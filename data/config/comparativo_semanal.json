@@ -1,0 +1,211 @@
+{
+  "version": "v1.1.0-20261013",
+  "vigente_desde": "2026-10-13T00:00:00Z",
+  "zona_horaria_presentacion": "America/Bogota",
+  "semana_inicio_seguimiento": "2026-W01",
+  "deteccion_evento": {
+    "variable": "NINO34_SSTA",
+    "umbral_inicio_c": 0.5,
+    "semanas_consecutivas_inicio": 4
+  },
+  "frescura_horas_aviso": 36,
+  "semanas_matriz": 12,
+  "desplazamientos_referencia": [1, 4],
+  "origenes_no_verificados": {
+    "bronce_xm": "conector_xm_embalses.py publica valores fijos en código (no consulta la API XM). Ej.: Chuza 43,8 % vs 92,1 % real XM al 2026-10-01.",
+    "bronce_ideam": "conector_ideam.py publica valores fijos en código (no consulta DHIME ni datos.gov.co).",
+    "bronce_firms": "conector_nasa_firms.py publica valores fijos en código (no consulta la API FIRMS)."
+  },
+  "almacen_historico": {
+    "directorio": "data/oro/semanal/historico",
+    "dias_gracia_cierre": 7,
+    "estado_corte_valido": "PUBLICADO_VALIDO"
+  },
+  "recuperacion_historica": {
+    "margen_dias_periodo_abierto": 10,
+    "xm": {
+      "url": "https://servapibi.xm.com.co/daily",
+      "metrica": "PorcVoluUtilDiar",
+      "max_dias_por_consulta": 30,
+      "ventanas": [
+        {"entidad": "Sistema", "desde": "2015-01-01", "hasta": null},
+        {"entidad": "Embalse", "desde": "2015-01-01", "hasta": "2016-08-31"},
+        {"entidad": "Embalse", "desde": "2023-03-01", "hasta": null}
+      ]
+    },
+    "ideam": {
+      "url": "https://www.datos.gov.co/resource/s54a-sgyg.json",
+      "desde": "2025-01-01",
+      "hilos": 4,
+      "timeout_s": 240
+    },
+    "ungrd": {
+      "eventos": ["INCENDIO FORESTAL", "SEQUIA", "DESABASTECIMIENTO DE AGUA"],
+      "datasets": [
+        {"id": "wwkg-r6te", "url": "https://www.datos.gov.co/resource/wwkg-r6te.json", "desde": "2019-01-01", "hasta": "2022-12-31", "campos": "fecha,departamento,municipio,evento,divipola,personas,familias,acueducto"},
+        {"id": "rgre-6ak4", "url": "https://www.datos.gov.co/resource/rgre-6ak4.json", "desde": "2023-01-01", "hasta": "2024-12-31", "campos": "fecha,departamento,municipio,evento,codificaci_n_segun_divipola,personas,familias,acueducto"},
+        {"id": "2343-nuqp", "url": "https://www.datos.gov.co/resource/2343-nuqp.json", "desde": "2025-01-01", "hasta": "2025-12-31", "campos": "fecha,departamento,municipio,evento,codificaci_n_segun_divipola,personas,familias,acued"}
+      ]
+    },
+    "firms": {
+      "url": "https://firms.modaps.eosdis.nasa.gov/api/country/csv/{map_key}/VIIRS_SNPP_SP/COL/{dias}/{fecha}",
+      "variable_entorno_clave": "FIRMS_MAP_KEY",
+      "desde": "2026-01-01",
+      "max_dias_por_consulta": 5
+    }
+  },
+  "variables": [
+    {
+      "codigo": "NINO34_SSTA", "grupo": "amenaza", "nombre": "Anomalía Niño 3.4",
+      "descripcion": "Anomalía semanal de temperatura superficial del mar en la región Niño 3.4 (5°N-5°S, 170°W-120°W). Indicador principal del evento.",
+      "unidad": "°C", "decimales": 1, "fuente": "NOAA CPC · wksst9120.for", "origen": "noaa_semanal", "campo": "nino34",
+      "agregacion": "ultimo", "direccion": "sube_empeora", "tolerancia_estable": 0.05, "en_analogos": true,
+      "niveles": [
+        {"desde": null, "hasta": 0.5, "etiqueta": "Neutro", "riesgo": "sin"},
+        {"desde": 0.5, "hasta": 1.0, "etiqueta": "Débil", "riesgo": "amarilla"},
+        {"desde": 1.0, "hasta": 1.5, "etiqueta": "Moderado", "riesgo": "naranja"},
+        {"desde": 1.5, "hasta": 2.0, "etiqueta": "Fuerte", "riesgo": "roja"},
+        {"desde": 2.0, "hasta": null, "etiqueta": "Muy fuerte", "riesgo": "roja"}
+      ]
+    },
+    {
+      "codigo": "NINO12_SSTA", "grupo": "amenaza", "nombre": "Anomalía Niño 1+2",
+      "descripcion": "Región costera del Pacífico suramericano (0-10°S, 90°W-80°W). Anticipa efectos sobre el Pacífico y el sur de Colombia.",
+      "unidad": "°C", "decimales": 1, "fuente": "NOAA CPC · wksst9120.for", "origen": "noaa_semanal", "campo": "nino12",
+      "agregacion": "ultimo", "direccion": "sube_empeora", "tolerancia_estable": 0.05, "en_analogos": true,
+      "niveles": [
+        {"desde": null, "hasta": 0.5, "etiqueta": "Neutro", "riesgo": "sin"},
+        {"desde": 0.5, "hasta": 1.0, "etiqueta": "Débil", "riesgo": "amarilla"},
+        {"desde": 1.0, "hasta": 1.5, "etiqueta": "Moderado", "riesgo": "naranja"},
+        {"desde": 1.5, "hasta": null, "etiqueta": "Fuerte o más", "riesgo": "roja"}
+      ]
+    },
+    {
+      "codigo": "NINO3_SSTA", "grupo": "amenaza", "nombre": "Anomalía Niño 3",
+      "descripcion": "Pacífico oriental (5°N-5°S, 150°W-90°W).",
+      "unidad": "°C", "decimales": 1, "fuente": "NOAA CPC · wksst9120.for", "origen": "noaa_semanal", "campo": "nino3",
+      "agregacion": "ultimo", "direccion": "sube_empeora", "tolerancia_estable": 0.05, "en_analogos": true, "niveles": []
+    },
+    {
+      "codigo": "NINO4_SSTA", "grupo": "amenaza", "nombre": "Anomalía Niño 4",
+      "descripcion": "Pacífico central-occidental (5°N-5°S, 160°E-150°W).",
+      "unidad": "°C", "decimales": 1, "fuente": "NOAA CPC · wksst9120.for", "origen": "noaa_semanal", "campo": "nino4",
+      "agregacion": "ultimo", "direccion": "sube_empeora", "tolerancia_estable": 0.05, "en_analogos": true, "niveles": []
+    },
+    {
+      "codigo": "ONI", "grupo": "amenaza", "nombre": "ONI trimestral",
+      "descripcion": "Oceanic Niño Index: media móvil de 3 meses de la anomalía Niño 3.4. Define oficialmente la intensidad del evento.",
+      "unidad": "°C", "decimales": 2, "fuente": "NOAA CPC · oni.ascii.txt", "origen": "noaa_oni", "campo": "oni",
+      "agregacion": "arrastre", "direccion": "sube_empeora", "tolerancia_estable": 0.02, "en_analogos": false,
+      "niveles": [
+        {"desde": null, "hasta": 0.5, "etiqueta": "Neutro", "riesgo": "sin"},
+        {"desde": 0.5, "hasta": 1.0, "etiqueta": "Débil", "riesgo": "amarilla"},
+        {"desde": 1.0, "hasta": 1.5, "etiqueta": "Moderado", "riesgo": "naranja"},
+        {"desde": 1.5, "hasta": 2.0, "etiqueta": "Fuerte", "riesgo": "roja"},
+        {"desde": 2.0, "hasta": null, "etiqueta": "Muy fuerte", "riesgo": "roja"}
+      ]
+    },
+    {
+      "codigo": "EMBALSES_NAL_PCT", "grupo": "colombia", "nombre": "Volumen útil embalses (SIN)",
+      "descripcion": "Porcentaje de volumen útil diario del Sistema Interconectado Nacional; valor del último día con dato de la semana.",
+      "unidad": "%", "decimales": 1, "fuente": "XM API · PorcVoluUtilDiar", "origen": "xm_historico", "campo": "Sistema",
+      "agregacion": "ultimo", "direccion": "baja_empeora", "tolerancia_estable": 0.3, "en_analogos": true,
+      "niveles": [
+        {"desde": null, "hasta": 40, "etiqueta": "Crítico", "riesgo": "roja"},
+        {"desde": 40, "hasta": 55, "etiqueta": "Vigilancia", "riesgo": "naranja"},
+        {"desde": 55, "hasta": 70, "etiqueta": "Atención", "riesgo": "amarilla"},
+        {"desde": 70, "hasta": null, "etiqueta": "Normal", "riesgo": "sin"}
+      ]
+    },
+    {
+      "codigo": "EMBALSE_BOGOTA_PCT", "grupo": "colombia", "nombre": "Embalses agregado Bogotá",
+      "descripcion": "Volumen útil del agregado Bogotá reportado por XM (sistema que abastece el acueducto de Bogotá y la Sabana); último día con dato de la semana.",
+      "unidad": "%", "decimales": 1, "fuente": "XM API · PorcVoluUtilDiar", "origen": "xm_historico", "campo": "AGREGADO BOGOTA",
+      "agregacion": "ultimo", "direccion": "baja_empeora", "tolerancia_estable": 0.3, "en_analogos": true,
+      "niveles": [
+        {"desde": null, "hasta": 40, "etiqueta": "Crítico", "riesgo": "roja"},
+        {"desde": 40, "hasta": 55, "etiqueta": "Vigilancia", "riesgo": "naranja"},
+        {"desde": 55, "hasta": 70, "etiqueta": "Atención", "riesgo": "amarilla"},
+        {"desde": 70, "hasta": null, "etiqueta": "Normal", "riesgo": "sin"}
+      ]
+    },
+    {
+      "codigo": "PRECIP_MM_DIA", "grupo": "colombia", "nombre": "Lluvia media por estación",
+      "descripcion": "Precipitación diaria media por estación IDEAM que reportó en la semana (suma de observaciones / estaciones-día), red automática nacional.",
+      "unidad": "mm/día", "decimales": 2, "fuente": "IDEAM · datos.gov.co s54a-sgyg", "origen": "ideam_precip", "campo": "mm_dia",
+      "agregacion": "promedio", "direccion": "baja_empeora", "tolerancia_estable": 0.1, "en_analogos": false, "niveles": []
+    },
+    {
+      "codigo": "PRECIP_VAR_REF_PCT", "grupo": "colombia", "nombre": "Lluvia vs misma semana 2025",
+      "descripcion": "Variación porcentual de la lluvia media por estación frente a la misma semana ISO de 2025. No es una anomalía climatológica (requiere normal 1991-2020).",
+      "unidad": "%", "decimales": 1, "fuente": "IDEAM · datos.gov.co s54a-sgyg", "origen": "ideam_precip", "campo": "var_ref_pct", "anio_referencia": 2025,
+      "agregacion": "promedio", "direccion": "baja_empeora", "tolerancia_estable": 2.0, "en_analogos": false,
+      "niveles": [
+        {"desde": null, "hasta": -60, "etiqueta": "Déficit extremo", "riesgo": "roja"},
+        {"desde": -60, "hasta": -40, "etiqueta": "Déficit severo", "riesgo": "naranja"},
+        {"desde": -40, "hasta": -20, "etiqueta": "Déficit moderado", "riesgo": "amarilla"},
+        {"desde": -20, "hasta": null, "etiqueta": "Normal", "riesgo": "sin"}
+      ]
+    },
+    {
+      "codigo": "INCENDIOS_FORESTALES", "grupo": "colombia", "nombre": "Incendios forestales reportados",
+      "descripcion": "Eventos de incendio forestal registrados por la UNGRD en la semana. Datos abiertos disponibles 2019-2025: se usa para comparar con El Niño 2023-24.",
+      "unidad": "eventos", "decimales": 0, "fuente": "UNGRD · datos.gov.co", "origen": "ungrd_historico", "campo": "INCENDIO FORESTAL",
+      "agregacion": "suma", "direccion": "sube_empeora", "tolerancia_estable": 0, "en_analogos": true, "solo_analogos": true, "niveles": []
+    },
+    {
+      "codigo": "SEQUIA_DESABAST", "grupo": "colombia", "nombre": "Sequía y desabastecimiento reportados",
+      "descripcion": "Eventos de sequía o desabastecimiento de agua registrados por la UNGRD en la semana (2019-2025).",
+      "unidad": "eventos", "decimales": 0, "fuente": "UNGRD · datos.gov.co", "origen": "ungrd_historico", "campo": "SEQUIA|DESABASTECIMIENTO DE AGUA",
+      "agregacion": "suma", "direccion": "sube_empeora", "tolerancia_estable": 0, "en_analogos": true, "solo_analogos": true, "niveles": []
+    },
+    {
+      "codigo": "PRECIP_ANOM_PCT", "activa": false, "motivo_inactiva": "Origen bronce_ideam no verificado (valores fijos en código).", "grupo": "colombia", "nombre": "Anomalía de precipitación",
+      "descripcion": "Promedio de la anomalía de precipitación a 30 días en los municipios monitoreados (muestra).",
+      "unidad": "%", "decimales": 1, "fuente": "IDEAM DHIME", "origen": "bronce_ideam", "campo": "anomalia_precip_pct",
+      "agregacion": "promedio", "direccion": "baja_empeora", "tolerancia_estable": 1.0, "en_analogos": false, "niveles": []
+    },
+    {
+      "codigo": "DIAS_SIN_LLUVIA", "activa": false, "motivo_inactiva": "Origen bronce_ideam no verificado (valores fijos en código).", "grupo": "colombia", "nombre": "Días consecutivos sin lluvia",
+      "descripcion": "Promedio de días consecutivos sin lluvia en los municipios monitoreados (muestra).",
+      "unidad": "días", "decimales": 1, "fuente": "IDEAM DHIME", "origen": "bronce_ideam", "campo": "dias_sin_lluvia",
+      "agregacion": "promedio", "direccion": "sube_empeora", "tolerancia_estable": 0.5, "en_analogos": false, "niveles": []
+    },
+    {
+      "codigo": "FOCOS_CALOR_7D", "activa": false, "motivo_inactiva": "Origen bronce_firms no verificado y la recuperación FIRMS requiere FIRMS_MAP_KEY.", "grupo": "colombia", "nombre": "Focos de calor (7 días)",
+      "descripcion": "Focos de calor VIIRS detectados en Colombia en la semana.",
+      "unidad": "focos", "decimales": 0, "fuente": "NASA FIRMS VIIRS", "origen": "firms_historico", "campo": "focos",
+      "agregacion": "suma", "direccion": "sube_empeora", "tolerancia_estable": 2, "en_analogos": false, "niveles": []
+    },
+    {
+      "codigo": "ICR_NACIONAL", "grupo": "riesgo", "nombre": "ICR nacional ponderado",
+      "descripcion": "Índice Compuesto de Riesgo ponderado por población del último corte publicado de la semana.",
+      "advertencia": "Calculado por el pipeline con insumos IDEAM/XM/FIRMS aún no verificados.",
+      "unidad": "pts", "decimales": 1, "fuente": "Vigía · corte oro", "origen": "oro_corte", "campo": "icr_nacional_ponderado",
+      "agregacion": "ultimo", "direccion": "sube_empeora", "tolerancia_estable": 0.2, "en_analogos": false,
+      "niveles": [
+        {"desde": null, "hasta": 40, "etiqueta": "Sin alerta", "riesgo": "sin"},
+        {"desde": 40, "hasta": 60, "etiqueta": "Amarilla", "riesgo": "amarilla"},
+        {"desde": 60, "hasta": 75, "etiqueta": "Naranja", "riesgo": "naranja"},
+        {"desde": 75, "hasta": null, "etiqueta": "Roja", "riesgo": "roja"}
+      ]
+    },
+    {
+      "codigo": "POB_RIESGO_CRITICO", "grupo": "riesgo", "nombre": "Población en riesgo crítico",
+      "descripcion": "Habitantes de municipios en alerta naranja o roja en el último corte publicado de la semana.",
+      "unidad": "hab.", "decimales": 0, "fuente": "Vigía · corte oro", "origen": "oro_corte", "campo": "poblacion_en_riesgo_critico",
+      "agregacion": "ultimo", "direccion": "sube_empeora", "tolerancia_estable": 1000, "en_analogos": false, "niveles": []
+    },
+    {
+      "codigo": "MUN_ALERTA_ROJA", "grupo": "riesgo", "nombre": "Municipios en alerta roja",
+      "descripcion": "Conteo de municipios evaluados en nivel rojo en el último corte publicado de la semana.",
+      "unidad": "mun.", "decimales": 0, "fuente": "Vigía · corte oro", "origen": "oro_corte", "campo": "conteo_roja",
+      "agregacion": "ultimo", "direccion": "sube_empeora", "tolerancia_estable": 0, "en_analogos": false, "niveles": []
+    }
+  ],
+  "eventos_analogos": [
+    {"id_evento": "1997-98", "nombre": "El Niño 1997-98", "desde": "1997-01-01", "hasta": "1998-08-31", "oni_pico": 2.4, "nota": "Evento muy fuerte; racionamientos de agua y energía en Colombia."},
+    {"id_evento": "2015-16", "nombre": "El Niño 2015-16", "desde": "2015-01-01", "hasta": "2016-08-31", "oni_pico": 2.6, "nota": "Evento muy fuerte; más de 300 municipios con desabastecimiento."},
+    {"id_evento": "2023-24", "nombre": "El Niño 2023-24", "desde": "2023-03-01", "hasta": "2024-08-31", "oni_pico": 2.0, "nota": "Evento fuerte; racionamiento en Bogotá (2024)."}
+  ]
+}

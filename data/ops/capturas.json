@@ -1,0 +1,462 @@
+[
+  {
+    "id_fuente": "FTE-CPC-NOAA",
+    "estado": "exitosa",
+    "hash_sha256": "dcc41aea6118b6f5dbf87f105772777170d7587c8646ddbc233b5cdb63945420",
+    "bytes_descargados": 171464,
+    "filas_procesadas": 2,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_cpc_noaa\\20261008_183211_dcc41aea.txt",
+    "mensaje": "Captura exitosa de anomalías SST semanales y ONI de NOAA CPC",
+    "capturado_en": "2026-10-08T18:32:11.478387+00:00"
+  },
+  {
+    "id_fuente": "FTE-INS-IRCA",
+    "estado": "exitosa",
+    "hash_sha256": "147f333096f842424c33beff2339e492c5212f1723ba182001faf9f6a3b59f21",
+    "bytes_descargados": 272750,
+    "filas_procesadas": 1006,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ins_irca\\20261008_183227_147f3330.json",
+    "mensaje": "Captura exitosa de 1006 municipios desde SIVICAP",
+    "capturado_en": "2026-10-08T18:32:27.959510+00:00"
+  },
+  {
+    "id_fuente": "FTE-CPC-NOAA",
+    "estado": "sin_cambios",
+    "hash_sha256": "dcc41aea6118b6f5dbf87f105772777170d7587c8646ddbc233b5cdb63945420",
+    "bytes_descargados": 171464,
+    "filas_procesadas": 0,
+    "ruta_archivo_bronce": "",
+    "mensaje": "Los datos de NOAA CPC no presentan cambios frente a la última captura.",
+    "capturado_en": "2026-10-08T18:34:02.081572+00:00"
+  },
+  {
+    "id_fuente": "FTE-INS-IRCA",
+    "estado": "sin_cambios",
+    "hash_sha256": "147f333096f842424c33beff2339e492c5212f1723ba182001faf9f6a3b59f21",
+    "bytes_descargados": 272750,
+    "filas_procesadas": 0,
+    "ruta_archivo_bronce": "",
+    "mensaje": "Sin cambios en el catálogo IRCA de SIVICAP.",
+    "capturado_en": "2026-10-08T18:34:02.959744+00:00"
+  },
+  {
+    "id_fuente": "FTE-IDEAM-CLIMA",
+    "estado": "exitosa",
+    "hash_sha256": "573955bfdca5de8922aa8b28aa6dfb7ef4f297aa4fc47da070bd2f754617b174",
+    "bytes_descargados": 4553,
+    "filas_procesadas": 22,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ideam_clima\\20261008_183402_573955bf.json",
+    "mensaje": "Captura exitosa de 22 municipios desde IDEAM",
+    "capturado_en": "2026-10-08T18:34:03.020162+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "32300c122dc2fd08d3eb339e90ec849a3e1e38c00a7fd873f0ca6f2c6b625c9b",
+    "bytes_descargados": 5226,
+    "filas_procesadas": 17,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261008_183403_32300c12.json",
+    "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
+    "capturado_en": "2026-10-08T18:34:03.093801+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "d84bfb289bbb5250b3977a2c797480f61d9f26daaa575ce73f848dcf28a050e1",
+    "bytes_descargados": 1765,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261008_183403_d84bfb28.json",
+    "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
+    "capturado_en": "2026-10-08T18:34:03.163359+00:00"
+  },
+  {
+    "id_fuente": "FTE-FIRMS-NASA",
+    "estado": "exitosa",
+    "hash_sha256": "334961fd7c2e59c1a906466e941775035da8ab6129983498f6f26eaec3326fd2",
+    "bytes_descargados": 1283,
+    "filas_procesadas": 10,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_firms_nasa\\20261008_183403_334961fd.json",
+    "mensaje": "Captura exitosa de anomalías térmicas en 10 municipios",
+    "capturado_en": "2026-10-08T18:34:03.229196+00:00"
+  },
+  {
+    "id_fuente": "FTE-CPC-NOAA",
+    "estado": "sin_cambios",
+    "hash_sha256": "dcc41aea6118b6f5dbf87f105772777170d7587c8646ddbc233b5cdb63945420",
+    "bytes_descargados": 171464,
+    "filas_procesadas": 0,
+    "ruta_archivo_bronce": "",
+    "mensaje": "Los datos de NOAA CPC no presentan cambios frente a la última captura.",
+    "capturado_en": "2026-10-08T18:34:15.183188+00:00"
+  },
+  {
+    "id_fuente": "FTE-INS-IRCA",
+    "estado": "sin_cambios",
+    "hash_sha256": "147f333096f842424c33beff2339e492c5212f1723ba182001faf9f6a3b59f21",
+    "bytes_descargados": 272750,
+    "filas_procesadas": 0,
+    "ruta_archivo_bronce": "",
+    "mensaje": "Sin cambios en el catálogo IRCA de SIVICAP.",
+    "capturado_en": "2026-10-08T18:34:16.136371+00:00"
+  },
+  {
+    "id_fuente": "FTE-IDEAM-CLIMA",
+    "estado": "exitosa",
+    "hash_sha256": "d7f64e192da8815b5e132a2dd71cb0d2c54cca62656840229d1d5c6a82cad0df",
+    "bytes_descargados": 4553,
+    "filas_procesadas": 22,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ideam_clima\\20261008_183416_d7f64e19.json",
+    "mensaje": "Captura exitosa de 22 municipios desde IDEAM",
+    "capturado_en": "2026-10-08T18:34:16.187684+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "21148478bae6120df0c9e694ed9f181ab9f3029dd1d88e26c19fc7570e94be93",
+    "bytes_descargados": 5226,
+    "filas_procesadas": 17,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261008_183416_21148478.json",
+    "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
+    "capturado_en": "2026-10-08T18:34:16.274454+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "06209bc458cdd6bfb4094ddf572eb5e3241ec85e84edcb51f6f02266bf334d14",
+    "bytes_descargados": 1765,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261008_183416_06209bc4.json",
+    "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
+    "capturado_en": "2026-10-08T18:34:16.357884+00:00"
+  },
+  {
+    "id_fuente": "FTE-FIRMS-NASA",
+    "estado": "exitosa",
+    "hash_sha256": "69365b189a70ed4c6a717596a4cc92f847c262ddcb111bca14110fca1fcabaeb",
+    "bytes_descargados": 1283,
+    "filas_procesadas": 10,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_firms_nasa\\20261008_183416_69365b18.json",
+    "mensaje": "Captura exitosa de anomalías térmicas en 10 municipios",
+    "capturado_en": "2026-10-08T18:34:16.433625+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "205b727b6e4b8ed073c7c5ff7aa5deb17b592db228a6ee7d92416a54fb55058c",
+    "bytes_descargados": 1765,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261008_183501_205b727b.json",
+    "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
+    "capturado_en": "2026-10-08T18:35:01.274033+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "e7b7dab14c879da0b3532259efd00b27326a14219454118743512d0c5868f283",
+    "bytes_descargados": 5226,
+    "filas_procesadas": 17,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261008_183501_e7b7dab1.json",
+    "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
+    "capturado_en": "2026-10-08T18:35:01.368980+00:00"
+  },
+  {
+    "id_fuente": "FTE-CPC-NOAA",
+    "estado": "sin_cambios",
+    "hash_sha256": "dcc41aea6118b6f5dbf87f105772777170d7587c8646ddbc233b5cdb63945420",
+    "bytes_descargados": 171464,
+    "filas_procesadas": 0,
+    "ruta_archivo_bronce": "",
+    "mensaje": "Los datos de NOAA CPC no presentan cambios frente a la última captura.",
+    "capturado_en": "2026-10-08T18:35:54.629799+00:00"
+  },
+  {
+    "id_fuente": "FTE-INS-IRCA",
+    "estado": "sin_cambios",
+    "hash_sha256": "147f333096f842424c33beff2339e492c5212f1723ba182001faf9f6a3b59f21",
+    "bytes_descargados": 272750,
+    "filas_procesadas": 1006,
+    "ruta_archivo_bronce": "",
+    "mensaje": "Sin cambios en el catálogo IRCA de SIVICAP.",
+    "capturado_en": "2026-10-08T18:35:55.744399+00:00"
+  },
+  {
+    "id_fuente": "FTE-IDEAM-CLIMA",
+    "estado": "exitosa",
+    "hash_sha256": "c86a51c496079f46e9facb764da76e41fa1a5781d62b504861b7438963982f0a",
+    "bytes_descargados": 4553,
+    "filas_procesadas": 22,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ideam_clima\\20261008_183555_c86a51c4.json",
+    "mensaje": "Captura exitosa de 22 municipios desde IDEAM",
+    "capturado_en": "2026-10-08T18:35:56.631741+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "394df406294c0b89a290064103009ee43ef49b113060b2b94f43e513864cf38b",
+    "bytes_descargados": 5226,
+    "filas_procesadas": 17,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261008_183557_394df406.json",
+    "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
+    "capturado_en": "2026-10-08T18:35:58.646447+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "cf76f94f3940407a6e7873bed75248426a59cf40557d8b48e065bae53ffc7b48",
+    "bytes_descargados": 1765,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261008_183559_cf76f94f.json",
+    "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
+    "capturado_en": "2026-10-08T18:36:00.051353+00:00"
+  },
+  {
+    "id_fuente": "FTE-FIRMS-NASA",
+    "estado": "exitosa",
+    "hash_sha256": "8bbed1a9a6cfcce76fe8121c73187a5bd8edfa5bb091d2ff15979d0e8a7c7202",
+    "bytes_descargados": 1283,
+    "filas_procesadas": 10,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_firms_nasa\\20261008_183601_8bbed1a9.json",
+    "mensaje": "Captura exitosa de anomalías térmicas en 10 municipios",
+    "capturado_en": "2026-10-08T18:36:01.349654+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "db31855762b2b31efcbc970cbdca8239ae1b01faa2c41a786c10dc206cb7682e",
+    "bytes_descargados": 1765,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261008_184443_db318557.json",
+    "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
+    "capturado_en": "2026-10-08T18:44:43.712067+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "7725fbe602ce6d3e5d9dfe4429210e3d53d9f11ffb65968707853160befcd801",
+    "bytes_descargados": 5226,
+    "filas_procesadas": 17,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261008_184443_7725fbe6.json",
+    "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
+    "capturado_en": "2026-10-08T18:44:43.860658+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "19534a83d065ade107bf78aba67beb65ae35d108cd41bcc19bd142efa7e07410",
+    "bytes_descargados": 1765,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261008_200505_19534a83.json",
+    "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
+    "capturado_en": "2026-10-08T20:05:06.050138+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "0edf07f013f8ca612b36532a0f61eb59c8b0b4b63f7db00288c1f84054dc2181",
+    "bytes_descargados": 5226,
+    "filas_procesadas": 17,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261008_200506_0edf07f0.json",
+    "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
+    "capturado_en": "2026-10-08T20:05:06.150023+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "6db3889dc713fe3d6200fc9bb8e029bf97a7ae8e7dd0a753f9992b9533287928",
+    "bytes_descargados": 1765,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261008_200631_6db3889d.json",
+    "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
+    "capturado_en": "2026-10-08T20:06:31.472555+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "eaabf6da0e0d795b09154f0e8381362aaa3c23bf9f0c9d7cbfd4fbcb1bf574f7",
+    "bytes_descargados": 5226,
+    "filas_procesadas": 17,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261008_200631_eaabf6da.json",
+    "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
+    "capturado_en": "2026-10-08T20:06:31.557526+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "6f9f2f0d9cc82165ef290f5945055faf8bf6da12c9e300a506e3262f0ad0849b",
+    "bytes_descargados": 1765,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261008_201849_6f9f2f0d.json",
+    "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
+    "capturado_en": "2026-10-08T20:18:49.355956+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "dea46aa580fb5ccb44ca9ad920efe318f7ef9c8232c48a7cf2a3e7a22e12b124",
+    "bytes_descargados": 5226,
+    "filas_procesadas": 17,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261008_201849_dea46aa5.json",
+    "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
+    "capturado_en": "2026-10-08T20:18:49.454430+00:00"
+  },
+  {
+    "id_fuente": "FTE-CPC-NOAA",
+    "estado": "sin_cambios",
+    "hash_sha256": "dcc41aea6118b6f5dbf87f105772777170d7587c8646ddbc233b5cdb63945420",
+    "bytes_descargados": 171464,
+    "filas_procesadas": 0,
+    "ruta_archivo_bronce": "",
+    "mensaje": "Los datos de NOAA CPC no presentan cambios frente a la última captura.",
+    "capturado_en": "2026-10-09T16:02:47.953189+00:00"
+  },
+  {
+    "id_fuente": "FTE-INS-IRCA",
+    "estado": "sin_cambios",
+    "hash_sha256": "147f333096f842424c33beff2339e492c5212f1723ba182001faf9f6a3b59f21",
+    "bytes_descargados": 272750,
+    "filas_procesadas": 1006,
+    "ruta_archivo_bronce": "",
+    "mensaje": "Sin cambios en el catálogo IRCA de SIVICAP.",
+    "capturado_en": "2026-10-09T16:02:49.049968+00:00"
+  },
+  {
+    "id_fuente": "FTE-IDEAM-CLIMA",
+    "estado": "exitosa",
+    "hash_sha256": "62cc1d228d686d53974a1164762f36e738bd332fa097c7b3889fe0fc2ba1c676",
+    "bytes_descargados": 4553,
+    "filas_procesadas": 22,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ideam_clima\\20261009_160249_62cc1d22.json",
+    "mensaje": "Captura exitosa de 22 municipios desde IDEAM",
+    "capturado_en": "2026-10-09T16:02:49.144161+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "dd2fba10f0bab7f50e4a13bc21de57ac20aafdbd56d2f9650592faa383a8c5ce",
+    "bytes_descargados": 5226,
+    "filas_procesadas": 17,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261009_160249_dd2fba10.json",
+    "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
+    "capturado_en": "2026-10-09T16:02:49.249013+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "4ca2f877ceec288245e3b4d66a1835942f5aec251786b742b86de94889a7fb1d",
+    "bytes_descargados": 1765,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261009_160249_4ca2f877.json",
+    "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
+    "capturado_en": "2026-10-09T16:02:49.386661+00:00"
+  },
+  {
+    "id_fuente": "FTE-FIRMS-NASA",
+    "estado": "exitosa",
+    "hash_sha256": "52190ae01852f72830b9636d9dc114243d3fb5572ffcb45e0116b37e2911172d",
+    "bytes_descargados": 1283,
+    "filas_procesadas": 10,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_firms_nasa\\20261009_160249_52190ae0.json",
+    "mensaje": "Captura exitosa de anomalías térmicas en 10 municipios",
+    "capturado_en": "2026-10-09T16:02:49.519055+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "279e5117270e739690ab17cb4300d2bdfb15a41aebee4a3d3aa1eb0947107612",
+    "bytes_descargados": 1765,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261013_131739_279e5117.json",
+    "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
+    "capturado_en": "2026-10-13T13:17:39.718887+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "d5da6d4188c35d55a7404c03b1b563d14b6e5ed980f5bbbad69faaa10e89a2cd",
+    "bytes_descargados": 5226,
+    "filas_procesadas": 17,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261013_131739_d5da6d41.json",
+    "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
+    "capturado_en": "2026-10-13T13:17:39.924362+00:00"
+  },
+  {
+    "id_fuente": "FTE-CPC-NOAA",
+    "estado": "exitosa",
+    "hash_sha256": "258a28f845244b79fc143a85a559778058e3b28ea3c03349a304d99b2e8dce0b",
+    "bytes_descargados": 171527,
+    "filas_procesadas": 2,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_cpc_noaa\\20261013_134943_258a28f8.txt",
+    "mensaje": "Captura exitosa de anomalías SST semanales y ONI de NOAA CPC",
+    "capturado_en": "2026-10-13T13:49:43.288753+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HISTORICO",
+    "estado": "exitosa",
+    "hash_sha256": "",
+    "bytes_descargados": 0,
+    "filas_procesadas": 210,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_historico",
+    "mensaje": "210 tramos nuevos de 210 consultados",
+    "capturado_en": "2026-10-13T13:51:18.293245+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-HISTORICO",
+    "estado": "exitosa",
+    "hash_sha256": "",
+    "bytes_descargados": 0,
+    "filas_procesadas": 3,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_historico",
+    "mensaje": "3 tramos nuevos de 3 consultados",
+    "capturado_en": "2026-10-13T13:51:26.338950+00:00"
+  },
+  {
+    "id_fuente": "FTE-FIRMS-HISTORICO",
+    "estado": "fallida",
+    "hash_sha256": "",
+    "bytes_descargados": 0,
+    "filas_procesadas": 0,
+    "ruta_archivo_bronce": "",
+    "mensaje": "bloqueada: requiere la variable de entorno FIRMS_MAP_KEY (MAP_KEY gratuita de NASA FIRMS)",
+    "capturado_en": "2026-10-13T13:51:26.677806+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "afb9be564bc54b7b6079750b2b76e3b4dd73a2c45b2c469175536658b2ebf7c5",
+    "bytes_descargados": 1765,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261013_140458_afb9be56.json",
+    "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
+    "capturado_en": "2026-10-13T14:04:58.287578+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "3ffcbf0c74d13df1b349b11400d0cdc56bc626cf37ed0f333f8ec9e5d6f6979a",
+    "bytes_descargados": 5226,
+    "filas_procesadas": 17,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261013_140458_3ffcbf0c.json",
+    "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
+    "capturado_en": "2026-10-13T14:04:58.517583+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "55207b18033fe477cb117378b2ae2898a3b36189118e837fb9b31dbb592b0146",
+    "bytes_descargados": 1765,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261014_134858_55207b18.json",
+    "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
+    "capturado_en": "2026-10-14T13:48:58.581265+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "7e93118a5227fd9b1e3763636831a095a94988d66ef06a606d81e1f085add773",
+    "bytes_descargados": 5226,
+    "filas_procesadas": 17,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261014_134858_7e93118a.json",
+    "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
+    "capturado_en": "2026-10-14T13:48:58.694624+00:00"
+  }
+]

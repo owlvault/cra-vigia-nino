@@ -1,0 +1,72 @@
+{
+  "fuente": "XM Sinergox (API Embalses)",
+  "fecha_reporte": "2026-10-08",
+  "fecha_captura": "2026-10-08T20:06:31.365485+00:00",
+  "embalses": {
+    "CHINGAZA_CHUZA": {
+      "nombre": "Embalse de Chuza (Sistema Chingaza)",
+      "municipios_asociados": [
+        "11001",
+        "25269",
+        "25290",
+        "25754"
+      ],
+      "capacidad_hm3": 220.0,
+      "volumen_util_actual_pct": 43.8,
+      "region": "Andina / Cundinamarca"
+    },
+    "SAN_RAFAEL": {
+      "nombre": "Embalse San Rafael",
+      "municipios_asociados": [
+        "11001",
+        "25377"
+      ],
+      "capacidad_hm3": 70.0,
+      "volumen_util_actual_pct": 52.4,
+      "region": "Andina / Cundinamarca"
+    },
+    "TOMINE": {
+      "nombre": "Embalse de Tominé",
+      "municipios_asociados": [
+        "11001",
+        "25307",
+        "25899"
+      ],
+      "capacidad_hm3": 690.0,
+      "volumen_util_actual_pct": 48.1,
+      "region": "Andina / Cundinamarca"
+    },
+    "PRADO": {
+      "nombre": "Embalse de Hidroprado",
+      "municipios_asociados": [
+        "73563",
+        "73555",
+        "73268"
+      ],
+      "capacidad_hm3": 1100.0,
+      "volumen_util_actual_pct": 39.5,
+      "region": "Andina / Tolima"
+    },
+    "CALIMA": {
+      "nombre": "Embalse Lago Calima",
+      "municipios_asociados": [
+        "76111",
+        "76892"
+      ],
+      "capacidad_hm3": 450.0,
+      "volumen_util_actual_pct": 58.2,
+      "region": "Pacífica / Valle del Cauca"
+    },
+    "PENOL_GUATAPE": {
+      "nombre": "Embalse Peñol-Guatapé",
+      "municipios_asociados": [
+        "05318",
+        "05541"
+      ],
+      "capacidad_hm3": 1070.0,
+      "volumen_util_actual_pct": 56.7,
+      "region": "Andina / Antioquia"
+    }
+  },
+  "nivel_agregado_nacional_pct": 49.3
+}

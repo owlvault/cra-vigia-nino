@@ -1,0 +1,46 @@
+[
+  {
+    "id_ejecucion": "7d5b73c5-9418-4d27-b538-557690bdb9e1",
+    "modo": "recalculo",
+    "inicio": "2026-10-13T13:10:40.873875+00:00",
+    "fin": "2026-10-13T13:10:42.602487+00:00",
+    "estado": "exitoso",
+    "pasos": [
+      {
+        "paso": "Modelo semanal",
+        "estado": "exitosa",
+        "mensaje": "Semana vigente 2026-W41"
+      },
+      {
+        "paso": "Publicación",
+        "estado": "exitosa",
+        "mensaje": "Corte semanal publicado en oro y tablero"
+      }
+    ],
+    "hash_entradas": "b53d14f084a46dafee0a2433a7e66812554a6deec8aeb7dd05129481852fb987",
+    "semana_publicada": "2026-W41",
+    "mensaje": "Actualización completada"
+  },
+  {
+    "id_ejecucion": "455ad16f-b3e1-4a09-9f99-54e53419426d",
+    "modo": "recalculo",
+    "inicio": "2026-10-13T13:17:49.469099+00:00",
+    "fin": "2026-10-13T13:17:50.730131+00:00",
+    "estado": "exitoso",
+    "pasos": [
+      {
+        "paso": "Modelo semanal",
+        "estado": "exitosa",
+        "mensaje": "Semana vigente 2026-W41"
+      },
+      {
+        "paso": "Publicación",
+        "estado": "exitosa",
+        "mensaje": "Corte semanal publicado en oro y tablero"
+      }
+    ],
+    "hash_entradas": "b23115ee39b910f4b703a4e9493f890541a083c2f503757f1afd9f1233c9a565",
+    "semana_publicada": "2026-W41",
+    "mensaje": "Actualización completada"
+  }
+]

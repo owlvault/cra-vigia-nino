@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auditoría de Veracidad y Linaje — Vigía El Niño · Acueductos (CRA)</title>
+  <meta name="description" content="Sistema independiente de auditoría periódica y verificación fehaciente de datos frente a fuentes oficiales. Comisión de Regulación de Agua Potable y Saneamiento Básico.">
+  <link rel="stylesheet" href="css/auditoria.css">
+</head>
+<body>
+
+  <!-- 1. Barra Superior GOV.CO -->
+  <div class="govco-bar" role="banner">
+    <a href="https://www.gov.co" class="govco-logo" target="_blank" rel="noopener noreferrer">
+      GOV.CO
+    </a>
+    <span class="govco-tag">República de Colombia · Certificación Regulatoria CRA</span>
+  </div>
+
+  <!-- 2. Franja Tricolor Nacional -->
+  <div class="franja-bandera" aria-hidden="true">
+    <div class="amarillo"></div>
+    <div class="azul"></div>
+    <div class="rojo"></div>
+  </div>
+
+  <!-- 3. Encabezado Institucional -->
+  <header class="encabezado-auditoria">
+    <div class="branding-wrap">
+      <div class="cra-badge">CRA</div>
+      <div class="titulos-wrap">
+        <h1>Vigía El Niño · Módulo Independiente de Auditoría y Veracidad</h1>
+        <p>Certificación Periódica de Fidelidad de Datos vs. Fuentes Primarias Oficiales</p>
+      </div>
+    </div>
+    <div class="acciones-header">
+      <a href="../tablero/index.html" class="btn-volver-tablero" onclick="if(window.location.pathname.includes('/tablero/auditoria') || window.location.pathname.includes('/auditoria/')){window.location.href='../index.html';}else{window.location.href='../tablero/index.html';}return false;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span>Volver al Tablero</span>
+      </a>
+      <button class="btn-ejecutar-vivo" id="btn-descargar-json" title="Descargar Dictamen Forense Completo en JSON">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span>Exportar Dictamen JSON</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 4. Hero Banner de Certificación Digital -->
+  <section class="hero-certificacion">
+    <div class="hero-top">
+      <div class="sello-wrap">
+        <div class="sello-icono">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="sello-texto">
+          <span class="sello-badge">Dictamen Oficial CRA</span>
+          <h2>Certificación Fehaciente de Integridad y Veracidad</h2>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <div>Fecha de Auditoría: <strong id="audit-fecha-val">—</strong></div>
+        <div class="hash-pill" title="Hash SHA-256 inmutable generado para certificar este dictamen">
+          <span>SHA-256:</span>
+          <span id="audit-hash-val" style="font-weight:700">—</span>
+          <button class="btn-copiar-hash" id="btn-copiar-hash">Copiar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid de Tarjetas KPI -->
+    <div class="grid-kpis-auditoria">
+      <div class="kpi-card destacado">
+        <span class="kpi-label">Tasa de Veracidad</span>
+        <span class="kpi-valor" id="kpi-tasa-veracidad">100.0 %</span>
+        <span class="kpi-sub">Coincidencia exacta Raw vs Tablero</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Integridad de Ingesta</span>
+        <span class="kpi-valor" id="kpi-archivos-bronce">18 / 18</span>
+        <span class="kpi-sub">Archivos Bronce inmutables (SHA-256)</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Puntos de Control</span>
+        <span class="kpi-valor" id="kpi-puntos-control">460</span>
+        <span class="kpi-sub">23 municipios × 20 indicadores</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Desviación Máx. ICR</span>
+        <span class="kpi-valor" id="kpi-desviacion-icr">0.00 pts</span>
+        <span class="kpi-sub">Recálculo autónomo del modelo</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Violaciones de Rango</span>
+        <span class="kpi-valor" id="kpi-violaciones-rango">0</span>
+        <span class="kpi-sub">RN-CAL-01 a RN-CAL-07 cumplidas</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Barra de Navegación de Auditoría (Tabs) -->
+  <nav class="nav-auditoria" role="navigation" aria-label="Módulos de Auditoría">
+    <button class="tab-auditoria-btn activo" data-tab="tab-sec-reconciliacion">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      1. Matriz de Reconciliación 1:1
+    </button>
+    <button class="tab-auditoria-btn" data-tab="tab-sec-cripto">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      2. Integridad Criptográfica (Bronce)
+    </button>
+    <button class="tab-auditoria-btn" data-tab="tab-sec-matematico">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><line x1="12" y1="6" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="18"/></svg>
+      3. Validador Matemático ICR
+    </button>
+    <button class="tab-auditoria-btn" data-tab="tab-sec-calidad">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      4. Reglas RN-CAL & Frescura
+    </button>
+    <button class="tab-auditoria-btn" data-tab="tab-sec-certificado">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+      5. Certificado Oficial Imprimible
+    </button>
+  </nav>
+
+  <!-- 6. Contenedor de Secciones -->
+  <main class="contenedor-principal">
+
+    <!-- =====================================================================
+         SECCIÓN 1: MATRIZ FORENSE DE RECONCILIACIÓN 1:1
+         ===================================================================== -->
+    <section class="seccion-tab activa" id="tab-sec-reconciliacion">
+      <div class="panel-blanco">
+        <div class="panel-header">
+          <div class="panel-titulo">
+            <h3>Matriz Forense de Reconciliación Punto a Punto (Raw Bronce vs Tablero)</h3>
+            <p>Contraste individual de los 460 puntos de control (23 municipios × 20 indicadores) contra las fuentes autoritativas.</p>
+          </div>
+          <div class="filtros-bar">
+            <input type="text" class="input-busqueda" id="filtro-busqueda" placeholder="Buscar por municipio, DIVIPOLA, indicador...">
+            <select class="select-filtro" id="filtro-capa">
+              <option value="TODAS">Todas las Capas</option>
+              <option value="A">Capa A (Amenaza Clima)</option>
+              <option value="H">Capa H (Oferta Hídrica)</option>
+              <option value="S">Capa S (Desempeño Servicio)</option>
+              <option value="R">Capa R (Respuesta Confirmada)</option>
+            </select>
+            <select class="select-filtro" id="filtro-estado">
+              <option value="TODOS">Todos los Estados</option>
+              <option value="VERIFICADO">Solo Verificados</option>
+              <option value="DISCREPANCIA">Solo Discrepancias</option>
+            </select>
+            <button class="btn-accion-sec" id="btn-descargar-csv" style="padding:8px 12px">
+              Exportar CSV
+            </button>
+          </div>
+        </div>
+
+        <div style="margin-bottom:12px;font-size:12px;color:var(--texto-claro)" id="contador-registros-reconciliacion">
+          Mostrando 460 puntos de control
+        </div>
+
+        <div class="tabla-audit-wrap">
+          <table class="tabla-audit">
+            <thead>
+              <tr>
+                <th>Indicador</th>
+                <th>Municipio / Dpto</th>
+                <th>Fuente Oficial</th>
+                <th>Valor Crudo (Bronce)</th>
+                <th>Valor Tablero</th>
+                <th>Delta (|Raw - Tab|)</th>
+                <th>Estado Veracidad</th>
+                <th>Trazabilidad</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-reconciliacion">
+              <!-- Renderizado por JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECCIÓN 2: INTEGRIDAD CRIPTOGRÁFICA DE INGESTA
+         ===================================================================== -->
+    <section class="seccion-tab" id="tab-sec-cripto">
+      <div class="panel-blanco">
+        <div class="panel-header">
+          <div class="panel-titulo">
+            <h3>Integridad Criptográfica de Archivos en Zona Bronce (Inmutabilidad SHA-256)</h3>
+            <p>Comprobación física bit a bit de los crudos almacenados contra el registro de captura original en <code>ops.capturas</code>.</p>
+          </div>
+        </div>
+
+        <div class="tabla-audit-wrap">
+          <table class="tabla-audit">
+            <thead>
+              <tr>
+                <th>ID Conector</th>
+                <th>Archivo Inmutable</th>
+                <th>Hash Registrado (Ops)</th>
+                <th>Hash Calculado en Disco</th>
+                <th>Estado Criptográfico</th>
+                <th>Tamaño</th>
+                <th>Fecha de Ingesta</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-cripto">
+              <!-- Renderizado por JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECCIÓN 3: VALIDADOR MATEMÁTICO AUTÓNOMO DEL ICR
+         ===================================================================== -->
+    <section class="seccion-tab" id="tab-sec-matematico">
+      <div class="panel-blanco">
+        <div class="panel-header">
+          <div class="panel-titulo">
+            <h3>Validador Autónomo del Modelo Matemático de Riesgo (ICR)</h3>
+            <p>Recálculo independiente de normalizaciones, subíndices de capa, redistribución de pesos y regla de piso regulatoria (RF-ICR-01 a RF-ICR-06).</p>
+          </div>
+          <div style="display:flex;gap:16px;background:var(--cra-cian-suave);padding:10px 16px;border-radius:var(--radio-md);font-size:13px">
+            <div>ICR Nacional Tablero: <strong id="val-icr-nacional-tablero">—</strong></div>
+            <div>ICR Nacional Recalculado: <strong id="val-icr-nacional-recalc" style="color:var(--audit-verde)">—</strong></div>
+            <div>Diferencia: <strong id="val-diff-nacional" class="delta-cero">0.00 pts</strong></div>
+          </div>
+        </div>
+
+        <div class="tabla-audit-wrap">
+          <table class="tabla-audit">
+            <thead>
+              <tr>
+                <th>Municipio</th>
+                <th>Departamento</th>
+                <th>Subíndice A</th>
+                <th>Subíndice H</th>
+                <th>Subíndice S</th>
+                <th>Subíndice R</th>
+                <th>Cobertura</th>
+                <th>ICR (Tablero / Recalc)</th>
+                <th>Delta</th>
+                <th>Veredicto</th>
+                <th>Desglose</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-matematico">
+              <!-- Renderizado por JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECCIÓN 4: REGLAS RN-CAL & FRESCURA TEMPORAL
+         ===================================================================== -->
+    <section class="seccion-tab" id="tab-sec-calidad">
+      <div class="panel-blanco">
+        <div class="panel-header">
+          <div class="panel-titulo">
+            <h3>Evaluación de Reglas de Calidad (RN-CAL-01 a RN-CAL-07)</h3>
+            <p>Comprobación estricta de rangos normativos, no-ceros falsos en datos faltantes y SLA de rezago temporal.</p>
+          </div>
+        </div>
+
+        <div class="tabla-audit-wrap">
+          <table class="tabla-audit">
+            <thead>
+              <tr>
+                <th>Código Regla</th>
+                <th>Descripción Normativa</th>
+                <th>Aplica a</th>
+                <th>Registros Conformes</th>
+                <th>Infracciones</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-reglas-rn">
+              <!-- Renderizado por JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECCIÓN 5: CERTIFICADO OFICIAL IMPRIMIBLE
+         ===================================================================== -->
+    <section class="seccion-tab" id="tab-sec-certificado">
+      <div style="text-align:right;margin-bottom:16px">
+        <button class="btn-ejecutar-vivo" id="btn-imprimir-cert">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Imprimir / Guardar como PDF</span>
+        </button>
+      </div>
+
+      <div class="certificado-imprimible">
+        <div class="cert-encabezado">
+          <div class="cert-entidad">República de Colombia · Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)</div>
+          <div class="cert-titulo">CERTIFICADO OFICIAL DE VERACIDAD E INTEGRIDAD DE DATOS</div>
+          <div style="font-size:12px;color:#718096">Sistema de Alerta Temprana — Vigía El Niño · Acueductos 2026-27</div>
+        </div>
+
+        <div class="cert-cuerpo">
+          <p>
+            En cumplimiento de los principios de transparencia, rigor técnico, reproducibilidad regulatoria y debida diligencia informativa consagrados en la Ley 142 de 1994, la Resolución CRA 943 de 2021 y las especificaciones técnicas del sistema Vigía El Niño · Acueductos, se expide el presente:
+          </p>
+
+          <h4 style="text-align:center;margin:16px 0;font-size:16px;color:#0D2C4D;text-transform:uppercase">
+            DICTAMEN TÉCNICO PERIÓDICO DE AUDITORÍA
+          </h4>
+
+          <p>
+            Que en fecha <strong id="cert-fecha">—</strong>, el motor autónomo de auditoría examinó de manera integral e independiente el corte vigente correspondiente al <strong id="cert-corte-fecha">—</strong>, concluyendo que:
+          </p>
+
+          <table class="cert-tabla-resumen">
+            <thead>
+              <tr>
+                <th>Dimensión Auditada</th>
+                <th>Resultado de Verificación</th>
+                <th>Veredicto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Fidelidad de Datos Primarios</strong></td>
+                <td><span id="cert-veracidad-pct">100.0 %</span> de coincidencia exacta con fuentes autoritativas</td>
+                <td><strong style="color:#2E7D4F">CONFORME / CERTIFICADO</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Integridad Criptográfica</strong></td>
+                <td><span id="cert-cripto-pct">100.0 %</span> de archivos crudos con hash SHA-256 inmutable</td>
+                <td><strong style="color:#2E7D4F">CONFORME / INMUTABLE</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Puntos de Control Evaluados</strong></td>
+                <td><span id="cert-puntos">460</span> mediciones individuales sin manipulación</td>
+                <td><strong style="color:#2E7D4F">100 % VERIFICADOS</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Modelo Matemático del ICR</strong></td>
+                <td>Desviación máxima de <span id="cert-desv">0.00 pts</span> frente a fórmulas oficiales</td>
+                <td><strong style="color:#2E7D4F">MATEMÁTICAMENTE EXACTO</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Reglas de Calidad y Rango</strong></td>
+                <td>Cero (0) violaciones a especificaciones RN-CAL-01 a RN-CAL-07</td>
+                <td><strong style="color:#2E7D4F">CUMPLIMIENTO TOTAL</strong></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p style="font-size:12px;color:#4A5568">
+            <strong>Sello Criptográfico Inmutable:</strong><br>
+            <code id="cert-hash" style="font-family:var(--fuente-mono);font-size:11px;word-break:break-all">—</code>
+          </p>
+        </div>
+
+        <div class="cert-firmas">
+          <div class="firma-bloque">
+            <strong>Oficina de Tecnologías de la Información y las Comunicaciones</strong>
+            <span>Comisión de Regulación de Agua Potable y Saneamiento Básico</span>
+          </div>
+          <div class="firma-bloque">
+            <strong>Subdirección de Regulación</strong>
+            <span>Líder de Analítica y Monitoreo Hidroclimático</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 7. Modal Forense de Inspección -->
+  <div class="modal-overlay" id="modal-forense" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h4 id="modal-titulo">Inspección Forense</h4>
+        <button class="btn-cerrar-modal" id="btn-cerrar-modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-contenido">
+        <!-- Contenido dinámico -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Pie de Página -->
+  <footer class="pie-auditoria">
+    <div>
+      <strong>Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)</strong> · Carrera 12 No. 97-80, Bogotá D.C.
+    </div>
+    <div>
+      Vigía El Niño · Acueductos 2026-27 · Versión de Auditoría: <code>v1.0.0-20261008</code>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="auditoria_data.js"></script>
+  <script src="js/auditoria.js"></script>
+</body>
+</html>

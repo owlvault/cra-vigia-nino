@@ -1,0 +1,52 @@
+[
+  {
+    "inicio": "2026-10-13T13:49:40.837676+00:00",
+    "fuentes": {
+      "NOAA histórico": {
+        "id_fuente": "FTE-CPC-NOAA",
+        "estado": "exitosa",
+        "hash_sha256": "258a28f845244b79fc143a85a559778058e3b28ea3c03349a304d99b2e8dce0b",
+        "bytes_descargados": 171527,
+        "filas_procesadas": 2,
+        "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_cpc_noaa\\20261013_134943_258a28f8.txt",
+        "mensaje": "Captura exitosa de anomalías SST semanales y ONI de NOAA CPC",
+        "capturado_en": "2026-10-13T13:49:43.288753+00:00",
+        "duracion_s": 2.5
+      },
+      "XM histórico": {
+        "id_fuente": "FTE-XM-HISTORICO",
+        "estado": "exitosa",
+        "hash_sha256": "",
+        "bytes_descargados": 0,
+        "filas_procesadas": 210,
+        "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_historico",
+        "mensaje": "210 tramos nuevos de 210 consultados",
+        "capturado_en": "2026-10-13T13:51:18.293245+00:00",
+        "duracion_s": 95.0
+      },
+      "UNGRD histórico": {
+        "id_fuente": "FTE-UNGRD-HISTORICO",
+        "estado": "exitosa",
+        "hash_sha256": "",
+        "bytes_descargados": 0,
+        "filas_procesadas": 3,
+        "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_historico",
+        "mensaje": "3 tramos nuevos de 3 consultados",
+        "capturado_en": "2026-10-13T13:51:26.338950+00:00",
+        "duracion_s": 8.2
+      },
+      "FIRMS histórico": {
+        "id_fuente": "FTE-FIRMS-HISTORICO",
+        "estado": "bloqueada",
+        "hash_sha256": "",
+        "bytes_descargados": 0,
+        "filas_procesadas": 0,
+        "ruta_archivo_bronce": "",
+        "mensaje": "bloqueada: requiere la variable de entorno FIRMS_MAP_KEY (MAP_KEY gratuita de NASA FIRMS)",
+        "capturado_en": "2026-10-13T13:51:26.677806+00:00",
+        "duracion_s": 0.2
+      }
+    },
+    "fin": "2026-10-13T13:51:26.747037+00:00"
+  }
+]

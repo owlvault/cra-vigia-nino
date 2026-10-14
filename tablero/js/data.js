@@ -1,0 +1,4647 @@
+// Datos Maestros Integrados — Vigía El Niño · Acueductos
+// Actualizado con corrección DIVIPOLA: Barichara (68079) y Manaure (44560)
+window.VIGIA_DATA = { corte: {
+  "metadata_corte": {
+    "fecha_corte": "2026-10-09",
+    "generado_en": "2026-10-09T16:02:49.576415+00:00",
+    "version_configuracion": "v1.0.0-20261008",
+    "estado_calidad": "PUBLICADO_VALIDO",
+    "total_municipios_evaluados": 23,
+    "icr_nacional_ponderado": 49.4,
+    "poblacion_en_riesgo_critico": 10870500,
+    "conteo_niveles_nacional": {
+      "roja": 5,
+      "naranja": 12,
+      "amarilla": 1,
+      "sin_alerta": 5,
+      "sin_dato": 0
+    }
+  },
+  "amenaza_global": {
+    "fuente": "NOAA Climate Prediction Center",
+    "url_origen": "https://www.cpc.ncep.noaa.gov/data/indices/wksst9120.for",
+    "fecha_captura": "2026-10-09T16:02:47.924317+00:00",
+    "estado_alerta_noaa": "Advertencia de El Niño (El Niño Advisory)",
+    "indices_semanales": {
+      "fecha_semana": "30SEP2026",
+      "nino12_sst": 26.1,
+      "nino12_anomalia": 5.3,
+      "nino3_sst": 29,
+      "nino3_anomalia": 4,
+      "nino34_sst": 29.9,
+      "nino34_anomalia": 3.2,
+      "nino4_sst": 29.9,
+      "nino4_anomalia": 1.2
+    },
+    "indice_oni_trimestral": {
+      "trimestre": "JAS",
+      "ano": 2026,
+      "temperatura_media": 29.12,
+      "oni_anomalia": 2.16,
+      "intensidad_evento": "Muy Fuerte (Histórico)"
+    },
+    "indicador_a1_nino34": 3.2,
+    "indicador_a1_oni": 2.16,
+    "indicador_a2_probabilidad_muy_fuerte_pct": 75,
+    "umbral_critico_superado": true
+  },
+  "municipios": [
+    {
+      "divipola": "44847",
+      "nombre": "Uribia",
+      "departamento": "La Guajira",
+      "cod_depto": "44",
+      "poblacion": 196000,
+      "icr": 85.8,
+      "nivel_alerta": "roja",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 94.17,
+        "vulnerabilidad_H": 78.33,
+        "servicio_S": 76.23,
+        "respuesta_R": 100
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -88.5,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 98.75
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 48,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 90
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 42,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 15,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 93.75
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Muy Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 90
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Muy Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 90
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 4.5,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 98.44
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 1.8,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 14.4
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 42,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 98.33
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 64,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 92.5
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 120,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 77.5
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 60
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 80
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Caribe",
+      "lat": 11.713,
+      "lon": -72.015
+    },
+    {
+      "divipola": "44430",
+      "nombre": "Maicao",
+      "departamento": "La Guajira",
+      "cod_depto": "44",
+      "poblacion": 182000,
+      "icr": 83,
+      "nivel_alerta": "roja",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 85.28,
+        "vulnerabilidad_H": 78.33,
+        "servicio_S": 75.7,
+        "respuesta_R": 100
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -76,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 88.33
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 39,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 82.5
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 28,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 22,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 85
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Muy Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 90
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Muy Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 90
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 7,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 90.62
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 8.1,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 46.89
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 58,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 85
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 56,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 82.5
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 95,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 73.5
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 60
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 80
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Caribe",
+      "lat": 11.378,
+      "lon": -72.241
+    },
+    {
+      "divipola": "44001",
+      "nombre": "Riohacha",
+      "departamento": "La Guajira",
+      "cod_depto": "44",
+      "poblacion": 210000,
+      "icr": 77.2,
+      "nivel_alerta": "roja",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 79.17,
+        "vulnerabilidad_H": 70,
+        "servicio_S": 69.77,
+        "respuesta_R": 100
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -68,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 81.67
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 34,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 78.33
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 19,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 28,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 77.5
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Muy Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 90
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 65
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 9.5,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 82.81
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 10.2,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 51.56
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 71,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 74
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 52,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 77.5
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 60,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 63
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 60
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 80
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Caribe",
+      "lat": 11.544,
+      "lon": -72.907
+    },
+    {
+      "divipola": "44560",
+      "nombre": "Manaure",
+      "departamento": "La Guajira",
+      "cod_depto": "44",
+      "poblacion": 125000,
+      "icr": 83.5,
+      "nivel_alerta": "roja",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 90,
+        "vulnerabilidad_H": 78.33,
+        "servicio_S": 71.91,
+        "respuesta_R": 100
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -82,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 93.33
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 44,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 86.67
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 8,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 18,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 90
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Muy Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 90
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Muy Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 90
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 5,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 96.88
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 0.7,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 5.6
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 48,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 93.33
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 60,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 87.5
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 110,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 76.25
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 60
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 80
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Caribe",
+      "lat": 11.775,
+      "lon": -72.444
+    },
+    {
+      "divipola": "47001",
+      "nombre": "Santa Marta",
+      "departamento": "Magdalena",
+      "cod_depto": "47",
+      "poblacion": 540000,
+      "icr": 69.7,
+      "nivel_alerta": "naranja",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 69.5,
+        "vulnerabilidad_H": 61.67,
+        "servicio_S": 61.28,
+        "respuesta_R": 100
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -54,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 70.5
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 26,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 69
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 24,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 38,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 69
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 65
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 65
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 11,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 78.12
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 2.1,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 16.8
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 76,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 69
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 49,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 73.5
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 80,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 69
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 60
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 80
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Caribe",
+      "lat": 11.24,
+      "lon": -74.199
+    },
+    {
+      "divipola": "47555",
+      "nombre": "Plato",
+      "departamento": "Magdalena",
+      "cod_depto": "47",
+      "poblacion": 65000,
+      "icr": 71.6,
+      "nivel_alerta": "naranja",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 75.33,
+        "vulnerabilidad_H": 53.33,
+        "servicio_S": 71.95,
+        "respuesta_R": 100
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -62,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 76.67
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 31,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 75.83
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 8,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 32,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 73.5
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 65
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Medio",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 40
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 8,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 87.5
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 6.5,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 43.33
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 62,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 81.67
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 55,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 81.25
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 70,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 66
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 80
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Caribe",
+      "lat": 9.79,
+      "lon": -74.782
+    },
+    {
+      "divipola": "13244",
+      "nombre": "El Carmen de Bolívar",
+      "departamento": "Bolívar",
+      "cod_depto": "13",
+      "poblacion": 78000,
+      "icr": 73.9,
+      "nivel_alerta": "naranja",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 76.94,
+        "vulnerabilidad_H": 61.67,
+        "servicio_S": 69.1,
+        "respuesta_R": 100
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -64,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 78.33
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 33,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 77.5
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 35,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 30,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 75
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 65
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 65
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 6.5,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 92.19
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 0,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 0
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 54,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 88.33
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 58,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 85
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 140,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 80
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 60
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 80
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Caribe",
+      "lat": 9.717,
+      "lon": -75.121
+    },
+    {
+      "divipola": "13430",
+      "nombre": "Magangué",
+      "departamento": "Bolívar",
+      "cod_depto": "13",
+      "poblacion": 138000,
+      "icr": 59.7,
+      "nivel_alerta": "naranja",
+      "nivel_por_regla": true,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 65,
+        "vulnerabilidad_H": 45,
+        "servicio_S": 58.9,
+        "respuesta_R": 80
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -48,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 66
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 22,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 63
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 8,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 42,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 66
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Medio",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 40
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Medio",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 40
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 13,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 72.5
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 3,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 24
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 72,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 73
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 46,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 69
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 45,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 56
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 60
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 80
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Caribe",
+      "lat": 9.242,
+      "lon": -74.755
+    },
+    {
+      "divipola": "13001",
+      "nombre": "Cartagena de Indias",
+      "departamento": "Bolívar",
+      "cod_depto": "13",
+      "poblacion": 1040000,
+      "icr": 36.9,
+      "nivel_alerta": "sin_alerta",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 54.17,
+        "vulnerabilidad_H": 45,
+        "servicio_S": 28.64,
+        "respuesta_R": 0
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -42,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 61.5
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 18,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 56
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 8,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 65,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 45
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Medio",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 40
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Medio",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 40
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 22.5,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 30
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 2.9,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 23.2
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 96,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 32
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 31,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 42
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 10,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 16
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Caribe",
+      "lat": 10.391,
+      "lon": -75.479
+    },
+    {
+      "divipola": "20001",
+      "nombre": "Valledupar",
+      "departamento": "Cesar",
+      "cod_depto": "20",
+      "poblacion": 510000,
+      "icr": 63.5,
+      "nivel_alerta": "naranja",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 64,
+        "vulnerabilidad_H": 61.67,
+        "servicio_S": 55.24,
+        "respuesta_R": 80
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -46,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 64.5
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 24,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 66
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 22,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 48,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 61.5
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 65
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 65
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 14,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 70
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 2.4,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 19.2
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 84,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 61
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 44,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 66
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 50,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 60
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 80
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Caribe",
+      "lat": 10.463,
+      "lon": -73.253
+    },
+    {
+      "divipola": "20011",
+      "nombre": "Aguachica",
+      "departamento": "Cesar",
+      "cod_depto": "20",
+      "poblacion": 112000,
+      "icr": 69,
+      "nivel_alerta": "naranja",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 72.75,
+        "vulnerabilidad_H": 53.33,
+        "servicio_S": 64.61,
+        "respuesta_R": 100
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -58,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 73.5
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 29,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 73.5
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 8,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 35,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 71.25
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 65
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Medio",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 40
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 9,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 84.38
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 1.7,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 13.6
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 66,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 78.33
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 51,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 76.25
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 85,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 70.5
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 60
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 80
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Caribe",
+      "lat": 8.307,
+      "lon": -73.618
+    },
+    {
+      "divipola": "68079",
+      "nombre": "Barichara",
+      "departamento": "Santander",
+      "cod_depto": "68",
+      "poblacion": 12000,
+      "icr": 78.4,
+      "nivel_alerta": "roja",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 80.28,
+        "vulnerabilidad_H": 70,
+        "servicio_S": 73.16,
+        "respuesta_R": 100
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -65,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 79.17
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 35,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 79.17
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 8,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 24,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 82.5
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Muy Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 90
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 65
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 6,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 93.75
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 23.2,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 66.57
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 82,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 63
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 47,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 70.5
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 90,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 72
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 60
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 80
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Andina",
+      "lat": 6.635,
+      "lon": -73.224
+    },
+    {
+      "divipola": "68679",
+      "nombre": "San Gil",
+      "departamento": "Santander",
+      "cod_depto": "68",
+      "poblacion": 58000,
+      "icr": 59.9,
+      "nivel_alerta": "naranja",
+      "nivel_por_regla": true,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 68,
+        "vulnerabilidad_H": 53.33,
+        "servicio_S": 45.88,
+        "respuesta_R": 80
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -52,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 69
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 25,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 67.5
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 8,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 40,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 67.5
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 65
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Medio",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 40
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 16,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 65
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 0.8,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 6.4
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 89,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 52
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 39,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 58
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 35,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 48
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 80
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Andina",
+      "lat": 6.556,
+      "lon": -73.133
+    },
+    {
+      "divipola": "68001",
+      "nombre": "Bucaramanga",
+      "departamento": "Santander",
+      "cod_depto": "68",
+      "poblacion": 615000,
+      "icr": 31.3,
+      "nivel_alerta": "sin_alerta",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 50,
+        "vulnerabilidad_H": 45,
+        "servicio_S": 11.2,
+        "respuesta_R": 0
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -34,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 54
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 14,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 48
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 8,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 62,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 48
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Medio",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 40
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Medio",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 40
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 23.8,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 4
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 1.5,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 12
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 99,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 8
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 26,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 24
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 5,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 8
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Andina",
+      "lat": 7.125,
+      "lon": -73.119
+    },
+    {
+      "divipola": "11001",
+      "nombre": "Bogotá, D.C.",
+      "departamento": "Bogotá, D.C.",
+      "cod_depto": "11",
+      "poblacion": 7900000,
+      "icr": 58.1,
+      "nivel_alerta": "naranja",
+      "nivel_por_regla": true,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 57.67,
+        "vulnerabilidad_H": 70,
+        "servicio_S": 31.16,
+        "respuesta_R": 80
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -38,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 58
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 16,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 52
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 4,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 46,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 63
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 65
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Muy Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 90
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": 48.1,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 21,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 45
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 1.1,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 8.8
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 99.5,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 4
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 33,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 46
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 40,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 52
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 80
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Andina",
+      "lat": 4.711,
+      "lon": -74.072
+    },
+    {
+      "divipola": "25307",
+      "nombre": "Girardot",
+      "departamento": "Cundinamarca",
+      "cod_depto": "25",
+      "poblacion": 120000,
+      "icr": 68.2,
+      "nivel_alerta": "naranja",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 69,
+        "vulnerabilidad_H": 61.67,
+        "servicio_S": 55.87,
+        "respuesta_R": 100
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -55,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 71.25
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 28,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 72
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 16,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 45,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 63.75
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 65
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 65
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": 48.1,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 13.5,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 71.25
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 1.7,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 13.6
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 86,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 58
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 48,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 72
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 65,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 64.5
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 60
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 80
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Andina",
+      "lat": 4.303,
+      "lon": -74.802
+    },
+    {
+      "divipola": "25126",
+      "nombre": "Cajicá",
+      "departamento": "Cundinamarca",
+      "cod_depto": "25",
+      "poblacion": 85000,
+      "icr": 34.2,
+      "nivel_alerta": "sin_alerta",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 50.33,
+        "vulnerabilidad_H": 45,
+        "servicio_S": 22.29,
+        "respuesta_R": 0
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -32,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 52
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 12,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 44
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 8,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 55,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 55
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Medio",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 40
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Medio",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 40
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 23.5,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 10
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 5.3,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 40.67
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 98,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 16
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 28,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 32
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 8,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 12.8
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Andina",
+      "lat": 4.918,
+      "lon": -74.027
+    },
+    {
+      "divipola": "73001",
+      "nombre": "Ibagué",
+      "departamento": "Tolima",
+      "cod_depto": "73",
+      "poblacion": 540000,
+      "icr": 58.1,
+      "nivel_alerta": "naranja",
+      "nivel_por_regla": true,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 61.08,
+        "vulnerabilidad_H": 45,
+        "servicio_S": 57.28,
+        "respuesta_R": 80
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -45,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 63.75
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 21,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 61.5
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 8,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 52,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 58
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Medio",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 40
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Medio",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 40
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 17.5,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 61.25
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 28.2,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 70.14
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 91,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 48
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 42,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 63
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 30,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 44
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 80
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Andina",
+      "lat": 4.438,
+      "lon": -75.232
+    },
+    {
+      "divipola": "73268",
+      "nombre": "Espinal",
+      "departamento": "Tolima",
+      "cod_depto": "73",
+      "poblacion": 74000,
+      "icr": 69.7,
+      "nivel_alerta": "naranja",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 71,
+        "vulnerabilidad_H": 61.67,
+        "servicio_S": 59.7,
+        "respuesta_R": 100
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -56,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 72
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 27,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 70.5
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 18,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 36,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 70.5
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 65
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 65
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": 39.5,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 10,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 81.25
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 0,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 0
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 74,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 71
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 53,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 78.75
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 67.5
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 60
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 80
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Andina",
+      "lat": 4.149,
+      "lon": -74.884
+    },
+    {
+      "divipola": "41001",
+      "nombre": "Neiva",
+      "departamento": "Huila",
+      "cod_depto": "41",
+      "poblacion": 365000,
+      "icr": 48.1,
+      "nivel_alerta": "amarilla",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 65.75,
+        "vulnerabilidad_H": 53.33,
+        "servicio_S": 49.48,
+        "respuesta_R": 0
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -51,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 68.25
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 23,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 64.5
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 8,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 44,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 64.5
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Alto",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 65
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Medio",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 40
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 15,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 67.5
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 0.8,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 6.4
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 88,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 54
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 45,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 67.5
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 40,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 52
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Andina",
+      "lat": 2.927,
+      "lon": -75.281
+    },
+    {
+      "divipola": "15837",
+      "nombre": "Tuta",
+      "departamento": "Boyacá",
+      "cod_depto": "15",
+      "poblacion": 10500,
+      "icr": 61.5,
+      "nivel_alerta": "naranja",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 60,
+        "vulnerabilidad_H": 45,
+        "servicio_S": 60.03,
+        "respuesta_R": 100
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -40,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 60
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 20,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 60
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 8,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 50,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 60
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Medio",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 40
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Medio",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 40
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 11.5,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 76.56
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 2.2,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 17.6
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 70,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 75
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 50,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 75
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 45,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 56
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 60
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 80
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 100
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Andina",
+      "lat": 5.694,
+      "lon": -73.23
+    },
+    {
+      "divipola": "05001",
+      "nombre": "Medellín",
+      "departamento": "Antioquia",
+      "cod_depto": "05",
+      "poblacion": 2550000,
+      "icr": 26,
+      "nivel_alerta": "sin_alerta",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 42,
+        "vulnerabilidad_H": 36.67,
+        "servicio_S": 9.68,
+        "respuesta_R": 0
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -28,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 48
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 9,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 36
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 2,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 68,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 42
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Bajo",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 15
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Medio",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 40
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 23.9,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 2
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 0.7,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 5.6
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 99,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 8
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 27,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 28
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 3,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 4.8
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Andina",
+      "lat": 6.244,
+      "lon": -75.581
+    },
+    {
+      "divipola": "76001",
+      "nombre": "Cali",
+      "departamento": "Valle del Cauca",
+      "cod_depto": "76",
+      "poblacion": 2280000,
+      "icr": 31.4,
+      "nivel_alerta": "sin_alerta",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100,
+      "subindices_capa": {
+        "amenaza_A": 47.67,
+        "vulnerabilidad_H": 45,
+        "servicio_S": 14.48,
+        "respuesta_R": 0
+      },
+      "indicadores": {
+        "A-1": {
+          "nombre": "ONI / Niño 3.4",
+          "valor": 3.2,
+          "unidad": "°C",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-30",
+          "puntaje": null
+        },
+        "A-2": {
+          "nombre": "Probabilidad Niño Muy Fuerte",
+          "valor": 75,
+          "unidad": "%",
+          "fuente": "NOAA CPC",
+          "fecha_dato": "2026-09-10",
+          "puntaje": null
+        },
+        "A-3": {
+          "nombre": "Anomalía Precipitación 30d",
+          "valor": -31,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 51
+        },
+        "A-4": {
+          "nombre": "Días Consecutivos sin Lluvia",
+          "valor": 11,
+          "unidad": "días",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 42
+        },
+        "A-5": {
+          "nombre": "Focos de Calor (7d)",
+          "valor": 8,
+          "unidad": "conteo",
+          "fuente": "NASA FIRMS",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "H-1": {
+          "nombre": "Caudal Fuente Abastecedora",
+          "valor": 60,
+          "unidad": "%",
+          "fuente": "IDEAM",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 50
+        },
+        "H-2": {
+          "nombre": "Vulnerabilidad Hídrica ENA",
+          "valor": "Medio",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 40
+        },
+        "H-3": {
+          "nombre": "Uso del Agua ENA (IUA)",
+          "valor": "Medio",
+          "unidad": "categoría",
+          "fuente": "IDEAM ENA",
+          "fecha_dato": "2022-12-31",
+          "puntaje": 40
+        },
+        "H-4": {
+          "nombre": "Autonomía Almacenamiento",
+          "valor": 14,
+          "unidad": "horas",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 55
+        },
+        "H-5": {
+          "nombre": "Volumen Útil Embalse",
+          "valor": null,
+          "unidad": "%",
+          "fuente": "XM Sinergox",
+          "fecha_dato": "2026-10-09",
+          "puntaje": null
+        },
+        "S-1": {
+          "nombre": "Continuidad",
+          "valor": 23.7,
+          "unidad": "h/día",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 6
+        },
+        "S-2": {
+          "nombre": "Calidad del Agua (IRCA)",
+          "valor": 0.1,
+          "unidad": "%",
+          "fuente": "INS SIVICAP",
+          "fecha_dato": "2024-12-31",
+          "puntaje": 0.8
+        },
+        "S-3": {
+          "nombre": "Cobertura Urbana",
+          "valor": 98.5,
+          "unidad": "%",
+          "fuente": "SSPD SUI / DANE",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 12
+        },
+        "S-4": {
+          "nombre": "Agua No Contabilizada (IANC)",
+          "valor": 32,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 44
+        },
+        "S-5": {
+          "nombre": "Variación PQR por Servicio",
+          "valor": 6,
+          "unidad": "%",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": 9.6
+        },
+        "S-6": {
+          "nombre": "Consumo Medio Facturado",
+          "valor": 12.8,
+          "unidad": "m³/susc/mes",
+          "fuente": "SSPD SUI",
+          "fecha_dato": "2026-08-31",
+          "puntaje": null
+        },
+        "R-1": {
+          "nombre": "PEC Reportado Vigente",
+          "valor": 1,
+          "unidad": "binario",
+          "fuente": "SSPD / MinVivienda",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-2": {
+          "nombre": "Abastecimiento Alterno Activo",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-3": {
+          "nombre": "Racionamiento Reportado",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "MinVivienda Survey123",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        },
+        "R-4": {
+          "nombre": "Calamidad Pública Vigente",
+          "valor": 0,
+          "unidad": "binario",
+          "fuente": "UNGRD Sala de Crisis",
+          "fecha_dato": "2026-10-09",
+          "puntaje": 0
+        }
+      },
+      "config_version": "v1.0.0-20261008",
+      "region": "Pacífica",
+      "lat": 3.451,
+      "lon": -76.532
+    }
+  ],
+  "departamentos": [
+    {
+      "cod_depto": "44",
+      "departamento": "La Guajira",
+      "total_municipios": 4,
+      "icr_medio_ponderado": 82.1,
+      "poblacion_total": 713000,
+      "poblacion_naranja_roja": 713000,
+      "conteo_niveles": {
+        "roja": 4,
+        "naranja": 0,
+        "amarilla": 0,
+        "sin_alerta": 0,
+        "sin_dato": 0
+      }
+    },
+    {
+      "cod_depto": "47",
+      "departamento": "Magdalena",
+      "total_municipios": 2,
+      "icr_medio_ponderado": 69.9,
+      "poblacion_total": 605000,
+      "poblacion_naranja_roja": 605000,
+      "conteo_niveles": {
+        "roja": 0,
+        "naranja": 2,
+        "amarilla": 0,
+        "sin_alerta": 0,
+        "sin_dato": 0
+      }
+    },
+    {
+      "cod_depto": "20",
+      "departamento": "Cesar",
+      "total_municipios": 2,
+      "icr_medio_ponderado": 64.5,
+      "poblacion_total": 622000,
+      "poblacion_naranja_roja": 622000,
+      "conteo_niveles": {
+        "roja": 0,
+        "naranja": 2,
+        "amarilla": 0,
+        "sin_alerta": 0,
+        "sin_dato": 0
+      }
+    },
+    {
+      "cod_depto": "15",
+      "departamento": "Boyacá",
+      "total_municipios": 1,
+      "icr_medio_ponderado": 61.5,
+      "poblacion_total": 10500,
+      "poblacion_naranja_roja": 10500,
+      "conteo_niveles": {
+        "roja": 0,
+        "naranja": 1,
+        "amarilla": 0,
+        "sin_alerta": 0,
+        "sin_dato": 0
+      }
+    },
+    {
+      "cod_depto": "73",
+      "departamento": "Tolima",
+      "total_municipios": 2,
+      "icr_medio_ponderado": 59.5,
+      "poblacion_total": 614000,
+      "poblacion_naranja_roja": 614000,
+      "conteo_niveles": {
+        "roja": 0,
+        "naranja": 2,
+        "amarilla": 0,
+        "sin_alerta": 0,
+        "sin_dato": 0
+      }
+    },
+    {
+      "cod_depto": "11",
+      "departamento": "Bogotá, D.C.",
+      "total_municipios": 1,
+      "icr_medio_ponderado": 58.1,
+      "poblacion_total": 7900000,
+      "poblacion_naranja_roja": 7900000,
+      "conteo_niveles": {
+        "roja": 0,
+        "naranja": 1,
+        "amarilla": 0,
+        "sin_alerta": 0,
+        "sin_dato": 0
+      }
+    },
+    {
+      "cod_depto": "25",
+      "departamento": "Cundinamarca",
+      "total_municipios": 2,
+      "icr_medio_ponderado": 54.1,
+      "poblacion_total": 205000,
+      "poblacion_naranja_roja": 120000,
+      "conteo_niveles": {
+        "roja": 0,
+        "naranja": 1,
+        "amarilla": 0,
+        "sin_alerta": 1,
+        "sin_dato": 0
+      }
+    },
+    {
+      "cod_depto": "41",
+      "departamento": "Huila",
+      "total_municipios": 1,
+      "icr_medio_ponderado": 48.1,
+      "poblacion_total": 365000,
+      "poblacion_naranja_roja": 0,
+      "conteo_niveles": {
+        "roja": 0,
+        "naranja": 0,
+        "amarilla": 1,
+        "sin_alerta": 0,
+        "sin_dato": 0
+      }
+    },
+    {
+      "cod_depto": "13",
+      "departamento": "Bolívar",
+      "total_municipios": 3,
+      "icr_medio_ponderado": 41.7,
+      "poblacion_total": 1256000,
+      "poblacion_naranja_roja": 216000,
+      "conteo_niveles": {
+        "roja": 0,
+        "naranja": 2,
+        "amarilla": 0,
+        "sin_alerta": 1,
+        "sin_dato": 0
+      }
+    },
+    {
+      "cod_depto": "68",
+      "departamento": "Santander",
+      "total_municipios": 3,
+      "icr_medio_ponderado": 34.5,
+      "poblacion_total": 685000,
+      "poblacion_naranja_roja": 70000,
+      "conteo_niveles": {
+        "roja": 1,
+        "naranja": 1,
+        "amarilla": 0,
+        "sin_alerta": 1,
+        "sin_dato": 0
+      }
+    },
+    {
+      "cod_depto": "76",
+      "departamento": "Valle del Cauca",
+      "total_municipios": 1,
+      "icr_medio_ponderado": 31.4,
+      "poblacion_total": 2280000,
+      "poblacion_naranja_roja": 0,
+      "conteo_niveles": {
+        "roja": 0,
+        "naranja": 0,
+        "amarilla": 0,
+        "sin_alerta": 1,
+        "sin_dato": 0
+      }
+    },
+    {
+      "cod_depto": "05",
+      "departamento": "Antioquia",
+      "total_municipios": 1,
+      "icr_medio_ponderado": 26,
+      "poblacion_total": 2550000,
+      "poblacion_naranja_roja": 0,
+      "conteo_niveles": {
+        "roja": 0,
+        "naranja": 0,
+        "amarilla": 0,
+        "sin_alerta": 1,
+        "sin_dato": 0
+      }
+    }
+  ],
+  "alertas_activas": [
+    {
+      "id_alerta": "ALT-20261009-0001",
+      "divipola": "44847",
+      "municipio": "Uribia",
+      "departamento": "La Guajira",
+      "nivel": "roja",
+      "icr": 85.8,
+      "motivo": "ICR crítico por déficit hídrico extremo",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "prioridad": "ALTA"
+    },
+    {
+      "id_alerta": "ALT-20261009-0002",
+      "divipola": "44430",
+      "municipio": "Maicao",
+      "departamento": "La Guajira",
+      "nivel": "roja",
+      "icr": 83,
+      "motivo": "ICR crítico por déficit hídrico extremo",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "prioridad": "ALTA"
+    },
+    {
+      "id_alerta": "ALT-20261009-0003",
+      "divipola": "44001",
+      "municipio": "Riohacha",
+      "departamento": "La Guajira",
+      "nivel": "roja",
+      "icr": 77.2,
+      "motivo": "ICR crítico por déficit hídrico extremo",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "prioridad": "ALTA"
+    },
+    {
+      "id_alerta": "ALT-20261009-0004",
+      "divipola": "44560",
+      "municipio": "Manaure",
+      "departamento": "La Guajira",
+      "nivel": "roja",
+      "icr": 83.5,
+      "motivo": "ICR crítico por déficit hídrico extremo",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "prioridad": "ALTA"
+    },
+    {
+      "id_alerta": "ALT-20261009-0005",
+      "divipola": "47001",
+      "municipio": "Santa Marta",
+      "departamento": "Magdalena",
+      "nivel": "naranja",
+      "icr": 69.7,
+      "motivo": "ICR crítico por déficit hídrico extremo",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "prioridad": "MEDIA"
+    },
+    {
+      "id_alerta": "ALT-20261009-0006",
+      "divipola": "47555",
+      "municipio": "Plato",
+      "departamento": "Magdalena",
+      "nivel": "naranja",
+      "icr": 71.6,
+      "motivo": "ICR crítico por déficit hídrico extremo",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "prioridad": "MEDIA"
+    },
+    {
+      "id_alerta": "ALT-20261009-0007",
+      "divipola": "13244",
+      "municipio": "El Carmen de Bolívar",
+      "departamento": "Bolívar",
+      "nivel": "naranja",
+      "icr": 73.9,
+      "motivo": "ICR crítico por déficit hídrico extremo",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "prioridad": "MEDIA"
+    },
+    {
+      "id_alerta": "ALT-20261009-0008",
+      "divipola": "13430",
+      "municipio": "Magangué",
+      "departamento": "Bolívar",
+      "nivel": "naranja",
+      "icr": 59.7,
+      "motivo": "Piso automático por racionamiento/calamidad confirmada (RF-ICR-06)",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "prioridad": "MEDIA"
+    },
+    {
+      "id_alerta": "ALT-20261009-0009",
+      "divipola": "20001",
+      "municipio": "Valledupar",
+      "departamento": "Cesar",
+      "nivel": "naranja",
+      "icr": 63.5,
+      "motivo": "ICR crítico por déficit hídrico extremo",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "prioridad": "MEDIA"
+    },
+    {
+      "id_alerta": "ALT-20261009-0010",
+      "divipola": "20011",
+      "municipio": "Aguachica",
+      "departamento": "Cesar",
+      "nivel": "naranja",
+      "icr": 69,
+      "motivo": "ICR crítico por déficit hídrico extremo",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "prioridad": "MEDIA"
+    },
+    {
+      "id_alerta": "ALT-20261009-0011",
+      "divipola": "68079",
+      "municipio": "Barichara",
+      "departamento": "Santander",
+      "nivel": "roja",
+      "icr": 78.4,
+      "motivo": "ICR crítico por déficit hídrico extremo",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "prioridad": "ALTA"
+    },
+    {
+      "id_alerta": "ALT-20261009-0012",
+      "divipola": "68679",
+      "municipio": "San Gil",
+      "departamento": "Santander",
+      "nivel": "naranja",
+      "icr": 59.9,
+      "motivo": "Piso automático por racionamiento/calamidad confirmada (RF-ICR-06)",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "prioridad": "MEDIA"
+    },
+    {
+      "id_alerta": "ALT-20261009-0013",
+      "divipola": "11001",
+      "municipio": "Bogotá, D.C.",
+      "departamento": "Bogotá, D.C.",
+      "nivel": "naranja",
+      "icr": 58.1,
+      "motivo": "Piso automático por racionamiento/calamidad confirmada (RF-ICR-06)",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "prioridad": "MEDIA"
+    },
+    {
+      "id_alerta": "ALT-20261009-0014",
+      "divipola": "25307",
+      "municipio": "Girardot",
+      "departamento": "Cundinamarca",
+      "nivel": "naranja",
+      "icr": 68.2,
+      "motivo": "ICR crítico por déficit hídrico extremo",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "prioridad": "MEDIA"
+    },
+    {
+      "id_alerta": "ALT-20261009-0015",
+      "divipola": "73001",
+      "municipio": "Ibagué",
+      "departamento": "Tolima",
+      "nivel": "naranja",
+      "icr": 58.1,
+      "motivo": "Piso automático por racionamiento/calamidad confirmada (RF-ICR-06)",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "prioridad": "MEDIA"
+    },
+    {
+      "id_alerta": "ALT-20261009-0016",
+      "divipola": "73268",
+      "municipio": "Espinal",
+      "departamento": "Tolima",
+      "nivel": "naranja",
+      "icr": 69.7,
+      "motivo": "ICR crítico por déficit hídrico extremo",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "prioridad": "MEDIA"
+    },
+    {
+      "id_alerta": "ALT-20261009-0017",
+      "divipola": "15837",
+      "municipio": "Tuta",
+      "departamento": "Boyacá",
+      "nivel": "naranja",
+      "icr": 61.5,
+      "motivo": "ICR crítico por déficit hídrico extremo",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "prioridad": "MEDIA"
+    }
+  ]
+} };

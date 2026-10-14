@@ -1,0 +1,199 @@
+{
+  "type": "FeatureCollection",
+  "name": "vigia_corte_procesado_arcgis_ejemplo",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "metadata_arcgis": {
+    "software": "ArcGIS Pro 3.3.0",
+    "sistema_referencia": "MAGNA-SIRGAS 2018 / Origen Nacional (EPSG:9377) transformado a WGS84 (EPSG:4326)",
+    "fecha_procesamiento": "2026-10-08T19:30:00Z",
+    "operador": "Analista SIG - CRA Regulación de Agua",
+    "capas_cruzadas": [
+      "DANE MGN 2018 (Marco Geoestadístico Nacional - Polígonos Municipales)",
+      "IDEAM Zonificación Hidrográfica (Subzonas Hidrográficas)",
+      "XM Sistema Interconectado Nacional (Inventario de Embalses)",
+      "NASA FIRMS VIIRS (Focos Térmicos e Incendios Activos)"
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-71.85, 11.55],
+            [-71.40, 11.85],
+            [-71.30, 12.45],
+            [-71.70, 12.35],
+            [-72.25, 11.95],
+            [-72.35, 11.60],
+            [-71.85, 11.55]
+          ]
+        ]
+      },
+      "properties": {
+        "DIVIPOLA": "44847",
+        "MUNICIPIO": "Uribia",
+        "DEPARTAMENTO": "La Guajira",
+        "COD_DEPTO": "44",
+        "REGION": "Caribe",
+        "POBLACION": 196000,
+        "ICR": 88.5,
+        "ARCGIS_RIESGO": 88.5,
+        "NIVEL_ALERTA": "roja",
+        "S1_CONTINUIDAD_H": 6.5,
+        "S2_IRCA_PTS": 42.0,
+        "A3_DEFICIT_LLUVIA_PCT": -92.0,
+        "CUENCA_APORTANTE": "Subzona Cuenca Río Ranchería y Vertiente Caribe Guajira",
+        "DIST_EMBALSE_KM": 84.2,
+        "AREA_AFECTADA_HA": 14250.0,
+        "FOCOS_EN_CUENCA": 28,
+        "OBS_SIG": "Colapso severo en pozos profundos y jagüeyes; sin conectividad a embalses; racionamiento extremo."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-72.40, 11.20],
+            [-72.05, 11.45],
+            [-72.15, 11.65],
+            [-72.55, 11.50],
+            [-72.65, 11.30],
+            [-72.40, 11.20]
+          ]
+        ]
+      },
+      "properties": {
+        "DIVIPOLA": "44430",
+        "MUNICIPIO": "Maicao",
+        "DEPARTAMENTO": "La Guajira",
+        "COD_DEPTO": "44",
+        "REGION": "Caribe",
+        "POBLACION": 182000,
+        "ICR": 84.2,
+        "ARCGIS_RIESGO": 84.2,
+        "NIVEL_ALERTA": "roja",
+        "S1_CONTINUIDAD_H": 8.0,
+        "S2_IRCA_PTS": 36.8,
+        "A3_DEFICIT_LLUVIA_PCT": -86.0,
+        "CUENCA_APORTANTE": "Subzona Hidrográfica Río Carraipía - Paraguachón",
+        "DIST_EMBALSE_KM": 72.5,
+        "AREA_AFECTADA_HA": 8900.0,
+        "FOCOS_EN_CUENCA": 14,
+        "OBS_SIG": "Caudal de captación en río Carraipía disminuido en 65 % respecto al promedio histórico."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-72.60, 11.60],
+            [-72.35, 11.80],
+            [-72.45, 12.00],
+            [-72.85, 11.85],
+            [-72.90, 11.68],
+            [-72.60, 11.60]
+          ]
+        ]
+      },
+      "properties": {
+        "DIVIPOLA": "44560",
+        "MUNICIPIO": "Manaure",
+        "DEPARTAMENTO": "La Guajira",
+        "COD_DEPTO": "44",
+        "REGION": "Caribe",
+        "POBLACION": 112000,
+        "ICR": 81.0,
+        "ARCGIS_RIESGO": 81.0,
+        "NIVEL_ALERTA": "roja",
+        "S1_CONTINUIDAD_H": 7.5,
+        "S2_IRCA_PTS": 35.0,
+        "A3_DEFICIT_LLUVIA_PCT": -89.4,
+        "CUENCA_APORTANTE": "Arroyos Menores Costeros - Alta Guajira",
+        "DIST_EMBALSE_KM": 98.0,
+        "AREA_AFECTADA_HA": 6200.0,
+        "FOCOS_EN_CUENCA": 8,
+        "OBS_SIG": "Alta salinidad freática en pozos costeros e intrusión marina documentada en ArcGIS."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-73.10, 11.35],
+            [-72.70, 11.55],
+            [-72.80, 11.75],
+            [-73.25, 11.60],
+            [-73.30, 11.42],
+            [-73.10, 11.35]
+          ]
+        ]
+      },
+      "properties": {
+        "DIVIPOLA": "44001",
+        "MUNICIPIO": "Riohacha",
+        "DEPARTAMENTO": "La Guajira",
+        "COD_DEPTO": "44",
+        "REGION": "Caribe",
+        "POBLACION": 235000,
+        "ICR": 76.8,
+        "ARCGIS_RIESGO": 76.8,
+        "NIVEL_ALERTA": "roja",
+        "S1_CONTINUIDAD_H": 11.0,
+        "S2_IRCA_PTS": 28.5,
+        "A3_DEFICIT_LLUVIA_PCT": -84.0,
+        "CUENCA_APORTANTE": "Baja Cuenca Río Ranchería",
+        "DIST_EMBALSE_KM": 48.0,
+        "AREA_AFECTADA_HA": 11400.0,
+        "FOCOS_EN_CUENCA": 19,
+        "OBS_SIG": "Presa El Cercado operando con reserva hídrica restringida aguas arriba."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-74.25, 11.05],
+            [-74.05, 11.25],
+            [-74.15, 11.35],
+            [-74.30, 11.25],
+            [-74.25, 11.05]
+          ]
+        ]
+      },
+      "properties": {
+        "DIVIPOLA": "47001",
+        "MUNICIPIO": "Santa Marta",
+        "DEPARTAMENTO": "Magdalena",
+        "COD_DEPTO": "47",
+        "REGION": "Caribe",
+        "POBLACION": 540000,
+        "ICR": 79.5,
+        "ARCGIS_RIESGO": 79.5,
+        "NIVEL_ALERTA": "roja",
+        "S1_CONTINUIDAD_H": 9.5,
+        "S2_IRCA_PTS": 22.0,
+        "A3_DEFICIT_LLUVIA_PCT": -72.0,
+        "CUENCA_APORTANTE": "Ríos Manzanares, Gaira y Piedras (SNSM)",
+        "DIST_EMBALSE_KM": 140.0,
+        "AREA_AFECTADA_HA": 15800.0,
+        "FOCOS_EN_CUENCA": 31,
+        "OBS_SIG": "Ríos de la Sierra Nevada con descenso de caudal superior al 60 %; racionamiento sectorizado."
+      }
+    }
+  ]
+}

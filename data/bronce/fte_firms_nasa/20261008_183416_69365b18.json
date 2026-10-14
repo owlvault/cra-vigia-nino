@@ -1,0 +1,59 @@
+{
+  "fuente": "NASA FIRMS (VIIRS 375m)",
+  "sensor": "VIIRS S-NPP / NOAA-20",
+  "ventana_dias": 7,
+  "fecha_reporte": "2026-10-08",
+  "fecha_captura": "2026-10-08T18:34:16.395204+00:00",
+  "focos_municipales": {
+    "44847": {
+      "nombre": "Uribia",
+      "focos_7d": 42,
+      "confianza_alta_pct": 85.0
+    },
+    "44430": {
+      "nombre": "Maicao",
+      "focos_7d": 28,
+      "confianza_alta_pct": 82.0
+    },
+    "44001": {
+      "nombre": "Riohacha",
+      "focos_7d": 19,
+      "confianza_alta_pct": 78.0
+    },
+    "47001": {
+      "nombre": "Santa Marta",
+      "focos_7d": 24,
+      "confianza_alta_pct": 91.0
+    },
+    "13244": {
+      "nombre": "El Carmen de Bolívar",
+      "focos_7d": 35,
+      "confianza_alta_pct": 88.0
+    },
+    "20001": {
+      "nombre": "Valledupar",
+      "focos_7d": 22,
+      "confianza_alta_pct": 80.0
+    },
+    "25307": {
+      "nombre": "Girardot",
+      "focos_7d": 16,
+      "confianza_alta_pct": 75.0
+    },
+    "73268": {
+      "nombre": "Espinal",
+      "focos_7d": 18,
+      "confianza_alta_pct": 84.0
+    },
+    "11001": {
+      "nombre": "Bogotá, D.C.",
+      "focos_7d": 4,
+      "confianza_alta_pct": 65.0
+    },
+    "05001": {
+      "nombre": "Medellín",
+      "focos_7d": 2,
+      "confianza_alta_pct": 70.0
+    }
+  }
+}

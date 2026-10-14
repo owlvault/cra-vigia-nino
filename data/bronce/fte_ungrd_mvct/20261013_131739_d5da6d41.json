@@ -1,0 +1,180 @@
+{
+  "fuente": "UNGRD Sala de Crisis / MinVivienda Reportes de Racionamiento",
+  "fecha_reporte": "2026-10-13",
+  "fecha_captura": "2026-10-13T13:17:39.883716+00:00",
+  "total_municipios_con_calamidad": 12,
+  "total_municipios_con_racionamiento": 17,
+  "total_municipios_con_carrotanques": 12,
+  "municipios": {
+    "44847": {
+      "nombre": "Uribia",
+      "cod_depto": "44",
+      "depto": "La Guajira",
+      "calamidad_publica": 1,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 1,
+      "decreto_calamidad": "Decreto Municipal 012-2026",
+      "poblacion_afectada": 196000
+    },
+    "44430": {
+      "nombre": "Maicao",
+      "cod_depto": "44",
+      "depto": "La Guajira",
+      "calamidad_publica": 1,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 1,
+      "decreto_calamidad": "Decreto Municipal 034-2026",
+      "poblacion_afectada": 182000
+    },
+    "44001": {
+      "nombre": "Riohacha",
+      "cod_depto": "44",
+      "depto": "La Guajira",
+      "calamidad_publica": 1,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 1,
+      "decreto_calamidad": "Decreto Municipal 045-2026",
+      "poblacion_afectada": 210000
+    },
+    "44560": {
+      "nombre": "Manaure",
+      "cod_depto": "44",
+      "depto": "La Guajira",
+      "calamidad_publica": 1,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 1,
+      "decreto_calamidad": "Decreto Municipal 018-2026",
+      "poblacion_afectada": 125000
+    },
+    "47001": {
+      "nombre": "Santa Marta",
+      "cod_depto": "47",
+      "depto": "Magdalena",
+      "calamidad_publica": 1,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 1,
+      "decreto_calamidad": "Decreto Distrital 089-2026",
+      "poblacion_afectada": 540000
+    },
+    "47555": {
+      "nombre": "Plato",
+      "cod_depto": "47",
+      "depto": "Magdalena",
+      "calamidad_publica": 1,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": "Decreto Municipal 029-2026",
+      "poblacion_afectada": 65000
+    },
+    "13244": {
+      "nombre": "El Carmen de Bolívar",
+      "cod_depto": "13",
+      "depto": "Bolívar",
+      "calamidad_publica": 1,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 1,
+      "decreto_calamidad": "Decreto Municipal 052-2026",
+      "poblacion_afectada": 78000
+    },
+    "13430": {
+      "nombre": "Magangué",
+      "cod_depto": "13",
+      "depto": "Bolívar",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 1,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 138000
+    },
+    "20001": {
+      "nombre": "Valledupar",
+      "cod_depto": "20",
+      "depto": "Cesar",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 510000
+    },
+    "20011": {
+      "nombre": "Aguachica",
+      "cod_depto": "20",
+      "depto": "Cesar",
+      "calamidad_publica": 1,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 1,
+      "decreto_calamidad": "Decreto Municipal 031-2026",
+      "poblacion_afectada": 112000
+    },
+    "68079": {
+      "nombre": "Barichara",
+      "cod_depto": "68",
+      "depto": "Santander",
+      "calamidad_publica": 1,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 1,
+      "decreto_calamidad": "Decreto Municipal 014-2026",
+      "poblacion_afectada": 12000
+    },
+    "68679": {
+      "nombre": "San Gil",
+      "cod_depto": "68",
+      "depto": "Santander",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 58000
+    },
+    "11001": {
+      "nombre": "Bogotá, D.C.",
+      "cod_depto": "11",
+      "depto": "Bogotá, D.C.",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": "Resolución Alcaldía Mayor 128-2026",
+      "poblacion_afectada": 7900000
+    },
+    "25307": {
+      "nombre": "Girardot",
+      "cod_depto": "25",
+      "depto": "Cundinamarca",
+      "calamidad_publica": 1,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 1,
+      "decreto_calamidad": "Decreto Municipal 073-2026",
+      "poblacion_afectada": 120000
+    },
+    "73001": {
+      "nombre": "Ibagué",
+      "cod_depto": "73",
+      "depto": "Tolima",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 540000
+    },
+    "73268": {
+      "nombre": "Espinal",
+      "cod_depto": "73",
+      "depto": "Tolima",
+      "calamidad_publica": 1,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 1,
+      "decreto_calamidad": "Decreto Municipal 044-2026",
+      "poblacion_afectada": 74000
+    },
+    "15837": {
+      "nombre": "Tuta",
+      "cod_depto": "15",
+      "depto": "Boyacá",
+      "calamidad_publica": 1,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 1,
+      "decreto_calamidad": "Decreto Municipal 021-2026",
+      "poblacion_afectada": 10500
+    }
+  }
+}

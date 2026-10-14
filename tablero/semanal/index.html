@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparativo semanal El Niño en Colombia · Vigía El Niño · Acueductos (CRA)</title>
+  <meta name="description" content="Micrositio interno de la CRA para comparar semana a semana el comportamiento real del fenómeno El Niño 2026-27 en Colombia: amenaza oceánica NOAA, embalses, lluvia, focos de calor e Índice Compuesto de Riesgo.">
+  <link rel="preload" href="fonts/NunitoSans-Variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/semanal.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <div class="govco-bar" role="banner">
+    <a href="https://www.gov.co" class="govco-logo" target="_blank" rel="noopener noreferrer" aria-label="Portal del Estado Colombiano GOV.CO">GOV.CO</a>
+    <span class="govco-tag">República de Colombia · Uso interno CRA</span>
+  </div>
+
+  <header class="encabezado">
+    <div class="encabezado__marca">
+      <div class="logo-cra" title="Comisión de Regulación de Agua Potable y Saneamiento Básico">
+        <span>CRA</span>
+        <i class="franja" aria-hidden="true"><b></b><b></b><b></b></i>
+      </div>
+      <div>
+        <p class="encabezado__sistema">Vigía El Niño · Acueductos</p>
+        <h1>Comparativo semanal <span class="h1-sub">El Niño en Colombia</span></h1>
+      </div>
+    </div>
+    <div class="encabezado__acciones">
+      <a class="btn btn--fantasma" href="../index.html" id="link-tablero">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Tablero principal
+      </a>
+      <div class="meta-corte">
+        <span class="meta-corte__label">Corte semanal generado</span>
+        <span class="meta-corte__valor" id="meta-generado">—</span>
+      </div>
+      <span class="pill-frescura" id="pill-frescura"><i></i><span>Cargando…</span></span>
+      <div class="actualizar-grupo">
+        <button class="btn btn--primario" id="btn-actualizar" type="button" aria-describedby="ayuda-actualizar">
+          <svg class="icono-giro" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+          <span>Actualizar datos</span>
+        </button>
+        <button class="btn btn--primario btn--menu" id="btn-modo" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Opciones de actualización">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="menu-modo" id="menu-modo" role="menu" hidden>
+          <button role="menuitemradio" aria-checked="true" data-modo="completo" id="modo-completo">
+            <strong>Captura completa</strong><small>Consulta todas las fuentes, recalcula el corte oro y el comparativo</small>
+          </button>
+          <button role="menuitemradio" aria-checked="false" data-modo="recalculo" id="modo-recalculo">
+            <strong>Solo recalcular</strong><small>Reconstruye el comparativo desde bronce y cortes existentes (segundos)</small>
+          </button>
+        </div>
+        <span id="ayuda-actualizar" class="sr-only">Ejecuta la actualización de datos del tablero</span>
+      </div>
+    </div>
+  </header>
+  <div class="franja-titulo" aria-hidden="true"></div>
+
+  <!-- Panel de progreso de la actualización (RF-SEM-05) -->
+  <section class="progreso" id="panel-progreso" hidden aria-live="polite">
+    <div class="progreso__cab">
+      <div>
+        <h2 id="progreso-titulo">Actualizando datos del tablero…</h2>
+        <p id="progreso-sub">Puede seguir consultando el tablero mientras termina.</p>
+      </div>
+      <button class="btn-icono" id="btn-cerrar-progreso" type="button" aria-label="Ocultar progreso">✕</button>
+    </div>
+    <div class="progreso__barra"><i id="progreso-barra"></i></div>
+    <ol class="progreso__pasos" id="progreso-pasos"></ol>
+  </section>
+
+  <div class="aviso" id="aviso-frescura" hidden role="status"></div>
+
+  <main id="contenido">
+    <!-- Navegador de semana -->
+    <section class="hero" aria-labelledby="hero-semana">
+      <div class="hero__nav">
+        <button class="btn-icono btn-icono--grande" id="btn-semana-prev" type="button" aria-label="Semana anterior">
+          <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="hero__semana">
+          <span class="hero__eyebrow">Semana foco</span>
+          <h2 id="hero-semana">—</h2>
+          <span class="hero__rango" id="hero-rango">—</span>
+        </div>
+        <button class="btn-icono btn-icono--grande" id="btn-semana-next" type="button" aria-label="Semana siguiente">
+          <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+      <div class="hero__controles">
+        <label class="campo">
+          <span>Ir a semana</span>
+          <select id="sel-semana"></select>
+        </label>
+        <div class="segmentado" role="radiogroup" aria-label="Comparar contra">
+          <span class="segmentado__label">Comparar contra</span>
+          <button role="radio" aria-checked="true" data-ref="1" id="ref-1">Semana anterior</button>
+          <button role="radio" aria-checked="false" data-ref="4" id="ref-4">Hace 4 semanas</button>
+        </div>
+      </div>
+      <div class="hero__chips" id="hero-chips"></div>
+    </section>
+
+    <!-- Lectura de la semana -->
+    <section class="bloque lectura" aria-labelledby="t-lectura">
+      <div class="lectura__texto">
+        <h2 id="t-lectura" class="titulo-bloque">Lectura de la semana</h2>
+        <p id="lectura-texto" class="lectura__parrafo">—</p>
+      </div>
+      <div class="balance" id="balance" aria-label="Balance de variables frente a la referencia"></div>
+    </section>
+
+    <!-- Tarjetas por variable -->
+    <section class="bloque" aria-labelledby="t-tarjetas">
+      <div class="bloque__cab">
+        <h2 id="t-tarjetas" class="titulo-bloque">Variables clave · semana foco vs referencia</h2>
+        <div class="filtros-grupo" role="tablist" aria-label="Grupo de variables">
+          <button role="tab" aria-selected="true" data-grupo="todas" id="grupo-todas">Todas</button>
+          <button role="tab" aria-selected="false" data-grupo="amenaza" id="grupo-amenaza">Amenaza oceánica</button>
+          <button role="tab" aria-selected="false" data-grupo="colombia" id="grupo-colombia">Efecto en Colombia</button>
+          <button role="tab" aria-selected="false" data-grupo="riesgo" id="grupo-riesgo">Riesgo acueductos</button>
+        </div>
+      </div>
+      <div class="tarjetas" id="tarjetas"></div>
+    </section>
+
+    <!-- Trayectoria vs análogos -->
+    <section class="bloque" aria-labelledby="t-analogos">
+      <div class="bloque__cab">
+        <div>
+          <h2 id="t-analogos" class="titulo-bloque">Trayectoria del evento 2026-27 frente a eventos análogos</h2>
+          <p class="bloque__desc" id="analogos-desc">Alineado por semana desde el inicio de cada evento.</p>
+        </div>
+        <div class="controles-fila">
+          <label class="campo campo--compacto">
+            <span>Índice</span>
+            <select id="sel-analogo-var"></select>
+          </label>
+          <div class="segmentado" role="radiogroup" aria-label="Alinear por">
+            <button role="radio" aria-checked="true" data-alinear="evento" id="alinear-evento">Semana del evento</button>
+            <button role="radio" aria-checked="false" data-alinear="anio" id="alinear-anio">Semana del año</button>
+          </div>
+        </div>
+      </div>
+      <div class="grafico grafico--alto" id="graf-analogos" role="img" aria-label="Gráfico de trayectoria del evento frente a análogos"></div>
+      <div class="analogos-resumen" id="analogos-resumen"></div>
+    </section>
+
+    <!-- Matriz semana a semana -->
+    <section class="bloque" aria-labelledby="t-matriz">
+      <div class="bloque__cab">
+        <div>
+          <h2 id="t-matriz" class="titulo-bloque">Matriz semana a semana</h2>
+          <p class="bloque__desc">Últimas semanas hasta la semana foco. Flecha = cambio frente a la semana previa; color = nivel de riesgo.</p>
+        </div>
+        <button class="btn btn--secundario" id="btn-exportar" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Exportar CSV
+        </button>
+      </div>
+      <div class="tabla-contenedor" tabindex="0" role="region" aria-label="Matriz semana a semana">
+        <table class="matriz" id="matriz"></table>
+      </div>
+      <ul class="leyenda" aria-label="Leyenda">
+        <li><i class="nv nv--sin"></i>Sin alerta / normal</li>
+        <li><i class="nv nv--amarilla"></i>Amarilla</li>
+        <li><i class="nv nv--naranja"></i>Naranja</li>
+        <li><i class="nv nv--roja"></i>Roja</li>
+        <li><i class="nv nv--sindato"></i>Sin dato</li>
+        <li><span class="arr">↻</span>Último publicado (arrastre)</li>
+      </ul>
+    </section>
+
+    <!-- Dos gráficos -->
+    <div class="rejilla-2">
+      <section class="bloque" aria-labelledby="t-regiones">
+        <h2 id="t-regiones" class="titulo-bloque">Regiones Niño · últimas 16 semanas</h2>
+        <p class="bloque__desc">Anomalía semanal de temperatura del mar (°C) · NOAA CPC</p>
+        <div class="grafico" id="graf-regiones" role="img" aria-label="Anomalías de las regiones Niño"></div>
+      </section>
+      <section class="bloque" aria-labelledby="t-impacto">
+        <h2 id="t-impacto" class="titulo-bloque">Efecto en Colombia · semana a semana</h2>
+        <p class="bloque__desc">Embalses (XM) e ICR nacional (Vigía). Huecos = semanas sin captura.</p>
+        <div class="grafico" id="graf-impacto" role="img" aria-label="Embalses e ICR nacional por semana"></div>
+      </section>
+    </div>
+
+    <!-- Departamentos -->
+    <section class="bloque" aria-labelledby="t-deptos">
+      <div class="bloque__cab">
+        <div>
+          <h2 id="t-deptos" class="titulo-bloque">Departamentos · semana foco vs referencia</h2>
+          <p class="bloque__desc" id="deptos-desc">Último corte oro publicado en cada semana.</p>
+        </div>
+      </div>
+      <div class="tabla-contenedor" tabindex="0" role="region" aria-label="Comparativo departamental">
+        <table class="tabla" id="tabla-deptos"></table>
+      </div>
+    </section>
+
+    <!-- Fuentes -->
+    <section class="bloque" aria-labelledby="t-fuentes">
+      <h2 id="t-fuentes" class="titulo-bloque">Fuentes y frescura</h2>
+      <div class="fuentes" id="fuentes"></div>
+      <details class="metodologia">
+        <summary>Nota metodológica y modelo de almacenamiento</summary>
+        <div class="metodologia__cuerpo">
+          <p><strong>Semana ISO</strong> lunes–domingo (America/Bogota). Cada variable se consolida por semana según la regla de agregación configurada (<code>data/config/comparativo_semanal.json</code>): última observación, promedio o suma de la muestra, o arrastre del último valor publicado (ONI).</p>
+          <p><strong>Inicio del evento:</strong> primera semana de la racha vigente con Niño 3.4 ≥ <span id="met-umbral">+0,5</span> °C durante al menos <span id="met-consec">4</span> semanas consecutivas. Los análogos se detectan con la misma regla dentro de su ventana histórica.</p>
+          <p><strong>Tendencia:</strong> “empeora” o “mejora” según la dirección de riesgo de la variable; “estable” si el cambio no supera la tolerancia configurada. <em>Sin dato nunca se muestra como 0.</em></p>
+          <p><strong>Almacenamiento:</strong> <code>config.variable_semanal</code> → <code>plata.obs_variable_semana</code> → <code>oro.fct_variable_semana</code>, <code>oro.fct_analogo_semana</code>, <code>oro.fct_depto_semana</code>, <code>oro.corte_semanal</code>; bitácora en <code>ops.ejecucion_semanal</code>. DDL objetivo: <code>transform/sql/comparativo_semanal.sql</code>.</p>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="pie__cuerpo">
+      <div class="logo-cra logo-cra--pie"><span>CRA</span><i class="franja" aria-hidden="true"><b></b><b></b><b></b></i></div>
+      <p>Comisión de Regulación de Agua Potable y Saneamiento Básico · Carrera 12 n.º 97-80, piso 2, Bogotá D.C. · <a href="https://www.cra.gov.co" target="_blank" rel="noopener noreferrer">www.cra.gov.co</a></p>
+      <p class="pie__uso">Uso interno CRA · Spec V-08 <code>specs/comparativo-semanal.md</code> · <span id="pie-version">—</span></p>
+    </div>
+    <div class="pie__barra" aria-hidden="true"></div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="../js/echarts.min.js"></script>
+  <script src="js/semanal.js"></script>
+</body>
+</html>

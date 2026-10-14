@@ -1,0 +1,878 @@
+/* ==========================================================================
+   ESTILOS DE AUDITORÍA Y VERACIDAD DE DATOS — VIGÍA EL NIÑO (CRA)
+   Basado en: Manual de Identidad Visual CRA DES-MAN04 V02 y specs/calidad-datos.md
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300..900;1,6..12,300..900&family=JetBrains+Mono:wght@400;600;700&display=swap');
+
+:root {
+  /* Tokens Institucionales CRA */
+  --cra-cian: #43B2D7;
+  --cra-cian-texto: #17729A;
+  --cra-cian-suave: #E6F5FA;
+  --cra-cian-hover: #135d7e;
+  --cra-azul-oscuro: #0D2C4D;
+  
+  /* Bandera de Colombia */
+  --bandera-amarillo: #FFC800;
+  --bandera-azul: #003189;
+  --bandera-rojo: #D80025;
+  
+  /* Paleta de Auditoría y Veracidad */
+  --audit-verde: #2E7D4F;
+  --audit-verde-bg: #E8F5E9;
+  --audit-verde-borde: #A5D6A7;
+  --audit-rojo: #B3261E;
+  --audit-rojo-bg: #FFEBEE;
+  --audit-rojo-borde: #EF9A9A;
+  --audit-azul: #1565C0;
+  --audit-azul-bg: #E3F2FD;
+  --audit-amarillo: #F2C200;
+  --audit-amarillo-bg: #FFFDE7;
+  
+  /* Superficies */
+  --texto: #4A5568;
+  --texto-fuerte: #1A202C;
+  --texto-claro: #718096;
+  --superficie: #FFFFFF;
+  --tinte: #F7FAFC;
+  --linea: #E2E8F0;
+  --linea-suave: #EDF2F7;
+  
+  /* Sombras y Radios */
+  --sombra-card: 0 4px 16px rgba(13, 44, 77, 0.06);
+  --sombra-flotante: 0 12px 32px rgba(13, 44, 77, 0.12);
+  --radio-sm: 4px;
+  --radio-md: 8px;
+  --radio-lg: 12px;
+  --radio-pill: 9999px;
+  
+  --fuente-base: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --fuente-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-base);
+  background-color: var(--tinte);
+  color: var(--texto);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 1. Barra Superior GOV.CO */
+.govco-bar {
+  background-color: #3366CC;
+  color: #FFFFFF;
+  padding: 6px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+}
+.govco-logo {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+.govco-tag {
+  opacity: 0.9;
+}
+
+/* 2. Franja Tricolor */
+.franja-bandera {
+  height: 4px;
+  display: flex;
+  width: 100%;
+}
+.franja-bandera .amarillo { background-color: var(--bandera-amarillo); flex: 2; }
+.franja-bandera .azul { background-color: var(--bandera-azul); flex: 1; }
+.franja-bandera .rojo { background-color: var(--bandera-rojo); flex: 1; }
+
+/* 3. Encabezado Institucional */
+.encabezado-auditoria {
+  background-color: var(--superficie);
+  border-bottom: 1px solid var(--linea);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.branding-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.cra-badge {
+  background-color: var(--cra-azul-oscuro);
+  color: #FFFFFF;
+  padding: 6px 14px;
+  border-radius: var(--radio-md);
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+.titulos-wrap h1 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--texto-fuerte);
+  line-height: 1.2;
+}
+.titulos-wrap p {
+  font-size: 13px;
+  color: var(--texto-claro);
+}
+
+.acciones-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-volver-tablero {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radio-md);
+  background-color: var(--superficie);
+  border: 1px solid var(--cra-cian-texto);
+  color: var(--cra-cian-texto);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-volver-tablero:hover {
+  background-color: var(--cra-cian-suave);
+}
+
+.btn-ejecutar-vivo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: var(--radio-md);
+  background: linear-gradient(135deg, var(--cra-cian) 0%, var(--cra-cian-texto) 100%);
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(67, 178, 215, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-ejecutar-vivo:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(67, 178, 215, 0.4);
+}
+
+/* 4. Banner Hero de Certificación */
+.hero-certificacion {
+  background: linear-gradient(135deg, #0D2C4D 0%, #153E6B 100%);
+  color: #FFFFFF;
+  padding: 28px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-certificacion::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(67, 178, 215, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.sello-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sello-icono {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(46, 125, 79, 0.25);
+  border: 2px solid #66BB6A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #66BB6A;
+}
+.sello-texto .sello-badge {
+  display: inline-block;
+  background-color: #2E7D4F;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: var(--radio-sm);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.sello-texto h2 {
+  font-size: 22px;
+  font-weight: 800;
+}
+.hero-meta {
+  text-align: right;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.hash-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: var(--radio-pill);
+  font-family: var(--fuente-mono);
+  font-size: 11px;
+  margin-top: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.btn-copiar-hash {
+  background: none;
+  border: none;
+  color: var(--cra-cian);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Grid de Tarjetas KPI */
+.grid-kpis-auditoria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+.kpi-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radio-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.kpi-card .kpi-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 6px;
+}
+.kpi-card .kpi-valor {
+  font-size: 26px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+.kpi-card .kpi-sub {
+  font-size: 11px;
+  color: #81C784;
+}
+.kpi-card.destacado {
+  border-color: #66BB6A;
+  background: rgba(46, 125, 79, 0.2);
+}
+
+/* 5. Barra de Navegación de Auditoría (Tabs) */
+.nav-auditoria {
+  background-color: var(--superficie);
+  border-bottom: 1px solid var(--linea);
+  display: flex;
+  padding: 0 32px;
+  gap: 8px;
+  overflow-x: auto;
+}
+.tab-auditoria-btn {
+  background: none;
+  border: none;
+  padding: 14px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--texto);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+.tab-auditoria-btn:hover {
+  color: var(--cra-cian-texto);
+}
+.tab-auditoria-btn.activo {
+  color: var(--cra-cian-texto);
+  border-bottom-color: var(--cra-cian);
+  background-color: var(--cra-cian-suave);
+}
+
+/* 6. Contenedor Principal de Secciones */
+.contenedor-principal {
+  flex: 1;
+  padding: 24px 32px;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.seccion-tab {
+  display: none;
+}
+.seccion-tab.activa {
+  display: block;
+}
+
+/* Tarjetas y Paneles */
+.panel-blanco {
+  background-color: var(--superficie);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio-lg);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--sombra-card);
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.panel-titulo h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--texto-fuerte);
+}
+.panel-titulo p {
+  font-size: 13px;
+  color: var(--texto-claro);
+}
+
+/* Barra de Filtros y Búsqueda */
+.filtros-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.input-busqueda {
+  padding: 8px 14px;
+  border: 1px solid var(--linea);
+  border-radius: var(--radio-md);
+  font-size: 13px;
+  font-family: inherit;
+  min-width: 240px;
+}
+.input-busqueda:focus {
+  outline: none;
+  border-color: var(--cra-cian);
+}
+.select-filtro {
+  padding: 8px 12px;
+  border: 1px solid var(--linea);
+  border-radius: var(--radio-md);
+  font-size: 13px;
+  font-family: inherit;
+  background-color: var(--superficie);
+}
+
+/* Tablas de Auditoría */
+.tabla-audit-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--linea);
+  border-radius: var(--radio-md);
+}
+.tabla-audit {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+}
+.tabla-audit th {
+  background-color: #F8FAFC;
+  padding: 12px 14px;
+  font-weight: 800;
+  color: var(--texto-fuerte);
+  border-bottom: 2px solid var(--linea);
+  white-space: nowrap;
+}
+.tabla-audit td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--linea);
+  vertical-align: middle;
+}
+.tabla-audit tbody tr:hover {
+  background-color: #F1F7F9;
+}
+
+/* Chips y Badges */
+.chip-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border-radius: var(--radio-pill);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.chip-status.integro, .chip-status.verificado {
+  background-color: var(--audit-verde-bg);
+  color: var(--audit-verde);
+  border: 1px solid var(--audit-verde-borde);
+}
+.chip-status.corrupto, .chip-status.discrepancia {
+  background-color: var(--audit-rojo-bg);
+  color: var(--audit-rojo);
+  border: 1px solid var(--audit-rojo-borde);
+}
+
+.code-pill {
+  font-family: var(--fuente-mono);
+  font-size: 11px;
+  background-color: #EDF2F7;
+  padding: 2px 6px;
+  border-radius: var(--radio-sm);
+  color: #2D3748;
+}
+
+.delta-cero {
+  color: var(--audit-verde);
+  font-weight: 700;
+  font-family: var(--fuente-mono);
+}
+
+/* Botones de Acción Secundaria */
+.btn-accion-sec {
+  background: var(--superficie);
+  border: 1px solid var(--linea);
+  padding: 4px 10px;
+  border-radius: var(--radio-sm);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--cra-cian-texto);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.btn-accion-sec:hover {
+  background-color: var(--cra-cian-suave);
+  border-color: var(--cra-cian);
+}
+
+/* Modal de Inspección Forense */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(13, 44, 77, 0.6);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+.modal-card {
+  background: var(--superficie);
+  border-radius: var(--radio-lg);
+  max-width: 800px;
+  width: 100%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--sombra-flotante);
+  overflow: hidden;
+}
+.modal-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--linea);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F8FAFC;
+}
+.modal-header h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--texto-fuerte);
+}
+.btn-cerrar-modal {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--texto-claro);
+  cursor: pointer;
+}
+.modal-body {
+  padding: 20px 24px;
+  overflow-y: auto;
+}
+.codigo-pre {
+  background-color: #1A202C;
+  color: #EDF2F7;
+  padding: 16px;
+  border-radius: var(--radio-md);
+  font-family: var(--fuente-mono);
+  font-size: 12px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* =========================================================================
+   FICHA DE LINAJE FORENSE & VÍNCULO A FUENTE OFICIAL
+   ========================================================================= */
+.ficha-linaje-contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.linaje-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  background-color: #F8FAFC;
+  border: 1px solid var(--linea);
+  border-radius: var(--radio-md);
+  padding: 14px 16px;
+}
+
+.linaje-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.linaje-meta-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--texto-claro);
+  font-weight: 700;
+}
+
+.linaje-meta-val {
+  font-size: 13px;
+  color: var(--texto-fuerte);
+}
+
+.card-fuente-oficial-linaje {
+  background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 50%, #F0F9FF 100%);
+  border: 1.5px solid #86EFAC;
+  border-radius: var(--radio-md);
+  padding: 16px 20px;
+  box-shadow: 0 2px 8px rgba(13, 44, 77, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fuente-oficial-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.fuente-badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #DCFCE7;
+  color: #166534;
+  padding: 4px 10px;
+  border-radius: var(--radio-pill);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  border: 1px solid #BBF7D0;
+}
+
+.fuente-entidad-chip {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cra-azul-oscuro);
+  background: #E0F2FE;
+  padding: 3px 10px;
+  border-radius: 4px;
+  border: 1px solid #BAE6FD;
+}
+
+.fuente-oficial-nombre {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--cra-azul-oscuro);
+  margin: 0;
+}
+
+.fuente-oficial-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #334155;
+  margin: 0;
+}
+
+.fuente-accion-barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(22, 101, 52, 0.25);
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.fuente-url-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+  max-width: 60%;
+  min-width: 200px;
+}
+
+.fuente-url-preview .url-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--texto-claro);
+  text-transform: uppercase;
+}
+
+.fuente-url-preview .url-enlace {
+  font-family: var(--fuente-mono);
+  font-size: 12px;
+  color: var(--cra-azul);
+  text-decoration: underline;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+}
+
+.fuente-url-preview .url-enlace:hover {
+  color: var(--cra-cian-texto);
+}
+
+.btn-ir-fuente-oficial {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--cra-azul-oscuro) 0%, var(--cra-azul) 100%);
+  color: #FFFFFF !important;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 10px 18px;
+  border-radius: var(--radio-md);
+  box-shadow: 0 2px 6px rgba(13, 44, 77, 0.25);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-ir-fuente-oficial:hover {
+  background: linear-gradient(135deg, var(--cra-azul) 0%, #154D7A 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 44, 77, 0.35);
+  color: #FFFFFF !important;
+}
+
+.btn-ir-fuente-oficial svg {
+  transition: transform 0.2s ease;
+}
+
+.btn-ir-fuente-oficial:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.linaje-traza-box {
+  background: #F8FAFC;
+  border: 1px solid var(--linea);
+  border-radius: var(--radio-md);
+  padding: 16px;
+}
+
+.linaje-traza-titulo {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--cra-azul-oscuro);
+}
+
+.linaje-traza-lista {
+  margin: 0 0 0 20px;
+  padding: 0;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--texto-fuerte);
+}
+
+.linaje-val-destacado {
+  background: #EDF2F7;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-family: var(--fuente-mono);
+}
+
+.linaje-veredicto-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--audit-verde-bg);
+  border: 1px solid var(--audit-verde-borde);
+  padding: 12px 16px;
+  border-radius: var(--radio-md);
+  color: var(--audit-verde);
+  font-size: 13px;
+}
+
+/* Formato Imprimible Oficial (Certificado) */
+.certificado-imprimible {
+  background-color: var(--superficie);
+  border: 2px solid #CBD5E0;
+  padding: 48px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: var(--sombra-card);
+  position: relative;
+}
+.certificado-imprimible::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  border: 1px solid #E2E8F0;
+  pointer-events: none;
+}
+.cert-encabezado {
+  text-align: center;
+  border-bottom: 2px solid #0D2C4D;
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+.cert-encabezado .cert-entidad {
+  font-size: 14px;
+  font-weight: 800;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.cert-encabezado .cert-titulo {
+  font-size: 22px;
+  font-weight: 900;
+  color: #0D2C4D;
+  margin: 6px 0;
+}
+.cert-cuerpo {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #2D3748;
+  margin-bottom: 32px;
+}
+.cert-tabla-resumen {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 13px;
+}
+.cert-tabla-resumen th, .cert-tabla-resumen td {
+  padding: 10px 12px;
+  border: 1px solid #CBD5E0;
+}
+.cert-tabla-resumen th {
+  background-color: #EDF2F7;
+  font-weight: 800;
+}
+.cert-firmas {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  padding-top: 20px;
+}
+.firma-bloque {
+  width: 45%;
+  border-top: 1px solid #718096;
+  text-align: center;
+  padding-top: 8px;
+  font-size: 12px;
+}
+.firma-bloque strong {
+  display: block;
+  font-size: 13px;
+  color: #1A202C;
+}
+
+/* Pie de Página */
+.pie-auditoria {
+  background-color: var(--superficie);
+  border-top: 1px solid var(--linea);
+  padding: 16px 32px;
+  font-size: 12px;
+  color: var(--texto-claro);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+/* Estilos para Impresión */
+@media print {
+  .govco-bar, .encabezado-auditoria, .nav-auditoria, .filtros-bar, .pie-auditoria, .btn-accion-sec, .btn-ejecutar-vivo {
+    display: none !important;
+  }
+  body, .contenedor-principal {
+    background: #FFFFFF !important;
+    padding: 0 !important;
+  }
+  .seccion-tab {
+    display: none !important;
+  }
+  #tab-sec-certificado {
+    display: block !important;
+  }
+  .certificado-imprimible {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+}
