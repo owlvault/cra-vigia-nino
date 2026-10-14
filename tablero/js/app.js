@@ -1279,6 +1279,17 @@ document.addEventListener('DOMContentLoaded', () => {
           <strong>+${amenaza.indice_oni_trimestral.oni_anomalia.toFixed(2)} °C</strong> (${amenaza.indice_oni_trimestral.intensidad_evento})
         `;
       }
+
+      const descBanner = document.getElementById('noaa-resumen-desc');
+      if (descBanner) {
+        const prob = amenaza.indicador_a2_probabilidad_muy_fuerte_pct !== undefined ? amenaza.indicador_a2_probabilidad_muy_fuerte_pct.toFixed(1) : '83.0';
+        descBanner.innerHTML = `Anomalía en la región <strong>Niño 3.4 a +${sem.nino34_anomalia.toFixed(1)} °C</strong> (con picos en la región Niño 1+2 de +${sem.nino12_anomalia.toFixed(1)} °C) y una probabilidad del <strong>${prob} %</strong> de consolidar un evento de carácter histórico (RONI &ge; +2.5 °C).`;
+      }
+    }
+
+    const badgeTotal = document.getElementById('badge-total-alertas');
+    if (badgeTotal && state.corte.alertas_activas) {
+      badgeTotal.textContent = state.corte.alertas_activas.length;
     }
 
     // Renderizar Top Municipios Críticos en la tabla
@@ -1331,7 +1342,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: '4', nombre: 'Niño 4 (Occidental)', anom: sem.nino4_anomalia, sst: sem.nino4_sst }
       ];
 
-      const contenedorBarras = document.getElementById('barras-anomalia-nino');
+      const contenedorBarras = document.getElementById('barras-anomalia-nino') || document.getElementById('bars-nino-regiones');
       if (contenedorBarras) {
         contenedorBarras.innerHTML = regiones.map(r => {
           const pctWidth = Math.min((r.anom / 6.0) * 100, 100);
@@ -1348,6 +1359,38 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           `;
         }).join('');
+      }
+    }
+
+    // Actualizar diagnóstico regional dinámico en V-02
+    if (state.corte && state.corte.municipios) {
+      const munis = state.corte.municipios;
+      const caribe = munis.filter(m => m.region === 'Caribe');
+      const andina = munis.filter(m => m.region === 'Andina');
+      
+      const calcStats = (lista) => {
+        if (!lista.length) return { dias: 0, anom: 0, focos: 0 };
+        const dias = Math.round(lista.reduce((acc, m) => acc + (m.indicadores?.['A-4']?.valor || 0), 0) / lista.length);
+        const anom = (lista.reduce((acc, m) => acc + (m.indicadores?.['A-3']?.valor || 0), 0) / lista.length).toFixed(1);
+        const focos = lista.reduce((acc, m) => acc + (m.indicadores?.['A-5']?.valor || 0), 0);
+        return { dias, anom, focos };
+      };
+
+      const sc = calcStats(caribe);
+      const sa = calcStats(andina);
+      const probExt = amenaza.indicador_a2_probabilidad_muy_fuerte_pct || 83.0;
+
+      const pCaribe = document.getElementById('v02-desc-caribe');
+      if (pCaribe) {
+        pCaribe.innerHTML = `Promedio de <strong>${sc.dias} días consecutivos</strong> con precipitación menor a 1 mm. Déficit acumulado de lluvia a 30 días de <strong>${sc.anom} %</strong> frente a la normal histórica. Focos térmicos registrados en cuencas: <strong>${sc.focos}</strong>.`;
+      }
+      const pAndina = document.getElementById('v02-desc-andina');
+      if (pAndina) {
+        pAndina.innerHTML = `Promedio de <strong>${sa.dias} días consecutivos sin lluvia</strong>. Déficit acumulado de <strong>${sa.anom} %</strong>. Focos térmicos registrados en cuencas: <strong>${sa.focos}</strong>.`;
+      }
+      const pCpc = document.getElementById('v02-desc-cpc');
+      if (pCpc) {
+        pCpc.innerHTML = `Los modelos acoplados Océano-Atmósfera pronostican una probabilidad del <strong>${probExt}%</strong> de mantener anomalías extremas RONI &ge; +2.0 °C.`;
       }
     }
   }

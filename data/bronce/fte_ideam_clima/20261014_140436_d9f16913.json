@@ -1,0 +1,216 @@
+{
+  "fuente": "IDEAM DHIME / ENA",
+  "url_origen": "https://www.datos.gov.co/resource/s54a-sgyg.json",
+  "fecha_reporte": "2026-10-14",
+  "fecha_captura": "2026-10-14T14:04:36.555935+00:00",
+  "total_municipios": 23,
+  "municipios": {
+    "44847": {
+      "nombre": "Uribia",
+      "depto": "La Guajira",
+      "anomalia_precip_pct": -88.5,
+      "dias_sin_lluvia": 48,
+      "caudal_fuente_pct": 15.0,
+      "iua_ena": "Muy Alto",
+      "ivh_ena": "Muy Alto"
+    },
+    "44430": {
+      "nombre": "Maicao",
+      "depto": "La Guajira",
+      "anomalia_precip_pct": -76.0,
+      "dias_sin_lluvia": 39,
+      "caudal_fuente_pct": 22.0,
+      "iua_ena": "Muy Alto",
+      "ivh_ena": "Muy Alto"
+    },
+    "44001": {
+      "nombre": "Riohacha",
+      "depto": "La Guajira",
+      "anomalia_precip_pct": -68.0,
+      "dias_sin_lluvia": 34,
+      "caudal_fuente_pct": 28.0,
+      "iua_ena": "Alto",
+      "ivh_ena": "Muy Alto"
+    },
+    "44560": {
+      "nombre": "Manaure",
+      "depto": "La Guajira",
+      "anomalia_precip_pct": -82.0,
+      "dias_sin_lluvia": 44,
+      "caudal_fuente_pct": 18.0,
+      "iua_ena": "Muy Alto",
+      "ivh_ena": "Muy Alto"
+    },
+    "47001": {
+      "nombre": "Santa Marta",
+      "depto": "Magdalena",
+      "anomalia_precip_pct": -54.0,
+      "dias_sin_lluvia": 26,
+      "caudal_fuente_pct": 38.0,
+      "iua_ena": "Alto",
+      "ivh_ena": "Alto"
+    },
+    "47555": {
+      "nombre": "Plato",
+      "depto": "Magdalena",
+      "anomalia_precip_pct": -62.0,
+      "dias_sin_lluvia": 31,
+      "caudal_fuente_pct": 32.0,
+      "iua_ena": "Medio",
+      "ivh_ena": "Alto"
+    },
+    "13244": {
+      "nombre": "El Carmen de Bolívar",
+      "depto": "Bolívar",
+      "anomalia_precip_pct": -64.0,
+      "dias_sin_lluvia": 33,
+      "caudal_fuente_pct": 30.0,
+      "iua_ena": "Alto",
+      "ivh_ena": "Alto"
+    },
+    "13430": {
+      "nombre": "Magangué",
+      "depto": "Bolívar",
+      "anomalia_precip_pct": -48.0,
+      "dias_sin_lluvia": 22,
+      "caudal_fuente_pct": 42.0,
+      "iua_ena": "Medio",
+      "ivh_ena": "Medio"
+    },
+    "13001": {
+      "nombre": "Cartagena de Indias",
+      "depto": "Bolívar",
+      "anomalia_precip_pct": -42.0,
+      "dias_sin_lluvia": 18,
+      "caudal_fuente_pct": 65.0,
+      "iua_ena": "Medio",
+      "ivh_ena": "Medio"
+    },
+    "20001": {
+      "nombre": "Valledupar",
+      "depto": "Cesar",
+      "anomalia_precip_pct": -46.0,
+      "dias_sin_lluvia": 24,
+      "caudal_fuente_pct": 48.0,
+      "iua_ena": "Alto",
+      "ivh_ena": "Alto"
+    },
+    "20011": {
+      "nombre": "Aguachica",
+      "depto": "Cesar",
+      "anomalia_precip_pct": -58.0,
+      "dias_sin_lluvia": 29,
+      "caudal_fuente_pct": 35.0,
+      "iua_ena": "Medio",
+      "ivh_ena": "Alto"
+    },
+    "68079": {
+      "nombre": "Barichara",
+      "depto": "Santander",
+      "anomalia_precip_pct": -65.0,
+      "dias_sin_lluvia": 35,
+      "caudal_fuente_pct": 24.0,
+      "iua_ena": "Alto",
+      "ivh_ena": "Muy Alto"
+    },
+    "68679": {
+      "nombre": "San Gil",
+      "depto": "Santander",
+      "anomalia_precip_pct": -52.0,
+      "dias_sin_lluvia": 25,
+      "caudal_fuente_pct": 40.0,
+      "iua_ena": "Medio",
+      "ivh_ena": "Alto"
+    },
+    "68001": {
+      "nombre": "Bucaramanga",
+      "depto": "Santander",
+      "anomalia_precip_pct": -34.0,
+      "dias_sin_lluvia": 14,
+      "caudal_fuente_pct": 62.0,
+      "iua_ena": "Medio",
+      "ivh_ena": "Medio"
+    },
+    "11001": {
+      "nombre": "Bogotá, D.C.",
+      "depto": "Bogotá, D.C.",
+      "anomalia_precip_pct": -38.0,
+      "dias_sin_lluvia": 16,
+      "caudal_fuente_pct": 46.0,
+      "iua_ena": "Muy Alto",
+      "ivh_ena": "Alto"
+    },
+    "25307": {
+      "nombre": "Girardot",
+      "depto": "Cundinamarca",
+      "anomalia_precip_pct": -55.0,
+      "dias_sin_lluvia": 28,
+      "caudal_fuente_pct": 45.0,
+      "iua_ena": "Alto",
+      "ivh_ena": "Alto"
+    },
+    "25126": {
+      "nombre": "Cajicá",
+      "depto": "Cundinamarca",
+      "anomalia_precip_pct": -32.0,
+      "dias_sin_lluvia": 12,
+      "caudal_fuente_pct": 55.0,
+      "iua_ena": "Medio",
+      "ivh_ena": "Medio"
+    },
+    "73001": {
+      "nombre": "Ibagué",
+      "depto": "Tolima",
+      "anomalia_precip_pct": -45.0,
+      "dias_sin_lluvia": 21,
+      "caudal_fuente_pct": 52.0,
+      "iua_ena": "Medio",
+      "ivh_ena": "Medio"
+    },
+    "73268": {
+      "nombre": "Espinal",
+      "depto": "Tolima",
+      "anomalia_precip_pct": -56.0,
+      "dias_sin_lluvia": 27,
+      "caudal_fuente_pct": 36.0,
+      "iua_ena": "Alto",
+      "ivh_ena": "Alto"
+    },
+    "41001": {
+      "nombre": "Neiva",
+      "depto": "Huila",
+      "anomalia_precip_pct": -51.0,
+      "dias_sin_lluvia": 23,
+      "caudal_fuente_pct": 44.0,
+      "iua_ena": "Medio",
+      "ivh_ena": "Alto"
+    },
+    "15837": {
+      "nombre": "Tuta",
+      "depto": "Boyacá",
+      "anomalia_precip_pct": -46.0,
+      "dias_sin_lluvia": 22,
+      "caudal_fuente_pct": 48.0,
+      "iua_ena": "Medio",
+      "ivh_ena": "Alto"
+    },
+    "05001": {
+      "nombre": "Medellín",
+      "depto": "Antioquia",
+      "anomalia_precip_pct": -28.0,
+      "dias_sin_lluvia": 9,
+      "caudal_fuente_pct": 68.0,
+      "iua_ena": "Medio",
+      "ivh_ena": "Bajo"
+    },
+    "76001": {
+      "nombre": "Cali",
+      "depto": "Valle del Cauca",
+      "anomalia_precip_pct": -31.0,
+      "dias_sin_lluvia": 11,
+      "caudal_fuente_pct": 60.0,
+      "iua_ena": "Medio",
+      "ivh_ena": "Medio"
+    }
+  }
+}

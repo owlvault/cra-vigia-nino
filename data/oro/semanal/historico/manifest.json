@@ -1,0 +1,41 @@
+{
+ "modelo": "almacen_historico_semanal",
+ "spec": "RF-SEM-09",
+ "linea_base": {
+  "fecha_corte": "2026-10-08",
+  "semana_iso": "2026-W41",
+  "archivo": "data\\oro\\corte_2026-10-08.json",
+  "sha256": "898632012e78451e5e79eed3d6dd69d5fde61dcc6b872ab380d88d5c9bbe8ff4",
+  "estado_calidad": "PUBLICADO_VALIDO",
+  "generado_en": "2026-10-08T18:36:01.746476+00:00",
+  "version_configuracion": "v1.0.0-20261008"
+ },
+ "creado_en": "2026-10-14T14:09:03.149989+00:00",
+ "actualizado_en": "2026-10-14T14:24:25.770314+00:00",
+ "politica": {
+  "dias_gracia_cierre": 7,
+  "estado_corte_valido": "PUBLICADO_VALIDO",
+  "reescritura_semanas_cerradas": false
+ },
+ "semanas": [
+  {
+   "semana_iso": "2026-W41",
+   "estado": "abierta",
+   "archivo": "data\\oro\\semanal\\historico\\semana_2026-W41.json",
+   "sha256_datos": "635153d1cbcb0b1dbbd03995f3c39e1fcbb8f7bc22237dc0dbda5894bb6adcd5",
+   "cortes_diarios": 2,
+   "variables_con_dato": 12,
+   "actualizado_en": "2026-10-14T14:24:25.770314+00:00"
+  },
+  {
+   "semana_iso": "2026-W42",
+   "estado": "abierta",
+   "archivo": "data\\oro\\semanal\\historico\\semana_2026-W42.json",
+   "sha256_datos": "056895cd740c2dad2d8ce32427fb6d5dcd7ddcb807d1a2dc96508aba421c09b8",
+   "cortes_diarios": 1,
+   "variables_con_dato": 8,
+   "actualizado_en": "2026-10-14T14:24:25.770314+00:00"
+  }
+ ],
+ "discrepancias": []
+}

@@ -1,16 +1,16 @@
 {
   "metadata_corte": {
-    "fecha_corte": "2026-10-09",
-    "generado_en": "2026-10-09T16:02:49.576415+00:00",
+    "fecha_corte": "2026-10-14",
+    "generado_en": "2026-10-14T14:20:50.112653+00:00",
     "version_configuracion": "v1.0.0-20261008",
     "estado_calidad": "PUBLICADO_VALIDO",
     "total_municipios_evaluados": 23,
-    "icr_nacional_ponderado": 49.4,
-    "poblacion_en_riesgo_critico": 10870500,
+    "icr_nacional_ponderado": 39.3,
+    "poblacion_en_riesgo_critico": 1064500,
     "conteo_niveles_nacional": {
-      "roja": 5,
-      "naranja": 12,
-      "amarilla": 1,
+      "roja": 4,
+      "naranja": 6,
+      "amarilla": 8,
       "sin_alerta": 5,
       "sin_dato": 0
     }
@@ -18,18 +18,18 @@
   "amenaza_global": {
     "fuente": "NOAA Climate Prediction Center",
     "url_origen": "https://www.cpc.ncep.noaa.gov/data/indices/wksst9120.for",
-    "fecha_captura": "2026-10-09T16:02:47.924317+00:00",
+    "fecha_captura": "2026-10-14T14:20:45.222050+00:00",
     "estado_alerta_noaa": "Advertencia de El Niño (El Niño Advisory)",
     "indices_semanales": {
-      "fecha_semana": "30SEP2026",
+      "fecha_semana": "07OCT2026",
       "nino12_sst": 26.1,
-      "nino12_anomalia": 5.3,
+      "nino12_anomalia": 5.2,
       "nino3_sst": 29.0,
-      "nino3_anomalia": 4.0,
-      "nino34_sst": 29.9,
-      "nino34_anomalia": 3.2,
+      "nino3_anomalia": 4.1,
+      "nino34_sst": 30.0,
+      "nino34_anomalia": 3.3,
       "nino4_sst": 29.9,
-      "nino4_anomalia": 1.2
+      "nino4_anomalia": 1.3
     },
     "indice_oni_trimestral": {
       "trimestre": "JAS",
@@ -38,9 +38,9 @@
       "oni_anomalia": 2.16,
       "intensidad_evento": "Muy Fuerte (Histórico)"
     },
-    "indicador_a1_nino34": 3.2,
-    "indicador_a1_oni": 2.16,
-    "indicador_a2_probabilidad_muy_fuerte_pct": 75.0,
+    "indicador_a1_nino34": 3.3,
+    "indicador_a2_probabilidad_muy_fuerte_pct": 83.0,
+    "fecha_boletin_enso": "2026-10-10",
     "umbral_critico_superado": true
   },
   "municipios": [
@@ -50,20 +50,20 @@
       "departamento": "La Guajira",
       "cod_depto": "44",
       "poblacion": 196000,
-      "icr": 85.8,
+      "icr": 89.1,
       "nivel_alerta": "roja",
       "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 94.17,
-        "vulnerabilidad_H": 78.33,
+        "vulnerabilidad_H": 89.17,
         "servicio_S": 76.23,
         "respuesta_R": 100.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -71,10 +71,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -82,7 +82,7 @@
           "valor": -88.5,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 98.75
         },
         "A-4": {
@@ -90,15 +90,15 @@
           "valor": 48,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 90.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 42,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -106,7 +106,7 @@
           "valor": 15.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 93.75
         },
         "H-2": {
@@ -127,18 +127,18 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 4.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 87.5
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -183,7 +183,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 8.5,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -194,7 +194,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 100.0
         },
         "R-2": {
@@ -202,7 +202,7 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 60.0
         },
         "R-3": {
@@ -210,7 +210,7 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 80.0
         },
         "R-4": {
@@ -218,7 +218,7 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 100.0
         }
       },
@@ -233,20 +233,20 @@
       "departamento": "La Guajira",
       "cod_depto": "44",
       "poblacion": 182000,
-      "icr": 83.0,
+      "icr": 85.0,
       "nivel_alerta": "roja",
       "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 85.28,
-        "vulnerabilidad_H": 78.33,
+        "vulnerabilidad_H": 85.0,
         "servicio_S": 75.7,
         "respuesta_R": 100.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -254,10 +254,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -265,7 +265,7 @@
           "valor": -76.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 88.33
         },
         "A-4": {
@@ -273,15 +273,15 @@
           "valor": 39,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 82.5
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 28,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -289,7 +289,7 @@
           "valor": 22.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 85.0
         },
         "H-2": {
@@ -310,18 +310,18 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 6.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 75.0
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -366,7 +366,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 11.2,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -377,32 +377,32 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 100.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -416,20 +416,20 @@
       "departamento": "La Guajira",
       "cod_depto": "44",
       "poblacion": 210000,
-      "icr": 77.2,
-      "nivel_alerta": "roja",
+      "icr": 63.5,
+      "nivel_alerta": "naranja",
       "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 79.17,
-        "vulnerabilidad_H": 70.0,
+        "vulnerabilidad_H": 74.44,
         "servicio_S": 69.77,
-        "respuesta_R": 100.0
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -437,10 +437,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -448,7 +448,7 @@
           "valor": -68.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 81.67
         },
         "A-4": {
@@ -456,15 +456,15 @@
           "valor": 34,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 78.33
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 19,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -472,7 +472,7 @@
           "valor": 28.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 77.5
         },
         "H-2": {
@@ -493,18 +493,18 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 8.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 68.33
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -549,7 +549,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 13.5,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -560,32 +560,32 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -599,20 +599,20 @@
       "departamento": "La Guajira",
       "cod_depto": "44",
       "poblacion": 125000,
-      "icr": 83.5,
+      "icr": 86.7,
       "nivel_alerta": "roja",
       "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 90.0,
-        "vulnerabilidad_H": 78.33,
+        "vulnerabilidad_H": 89.17,
         "servicio_S": 71.91,
         "respuesta_R": 100.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -620,10 +620,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -631,7 +631,7 @@
           "valor": -82.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 93.33
         },
         "A-4": {
@@ -639,15 +639,15 @@
           "valor": 44,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 86.67
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -655,7 +655,7 @@
           "valor": 18.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 90.0
         },
         "H-2": {
@@ -676,18 +676,18 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 4.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 87.5
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -732,7 +732,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 9.0,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -743,7 +743,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 100.0
         },
         "R-2": {
@@ -751,7 +751,7 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 60.0
         },
         "R-3": {
@@ -759,7 +759,7 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 80.0
         },
         "R-4": {
@@ -767,7 +767,7 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 100.0
         }
       },
@@ -782,20 +782,20 @@
       "departamento": "Magdalena",
       "cod_depto": "47",
       "poblacion": 540000,
-      "icr": 69.7,
-      "nivel_alerta": "naranja",
+      "icr": 56.0,
+      "nivel_alerta": "amarilla",
       "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 69.5,
-        "vulnerabilidad_H": 61.67,
+        "vulnerabilidad_H": 66.11,
         "servicio_S": 61.28,
-        "respuesta_R": 100.0
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -803,10 +803,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -814,7 +814,7 @@
           "valor": -54.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 70.5
         },
         "A-4": {
@@ -822,15 +822,15 @@
           "valor": 26,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 69.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 24,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -838,7 +838,7 @@
           "valor": 38.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 69.0
         },
         "H-2": {
@@ -859,18 +859,18 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 8.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 68.33
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -915,7 +915,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 14.2,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -926,32 +926,32 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -965,20 +965,20 @@
       "departamento": "Magdalena",
       "cod_depto": "47",
       "poblacion": 65000,
-      "icr": 71.6,
+      "icr": 73.6,
       "nivel_alerta": "naranja",
       "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 75.33,
-        "vulnerabilidad_H": 53.33,
+        "vulnerabilidad_H": 60.0,
         "servicio_S": 71.95,
         "respuesta_R": 100.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -986,10 +986,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -997,7 +997,7 @@
           "valor": -62.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 76.67
         },
         "A-4": {
@@ -1005,15 +1005,15 @@
           "valor": 31,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 75.83
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -1021,7 +1021,7 @@
           "valor": 32.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 73.5
         },
         "H-2": {
@@ -1042,18 +1042,18 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 6.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 75.0
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -1109,7 +1109,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 100.0
         },
         "R-2": {
@@ -1117,24 +1117,24 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -1148,20 +1148,20 @@
       "departamento": "Bolívar",
       "cod_depto": "13",
       "poblacion": 78000,
-      "icr": 73.9,
-      "nivel_alerta": "naranja",
+      "icr": 75.9,
+      "nivel_alerta": "roja",
       "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 76.94,
-        "vulnerabilidad_H": 61.67,
+        "vulnerabilidad_H": 68.33,
         "servicio_S": 69.1,
         "respuesta_R": 100.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -1169,10 +1169,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -1180,7 +1180,7 @@
           "valor": -64.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 78.33
         },
         "A-4": {
@@ -1188,15 +1188,15 @@
           "valor": 33,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 77.5
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 35,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -1204,7 +1204,7 @@
           "valor": 30.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 75.0
         },
         "H-2": {
@@ -1225,18 +1225,18 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 6.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 75.0
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -1281,7 +1281,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 10.5,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -1292,32 +1292,32 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 100.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -1331,20 +1331,20 @@
       "departamento": "Bolívar",
       "cod_depto": "13",
       "poblacion": 138000,
-      "icr": 59.7,
-      "nivel_alerta": "naranja",
-      "nivel_por_regla": true,
+      "icr": 48.4,
+      "nivel_alerta": "amarilla",
+      "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 65.0,
-        "vulnerabilidad_H": 45.0,
+        "vulnerabilidad_H": 47.22,
         "servicio_S": 58.9,
-        "respuesta_R": 80.0
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -1352,10 +1352,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -1363,7 +1363,7 @@
           "valor": -48.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 66.0
         },
         "A-4": {
@@ -1371,15 +1371,15 @@
           "valor": 22,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 63.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -1387,7 +1387,7 @@
           "valor": 42.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 66.0
         },
         "H-2": {
@@ -1408,18 +1408,18 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 10.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 61.67
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -1464,7 +1464,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 13.4,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -1475,31 +1475,31 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         }
       },
@@ -1514,20 +1514,20 @@
       "departamento": "Bolívar",
       "cod_depto": "13",
       "poblacion": 1040000,
-      "icr": 36.9,
+      "icr": 34.9,
       "nivel_alerta": "sin_alerta",
       "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 54.17,
-        "vulnerabilidad_H": 45.0,
+        "vulnerabilidad_H": 38.33,
         "servicio_S": 28.64,
         "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -1535,10 +1535,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -1546,7 +1546,7 @@
           "valor": -42.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 61.5
         },
         "A-4": {
@@ -1554,15 +1554,15 @@
           "valor": 18,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 56.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -1570,7 +1570,7 @@
           "valor": 65.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 45.0
         },
         "H-2": {
@@ -1591,18 +1591,18 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 18.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 35.0
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -1647,7 +1647,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 14.0,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -1658,7 +1658,7 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-2": {
@@ -1666,7 +1666,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-3": {
@@ -1674,7 +1674,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-4": {
@@ -1682,7 +1682,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         }
       },
@@ -1697,20 +1697,20 @@
       "departamento": "Cesar",
       "cod_depto": "20",
       "poblacion": 510000,
-      "icr": 63.5,
-      "nivel_alerta": "naranja",
+      "icr": 51.5,
+      "nivel_alerta": "amarilla",
       "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 64.0,
         "vulnerabilidad_H": 61.67,
         "servicio_S": 55.24,
-        "respuesta_R": 80.0
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -1718,10 +1718,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -1729,7 +1729,7 @@
           "valor": -46.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 64.5
         },
         "A-4": {
@@ -1737,15 +1737,15 @@
           "valor": 24,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 66.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 22,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -1753,7 +1753,7 @@
           "valor": 48.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 61.5
         },
         "H-2": {
@@ -1774,7 +1774,7 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 12.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -1785,7 +1785,7 @@
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -1830,7 +1830,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 14.5,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -1841,7 +1841,7 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-2": {
@@ -1849,23 +1849,23 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         }
       },
@@ -1880,20 +1880,20 @@
       "departamento": "Cesar",
       "cod_depto": "20",
       "poblacion": 112000,
-      "icr": 69.0,
+      "icr": 70.3,
       "nivel_alerta": "naranja",
       "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 72.75,
-        "vulnerabilidad_H": 53.33,
+        "vulnerabilidad_H": 57.78,
         "servicio_S": 64.61,
         "respuesta_R": 100.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -1901,10 +1901,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -1912,7 +1912,7 @@
           "valor": -58.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 73.5
         },
         "A-4": {
@@ -1920,15 +1920,15 @@
           "valor": 29,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 73.5
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -1936,7 +1936,7 @@
           "valor": 35.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 71.25
         },
         "H-2": {
@@ -1957,18 +1957,18 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 8.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 68.33
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -2013,7 +2013,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 12.0,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -2024,32 +2024,32 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 100.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -2063,20 +2063,20 @@
       "departamento": "Santander",
       "cod_depto": "68",
       "poblacion": 12000,
-      "icr": 78.4,
-      "nivel_alerta": "roja",
+      "icr": 64.7,
+      "nivel_alerta": "naranja",
       "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 80.28,
-        "vulnerabilidad_H": 70.0,
+        "vulnerabilidad_H": 74.44,
         "servicio_S": 73.16,
-        "respuesta_R": 100.0
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -2084,10 +2084,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -2095,7 +2095,7 @@
           "valor": -65.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 79.17
         },
         "A-4": {
@@ -2103,15 +2103,15 @@
           "valor": 35,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 79.17
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -2119,7 +2119,7 @@
           "valor": 24.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 82.5
         },
         "H-2": {
@@ -2140,18 +2140,18 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 8.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 68.33
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -2196,7 +2196,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 11.5,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -2207,32 +2207,32 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -2246,20 +2246,20 @@
       "departamento": "Santander",
       "cod_depto": "68",
       "poblacion": 58000,
-      "icr": 59.9,
-      "nivel_alerta": "naranja",
-      "nivel_por_regla": true,
+      "icr": 47.2,
+      "nivel_alerta": "amarilla",
+      "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 68.0,
-        "vulnerabilidad_H": 53.33,
+        "vulnerabilidad_H": 51.11,
         "servicio_S": 45.88,
-        "respuesta_R": 80.0
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -2267,10 +2267,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -2278,7 +2278,7 @@
           "valor": -52.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 69.0
         },
         "A-4": {
@@ -2286,15 +2286,15 @@
           "valor": 25,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 67.5
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -2302,7 +2302,7 @@
           "valor": 40.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 67.5
         },
         "H-2": {
@@ -2327,14 +2327,14 @@
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 48.33
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -2390,7 +2390,7 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-2": {
@@ -2398,23 +2398,23 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         }
       },
@@ -2429,20 +2429,20 @@
       "departamento": "Santander",
       "cod_depto": "68",
       "poblacion": 615000,
-      "icr": 31.3,
+      "icr": 28.1,
       "nivel_alerta": "sin_alerta",
       "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 50.0,
-        "vulnerabilidad_H": 45.0,
+        "vulnerabilidad_H": 34.44,
         "servicio_S": 11.2,
         "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -2450,10 +2450,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -2461,7 +2461,7 @@
           "valor": -34.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 54.0
         },
         "A-4": {
@@ -2469,15 +2469,15 @@
           "valor": 14,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 48.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -2485,7 +2485,7 @@
           "valor": 62.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 48.0
         },
         "H-2": {
@@ -2506,18 +2506,18 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 20.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 23.33
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -2562,7 +2562,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 12.5,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -2573,7 +2573,7 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-2": {
@@ -2581,7 +2581,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-3": {
@@ -2589,7 +2589,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-4": {
@@ -2597,7 +2597,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         }
       },
@@ -2612,20 +2612,20 @@
       "departamento": "Bogotá, D.C.",
       "cod_depto": "11",
       "poblacion": 7900000,
-      "icr": 58.1,
-      "nivel_alerta": "naranja",
-      "nivel_por_regla": true,
+      "icr": 40.6,
+      "nivel_alerta": "amarilla",
+      "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 57.67,
-        "vulnerabilidad_H": 70.0,
+        "vulnerabilidad_H": 51.67,
         "servicio_S": 31.16,
-        "respuesta_R": 80.0
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -2633,10 +2633,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -2644,7 +2644,7 @@
           "valor": -38.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 58.0
         },
         "A-4": {
@@ -2652,15 +2652,15 @@
           "valor": 16,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 52.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 4,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -2668,7 +2668,7 @@
           "valor": 46.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 63.0
         },
         "H-2": {
@@ -2689,18 +2689,18 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 24.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 0.0
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
-          "valor": 48.1,
+          "valor": 71.5,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -2745,7 +2745,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 10.4,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -2756,7 +2756,7 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-2": {
@@ -2764,23 +2764,23 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         }
       },
@@ -2795,20 +2795,20 @@
       "departamento": "Cundinamarca",
       "cod_depto": "25",
       "poblacion": 120000,
-      "icr": 68.2,
-      "nivel_alerta": "naranja",
+      "icr": 53.2,
+      "nivel_alerta": "amarilla",
       "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 69.0,
         "vulnerabilidad_H": 61.67,
         "servicio_S": 55.87,
-        "respuesta_R": 100.0
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -2816,10 +2816,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -2827,7 +2827,7 @@
           "valor": -55.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 71.25
         },
         "A-4": {
@@ -2835,15 +2835,15 @@
           "valor": 28,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 72.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 16,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -2851,7 +2851,7 @@
           "valor": 45.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 63.75
         },
         "H-2": {
@@ -2872,7 +2872,7 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 12.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -2880,10 +2880,10 @@
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
-          "valor": 48.1,
+          "valor": 66.2,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -2928,7 +2928,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 13.8,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -2939,32 +2939,32 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -2978,20 +2978,20 @@
       "departamento": "Cundinamarca",
       "cod_depto": "25",
       "poblacion": 85000,
-      "icr": 34.2,
+      "icr": 32.8,
       "nivel_alerta": "sin_alerta",
       "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 50.33,
-        "vulnerabilidad_H": 45.0,
+        "vulnerabilidad_H": 40.56,
         "servicio_S": 22.29,
         "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -2999,10 +2999,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -3010,7 +3010,7 @@
           "valor": -32.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 52.0
         },
         "A-4": {
@@ -3018,15 +3018,15 @@
           "valor": 12,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 44.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -3034,7 +3034,7 @@
           "valor": 55.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 55.0
         },
         "H-2": {
@@ -3055,18 +3055,18 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 16.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 41.67
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -3111,7 +3111,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 11.1,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -3122,7 +3122,7 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-2": {
@@ -3130,7 +3130,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-3": {
@@ -3138,7 +3138,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-4": {
@@ -3146,7 +3146,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         }
       },
@@ -3161,20 +3161,20 @@
       "departamento": "Tolima",
       "cod_depto": "73",
       "poblacion": 540000,
-      "icr": 58.1,
-      "nivel_alerta": "naranja",
-      "nivel_por_regla": true,
+      "icr": 45.5,
+      "nivel_alerta": "amarilla",
+      "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 61.08,
-        "vulnerabilidad_H": 45.0,
+        "vulnerabilidad_H": 42.78,
         "servicio_S": 57.28,
-        "respuesta_R": 80.0
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -3182,10 +3182,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -3193,7 +3193,7 @@
           "valor": -45.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 63.75
         },
         "A-4": {
@@ -3201,15 +3201,15 @@
           "valor": 21,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 61.5
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -3217,7 +3217,7 @@
           "valor": 52.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 58.0
         },
         "H-2": {
@@ -3242,14 +3242,14 @@
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 48.33
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -3294,7 +3294,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 13.1,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -3305,7 +3305,7 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-2": {
@@ -3313,23 +3313,23 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         }
       },
@@ -3344,20 +3344,20 @@
       "departamento": "Tolima",
       "cod_depto": "73",
       "poblacion": 74000,
-      "icr": 69.7,
+      "icr": 70.4,
       "nivel_alerta": "naranja",
       "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 71.0,
-        "vulnerabilidad_H": 61.67,
+        "vulnerabilidad_H": 63.89,
         "servicio_S": 59.7,
         "respuesta_R": 100.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -3365,10 +3365,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -3376,7 +3376,7 @@
           "valor": -56.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 72.0
         },
         "A-4": {
@@ -3384,15 +3384,15 @@
           "valor": 27,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 70.5
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 18,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -3400,7 +3400,7 @@
           "valor": 36.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 70.5
         },
         "H-2": {
@@ -3421,18 +3421,18 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 10.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 61.67
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
-          "valor": 39.5,
+          "valor": 41.0,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -3477,7 +3477,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 13.6,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -3488,32 +3488,32 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 100.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -3540,7 +3540,7 @@
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -3548,10 +3548,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -3559,7 +3559,7 @@
           "valor": -51.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 68.25
         },
         "A-4": {
@@ -3567,15 +3567,15 @@
           "valor": 23,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 64.5
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -3583,7 +3583,7 @@
           "valor": 44.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 64.5
         },
         "H-2": {
@@ -3604,7 +3604,7 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 12.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -3615,7 +3615,7 @@
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -3660,7 +3660,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 14.1,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -3671,7 +3671,7 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-2": {
@@ -3679,7 +3679,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-3": {
@@ -3687,7 +3687,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-4": {
@@ -3695,7 +3695,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         }
       },
@@ -3710,20 +3710,20 @@
       "departamento": "Boyacá",
       "cod_depto": "15",
       "poblacion": 10500,
-      "icr": 61.5,
+      "icr": 65.6,
       "nivel_alerta": "naranja",
       "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
-        "amenaza_A": 60.0,
-        "vulnerabilidad_H": 45.0,
+        "amenaza_A": 63.0,
+        "vulnerabilidad_H": 55.56,
         "servicio_S": 60.03,
         "respuesta_R": 100.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -3731,51 +3731,51 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -40.0,
+          "valor": -46.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 64.5
         },
         "A-4": {
           "nombre": "Días Consecutivos sin Lluvia",
-          "valor": 20,
+          "valor": 22,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 63.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 50.0,
+          "valor": 48.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 61.5
         },
         "H-2": {
           "nombre": "Vulnerabilidad Hídrica ENA",
-          "valor": "Medio",
+          "valor": "Alto",
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40.0
+          "puntaje": 65.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -3787,18 +3787,18 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 10.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 61.67
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -3843,7 +3843,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 8.9,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -3854,32 +3854,32 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 100.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100.0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -3893,20 +3893,20 @@
       "departamento": "Antioquia",
       "cod_depto": "05",
       "poblacion": 2550000,
-      "icr": 26.0,
+      "icr": 22.9,
       "nivel_alerta": "sin_alerta",
       "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 42.0,
-        "vulnerabilidad_H": 36.67,
+        "vulnerabilidad_H": 26.11,
         "servicio_S": 9.68,
         "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -3914,10 +3914,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -3925,7 +3925,7 @@
           "valor": -28.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 48.0
         },
         "A-4": {
@@ -3933,15 +3933,15 @@
           "valor": 9,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 36.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 2,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -3949,7 +3949,7 @@
           "valor": 68.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 42.0
         },
         "H-2": {
@@ -3970,18 +3970,18 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 20.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 23.33
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -4026,7 +4026,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 12.2,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -4037,7 +4037,7 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-2": {
@@ -4045,7 +4045,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-3": {
@@ -4053,7 +4053,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-4": {
@@ -4061,7 +4061,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         }
       },
@@ -4076,20 +4076,20 @@
       "departamento": "Valle del Cauca",
       "cod_depto": "76",
       "poblacion": 2280000,
-      "icr": 31.4,
+      "icr": 29.4,
       "nivel_alerta": "sin_alerta",
       "nivel_por_regla": false,
       "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 47.67,
-        "vulnerabilidad_H": 45.0,
+        "vulnerabilidad_H": 38.33,
         "servicio_S": 14.48,
         "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -4097,10 +4097,10 @@
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75.0,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -4108,7 +4108,7 @@
           "valor": -31.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 51.0
         },
         "A-4": {
@@ -4116,15 +4116,15 @@
           "valor": 11,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 42.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
@@ -4132,7 +4132,7 @@
           "valor": 60.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 50.0
         },
         "H-2": {
@@ -4153,18 +4153,18 @@
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14.0,
+          "valor": 18.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55.0
+          "puntaje": 35.0
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -4209,7 +4209,7 @@
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 13.9,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -4220,7 +4220,7 @@
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-2": {
@@ -4228,7 +4228,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-3": {
@@ -4236,7 +4236,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         },
         "R-4": {
@@ -4244,7 +4244,7 @@
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 0.0
         }
       },
@@ -4259,42 +4259,12 @@
       "cod_depto": "44",
       "departamento": "La Guajira",
       "total_municipios": 4,
-      "icr_medio_ponderado": 82.1,
+      "icr_medio_ponderado": 80.1,
       "poblacion_total": 713000,
       "poblacion_naranja_roja": 713000,
       "conteo_niveles": {
-        "roja": 4,
-        "naranja": 0,
-        "amarilla": 0,
-        "sin_alerta": 0,
-        "sin_dato": 0
-      }
-    },
-    {
-      "cod_depto": "47",
-      "departamento": "Magdalena",
-      "total_municipios": 2,
-      "icr_medio_ponderado": 69.9,
-      "poblacion_total": 605000,
-      "poblacion_naranja_roja": 605000,
-      "conteo_niveles": {
-        "roja": 0,
-        "naranja": 2,
-        "amarilla": 0,
-        "sin_alerta": 0,
-        "sin_dato": 0
-      }
-    },
-    {
-      "cod_depto": "20",
-      "departamento": "Cesar",
-      "total_municipios": 2,
-      "icr_medio_ponderado": 64.5,
-      "poblacion_total": 622000,
-      "poblacion_naranja_roja": 622000,
-      "conteo_niveles": {
-        "roja": 0,
-        "naranja": 2,
+        "roja": 3,
+        "naranja": 1,
         "amarilla": 0,
         "sin_alerta": 0,
         "sin_dato": 0
@@ -4304,7 +4274,7 @@
       "cod_depto": "15",
       "departamento": "Boyacá",
       "total_municipios": 1,
-      "icr_medio_ponderado": 61.5,
+      "icr_medio_ponderado": 65.6,
       "poblacion_total": 10500,
       "poblacion_naranja_roja": 10500,
       "conteo_niveles": {
@@ -4316,47 +4286,47 @@
       }
     },
     {
+      "cod_depto": "47",
+      "departamento": "Magdalena",
+      "total_municipios": 2,
+      "icr_medio_ponderado": 57.9,
+      "poblacion_total": 605000,
+      "poblacion_naranja_roja": 65000,
+      "conteo_niveles": {
+        "roja": 0,
+        "naranja": 1,
+        "amarilla": 1,
+        "sin_alerta": 0,
+        "sin_dato": 0
+      }
+    },
+    {
+      "cod_depto": "20",
+      "departamento": "Cesar",
+      "total_municipios": 2,
+      "icr_medio_ponderado": 54.9,
+      "poblacion_total": 622000,
+      "poblacion_naranja_roja": 112000,
+      "conteo_niveles": {
+        "roja": 0,
+        "naranja": 1,
+        "amarilla": 1,
+        "sin_alerta": 0,
+        "sin_dato": 0
+      }
+    },
+    {
       "cod_depto": "73",
       "departamento": "Tolima",
       "total_municipios": 2,
-      "icr_medio_ponderado": 59.5,
+      "icr_medio_ponderado": 48.5,
       "poblacion_total": 614000,
-      "poblacion_naranja_roja": 614000,
-      "conteo_niveles": {
-        "roja": 0,
-        "naranja": 2,
-        "amarilla": 0,
-        "sin_alerta": 0,
-        "sin_dato": 0
-      }
-    },
-    {
-      "cod_depto": "11",
-      "departamento": "Bogotá, D.C.",
-      "total_municipios": 1,
-      "icr_medio_ponderado": 58.1,
-      "poblacion_total": 7900000,
-      "poblacion_naranja_roja": 7900000,
+      "poblacion_naranja_roja": 74000,
       "conteo_niveles": {
         "roja": 0,
         "naranja": 1,
-        "amarilla": 0,
+        "amarilla": 1,
         "sin_alerta": 0,
-        "sin_dato": 0
-      }
-    },
-    {
-      "cod_depto": "25",
-      "departamento": "Cundinamarca",
-      "total_municipios": 2,
-      "icr_medio_ponderado": 54.1,
-      "poblacion_total": 205000,
-      "poblacion_naranja_roja": 120000,
-      "conteo_niveles": {
-        "roja": 0,
-        "naranja": 1,
-        "amarilla": 0,
-        "sin_alerta": 1,
         "sin_dato": 0
       }
     },
@@ -4376,16 +4346,46 @@
       }
     },
     {
+      "cod_depto": "25",
+      "departamento": "Cundinamarca",
+      "total_municipios": 2,
+      "icr_medio_ponderado": 44.7,
+      "poblacion_total": 205000,
+      "poblacion_naranja_roja": 0,
+      "conteo_niveles": {
+        "roja": 0,
+        "naranja": 0,
+        "amarilla": 1,
+        "sin_alerta": 1,
+        "sin_dato": 0
+      }
+    },
+    {
+      "cod_depto": "11",
+      "departamento": "Bogotá, D.C.",
+      "total_municipios": 1,
+      "icr_medio_ponderado": 40.6,
+      "poblacion_total": 7900000,
+      "poblacion_naranja_roja": 0,
+      "conteo_niveles": {
+        "roja": 0,
+        "naranja": 0,
+        "amarilla": 1,
+        "sin_alerta": 0,
+        "sin_dato": 0
+      }
+    },
+    {
       "cod_depto": "13",
       "departamento": "Bolívar",
       "total_municipios": 3,
-      "icr_medio_ponderado": 41.7,
+      "icr_medio_ponderado": 38.9,
       "poblacion_total": 1256000,
-      "poblacion_naranja_roja": 216000,
+      "poblacion_naranja_roja": 78000,
       "conteo_niveles": {
-        "roja": 0,
-        "naranja": 2,
-        "amarilla": 0,
+        "roja": 1,
+        "naranja": 0,
+        "amarilla": 1,
         "sin_alerta": 1,
         "sin_dato": 0
       }
@@ -4394,13 +4394,13 @@
       "cod_depto": "68",
       "departamento": "Santander",
       "total_municipios": 3,
-      "icr_medio_ponderado": 34.5,
+      "icr_medio_ponderado": 30.4,
       "poblacion_total": 685000,
-      "poblacion_naranja_roja": 70000,
+      "poblacion_naranja_roja": 12000,
       "conteo_niveles": {
-        "roja": 1,
+        "roja": 0,
         "naranja": 1,
-        "amarilla": 0,
+        "amarilla": 1,
         "sin_alerta": 1,
         "sin_dato": 0
       }
@@ -4409,7 +4409,7 @@
       "cod_depto": "76",
       "departamento": "Valle del Cauca",
       "total_municipios": 1,
-      "icr_medio_ponderado": 31.4,
+      "icr_medio_ponderado": 29.4,
       "poblacion_total": 2280000,
       "poblacion_naranja_roja": 0,
       "conteo_niveles": {
@@ -4424,7 +4424,7 @@
       "cod_depto": "05",
       "departamento": "Antioquia",
       "total_municipios": 1,
-      "icr_medio_ponderado": 26.0,
+      "icr_medio_ponderado": 22.9,
       "poblacion_total": 2550000,
       "poblacion_naranja_roja": 0,
       "conteo_niveles": {
@@ -4438,207 +4438,123 @@
   ],
   "alertas_activas": [
     {
-      "id_alerta": "ALT-20261009-0001",
+      "id_alerta": "ALT-20261014-0001",
       "divipola": "44847",
       "municipio": "Uribia",
       "departamento": "La Guajira",
       "nivel": "roja",
-      "icr": 85.8,
+      "icr": 89.1,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
       "prioridad": "ALTA"
     },
     {
-      "id_alerta": "ALT-20261009-0002",
+      "id_alerta": "ALT-20261014-0002",
       "divipola": "44430",
       "municipio": "Maicao",
       "departamento": "La Guajira",
       "nivel": "roja",
-      "icr": 83.0,
+      "icr": 85.0,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
       "prioridad": "ALTA"
     },
     {
-      "id_alerta": "ALT-20261009-0003",
+      "id_alerta": "ALT-20261014-0003",
       "divipola": "44001",
       "municipio": "Riohacha",
       "departamento": "La Guajira",
-      "nivel": "roja",
-      "icr": 77.2,
-      "motivo": "ICR crítico por déficit hídrico extremo",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "ALTA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0004",
-      "divipola": "44560",
-      "municipio": "Manaure",
-      "departamento": "La Guajira",
-      "nivel": "roja",
-      "icr": 83.5,
-      "motivo": "ICR crítico por déficit hídrico extremo",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "ALTA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0005",
-      "divipola": "47001",
-      "municipio": "Santa Marta",
-      "departamento": "Magdalena",
-      "nivel": "naranja",
-      "icr": 69.7,
-      "motivo": "ICR crítico por déficit hídrico extremo",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "MEDIA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0006",
-      "divipola": "47555",
-      "municipio": "Plato",
-      "departamento": "Magdalena",
-      "nivel": "naranja",
-      "icr": 71.6,
-      "motivo": "ICR crítico por déficit hídrico extremo",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "MEDIA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0007",
-      "divipola": "13244",
-      "municipio": "El Carmen de Bolívar",
-      "departamento": "Bolívar",
-      "nivel": "naranja",
-      "icr": 73.9,
-      "motivo": "ICR crítico por déficit hídrico extremo",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "MEDIA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0008",
-      "divipola": "13430",
-      "municipio": "Magangué",
-      "departamento": "Bolívar",
-      "nivel": "naranja",
-      "icr": 59.7,
-      "motivo": "Piso automático por racionamiento/calamidad confirmada (RF-ICR-06)",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "MEDIA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0009",
-      "divipola": "20001",
-      "municipio": "Valledupar",
-      "departamento": "Cesar",
       "nivel": "naranja",
       "icr": 63.5,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
       "prioridad": "MEDIA"
     },
     {
-      "id_alerta": "ALT-20261009-0010",
+      "id_alerta": "ALT-20261014-0004",
+      "divipola": "44560",
+      "municipio": "Manaure",
+      "departamento": "La Guajira",
+      "nivel": "roja",
+      "icr": 86.7,
+      "motivo": "ICR crítico por déficit hídrico extremo",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
+      "prioridad": "ALTA"
+    },
+    {
+      "id_alerta": "ALT-20261014-0005",
+      "divipola": "47555",
+      "municipio": "Plato",
+      "departamento": "Magdalena",
+      "nivel": "naranja",
+      "icr": 73.6,
+      "motivo": "ICR crítico por déficit hídrico extremo",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
+      "prioridad": "MEDIA"
+    },
+    {
+      "id_alerta": "ALT-20261014-0006",
+      "divipola": "13244",
+      "municipio": "El Carmen de Bolívar",
+      "departamento": "Bolívar",
+      "nivel": "roja",
+      "icr": 75.9,
+      "motivo": "ICR crítico por déficit hídrico extremo",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
+      "prioridad": "ALTA"
+    },
+    {
+      "id_alerta": "ALT-20261014-0007",
       "divipola": "20011",
       "municipio": "Aguachica",
       "departamento": "Cesar",
       "nivel": "naranja",
-      "icr": 69.0,
+      "icr": 70.3,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
       "prioridad": "MEDIA"
     },
     {
-      "id_alerta": "ALT-20261009-0011",
+      "id_alerta": "ALT-20261014-0008",
       "divipola": "68079",
       "municipio": "Barichara",
       "departamento": "Santander",
-      "nivel": "roja",
-      "icr": 78.4,
+      "nivel": "naranja",
+      "icr": 64.7,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "ALTA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0012",
-      "divipola": "68679",
-      "municipio": "San Gil",
-      "departamento": "Santander",
-      "nivel": "naranja",
-      "icr": 59.9,
-      "motivo": "Piso automático por racionamiento/calamidad confirmada (RF-ICR-06)",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
       "prioridad": "MEDIA"
     },
     {
-      "id_alerta": "ALT-20261009-0013",
-      "divipola": "11001",
-      "municipio": "Bogotá, D.C.",
-      "departamento": "Bogotá, D.C.",
-      "nivel": "naranja",
-      "icr": 58.1,
-      "motivo": "Piso automático por racionamiento/calamidad confirmada (RF-ICR-06)",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "MEDIA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0014",
-      "divipola": "25307",
-      "municipio": "Girardot",
-      "departamento": "Cundinamarca",
-      "nivel": "naranja",
-      "icr": 68.2,
-      "motivo": "ICR crítico por déficit hídrico extremo",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "MEDIA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0015",
-      "divipola": "73001",
-      "municipio": "Ibagué",
-      "departamento": "Tolima",
-      "nivel": "naranja",
-      "icr": 58.1,
-      "motivo": "Piso automático por racionamiento/calamidad confirmada (RF-ICR-06)",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "MEDIA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0016",
+      "id_alerta": "ALT-20261014-0009",
       "divipola": "73268",
       "municipio": "Espinal",
       "departamento": "Tolima",
       "nivel": "naranja",
-      "icr": 69.7,
+      "icr": 70.4,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
       "prioridad": "MEDIA"
     },
     {
-      "id_alerta": "ALT-20261009-0017",
+      "id_alerta": "ALT-20261014-0010",
       "divipola": "15837",
       "municipio": "Tuta",
       "departamento": "Boyacá",
       "nivel": "naranja",
-      "icr": 61.5,
+      "icr": 65.6,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
       "prioridad": "MEDIA"
     }
   ]

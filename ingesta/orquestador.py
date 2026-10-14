@@ -19,6 +19,7 @@ from ingesta.conectores.conector_ideam import ConectorIDEAM
 from ingesta.conectores.conector_ungrd_minvivienda import ConectorUNGRDMinVivienda
 from ingesta.conectores.conector_xm_embalses import ConectorXMEmbalses
 from ingesta.conectores.conector_nasa_firms import ConectorNASAFIRMS
+from ingesta.conectores.conector_sui import ConectorSUI
 from ingesta.pipeline_corte import PipelineCorte
 
 logger = logging.getLogger("OrquestadorVigia")
@@ -35,7 +36,8 @@ class OrquestadorIngesta:
             "IDEAM": ConectorIDEAM(base_dir=base_dir),
             "UNGRD_MVCT": ConectorUNGRDMinVivienda(base_dir=base_dir),
             "XM": ConectorXMEmbalses(base_dir=base_dir),
-            "FIRMS": ConectorNASAFIRMS(base_dir=base_dir)
+            "FIRMS": ConectorNASAFIRMS(base_dir=base_dir),
+            "SUI": ConectorSUI(base_dir=base_dir)
         }
 
     def ejecutar_ciclo_completo(
@@ -84,6 +86,7 @@ class OrquestadorIngesta:
         ungrd_data = datos_extraidos.get("UNGRD_MVCT", {}).get("capa_r_por_divipola", {})
         xm_data = datos_extraidos.get("XM", {}).get("h5_por_divipola", {})
         firms_data = datos_extraidos.get("FIRMS", {})
+        sui_data = datos_extraidos.get("SUI", {})
 
         # 3. Ejecutar consolidación en zona Oro
         logger.info("-> Ejecutando cálculo analítico del Índice Compuesto de Riesgo (ICR)...")
@@ -94,7 +97,8 @@ class OrquestadorIngesta:
             datos_sivicap=sivicap_data,
             datos_ungrd_mvct=ungrd_data,
             datos_xm=xm_data,
-            datos_firms=firms_data
+            datos_firms=firms_data,
+            datos_sui=sui_data
         )
 
         notificar("Corte oro (ICR)", "exitosa", f"Corte {corte_oro['metadata_corte'].get('fecha_corte')}")

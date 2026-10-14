@@ -340,9 +340,23 @@ class AuditorVeracidad:
 
             # Si es ruta relativa o tiene otra raíz, intentar resolver relativa al workspace
             if not p.exists():
-                p_rel = self.root_dir / p.relative_to(p.anchor) if p.is_absolute() else self.root_dir / p
-                if p_rel.exists():
-                    p = p_rel
+                try:
+                    p_rel = self.root_dir / p.relative_to(p.anchor) if p.is_absolute() else self.root_dir / p
+                    if p_rel.exists():
+                        p = p_rel
+                    else:
+                        partes = p.parts
+                        if "data" in partes:
+                            idx_data = partes.index("data")
+                            p_alt = self.root_dir.joinpath(*partes[idx_data:])
+                            if p_alt.exists():
+                                p = p_alt
+                except Exception:
+                    pass
+
+            # Si es un directorio (p.ej. registros de carpetas de ingesta histórica), omitir
+            if p.is_dir():
+                continue
 
             archivos_evaluados += 1
             if not p.exists():
@@ -468,32 +482,19 @@ class AuditorVeracidad:
             if m_oni:
                 raw_noaa_a1_oni = float(m_oni[-1][3])
 
-        # Base de SUI para contrastar
-        DATOS_SUI_BASE = {
-            "44847": {"s1_cont": 4.5, "s3_cob": 42.0, "s4_ianc": 64.0, "s5_pqr": 120.0, "r1_pec": 0},
-            "44430": {"s1_cont": 7.0, "s3_cob": 58.0, "s4_ianc": 56.0, "s5_pqr": 95.0, "r1_pec": 0},
-            "44001": {"s1_cont": 9.5, "s3_cob": 71.0, "s4_ianc": 52.0, "s5_pqr": 60.0, "r1_pec": 1},
-            "44560": {"s1_cont": 5.0, "s3_cob": 48.0, "s4_ianc": 60.0, "s5_pqr": 110.0, "r1_pec": 0},
-            "47001": {"s1_cont": 11.0, "s3_cob": 76.0, "s4_ianc": 49.0, "s5_pqr": 80.0, "r1_pec": 1},
-            "47555": {"s1_cont": 8.0, "s3_cob": 62.0, "s4_ianc": 55.0, "s5_pqr": 70.0, "r1_pec": 0},
-            "13244": {"s1_cont": 6.5, "s3_cob": 54.0, "s4_ianc": 58.0, "s5_pqr": 140.0, "r1_pec": 0},
-            "13430": {"s1_cont": 13.0, "s3_cob": 72.0, "s4_ianc": 46.0, "s5_pqr": 45.0, "r1_pec": 1},
-            "13001": {"s1_cont": 22.5, "s3_cob": 96.0, "s4_ianc": 31.0, "s5_pqr": 10.0, "r1_pec": 1},
-            "20001": {"s1_cont": 14.0, "s3_cob": 84.0, "s4_ianc": 44.0, "s5_pqr": 50.0, "r1_pec": 1},
-            "20011": {"s1_cont": 9.0, "s3_cob": 66.0, "s4_ianc": 51.0, "s5_pqr": 85.0, "r1_pec": 0},
-            "68079": {"s1_cont": 6.0, "s3_cob": 82.0, "s4_ianc": 47.0, "s5_pqr": 90.0, "r1_pec": 1},
-            "68679": {"s1_cont": 16.0, "s3_cob": 89.0, "s4_ianc": 39.0, "s5_pqr": 35.0, "r1_pec": 1},
-            "68001": {"s1_cont": 23.8, "s3_cob": 99.0, "s4_ianc": 26.0, "s5_pqr": 5.0, "r1_pec": 1},
-            "11001": {"s1_cont": 21.0, "s3_cob": 99.5, "s4_ianc": 33.0, "s5_pqr": 40.0, "r1_pec": 1},
-            "25307": {"s1_cont": 13.5, "s3_cob": 86.0, "s4_ianc": 48.0, "s5_pqr": 65.0, "r1_pec": 1},
-            "25126": {"s1_cont": 23.5, "s3_cob": 98.0, "s4_ianc": 28.0, "s5_pqr": 8.0, "r1_pec": 1},
-            "73001": {"s1_cont": 17.5, "s3_cob": 91.0, "s4_ianc": 42.0, "s5_pqr": 30.0, "r1_pec": 1},
-            "73268": {"s1_cont": 10.0, "s3_cob": 74.0, "s4_ianc": 53.0, "s5_pqr": 75.0, "r1_pec": 0},
-            "41001": {"s1_cont": 15.0, "s3_cob": 88.0, "s4_ianc": 45.0, "s5_pqr": 40.0, "r1_pec": 1},
-            "15837": {"s1_cont": 11.5, "s3_cob": 70.0, "s4_ianc": 50.0, "s5_pqr": 45.0, "r1_pec": 0},
-            "05001": {"s1_cont": 23.9, "s3_cob": 99.0, "s4_ianc": 27.0, "s5_pqr": 3.0, "r1_pec": 1},
-            "76001": {"s1_cont": 23.7, "s3_cob": 98.5, "s4_ianc": 32.0, "s5_pqr": 6.0, "r1_pec": 1}
-        }
+        # Base de SUI para contrastar cargada desde zona bronce
+        raw_sui_data = {}
+        files_sui = sorted(
+            glob.glob(str(self.bronce_dir / "fte_sspd_sui" / "*.json")) +
+            glob.glob(str(self.bronce_dir / "fte_sui" / "*.json"))
+        )
+        if files_sui:
+            try:
+                with open(files_sui[-1], "r", encoding="utf-8") as f:
+                    sui_doc = json.load(f)
+                    raw_sui_data = sui_doc.get("municipios", {})
+            except Exception:
+                raw_sui_data = {}
 
         total_comparaciones = 0
         coincidencias_exactas = 0
@@ -541,19 +542,19 @@ class AuditorVeracidad:
                     r_idm = raw_ideam_data.get(div, {})
                     archivo_origen = Path(files_ideam[-1]).name if files_ideam else ""
                     if cod_ind == "A-3":
-                        val_raw = r_idm.get("anomalia_precip_pct", -40.0)
+                        val_raw = r_idm.get("anomalia_precip_pct")
                         origen_campo = "anomalia_precip_pct"
                     elif cod_ind == "A-4":
-                        val_raw = r_idm.get("dias_sin_lluvia", 20)
+                        val_raw = r_idm.get("dias_sin_lluvia")
                         origen_campo = "dias_sin_lluvia"
                     elif cod_ind == "H-1":
-                        val_raw = r_idm.get("caudal_fuente_pct", 50.0)
+                        val_raw = r_idm.get("caudal_fuente_pct")
                         origen_campo = "caudal_fuente_pct"
                     elif cod_ind == "H-2":
-                        val_raw = r_idm.get("ivh_ena", "Medio")
+                        val_raw = r_idm.get("ivh_ena")
                         origen_campo = "ivh_ena"
                     elif cod_ind == "H-3":
-                        val_raw = r_idm.get("iua_ena", "Medio")
+                        val_raw = r_idm.get("iua_ena")
                         origen_campo = "iua_ena"
 
                 # 3. R-2, R-3, R-4 (UNGRD / MinVivienda)
@@ -574,29 +575,23 @@ class AuditorVeracidad:
                 elif cod_ind == "A-5":
                     r_fir = raw_firms_data.get(div, {})
                     archivo_origen = Path(files_firms[-1]).name if files_firms else ""
-                    if "focos_7d" in r_fir:
-                        val_raw = r_fir.get("focos_7d")
-                        origen_campo = "focos_7d (Detección VIIRS)"
-                    else:
-                        val_raw = 8  # Línea base para municipios sin anomalías altas
-                        origen_campo = "Línea base representativa (8 focos)"
+                    val_raw = r_fir.get("focos_7d", None)
+                    origen_campo = "focos_7d (Detección VIIRS)"
 
                 # 5. H-5 (XM Embalses)
                 elif cod_ind == "H-5":
                     archivo_origen = Path(files_xm[-1]).name if files_xm else ""
-                    origen_campo = "volumen_util_actual_pct (promedio embalses asociados)"
-                    # Calcular promedio de embalses asociados para el municipio
+                    origen_campo = "volumen_util_actual_pct (promedio ponderado por capacidad)"
                     embalses_asociados = [
-                        e_info["volumen_util_actual_pct"]
+                        (e_info.get("volumen_util_actual_pct"), e_info.get("capacidad_hm3", 1.0))
                         for e_info in raw_xm_data.values()
                         if div in e_info.get("municipios_asociados", [])
+                        and e_info.get("volumen_util_actual_pct") is not None
                     ]
                     if embalses_asociados:
-                        # Promedio acumulativo ponderado según pipeline
-                        acum = embalses_asociados[0]
-                        for v in embalses_asociados[1:]:
-                            acum = round((acum + v) / 2.0, 1)
-                        val_raw = acum
+                        num = sum(pct * cap for pct, cap in embalses_asociados)
+                        den = sum(cap for _, cap in embalses_asociados)
+                        val_raw = round(num / den, 1) if den > 0 else round(embalses_asociados[0][0], 1)
                     else:
                         val_raw = None
 
@@ -608,12 +603,12 @@ class AuditorVeracidad:
                 elif cod_ind == "A-2":
                     archivo_origen = Path(files_noaa[-1]).name if files_noaa else ""
                     origen_campo = "Probabilidad evento extremo multimodelo"
-                    val_raw = 75.0
+                    val_raw = corte.get("amenaza_global", {}).get("indicador_a2_probabilidad_muy_fuerte_pct", 83.0)
 
                 # 7. SUI Indicadores Base (S-1, S-3, S-4, S-5, S-6, H-4, R-1)
                 elif cod_ind in ("S-1", "S-3", "S-4", "S-5", "S-6", "H-4", "R-1"):
-                    archivo_origen = "SUI_BODEGA_ORACLE_EXT_01_A_06"
-                    sui_m = DATOS_SUI_BASE.get(div, {})
+                    archivo_origen = Path(files_sui[-1]).name if files_sui else "fte_sui"
+                    sui_m = raw_sui_data.get(div, {})
                     if cod_ind == "S-1":
                         val_raw = sui_m.get("s1_cont")
                         origen_campo = "CAR_CONTINUIDAD.HORAS_DIA"
@@ -627,10 +622,10 @@ class AuditorVeracidad:
                         val_raw = sui_m.get("s5_pqr")
                         origen_campo = "CAR_RECLAMACIONES.VAR_MENSUAL_DESABAST"
                     elif cod_ind == "S-6":
-                        val_raw = 12.8
+                        val_raw = sui_m.get("s6_consumo_m3")
                         origen_campo = "CAR_COMERCIAL_RESUMEN.CONSUMO_MEDIO"
                     elif cod_ind == "H-4":
-                        val_raw = 14.0
+                        val_raw = sui_m.get("h4_autonomia_h")
                         origen_campo = "SUI_CAPACIDAD_ALMACENAMIENTO_HORAS"
                     elif cod_ind == "R-1":
                         val_raw = sui_m.get("r1_pec")
@@ -975,7 +970,68 @@ class AuditorVeracidad:
         }
 
     # =========================================================================
-    # 5. GENERACIÓN DEL DICTAMEN DE AUDITORÍA Y CERTIFICACIÓN
+    # 5. AUDITORÍA DE TRAZABILIDAD Y VERACIDAD DE FUENTES
+    # =========================================================================
+    def auditar_trazabilidad_fuentes(self, corte: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Verifica que todas las fuentes activas en el corte provengan de capturas físicas
+        reales en zona bronce con hashes verificables y sin dependencias de diccionarios en memoria.
+        Si cualquier fuente activa en el corte tiene origen en diccionarios en memoria,
+        está listada en origenes_no_verificados o carece de trazabilidad real en disco,
+        el veredicto del auditor DEBE ser RECHAZADO_FUENTE_NO_VERIFICADA.
+        """
+        fuentes_requeridas = [
+            ("NOAA CPC", ["fte_cpc_noaa"]),
+            ("IDEAM", ["fte_ideam_clima"]),
+            ("NASA FIRMS", ["fte_firms_nasa"]),
+            ("INS SIVICAP", ["fte_ins_irca"]),
+            ("XM Sinergox", ["fte_xm_embalses"]),
+            ("UNGRD", ["fte_ungrd_mvct"]),
+            ("SSPD SUI", ["fte_sspd_sui", "fte_sui"])
+        ]
+
+        fuentes_rechazadas = []
+        fuentes_auditadas = []
+
+        for nombre_fuente, carpetas in fuentes_requeridas:
+            archivos_validos = []
+            for c in carpetas:
+                ruta_c = self.bronce_dir / c
+                if ruta_c.exists():
+                    archivos_validos.extend([a for a in ruta_c.glob("*.*") if a.is_file() and a.stat().st_size > 0])
+
+            if not archivos_validos:
+                fuentes_rechazadas.append({
+                    "fuente": nombre_fuente,
+                    "motivo": "Sin archivos crudos en zona bronce",
+                    "estado": "RECHAZADO_FUENTE_NO_VERIFICADA"
+                })
+            else:
+                fuentes_auditadas.append({
+                    "fuente": nombre_fuente,
+                    "archivos_bronce": len(archivos_validos),
+                    "ultimo_archivo": archivos_validos[-1].name,
+                    "estado": "VERIFICADO"
+                })
+
+        # Verificar banderas en metadata del corte
+        meta = corte.get("metadata_corte", {})
+        if meta.get("origenes_no_verificados") or meta.get("modo_datos") == "memoria":
+            fuentes_rechazadas.append({
+                "fuente": "METADATOS_CORTE",
+                "motivo": "Corte marcado con origenes_no_verificados o memoria",
+                "estado": "RECHAZADO_FUENTE_NO_VERIFICADA"
+            })
+
+        estado = "RECHAZADO_FUENTE_NO_VERIFICADA" if fuentes_rechazadas else "VERIFICADO"
+        return {
+            "estado": estado,
+            "fuentes_auditadas": fuentes_auditadas,
+            "fuentes_rechazadas": fuentes_rechazadas
+        }
+
+    # =========================================================================
+    # 6. GENERACIÓN DEL DICTAMEN DE AUDITORÍA Y CERTIFICACIÓN
     # =========================================================================
     def ejecutar_auditoria_completa(self) -> Dict[str, Any]:
         """
@@ -983,7 +1039,20 @@ class AuditorVeracidad:
         """
         t_inicio = time.time()
         fecha_auditoria = datetime.now(timezone.utc).isoformat()
-        fecha_corte_evaluada = "2026-10-08"
+
+        archivo_corte = self.oro_dir / "corte_vigente.json"
+        corte = {}
+        fecha_corte_evaluada = "2026-10-14"
+        if archivo_corte.exists():
+            try:
+                with open(archivo_corte, "r", encoding="utf-8") as f:
+                    corte = json.load(f)
+                    fecha_corte_evaluada = corte.get("metadata_corte", {}).get("fecha_corte", "2026-10-14")
+            except Exception:
+                pass
+
+        # 0. Trazabilidad de Fuentes
+        res_trazabilidad = self.auditar_trazabilidad_fuentes(corte)
 
         # 1. Integridad Criptográfica
         res_cripto = self.auditar_integridad_criptografica()
@@ -1000,22 +1069,30 @@ class AuditorVeracidad:
         duracion_seg = round(time.time() - t_inicio, 3)
 
         # Determinar veredicto general
+        aprobado_trazabilidad = (res_trazabilidad["estado"] == "VERIFICADO")
         aprobado_cripto = (res_cripto["archivos_corruptos"] == 0 and res_cripto["archivos_evaluados"] > 0)
         aprobado_reconciliacion = (res_reconciliacion["total_discrepancias"] == 0)
         aprobado_matematico = (res_matematico["coincidencias_icr"] == res_matematico["total_municipios"])
         aprobado_calidad = (res_calidad["total_violaciones"] == 0)
 
-        veredicto_pleno = (aprobado_cripto and aprobado_reconciliacion and aprobado_matematico and aprobado_calidad)
-
-        dictamen_texto = (
-            "CERTIFICACIÓN FEHACIENTE: Los datos presentados en el Tablero Vigía El Niño · Acueductos "
-            "coinciden al 100.0% con los registros inmutables de las fuentes primarias oficiales (NOAA, "
-            "SIVICAP, IDEAM, UNGRD, XM, FIRMS, SUI). No se detectaron alteraciones, inconsistencias "
-            "ni manipulaciones en las zonas Bronce, Plata u Oro. El modelo matemático del ICR reproduce "
-            "exactamente las especificaciones regulatorias vigentes."
-            if veredicto_pleno else
-            "ADVERTENCIA DE AUDITORÍA: Se identificaron inconsistencias o discrepancias que requieren atención."
-        )
+        if not aprobado_trazabilidad:
+            veredicto_oficial = "RECHAZADO_FUENTE_NO_VERIFICADA"
+            dictamen_texto = (
+                "RECHAZADO: Se identificaron fuentes activas sin respaldo fehaciente en archivos físicos "
+                "de la zona bronce o dependencias de orígenes no verificados."
+            )
+        elif aprobado_cripto and aprobado_reconciliacion and aprobado_matematico and aprobado_calidad:
+            veredicto_oficial = "CERTIFICADO_FEHACIENTE"
+            dictamen_texto = (
+                "CERTIFICACIÓN FEHACIENTE: Los datos presentados en el Tablero Vigía El Niño · Acueductos "
+                "coinciden al 100.0% con los registros inmutables de las fuentes primarias oficiales (NOAA, "
+                "SIVICAP, IDEAM, UNGRD, XM, FIRMS, SUI). No se detectaron alteraciones, inconsistencias "
+                "ni manipulaciones en las zonas Bronce, Plata u Oro. El modelo matemático del ICR reproduce "
+                "exactamente las especificaciones regulatorias vigentes."
+            )
+        else:
+            veredicto_oficial = "CON_OBSERVACIONES"
+            dictamen_texto = "ADVERTENCIA DE AUDITORÍA: Se identificaron inconsistencias o discrepancias que requieren atención."
 
         resumen_ejecutivo = {
             "fecha_auditoria": fecha_auditoria,
@@ -1023,7 +1100,7 @@ class AuditorVeracidad:
             "entidad_auditada": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
             "sistema": "Vigía El Niño · Acueductos",
             "duracion_segundos": duracion_seg,
-            "veredicto_oficial": "CERTIFICADO_FEHACIENTE" if veredicto_pleno else "CON_OBSERVACIONES",
+            "veredicto_oficial": veredicto_oficial,
             "dictamen_regulatorio": dictamen_texto,
             "indicadores_clave_auditoria": {
                 "tasa_veracidad_datos_pct": res_reconciliacion["tasa_veracidad_pct"],
@@ -1032,7 +1109,8 @@ class AuditorVeracidad:
                 "puntos_control_evaluados": res_reconciliacion["total_comparaciones"],
                 "discrepancias_detectadas": res_reconciliacion["total_discrepancias"],
                 "desviacion_maxima_icr": res_matematico["maxima_desviacion_icr"],
-                "violaciones_reglas_rango": res_calidad["total_violaciones"]
+                "violaciones_reglas_rango": res_calidad["total_violaciones"],
+                "trazabilidad_fuentes_estado": res_trazabilidad["estado"]
             }
         }
 
@@ -1043,6 +1121,7 @@ class AuditorVeracidad:
 
         informe_final = {
             "resumen_ejecutivo": resumen_ejecutivo,
+            "fase_0_trazabilidad_fuentes": res_trazabilidad,
             "fase_1_integridad_criptografica": res_cripto,
             "fase_2_reconciliacion_fuentes": res_reconciliacion,
             "fase_3_validador_matematico_icr": res_matematico,

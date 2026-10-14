@@ -1,0 +1,26 @@
+{
+  "descripcion": "Registro oficial y auditable de actos administrativos y emergencias verificadas para acueductos (UNGRD / MinVivienda)",
+  "version": "2026-10-14",
+  "fuente": "Sala de Crisis UNGRD y Registro Nacional de Calamidades Públicas",
+  "observaciones": "Solo se incluyen actos administrativos reales y vigentes debidamente publicados en gaceta oficial o registro UNGRD. Bogotá D.C., Ibagué, San Gil y Magangué no registran decretos de calamidad vigentes a la fecha de corte.",
+  "municipios_con_calamidad_verificada": {
+    "44847": {
+      "nombre": "Uribia",
+      "depto": "La Guajira",
+      "calamidad_publica": 1,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 1,
+      "soporte_verificado": "Registro UNGRD Emergencia Hídrica Alta Guajira - Plan Departamental de Gestión del Riesgo",
+      "poblacion_afectada": 196000
+    },
+    "44560": {
+      "nombre": "Manaure",
+      "depto": "La Guajira",
+      "calamidad_publica": 1,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 1,
+      "soporte_verificado": "Registro UNGRD Emergencia Hídrica Alta Guajira",
+      "poblacion_afectada": 125000
+    }
+  }
+}

@@ -42,5 +42,133 @@
     "hash_entradas": "b23115ee39b910f4b703a4e9493f890541a083c2f503757f1afd9f1233c9a565",
     "semana_publicada": "2026-W41",
     "mensaje": "Actualización completada"
+  },
+  {
+    "id_ejecucion": "251dc9eb-c415-487b-a90b-2f7e4745ad20",
+    "modo": "recalculo",
+    "inicio": "2026-10-14T14:08:13.553624+00:00",
+    "fin": "2026-10-14T14:08:17.480432+00:00",
+    "estado": "fallido",
+    "pasos": [
+      {
+        "paso": "Modelo semanal",
+        "estado": "en_ejecucion",
+        "mensaje": "Consolidando plata y oro semanal"
+      },
+      {
+        "paso": "Error",
+        "estado": "fallida",
+        "mensaje": "'Sistema'"
+      }
+    ],
+    "hash_entradas": null,
+    "semana_publicada": null,
+    "mensaje": "'Sistema'"
+  },
+  {
+    "id_ejecucion": "a5fb4249-4df7-4592-b463-3f26ddccbf1b",
+    "modo": "recalculo",
+    "inicio": "2026-10-14T14:08:57.271234+00:00",
+    "fin": "2026-10-14T14:09:03.406459+00:00",
+    "estado": "exitoso",
+    "pasos": [
+      {
+        "paso": "Modelo semanal",
+        "estado": "exitosa",
+        "mensaje": "Semana vigente 2026-W42"
+      },
+      {
+        "paso": "Publicación",
+        "estado": "exitosa",
+        "mensaje": "Corte semanal publicado en oro y tablero"
+      }
+    ],
+    "hash_entradas": "422356b155f0aa66d3f038e9ddea6e91c5bb16549408328a990c5999ff99e716",
+    "semana_publicada": "2026-W42",
+    "mensaje": "Actualización completada"
+  },
+  {
+    "id_ejecucion": "ef418168-b1e8-4c8b-a869-d1db3a6e8c4b",
+    "modo": "completo",
+    "inicio": "2026-10-14T14:09:17.302762+00:00",
+    "fin": "2026-10-14T14:09:33.064088+00:00",
+    "estado": "exitoso",
+    "pasos": [
+      {
+        "paso": "NOAA",
+        "estado": "sin_cambios",
+        "mensaje": "Los datos de NOAA CPC no presentan cambios frente a la última captura."
+      },
+      {
+        "paso": "SIVICAP",
+        "estado": "sin_cambios",
+        "mensaje": "Sin cambios en el catálogo IRCA de SIVICAP."
+      },
+      {
+        "paso": "IDEAM",
+        "estado": "exitosa",
+        "mensaje": "Captura exitosa de 23 municipios desde IDEAM (incluyendo Tuta 15837)"
+      },
+      {
+        "paso": "UNGRD_MVCT",
+        "estado": "exitosa",
+        "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)"
+      },
+      {
+        "paso": "XM",
+        "estado": "exitosa",
+        "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 90.0%, SIN: 75.68%)"
+      },
+      {
+        "paso": "FIRMS",
+        "estado": "exitosa",
+        "mensaje": "Captura FIRMS procesada para 23 municipios (modo: sin_clave/null)"
+      },
+      {
+        "paso": "SUI",
+        "estado": "exitosa",
+        "mensaje": "Captura certificada de 23 municipios desde SSPD SUI"
+      },
+      {
+        "paso": "Corte oro (ICR)",
+        "estado": "exitosa",
+        "mensaje": "Corte 2026-10-14"
+      },
+      {
+        "paso": "Modelo semanal",
+        "estado": "exitosa",
+        "mensaje": "Semana vigente 2026-W42"
+      },
+      {
+        "paso": "Publicación",
+        "estado": "exitosa",
+        "mensaje": "Corte semanal publicado en oro y tablero"
+      }
+    ],
+    "hash_entradas": "8e873f3f1daf1c1bf8373dab6f815de1ad0129949810d98e5112cee35dbe30b8",
+    "semana_publicada": "2026-W42",
+    "mensaje": "Actualización completada"
+  },
+  {
+    "id_ejecucion": "fb5fed4d-5295-43b9-9fdc-8e555b535577",
+    "modo": "recalculo",
+    "inicio": "2026-10-14T14:24:19.971101+00:00",
+    "fin": "2026-10-14T14:24:26.004276+00:00",
+    "estado": "exitoso",
+    "pasos": [
+      {
+        "paso": "Modelo semanal",
+        "estado": "exitosa",
+        "mensaje": "Semana vigente 2026-W42"
+      },
+      {
+        "paso": "Publicación",
+        "estado": "exitosa",
+        "mensaje": "Corte semanal publicado en oro y tablero"
+      }
+    ],
+    "hash_entradas": "e764bd5bc2d3c6e98ac24882eb3eb2a8c540faec665c3fbabac4dd7b1d894b8f",
+    "semana_publicada": "2026-W42",
+    "mensaje": "Actualización completada"
   }
 ]

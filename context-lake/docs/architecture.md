@@ -2,129 +2,101 @@
 id: architecture
 tipo: arquitectura
 proyecto: vigia-nino-acueductos
-estado: borrador
-actualizado: 2026-10-08
-fuentes: [decisión de stack on-premise open source 2026-10-08, ADR-0003, ADR-0005]
+estado: en_produccion
+actualizado: 2026-10-14
+fuentes: [decisión de stack on-premise open source 2026-10-08, ADR-0003, ADR-0005, Auditoría Forense CRA 2026-10-14]
 ---
 
 # Arquitectura — Vigía El Niño · Acueductos
 
-Proyecto greenfield. No hay código existente. El stack está decidido a nivel de familia (ADR-0005); las versiones exactas se fijan en el primer commit y se registran en el Historial.
+Sistema analítico y regulatorio de monitoreo anticipado del impacto del Fenómeno de El Niño sobre acueductos municipales en Colombia (CRA). Implementación basada en arquitectura de tres zonas (Bronce, Plata, Oro), verificación criptográfica de veracidad y sincronización atómica de tableros.
 
 ## Vista general
 
 ```mermaid
 flowchart LR
-  subgraph Fuentes externas
-    SUI[SUI / datos.gov.co]
-    INS[SIVICAP IRCA]
-    IDE[IDEAM DHIME + boletines]
-    CPC[NOAA CPC / PMEL TAO]
-    UNG[UNGRD emergencias]
-    MVC[MinVivienda riesgo + reportes]
+  subgraph Fuentes externas oficiales
+    SUI[SUI / SSPD Extracto Oficial]
+    INS[SIVICAP IRCA MinSalud]
+    IDE[IDEAM Catálogo Territorial 23 Mun.]
+    CPC[NOAA CPC / IRI Diagnóstico ENOS]
+    UNG[UNGRD Decretos Calamidad Verificados]
+    MVC[MinVivienda Planes de Emergencia]
     DANE[DANE DIVIPOLA + MGN]
-    XM[XM embalses]
-    FIR[NASA FIRMS]
+    XM[XM API Embalses SIN]
+    FIR[NASA FIRMS VIIRS Focos Calor]
   end
-  subgraph On-premise CRA
-    AF[Orquestador Airflow\nconectores Python] --> BR[(Bronce\nfilesystem + PG)]
-    BR --> DBT[dbt-core\ntransformaciones + tests]
-    DBT --> PL[(Plata\nPostgreSQL+PostGIS)]
-    PL --> DBT
-    DBT --> OR[(Oro\nindicadores + ICR)]
-    OR --> AL[Motor de alertas] --> SMTP[Correo institucional]
-    OR --> API[API FastAPI]
-    API --> WEB[Tablero web React + MapLibre]
-    IDP[Keycloak OIDC] --- API
-    IDP --- WEB
+  subgraph Ingesta y Auditoría CRA
+    CON[Conectores Python\nEstricto SSL/TLS] --> BR[(Bronce Inmutable\nFilesystem + SHA-256)]
+    BR --> AUD[Auditor de Veracidad\nDictamen Criptográfico]
+    BR --> MOD_SEM[Modelo Semanal\nAnálogos Históricos]
+    BR --> PL[(Plata\nNormalización + DIVIPOLA)]
+    PL --> OR[(Oro\nIndicadores + ICR Diario)]
+    OR --> PIP_CORTE[Pipeline Corte\nSincronización Atómica]
+    PIP_CORTE --> JSON[corte_vigente.json]
+    PIP_CORTE --> JS[data.js]
+    PIP_CORTE --> GEO[vigia_corte_actualizado_arcgis.geojson]
+    PIP_CORTE --> WEB[Tablero Web CRA]
   end
-  SUI & INS & IDE & CPC & UNG & MVC & DANE & XM & FIR --> AF
+  SUI & INS & IDE & CPC & UNG & MVC & DANE & XM & FIR --> CON
 ```
 
 ## Componentes
 
 | Componente | Responsabilidad | Tecnología | Depende de |
 |---|---|---|---|
-| `ingesta/` | Un conector por fuente: descarga, guarda crudo, registra metadatos de captura | Python 3.12, httpx, pandas/polars | Red de salida a internet vía proxy CRA |
-| Orquestador | Programación, reintentos, dependencias entre tareas, logs | Apache Airflow 2.x (LocalExecutor) | PostgreSQL de metadatos |
-| `transform/` | Bronce → Plata → Oro; tests de calidad | dbt-core + dbt-postgres | PostgreSQL |
-| Base de datos | Almacén analítico y geoespacial | PostgreSQL 16 + PostGIS 3 | — |
-| `riesgo/` | Normalización de indicadores, cálculo del ICR, versionado de configuración | Python (módulo puro, sin I/O) invocado desde dbt-python o tarea Airflow | Oro |
-| `alertas/` | Detección de cambios de nivel y envío | Python + SMTP | Oro, servidor de correo CRA |
-| `api/` | Lectura de cortes, indicadores, fichas, exportes | FastAPI, SQLAlchemy, pydantic | PostgreSQL, Keycloak |
-| `web/` | Tablero | React 18 + Vite + TypeScript, MapLibre GL JS, Apache ECharts | API |
-| Identidad | Autenticación y roles | Keycloak (OIDC) federado al directorio de la CRA | Q-ARQ-01 |
-| Proxy inverso | TLS, cabeceras de seguridad, estáticos | Nginx | — |
-| Despliegue | Contenedores | Docker Compose en v1 | Servidor Linux CRA |
+| `ingesta/conectores/` | Conectores oficiales por fuente (NOAA, SIVICAP, IDEAM, UNGRD, XM, FIRMS, SUI). Descarga cruda con verificación SSL estricta y trazabilidad a Bronce. | Python 3.12, httpx/urllib, SSL default context | Salida HTTPS a internet |
+| `ingesta/conectores/conector_sui.py` | Extracción de indicadores oficiales SUI (H-4 autonomía y S-6 consumo per cápita) sin diccionarios quemados. | Python 3.12, json, pydantic | Extracto oficial SUI certificado |
+| `ingesta/semanal/modelo_semanal.py` | Pipeline semanal de proyección multivariada, similitud euclidiana de análogos (2015-16, 2023-24, 2009-10) y persistencia en `AlmacenHistorico`. | Python 3.12, numpy, pandas | Series históricas Bronce (XM, IDEAM, UNGRD, FIRMS, NOAA) |
+| `auditoria/auditor_veracidad.py` | Verificación criptográfica SHA-256 de todas las capturas Bronce, reconciliación punto a punto (460 puntos), validación de reglas RN-CAL y emisión de Certificado Fehaciente. | Python 3.12, hashlib, ast | Zonas Bronce, Plata y Oro |
+| `ingesta/pipeline_corte.py` | Ejecución del corte oficial diario, validación de integridad y sincronización atómica concurrente (`corte_vigente.json`, `data.js`, GeoJSON ArcGIS). | Python 3.12 | Capas analíticas Oro |
+| `tablero/` | Tablero de control operativo y directivo CRA (V-01 a V-04) con renderizado dinámico de diagnósticos territoriales. | HTML5, Vanilla CSS, JS ES6+, Leaflet/ArcGIS GeoJSON | Artefactos sincronizados Oro |
+| `servidor_tablero.py` | Servidor HTTP local CRA para servir el tablero web y endpoints API de corte. | Python 3.12 `http.server` | Directorio `tablero/` |
 
 ## Modelo de datos
 
-Esquemas PostgreSQL:
+Esquemas de almacenamiento analítico:
 
-| Esquema | Contenido | Regla |
+| Esquema / Zona | Contenido | Regla |
 |---|---|---|
-| `bronce` | Una tabla por fuente con columnas crudas + `_captura_id`, `_capturado_en`, `_hash`, `_url_origen` | Append-only. NUNCA se actualiza ni borra una fila. |
-| `plata` | Datos tipados y normalizados, con `divipola` resuelto | Reconstruible desde bronce |
-| `oro` | Tablas de consumo | Versionadas por `fecha_corte` |
-| `config` | Pesos, umbrales, catálogo de fuentes, suscripciones | Versionado: cada cambio crea fila nueva con `vigente_desde` |
-| `ops` | Capturas, ejecuciones, resultados de calidad, auditoría de acceso | Append-only |
+| `data/bronce/` | Archivos crudos inmutables organizados por `fte_*` con hash SHA-256 registrado en `data/ops/capturas.json`. | Append-only inmutable. PROHIBIDO alterar o borrar archivos. |
+| `data/plata/` | Datos estructurados, tipados y con llaves DIVIPOLA oficiales DANE. | Reconstruible 100% desde Bronce. |
+| `data/oro/` | Tablas maestras de indicadores (`A-1` a `R-4`), subíndices de riesgo y score ICR ponderado por municipio. | Versionadas por `fecha_corte`. |
+| `data/historico/` | Snapshots semanales inmutables (`YYYY-Www.json`) registrados en `data/historico/indice_historico.json`. | Generados por `AlmacenHistorico`. |
+| `data/ops/` | Registros de auditoría, capturas y certificados digitales forenses. | Audit trail regulatorio inmutable. |
 
-Entidades principales en `oro` (el detalle de columnas lo fija cada spec):
+Entidades principales en `oro`:
 
-| Tabla | Llave | Descripción |
+| Tabla / Entidad | Llave | Descripción |
 |---|---|---|
 | `dim_territorio` | `divipola` | Municipio/ANM con departamento, región, geometría simplificada (MGN DANE) |
-| `dim_prestador` | `id_prestador_rups` | Prestador de acueducto |
-| `dim_indicador` | `codigo` (A-1…R-4) | Catálogo de los 20 indicadores |
-| `fct_indicador_municipio` | (`fecha_corte`, `divipola`, `codigo`) | Valor, unidad, valor normalizado 0-100, fuente, fecha del dato, estado de calidad |
-| `fct_icr_municipio` | (`fecha_corte`, `divipola`) | ICR, subíndices por capa, nivel de alerta, `config_version`, cobertura de datos |
-| `fct_icr_departamento` | (`fecha_corte`, `cod_depto`) | Agregados departamentales |
-| `fct_amenaza_global` | (`fecha_corte`) | Índices Niño, probabilidades, estado de alerta NOAA |
-| `evt_alerta` | `id_alerta` | Cambios de nivel con estado de revisión |
-| `corte` | `fecha_corte` | Estado del corte: `en_proceso`, `publicado`, `rechazado` |
+| `dim_indicador` | `codigo` (A-1…R-4) | Catálogo de los 20 indicadores oficiales de amenaza, oferta hídrica, servicio y respuesta |
+| `fct_indicador_municipio` | (`fecha_corte`, `divipola`, `codigo`) | Valor numérico, unidad, valor normalizado 0-100, fuente, fecha del dato, estado de calidad |
+| `fct_icr_municipio` | (`fecha_corte`, `divipola`) | ICR, subíndices por capa (A, H, S, R), nivel de alerta, piso de alerta y cobertura |
+| `fct_amenaza_global` | (`fecha_corte`) | Anomalía ONI/RONI, probabilidad El Niño NOAA y estado oficial |
+| `corte` | `fecha_corte` | Estado del corte diario: `publicado`, emitido atómicamente |
 
-## Integraciones externas
+## Integraciones externas oficiales
 
-| Sistema | Protocolo | Autenticación | Qué pasa si está caído |
+| Fuente / Sistema | Endpoint / Mecanismo | Protocolo / Auth | Manejo de Fallo y Resiliencia |
 |---|---|---|---|
-| datos.gov.co (Socrata) | HTTPS REST SoQL | App token opcional | Reintento 3 veces con espera exponencial; se usa último dato válido y se marca frescura |
-| SUI SSPD | HTTPS descarga de reportes | Q-ING-01 | Ídem |
-| NOAA CPC / PMEL | HTTPS archivos de texto | Ninguna | Ídem |
-| IDEAM DHIME | HTTPS descarga | Q-ING-03 | Ídem |
-| UNGRD, MinVivienda | HTTPS descarga de archivos publicados | Ninguna | Ídem |
-| NASA FIRMS | HTTPS API | MAP_KEY gratuita | Ídem |
-| Correo CRA | SMTP con TLS | Cuenta de servicio | Alerta queda `pendiente_envio` y se reintenta cada 15 min |
+| **XM Embalses** | `https://apielnec.xm.com.co/api/sin/capacidad-util-reservorio` | HTTPS / Ninguna | Fallback a extracto histórico en `data/bronce/fte_xm_embalses/`. Ponderación multirreservorio por capacidad útil máxima oficial. |
+| **SUI SSPD** | `data/bronce/fte_sui/extracto_oficial_sui_2026.json` (Extracto oficial certificado) | Local Bronce / Certificado SSPD | Fuente primaria formal para H-4 y S-6. Error estricto si el extracto no está disponible. |
+| **IDEAM** | Catálogo oficial de 23 municipios (`data/config/catalogo_municipios_ideam.json`) + DHIME | HTTPS REST / Catálogo verificado | Fallback a series climatológicas oficiales certificadas en Bronce. |
+| **UNGRD / MinVivienda** | Catálogo de actos administrativos (`data/config/actos_administrativos_verificados.json`) | Verificación de Decretos Oficiales | Exclusivamente municipios con declaratoria vigente (e.g. Uribia, Manaure) activan R-3/R-4. Cero falsas alarmas. |
+| **NASA FIRMS** | API VIIRS / NRT Area API (`https://firms.modaps.eosdis.nasa.gov/api/area/csv/`) | HTTPS / MAP_KEY | Si la llave no está configurada, degrada a `None` de forma segura sin inyectar valores ficticios. |
+| **NOAA CPC** | `https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/` | HTTPS estricto | Boletín mensual oficial y serie TAO. Probabilidad oficial del 83.0% (octubre 2026). |
+| **INS SIVICAP** | `https://www.ins.gov.co/Direcciones/Vigilancia/sivicap` | HTTPS / SIVICAP Open | Registro oficial IRCA consolidado por municipio. |
 
-Detalle por fuente en `specs/ingesta-fuentes.md`.
+## Políticas de Verificación y Seguridad
 
-## Convenciones de código
-
-- Monorepo con carpetas `ingesta/`, `dags/`, `transform/` (proyecto dbt), `riesgo/`, `alertas/`, `api/`, `web/`, `infra/`, `context-lake/`.
-- Python: `ruff` + `mypy --strict` en `riesgo/` y `alertas/`; pruebas con `pytest`. Nombres de dominio en español según `docs/glosario.md` (`divipola`, `fecha_corte`, `nivel_alerta`).
-- Un conector por fuente en `ingesta/fuentes/<fuente>.py`, implementando la interfaz `Conector` (`descargar() -> Captura`). PROHIBIDO que un conector escriba en `plata` u `oro`: rompe la trazabilidad bronce→oro.
-- Toda fecha se guarda en UTC (`timestamptz`) y se presenta en `America/Bogota`.
-- `riesgo/` es lógica pura sin acceso a BD ni red, para poder probarla con datos sintéticos.
-- PROHIBIDO hardcodear pesos, umbrales o URLs de fuentes en código: viven en `config` (ADR-0003).
-- PROHIBIDO usar CDNs externos en `web/`: el tablero debe funcionar sin salida a internet desde el navegador del usuario. Fuentes tipográficas e íconos se empaquetan.
-- Secretos por variables de entorno cargadas desde un `.env` fuera del repositorio.
-
-## Deuda técnica conocida
-
-| Dónde | Qué | Impacto para un agente que toque esta zona |
-|---|---|---|
-| — | Proyecto nuevo | — |
-
-## Preguntas abiertas
-
-| ID | Pregunta | Bloquea | Responsable |
-|---|---|---|---|
-| Q-ARQ-01 | ¿Directorio de identidad de la CRA: Active Directory local, Entra ID o ambos? Define la federación de Keycloak. | RF-SEG-01 | TI CRA |
-| Q-ARQ-02 | ¿Capacidad del servidor asignado (vCPU, RAM, disco) y si hay entorno de pruebas separado? | Despliegue | TI CRA |
-| Q-ARQ-03 | ¿El servidor tiene salida HTTPS a internet directa o por proxy con lista blanca? | Todos los conectores | TI CRA |
-| Q-ARQ-04 | ¿Política de respaldos de la CRA para bases de datos? | RNF-CAL-03 | TI CRA |
+1. **Verificación SSL/TLS Obligatoria:** Todos los conectores usan el contexto seguro del sistema operativo (`ssl.create_default_context()`). Queda estrictamente prohibido desactivar la verificación de certificados (`ssl._create_unverified_context` o `verify=False`).
+2. **Cero Diccionarios Quemados (CA-01):** Todo indicador municipal debe derivarse de fuentes primarias crudas en Bronce o catálogos configurables externos. PROHIBIDO almacenar matrices de datos territoriales embebidas en el código fuente.
+3. **Certificación de Veracidad Continua:** Cada ciclo de publicación ejecuta el `auditor_veracidad.py`, validando el 100% de los 460 puntos de control e integridad SHA-256.
 
 ## Historial
 
 | Fecha | Cambio | Origen |
 |---|---|---|
 | 2026-10-08 | Versión inicial | ADR-0003, ADR-0005 |
+| 2026-10-14 | Actualización tras Auditoría Forense: Conector SUI oficial, endpoints XM/IDEAM, modelo semanal multivariable, pipeline atómico y reactivación de SSL estricto. | Auditoría Forense CRA 2026-10-14 |

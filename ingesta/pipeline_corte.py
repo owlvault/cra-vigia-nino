@@ -10,6 +10,7 @@ Especificaciones:
 
 import json
 import logging
+import time
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
 from datetime import datetime, timezone
@@ -26,6 +27,14 @@ class PipelineCorte:
         "S": 0.25, # Desempeño del servicio (S-1, S-2, S-3, S-4, S-5)
         "R": 0.15  # Respuesta e impacto confirmado (R-1, R-2, R-3, R-4)
     }
+
+    @staticmethod
+    def _escribir_atomico(ruta_destino: Path, contenido: str) -> None:
+        """Escribe un archivo de manera atómica usando un archivo temporal y reemplazo."""
+        ruta_destino.parent.mkdir(parents=True, exist_ok=True)
+        temp_path = ruta_destino.with_name(f"{ruta_destino.name}.tmp.{int(time.time() * 1000)}")
+        temp_path.write_text(contenido, encoding="utf-8")
+        temp_path.replace(ruta_destino)
 
     def __init__(self, base_dir: Optional[str] = None):
         self.root_dir = Path(base_dir or Path(__file__).resolve().parent.parent)
@@ -146,13 +155,24 @@ class PipelineCorte:
         datos_sivicap: Dict[str, Any],
         datos_ungrd_mvct: Dict[str, Any],
         datos_xm: Dict[str, Any],
-        datos_firms: Dict[str, Any]
+        datos_firms: Dict[str, Any],
+        datos_sui: Optional[Dict[str, Any]] = None
     ) -> Dict[str, Any]:
         """
         Consolida todas las fuentes y genera el corte analítico completo versionado en zona oro.
         """
         fecha_corte = datetime.now(timezone.utc).strftime("%Y-%m-%d")
         ts_utc = datetime.now(timezone.utc).isoformat()
+
+        # Ingestar o usar datos SUI oficiales certificados
+        if datos_sui is None:
+            try:
+                from ingesta.conectores.conector_sui import ConectorSUI
+                con_sui = ConectorSUI(base_dir=str(self.root_dir))
+                datos_sui = con_sui.ejecutar().datos_extraidos or {}
+            except Exception as e:
+                logger.warning(f"No se pudo ejecutar ConectorSUI: {e}")
+                datos_sui = {}
         
         # Base de municipios emblemáticos y prioritarios de Colombia
         MUNICIPIOS_MAESTRO = [
@@ -202,38 +222,11 @@ class PipelineCorte:
             {"divipola": "76001", "nombre": "Cali", "depto": "Valle del Cauca", "cod_depto": "76", "poblacion": 2280000, "region": "Pacífica", "lat": 3.451, "lon": -76.532}
         ]
 
-        # Datos base de SUI para continuidad y cobertura
-        DATOS_SUI_BASE = {
-            "44847": {"s1_cont": 4.5, "s3_cob": 42.0, "s4_ianc": 64.0, "s5_pqr": 120.0, "r1_pec": 0},
-            "44430": {"s1_cont": 7.0, "s3_cob": 58.0, "s4_ianc": 56.0, "s5_pqr": 95.0, "r1_pec": 0},
-            "44001": {"s1_cont": 9.5, "s3_cob": 71.0, "s4_ianc": 52.0, "s5_pqr": 60.0, "r1_pec": 1},
-            "44560": {"s1_cont": 5.0, "s3_cob": 48.0, "s4_ianc": 60.0, "s5_pqr": 110.0, "r1_pec": 0},
-            "47001": {"s1_cont": 11.0, "s3_cob": 76.0, "s4_ianc": 49.0, "s5_pqr": 80.0, "r1_pec": 1},
-            "47555": {"s1_cont": 8.0, "s3_cob": 62.0, "s4_ianc": 55.0, "s5_pqr": 70.0, "r1_pec": 0},
-            "13244": {"s1_cont": 6.5, "s3_cob": 54.0, "s4_ianc": 58.0, "s5_pqr": 140.0, "r1_pec": 0},
-            "13430": {"s1_cont": 13.0, "s3_cob": 72.0, "s4_ianc": 46.0, "s5_pqr": 45.0, "r1_pec": 1},
-            "13001": {"s1_cont": 22.5, "s3_cob": 96.0, "s4_ianc": 31.0, "s5_pqr": 10.0, "r1_pec": 1},
-            "20001": {"s1_cont": 14.0, "s3_cob": 84.0, "s4_ianc": 44.0, "s5_pqr": 50.0, "r1_pec": 1},
-            "20011": {"s1_cont": 9.0, "s3_cob": 66.0, "s4_ianc": 51.0, "s5_pqr": 85.0, "r1_pec": 0},
-            "68079": {"s1_cont": 6.0, "s3_cob": 82.0, "s4_ianc": 47.0, "s5_pqr": 90.0, "r1_pec": 1},
-            "68679": {"s1_cont": 16.0, "s3_cob": 89.0, "s4_ianc": 39.0, "s5_pqr": 35.0, "r1_pec": 1},
-            "68001": {"s1_cont": 23.8, "s3_cob": 99.0, "s4_ianc": 26.0, "s5_pqr": 5.0, "r1_pec": 1},
-            "11001": {"s1_cont": 21.0, "s3_cob": 99.5, "s4_ianc": 33.0, "s5_pqr": 40.0, "r1_pec": 1},
-            "25307": {"s1_cont": 13.5, "s3_cob": 86.0, "s4_ianc": 48.0, "s5_pqr": 65.0, "r1_pec": 1},
-            "25126": {"s1_cont": 23.5, "s3_cob": 98.0, "s4_ianc": 28.0, "s5_pqr": 8.0, "r1_pec": 1},
-            "73001": {"s1_cont": 17.5, "s3_cob": 91.0, "s4_ianc": 42.0, "s5_pqr": 30.0, "r1_pec": 1},
-            "73268": {"s1_cont": 10.0, "s3_cob": 74.0, "s4_ianc": 53.0, "s5_pqr": 75.0, "r1_pec": 0},
-            "41001": {"s1_cont": 15.0, "s3_cob": 88.0, "s4_ianc": 45.0, "s5_pqr": 40.0, "r1_pec": 1},
-            "15837": {"s1_cont": 11.5, "s3_cob": 70.0, "s4_ianc": 50.0, "s5_pqr": 45.0, "r1_pec": 0},
-            "05001": {"s1_cont": 23.9, "s3_cob": 99.0, "s4_ianc": 27.0, "s5_pqr": 3.0, "r1_pec": 1},
-            "76001": {"s1_cont": 23.7, "s3_cob": 98.5, "s4_ianc": 32.0, "s5_pqr": 6.0, "r1_pec": 1}
-        }
-
         # Calcular cada municipio
         municipios_oro = []
         for m in MUNICIPIOS_MAESTRO:
             div = m["divipola"]
-            sui_info = DATOS_SUI_BASE.get(div, {"s1_cont": 18.0, "s3_cob": 85.0, "s4_ianc": 40.0, "s5_pqr": 20.0, "r1_pec": 1})
+            sui_info = datos_sui.get(div, {})
             ideam_info = datos_ideam.get(div, {})
             sivicap_info = datos_sivicap.get(div, {})
             ungrd_info = datos_ungrd_mvct.get(div, {})
@@ -241,8 +234,10 @@ class PipelineCorte:
             firms_info = datos_firms.get(div, {})
 
             # Normalizar S-1 (Continuidad h/día: 24->0, 22->40, 18->60, 12->75, 4->100)
-            cont = sui_info["s1_cont"]
-            if cont >= 24.0: punt_s1 = 0.0
+            cont = float(sui_info.get("s1_cont", 24.0))
+            if "puntaje_s1" in sui_info and sui_info["puntaje_s1"] is not None:
+                punt_s1 = float(sui_info["puntaje_s1"])
+            elif cont >= 24.0: punt_s1 = 0.0
             elif cont >= 22.0: punt_s1 = round(((24.0 - cont) / 2.0) * 40.0, 2)
             elif cont >= 18.0: punt_s1 = round(40.0 + ((22.0 - cont) / 4.0) * 20.0, 2)
             elif cont >= 12.0: punt_s1 = round(60.0 + ((18.0 - cont) / 6.0) * 15.0, 2)
@@ -250,8 +245,10 @@ class PipelineCorte:
             else: punt_s1 = 100.0
 
             # Normalizar S-3 (Cobertura %: 100->0, 95->40, 85->60, 70->75, 40->100)
-            cob = sui_info["s3_cob"]
-            if cob >= 100.0: punt_s3 = 0.0
+            cob = float(sui_info.get("s3_cob", 95.0))
+            if "puntaje_s3" in sui_info and sui_info["puntaje_s3"] is not None:
+                punt_s3 = float(sui_info["puntaje_s3"])
+            elif cob >= 100.0: punt_s3 = 0.0
             elif cob >= 95.0: punt_s3 = round(((100.0 - cob) / 5.0) * 40.0, 2)
             elif cob >= 85.0: punt_s3 = round(40.0 + ((95.0 - cob) / 10.0) * 20.0, 2)
             elif cob >= 70.0: punt_s3 = round(60.0 + ((85.0 - cob) / 15.0) * 15.0, 2)
@@ -259,8 +256,10 @@ class PipelineCorte:
             else: punt_s3 = 100.0
 
             # Normalizar S-4 (IANC %: 20->0, 30->40, 40->60, 50->75, 70->100)
-            ianc = sui_info["s4_ianc"]
-            if ianc <= 20.0: punt_s4 = 0.0
+            ianc = float(sui_info.get("s4_ianc", 30.0))
+            if "puntaje_s4" in sui_info and sui_info["puntaje_s4"] is not None:
+                punt_s4 = float(sui_info["puntaje_s4"])
+            elif ianc <= 20.0: punt_s4 = 0.0
             elif ianc <= 30.0: punt_s4 = round(((ianc - 20.0) / 10.0) * 40.0, 2)
             elif ianc <= 40.0: punt_s4 = round(40.0 + ((ianc - 30.0) / 10.0) * 20.0, 2)
             elif ianc <= 50.0: punt_s4 = round(60.0 + ((ianc - 40.0) / 10.0) * 15.0, 2)
@@ -268,21 +267,36 @@ class PipelineCorte:
             else: punt_s4 = 100.0
 
             # Normalizar S-5 (Variación PQR: 0->0, 25->40, 50->60, 100->75, 300->100)
-            pqr = sui_info["s5_pqr"]
-            if pqr <= 0: punt_s5 = 0.0
+            pqr = float(sui_info.get("s5_pqr", 20.0))
+            if "puntaje_s5" in sui_info and sui_info["puntaje_s5"] is not None:
+                punt_s5 = float(sui_info["puntaje_s5"])
+            elif pqr <= 0: punt_s5 = 0.0
             elif pqr <= 25.0: punt_s5 = round((pqr / 25.0) * 40.0, 2)
             elif pqr <= 50.0: punt_s5 = round(40.0 + ((pqr - 25.0) / 25.0) * 20.0, 2)
             elif pqr <= 100.0: punt_s5 = round(60.0 + ((pqr - 50.0) / 50.0) * 15.0, 2)
             elif pqr <= 300.0: punt_s5 = round(75.0 + ((pqr - 100.0) / 200.0) * 25.0, 2)
             else: punt_s5 = 100.0
 
+            # Normalizar H-4 (Autonomía de almacenamiento)
+            h4_val = float(sui_info.get("h4_autonomia_h", 14.0))
+            if "puntaje_h4" in sui_info and sui_info["puntaje_h4"] is not None:
+                punt_h4 = float(sui_info["puntaje_h4"])
+            elif h4_val >= 24.0: punt_h4 = 0.0
+            elif h4_val >= 18.0: punt_h4 = round(((24.0 - h4_val) / 6.0) * 35.0, 2)
+            elif h4_val >= 12.0: punt_h4 = round(35.0 + ((18.0 - h4_val) / 6.0) * 20.0, 2)
+            elif h4_val >= 6.0: punt_h4 = round(55.0 + ((12.0 - h4_val) / 6.0) * 20.0, 2)
+            elif h4_val >= 2.0: punt_h4 = round(75.0 + ((6.0 - h4_val) / 4.0) * 25.0, 2)
+            else: punt_h4 = 100.0
+
+            s6_val = float(sui_info.get("s6_consumo_m3", 12.8))
+
             # Normalizar S-2 (IRCA desde SIVICAP)
             irca_val = sivicap_info.get("valor_indicador_s2", 12.0)
             punt_s2 = sivicap_info.get("puntaje_riesgo_s2", 55.0)
 
             # Capa R (Respuesta)
-            r1_val = sui_info["r1_pec"]
-            punt_r1 = 0.0 if r1_val == 1 else 100.0
+            r1_val = int(sui_info.get("r1_pec", 1))
+            punt_r1 = float(sui_info.get("puntaje_r1", 0.0 if r1_val == 1 else 100.0))
             r2_val = ungrd_info.get("indicador_r2_carrotanques", 0)
             punt_r2 = 60.0 if r2_val == 1 else 0.0
             r3_val = ungrd_info.get("indicador_r3_racionamiento", 0)
@@ -290,28 +304,31 @@ class PipelineCorte:
             r4_val = ungrd_info.get("indicador_r4_calamidad", 0)
             punt_r4 = 100.0 if r4_val == 1 else 0.0
 
+            fecha_sui = sui_info.get("fecha_corte", "2026-08-31")
+            a5_val = firms_info.get("indicador_a5_focos_7d")
+
             # Diccionario consolidado de los 20 indicadores
             indicadores_m = {
                 # Amenaza Global
-                "A-1": {"nombre": "ONI / Niño 3.4", "valor": amenaza_global.get("indicador_a1_nino34"), "unidad": "°C", "fuente": "NOAA CPC", "fecha_dato": "2026-09-30", "puntaje": None},
-                "A-2": {"nombre": "Probabilidad Niño Muy Fuerte", "valor": 75.0, "unidad": "%", "fuente": "NOAA CPC", "fecha_dato": "2026-09-10", "puntaje": None},
+                "A-1": {"nombre": "ONI / Niño 3.4", "valor": amenaza_global.get("indicador_a1_nino34"), "unidad": "°C", "fuente": "NOAA CPC", "fecha_dato": amenaza_global.get("fecha_boletin_noaa", "2026-09-30"), "puntaje": None},
+                "A-2": {"nombre": "Probabilidad Niño Muy Fuerte", "valor": amenaza_global.get("indicador_a2_probabilidad_muy_fuerte_pct", 83.0), "unidad": "%", "fuente": "NOAA CPC", "fecha_dato": amenaza_global.get("fecha_boletin_noaa", "2026-10-10"), "puntaje": None},
                 # Amenaza Local
                 "A-3": {"nombre": "Anomalía Precipitación 30d", "valor": ideam_info.get("indicador_a3_anomalia_precip_pct", -40.0), "unidad": "%", "fuente": "IDEAM", "fecha_dato": fecha_corte, "puntaje": ideam_info.get("puntaje_a3", 60.0)},
                 "A-4": {"nombre": "Días Consecutivos sin Lluvia", "valor": ideam_info.get("indicador_a4_dias_sin_lluvia", 20), "unidad": "días", "fuente": "IDEAM", "fecha_dato": fecha_corte, "puntaje": ideam_info.get("puntaje_a4", 60.0)},
-                "A-5": {"nombre": "Focos de Calor (7d)", "valor": firms_info.get("indicador_a5_focos_7d", 8), "unidad": "conteo", "fuente": "NASA FIRMS", "fecha_dato": fecha_corte, "puntaje": None},
+                "A-5": {"nombre": "Focos de Calor (7d)", "valor": a5_val, "unidad": "conteo", "fuente": "NASA FIRMS", "fecha_dato": fecha_corte, "puntaje": None},
                 # Oferta Hídrica
                 "H-1": {"nombre": "Caudal Fuente Abastecedora", "valor": ideam_info.get("indicador_h1_caudal_pct", 50.0), "unidad": "%", "fuente": "IDEAM", "fecha_dato": fecha_corte, "puntaje": ideam_info.get("puntaje_h1", 60.0)},
                 "H-2": {"nombre": "Vulnerabilidad Hídrica ENA", "valor": ideam_info.get("indicador_h2_ivh_ena", "Medio"), "unidad": "categoría", "fuente": "IDEAM ENA", "fecha_dato": "2022-12-31", "puntaje": ideam_info.get("puntaje_h2", 40.0)},
                 "H-3": {"nombre": "Uso del Agua ENA (IUA)", "valor": ideam_info.get("indicador_h3_iua_ena", "Medio"), "unidad": "categoría", "fuente": "IDEAM ENA", "fecha_dato": "2022-12-31", "puntaje": ideam_info.get("puntaje_h3", 40.0)},
-                "H-4": {"nombre": "Autonomía Almacenamiento", "valor": 14.0, "unidad": "horas", "fuente": "SSPD SUI", "fecha_dato": "2026-08-31", "puntaje": 55.0},
+                "H-4": {"nombre": "Autonomía Almacenamiento", "valor": h4_val, "unidad": "horas", "fuente": "SSPD SUI", "fecha_dato": fecha_sui, "puntaje": punt_h4},
                 "H-5": {"nombre": "Volumen Útil Embalse", "valor": xm_info.get("volumen_util_pct"), "unidad": "%", "fuente": "XM Sinergox", "fecha_dato": fecha_corte, "puntaje": None},
                 # Desempeño del Servicio
-                "S-1": {"nombre": "Continuidad", "valor": cont, "unidad": "h/día", "fuente": "SSPD SUI", "fecha_dato": "2026-08-31", "puntaje": punt_s1},
+                "S-1": {"nombre": "Continuidad", "valor": cont, "unidad": "h/día", "fuente": "SSPD SUI", "fecha_dato": fecha_sui, "puntaje": punt_s1},
                 "S-2": {"nombre": "Calidad del Agua (IRCA)", "valor": irca_val, "unidad": "%", "fuente": "INS SIVICAP", "fecha_dato": "2024-12-31", "puntaje": punt_s2},
-                "S-3": {"nombre": "Cobertura Urbana", "valor": cob, "unidad": "%", "fuente": "SSPD SUI / DANE", "fecha_dato": "2026-08-31", "puntaje": punt_s3},
-                "S-4": {"nombre": "Agua No Contabilizada (IANC)", "valor": ianc, "unidad": "%", "fuente": "SSPD SUI", "fecha_dato": "2026-08-31", "puntaje": punt_s4},
-                "S-5": {"nombre": "Variación PQR por Servicio", "valor": pqr, "unidad": "%", "fuente": "SSPD SUI", "fecha_dato": "2026-08-31", "puntaje": punt_s5},
-                "S-6": {"nombre": "Consumo Medio Facturado", "valor": 12.8, "unidad": "m³/susc/mes", "fuente": "SSPD SUI", "fecha_dato": "2026-08-31", "puntaje": None},
+                "S-3": {"nombre": "Cobertura Urbana", "valor": cob, "unidad": "%", "fuente": "SSPD SUI / DANE", "fecha_dato": fecha_sui, "puntaje": punt_s3},
+                "S-4": {"nombre": "Agua No Contabilizada (IANC)", "valor": ianc, "unidad": "%", "fuente": "SSPD SUI", "fecha_dato": fecha_sui, "puntaje": punt_s4},
+                "S-5": {"nombre": "Variación PQR por Servicio", "valor": pqr, "unidad": "%", "fuente": "SSPD SUI", "fecha_dato": fecha_sui, "puntaje": punt_s5},
+                "S-6": {"nombre": "Consumo Medio Facturado", "valor": s6_val, "unidad": "m³/susc/mes", "fuente": "SSPD SUI", "fecha_dato": fecha_sui, "puntaje": None},
                 # Respuesta e Impacto
                 "R-1": {"nombre": "PEC Reportado Vigente", "valor": r1_val, "unidad": "binario", "fuente": "SSPD / MinVivienda", "fecha_dato": fecha_corte, "puntaje": punt_r1},
                 "R-2": {"nombre": "Abastecimiento Alterno Activo", "valor": r2_val, "unidad": "binario", "fuente": "UNGRD", "fecha_dato": fecha_corte, "puntaje": punt_r2},
@@ -423,12 +440,78 @@ class PipelineCorte:
             "alertas_activas": alertas
         }
 
-        # Guardar en zona Oro (JSON inmutable y versionado)
-        with open(self.oro_dir / "corte_vigente.json", "w", encoding="utf-8") as f:
-            json.dump(corte_final, f, indent=2, ensure_ascii=False)
-            
-        with open(self.oro_dir / f"corte_{fecha_corte}.json", "w", encoding="utf-8") as f:
-            json.dump(corte_final, f, indent=2, ensure_ascii=False)
+        # 1. Guardar en zona Oro (JSON inmutable y versionado) de manera atómica
+        corte_json_str = json.dumps(corte_final, indent=2, ensure_ascii=False)
+        self._escribir_atomico(self.oro_dir / "corte_vigente.json", corte_json_str)
+        self._escribir_atomico(self.oro_dir / f"corte_{fecha_corte}.json", corte_json_str)
+
+        # 2. Sincronizar atómicamente con el frontend principal (tablero/js/data.js)
+        data_js_content = f"// Datos Maestros Integrados — Vigía El Niño · Acueductos\nwindow.VIGIA_DATA = {{ corte: {corte_json_str} }};\n"
+        tablero_js_dir = self.root_dir / "tablero" / "js"
+        self._escribir_atomico(tablero_js_dir / "data.js", data_js_content)
+
+        # 3. Sincronizar atómicamente con ArcGIS GeoJSON (tablero/vigia_corte_actualizado_arcgis.geojson)
+        features = []
+        for m in municipios_oro:
+            ind = m.get("indicadores", {})
+            sub = m.get("subindices_capa", {})
+            feature = {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [m.get("lon", 0.0), m.get("lat", 0.0)]
+                },
+                "properties": {
+                    "DIVIPOLA": m["divipola"],
+                    "MUNICIPIO": m["nombre"],
+                    "DEPARTAMENTO": m["departamento"],
+                    "COD_DEPTO": m["cod_depto"],
+                    "REGION": m.get("region", ""),
+                    "POBLACION": m["poblacion"],
+                    "ICR": m["icr"],
+                    "NIVEL_ALERTA": m["nivel_alerta"],
+                    "SUB_AMENAZA": sub.get("amenaza_A"),
+                    "SUB_VULNERABILIDAD": sub.get("vulnerabilidad_H"),
+                    "SUB_SERVICIO": sub.get("servicio_S"),
+                    "SUB_RESPUESTA": sub.get("respuesta_R"),
+                    "S1_CONTINUIDAD_H": ind.get("S-1", {}).get("valor"),
+                    "S2_IRCA_PTS": ind.get("S-2", {}).get("valor"),
+                    "A3_DEFICIT_LLUVIA_PCT": ind.get("A-3", {}).get("valor"),
+                    "A4_DIAS_SECOS": ind.get("A-4", {}).get("valor"),
+                    "A5_FOCOS_CALOR_7D": ind.get("A-5", {}).get("valor"),
+                    "H1_CAUDAL_PCT": ind.get("H-1", {}).get("valor"),
+                    "H4_AUTONOMIA_H": ind.get("H-4", {}).get("valor"),
+                    "R1_PLAN_EMERGENCIA": ind.get("R-1", {}).get("valor"),
+                    "R2_ABASTECIMIENTO_ALTERNO": ind.get("R-2", {}).get("valor"),
+                    "R3_RACIONAMIENTO": ind.get("R-3", {}).get("valor"),
+                    "R4_CALAMIDAD": ind.get("R-4", {}).get("valor"),
+                    "FECHA_CORTE": fecha_corte
+                }
+            }
+            features.append(feature)
+
+        geojson_data = {
+            "type": "FeatureCollection",
+            "name": "vigia_corte_municipios_arcgis_v2",
+            "crs": {
+                "type": "name",
+                "properties": {
+                    "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+                }
+            },
+            "metadata_export": {
+                "sistema": "Vigía El Niño · Acueductos (CRA)",
+                "fecha_corte": fecha_corte,
+                "entidades": len(features),
+                "formato": "Esri-Ready GeoJSON WGS84 (EPSG:4326)",
+                "observaciones": "Generado automáticamente por PipelineCorte de manera atómica"
+            },
+            "features": features
+        }
+        self._escribir_atomico(
+            self.root_dir / "tablero" / "vigia_corte_actualizado_arcgis.geojson",
+            json.dumps(geojson_data, indent=2, ensure_ascii=False)
+        )
 
         logger.info(f"Corte exitoso: {len(municipios_oro)} municipios evaluados. ICR Nacional={icr_nacional_ponderado}")
         return corte_final

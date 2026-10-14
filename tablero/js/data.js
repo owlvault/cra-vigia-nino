@@ -1,18 +1,17 @@
 // Datos Maestros Integrados — Vigía El Niño · Acueductos
-// Actualizado con corrección DIVIPOLA: Barichara (68079) y Manaure (44560)
 window.VIGIA_DATA = { corte: {
   "metadata_corte": {
-    "fecha_corte": "2026-10-09",
-    "generado_en": "2026-10-09T16:02:49.576415+00:00",
+    "fecha_corte": "2026-10-14",
+    "generado_en": "2026-10-14T14:20:50.112653+00:00",
     "version_configuracion": "v1.0.0-20261008",
     "estado_calidad": "PUBLICADO_VALIDO",
     "total_municipios_evaluados": 23,
-    "icr_nacional_ponderado": 49.4,
-    "poblacion_en_riesgo_critico": 10870500,
+    "icr_nacional_ponderado": 39.3,
+    "poblacion_en_riesgo_critico": 1064500,
     "conteo_niveles_nacional": {
-      "roja": 5,
-      "naranja": 12,
-      "amarilla": 1,
+      "roja": 4,
+      "naranja": 6,
+      "amarilla": 8,
       "sin_alerta": 5,
       "sin_dato": 0
     }
@@ -20,18 +19,18 @@ window.VIGIA_DATA = { corte: {
   "amenaza_global": {
     "fuente": "NOAA Climate Prediction Center",
     "url_origen": "https://www.cpc.ncep.noaa.gov/data/indices/wksst9120.for",
-    "fecha_captura": "2026-10-09T16:02:47.924317+00:00",
+    "fecha_captura": "2026-10-14T14:20:45.222050+00:00",
     "estado_alerta_noaa": "Advertencia de El Niño (El Niño Advisory)",
     "indices_semanales": {
-      "fecha_semana": "30SEP2026",
+      "fecha_semana": "07OCT2026",
       "nino12_sst": 26.1,
-      "nino12_anomalia": 5.3,
-      "nino3_sst": 29,
-      "nino3_anomalia": 4,
-      "nino34_sst": 29.9,
-      "nino34_anomalia": 3.2,
+      "nino12_anomalia": 5.2,
+      "nino3_sst": 29.0,
+      "nino3_anomalia": 4.1,
+      "nino34_sst": 30.0,
+      "nino34_anomalia": 3.3,
       "nino4_sst": 29.9,
-      "nino4_anomalia": 1.2
+      "nino4_anomalia": 1.3
     },
     "indice_oni_trimestral": {
       "trimestre": "JAS",
@@ -40,9 +39,9 @@ window.VIGIA_DATA = { corte: {
       "oni_anomalia": 2.16,
       "intensidad_evento": "Muy Fuerte (Histórico)"
     },
-    "indicador_a1_nino34": 3.2,
-    "indicador_a1_oni": 2.16,
-    "indicador_a2_probabilidad_muy_fuerte_pct": 75,
+    "indicador_a1_nino34": 3.3,
+    "indicador_a2_probabilidad_muy_fuerte_pct": 83.0,
+    "fecha_boletin_enso": "2026-10-10",
     "umbral_critico_superado": true
   },
   "municipios": [
@@ -52,20 +51,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "La Guajira",
       "cod_depto": "44",
       "poblacion": 196000,
-      "icr": 85.8,
+      "icr": 89.1,
       "nivel_alerta": "roja",
       "nivel_por_regla": false,
-      "cobertura_datos_pct": 100,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 94.17,
-        "vulnerabilidad_H": 78.33,
+        "vulnerabilidad_H": 89.17,
         "servicio_S": 76.23,
-        "respuesta_R": 100
+        "respuesta_R": 100.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -73,10 +72,10 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
@@ -84,7 +83,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -88.5,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 98.75
         },
         "A-4": {
@@ -92,23 +91,23 @@ window.VIGIA_DATA = { corte: {
           "valor": 48,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 90
+          "fecha_dato": "2026-10-14",
+          "puntaje": 90.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 42,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 15,
+          "valor": 15.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 93.75
         },
         "H-2": {
@@ -117,7 +116,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 90
+          "puntaje": 90.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -125,22 +124,22 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 90
+          "puntaje": 90.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 4.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 87.5
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -161,7 +160,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 42,
+          "valor": 42.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
@@ -169,7 +168,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 64,
+          "valor": 64.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -177,7 +176,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 120,
+          "valor": 120.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -185,7 +184,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 8.5,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -196,32 +195,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 100.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
           "valor": 1,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60
+          "fecha_dato": "2026-10-14",
+          "puntaje": 60.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
           "valor": 1,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80
+          "fecha_dato": "2026-10-14",
+          "puntaje": 80.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
           "valor": 1,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 100.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -235,20 +234,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "La Guajira",
       "cod_depto": "44",
       "poblacion": 182000,
-      "icr": 83,
+      "icr": 85.0,
       "nivel_alerta": "roja",
       "nivel_por_regla": false,
-      "cobertura_datos_pct": 100,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 85.28,
-        "vulnerabilidad_H": 78.33,
+        "vulnerabilidad_H": 85.0,
         "servicio_S": 75.7,
-        "respuesta_R": 100
+        "respuesta_R": 100.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -256,18 +255,18 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -76,
+          "valor": -76.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 88.33
         },
         "A-4": {
@@ -275,24 +274,24 @@ window.VIGIA_DATA = { corte: {
           "valor": 39,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 82.5
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 28,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 22,
+          "valor": 22.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 85
+          "fecha_dato": "2026-10-14",
+          "puntaje": 85.0
         },
         "H-2": {
           "nombre": "Vulnerabilidad Hídrica ENA",
@@ -300,7 +299,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 90
+          "puntaje": 90.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -308,27 +307,27 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 90
+          "puntaje": 90.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 6.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 75.0
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
           "nombre": "Continuidad",
-          "valor": 7,
+          "valor": 7.0,
           "unidad": "h/día",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -344,15 +343,15 @@ window.VIGIA_DATA = { corte: {
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 58,
+          "valor": 58.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
-          "puntaje": 85
+          "puntaje": 85.0
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 56,
+          "valor": 56.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -360,7 +359,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 95,
+          "valor": 95.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -368,7 +367,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 11.2,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -379,32 +378,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 100.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -418,20 +417,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "La Guajira",
       "cod_depto": "44",
       "poblacion": 210000,
-      "icr": 77.2,
-      "nivel_alerta": "roja",
+      "icr": 63.5,
+      "nivel_alerta": "naranja",
       "nivel_por_regla": false,
-      "cobertura_datos_pct": 100,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 79.17,
-        "vulnerabilidad_H": 70,
+        "vulnerabilidad_H": 74.44,
         "servicio_S": 69.77,
-        "respuesta_R": 100
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -439,18 +438,18 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -68,
+          "valor": -68.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 81.67
         },
         "A-4": {
@@ -458,23 +457,23 @@ window.VIGIA_DATA = { corte: {
           "valor": 34,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 78.33
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 19,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 28,
+          "valor": 28.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 77.5
         },
         "H-2": {
@@ -483,7 +482,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 90
+          "puntaje": 90.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -491,22 +490,22 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 65
+          "puntaje": 65.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 8.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 68.33
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -527,15 +526,15 @@ window.VIGIA_DATA = { corte: {
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 71,
+          "valor": 71.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
-          "puntaje": 74
+          "puntaje": 74.0
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 52,
+          "valor": 52.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -543,15 +542,15 @@ window.VIGIA_DATA = { corte: {
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 60,
+          "valor": 60.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 63
+          "puntaje": 63.0
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 13.5,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -562,32 +561,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -601,20 +600,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "La Guajira",
       "cod_depto": "44",
       "poblacion": 125000,
-      "icr": 83.5,
+      "icr": 86.7,
       "nivel_alerta": "roja",
       "nivel_por_regla": false,
-      "cobertura_datos_pct": 100,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
-        "amenaza_A": 90,
-        "vulnerabilidad_H": 78.33,
+        "amenaza_A": 90.0,
+        "vulnerabilidad_H": 89.17,
         "servicio_S": 71.91,
-        "respuesta_R": 100
+        "respuesta_R": 100.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -622,18 +621,18 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -82,
+          "valor": -82.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 93.33
         },
         "A-4": {
@@ -641,24 +640,24 @@ window.VIGIA_DATA = { corte: {
           "valor": 44,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 86.67
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 18,
+          "valor": 18.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 90
+          "fecha_dato": "2026-10-14",
+          "puntaje": 90.0
         },
         "H-2": {
           "nombre": "Vulnerabilidad Hídrica ENA",
@@ -666,7 +665,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 90
+          "puntaje": 90.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -674,27 +673,27 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 90
+          "puntaje": 90.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 4.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 87.5
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
           "nombre": "Continuidad",
-          "valor": 5,
+          "valor": 5.0,
           "unidad": "h/día",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -710,7 +709,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 48,
+          "valor": 48.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
@@ -718,7 +717,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 60,
+          "valor": 60.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -726,7 +725,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 110,
+          "valor": 110.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -734,7 +733,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 9.0,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -745,32 +744,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 100.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
           "valor": 1,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60
+          "fecha_dato": "2026-10-14",
+          "puntaje": 60.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
           "valor": 1,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80
+          "fecha_dato": "2026-10-14",
+          "puntaje": 80.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
           "valor": 1,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 100.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -784,20 +783,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "Magdalena",
       "cod_depto": "47",
       "poblacion": 540000,
-      "icr": 69.7,
-      "nivel_alerta": "naranja",
+      "icr": 56.0,
+      "nivel_alerta": "amarilla",
       "nivel_por_regla": false,
-      "cobertura_datos_pct": 100,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 69.5,
-        "vulnerabilidad_H": 61.67,
+        "vulnerabilidad_H": 66.11,
         "servicio_S": 61.28,
-        "respuesta_R": 100
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -805,18 +804,18 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -54,
+          "valor": -54.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 70.5
         },
         "A-4": {
@@ -824,24 +823,24 @@ window.VIGIA_DATA = { corte: {
           "valor": 26,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 69
+          "fecha_dato": "2026-10-14",
+          "puntaje": 69.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 24,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 38,
+          "valor": 38.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 69
+          "fecha_dato": "2026-10-14",
+          "puntaje": 69.0
         },
         "H-2": {
           "nombre": "Vulnerabilidad Hídrica ENA",
@@ -849,7 +848,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 65
+          "puntaje": 65.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -857,27 +856,27 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 65
+          "puntaje": 65.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 8.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 68.33
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
           "nombre": "Continuidad",
-          "valor": 11,
+          "valor": 11.0,
           "unidad": "h/día",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -893,15 +892,15 @@ window.VIGIA_DATA = { corte: {
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 76,
+          "valor": 76.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
-          "puntaje": 69
+          "puntaje": 69.0
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 49,
+          "valor": 49.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -909,15 +908,15 @@ window.VIGIA_DATA = { corte: {
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 80,
+          "valor": 80.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 69
+          "puntaje": 69.0
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 14.2,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -928,32 +927,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -967,20 +966,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "Magdalena",
       "cod_depto": "47",
       "poblacion": 65000,
-      "icr": 71.6,
+      "icr": 73.6,
       "nivel_alerta": "naranja",
       "nivel_por_regla": false,
-      "cobertura_datos_pct": 100,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 75.33,
-        "vulnerabilidad_H": 53.33,
+        "vulnerabilidad_H": 60.0,
         "servicio_S": 71.95,
-        "respuesta_R": 100
+        "respuesta_R": 100.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -988,18 +987,18 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -62,
+          "valor": -62.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 76.67
         },
         "A-4": {
@@ -1007,23 +1006,23 @@ window.VIGIA_DATA = { corte: {
           "valor": 31,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 75.83
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 32,
+          "valor": 32.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 73.5
         },
         "H-2": {
@@ -1032,7 +1031,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 65
+          "puntaje": 65.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -1040,27 +1039,27 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40
+          "puntaje": 40.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 6.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 75.0
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
           "nombre": "Continuidad",
-          "valor": 8,
+          "valor": 8.0,
           "unidad": "h/día",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -1076,7 +1075,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 62,
+          "valor": 62.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
@@ -1084,7 +1083,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 55,
+          "valor": 55.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -1092,11 +1091,11 @@ window.VIGIA_DATA = { corte: {
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 70,
+          "valor": 70.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 66
+          "puntaje": 66.0
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
@@ -1111,32 +1110,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 100.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -1150,20 +1149,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "Bolívar",
       "cod_depto": "13",
       "poblacion": 78000,
-      "icr": 73.9,
-      "nivel_alerta": "naranja",
+      "icr": 75.9,
+      "nivel_alerta": "roja",
       "nivel_por_regla": false,
-      "cobertura_datos_pct": 100,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 76.94,
-        "vulnerabilidad_H": 61.67,
+        "vulnerabilidad_H": 68.33,
         "servicio_S": 69.1,
-        "respuesta_R": 100
+        "respuesta_R": 100.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -1171,18 +1170,18 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -64,
+          "valor": -64.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 78.33
         },
         "A-4": {
@@ -1190,24 +1189,24 @@ window.VIGIA_DATA = { corte: {
           "valor": 33,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 77.5
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 35,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 30,
+          "valor": 30.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 75
+          "fecha_dato": "2026-10-14",
+          "puntaje": 75.0
         },
         "H-2": {
           "nombre": "Vulnerabilidad Hídrica ENA",
@@ -1215,7 +1214,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 65
+          "puntaje": 65.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -1223,22 +1222,22 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 65
+          "puntaje": 65.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 6.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 75.0
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -1251,15 +1250,15 @@ window.VIGIA_DATA = { corte: {
         },
         "S-2": {
           "nombre": "Calidad del Agua (IRCA)",
-          "valor": 0,
+          "valor": 0.0,
           "unidad": "%",
           "fuente": "INS SIVICAP",
           "fecha_dato": "2024-12-31",
-          "puntaje": 0
+          "puntaje": 0.0
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 54,
+          "valor": 54.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
@@ -1267,23 +1266,23 @@ window.VIGIA_DATA = { corte: {
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 58,
+          "valor": 58.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 85
+          "puntaje": 85.0
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 140,
+          "valor": 140.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 80
+          "puntaje": 80.0
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 10.5,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -1294,32 +1293,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 100.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -1333,20 +1332,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "Bolívar",
       "cod_depto": "13",
       "poblacion": 138000,
-      "icr": 59.7,
-      "nivel_alerta": "naranja",
-      "nivel_por_regla": true,
-      "cobertura_datos_pct": 100,
+      "icr": 48.4,
+      "nivel_alerta": "amarilla",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
-        "amenaza_A": 65,
-        "vulnerabilidad_H": 45,
+        "amenaza_A": 65.0,
+        "vulnerabilidad_H": 47.22,
         "servicio_S": 58.9,
-        "respuesta_R": 80
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -1354,43 +1353,43 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -48,
+          "valor": -48.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 66
+          "fecha_dato": "2026-10-14",
+          "puntaje": 66.0
         },
         "A-4": {
           "nombre": "Días Consecutivos sin Lluvia",
           "valor": 22,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 63
+          "fecha_dato": "2026-10-14",
+          "puntaje": 63.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 42,
+          "valor": 42.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 66
+          "fecha_dato": "2026-10-14",
+          "puntaje": 66.0
         },
         "H-2": {
           "nombre": "Vulnerabilidad Hídrica ENA",
@@ -1398,7 +1397,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40
+          "puntaje": 40.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -1406,27 +1405,27 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40
+          "puntaje": 40.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 10.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 61.67
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
           "nombre": "Continuidad",
-          "valor": 13,
+          "valor": 13.0,
           "unidad": "h/día",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -1434,39 +1433,39 @@ window.VIGIA_DATA = { corte: {
         },
         "S-2": {
           "nombre": "Calidad del Agua (IRCA)",
-          "valor": 3,
+          "valor": 3.0,
           "unidad": "%",
           "fuente": "INS SIVICAP",
           "fecha_dato": "2024-12-31",
-          "puntaje": 24
+          "puntaje": 24.0
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 72,
+          "valor": 72.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
-          "puntaje": 73
+          "puntaje": 73.0
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 46,
+          "valor": 46.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 69
+          "puntaje": 69.0
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 45,
+          "valor": 45.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 56
+          "puntaje": 56.0
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 13.4,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -1477,32 +1476,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -1516,20 +1515,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "Bolívar",
       "cod_depto": "13",
       "poblacion": 1040000,
-      "icr": 36.9,
+      "icr": 34.9,
       "nivel_alerta": "sin_alerta",
       "nivel_por_regla": false,
-      "cobertura_datos_pct": 100,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 54.17,
-        "vulnerabilidad_H": 45,
+        "vulnerabilidad_H": 38.33,
         "servicio_S": 28.64,
-        "respuesta_R": 0
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -1537,18 +1536,18 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -42,
+          "valor": -42.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 61.5
         },
         "A-4": {
@@ -1556,24 +1555,24 @@ window.VIGIA_DATA = { corte: {
           "valor": 18,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 56
+          "fecha_dato": "2026-10-14",
+          "puntaje": 56.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 65,
+          "valor": 65.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 45
+          "fecha_dato": "2026-10-14",
+          "puntaje": 45.0
         },
         "H-2": {
           "nombre": "Vulnerabilidad Hídrica ENA",
@@ -1581,7 +1580,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40
+          "puntaje": 40.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -1589,22 +1588,22 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40
+          "puntaje": 40.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 18.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 35.0
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -1613,7 +1612,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "h/día",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 30
+          "puntaje": 30.0
         },
         "S-2": {
           "nombre": "Calidad del Agua (IRCA)",
@@ -1625,31 +1624,31 @@ window.VIGIA_DATA = { corte: {
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 96,
+          "valor": 96.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
-          "puntaje": 32
+          "puntaje": 32.0
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 31,
+          "valor": 31.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 42
+          "puntaje": 42.0
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 10,
+          "valor": 10.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 16
+          "puntaje": 16.0
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 14.0,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -1660,32 +1659,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -1699,20 +1698,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "Cesar",
       "cod_depto": "20",
       "poblacion": 510000,
-      "icr": 63.5,
-      "nivel_alerta": "naranja",
+      "icr": 51.5,
+      "nivel_alerta": "amarilla",
       "nivel_por_regla": false,
-      "cobertura_datos_pct": 100,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
-        "amenaza_A": 64,
+        "amenaza_A": 64.0,
         "vulnerabilidad_H": 61.67,
         "servicio_S": 55.24,
-        "respuesta_R": 80
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -1720,18 +1719,18 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -46,
+          "valor": -46.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 64.5
         },
         "A-4": {
@@ -1739,23 +1738,23 @@ window.VIGIA_DATA = { corte: {
           "valor": 24,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 66
+          "fecha_dato": "2026-10-14",
+          "puntaje": 66.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 22,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 48,
+          "valor": 48.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 61.5
         },
         "H-2": {
@@ -1764,7 +1763,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 65
+          "puntaje": 65.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -1772,31 +1771,31 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 65
+          "puntaje": 65.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 12.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 55.0
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
           "nombre": "Continuidad",
-          "valor": 14,
+          "valor": 14.0,
           "unidad": "h/día",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 70
+          "puntaje": 70.0
         },
         "S-2": {
           "nombre": "Calidad del Agua (IRCA)",
@@ -1808,31 +1807,31 @@ window.VIGIA_DATA = { corte: {
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 84,
+          "valor": 84.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
-          "puntaje": 61
+          "puntaje": 61.0
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 44,
+          "valor": 44.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 66
+          "puntaje": 66.0
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 50,
+          "valor": 50.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 60
+          "puntaje": 60.0
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 14.5,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -1843,32 +1842,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -1882,20 +1881,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "Cesar",
       "cod_depto": "20",
       "poblacion": 112000,
-      "icr": 69,
+      "icr": 70.3,
       "nivel_alerta": "naranja",
       "nivel_por_regla": false,
-      "cobertura_datos_pct": 100,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 72.75,
-        "vulnerabilidad_H": 53.33,
+        "vulnerabilidad_H": 57.78,
         "servicio_S": 64.61,
-        "respuesta_R": 100
+        "respuesta_R": 100.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -1903,18 +1902,18 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -58,
+          "valor": -58.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 73.5
         },
         "A-4": {
@@ -1922,23 +1921,23 @@ window.VIGIA_DATA = { corte: {
           "valor": 29,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 73.5
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 35,
+          "valor": 35.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 71.25
         },
         "H-2": {
@@ -1947,7 +1946,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 65
+          "puntaje": 65.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -1955,27 +1954,27 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40
+          "puntaje": 40.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 8.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 68.33
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
           "nombre": "Continuidad",
-          "valor": 9,
+          "valor": 9.0,
           "unidad": "h/día",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -1991,7 +1990,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 66,
+          "valor": 66.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
@@ -1999,7 +1998,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 51,
+          "valor": 51.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -2007,7 +2006,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 85,
+          "valor": 85.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -2015,7 +2014,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 12.0,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -2026,32 +2025,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 100.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -2065,20 +2064,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "Santander",
       "cod_depto": "68",
       "poblacion": 12000,
-      "icr": 78.4,
-      "nivel_alerta": "roja",
+      "icr": 64.7,
+      "nivel_alerta": "naranja",
       "nivel_por_regla": false,
-      "cobertura_datos_pct": 100,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 80.28,
-        "vulnerabilidad_H": 70,
+        "vulnerabilidad_H": 74.44,
         "servicio_S": 73.16,
-        "respuesta_R": 100
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -2086,18 +2085,18 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -65,
+          "valor": -65.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 79.17
         },
         "A-4": {
@@ -2105,23 +2104,23 @@ window.VIGIA_DATA = { corte: {
           "valor": 35,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 79.17
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 24,
+          "valor": 24.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 82.5
         },
         "H-2": {
@@ -2130,7 +2129,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 90
+          "puntaje": 90.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -2138,27 +2137,27 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 65
+          "puntaje": 65.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 8.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 68.33
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
           "nombre": "Continuidad",
-          "valor": 6,
+          "valor": 6.0,
           "unidad": "h/día",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -2174,15 +2173,15 @@ window.VIGIA_DATA = { corte: {
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 82,
+          "valor": 82.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
-          "puntaje": 63
+          "puntaje": 63.0
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 47,
+          "valor": 47.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -2190,15 +2189,15 @@ window.VIGIA_DATA = { corte: {
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 90,
+          "valor": 90.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 72
+          "puntaje": 72.0
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 11.5,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -2209,32 +2208,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -2248,20 +2247,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "Santander",
       "cod_depto": "68",
       "poblacion": 58000,
-      "icr": 59.9,
-      "nivel_alerta": "naranja",
-      "nivel_por_regla": true,
-      "cobertura_datos_pct": 100,
+      "icr": 47.2,
+      "nivel_alerta": "amarilla",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
-        "amenaza_A": 68,
-        "vulnerabilidad_H": 53.33,
+        "amenaza_A": 68.0,
+        "vulnerabilidad_H": 51.11,
         "servicio_S": 45.88,
-        "respuesta_R": 80
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -2269,42 +2268,42 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -52,
+          "valor": -52.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 69
+          "fecha_dato": "2026-10-14",
+          "puntaje": 69.0
         },
         "A-4": {
           "nombre": "Días Consecutivos sin Lluvia",
           "valor": 25,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 67.5
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 40,
+          "valor": 40.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 67.5
         },
         "H-2": {
@@ -2313,7 +2312,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 65
+          "puntaje": 65.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -2321,31 +2320,31 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40
+          "puntaje": 40.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 14.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 48.33
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
           "nombre": "Continuidad",
-          "valor": 16,
+          "valor": 16.0,
           "unidad": "h/día",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 65
+          "puntaje": 65.0
         },
         "S-2": {
           "nombre": "Calidad del Agua (IRCA)",
@@ -2357,27 +2356,27 @@ window.VIGIA_DATA = { corte: {
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 89,
+          "valor": 89.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
-          "puntaje": 52
+          "puntaje": 52.0
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 39,
+          "valor": 39.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 58
+          "puntaje": 58.0
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 35,
+          "valor": 35.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 48
+          "puntaje": 48.0
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
@@ -2392,32 +2391,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -2431,20 +2430,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "Santander",
       "cod_depto": "68",
       "poblacion": 615000,
-      "icr": 31.3,
+      "icr": 28.1,
       "nivel_alerta": "sin_alerta",
       "nivel_por_regla": false,
-      "cobertura_datos_pct": 100,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
-        "amenaza_A": 50,
-        "vulnerabilidad_H": 45,
+        "amenaza_A": 50.0,
+        "vulnerabilidad_H": 34.44,
         "servicio_S": 11.2,
-        "respuesta_R": 0
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -2452,43 +2451,43 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -34,
+          "valor": -34.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 54
+          "fecha_dato": "2026-10-14",
+          "puntaje": 54.0
         },
         "A-4": {
           "nombre": "Días Consecutivos sin Lluvia",
           "valor": 14,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 48
+          "fecha_dato": "2026-10-14",
+          "puntaje": 48.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 62,
+          "valor": 62.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 48
+          "fecha_dato": "2026-10-14",
+          "puntaje": 48.0
         },
         "H-2": {
           "nombre": "Vulnerabilidad Hídrica ENA",
@@ -2496,7 +2495,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40
+          "puntaje": 40.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -2504,22 +2503,22 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40
+          "puntaje": 40.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 20.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 23.33
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -2528,7 +2527,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "h/día",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 4
+          "puntaje": 4.0
         },
         "S-2": {
           "nombre": "Calidad del Agua (IRCA)",
@@ -2536,35 +2535,35 @@ window.VIGIA_DATA = { corte: {
           "unidad": "%",
           "fuente": "INS SIVICAP",
           "fecha_dato": "2024-12-31",
-          "puntaje": 12
+          "puntaje": 12.0
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 99,
+          "valor": 99.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
-          "puntaje": 8
+          "puntaje": 8.0
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 26,
+          "valor": 26.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 24
+          "puntaje": 24.0
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 5,
+          "valor": 5.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 8
+          "puntaje": 8.0
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 12.5,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -2575,32 +2574,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -2614,20 +2613,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "Bogotá, D.C.",
       "cod_depto": "11",
       "poblacion": 7900000,
-      "icr": 58.1,
-      "nivel_alerta": "naranja",
-      "nivel_por_regla": true,
-      "cobertura_datos_pct": 100,
+      "icr": 40.6,
+      "nivel_alerta": "amarilla",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 57.67,
-        "vulnerabilidad_H": 70,
+        "vulnerabilidad_H": 51.67,
         "servicio_S": 31.16,
-        "respuesta_R": 80
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -2635,43 +2634,43 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -38,
+          "valor": -38.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 58
+          "fecha_dato": "2026-10-14",
+          "puntaje": 58.0
         },
         "A-4": {
           "nombre": "Días Consecutivos sin Lluvia",
           "valor": 16,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 52
+          "fecha_dato": "2026-10-14",
+          "puntaje": 52.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 4,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 46,
+          "valor": 46.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 63
+          "fecha_dato": "2026-10-14",
+          "puntaje": 63.0
         },
         "H-2": {
           "nombre": "Vulnerabilidad Hídrica ENA",
@@ -2679,7 +2678,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 65
+          "puntaje": 65.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -2687,31 +2686,31 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 90
+          "puntaje": 90.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 24.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 0.0
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
-          "valor": 48.1,
+          "valor": 71.5,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
           "nombre": "Continuidad",
-          "valor": 21,
+          "valor": 21.0,
           "unidad": "h/día",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 45
+          "puntaje": 45.0
         },
         "S-2": {
           "nombre": "Calidad del Agua (IRCA)",
@@ -2727,27 +2726,27 @@ window.VIGIA_DATA = { corte: {
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
-          "puntaje": 4
+          "puntaje": 4.0
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 33,
+          "valor": 33.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 46
+          "puntaje": 46.0
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 40,
+          "valor": 40.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 52
+          "puntaje": 52.0
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 10.4,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -2758,32 +2757,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -2797,20 +2796,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "Cundinamarca",
       "cod_depto": "25",
       "poblacion": 120000,
-      "icr": 68.2,
-      "nivel_alerta": "naranja",
+      "icr": 53.2,
+      "nivel_alerta": "amarilla",
       "nivel_por_regla": false,
-      "cobertura_datos_pct": 100,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
-        "amenaza_A": 69,
+        "amenaza_A": 69.0,
         "vulnerabilidad_H": 61.67,
         "servicio_S": 55.87,
-        "respuesta_R": 100
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -2818,18 +2817,18 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -55,
+          "valor": -55.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 71.25
         },
         "A-4": {
@@ -2837,23 +2836,23 @@ window.VIGIA_DATA = { corte: {
           "valor": 28,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 72
+          "fecha_dato": "2026-10-14",
+          "puntaje": 72.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 16,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 45,
+          "valor": 45.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 63.75
         },
         "H-2": {
@@ -2862,7 +2861,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 65
+          "puntaje": 65.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -2870,22 +2869,22 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 65
+          "puntaje": 65.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 12.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 55.0
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
-          "valor": 48.1,
+          "valor": 66.2,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -2906,23 +2905,23 @@ window.VIGIA_DATA = { corte: {
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 86,
+          "valor": 86.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
-          "puntaje": 58
+          "puntaje": 58.0
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 48,
+          "valor": 48.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 72
+          "puntaje": 72.0
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 65,
+          "valor": 65.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -2930,7 +2929,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 13.8,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -2941,32 +2940,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -2980,20 +2979,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "Cundinamarca",
       "cod_depto": "25",
       "poblacion": 85000,
-      "icr": 34.2,
+      "icr": 32.8,
       "nivel_alerta": "sin_alerta",
       "nivel_por_regla": false,
-      "cobertura_datos_pct": 100,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 50.33,
-        "vulnerabilidad_H": 45,
+        "vulnerabilidad_H": 40.56,
         "servicio_S": 22.29,
-        "respuesta_R": 0
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -3001,43 +3000,43 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -32,
+          "valor": -32.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 52
+          "fecha_dato": "2026-10-14",
+          "puntaje": 52.0
         },
         "A-4": {
           "nombre": "Días Consecutivos sin Lluvia",
           "valor": 12,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 44
+          "fecha_dato": "2026-10-14",
+          "puntaje": 44.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 55,
+          "valor": 55.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 55
+          "fecha_dato": "2026-10-14",
+          "puntaje": 55.0
         },
         "H-2": {
           "nombre": "Vulnerabilidad Hídrica ENA",
@@ -3045,7 +3044,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40
+          "puntaje": 40.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -3053,22 +3052,22 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40
+          "puntaje": 40.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 16.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 41.67
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -3077,7 +3076,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "h/día",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 10
+          "puntaje": 10.0
         },
         "S-2": {
           "nombre": "Calidad del Agua (IRCA)",
@@ -3089,23 +3088,23 @@ window.VIGIA_DATA = { corte: {
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 98,
+          "valor": 98.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
-          "puntaje": 16
+          "puntaje": 16.0
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 28,
+          "valor": 28.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 32
+          "puntaje": 32.0
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 8,
+          "valor": 8.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -3113,7 +3112,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 11.1,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -3124,32 +3123,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -3163,20 +3162,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "Tolima",
       "cod_depto": "73",
       "poblacion": 540000,
-      "icr": 58.1,
-      "nivel_alerta": "naranja",
-      "nivel_por_regla": true,
-      "cobertura_datos_pct": 100,
+      "icr": 45.5,
+      "nivel_alerta": "amarilla",
+      "nivel_por_regla": false,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 61.08,
-        "vulnerabilidad_H": 45,
+        "vulnerabilidad_H": 42.78,
         "servicio_S": 57.28,
-        "respuesta_R": 80
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -3184,18 +3183,18 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -45,
+          "valor": -45.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 63.75
         },
         "A-4": {
@@ -3203,24 +3202,24 @@ window.VIGIA_DATA = { corte: {
           "valor": 21,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 61.5
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 52,
+          "valor": 52.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 58
+          "fecha_dato": "2026-10-14",
+          "puntaje": 58.0
         },
         "H-2": {
           "nombre": "Vulnerabilidad Hídrica ENA",
@@ -3228,7 +3227,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40
+          "puntaje": 40.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -3236,22 +3235,22 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40
+          "puntaje": 40.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 14.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 48.33
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -3272,31 +3271,31 @@ window.VIGIA_DATA = { corte: {
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 91,
+          "valor": 91.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
-          "puntaje": 48
+          "puntaje": 48.0
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 42,
+          "valor": 42.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 63
+          "puntaje": 63.0
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 30,
+          "valor": 30.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 44
+          "puntaje": 44.0
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 13.1,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -3307,32 +3306,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -3346,20 +3345,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "Tolima",
       "cod_depto": "73",
       "poblacion": 74000,
-      "icr": 69.7,
+      "icr": 70.4,
       "nivel_alerta": "naranja",
       "nivel_por_regla": false,
-      "cobertura_datos_pct": 100,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
-        "amenaza_A": 71,
-        "vulnerabilidad_H": 61.67,
+        "amenaza_A": 71.0,
+        "vulnerabilidad_H": 63.89,
         "servicio_S": 59.7,
-        "respuesta_R": 100
+        "respuesta_R": 100.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -3367,42 +3366,42 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -56,
+          "valor": -56.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 72
+          "fecha_dato": "2026-10-14",
+          "puntaje": 72.0
         },
         "A-4": {
           "nombre": "Días Consecutivos sin Lluvia",
           "valor": 27,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 70.5
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 18,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 36,
+          "valor": 36.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 70.5
         },
         "H-2": {
@@ -3411,7 +3410,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 65
+          "puntaje": 65.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -3419,27 +3418,27 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 65
+          "puntaje": 65.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 10.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 61.67
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
-          "valor": 39.5,
+          "valor": 41.0,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
           "nombre": "Continuidad",
-          "valor": 10,
+          "valor": 10.0,
           "unidad": "h/día",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -3447,23 +3446,23 @@ window.VIGIA_DATA = { corte: {
         },
         "S-2": {
           "nombre": "Calidad del Agua (IRCA)",
-          "valor": 0,
+          "valor": 0.0,
           "unidad": "%",
           "fuente": "INS SIVICAP",
           "fecha_dato": "2024-12-31",
-          "puntaje": 0
+          "puntaje": 0.0
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 74,
+          "valor": 74.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
-          "puntaje": 71
+          "puntaje": 71.0
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 53,
+          "valor": 53.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -3471,7 +3470,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 75,
+          "valor": 75.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -3479,7 +3478,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 13.6,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -3490,32 +3489,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 100.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -3532,17 +3531,17 @@ window.VIGIA_DATA = { corte: {
       "icr": 48.1,
       "nivel_alerta": "amarilla",
       "nivel_por_regla": false,
-      "cobertura_datos_pct": 100,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 65.75,
         "vulnerabilidad_H": 53.33,
         "servicio_S": 49.48,
-        "respuesta_R": 0
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -3550,18 +3549,18 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -51,
+          "valor": -51.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 68.25
         },
         "A-4": {
@@ -3569,23 +3568,23 @@ window.VIGIA_DATA = { corte: {
           "valor": 23,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 64.5
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 44,
+          "valor": 44.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": 64.5
         },
         "H-2": {
@@ -3594,7 +3593,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 65
+          "puntaje": 65.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -3602,27 +3601,27 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40
+          "puntaje": 40.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 12.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 55.0
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
           "nombre": "Continuidad",
-          "valor": 15,
+          "valor": 15.0,
           "unidad": "h/día",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -3638,15 +3637,15 @@ window.VIGIA_DATA = { corte: {
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 88,
+          "valor": 88.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
-          "puntaje": 54
+          "puntaje": 54.0
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 45,
+          "valor": 45.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -3654,15 +3653,15 @@ window.VIGIA_DATA = { corte: {
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 40,
+          "valor": 40.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 52
+          "puntaje": 52.0
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 14.1,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -3673,32 +3672,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -3712,20 +3711,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "Boyacá",
       "cod_depto": "15",
       "poblacion": 10500,
-      "icr": 61.5,
+      "icr": 65.6,
       "nivel_alerta": "naranja",
       "nivel_por_regla": false,
-      "cobertura_datos_pct": 100,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
-        "amenaza_A": 60,
-        "vulnerabilidad_H": 45,
+        "amenaza_A": 63.0,
+        "vulnerabilidad_H": 55.56,
         "servicio_S": 60.03,
-        "respuesta_R": 100
+        "respuesta_R": 100.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -3733,51 +3732,51 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -40,
+          "valor": -46.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60
+          "fecha_dato": "2026-10-14",
+          "puntaje": 64.5
         },
         "A-4": {
           "nombre": "Días Consecutivos sin Lluvia",
-          "valor": 20,
+          "valor": 22,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60
+          "fecha_dato": "2026-10-14",
+          "puntaje": 63.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 50,
+          "valor": 48.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60
+          "fecha_dato": "2026-10-14",
+          "puntaje": 61.5
         },
         "H-2": {
           "nombre": "Vulnerabilidad Hídrica ENA",
-          "valor": "Medio",
+          "valor": "Alto",
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40
+          "puntaje": 65.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -3785,22 +3784,22 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40
+          "puntaje": 40.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 10.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 61.67
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -3821,31 +3820,31 @@ window.VIGIA_DATA = { corte: {
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 70,
+          "valor": 70.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
-          "puntaje": 75
+          "puntaje": 75.0
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 50,
+          "valor": 50.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 75
+          "puntaje": 75.0
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 45,
+          "valor": 45.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 56
+          "puntaje": 56.0
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 8.9,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -3856,32 +3855,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 100.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 60
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 80
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
-          "valor": 1,
+          "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 100
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -3895,20 +3894,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "Antioquia",
       "cod_depto": "05",
       "poblacion": 2550000,
-      "icr": 26,
+      "icr": 22.9,
       "nivel_alerta": "sin_alerta",
       "nivel_por_regla": false,
-      "cobertura_datos_pct": 100,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
-        "amenaza_A": 42,
-        "vulnerabilidad_H": 36.67,
+        "amenaza_A": 42.0,
+        "vulnerabilidad_H": 26.11,
         "servicio_S": 9.68,
-        "respuesta_R": 0
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -3916,43 +3915,43 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -28,
+          "valor": -28.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 48
+          "fecha_dato": "2026-10-14",
+          "puntaje": 48.0
         },
         "A-4": {
           "nombre": "Días Consecutivos sin Lluvia",
           "valor": 9,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 36
+          "fecha_dato": "2026-10-14",
+          "puntaje": 36.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 2,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 68,
+          "valor": 68.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 42
+          "fecha_dato": "2026-10-14",
+          "puntaje": 42.0
         },
         "H-2": {
           "nombre": "Vulnerabilidad Hídrica ENA",
@@ -3960,7 +3959,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 15
+          "puntaje": 15.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -3968,22 +3967,22 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40
+          "puntaje": 40.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 20.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 23.33
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -3992,7 +3991,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "h/día",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 2
+          "puntaje": 2.0
         },
         "S-2": {
           "nombre": "Calidad del Agua (IRCA)",
@@ -4004,23 +4003,23 @@ window.VIGIA_DATA = { corte: {
         },
         "S-3": {
           "nombre": "Cobertura Urbana",
-          "valor": 99,
+          "valor": 99.0,
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
-          "puntaje": 8
+          "puntaje": 8.0
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 27,
+          "valor": 27.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 28
+          "puntaje": 28.0
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 3,
+          "valor": 3.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -4028,7 +4027,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 12.2,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -4039,32 +4038,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -4078,20 +4077,20 @@ window.VIGIA_DATA = { corte: {
       "departamento": "Valle del Cauca",
       "cod_depto": "76",
       "poblacion": 2280000,
-      "icr": 31.4,
+      "icr": 29.4,
       "nivel_alerta": "sin_alerta",
       "nivel_por_regla": false,
-      "cobertura_datos_pct": 100,
+      "cobertura_datos_pct": 100.0,
       "subindices_capa": {
         "amenaza_A": 47.67,
-        "vulnerabilidad_H": 45,
+        "vulnerabilidad_H": 38.33,
         "servicio_S": 14.48,
-        "respuesta_R": 0
+        "respuesta_R": 0.0
       },
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.2,
+          "valor": 3.3,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -4099,43 +4098,43 @@ window.VIGIA_DATA = { corte: {
         },
         "A-2": {
           "nombre": "Probabilidad Niño Muy Fuerte",
-          "valor": 75,
+          "valor": 83.0,
           "unidad": "%",
           "fuente": "NOAA CPC",
-          "fecha_dato": "2026-09-10",
+          "fecha_dato": "2026-10-10",
           "puntaje": null
         },
         "A-3": {
           "nombre": "Anomalía Precipitación 30d",
-          "valor": -31,
+          "valor": -31.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 51
+          "fecha_dato": "2026-10-14",
+          "puntaje": 51.0
         },
         "A-4": {
           "nombre": "Días Consecutivos sin Lluvia",
           "valor": 11,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 42
+          "fecha_dato": "2026-10-14",
+          "puntaje": 42.0
         },
         "A-5": {
           "nombre": "Focos de Calor (7d)",
-          "valor": 8,
+          "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "H-1": {
           "nombre": "Caudal Fuente Abastecedora",
-          "valor": 60,
+          "valor": 60.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 50
+          "fecha_dato": "2026-10-14",
+          "puntaje": 50.0
         },
         "H-2": {
           "nombre": "Vulnerabilidad Hídrica ENA",
@@ -4143,7 +4142,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40
+          "puntaje": 40.0
         },
         "H-3": {
           "nombre": "Uso del Agua ENA (IUA)",
@@ -4151,22 +4150,22 @@ window.VIGIA_DATA = { corte: {
           "unidad": "categoría",
           "fuente": "IDEAM ENA",
           "fecha_dato": "2022-12-31",
-          "puntaje": 40
+          "puntaje": 40.0
         },
         "H-4": {
           "nombre": "Autonomía Almacenamiento",
-          "valor": 14,
+          "valor": 18.0,
           "unidad": "horas",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 55
+          "puntaje": 35.0
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-09",
+          "fecha_dato": "2026-10-14",
           "puntaje": null
         },
         "S-1": {
@@ -4175,7 +4174,7 @@ window.VIGIA_DATA = { corte: {
           "unidad": "h/día",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 6
+          "puntaje": 6.0
         },
         "S-2": {
           "nombre": "Calidad del Agua (IRCA)",
@@ -4191,19 +4190,19 @@ window.VIGIA_DATA = { corte: {
           "unidad": "%",
           "fuente": "SSPD SUI / DANE",
           "fecha_dato": "2026-08-31",
-          "puntaje": 12
+          "puntaje": 12.0
         },
         "S-4": {
           "nombre": "Agua No Contabilizada (IANC)",
-          "valor": 32,
+          "valor": 32.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
-          "puntaje": 44
+          "puntaje": 44.0
         },
         "S-5": {
           "nombre": "Variación PQR por Servicio",
-          "valor": 6,
+          "valor": 6.0,
           "unidad": "%",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -4211,7 +4210,7 @@ window.VIGIA_DATA = { corte: {
         },
         "S-6": {
           "nombre": "Consumo Medio Facturado",
-          "valor": 12.8,
+          "valor": 13.9,
           "unidad": "m³/susc/mes",
           "fuente": "SSPD SUI",
           "fecha_dato": "2026-08-31",
@@ -4222,32 +4221,32 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-2": {
           "nombre": "Abastecimiento Alterno Activo",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-3": {
           "nombre": "Racionamiento Reportado",
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         },
         "R-4": {
           "nombre": "Calamidad Pública Vigente",
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-09",
-          "puntaje": 0
+          "fecha_dato": "2026-10-14",
+          "puntaje": 0.0
         }
       },
       "config_version": "v1.0.0-20261008",
@@ -4261,42 +4260,12 @@ window.VIGIA_DATA = { corte: {
       "cod_depto": "44",
       "departamento": "La Guajira",
       "total_municipios": 4,
-      "icr_medio_ponderado": 82.1,
+      "icr_medio_ponderado": 80.1,
       "poblacion_total": 713000,
       "poblacion_naranja_roja": 713000,
       "conteo_niveles": {
-        "roja": 4,
-        "naranja": 0,
-        "amarilla": 0,
-        "sin_alerta": 0,
-        "sin_dato": 0
-      }
-    },
-    {
-      "cod_depto": "47",
-      "departamento": "Magdalena",
-      "total_municipios": 2,
-      "icr_medio_ponderado": 69.9,
-      "poblacion_total": 605000,
-      "poblacion_naranja_roja": 605000,
-      "conteo_niveles": {
-        "roja": 0,
-        "naranja": 2,
-        "amarilla": 0,
-        "sin_alerta": 0,
-        "sin_dato": 0
-      }
-    },
-    {
-      "cod_depto": "20",
-      "departamento": "Cesar",
-      "total_municipios": 2,
-      "icr_medio_ponderado": 64.5,
-      "poblacion_total": 622000,
-      "poblacion_naranja_roja": 622000,
-      "conteo_niveles": {
-        "roja": 0,
-        "naranja": 2,
+        "roja": 3,
+        "naranja": 1,
         "amarilla": 0,
         "sin_alerta": 0,
         "sin_dato": 0
@@ -4306,7 +4275,7 @@ window.VIGIA_DATA = { corte: {
       "cod_depto": "15",
       "departamento": "Boyacá",
       "total_municipios": 1,
-      "icr_medio_ponderado": 61.5,
+      "icr_medio_ponderado": 65.6,
       "poblacion_total": 10500,
       "poblacion_naranja_roja": 10500,
       "conteo_niveles": {
@@ -4318,47 +4287,47 @@ window.VIGIA_DATA = { corte: {
       }
     },
     {
+      "cod_depto": "47",
+      "departamento": "Magdalena",
+      "total_municipios": 2,
+      "icr_medio_ponderado": 57.9,
+      "poblacion_total": 605000,
+      "poblacion_naranja_roja": 65000,
+      "conteo_niveles": {
+        "roja": 0,
+        "naranja": 1,
+        "amarilla": 1,
+        "sin_alerta": 0,
+        "sin_dato": 0
+      }
+    },
+    {
+      "cod_depto": "20",
+      "departamento": "Cesar",
+      "total_municipios": 2,
+      "icr_medio_ponderado": 54.9,
+      "poblacion_total": 622000,
+      "poblacion_naranja_roja": 112000,
+      "conteo_niveles": {
+        "roja": 0,
+        "naranja": 1,
+        "amarilla": 1,
+        "sin_alerta": 0,
+        "sin_dato": 0
+      }
+    },
+    {
       "cod_depto": "73",
       "departamento": "Tolima",
       "total_municipios": 2,
-      "icr_medio_ponderado": 59.5,
+      "icr_medio_ponderado": 48.5,
       "poblacion_total": 614000,
-      "poblacion_naranja_roja": 614000,
-      "conteo_niveles": {
-        "roja": 0,
-        "naranja": 2,
-        "amarilla": 0,
-        "sin_alerta": 0,
-        "sin_dato": 0
-      }
-    },
-    {
-      "cod_depto": "11",
-      "departamento": "Bogotá, D.C.",
-      "total_municipios": 1,
-      "icr_medio_ponderado": 58.1,
-      "poblacion_total": 7900000,
-      "poblacion_naranja_roja": 7900000,
+      "poblacion_naranja_roja": 74000,
       "conteo_niveles": {
         "roja": 0,
         "naranja": 1,
-        "amarilla": 0,
+        "amarilla": 1,
         "sin_alerta": 0,
-        "sin_dato": 0
-      }
-    },
-    {
-      "cod_depto": "25",
-      "departamento": "Cundinamarca",
-      "total_municipios": 2,
-      "icr_medio_ponderado": 54.1,
-      "poblacion_total": 205000,
-      "poblacion_naranja_roja": 120000,
-      "conteo_niveles": {
-        "roja": 0,
-        "naranja": 1,
-        "amarilla": 0,
-        "sin_alerta": 1,
         "sin_dato": 0
       }
     },
@@ -4378,16 +4347,46 @@ window.VIGIA_DATA = { corte: {
       }
     },
     {
+      "cod_depto": "25",
+      "departamento": "Cundinamarca",
+      "total_municipios": 2,
+      "icr_medio_ponderado": 44.7,
+      "poblacion_total": 205000,
+      "poblacion_naranja_roja": 0,
+      "conteo_niveles": {
+        "roja": 0,
+        "naranja": 0,
+        "amarilla": 1,
+        "sin_alerta": 1,
+        "sin_dato": 0
+      }
+    },
+    {
+      "cod_depto": "11",
+      "departamento": "Bogotá, D.C.",
+      "total_municipios": 1,
+      "icr_medio_ponderado": 40.6,
+      "poblacion_total": 7900000,
+      "poblacion_naranja_roja": 0,
+      "conteo_niveles": {
+        "roja": 0,
+        "naranja": 0,
+        "amarilla": 1,
+        "sin_alerta": 0,
+        "sin_dato": 0
+      }
+    },
+    {
       "cod_depto": "13",
       "departamento": "Bolívar",
       "total_municipios": 3,
-      "icr_medio_ponderado": 41.7,
+      "icr_medio_ponderado": 38.9,
       "poblacion_total": 1256000,
-      "poblacion_naranja_roja": 216000,
+      "poblacion_naranja_roja": 78000,
       "conteo_niveles": {
-        "roja": 0,
-        "naranja": 2,
-        "amarilla": 0,
+        "roja": 1,
+        "naranja": 0,
+        "amarilla": 1,
         "sin_alerta": 1,
         "sin_dato": 0
       }
@@ -4396,13 +4395,13 @@ window.VIGIA_DATA = { corte: {
       "cod_depto": "68",
       "departamento": "Santander",
       "total_municipios": 3,
-      "icr_medio_ponderado": 34.5,
+      "icr_medio_ponderado": 30.4,
       "poblacion_total": 685000,
-      "poblacion_naranja_roja": 70000,
+      "poblacion_naranja_roja": 12000,
       "conteo_niveles": {
-        "roja": 1,
+        "roja": 0,
         "naranja": 1,
-        "amarilla": 0,
+        "amarilla": 1,
         "sin_alerta": 1,
         "sin_dato": 0
       }
@@ -4411,7 +4410,7 @@ window.VIGIA_DATA = { corte: {
       "cod_depto": "76",
       "departamento": "Valle del Cauca",
       "total_municipios": 1,
-      "icr_medio_ponderado": 31.4,
+      "icr_medio_ponderado": 29.4,
       "poblacion_total": 2280000,
       "poblacion_naranja_roja": 0,
       "conteo_niveles": {
@@ -4426,7 +4425,7 @@ window.VIGIA_DATA = { corte: {
       "cod_depto": "05",
       "departamento": "Antioquia",
       "total_municipios": 1,
-      "icr_medio_ponderado": 26,
+      "icr_medio_ponderado": 22.9,
       "poblacion_total": 2550000,
       "poblacion_naranja_roja": 0,
       "conteo_niveles": {
@@ -4440,207 +4439,123 @@ window.VIGIA_DATA = { corte: {
   ],
   "alertas_activas": [
     {
-      "id_alerta": "ALT-20261009-0001",
+      "id_alerta": "ALT-20261014-0001",
       "divipola": "44847",
       "municipio": "Uribia",
       "departamento": "La Guajira",
       "nivel": "roja",
-      "icr": 85.8,
+      "icr": 89.1,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
       "prioridad": "ALTA"
     },
     {
-      "id_alerta": "ALT-20261009-0002",
+      "id_alerta": "ALT-20261014-0002",
       "divipola": "44430",
       "municipio": "Maicao",
       "departamento": "La Guajira",
       "nivel": "roja",
-      "icr": 83,
+      "icr": 85.0,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
       "prioridad": "ALTA"
     },
     {
-      "id_alerta": "ALT-20261009-0003",
+      "id_alerta": "ALT-20261014-0003",
       "divipola": "44001",
       "municipio": "Riohacha",
       "departamento": "La Guajira",
-      "nivel": "roja",
-      "icr": 77.2,
-      "motivo": "ICR crítico por déficit hídrico extremo",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "ALTA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0004",
-      "divipola": "44560",
-      "municipio": "Manaure",
-      "departamento": "La Guajira",
-      "nivel": "roja",
-      "icr": 83.5,
-      "motivo": "ICR crítico por déficit hídrico extremo",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "ALTA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0005",
-      "divipola": "47001",
-      "municipio": "Santa Marta",
-      "departamento": "Magdalena",
-      "nivel": "naranja",
-      "icr": 69.7,
-      "motivo": "ICR crítico por déficit hídrico extremo",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "MEDIA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0006",
-      "divipola": "47555",
-      "municipio": "Plato",
-      "departamento": "Magdalena",
-      "nivel": "naranja",
-      "icr": 71.6,
-      "motivo": "ICR crítico por déficit hídrico extremo",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "MEDIA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0007",
-      "divipola": "13244",
-      "municipio": "El Carmen de Bolívar",
-      "departamento": "Bolívar",
-      "nivel": "naranja",
-      "icr": 73.9,
-      "motivo": "ICR crítico por déficit hídrico extremo",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "MEDIA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0008",
-      "divipola": "13430",
-      "municipio": "Magangué",
-      "departamento": "Bolívar",
-      "nivel": "naranja",
-      "icr": 59.7,
-      "motivo": "Piso automático por racionamiento/calamidad confirmada (RF-ICR-06)",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "MEDIA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0009",
-      "divipola": "20001",
-      "municipio": "Valledupar",
-      "departamento": "Cesar",
       "nivel": "naranja",
       "icr": 63.5,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
       "prioridad": "MEDIA"
     },
     {
-      "id_alerta": "ALT-20261009-0010",
+      "id_alerta": "ALT-20261014-0004",
+      "divipola": "44560",
+      "municipio": "Manaure",
+      "departamento": "La Guajira",
+      "nivel": "roja",
+      "icr": 86.7,
+      "motivo": "ICR crítico por déficit hídrico extremo",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
+      "prioridad": "ALTA"
+    },
+    {
+      "id_alerta": "ALT-20261014-0005",
+      "divipola": "47555",
+      "municipio": "Plato",
+      "departamento": "Magdalena",
+      "nivel": "naranja",
+      "icr": 73.6,
+      "motivo": "ICR crítico por déficit hídrico extremo",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
+      "prioridad": "MEDIA"
+    },
+    {
+      "id_alerta": "ALT-20261014-0006",
+      "divipola": "13244",
+      "municipio": "El Carmen de Bolívar",
+      "departamento": "Bolívar",
+      "nivel": "roja",
+      "icr": 75.9,
+      "motivo": "ICR crítico por déficit hídrico extremo",
+      "estado_revision": "PENDIENTE_REVISION_CRA",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
+      "prioridad": "ALTA"
+    },
+    {
+      "id_alerta": "ALT-20261014-0007",
       "divipola": "20011",
       "municipio": "Aguachica",
       "departamento": "Cesar",
       "nivel": "naranja",
-      "icr": 69,
+      "icr": 70.3,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
       "prioridad": "MEDIA"
     },
     {
-      "id_alerta": "ALT-20261009-0011",
+      "id_alerta": "ALT-20261014-0008",
       "divipola": "68079",
       "municipio": "Barichara",
       "departamento": "Santander",
-      "nivel": "roja",
-      "icr": 78.4,
+      "nivel": "naranja",
+      "icr": 64.7,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "ALTA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0012",
-      "divipola": "68679",
-      "municipio": "San Gil",
-      "departamento": "Santander",
-      "nivel": "naranja",
-      "icr": 59.9,
-      "motivo": "Piso automático por racionamiento/calamidad confirmada (RF-ICR-06)",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
       "prioridad": "MEDIA"
     },
     {
-      "id_alerta": "ALT-20261009-0013",
-      "divipola": "11001",
-      "municipio": "Bogotá, D.C.",
-      "departamento": "Bogotá, D.C.",
-      "nivel": "naranja",
-      "icr": 58.1,
-      "motivo": "Piso automático por racionamiento/calamidad confirmada (RF-ICR-06)",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "MEDIA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0014",
-      "divipola": "25307",
-      "municipio": "Girardot",
-      "departamento": "Cundinamarca",
-      "nivel": "naranja",
-      "icr": 68.2,
-      "motivo": "ICR crítico por déficit hídrico extremo",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "MEDIA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0015",
-      "divipola": "73001",
-      "municipio": "Ibagué",
-      "departamento": "Tolima",
-      "nivel": "naranja",
-      "icr": 58.1,
-      "motivo": "Piso automático por racionamiento/calamidad confirmada (RF-ICR-06)",
-      "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
-      "prioridad": "MEDIA"
-    },
-    {
-      "id_alerta": "ALT-20261009-0016",
+      "id_alerta": "ALT-20261014-0009",
       "divipola": "73268",
       "municipio": "Espinal",
       "departamento": "Tolima",
       "nivel": "naranja",
-      "icr": 69.7,
+      "icr": 70.4,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
       "prioridad": "MEDIA"
     },
     {
-      "id_alerta": "ALT-20261009-0017",
+      "id_alerta": "ALT-20261014-0010",
       "divipola": "15837",
       "municipio": "Tuta",
       "departamento": "Boyacá",
       "nivel": "naranja",
-      "icr": 61.5,
+      "icr": 65.6,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-09T16:02:49.576415+00:00",
+      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
       "prioridad": "MEDIA"
     }
   ]

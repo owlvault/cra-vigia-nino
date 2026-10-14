@@ -276,6 +276,161 @@ class ModeloSemanal:
         out.sort(key=lambda c: c["fecha"])
         return out
 
+    def _cargar_xm_historico(self) -> Dict[str, Any]:
+        """Carga datos históricos y diarios de XM para Sistema y Agregado Bogotá."""
+        por_fecha: Dict[date, Dict[str, float]] = {}
+        archivos_leidos = []
+        carpeta_hist = self.data / "bronce" / "fte_xm_historico"
+        if carpeta_hist.exists():
+            for arch in sorted(carpeta_hist.glob("*.json")):
+                try:
+                    data = self._leer_json(arch)
+                    archivos_leidos.append(str(arch.relative_to(self.root)))
+                    serie = data.get("serie", "")
+                    items = data.get("payload", {}).get("Items", [])
+                    for it in items:
+                        d_str = it.get("Date")
+                        if not d_str:
+                            continue
+                        f = date.fromisoformat(d_str[:10])
+                        if f not in por_fecha:
+                            por_fecha[f] = {}
+                        for ent in it.get("DailyEntities", []):
+                            ent_id = ent.get("Id")
+                            ent_name = ent.get("Name")
+                            raw_val = ent.get("Value")
+                            if raw_val is not None:
+                                try:
+                                    val_f = float(raw_val)
+                                    val_pct = val_f * 100.0 if val_f <= 1.0 else val_f
+                                    if ent_id == "Sistema" or serie == "Sistema":
+                                        por_fecha[f]["Sistema"] = val_pct
+                                    if ent_name == "AGREGADO BOGOTA":
+                                        por_fecha[f]["AGREGADO BOGOTA"] = val_pct
+                                except ValueError:
+                                    pass
+                except Exception as e:
+                    logger.debug(f"Crudo XM histórico ilegible {arch.name}: {e}")
+
+        carpeta_diaria = self.data / "bronce" / "fte_xm_embalses"
+        if carpeta_diaria.exists():
+            for arch in sorted(carpeta_diaria.glob("*.json")):
+                try:
+                    cont = self._leer_json(arch)
+                    archivos_leidos.append(str(arch.relative_to(self.root)))
+                    f_str = cont.get("fecha_reporte")
+                    if f_str:
+                        f = date.fromisoformat(str(f_str)[:10])
+                        if f not in por_fecha:
+                            por_fecha[f] = {}
+                        if "sin_volumen_util_pct" in cont:
+                            por_fecha[f]["Sistema"] = float(cont["sin_volumen_util_pct"])
+                        if "agregado_bogota_pct" in cont:
+                            por_fecha[f]["AGREGADO BOGOTA"] = float(cont["agregado_bogota_pct"])
+                except Exception:
+                    pass
+
+        return {"por_fecha": por_fecha, "archivos": archivos_leidos}
+
+    def _cargar_ideam_precip(self) -> Dict[str, Any]:
+        """Carga datos de precipitación por departamento o municipio."""
+        por_semana: Dict[str, Dict[str, Any]] = {}
+        archivos_leidos = []
+        carpeta_precip = self.data / "bronce" / "fte_ideam_precip_historico"
+        if carpeta_precip.exists():
+            for arch in sorted(carpeta_precip.glob("*.json")):
+                try:
+                    data = self._leer_json(arch)
+                    archivos_leidos.append(str(arch.relative_to(self.root)))
+                    for row in data.get("payload", []):
+                        dia_str = row.get("dia")
+                        if not dia_str:
+                            continue
+                        f = date.fromisoformat(dia_str[:10])
+                        sem = semana_iso(f)
+                        if sem not in por_semana:
+                            por_semana[sem] = {"suma_mm": 0.0, "estaciones": 0, "ult_fecha": f}
+                        por_semana[sem]["suma_mm"] += float(row.get("suma_mm", 0.0))
+                        por_semana[sem]["estaciones"] += int(row.get("estaciones", 1))
+                        if f > por_semana[sem]["ult_fecha"]:
+                            por_semana[sem]["ult_fecha"] = f
+                except Exception:
+                    pass
+
+        carpeta_clima = self.data / "bronce" / "fte_ideam_clima"
+        if carpeta_clima.exists():
+            for arch in sorted(carpeta_clima.glob("*.json")):
+                try:
+                    data = self._leer_json(arch)
+                    archivos_leidos.append(str(arch.relative_to(self.root)))
+                    f_rep = data.get("fecha_reporte")
+                    if f_rep:
+                        f = date.fromisoformat(str(f_rep)[:10])
+                        sem = semana_iso(f)
+                        muns = data.get("municipios", {})
+                        if muns:
+                            vals_anom = [m.get("indicador_a3_anomalia_precip_pct") for m in muns.values() if isinstance(m.get("indicador_a3_anomalia_precip_pct"), (int, float))]
+                            vals_mm = [m.get("precipitacion_acumulada_30d_mm") for m in muns.values() if isinstance(m.get("precipitacion_acumulada_30d_mm"), (int, float))]
+                            prom_anom = sum(vals_anom) / len(vals_anom) if vals_anom else 0.0
+                            prom_mm_dia = (sum(vals_mm) / len(vals_mm) / 30.0) if vals_mm else round(max(0.5, 4.0 * (1.0 + prom_anom / 100.0)), 2)
+                            if sem not in por_semana:
+                                por_semana[sem] = {"mm_dia": prom_mm_dia, "var_ref_pct": prom_anom, "ult_fecha": f, "estaciones": len(muns)}
+                except Exception:
+                    pass
+
+        return {"por_semana": por_semana, "archivos": archivos_leidos}
+
+    def _cargar_ungrd_historico(self) -> Dict[str, Any]:
+        """Carga registros históricos de emergencias de la UNGRD."""
+        eventos = []
+        archivos_leidos = []
+        carpeta = self.data / "bronce" / "fte_ungrd_historico"
+        if carpeta.exists():
+            for arch in sorted(carpeta.glob("*.json")):
+                try:
+                    data = self._leer_json(arch)
+                    archivos_leidos.append(str(arch.relative_to(self.root)))
+                    for row in data.get("payload", []):
+                        f_str = row.get("fecha")
+                        ev = row.get("evento")
+                        if f_str and ev:
+                            f = date.fromisoformat(f_str[:10])
+                            eventos.append({
+                                "fecha": f,
+                                "semana_iso": semana_iso(f),
+                                "evento": ev.strip().upper()
+                            })
+                except Exception as e:
+                    logger.debug(f"Crudo UNGRD histórico ilegible {arch.name}: {e}")
+        return {"eventos": eventos, "archivos": archivos_leidos}
+
+    def _cargar_firms_historico(self) -> Dict[str, Any]:
+        """Carga focos históricos de NASA FIRMS si existen."""
+        por_semana: Dict[str, int] = {}
+        archivos_leidos = []
+        carpeta = self.data / "bronce" / "fte_firms_historico"
+        if carpeta.exists():
+            for arch in sorted(carpeta.glob("*.json")):
+                try:
+                    data = self._leer_json(arch)
+                    archivos_leidos.append(str(arch.relative_to(self.root)))
+                    csv_text = data.get("payload", {}).get("csv", "")
+                    if csv_text:
+                        lines = csv_text.strip().splitlines()
+                        if len(lines) > 1:
+                            header = lines[0].split(",")
+                            if "acq_date" in header:
+                                idx_date = header.index("acq_date")
+                                for line in lines[1:]:
+                                    parts = line.split(",")
+                                    if len(parts) > idx_date:
+                                        d = date.fromisoformat(parts[idx_date])
+                                        sem = semana_iso(d)
+                                        por_semana[sem] = por_semana.get(sem, 0) + 1
+                except Exception:
+                    pass
+        return {"por_semana": por_semana, "archivos": archivos_leidos}
+
     # ------------------------------------------------------- observaciones
     @staticmethod
     def _ultima_por_semana(capturas: List[Dict[str, Any]]) -> Dict[str, Tuple[Dict[str, Any], int]]:
@@ -372,20 +527,144 @@ class ModeloSemanal:
                                      muestra=meta.get("total_municipios_evaluados")))
             return obs
 
+        if origen == "xm_historico":
+            datos_xm = fuentes["xm_historico"]
+            por_fecha = datos_xm["por_fecha"]
+            arch_origen = datos_xm["archivos"][-1] if datos_xm["archivos"] else None
+            fechas_por_sem: Dict[str, List[date]] = {}
+            for f in por_fecha:
+                sem = semana_iso(f)
+                if sem not in fechas_por_sem:
+                    fechas_por_sem[sem] = []
+                fechas_por_sem[sem].append(f)
+
+            for s in semanas:
+                fechas = [f for f in fechas_por_sem.get(s, []) if campo in por_fecha[f]]
+                if not fechas:
+                    obs.append(self._obs(s, var, None, "sin_dato", None, 0, arch_origen, ambito="nacional"))
+                    continue
+                fechas.sort()
+                ult_f = fechas[-1]
+                val = por_fecha[ult_f][campo]
+                obs.append(self._obs(s, var, val, "dato", ult_f, len(fechas), arch_origen, ambito="nacional"))
+            return obs
+
+        if origen == "ideam_precip":
+            datos_ideam = fuentes["ideam_precip"]
+            por_semana = datos_ideam["por_semana"]
+            arch_origen = datos_ideam["archivos"][-1] if datos_ideam["archivos"] else None
+            for s in semanas:
+                if s not in por_semana:
+                    obs.append(self._obs(s, var, None, "sin_dato", None, 0, arch_origen, ambito="nacional"))
+                    continue
+                info = por_semana[s]
+                val = None
+                if campo == "mm_dia":
+                    if "mm_dia" in info:
+                        val = info["mm_dia"]
+                    elif info.get("estaciones", 0) > 0:
+                        val = round(info["suma_mm"] / info["estaciones"], 2)
+                elif campo == "var_ref_pct":
+                    if "var_ref_pct" in info:
+                        val = info["var_ref_pct"]
+                    else:
+                        s_ref = f"2025-W{s[-2:]}"
+                        if s_ref in por_semana:
+                            val_ref = por_semana[s_ref].get("mm_dia")
+                            if val_ref and "mm_dia" in info and val_ref > 0:
+                                val = round(((info["mm_dia"] - val_ref) / val_ref) * 100.0, 1)
+                estado = "dato" if val is not None else "sin_dato"
+                obs.append(self._obs(s, var, val, estado, info.get("ult_fecha"), 1, arch_origen, ambito="nacional", muestra=info.get("estaciones")))
+            return obs
+
+        if origen == "ungrd_historico":
+            datos_ungrd = fuentes["ungrd_historico"]
+            eventos = datos_ungrd["eventos"]
+            arch_origen = datos_ungrd["archivos"][-1] if datos_ungrd["archivos"] else None
+            targets = [t.strip().upper() for t in campo.split("|")]
+            
+            conteo_sem: Dict[str, Tuple[int, date]] = {}
+            for ev in eventos:
+                if ev["evento"] in targets:
+                    sem = ev["semana_iso"]
+                    cnt, ult_f = conteo_sem.get(sem, (0, ev["fecha"]))
+                    conteo_sem[sem] = (cnt + 1, max(ult_f, ev["fecha"]))
+
+            for s in semanas:
+                if s in conteo_sem:
+                    cnt, ult_f = conteo_sem[s]
+                    obs.append(self._obs(s, var, float(cnt), "dato", ult_f, cnt, arch_origen, ambito="nacional"))
+                else:
+                    anio_sem = int(s[:4])
+                    if 2019 <= anio_sem <= 2025:
+                        obs.append(self._obs(s, var, 0.0, "dato", fin_semana(s), 0, arch_origen, ambito="nacional"))
+                    else:
+                        obs.append(self._obs(s, var, None, "sin_dato", None, 0, arch_origen, ambito="nacional"))
+            return obs
+
+        if origen == "firms_historico":
+            datos_firms = fuentes["firms_historico"]
+            por_semana = datos_firms["por_semana"]
+            arch_origen = datos_firms["archivos"][-1] if datos_firms["archivos"] else None
+            for s in semanas:
+                if s in por_semana:
+                    cnt = por_semana[s]
+                    obs.append(self._obs(s, var, float(cnt), "dato", fin_semana(s), cnt, arch_origen, ambito="nacional"))
+                else:
+                    obs.append(self._obs(s, var, None, "sin_dato", None, 0, arch_origen, ambito="nacional"))
+            return obs
+
         raise ValueError(f"Origen no soportado en config: {origen}")
 
     # ------------------------------------------------------------ análogos
     def _serie_evento(self, noaa: List[Dict[str, Any]], inicio: str, variables: List[Dict[str, Any]],
-                      hasta: Optional[date], previas: int = 8) -> Dict[str, List[Dict[str, Any]]]:
+                      hasta: Optional[date], fuentes: Optional[Dict[str, Any]] = None,
+                      previas: int = 8) -> Dict[str, List[Dict[str, Any]]]:
         series: Dict[str, List[Dict[str, Any]]] = {v["codigo"]: [] for v in variables}
+
+        # Precomputar índices rápidos para fuentes históricas si están disponibles
+        xm_por_sem: Dict[str, Dict[str, float]] = {}
+        ungrd_por_sem: Dict[str, Dict[str, int]] = {}
+        if fuentes:
+            if "xm_historico" in fuentes:
+                por_fecha = fuentes["xm_historico"].get("por_fecha", {})
+                for f, vals in por_fecha.items():
+                    sem = semana_iso(f)
+                    if sem not in xm_por_sem:
+                        xm_por_sem[sem] = {}
+                    for k_c, v_c in vals.items():
+                        xm_por_sem[sem][k_c] = v_c  # el último día de la semana sobreescribe
+            if "ungrd_historico" in fuentes:
+                for ev in fuentes["ungrd_historico"].get("eventos", []):
+                    sem = ev["semana_iso"]
+                    e_name = ev["evento"]
+                    if sem not in ungrd_por_sem:
+                        ungrd_por_sem[sem] = {}
+                    ungrd_por_sem[sem][e_name] = ungrd_por_sem[sem].get(e_name, 0) + 1
+
         for r in noaa:
             if hasta and r["fecha"] > hasta:
                 break
             k = semanas_entre(inicio, r["semana_iso"]) + 1
             if k < 1 - previas:
                 continue
+            s = r["semana_iso"]
             for v in variables:
-                series[v["codigo"]].append({"semana_evento": k, "semana_iso": r["semana_iso"], "valor": r[v["campo"]]})
+                val: Optional[float] = None
+                orig = v.get("origen")
+                campo = v.get("campo")
+                if orig == "noaa_semanal":
+                    val = r.get(campo)
+                elif orig == "xm_historico":
+                    val = xm_por_sem.get(s, {}).get(campo)
+                elif orig == "ungrd_historico":
+                    targets = [t.strip().upper() for t in (campo or "").split("|")]
+                    if s in ungrd_por_sem:
+                        val = float(sum(ungrd_por_sem[s].get(t, 0) for t in targets))
+                    else:
+                        anio_s = int(s[:4]) if len(s) >= 4 and s[:4].isdigit() else 0
+                        val = 0.0 if (2019 <= anio_s <= 2025) else None
+                series[v["codigo"]].append({"semana_evento": k, "semana_iso": s, "valor": val})
         return series
 
     # -------------------------------------------------------------- construir
@@ -401,6 +680,10 @@ class ModeloSemanal:
             "bronce_ideam": self._cargar_capturas_bronce("fte_ideam_clima"),
             "bronce_firms": self._cargar_capturas_bronce("fte_firms_nasa"),
             "oro_cortes": self._cargar_cortes_oro(),
+            "xm_historico": self._cargar_xm_historico(),
+            "ideam_precip": self._cargar_ideam_precip(),
+            "ungrd_historico": self._cargar_ungrd_historico(),
+            "firms_historico": self._cargar_firms_historico(),
         }
 
         semana_actual = semana_iso(self.hoy)
@@ -428,14 +711,14 @@ class ModeloSemanal:
             ini = detectar_inicio_evento(ventana, det["umbral_inicio_c"], det["semanas_consecutivas_inicio"], vigente=False)
             if not ini:
                 continue
-            serie_ev = self._serie_evento(noaa_sem, ini, vars_analogos, hasta)
-            pico = max((p for p in serie_ev[var_det["codigo"]] if p["semana_evento"] >= 1), key=lambda p: p["valor"], default=None)
+            serie_ev = self._serie_evento(noaa_sem, ini, vars_analogos, hasta, fuentes=fuentes)
+            pico = max((p for p in serie_ev[var_det["codigo"]] if p["semana_evento"] >= 1 and p["valor"] is not None), key=lambda p: p["valor"], default=None)
             analogos.append({**ev, "inicio_semana": ini, "pico": pico, "series": serie_ev})
 
         evento_vigente: Dict[str, Any] = {"inicio_semana": inicio_evento, "series": {}}
         if inicio_evento:
-            evento_vigente["series"] = self._serie_evento(noaa_sem, inicio_evento, vars_analogos, None)
-            pts = [p for p in evento_vigente["series"][var_det["codigo"]] if p["semana_evento"] >= 1]
+            evento_vigente["series"] = self._serie_evento(noaa_sem, inicio_evento, vars_analogos, None, fuentes=fuentes)
+            pts = [p for p in evento_vigente["series"][var_det["codigo"]] if p["semana_evento"] >= 1 and p["valor"] is not None]
             evento_vigente["pico"] = max(pts, key=lambda p: p["valor"], default=None)
             evento_vigente["ultima"] = pts[-1] if pts else None
 
@@ -574,6 +857,14 @@ class ModeloSemanal:
             shutil.copyfile(vigente, por_semana)
         self.publicacion_dir.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(vigente, self.publicacion_dir / "comparativo_semanal.json")
+
+        # Registrar en almacén histórico inmutable (RF-SEM-09)
+        try:
+            from ingesta.semanal.historico import AlmacenHistorico
+            almacen = AlmacenHistorico(self.root, self.cargar_config(), self.hoy)
+            almacen.registrar(corte, self._cargar_cortes_oro())
+        except Exception as e:
+            logger.warning(f"No se pudo registrar en AlmacenHistorico: {e}")
 
 
 # =============================================================================

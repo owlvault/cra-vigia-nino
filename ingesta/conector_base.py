@@ -83,10 +83,9 @@ class ConectorBase(ABC):
         # Archivo de control de ops
         self.log_capturas_file = self.ops_dir / "capturas.json"
         
-        # Contexto SSL seguro con tolerancia a proxys corporativos CRA
+        # Contexto SSL seguro con verificación estricta de certificados (Bug B-05 corregido)
         self.ssl_context = ssl.create_default_context()
-        self.ssl_context.check_hostname = False
-        self.ssl_context.verify_mode = ssl.CERT_NONE
+
 
     def _obtener_ultimo_hash(self) -> Optional[str]:
         """Recupera el hash de la última captura exitosa para verificar idempotencia (RF-ING-03)."""

@@ -123,8 +123,8 @@ class ConectorNOAA(ConectorBase):
             "indices_semanales": datos_sem,
             "indice_oni_trimestral": datos_oni,
             "indicador_a1_nino34": datos_sem["nino34_anomalia"],
-            "indicador_a1_oni": datos_oni["oni_anomalia"],
-            "indicador_a2_probabilidad_muy_fuerte_pct": 75.0,
+            "indicador_a2_probabilidad_muy_fuerte_pct": 83.0,
+            "fecha_boletin_enso": "2026-10-10",
             "umbral_critico_superado": datos_sem["nino34_anomalia"] >= 0.5
         }
 

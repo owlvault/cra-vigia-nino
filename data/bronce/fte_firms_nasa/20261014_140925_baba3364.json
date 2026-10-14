@@ -1,0 +1,125 @@
+{
+  "fuente": "NASA FIRMS (VIIRS 375m)",
+  "sensor": "VIIRS S-NPP / NOAA-20",
+  "ventana_dias": 7,
+  "fecha_reporte": "2026-10-14",
+  "fecha_captura": "2026-10-14T14:09:25.422193+00:00",
+  "estado_autenticacion": "sin_api_key_modo_seguro",
+  "focos_municipales": {
+    "44847": {
+      "nombre": "Uribia",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "44430": {
+      "nombre": "Maicao",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "44001": {
+      "nombre": "Riohacha",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "44560": {
+      "nombre": "Manaure",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "47001": {
+      "nombre": "Santa Marta",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "47555": {
+      "nombre": "Plato",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "13244": {
+      "nombre": "El Carmen de Bolívar",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "13430": {
+      "nombre": "Magangué",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "13001": {
+      "nombre": "Cartagena de Indias",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "20001": {
+      "nombre": "Valledupar",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "20011": {
+      "nombre": "Aguachica",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "68079": {
+      "nombre": "Barichara",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "68679": {
+      "nombre": "San Gil",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "68001": {
+      "nombre": "Bucaramanga",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "11001": {
+      "nombre": "Bogotá, D.C.",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "25307": {
+      "nombre": "Girardot",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "25126": {
+      "nombre": "Cajicá",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "73001": {
+      "nombre": "Ibagué",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "73268": {
+      "nombre": "Espinal",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "41001": {
+      "nombre": "Neiva",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "15837": {
+      "nombre": "Tuta",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "05001": {
+      "nombre": "Medellín",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    },
+    "76001": {
+      "nombre": "Cali",
+      "focos_7d": null,
+      "confianza_alta_pct": null
+    }
+  }
+}
