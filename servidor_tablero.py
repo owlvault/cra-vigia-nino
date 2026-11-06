@@ -15,8 +15,10 @@ Uso: python servidor_tablero.py [--puerto 8088]
 from __future__ import annotations
 
 import argparse
+import hmac
 import json
 import logging
+import os
 import threading
 from datetime import datetime, timezone
 from functools import partial
@@ -24,6 +26,7 @@ from http import HTTPStatus
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any, Dict
+from urllib.parse import urlparse
 
 from ingesta.semanal.modelo_semanal import ejecutar_actualizacion
 
@@ -95,8 +98,50 @@ class Manejador(SimpleHTTPRequestHandler):
 
     def end_headers(self) -> None:
         self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header("X-Frame-Options", "DENY")
         self.send_header("Referrer-Policy", "same-origin")
+        self.send_header(
+            "Content-Security-Policy",
+            "default-src 'self'; "
+            "script-src 'self' 'unsafe-inline'; "
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+            "font-src 'self' data: https://fonts.gstatic.com; "
+            "img-src 'self' data: https:; "
+            "connect-src 'self'; "
+            "frame-ancestors 'none';"
+        )
         super().end_headers()
+
+    def _validar_seguridad_post(self) -> tuple[bool, int, str]:
+        """Valida protección anti-CSRF (Origin/Referer y Content-Type) y token administrativo opcional (SEC-03)."""
+        # 1. Validar Content-Type JSON explícito (mitiga CSRF vía formularios HTML simples)
+        content_type = (self.headers.get("Content-Type") or "").split(";")[0].strip().lower()
+        if content_type != "application/json":
+            return False, HTTPStatus.UNSUPPORTED_MEDIA_TYPE, "Content-Type debe ser application/json"
+
+        # 2. Validar Origin / Referer local (mitiga CSRF cross-origin CWE-352)
+        origen = self.headers.get("Origin") or self.headers.get("Referer")
+        if origen:
+            parsed = urlparse(origen)
+            if parsed.hostname not in ("localhost", "127.0.0.1"):
+                return False, HTTPStatus.FORBIDDEN, "Origen no permitido (CSRF bloqueado)"
+        else:
+            # Si el cliente no envía Origin/Referer, exigir cabecera personalizada anti-CSRF o token
+            req_with = self.headers.get("X-Requested-With")
+            token_cfg = os.environ.get("VIGIA_ADMIN_TOKEN")
+            if req_with != "Vigia-Client" and not token_cfg:
+                return False, HTTPStatus.FORBIDDEN, "Falta cabecera de verificación de origen (Origin o X-Requested-With)"
+
+        # 3. Validar token administrativo si está configurado en el entorno (VIGIA_ADMIN_TOKEN)
+        token_esperado = os.environ.get("VIGIA_ADMIN_TOKEN", "").strip()
+        if token_esperado:
+            auth_header = self.headers.get("Authorization", "")
+            token_bearer = auth_header[7:].strip() if auth_header.startswith("Bearer ") else ""
+            token_recibido = (self.headers.get("X-Vigia-Auth-Token") or token_bearer).strip()
+            if not token_recibido or not hmac.compare_digest(token_recibido, token_esperado):
+                return False, HTTPStatus.UNAUTHORIZED, "No autorizado: token administrativo inválido o ausente"
+
+        return True, HTTPStatus.OK, ""
 
     def do_GET(self) -> None:  # noqa: N802
         ruta = self.path.split("?")[0]
@@ -118,6 +163,9 @@ class Manejador(SimpleHTTPRequestHandler):
     def do_POST(self) -> None:  # noqa: N802
         if self.path.split("?")[0] != "/api/semanal/actualizar":
             return self._json(HTTPStatus.NOT_FOUND, {"error": "Ruta no encontrada"})
+        valido, codigo_err, msg_err = self._validar_seguridad_post()
+        if not valido:
+            return self._json(codigo_err, {"error": msg_err})
         try:
             largo = min(int(self.headers.get("Content-Length") or 0), 4096)
             cuerpo = json.loads(self.rfile.read(largo) or b"{}")

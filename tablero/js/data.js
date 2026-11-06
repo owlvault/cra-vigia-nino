@@ -1,8 +1,8 @@
 // Datos Maestros Integrados — Vigía El Niño · Acueductos
 window.VIGIA_DATA = { corte: {
   "metadata_corte": {
-    "fecha_corte": "2026-10-14",
-    "generado_en": "2026-10-14T14:20:50.112653+00:00",
+    "fecha_corte": "2026-11-06",
+    "generado_en": "2026-11-06T18:51:37.511914+00:00",
     "version_configuracion": "v1.0.0-20261008",
     "estado_calidad": "PUBLICADO_VALIDO",
     "total_municipios_evaluados": 23,
@@ -19,27 +19,27 @@ window.VIGIA_DATA = { corte: {
   "amenaza_global": {
     "fuente": "NOAA Climate Prediction Center",
     "url_origen": "https://www.cpc.ncep.noaa.gov/data/indices/wksst9120.for",
-    "fecha_captura": "2026-10-14T14:20:45.222050+00:00",
+    "fecha_captura": "2026-11-06T18:51:21.349661+00:00",
     "estado_alerta_noaa": "Advertencia de El Niño (El Niño Advisory)",
     "indices_semanales": {
-      "fecha_semana": "07OCT2026",
-      "nino12_sst": 26.1,
-      "nino12_anomalia": 5.2,
-      "nino3_sst": 29.0,
-      "nino3_anomalia": 4.1,
-      "nino34_sst": 30.0,
-      "nino34_anomalia": 3.3,
-      "nino4_sst": 29.9,
-      "nino4_anomalia": 1.3
+      "fecha_semana": "28OCT2026",
+      "nino12_sst": 26.7,
+      "nino12_anomalia": 5.4,
+      "nino3_sst": 29.5,
+      "nino3_anomalia": 4.4,
+      "nino34_sst": 30.2,
+      "nino34_anomalia": 3.4,
+      "nino4_sst": 30.1,
+      "nino4_anomalia": 1.4
     },
     "indice_oni_trimestral": {
-      "trimestre": "JAS",
+      "trimestre": "ASO",
       "ano": 2026,
-      "temperatura_media": 29.12,
-      "oni_anomalia": 2.16,
+      "temperatura_media": 29.23,
+      "oni_anomalia": 2.46,
       "intensidad_evento": "Muy Fuerte (Histórico)"
     },
-    "indicador_a1_nino34": 3.3,
+    "indicador_a1_nino34": 3.4,
     "indicador_a2_probabilidad_muy_fuerte_pct": 83.0,
     "fecha_boletin_enso": "2026-10-10",
     "umbral_critico_superado": true
@@ -64,7 +64,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -83,7 +83,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -88.5,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 98.75
         },
         "A-4": {
@@ -91,7 +91,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 48,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 90.0
         },
         "A-5": {
@@ -99,7 +99,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -107,7 +107,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 15.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 93.75
         },
         "H-2": {
@@ -139,7 +139,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -195,7 +195,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 100.0
         },
         "R-2": {
@@ -203,7 +203,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 60.0
         },
         "R-3": {
@@ -211,7 +211,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 80.0
         },
         "R-4": {
@@ -219,7 +219,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 100.0
         }
       },
@@ -247,7 +247,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -266,7 +266,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -76.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 88.33
         },
         "A-4": {
@@ -274,7 +274,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 39,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 82.5
         },
         "A-5": {
@@ -282,7 +282,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -290,7 +290,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 22.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 85.0
         },
         "H-2": {
@@ -322,7 +322,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -378,7 +378,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 100.0
         },
         "R-2": {
@@ -386,7 +386,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -394,7 +394,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -402,7 +402,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -430,7 +430,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -449,7 +449,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -68.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 81.67
         },
         "A-4": {
@@ -457,7 +457,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 34,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 78.33
         },
         "A-5": {
@@ -465,7 +465,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -473,7 +473,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 28.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 77.5
         },
         "H-2": {
@@ -505,7 +505,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -561,7 +561,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-2": {
@@ -569,7 +569,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -577,7 +577,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -585,7 +585,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -613,7 +613,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -632,7 +632,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -82.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 93.33
         },
         "A-4": {
@@ -640,7 +640,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 44,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 86.67
         },
         "A-5": {
@@ -648,7 +648,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -656,7 +656,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 18.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 90.0
         },
         "H-2": {
@@ -688,7 +688,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -744,7 +744,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 100.0
         },
         "R-2": {
@@ -752,7 +752,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 60.0
         },
         "R-3": {
@@ -760,7 +760,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 80.0
         },
         "R-4": {
@@ -768,7 +768,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 100.0
         }
       },
@@ -796,7 +796,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -815,7 +815,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -54.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 70.5
         },
         "A-4": {
@@ -823,7 +823,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 26,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 69.0
         },
         "A-5": {
@@ -831,7 +831,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -839,7 +839,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 38.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 69.0
         },
         "H-2": {
@@ -871,7 +871,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -927,7 +927,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-2": {
@@ -935,7 +935,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -943,7 +943,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -951,7 +951,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -979,7 +979,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -998,7 +998,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -62.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 76.67
         },
         "A-4": {
@@ -1006,7 +1006,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 31,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 75.83
         },
         "A-5": {
@@ -1014,7 +1014,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -1022,7 +1022,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 32.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 73.5
         },
         "H-2": {
@@ -1054,7 +1054,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -1110,7 +1110,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 100.0
         },
         "R-2": {
@@ -1118,7 +1118,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -1126,7 +1126,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -1134,7 +1134,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -1162,7 +1162,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -1181,7 +1181,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -64.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 78.33
         },
         "A-4": {
@@ -1189,7 +1189,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 33,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 77.5
         },
         "A-5": {
@@ -1197,7 +1197,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -1205,7 +1205,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 30.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 75.0
         },
         "H-2": {
@@ -1237,7 +1237,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -1293,7 +1293,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 100.0
         },
         "R-2": {
@@ -1301,7 +1301,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -1309,7 +1309,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -1317,7 +1317,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -1345,7 +1345,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -1364,7 +1364,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -48.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 66.0
         },
         "A-4": {
@@ -1372,7 +1372,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 22,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 63.0
         },
         "A-5": {
@@ -1380,7 +1380,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -1388,7 +1388,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 42.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 66.0
         },
         "H-2": {
@@ -1420,7 +1420,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -1476,7 +1476,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-2": {
@@ -1484,7 +1484,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -1492,7 +1492,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -1500,7 +1500,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -1528,7 +1528,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -1547,7 +1547,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -42.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 61.5
         },
         "A-4": {
@@ -1555,7 +1555,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 18,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 56.0
         },
         "A-5": {
@@ -1563,7 +1563,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -1571,7 +1571,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 65.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 45.0
         },
         "H-2": {
@@ -1603,7 +1603,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -1659,7 +1659,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-2": {
@@ -1667,7 +1667,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -1675,7 +1675,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -1683,7 +1683,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -1711,7 +1711,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -1730,7 +1730,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -46.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 64.5
         },
         "A-4": {
@@ -1738,7 +1738,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 24,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 66.0
         },
         "A-5": {
@@ -1746,7 +1746,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -1754,7 +1754,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 48.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 61.5
         },
         "H-2": {
@@ -1786,7 +1786,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -1842,7 +1842,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-2": {
@@ -1850,7 +1850,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -1858,7 +1858,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -1866,7 +1866,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -1894,7 +1894,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -1913,7 +1913,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -58.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 73.5
         },
         "A-4": {
@@ -1921,7 +1921,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 29,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 73.5
         },
         "A-5": {
@@ -1929,7 +1929,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -1937,7 +1937,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 35.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 71.25
         },
         "H-2": {
@@ -1969,7 +1969,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -2025,7 +2025,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 100.0
         },
         "R-2": {
@@ -2033,7 +2033,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -2041,7 +2041,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -2049,7 +2049,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -2077,7 +2077,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -2096,7 +2096,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -65.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 79.17
         },
         "A-4": {
@@ -2104,7 +2104,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 35,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 79.17
         },
         "A-5": {
@@ -2112,7 +2112,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -2120,7 +2120,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 24.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 82.5
         },
         "H-2": {
@@ -2152,7 +2152,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -2208,7 +2208,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-2": {
@@ -2216,7 +2216,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -2224,7 +2224,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -2232,7 +2232,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -2260,7 +2260,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -2279,7 +2279,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -52.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 69.0
         },
         "A-4": {
@@ -2287,7 +2287,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 25,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 67.5
         },
         "A-5": {
@@ -2295,7 +2295,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -2303,7 +2303,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 40.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 67.5
         },
         "H-2": {
@@ -2335,7 +2335,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -2391,7 +2391,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-2": {
@@ -2399,7 +2399,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -2407,7 +2407,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -2415,7 +2415,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -2443,7 +2443,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -2462,7 +2462,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -34.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 54.0
         },
         "A-4": {
@@ -2470,7 +2470,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 14,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 48.0
         },
         "A-5": {
@@ -2478,7 +2478,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -2486,7 +2486,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 62.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 48.0
         },
         "H-2": {
@@ -2518,7 +2518,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -2574,7 +2574,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-2": {
@@ -2582,7 +2582,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -2590,7 +2590,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -2598,7 +2598,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -2626,7 +2626,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -2645,7 +2645,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -38.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 58.0
         },
         "A-4": {
@@ -2653,7 +2653,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 16,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 52.0
         },
         "A-5": {
@@ -2661,7 +2661,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -2669,7 +2669,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 46.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 63.0
         },
         "H-2": {
@@ -2698,10 +2698,10 @@ window.VIGIA_DATA = { corte: {
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
-          "valor": 71.5,
+          "valor": 69.0,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -2757,7 +2757,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-2": {
@@ -2765,7 +2765,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -2773,7 +2773,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -2781,7 +2781,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -2809,7 +2809,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -2828,7 +2828,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -55.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 71.25
         },
         "A-4": {
@@ -2836,7 +2836,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 28,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 72.0
         },
         "A-5": {
@@ -2844,7 +2844,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -2852,7 +2852,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 45.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 63.75
         },
         "H-2": {
@@ -2881,10 +2881,10 @@ window.VIGIA_DATA = { corte: {
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
-          "valor": 66.2,
+          "valor": 65.3,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -2940,7 +2940,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-2": {
@@ -2948,7 +2948,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -2956,7 +2956,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -2964,7 +2964,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -2992,7 +2992,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -3011,7 +3011,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -32.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 52.0
         },
         "A-4": {
@@ -3019,7 +3019,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 12,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 44.0
         },
         "A-5": {
@@ -3027,7 +3027,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -3035,7 +3035,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 55.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 55.0
         },
         "H-2": {
@@ -3067,7 +3067,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -3123,7 +3123,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-2": {
@@ -3131,7 +3131,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -3139,7 +3139,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -3147,7 +3147,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -3175,7 +3175,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -3194,7 +3194,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -45.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 63.75
         },
         "A-4": {
@@ -3202,7 +3202,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 21,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 61.5
         },
         "A-5": {
@@ -3210,7 +3210,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -3218,7 +3218,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 52.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 58.0
         },
         "H-2": {
@@ -3250,7 +3250,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -3306,7 +3306,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-2": {
@@ -3314,7 +3314,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -3322,7 +3322,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -3330,7 +3330,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -3358,7 +3358,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -3377,7 +3377,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -56.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 72.0
         },
         "A-4": {
@@ -3385,7 +3385,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 27,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 70.5
         },
         "A-5": {
@@ -3393,7 +3393,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -3401,7 +3401,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 36.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 70.5
         },
         "H-2": {
@@ -3430,10 +3430,10 @@ window.VIGIA_DATA = { corte: {
         },
         "H-5": {
           "nombre": "Volumen Útil Embalse",
-          "valor": 41.0,
+          "valor": 48.2,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -3489,7 +3489,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 100.0
         },
         "R-2": {
@@ -3497,7 +3497,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -3505,7 +3505,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -3513,7 +3513,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -3541,7 +3541,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -3560,7 +3560,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -51.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 68.25
         },
         "A-4": {
@@ -3568,7 +3568,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 23,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 64.5
         },
         "A-5": {
@@ -3576,7 +3576,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -3584,7 +3584,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 44.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 64.5
         },
         "H-2": {
@@ -3616,7 +3616,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -3672,7 +3672,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-2": {
@@ -3680,7 +3680,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -3688,7 +3688,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -3696,7 +3696,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -3724,7 +3724,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -3743,7 +3743,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -46.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 64.5
         },
         "A-4": {
@@ -3751,7 +3751,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 22,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 63.0
         },
         "A-5": {
@@ -3759,7 +3759,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -3767,7 +3767,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 48.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 61.5
         },
         "H-2": {
@@ -3799,7 +3799,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -3855,7 +3855,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 100.0
         },
         "R-2": {
@@ -3863,7 +3863,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -3871,7 +3871,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -3879,7 +3879,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -3907,7 +3907,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -3926,7 +3926,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -28.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 48.0
         },
         "A-4": {
@@ -3934,7 +3934,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 9,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 36.0
         },
         "A-5": {
@@ -3942,7 +3942,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -3950,7 +3950,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 68.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 42.0
         },
         "H-2": {
@@ -3982,7 +3982,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -4038,7 +4038,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-2": {
@@ -4046,7 +4046,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -4054,7 +4054,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -4062,7 +4062,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -4090,7 +4090,7 @@ window.VIGIA_DATA = { corte: {
       "indicadores": {
         "A-1": {
           "nombre": "ONI / Niño 3.4",
-          "valor": 3.3,
+          "valor": 3.4,
           "unidad": "°C",
           "fuente": "NOAA CPC",
           "fecha_dato": "2026-09-30",
@@ -4109,7 +4109,7 @@ window.VIGIA_DATA = { corte: {
           "valor": -31.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 51.0
         },
         "A-4": {
@@ -4117,7 +4117,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 11,
           "unidad": "días",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 42.0
         },
         "A-5": {
@@ -4125,7 +4125,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "conteo",
           "fuente": "NASA FIRMS",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "H-1": {
@@ -4133,7 +4133,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 60.0,
           "unidad": "%",
           "fuente": "IDEAM",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 50.0
         },
         "H-2": {
@@ -4165,7 +4165,7 @@ window.VIGIA_DATA = { corte: {
           "valor": null,
           "unidad": "%",
           "fuente": "XM Sinergox",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": null
         },
         "S-1": {
@@ -4221,7 +4221,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 1,
           "unidad": "binario",
           "fuente": "SSPD / MinVivienda",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-2": {
@@ -4229,7 +4229,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-3": {
@@ -4237,7 +4237,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "MinVivienda Survey123",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         },
         "R-4": {
@@ -4245,7 +4245,7 @@ window.VIGIA_DATA = { corte: {
           "valor": 0,
           "unidad": "binario",
           "fuente": "UNGRD Sala de Crisis",
-          "fecha_dato": "2026-10-14",
+          "fecha_dato": "2026-11-06",
           "puntaje": 0.0
         }
       },
@@ -4439,7 +4439,7 @@ window.VIGIA_DATA = { corte: {
   ],
   "alertas_activas": [
     {
-      "id_alerta": "ALT-20261014-0001",
+      "id_alerta": "ALT-20261106-0001",
       "divipola": "44847",
       "municipio": "Uribia",
       "departamento": "La Guajira",
@@ -4447,11 +4447,11 @@ window.VIGIA_DATA = { corte: {
       "icr": 89.1,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
+      "fecha_emision": "2026-11-06T18:51:37.511914+00:00",
       "prioridad": "ALTA"
     },
     {
-      "id_alerta": "ALT-20261014-0002",
+      "id_alerta": "ALT-20261106-0002",
       "divipola": "44430",
       "municipio": "Maicao",
       "departamento": "La Guajira",
@@ -4459,11 +4459,11 @@ window.VIGIA_DATA = { corte: {
       "icr": 85.0,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
+      "fecha_emision": "2026-11-06T18:51:37.511914+00:00",
       "prioridad": "ALTA"
     },
     {
-      "id_alerta": "ALT-20261014-0003",
+      "id_alerta": "ALT-20261106-0003",
       "divipola": "44001",
       "municipio": "Riohacha",
       "departamento": "La Guajira",
@@ -4471,11 +4471,11 @@ window.VIGIA_DATA = { corte: {
       "icr": 63.5,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
+      "fecha_emision": "2026-11-06T18:51:37.511914+00:00",
       "prioridad": "MEDIA"
     },
     {
-      "id_alerta": "ALT-20261014-0004",
+      "id_alerta": "ALT-20261106-0004",
       "divipola": "44560",
       "municipio": "Manaure",
       "departamento": "La Guajira",
@@ -4483,11 +4483,11 @@ window.VIGIA_DATA = { corte: {
       "icr": 86.7,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
+      "fecha_emision": "2026-11-06T18:51:37.511914+00:00",
       "prioridad": "ALTA"
     },
     {
-      "id_alerta": "ALT-20261014-0005",
+      "id_alerta": "ALT-20261106-0005",
       "divipola": "47555",
       "municipio": "Plato",
       "departamento": "Magdalena",
@@ -4495,11 +4495,11 @@ window.VIGIA_DATA = { corte: {
       "icr": 73.6,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
+      "fecha_emision": "2026-11-06T18:51:37.511914+00:00",
       "prioridad": "MEDIA"
     },
     {
-      "id_alerta": "ALT-20261014-0006",
+      "id_alerta": "ALT-20261106-0006",
       "divipola": "13244",
       "municipio": "El Carmen de Bolívar",
       "departamento": "Bolívar",
@@ -4507,11 +4507,11 @@ window.VIGIA_DATA = { corte: {
       "icr": 75.9,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
+      "fecha_emision": "2026-11-06T18:51:37.511914+00:00",
       "prioridad": "ALTA"
     },
     {
-      "id_alerta": "ALT-20261014-0007",
+      "id_alerta": "ALT-20261106-0007",
       "divipola": "20011",
       "municipio": "Aguachica",
       "departamento": "Cesar",
@@ -4519,11 +4519,11 @@ window.VIGIA_DATA = { corte: {
       "icr": 70.3,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
+      "fecha_emision": "2026-11-06T18:51:37.511914+00:00",
       "prioridad": "MEDIA"
     },
     {
-      "id_alerta": "ALT-20261014-0008",
+      "id_alerta": "ALT-20261106-0008",
       "divipola": "68079",
       "municipio": "Barichara",
       "departamento": "Santander",
@@ -4531,11 +4531,11 @@ window.VIGIA_DATA = { corte: {
       "icr": 64.7,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
+      "fecha_emision": "2026-11-06T18:51:37.511914+00:00",
       "prioridad": "MEDIA"
     },
     {
-      "id_alerta": "ALT-20261014-0009",
+      "id_alerta": "ALT-20261106-0009",
       "divipola": "73268",
       "municipio": "Espinal",
       "departamento": "Tolima",
@@ -4543,11 +4543,11 @@ window.VIGIA_DATA = { corte: {
       "icr": 70.4,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
+      "fecha_emision": "2026-11-06T18:51:37.511914+00:00",
       "prioridad": "MEDIA"
     },
     {
-      "id_alerta": "ALT-20261014-0010",
+      "id_alerta": "ALT-20261106-0010",
       "divipola": "15837",
       "municipio": "Tuta",
       "departamento": "Boyacá",
@@ -4555,7 +4555,7 @@ window.VIGIA_DATA = { corte: {
       "icr": 65.6,
       "motivo": "ICR crítico por déficit hídrico extremo",
       "estado_revision": "PENDIENTE_REVISION_CRA",
-      "fecha_emision": "2026-10-14T14:20:50.112653+00:00",
+      "fecha_emision": "2026-11-06T18:51:37.511914+00:00",
       "prioridad": "MEDIA"
     }
   ]

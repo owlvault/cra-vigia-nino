@@ -184,6 +184,25 @@ const CATALOGO_INDICADORES_MASTER = [
   { codigo: "R-4", capa: "R", nombre: "Declaratoria de Calamidad Pública por Sequía Vigente", unidad: "binario (1/0)", fuente: "UNGRD / Alcaldía", escala: "Municipio", formula: "1 si el municipio cuenta con Decreto de Calamidad Pública por Ley 1523; 0 sin decreto", dir: "↑", en_icr: true, umbrales: { optimo: "0", amarilla: "0", naranja: "1", roja: "1", extremo: "1" } }
 ];
 
+function escaparHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function escaparUrl(url) {
+  if (!url) return '#';
+  const limpia = String(url).trim();
+  if (/^https?:\/\//i.test(limpia)) {
+    return escaparHtml(limpia);
+  }
+  return '#';
+}
+
 function getExplicacionCiudadana(codigo) {
   if (!codigo) return null;
   const codNormalizado = String(codigo).toUpperCase().trim();
@@ -204,24 +223,26 @@ function generarHtmlExplicacion(codigo) {
         <span class="exp-badge">💡 Guía Ciudadana</span>
         <button type="button" class="btn-cerrar-exp" title="Cerrar explicación">✕</button>
       </div>
-      <strong class="exp-titulo">${exp.titulo_sencillo}</strong>
+      <strong class="exp-titulo">${escaparHtml(exp.titulo_sencillo)}</strong>
       <div class="exp-bloque">
         <span class="exp-item-label">¿Qué nos dice?</span>
-        <p class="exp-item-text">${exp.que_mide}</p>
+        <p class="exp-item-text">${escaparHtml(exp.que_mide)}</p>
       </div>
       <div class="exp-bloque">
         <span class="exp-item-label">¿Por qué te afecta?</span>
-        <p class="exp-item-text">${exp.por_que_importa}</p>
+        <p class="exp-item-text">${escaparHtml(exp.por_que_importa)}</p>
       </div>
       <div class="exp-bloque exp-alerta">
         <span class="exp-item-label">¿Cuándo hay alerta?</span>
-        <p class="exp-item-text">${exp.cuando_hay_alerta}</p>
+        <p class="exp-item-text">${escaparHtml(exp.cuando_hay_alerta)}</p>
       </div>
     </div>
   `;
 }
 
 // Exponer globalmente en window para accesibilidad y pruebas
+window.escaparHtml = escaparHtml;
+window.escaparUrl = escaparUrl;
 window.CATALOGO_DIVULGACION_CIUDADANA = CATALOGO_DIVULGACION_CIUDADANA;
 window.CATALOGO_INDICADORES_MASTER = CATALOGO_INDICADORES_MASTER;
 window.getExplicacionCiudadana = getExplicacionCiudadana;
@@ -295,12 +316,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initExportaciones();
 
   // Exponer para interacción desde popups cartográficos
-  window.abrirFichaDesdeMapa = function(divipola) {
+  window.abrirFichaDesdeMapa = function (divipola) {
     cambiarVista('V-04');
     abrirFichaMunicipal(divipola);
   };
 
-  window.verEnMapaDesdeStory = function(divipola) {
+  window.verEnMapaDesdeStory = function (divipola) {
     ocultarModoStory();
     cambiarVista('V-03');
     setTimeout(() => {
@@ -411,19 +432,19 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (!panel) {
         panel = document.getElementById(`exp-muni-${cod}`) ||
-                document.getElementById(`exp-cat-${cod}`) ||
-                document.getElementById(`exp-tbl-${cod}`);
+          document.getElementById(`exp-cat-${cod}`) ||
+          document.getElementById(`exp-tbl-${cod}`);
       }
       if (!panel) {
         panel = btn.parentElement?.querySelector('.panel-exp-desplegable') ||
-                btn.closest('.ind-top-row')?.parentElement?.querySelector('.panel-exp-desplegable') ||
-                btn.closest('td')?.querySelector('.panel-exp-desplegable') ||
-                btn.closest('th')?.querySelector('.panel-exp-desplegable');
+          btn.closest('.ind-top-row')?.parentElement?.querySelector('.panel-exp-desplegable') ||
+          btn.closest('td')?.querySelector('.panel-exp-desplegable') ||
+          btn.closest('th')?.querySelector('.panel-exp-desplegable');
       }
 
       if (!panel) return;
 
-      const isAbierto = panel.style.display !== 'none' && 
+      const isAbierto = panel.style.display !== 'none' &&
         (!panel.hasAttribute('data-codigo-actual') || panel.getAttribute('data-codigo-actual') === cod);
 
       if (isAbierto) {
@@ -500,7 +521,7 @@ document.addEventListener('DOMContentLoaded', () => {
       state.storytelling.activo = true;
       document.querySelectorAll('.vista-panel').forEach(panel => panel.classList.remove('active'));
       document.querySelectorAll('.nav-tab-btn').forEach(btn => btn.classList.remove('active'));
-      
+
       const tabStory = document.getElementById('tab-storytelling');
       if (tabStory) tabStory.classList.add('active');
 
@@ -795,19 +816,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div>
                       <div style="display:flex;align-items:center;gap:8px">
                         <span class="pulse-indicator"></span>
-                        <strong style="font-size:15px;color:var(--texto-fuerte)">${m.nombre}</strong>
-                        <span style="font-size:12px;color:var(--texto-claro)">(${m.departamento})</span>
+                        <strong style="font-size:15px;color:var(--texto-fuerte)">${escaparHtml(m.nombre)}</strong>
+                        <span style="font-size:12px;color:var(--texto-claro)">(${escaparHtml(m.departamento)})</span>
                       </div>
                       <div style="font-size:12px;color:var(--texto);margin-top:3px">
-                        Continuidad: <strong>${m.indicadores['S-1']?.valor ?? '—'} h/d</strong> · Lluvia 30d: <strong>${m.indicadores['A-3']?.valor ?? '—'} %</strong> · Población: <strong>${m.poblacion.toLocaleString('es-CO')} hab.</strong>
+                        Continuidad: <strong>${escaparHtml(m.indicadores['S-1']?.valor ?? '—')} h/d</strong> · Lluvia 30d: <strong>${escaparHtml(m.indicadores['A-3']?.valor ?? '—')} %</strong> · Población: <strong>${Number(m.poblacion || 0).toLocaleString('es-CO')} hab.</strong>
                       </div>
                     </div>
                     <div style="display:flex;align-items:center;gap:12px">
                       <div style="text-align:right">
-                        <div style="font-size:18px;font-weight:900;color:var(--alerta-roja)">${m.icr.toFixed(1)}</div>
+                        <div style="font-size:18px;font-weight:900;color:var(--alerta-roja)">${Number(m.icr || 0).toFixed(1)}</div>
                         <div style="font-size:10px;text-transform:uppercase;color:var(--texto-claro);font-weight:700">ICR RIESGO</div>
                       </div>
-                      <button class="btn-secundario" onclick="window.verEnMapaDesdeStory('${m.divipola}')" style="padding:4px 8px;font-size:11px">Localizar</button>
+                      <button class="btn-secundario" onclick="window.verEnMapaDesdeStory('${escaparHtml(m.divipola)}')" style="padding:4px 8px;font-size:11px">Localizar</button>
                     </div>
                   </div>
                 `).join('')}
@@ -1200,10 +1221,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     grid.innerHTML = eslabones.map((esl, idx) => `
       <div class="eslabon-card ${idx === 0 ? 'active' : ''}" data-eslabon-idx="${idx}">
-        <div class="eslabon-num">${esl.num}</div>
-        <div class="eslabon-titulo">${esl.titulo}</div>
-        <div class="eslabon-valor-destacado">${esl.valor}</div>
-        <div class="eslabon-desc">${esl.desc}</div>
+        <div class="eslabon-num">${escaparHtml(esl.num)}</div>
+        <div class="eslabon-titulo">${escaparHtml(esl.titulo)}</div>
+        <div class="eslabon-valor-destacado">${escaparHtml(esl.valor)}</div>
+        <div class="eslabon-desc">${escaparHtml(esl.desc)}</div>
       </div>
     `).join('');
 
@@ -1224,14 +1245,14 @@ document.addEventListener('DOMContentLoaded', () => {
       drawer.innerHTML = `
         <div style="display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:12px">
           <div>
-            <span style="font-size:11px;font-weight:800;color:var(--cra-cian-texto);text-transform:uppercase">${esl.num} · Diagnóstico Causal</span>
-            <h4 style="font-size:16px;font-weight:900;color:var(--texto-fuerte);margin-top:2px">${esl.titulo}: ${esl.desc}</h4>
-            <p style="font-size:13px;color:var(--texto);margin-top:6px;max-width:760px;line-height:1.45">${esl.detalle}</p>
+            <span style="font-size:11px;font-weight:800;color:var(--cra-cian-texto);text-transform:uppercase">${escaparHtml(esl.num)} · Diagnóstico Causal</span>
+            <h4 style="font-size:16px;font-weight:900;color:var(--texto-fuerte);margin-top:2px">${escaparHtml(esl.titulo)}: ${escaparHtml(esl.desc)}</h4>
+            <p style="font-size:13px;color:var(--texto);margin-top:6px;max-width:760px;line-height:1.45">${escaparHtml(esl.detalle)}</p>
           </div>
           <div style="background:var(--superficie);border:1px solid var(--linea);padding:10px 14px;border-radius:var(--radio-md);text-align:right">
             <div style="font-size:11px;color:var(--texto-claro);font-weight:700;text-transform:uppercase">Métrica Regulatoria</div>
-            <div style="font-size:13px;font-weight:800;color:var(--cra-cian-texto)">${esl.indicador}</div>
-            <div style="font-size:11px;font-weight:700;color:var(--alerta-roja);margin-top:2px">${esl.impacto}</div>
+            <div style="font-size:13px;font-weight:800;color:var(--cra-cian-texto)">${escaparHtml(esl.indicador)}</div>
+            <div style="font-size:11px;font-weight:700;color:var(--alerta-roja);margin-top:2px">${escaparHtml(esl.impacto)}</div>
           </div>
         </div>
       `;
@@ -1275,15 +1296,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (amenaza.indice_oni_trimestral) {
         document.getElementById('noaa-oni-resumen').innerHTML = `
-          Trimestre ${amenaza.indice_oni_trimestral.trimestre} ${amenaza.indice_oni_trimestral.ano}: 
-          <strong>+${amenaza.indice_oni_trimestral.oni_anomalia.toFixed(2)} °C</strong> (${amenaza.indice_oni_trimestral.intensidad_evento})
+          Trimestre ${escaparHtml(amenaza.indice_oni_trimestral.trimestre)} ${escaparHtml(amenaza.indice_oni_trimestral.ano)}: 
+          <strong>+${Number(amenaza.indice_oni_trimestral.oni_anomalia || 0).toFixed(2)} °C</strong> (${escaparHtml(amenaza.indice_oni_trimestral.intensidad_evento)})
         `;
       }
 
       const descBanner = document.getElementById('noaa-resumen-desc');
       if (descBanner) {
-        const prob = amenaza.indicador_a2_probabilidad_muy_fuerte_pct !== undefined ? amenaza.indicador_a2_probabilidad_muy_fuerte_pct.toFixed(1) : '83.0';
-        descBanner.innerHTML = `Anomalía en la región <strong>Niño 3.4 a +${sem.nino34_anomalia.toFixed(1)} °C</strong> (con picos en la región Niño 1+2 de +${sem.nino12_anomalia.toFixed(1)} °C) y una probabilidad del <strong>${prob} %</strong> de consolidar un evento de carácter histórico (RONI &ge; +2.5 °C).`;
+        const prob = amenaza.indicador_a2_probabilidad_muy_fuerte_pct !== undefined ? Number(amenaza.indicador_a2_probabilidad_muy_fuerte_pct).toFixed(1) : '83.0';
+        descBanner.innerHTML = `Anomalía en la región <strong>Niño 3.4 a +${Number(sem.nino34_anomalia || 0).toFixed(1)} °C</strong> (con picos en la región Niño 1+2 de +${Number(sem.nino12_anomalia || 0).toFixed(1)} °C) y una probabilidad del <strong>${escaparHtml(prob)} %</strong> de consolidar un evento de carácter histórico (RONI &ge; +2.5 °C).`;
       }
     }
 
@@ -1304,20 +1325,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const ordenados = [...state.corte.municipios].sort((a, b) => (b.icr || 0) - (a.icr || 0)).slice(0, 10);
 
     tbody.innerHTML = ordenados.map(m => {
-      const contHoras = m.indicadores['S-1']?.valor !== null && m.indicadores['S-1']?.valor !== undefined ? `${m.indicadores['S-1'].valor} h/d` : 'Sin dato';
+      const contHoras = m.indicadores['S-1']?.valor !== null && m.indicadores['S-1']?.valor !== undefined ? `${escaparHtml(m.indicadores['S-1'].valor)} h/d` : 'Sin dato';
       const racionamiento = m.indicadores['R-3']?.valor === 1 ? '<span style="color:var(--alerta-roja);font-weight:800">SÍ (Confirmado)</span>' : '<span style="color:var(--alerta-sin)">No reportado</span>';
 
       return `
-        <tr data-abrir-municipio="${m.divipola}">
+        <tr data-abrir-municipio="${escaparHtml(m.divipola)}">
           <td>
-            <strong>${m.nombre}</strong> <span style="color:var(--texto-claro)">(${m.departamento})</span>
+            <strong>${escaparHtml(m.nombre)}</strong> <span style="color:var(--texto-claro)">(${escaparHtml(m.departamento)})</span>
           </td>
-          <td><span class="chip-alerta ${m.nivel_alerta}">${m.nivel_alerta.replace('_', ' ')}</span></td>
-          <td><strong style="font-size:15px;color:var(--texto-fuerte)">${m.icr.toFixed(1)}</strong></td>
+          <td><span class="chip-alerta ${escaparHtml(m.nivel_alerta)}">${escaparHtml(String(m.nivel_alerta || '').replace('_', ' '))}</span></td>
+          <td><strong style="font-size:15px;color:var(--texto-fuerte)">${Number(m.icr || 0).toFixed(1)}</strong></td>
           <td>${contHoras}</td>
           <td>${racionamiento}</td>
           <td>
-            <button class="btn-secundario" style="padding:4px 8px;font-size:11px" data-abrir-municipio="${m.divipola}">
+            <button class="btn-secundario" style="padding:4px 8px;font-size:11px" data-abrir-municipio="${escaparHtml(m.divipola)}">
               Ver Ficha ➔
             </button>
           </td>
@@ -1367,7 +1388,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const munis = state.corte.municipios;
       const caribe = munis.filter(m => m.region === 'Caribe');
       const andina = munis.filter(m => m.region === 'Andina');
-      
+
       const calcStats = (lista) => {
         if (!lista.length) return { dias: 0, anom: 0, focos: 0 };
         const dias = Math.round(lista.reduce((acc, m) => acc + (m.indicadores?.['A-4']?.valor || 0), 0) / lista.length);
@@ -1458,7 +1479,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!select) return;
     const deptos = state.corte.departamentos;
     select.innerHTML = '<option value="TODOS">Todos los Departamentos (12)</option>' +
-      deptos.map(d => `<option value="${d.cod_depto}">${d.departamento} (${d.total_municipios})</option>`).join('');
+    deptos.map(d => `<option value="${escaparHtml(d.cod_depto)}">${escaparHtml(d.departamento)} (${escaparHtml(d.total_municipios)})</option>`).join('');
   }
 
   function hacerZoomRegion(regionKey) {
@@ -1553,10 +1574,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (deptosGeo) {
       state.deptoLayer = L.geoJSON(deptosGeo, {
-        style: function(feature) {
+        style: function (feature) {
           const cod = feature.properties.DPTO_CCDGO;
           const munisDepto = municipios.filter(m => m.cod_depto === cod);
-          
+
           let fillColor = '#E2E8F0';
           let fillOpacity = 0.45;
 
@@ -1576,7 +1597,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fillOpacity: fillOpacity
           };
         },
-        onEachFeature: function(feature, layer) {
+        onEachFeature: function (feature, layer) {
           const cod = feature.properties.DPTO_CCDGO;
           const nombre = feature.properties.DPTO_CNMBR;
           const munisDepto = municipios.filter(m => m.cod_depto === cod);
@@ -1596,7 +1617,7 @@ document.addEventListener('DOMContentLoaded', () => {
           });
 
           layer.on({
-            mouseover: function(e) {
+            mouseover: function (e) {
               const l = e.target;
               l.setStyle({
                 weight: 2.8,
@@ -1607,10 +1628,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 l.bringToFront();
               }
             },
-            mouseout: function(e) {
+            mouseout: function (e) {
               state.deptoLayer.resetStyle(e.target);
             },
-            click: function() {
+            click: function () {
               const select = document.getElementById('select-filtro-depto');
               if (select) {
                 select.value = cod;
@@ -1657,23 +1678,23 @@ document.addEventListener('DOMContentLoaded', () => {
         fillOpacity: 0.95
       });
 
-      const s1Val = m.indicadores['S-1']?.valor !== undefined ? `${m.indicadores['S-1'].valor} h/d` : 'Sin dato';
-      const a3Val = m.indicadores['A-3']?.valor !== undefined ? `${m.indicadores['A-3'].valor}%` : 'Sin dato';
-      const s2Val = m.indicadores['S-2']?.valor !== undefined ? `${m.indicadores['S-2'].valor} pts` : 'Sin dato';
-      const nivelLabel = m.nivel_alerta.toUpperCase().replace('_', ' ');
+      const s1Val = m.indicadores['S-1']?.valor !== undefined ? `${escaparHtml(m.indicadores['S-1'].valor)} h/d` : 'Sin dato';
+      const a3Val = m.indicadores['A-3']?.valor !== undefined ? `${escaparHtml(m.indicadores['A-3'].valor)}%` : 'Sin dato';
+      const s2Val = m.indicadores['S-2']?.valor !== undefined ? `${escaparHtml(m.indicadores['S-2'].valor)} pts` : 'Sin dato';
+      const nivelLabel = escaparHtml(String(m.nivel_alerta || '').toUpperCase().replace('_', ' '));
 
       const popupHtml = `
         <div class="cra-map-popup-card">
           <div class="cra-map-popup-header">
             <div>
-              <h4>${m.nombre}</h4>
-              <div class="cra-map-popup-sub">${m.departamento} · DIVIPOLA ${m.divipola}</div>
+              <h4>${escaparHtml(m.nombre)}</h4>
+              <div class="cra-map-popup-sub">${escaparHtml(m.departamento)} · DIVIPOLA ${escaparHtml(m.divipola)}</div>
             </div>
-            <span class="chip-alerta ${m.nivel_alerta}">${nivelLabel}</span>
+            <span class="chip-alerta ${escaparHtml(m.nivel_alerta)}">${nivelLabel}</span>
           </div>
           <div class="cra-map-metric-row">
             <span>Índice Compuesto (ICR):</span>
-            <span class="val" style="color:${colHex}">${m.icr} pts</span>
+            <span class="val" style="color:${colHex}">${escaparHtml(m.icr)} pts</span>
           </div>
           <div class="cra-map-metric-row">
             <span>Población Afectada:</span>
@@ -1691,7 +1712,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <span>Riesgo Calidad (IRCA S-2):</span>
             <span class="val">${s2Val}</span>
           </div>
-          <button class="cra-map-popup-btn" onclick="window.abrirFichaDesdeMapa('${m.divipola}')">
+          <button class="cra-map-popup-btn" onclick="window.abrirFichaDesdeMapa('${escaparHtml(m.divipola)}')">
             Ver Ficha Municipal Completa ➔
           </button>
         </div>
@@ -1719,21 +1740,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (state.arcgis && state.arcgis.activo && state.arcgis.geojsonData) {
       const geoData = state.arcgis.geojsonData;
-      const hasPolygons = geoData.features && geoData.features.some(f => 
+      const hasPolygons = geoData.features && geoData.features.some(f =>
         f.geometry && (f.geometry.type === 'Polygon' || f.geometry.type === 'MultiPolygon')
       );
 
       if (hasPolygons) {
         state.arcgis.layer = L.geoJSON(geoData, {
-          filter: function(feature) {
+          filter: function (feature) {
             return feature.geometry && (feature.geometry.type === 'Polygon' || feature.geometry.type === 'MultiPolygon');
           },
-          style: function(feature) {
+          style: function (feature) {
             const p = feature.properties || {};
             const divipola = String(p.DIVIPOLA || p.MPIO_CCDGO || p.divipola || '').padStart(5, '0');
             const muni = municipios.find(m => m.divipola === divipola);
             const icr = muni ? muni.icr : (p.ARCGIS_RIESGO ?? p.ICR ?? 50);
-            
+
             let color = '#2E7D4F';
             if (icr >= 75) color = '#B3261E';
             else if (icr >= 60) color = '#E07A10';
@@ -1747,7 +1768,7 @@ document.addEventListener('DOMContentLoaded', () => {
               fillOpacity: 0.72
             };
           },
-          onEachFeature: function(feature, layer) {
+          onEachFeature: function (feature, layer) {
             const p = feature.properties || {};
             const divipola = String(p.DIVIPOLA || p.MPIO_CCDGO || p.divipola || '').padStart(5, '0');
             const muni = municipios.find(m => m.divipola === divipola);
@@ -1762,18 +1783,18 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             layer.on({
-              mouseover: function(e) {
+              mouseover: function (e) {
                 e.target.setStyle({ weight: 3.8, color: '#003189', fillOpacity: 0.90 });
                 if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
                   e.target.bringToFront();
                 }
               },
-              mouseout: function(e) {
+              mouseout: function (e) {
                 if (state.arcgis.layer) {
                   state.arcgis.layer.resetStyle(e.target);
                 }
               },
-              click: function() {
+              click: function () {
                 if (divipola) {
                   state.municipioSeleccionadoId = divipola;
                   initFichaV04(divipola);
@@ -1785,29 +1806,29 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="cra-map-popup-card">
                 <div class="cra-map-popup-header">
                   <div>
-                    <h4>${nombre}</h4>
-                    <div class="cra-map-popup-sub">${depto} · DIVIPOLA ${divipola}</div>
+                    <h4>${escaparHtml(nombre)}</h4>
+                    <div class="cra-map-popup-sub">${escaparHtml(depto)} · DIVIPOLA ${escaparHtml(divipola)}</div>
                   </div>
-                  <span class="chip-alerta ${nivel}">${nivel.toUpperCase()}</span>
+                  <span class="chip-alerta ${escaparHtml(nivel)}">${escaparHtml(String(nivel).toUpperCase())}</span>
                 </div>
                 <div class="cra-map-metric-row">
                   <span>Índice Compuesto (ICR):</span>
-                  <span class="val" style="color:#B3261E">${icr} pts</span>
+                  <span class="val" style="color:#B3261E">${escaparHtml(icr)} pts</span>
                 </div>
                 ${p.POBLACION ? `<div class="cra-map-metric-row"><span>Población:</span><span class="val">${Number(p.POBLACION).toLocaleString('es-CO')} hab.</span></div>` : ''}
-                ${p.S1_CONTINUIDAD_H ? `<div class="cra-map-metric-row"><span>Continuidad:</span><span class="val">${p.S1_CONTINUIDAD_H} h/d</span></div>` : ''}
-                ${p.A3_DEFICIT_LLUVIA_PCT ? `<div class="cra-map-metric-row"><span>Déficit Lluvia:</span><span class="val">${p.A3_DEFICIT_LLUVIA_PCT}%</span></div>` : ''}
+                ${p.S1_CONTINUIDAD_H ? `<div class="cra-map-metric-row"><span>Continuidad:</span><span class="val">${escaparHtml(p.S1_CONTINUIDAD_H)} h/d</span></div>` : ''}
+                ${p.A3_DEFICIT_LLUVIA_PCT ? `<div class="cra-map-metric-row"><span>Déficit Lluvia:</span><span class="val">${escaparHtml(p.A3_DEFICIT_LLUVIA_PCT)}%</span></div>` : ''}
                 
                 <div class="cra-arcgis-popup-section">
                   <span class="cra-arcgis-badge-tag">🛰️ Datos Enriquecidos ArcGIS Pro</span>
-                  ${p.CUENCA_APORTANTE ? `<div class="cra-map-metric-row"><span>Cuenca:</span><span class="val" style="font-size:11px">${p.CUENCA_APORTANTE}</span></div>` : ''}
-                  ${p.DIST_EMBALSE_KM ? `<div class="cra-map-metric-row"><span>Dist. Embalse:</span><span class="val">${p.DIST_EMBALSE_KM} km</span></div>` : ''}
+                  ${p.CUENCA_APORTANTE ? `<div class="cra-map-metric-row"><span>Cuenca:</span><span class="val" style="font-size:11px">${escaparHtml(p.CUENCA_APORTANTE)}</span></div>` : ''}
+                  ${p.DIST_EMBALSE_KM ? `<div class="cra-map-metric-row"><span>Dist. Embalse:</span><span class="val">${escaparHtml(p.DIST_EMBALSE_KM)} km</span></div>` : ''}
                   ${p.AREA_AFECTADA_HA ? `<div class="cra-map-metric-row"><span>Área Sequía:</span><span class="val">${Number(p.AREA_AFECTADA_HA).toLocaleString('es-CO')} ha</span></div>` : ''}
-                  ${p.FOCOS_EN_CUENCA ? `<div class="cra-map-metric-row"><span>Focos en Cuenca:</span><span class="val">${p.FOCOS_EN_CUENCA}</span></div>` : ''}
-                  ${p.OBS_SIG ? `<div style="font-size:11px;color:#0369A1;margin-top:5px;font-style:italic">"${p.OBS_SIG}"</div>` : ''}
+                  ${p.FOCOS_EN_CUENCA ? `<div class="cra-map-metric-row"><span>Focos en Cuenca:</span><span class="val">${escaparHtml(p.FOCOS_EN_CUENCA)}</span></div>` : ''}
+                  ${p.OBS_SIG ? `<div style="font-size:11px;color:#0369A1;margin-top:5px;font-style:italic">"${escaparHtml(p.OBS_SIG)}"</div>` : ''}
                 </div>
 
-                <button class="cra-map-popup-btn" onclick="window.abrirFichaDesdeMapa('${divipola}')">
+                <button class="cra-map-popup-btn" onclick="window.abrirFichaDesdeMapa('${escaparHtml(divipola)}')">
                   Ver Ficha Municipal Completa ➔
                 </button>
               </div>
@@ -1876,17 +1897,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     tbody.innerHTML = filtrados.map(m => `
-      <tr data-abrir-municipio="${m.divipola}" class="${m.divipola === state.municipioSeleccionadoId ? 'selected' : ''}">
-        <td><span style="font-family:monospace;font-weight:700;color:var(--cra-cian-texto)">${m.divipola}</span></td>
-        <td><strong>${m.nombre}</strong></td>
-        <td>${m.departamento}</td>
-        <td><span class="chip-alerta ${m.nivel_alerta}">${m.nivel_alerta.replace('_', ' ')}</span></td>
-        <td><strong style="font-size:14px;color:var(--texto-fuerte)">${m.icr !== null ? m.icr.toFixed(1) : 'Sin dato'}</strong></td>
-        <td>${m.indicadores['S-1']?.valor ? m.indicadores['S-1'].valor + ' h' : '—'}</td>
-        <td>${m.indicadores['A-3']?.valor ? m.indicadores['A-3'].valor + ' %' : '—'}</td>
-        <td>${m.indicadores['S-2']?.valor ? m.indicadores['S-2'].valor + ' %' : '—'}</td>
+      <tr data-abrir-municipio="${escaparHtml(m.divipola)}" class="${m.divipola === state.municipioSeleccionadoId ? 'selected' : ''}">
+        <td><span style="font-family:monospace;font-weight:700;color:var(--cra-cian-texto)">${escaparHtml(m.divipola)}</span></td>
+        <td><strong>${escaparHtml(m.nombre)}</strong></td>
+        <td>${escaparHtml(m.departamento)}</td>
+        <td><span class="chip-alerta ${escaparHtml(m.nivel_alerta)}">${escaparHtml(String(m.nivel_alerta || '').replace('_', ' '))}</span></td>
+        <td><strong style="font-size:14px;color:var(--texto-fuerte)">${m.icr !== null ? Number(m.icr).toFixed(1) : 'Sin dato'}</strong></td>
+        <td>${m.indicadores['S-1']?.valor ? escaparHtml(m.indicadores['S-1'].valor) + ' h' : '—'}</td>
+        <td>${m.indicadores['A-3']?.valor ? escaparHtml(m.indicadores['A-3'].valor) + ' %' : '—'}</td>
+        <td>${m.indicadores['S-2']?.valor ? escaparHtml(m.indicadores['S-2'].valor) + ' %' : '—'}</td>
         <td>
-          <button class="btn-secundario" style="padding:4px 8px;font-size:11px" data-abrir-municipio="${m.divipola}">
+          <button class="btn-secundario" style="padding:4px 8px;font-size:11px" data-abrir-municipio="${escaparHtml(m.divipola)}">
             Ficha ➔
           </button>
         </td>
@@ -1923,7 +1944,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('ficha-muni-nombre').textContent = muni.nombre;
     document.getElementById('ficha-muni-depto').textContent = `${muni.departamento} (DIVIPOLA: ${muni.divipola})`;
     document.getElementById('ficha-muni-pob').textContent = `Población: ${muni.poblacion.toLocaleString('es-CO')} hab. | Región: ${muni.region}`;
-    
+
     // Nivel e ICR
     const badgeNivel = document.getElementById('ficha-muni-nivel-badge');
     badgeNivel.className = `chip-alerta ${muni.nivel_alerta}`;
@@ -1934,9 +1955,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const icrValEl = document.getElementById('ficha-icr-val');
     icrValEl.textContent = muni.icr !== null ? muni.icr.toFixed(1) : 'S/D';
-    icrValEl.style.color = muni.nivel_alerta === 'roja' ? 'var(--alerta-roja)' : 
-                          (muni.nivel_alerta === 'naranja' ? 'var(--alerta-naranja)' : 
-                          (muni.nivel_alerta === 'amarilla' ? 'var(--alerta-amarilla)' : 'var(--alerta-sin)'));
+    icrValEl.style.color = muni.nivel_alerta === 'roja' ? 'var(--alerta-roja)' :
+      (muni.nivel_alerta === 'naranja' ? 'var(--alerta-naranja)' :
+        (muni.nivel_alerta === 'amarilla' ? 'var(--alerta-amarilla)' : 'var(--alerta-sin)'));
 
     // Subíndices de las 4 Capas
     const capas = muni.subindices_capa;
@@ -2050,7 +2071,7 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.innerHTML = entries.map(([cod, ind]) => {
       const cat = getInfoIndicador(cod);
       const capaKey = cat.capa ? cat.capa.toLowerCase() : cod[0].toLowerCase();
-      
+
       const valText = ind.valor !== null ? `${ind.valor}` : 'S/D';
       const unidadText = ind.unidad ? ind.unidad : '';
       const puntaje = ind.puntaje !== null ? ind.puntaje : null;
@@ -2112,9 +2133,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <!-- Fila Superior: Código, Capa, Botón Info Ciudadana y Dirección -->
             <div class="ind-top-row">
               <div style="display:flex;align-items:center;gap:6px">
-                <span class="ind-cod-badge">${cod}</span>
-                <span class="capa-badge capa-${capaKey}">Capa ${capaKey.toUpperCase()} · ${capaNombre}</span>
-                <button type="button" class="btn-info-ind" data-codigo="${cod}" title="¿Qué significa este indicador? (Explicación para no técnicos)" aria-expanded="false" aria-label="Ver explicación de ${cod}">
+                <span class="ind-cod-badge">${escaparHtml(cod)}</span>
+                <span class="capa-badge capa-${escaparHtml(capaKey)}">Capa ${escaparHtml(capaKey.toUpperCase())} · ${escaparHtml(capaNombre)}</span>
+                <button type="button" class="btn-info-ind" data-codigo="${escaparHtml(cod)}" title="¿Qué significa este indicador? (Explicación para no técnicos)" aria-expanded="false" aria-label="Ver explicación de ${escaparHtml(cod)}">
                   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
                 </button>
               </div>
@@ -2122,21 +2143,21 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <!-- Desplegable pedagógico para público no técnico -->
-            <div class="panel-exp-desplegable" id="exp-muni-${cod}" style="display:none;" role="region" aria-label="Explicación pedagógica de ${cod}"></div>
+            <div class="panel-exp-desplegable" id="exp-muni-${escaparHtml(cod)}" style="display:none;" role="region" aria-label="Explicación pedagógica de ${escaparHtml(cod)}"></div>
 
             <!-- Nombre Oficial -->
-            <div class="ind-nombre-txt">${ind.nombre}</div>
+            <div class="ind-nombre-txt">${escaparHtml(ind.nombre)}</div>
 
             <!-- Centro Visual: Medidor Conic + Valor Físico -->
             <div class="ind-center-visual">
-              <div class="ind-progress-ring-wrap" title="Puntaje Normalizado CRA: ${puntajeText} / 100 pts">
+              <div class="ind-progress-ring-wrap" title="Puntaje Normalizado CRA: ${escaparHtml(puntajeText)} / 100 pts">
                 <div class="ind-progress-ring" style="--val:${pct};--ring-color:${colorBarra};"></div>
                 <span class="ind-progress-ring-val">${puntaje !== null ? puntaje.toFixed(0) : '—'}</span>
                 <span class="ind-progress-ring-sub">ICR</span>
               </div>
               <div>
-                <div class="ind-val-big">${valText} <span class="ind-val-unit">${unidadText}</span></div>
-                <span class="ind-diag-pill ${diagClass}">${diagText}</span>
+                <div class="ind-val-big">${escaparHtml(valText)} <span class="ind-val-unit">${escaparHtml(unidadText)}</span></div>
+                <span class="ind-diag-pill ${diagClass}">${escaparHtml(diagText)}</span>
               </div>
             </div>
 
@@ -2150,25 +2171,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="spectrum-seg seg-ext" title="Zona Carmesí: Extremo (90-100)"></div>
               </div>
               <div class="spectrum-pin-wrap">
-                <div class="spectrum-pin" style="left:${pct}%" title="Posición municipal actual: ${puntajeText} pts">
+                <div class="spectrum-pin" style="left:${pct}%" title="Posición municipal actual: ${escaparHtml(puntajeText)} pts">
                   <div class="spectrum-pin-arrow"></div>
                   <div class="spectrum-pin-label">${puntaje !== null ? puntaje.toFixed(1) : 'S/D'}</div>
                 </div>
               </div>
               <div class="spectrum-labels-5">
-                <span class="lbl-opt">${cat.umbrales ? cat.umbrales.optimo : '0'}</span>
-                <span class="lbl-ama">${cat.umbrales ? cat.umbrales.amarilla : '40'}</span>
-                <span class="lbl-nar">${cat.umbrales ? cat.umbrales.naranja : '60'}</span>
-                <span class="lbl-roj">${cat.umbrales ? cat.umbrales.roja : '75'}</span>
-                <span class="lbl-ext">${cat.umbrales ? cat.umbrales.extremo : '100'}</span>
+                <span class="lbl-opt">${escaparHtml(cat.umbrales ? cat.umbrales.optimo : '0')}</span>
+                <span class="lbl-ama">${escaparHtml(cat.umbrales ? cat.umbrales.amarilla : '40')}</span>
+                <span class="lbl-nar">${escaparHtml(cat.umbrales ? cat.umbrales.naranja : '60')}</span>
+                <span class="lbl-roj">${escaparHtml(cat.umbrales ? cat.umbrales.roja : '75')}</span>
+                <span class="lbl-ext">${escaparHtml(cat.umbrales ? cat.umbrales.extremo : '100')}</span>
               </div>
             </div>
           </div>
 
           <!-- Metadata Inferior y Acción de Inspección -->
           <div class="ind-footer-meta">
-            <span>${ind.fuente} · ${ind.fecha_dato}</span>
-            <button class="btn-secundario btn-inspeccionar-ind" data-codigo="${cod}" style="padding:2px 8px;font-size:11px" title="Ver análisis regulatorio y distribución territorial de este indicador">
+            <span>${escaparHtml(ind.fuente)} · ${escaparHtml(ind.fecha_dato)}</span>
+            <button class="btn-secundario btn-inspeccionar-ind" data-codigo="${escaparHtml(cod)}" style="padding:2px 8px;font-size:11px" title="Ver análisis regulatorio y distribución territorial de este indicador">
               Regulación &rsaquo;
             </button>
           </div>
@@ -2238,7 +2259,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function calcularPromediosNacionales() {
     const munis = state.corte.municipios || [];
     if (!munis.length) return { A: 50, H: 50, S: 50, R: 50 };
-    
+
     let sumA = 0, sumH = 0, sumS = 0, sumR = 0;
     munis.forEach(m => {
       sumA += (m.subindices_capa?.amenaza_A ?? 0);
@@ -2263,11 +2284,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const promedios = calcularPromediosNacionales();
     const colorAlerta = muni.nivel_alerta === 'roja' ? '#B3261E' :
-                        (muni.nivel_alerta === 'naranja' ? '#E07A10' :
-                        (muni.nivel_alerta === 'amarilla' ? '#C79E00' : '#2E7D4F'));
+      (muni.nivel_alerta === 'naranja' ? '#E07A10' :
+        (muni.nivel_alerta === 'amarilla' ? '#C79E00' : '#2E7D4F'));
     const colorArea = muni.nivel_alerta === 'roja' ? 'rgba(179, 38, 30, 0.32)' :
-                      (muni.nivel_alerta === 'naranja' ? 'rgba(224, 122, 16, 0.32)' :
-                      (muni.nivel_alerta === 'amarilla' ? 'rgba(242, 194, 0, 0.32)' : 'rgba(46, 125, 79, 0.32)'));
+      (muni.nivel_alerta === 'naranja' ? 'rgba(224, 122, 16, 0.32)' :
+        (muni.nivel_alerta === 'amarilla' ? 'rgba(242, 194, 0, 0.32)' : 'rgba(46, 125, 79, 0.32)'));
 
     // 1. Radar 4D (Capas A, H, S, R)
     const domRadar = document.getElementById('chart-radar-4d');
@@ -2275,7 +2296,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!state.chartRadar) {
         state.chartRadar = echarts.init(domRadar);
       }
-      
+
       const optionRadar = {
         animationDuration: 750,
         animationEasing: 'cubicOut',
@@ -2286,7 +2307,7 @@ document.addEventListener('DOMContentLoaded', () => {
           borderWidth: 1,
           padding: [10, 14],
           textStyle: { color: '#FFFFFF', fontSize: 12, fontFamily: 'Nunito Sans, sans-serif' },
-          formatter: function(params) {
+          formatter: function (params) {
             const vals = params.value;
             const esMuni = params.name === muni.nombre;
             return `
@@ -2432,7 +2453,7 @@ document.addEventListener('DOMContentLoaded', () => {
               distance: 18,
               fontSize: 10,
               fontWeight: 700,
-              formatter: function(val) {
+              formatter: function (val) {
                 return val.toFixed(0);
               }
             },
@@ -2568,7 +2589,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Filtro por Búsqueda
     const q = state.busquedaCatalogo || '';
     if (q) {
-      items = items.filter(ind => 
+      items = items.filter(ind =>
         ind.codigo.toLowerCase().includes(q) ||
         ind.nombre.toLowerCase().includes(q) ||
         ind.fuente.toLowerCase().includes(q) ||
@@ -2616,14 +2637,14 @@ document.addEventListener('DOMContentLoaded', () => {
           }
 
           return `
-            <div class="ind-visual-card borde-${capaKey}">
+            <div class="ind-visual-card borde-${escaparHtml(capaKey)}">
               <div>
                 <!-- Encabezado con Código, Capa y Ponderación -->
                 <div class="ind-card-header">
                   <div style="display:flex;align-items:center;gap:6px">
-                    <span class="ind-card-cod">${ind.codigo}</span>
-                    <span class="capa-badge capa-${capaKey}">${capaNombre}</span>
-                    <button type="button" class="btn-info-ind" data-codigo="${ind.codigo}" data-panel-id="exp-cat-${ind.codigo}" title="¿Qué significa este indicador? (Explicación para no técnicos)" aria-expanded="false" aria-label="Ver explicación de ${ind.codigo}">
+                    <span class="ind-card-cod">${escaparHtml(ind.codigo)}</span>
+                    <span class="capa-badge capa-${escaparHtml(capaKey)}">${escaparHtml(capaNombre)}</span>
+                    <button type="button" class="btn-info-ind" data-codigo="${escaparHtml(ind.codigo)}" data-panel-id="exp-cat-${escaparHtml(ind.codigo)}" title="¿Qué significa este indicador? (Explicación para no técnicos)" aria-expanded="false" aria-label="Ver explicación de ${escaparHtml(ind.codigo)}">
                       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
                     </button>
                   </div>
@@ -2631,23 +2652,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
 
                 <!-- Desplegable pedagógico para público no técnico -->
-                <div class="panel-exp-desplegable" id="exp-cat-${ind.codigo}" style="display:none;" role="region" aria-label="Explicación pedagógica de ${ind.codigo}"></div>
+                <div class="panel-exp-desplegable" id="exp-cat-${escaparHtml(ind.codigo)}" style="display:none;" role="region" aria-label="Explicación pedagógica de ${escaparHtml(ind.codigo)}"></div>
 
                 <!-- Título -->
-                <h3 class="ind-card-title">${ind.nombre}</h3>
+                <h3 class="ind-card-title">${escaparHtml(ind.nombre)}</h3>
 
                 <!-- Fórmula Técnica -->
                 <div class="ind-card-formula-box">
                   <span class="ind-card-formula-label">Fórmula de Cálculo Oficial</span>
-                  <div class="ind-card-formula-txt">${ind.formula}</div>
+                  <div class="ind-card-formula-txt">${escaparHtml(ind.formula)}</div>
                 </div>
 
                 <!-- Pills de Atributos -->
                 <div class="ind-card-meta-pills">
                   ${icrTag}
-                  <span class="ind-meta-pill" title="Fuente Oficial">${ind.fuente}</span>
-                  <span class="ind-meta-pill" title="Escala Territorial">Escala: ${ind.escala || 'Municipio'}</span>
-                  <span class="ind-meta-pill" title="Unidad de Medida">Unidad: ${ind.unidad}</span>
+                  <span class="ind-meta-pill" title="Fuente Oficial">${escaparHtml(ind.fuente)}</span>
+                  <span class="ind-meta-pill" title="Escala Territorial">Escala: ${escaparHtml(ind.escala || 'Municipio')}</span>
+                  <span class="ind-meta-pill" title="Unidad de Medida">Unidad: ${escaparHtml(ind.unidad)}</span>
                 </div>
 
                 <!-- Herramienta Visual: Medidor de Espectro Semafórico de Umbrales -->
@@ -2665,15 +2686,15 @@ document.addEventListener('DOMContentLoaded', () => {
                       <div class="spectrum-seg seg-ext" title="Extremo: Calamidad (90-100)"></div>
                     </div>
                     <div class="spectrum-labels-5">
-                      <span class="lbl-opt" title="Óptimo">${ind.umbrales.optimo}</span>
-                      <span class="lbl-ama" title="Amarilla">${ind.umbrales.amarilla}</span>
-                      <span class="lbl-nar" title="Naranja">${ind.umbrales.naranja}</span>
-                      <span class="lbl-roj" title="Roja">${ind.umbrales.roja}</span>
-                      <span class="lbl-ext" title="Extremo">${ind.umbrales.extremo}</span>
+                      <span class="lbl-opt" title="Óptimo">${escaparHtml(ind.umbrales.optimo)}</span>
+                      <span class="lbl-ama" title="Amarilla">${escaparHtml(ind.umbrales.amarilla)}</span>
+                      <span class="lbl-nar" title="Naranja">${escaparHtml(ind.umbrales.naranja)}</span>
+                      <span class="lbl-roj" title="Roja">${escaparHtml(ind.umbrales.roja)}</span>
+                      <span class="lbl-ext" title="Extremo">${escaparHtml(ind.umbrales.extremo)}</span>
                     </div>
                   </div>
                   <div style="font-size:11px;color:var(--texto-claro);margin-top:6px;font-style:italic">
-                    ${dirExplicacion}
+                    ${escaparHtml(dirExplicacion)}
                   </div>
                 </div>
               </div>
@@ -2681,7 +2702,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <!-- Pie de Card con Botón de Inspección Territorial -->
               <div class="ind-card-action-row">
                 <span style="font-size:11px;color:var(--texto-claro)">Auditado en corte oficial</span>
-                <button class="btn-card-inspeccionar" data-codigo="${ind.codigo}">
+                <button class="btn-card-inspeccionar" data-codigo="${escaparHtml(ind.codigo)}">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                   <span>Ver Distribución Territorial</span>
                 </button>
@@ -2696,29 +2717,29 @@ document.addEventListener('DOMContentLoaded', () => {
     if (tbody) {
       tbody.innerHTML = items.map(ind => {
         const capaKey = ind.capa ? ind.capa.toLowerCase() : ind.codigo[0].toLowerCase();
-        let dirBadge = ind.dir === '↑' ? `<span class="dir-risk-badge dir-sube">▲ Sube</span>` : 
-                      (ind.dir === '↓' ? `<span class="dir-risk-badge dir-baja">▼ Baja</span>` : 
-                      `<span class="dir-risk-badge dir-rango">◆ Rango</span>`);
+        let dirBadge = ind.dir === '↑' ? `<span class="dir-risk-badge dir-sube">▲ Sube</span>` :
+          (ind.dir === '↓' ? `<span class="dir-risk-badge dir-baja">▼ Baja</span>` :
+            `<span class="dir-risk-badge dir-rango">◆ Rango</span>`);
 
         return `
           <tr>
             <td>
               <div style="display:flex;align-items:center;gap:6px">
-                <strong style="font-family:monospace;font-size:13px;color:var(--cra-cian-texto)">${ind.codigo}</strong>
-                <button type="button" class="btn-info-ind" data-codigo="${ind.codigo}" data-panel-id="exp-tbl-${ind.codigo}" title="¿Qué significa este indicador? (Explicación para no técnicos)" aria-expanded="false" aria-label="Ver explicación de ${ind.codigo}">
+                <strong style="font-family:monospace;font-size:13px;color:var(--cra-cian-texto)">${escaparHtml(ind.codigo)}</strong>
+                <button type="button" class="btn-info-ind" data-codigo="${escaparHtml(ind.codigo)}" data-panel-id="exp-tbl-${escaparHtml(ind.codigo)}" title="¿Qué significa este indicador? (Explicación para no técnicos)" aria-expanded="false" aria-label="Ver explicación de ${escaparHtml(ind.codigo)}">
                   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
                 </button>
               </div>
-              <div class="panel-exp-desplegable" id="exp-tbl-${ind.codigo}" style="display:none;" role="region" aria-label="Explicación pedagógica de ${ind.codigo}"></div>
+              <div class="panel-exp-desplegable" id="exp-tbl-${escaparHtml(ind.codigo)}" style="display:none;" role="region" aria-label="Explicación pedagógica de ${escaparHtml(ind.codigo)}"></div>
             </td>
-            <td><span class="capa-badge capa-${capaKey}">${capaKey.toUpperCase()}</span></td>
+            <td><span class="capa-badge capa-${escaparHtml(capaKey)}">${escaparHtml(capaKey.toUpperCase())}</span></td>
             <td>
-              <strong>${ind.nombre}</strong>
-              <div style="font-size:11px;color:var(--texto-claro)">Escala: ${ind.escala || 'Municipio'}</div>
+              <strong>${escaparHtml(ind.nombre)}</strong>
+              <div style="font-size:11px;color:var(--texto-claro)">Escala: ${escaparHtml(ind.escala || 'Municipio')}</div>
             </td>
-            <td style="font-size:12px;color:var(--texto);max-width:260px">${ind.formula}</td>
-            <td><span class="ind-meta-pill">${ind.unidad}</span></td>
-            <td><span style="font-size:12px">${ind.fuente}</span></td>
+            <td style="font-size:12px;color:var(--texto);max-width:260px">${escaparHtml(ind.formula)}</td>
+            <td><span class="ind-meta-pill">${escaparHtml(ind.unidad)}</span></td>
+            <td><span style="font-size:12px">${escaparHtml(ind.fuente)}</span></td>
             <td style="text-align:center">${dirBadge}</td>
             <td>
               <div class="micro-spectrum-wrap">
@@ -2730,16 +2751,16 @@ document.addEventListener('DOMContentLoaded', () => {
                   <div class="spectrum-seg seg-ext"></div>
                 </div>
                 <div class="micro-spectrum-labels">
-                  <span class="lbl-opt">${ind.umbrales.optimo}</span>
-                  <span class="lbl-ama">${ind.umbrales.amarilla}</span>
-                  <span class="lbl-nar">${ind.umbrales.naranja}</span>
-                  <span class="lbl-roj">${ind.umbrales.roja}</span>
-                  <span class="lbl-ext">${ind.umbrales.extremo}</span>
+                  <span class="lbl-opt">${escaparHtml(ind.umbrales.optimo)}</span>
+                  <span class="lbl-ama">${escaparHtml(ind.umbrales.amarilla)}</span>
+                  <span class="lbl-nar">${escaparHtml(ind.umbrales.naranja)}</span>
+                  <span class="lbl-roj">${escaparHtml(ind.umbrales.roja)}</span>
+                  <span class="lbl-ext">${escaparHtml(ind.umbrales.extremo)}</span>
                 </div>
               </div>
             </td>
             <td style="text-align:center">
-              <button class="btn-secundario btn-inspeccionar-tabla" data-codigo="${ind.codigo}" style="padding:4px 10px;font-size:11px">
+              <button class="btn-secundario btn-inspeccionar-tabla" data-codigo="${escaparHtml(ind.codigo)}" style="padding:4px 10px;font-size:11px">
                 Inspeccionar
               </button>
             </td>
@@ -2984,13 +3005,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const topMunis = listaAfectados.slice(0, 6);
       tbodyMunis.innerHTML = topMunis.map(m => `
         <tr>
-          <td><strong>${m.nombre}</strong> <span style="font-size:11px;color:var(--texto-claro)">(${m.divipola})</span></td>
-          <td>${m.departamento}</td>
-          <td><strong>${m.valor !== null ? m.valor : 'S/D'}</strong> <span style="font-size:11px;color:var(--texto-claro)">${m.unidad}</span></td>
-          <td><strong>${m.puntaje !== null ? m.puntaje.toFixed(1) : '—'}</strong> / 100</td>
-          <td><span class="chip-alerta ${m.nivel}">${m.nivel.replace('_', ' ')}</span></td>
+          <td><strong>${escaparHtml(m.nombre)}</strong> <span style="font-size:11px;color:var(--texto-claro)">(${escaparHtml(m.divipola)})</span></td>
+          <td>${escaparHtml(m.departamento)}</td>
+          <td><strong>${m.valor !== null ? escaparHtml(m.valor) : 'S/D'}</strong> <span style="font-size:11px;color:var(--texto-claro)">${escaparHtml(m.unidad)}</span></td>
+          <td><strong>${m.puntaje !== null ? Number(m.puntaje).toFixed(1) : '—'}</strong> / 100</td>
+          <td><span class="chip-alerta ${escaparHtml(m.nivel)}">${escaparHtml(String(m.nivel || '').replace('_', ' '))}</span></td>
           <td>
-            <button class="btn-secundario btn-ir-muni-modal" data-divipola="${m.divipola}" style="padding:3px 8px;font-size:11px">
+            <button class="btn-secundario btn-ir-muni-modal" data-divipola="${escaparHtml(m.divipola)}" style="padding:3px 8px;font-size:11px">
               Ver Ficha
             </button>
           </td>
@@ -3039,15 +3060,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('badge-total-alertas').textContent = alertas.length;
 
     tbody.innerHTML = alertas.map(alt => `
-      <tr data-abrir-municipio="${alt.divipola}">
-        <td><span style="font-family:monospace;font-weight:700">${alt.id_alerta}</span></td>
-        <td><strong>${alt.municipio}</strong> <span style="color:var(--texto-claro)">(${alt.departamento})</span></td>
-        <td><span class="chip-alerta ${alt.nivel}">${alt.nivel}</span></td>
-        <td><strong>${alt.icr}</strong> pts</td>
-        <td style="font-size:12px">${alt.motivo}</td>
-        <td><span style="background:${alt.prioridad === 'ALTA' ? '#FFEBEE' : '#FFF8E1'};color:${alt.prioridad === 'ALTA' ? 'var(--alerta-roja)' : 'var(--alerta-amarilla)'};padding:2px 6px;border-radius:3px;font-weight:800;font-size:11px">${alt.prioridad}</span></td>
-        <td><span style="font-size:11px;font-weight:700;color:var(--cra-cian-texto)">${alt.estado_revision}</span></td>
-        <td><button class="btn-secundario" style="padding:4px 8px;font-size:11px" data-abrir-municipio="${alt.divipola}">Revisar</button></td>
+      <tr data-abrir-municipio="${escaparHtml(alt.divipola)}">
+        <td><span style="font-family:monospace;font-weight:700">${escaparHtml(alt.id_alerta)}</span></td>
+        <td><strong>${escaparHtml(alt.municipio)}</strong> <span style="color:var(--texto-claro)">(${escaparHtml(alt.departamento)})</span></td>
+        <td><span class="chip-alerta ${escaparHtml(alt.nivel)}">${escaparHtml(alt.nivel)}</span></td>
+        <td><strong>${escaparHtml(alt.icr)}</strong> pts</td>
+        <td style="font-size:12px">${escaparHtml(alt.motivo)}</td>
+        <td><span style="background:${alt.prioridad === 'ALTA' ? '#FFEBEE' : '#FFF8E1'};color:${alt.prioridad === 'ALTA' ? 'var(--alerta-roja)' : 'var(--alerta-amarilla)'};padding:2px 6px;border-radius:3px;font-weight:800;font-size:11px">${escaparHtml(alt.prioridad)}</span></td>
+        <td><span style="font-size:11px;font-weight:700;color:var(--cra-cian-texto)">${escaparHtml(alt.estado_revision)}</span></td>
+        <td><button class="btn-secundario" style="padding:4px 8px;font-size:11px" data-abrir-municipio="${escaparHtml(alt.divipola)}">Revisar</button></td>
       </tr>
     `).join('');
   }
@@ -3072,15 +3093,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     tbody.innerHTML = fuentes.map(f => `
       <tr>
-        <td><span style="font-family:monospace;font-weight:800;color:var(--cra-cian-texto)">${f.id}</span></td>
-        <td><strong>${f.nombre}</strong></td>
-        <td>${f.entidad}</td>
-        <td>${f.frecuencia}</td>
-        <td><span class="frescura-pill" style="font-size:11px"><span class="frescura-dot"></span> ${f.estado}</span></td>
-        <td style="font-variant-numeric:tabular-nums;font-size:12px">${f.ultima_captura}</td>
-        <td>${f.latencia}</td>
-        <td><strong>${f.filas.toLocaleString('es-CO')}</strong></td>
-        <td><span style="font-family:monospace;font-size:11px">${f.hash}</span></td>
+        <td><span style="font-family:monospace;font-weight:800;color:var(--cra-cian-texto)">${escaparHtml(f.id)}</span></td>
+        <td><strong>${escaparHtml(f.nombre)}</strong></td>
+        <td>${escaparHtml(f.entidad)}</td>
+        <td>${escaparHtml(f.frecuencia)}</td>
+        <td><span class="frescura-pill" style="font-size:11px"><span class="frescura-dot"></span> ${escaparHtml(f.estado)}</span></td>
+        <td style="font-variant-numeric:tabular-nums;font-size:12px">${escaparHtml(f.ultima_captura)}</td>
+        <td>${escaparHtml(f.latencia)}</td>
+        <td><strong>${Number(f.filas || 0).toLocaleString('es-CO')}</strong></td>
+        <td><span style="font-family:monospace;font-size:11px">${escaparHtml(f.hash)}</span></td>
       </tr>
     `).join('');
   }
@@ -3180,7 +3201,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const file = dt && dt.files && dt.files[0];
         if (file) {
           const reader = new FileReader();
-          reader.onload = function(evt) {
+          reader.onload = function (evt) {
             procesarTextoGeoJSONArcGIS(evt.target.result, file.name);
           };
           reader.readAsText(file);
@@ -3355,10 +3376,10 @@ document.addEventListener('DOMContentLoaded', () => {
       state.arcgis.tempParsedData = geojson;
 
       // Analizar geometrías
-      const hasPolygons = geojson.features.some(f => 
+      const hasPolygons = geojson.features.some(f =>
         f.geometry && (f.geometry.type === 'Polygon' || f.geometry.type === 'MultiPolygon')
       );
-      const hasPoints = geojson.features.some(f => 
+      const hasPoints = geojson.features.some(f =>
         f.geometry && f.geometry.type === 'Point'
       );
 
@@ -3399,7 +3420,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!file) return;
 
     const reader = new FileReader();
-    reader.onload = function(e) {
+    reader.onload = function (e) {
       procesarTextoGeoJSONArcGIS(e.target.result, file.name);
     };
     reader.readAsText(file);

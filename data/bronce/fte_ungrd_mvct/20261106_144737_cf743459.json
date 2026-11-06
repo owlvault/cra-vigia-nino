@@ -1,0 +1,215 @@
+{
+  "fuente": "UNGRD / MinVivienda (Emergencias y Calamidades Verificadas)",
+  "fecha_reporte": "2026-11-06",
+  "fecha_captura": "2026-11-06T14:47:37.766168+00:00",
+  "total_municipios": 23,
+  "municipios": {
+    "44847": {
+      "nombre": "Uribia",
+      "depto": "La Guajira",
+      "calamidad_publica": 1,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 1,
+      "decreto_calamidad": "Registro UNGRD Emergencia Hídrica Alta Guajira - Plan Departamental de Gestión del Riesgo",
+      "poblacion_afectada": 196000
+    },
+    "44430": {
+      "nombre": "Maicao",
+      "depto": "La Guajira",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "44001": {
+      "nombre": "Riohacha",
+      "depto": "La Guajira",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "44560": {
+      "nombre": "Manaure",
+      "depto": "La Guajira",
+      "calamidad_publica": 1,
+      "racionamiento_reportado": 1,
+      "carrotanques_activos": 1,
+      "decreto_calamidad": "Registro UNGRD Emergencia Hídrica Alta Guajira",
+      "poblacion_afectada": 125000
+    },
+    "47001": {
+      "nombre": "Santa Marta",
+      "depto": "Magdalena",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "47555": {
+      "nombre": "Plato",
+      "depto": "Magdalena",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "13244": {
+      "nombre": "El Carmen de Bolívar",
+      "depto": "Bolívar",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "13430": {
+      "nombre": "Magangué",
+      "depto": "Bolívar",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "13001": {
+      "nombre": "Cartagena de Indias",
+      "depto": "Bolívar",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "20001": {
+      "nombre": "Valledupar",
+      "depto": "Cesar",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "20011": {
+      "nombre": "Aguachica",
+      "depto": "Cesar",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "68079": {
+      "nombre": "Barichara",
+      "depto": "Santander",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "68679": {
+      "nombre": "San Gil",
+      "depto": "Santander",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "68001": {
+      "nombre": "Bucaramanga",
+      "depto": "Santander",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "11001": {
+      "nombre": "Bogotá, D.C.",
+      "depto": "Bogotá, D.C.",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "25307": {
+      "nombre": "Girardot",
+      "depto": "Cundinamarca",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "25126": {
+      "nombre": "Cajicá",
+      "depto": "Cundinamarca",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "73001": {
+      "nombre": "Ibagué",
+      "depto": "Tolima",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "73268": {
+      "nombre": "Espinal",
+      "depto": "Tolima",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "41001": {
+      "nombre": "Neiva",
+      "depto": "Huila",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "15837": {
+      "nombre": "Tuta",
+      "depto": "Boyacá",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "05001": {
+      "nombre": "Medellín",
+      "depto": "Antioquia",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    },
+    "76001": {
+      "nombre": "Cali",
+      "depto": "Valle del Cauca",
+      "calamidad_publica": 0,
+      "racionamiento_reportado": 0,
+      "carrotanques_activos": 0,
+      "decreto_calamidad": null,
+      "poblacion_afectada": 0
+    }
+  }
+}

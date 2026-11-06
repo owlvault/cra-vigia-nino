@@ -11,7 +11,7 @@
   "version_configuracion": "v1.0.0-20261008"
  },
  "creado_en": "2026-10-14T14:09:03.149989+00:00",
- "actualizado_en": "2026-10-14T14:24:25.770314+00:00",
+ "actualizado_en": "2026-11-06T18:51:45.431570+00:00",
  "politica": {
   "dias_gracia_cierre": 7,
   "estado_corte_valido": "PUBLICADO_VALIDO",
@@ -20,22 +20,71 @@
  "semanas": [
   {
    "semana_iso": "2026-W41",
-   "estado": "abierta",
+   "estado": "cerrada",
    "archivo": "data\\oro\\semanal\\historico\\semana_2026-W41.json",
-   "sha256_datos": "635153d1cbcb0b1dbbd03995f3c39e1fcbb8f7bc22237dc0dbda5894bb6adcd5",
+   "sha256_datos": "062391e008ab630835a7c0fa806728f248b7fb805b2a1ccfa550740b0adaf9fc",
    "cortes_diarios": 2,
    "variables_con_dato": 12,
-   "actualizado_en": "2026-10-14T14:24:25.770314+00:00"
+   "actualizado_en": "2026-11-06T14:38:54.277306+00:00"
   },
   {
    "semana_iso": "2026-W42",
-   "estado": "abierta",
+   "estado": "cerrada",
    "archivo": "data\\oro\\semanal\\historico\\semana_2026-W42.json",
-   "sha256_datos": "056895cd740c2dad2d8ce32427fb6d5dcd7ddcb807d1a2dc96508aba421c09b8",
+   "sha256_datos": "38d0a6b59fe852ee4c97765eb1731e1145de0d4e8791a7d7160c88b9bf29c02b",
    "cortes_diarios": 1,
    "variables_con_dato": 8,
-   "actualizado_en": "2026-10-14T14:24:25.770314+00:00"
+   "actualizado_en": "2026-11-06T14:38:54.277306+00:00"
+  },
+  {
+   "semana_iso": "2026-W43",
+   "estado": "cerrada",
+   "archivo": "data\\oro\\semanal\\historico\\semana_2026-W43.json",
+   "sha256_datos": "e5b52f25dd089341b7e15c3d3106df02ef7ccce7541d547171d8beceba52bb5a",
+   "cortes_diarios": 0,
+   "variables_con_dato": 1,
+   "actualizado_en": "2026-11-06T14:38:54.277306+00:00"
+  },
+  {
+   "semana_iso": "2026-W44",
+   "estado": "abierta",
+   "archivo": "data\\oro\\semanal\\historico\\semana_2026-W44.json",
+   "sha256_datos": "1e833b98bb582c9a908dead72d89b1713bf6a63d8cd054d616d7b8d80e85884a",
+   "cortes_diarios": 0,
+   "variables_con_dato": 5,
+   "actualizado_en": "2026-11-06T18:51:45.431570+00:00"
+  },
+  {
+   "semana_iso": "2026-W45",
+   "estado": "abierta",
+   "archivo": "data\\oro\\semanal\\historico\\semana_2026-W45.json",
+   "sha256_datos": "bdd920009a2604a234c372b37b7e5fd87000517e5e943361d881677ca3340431",
+   "cortes_diarios": 1,
+   "variables_con_dato": 6,
+   "actualizado_en": "2026-11-06T18:51:45.431570+00:00"
   }
  ],
- "discrepancias": []
+ "discrepancias": [
+  {
+   "semana_iso": "2026-W41",
+   "detectada_en": "2026-11-06T18:51:45.431570+00:00",
+   "sha256_congelado": "062391e008ab630835a7c0fa806728f248b7fb805b2a1ccfa550740b0adaf9fc",
+   "sha256_recalculo": "fd903d2dbfba5da80013e7c4dfc51358af5acd53c411ed8e2ba6fb20eccee4ee",
+   "nota": "Recalculo distinto a la semana congelada; no se reescribe."
+  },
+  {
+   "semana_iso": "2026-W42",
+   "detectada_en": "2026-11-06T18:51:45.431570+00:00",
+   "sha256_congelado": "38d0a6b59fe852ee4c97765eb1731e1145de0d4e8791a7d7160c88b9bf29c02b",
+   "sha256_recalculo": "e90e65f27afc60713eec41a545f4a9663fa1b6cefce857f623dac19b825dd8d9",
+   "nota": "Recalculo distinto a la semana congelada; no se reescribe."
+  },
+  {
+   "semana_iso": "2026-W43",
+   "detectada_en": "2026-11-06T18:51:45.431570+00:00",
+   "sha256_congelado": "e5b52f25dd089341b7e15c3d3106df02ef7ccce7541d547171d8beceba52bb5a",
+   "sha256_recalculo": "e90ed3c073690d1a72dc2ffb24336e5267afc8b30fadfe3b501f59cda0a5c5e0",
+   "nota": "Recalculo distinto a la semana congelada; no se reescribe."
+  }
+ ]
 }

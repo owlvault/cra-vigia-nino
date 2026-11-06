@@ -446,7 +446,9 @@ class PipelineCorte:
         self._escribir_atomico(self.oro_dir / f"corte_{fecha_corte}.json", corte_json_str)
 
         # 2. Sincronizar atómicamente con el frontend principal (tablero/js/data.js)
-        data_js_content = f"// Datos Maestros Integrados — Vigía El Niño · Acueductos\nwindow.VIGIA_DATA = {{ corte: {corte_json_str} }};\n"
+        # Escapar secuencias '</' para prevenir cierre prematuro de etiquetas <script> e inyección XSS
+        corte_json_js_safe = corte_json_str.replace("</", "<\\/")
+        data_js_content = f"// Datos Maestros Integrados — Vigía El Niño · Acueductos\nwindow.VIGIA_DATA = {{ corte: {corte_json_js_safe} }};\n"
         tablero_js_dir = self.root_dir / "tablero" / "js"
         self._escribir_atomico(tablero_js_dir / "data.js", data_js_content)
 

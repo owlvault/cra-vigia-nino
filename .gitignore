@@ -1,12 +1,42 @@
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Testing & Coverage
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Environment variables & Secrets (SEC-02)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.crt
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDEs & Editors
+.vscode/
+.idea/
+
+# Frontend dependencies & builds
+node_modules/
+dist/
+build/
+
+# Logs & temporary files
 *.tmp
+*.log
 .system_generated/
 *.gdoc
 *.gsheet
 *.gslides
+
 

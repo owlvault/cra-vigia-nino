@@ -37,10 +37,14 @@ class SocrataClientSUI:
         self.app_token = app_token or os.environ.get("SOCRATA_APP_TOKEN")
         self.timeout = timeout
         
-        # Contexto SSL tolerante a inspección corporativa en redes CRA
+        # Contexto SSL con validación estricta de certificados (CWE-295 remediado)
+        # Soporta bundle CA institucional opcional mediante CRA_CA_BUNDLE_PATH
         self.ssl_context = ssl.create_default_context()
-        self.ssl_context.check_hostname = False
-        self.ssl_context.verify_mode = ssl.CERT_NONE
+        ca_bundle = os.environ.get("CRA_CA_BUNDLE_PATH")
+        if ca_bundle and os.path.exists(ca_bundle):
+            self.ssl_context.load_verify_locations(cafile=ca_bundle)
+        self.ssl_context.check_hostname = True
+        self.ssl_context.verify_mode = ssl.CERT_REQUIRED
 
     def _ejecutar_consulta_soql(self, dataset_id: str, soql_params: Dict[str, str]) -> List[Dict[str, Any]]:
         """Ejecuta una petición GET a la API Socrata con parámetros SoQL."""

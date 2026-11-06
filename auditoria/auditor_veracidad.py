@@ -1139,13 +1139,14 @@ class AuditorVeracidad:
         with open(ruta_ops_historico, "w", encoding="utf-8") as f:
             json.dump(informe_final, f, indent=2, ensure_ascii=False)
 
-        # Guardar wrapper JS para consumo directo en frontend independiente
+        # Guardar wrapper JS para consumo directo en frontend independiente (con escape seguro contra cierre </script>)
+        informe_json_js_safe = json.dumps(informe_final, indent=2, ensure_ascii=False).replace("</", "<\\/")
         ruta_js_data = self.auditoria_dir / "auditoria_data.js"
         with open(ruta_js_data, "w", encoding="utf-8") as f:
             f.write("// Datos Oficiales de Auditoría de Veracidad — Vigía El Niño · Acueductos\n")
             f.write(f"// Generado automáticamente por AuditorVeracidad: {fecha_auditoria}\n\n")
             f.write("window.AUDITORIA_DATA = ")
-            json.dump(informe_final, f, indent=2, ensure_ascii=False)
+            f.write(informe_json_js_safe)
             f.write(";\n")
 
         # Sincronizar en tablero/auditoria para acceso directo vía servidor web
@@ -1157,7 +1158,7 @@ class AuditorVeracidad:
                 f.write("// Datos Oficiales de Auditoría de Veracidad — Vigía El Niño · Acueductos\n")
                 f.write(f"// Generado automáticamente por AuditorVeracidad: {fecha_auditoria}\n\n")
                 f.write("window.AUDITORIA_DATA = ")
-                json.dump(informe_final, f, indent=2, ensure_ascii=False)
+                f.write(informe_json_js_safe)
                 f.write(";\n")
 
         return informe_final

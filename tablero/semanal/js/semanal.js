@@ -198,9 +198,11 @@
         animationDuration: 700, grid: { left: 2, right: 2, top: 4, bottom: 2 },
         xAxis: { type: "category", show: false, data: semanas }, yAxis: { type: "value", show: false, scale: true },
         tooltip: { trigger: "axis", confine: true, textStyle: { fontSize: 11 }, formatter: (p) => `Sem. ${nSem(p[0].axisValue)}: ${p[0].value == null ? "Sin dato" : fmt(p[0].value, v.decimales) + " " + v.unidad}` },
-        series: [{ type: "line", data: datos, smooth: .3, symbol: "circle", symbolSize: (val, p) => p.dataIndex === datos.length - 1 ? 7 : 0, connectNulls: false,
+        series: [{
+          type: "line", data: datos, smooth: .3, symbol: "circle", symbolSize: (val, p) => p.dataIndex === datos.length - 1 ? 7 : 0, connectNulls: false,
           lineStyle: { width: 2, color: COLOR.cian }, itemStyle: { color: COLOR.cianTexto },
-          areaStyle: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: "rgba(67,178,215,.28)" }, { offset: 1, color: "rgba(67,178,215,0)" }]) } }],
+          areaStyle: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: "rgba(67,178,215,.28)" }, { offset: 1, color: "rgba(67,178,215,0)" }]) }
+        }],
       });
       estado.sparks.push(c);
     });
@@ -241,8 +243,10 @@
         name: "El Niño 2026-27 (vigente)", type: "line", smooth: .25, data: datos, symbol: "circle", symbolSize: 5, z: 5,
         lineStyle: { width: 4, color: COLOR.cian, shadowColor: "rgba(67,178,215,.45)", shadowBlur: 10 }, itemStyle: { color: COLOR.cianTexto },
         areaStyle: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: "rgba(67,178,215,.25)" }, { offset: 1, color: "rgba(67,178,215,0)" }]) },
-        markLine: xFoco != null ? { symbol: "none", silent: true, label: { formatter: `Semana foco ${nSem(estado.foco)}`, color: COLOR.azul, fontWeight: 700, fontFamily: "Nunito Sans" },
-          lineStyle: { color: COLOR.azul, type: "dashed", width: 1.5 }, data: [{ xAxis: xFoco }] } : undefined,
+        markLine: xFoco != null ? {
+          symbol: "none", silent: true, label: { formatter: `Semana foco ${nSem(estado.foco)}`, color: COLOR.azul, fontWeight: 700, fontFamily: "Nunito Sans" },
+          lineStyle: { color: COLOR.azul, type: "dashed", width: 1.5 }, data: [{ xAxis: xFoco }]
+        } : undefined,
       });
     }
     const bandas = [[0.5, 1, "Débil", COLOR.amarilla], [1, 1.5, "Moderado", COLOR.naranja], [1.5, 2, "Fuerte", COLOR.roja], [2, 9, "Muy fuerte", COLOR.roja]];
@@ -257,10 +261,14 @@
       animationDuration: 900, textStyle: { fontFamily: "Nunito Sans" },
       grid: { left: 48, right: 20, top: 48, bottom: 56 },
       legend: { top: 4, left: 0, icon: "roundRect", itemWidth: 16, itemHeight: 4, textStyle: { color: COLOR.fuerte, fontWeight: 600 } },
-      tooltip: { trigger: "axis", backgroundColor: "#fff", borderColor: COLOR.linea, textStyle: { color: COLOR.fuerte },
-        formatter: (ps) => `<b>${etiquetaX(ps[0].value[0])}</b><br>` + ps.filter((p) => p.seriesName).map((p) => `${p.marker}${esc(p.seriesName)}: <b>${fmtSigno(p.value[1])} °C</b> <span style="color:#888">(${p.value[2]})</span>`).join("<br>") },
-      xAxis: { type: "value", min: porEvento ? -8 : 1, max: porEvento ? 80 : 90, axisLabel: { formatter: etiquetaX, color: COLOR.texto }, splitLine: { show: false },
-        name: porEvento ? "Semanas desde el inicio del evento" : "Semana del año de inicio", nameLocation: "middle", nameGap: 32, nameTextStyle: { color: COLOR.texto } },
+      tooltip: {
+        trigger: "axis", backgroundColor: "#fff", borderColor: COLOR.linea, textStyle: { color: COLOR.fuerte },
+        formatter: (ps) => `<b>${etiquetaX(ps[0].value[0])}</b><br>` + ps.filter((p) => p.seriesName).map((p) => `${p.marker}${esc(p.seriesName)}: <b>${fmtSigno(p.value[1])} °C</b> <span style="color:#888">(${p.value[2]})</span>`).join("<br>")
+      },
+      xAxis: {
+        type: "value", min: porEvento ? -8 : 1, max: porEvento ? 80 : 90, axisLabel: { formatter: etiquetaX, color: COLOR.texto }, splitLine: { show: false },
+        name: porEvento ? "Semanas desde el inicio del evento" : "Semana del año de inicio", nameLocation: "middle", nameGap: 32, nameTextStyle: { color: COLOR.texto }
+      },
       yAxis: { type: "value", name: `${v.nombre} (°C)`, nameTextStyle: { color: COLOR.texto, align: "left" }, axisLabel: { color: COLOR.texto, formatter: (x) => fmt(x, 1) }, splitLine: { lineStyle: { color: "#EEF0F2" } } },
       dataZoom: [{ type: "inside" }],
       series,
@@ -364,11 +372,15 @@
         { type: "value", name: "ICR", min: 0, max: 100, nameTextStyle: { color: COLOR.texto }, axisLabel: { color: COLOR.texto }, splitLine: { show: false } },
       ],
       series: [
-        { name: "Embalses (% vol. útil)", type: "bar", barMaxWidth: 22, data: semanas.map((s) => obs("EMBALSES_NAL_PCT", s)?.valor ?? null),
+        {
+          name: "Embalses (% vol. útil)", type: "bar", barMaxWidth: 22, data: semanas.map((s) => obs("EMBALSES_NAL_PCT", s)?.valor ?? null),
           itemStyle: { borderRadius: [4, 4, 0, 0], color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: COLOR.cian }, { offset: 1, color: "#A6DCEE" }]) },
-          markLine: { symbol: "none", silent: true, lineStyle: { color: COLOR.roja, type: "dotted" }, label: { formatter: "Crítico 40 %", fontSize: 10, color: COLOR.texto }, data: [{ yAxis: 40 }] } },
-        { name: "ICR nacional", type: "line", yAxisIndex: 1, connectNulls: false, symbol: "circle", symbolSize: 8, data: semanas.map((s) => obs("ICR_NACIONAL", s)?.valor ?? null),
-          lineStyle: { width: 3, color: COLOR.azul }, itemStyle: { color: COLOR.azul } },
+          markLine: { symbol: "none", silent: true, lineStyle: { color: COLOR.roja, type: "dotted" }, label: { formatter: "Crítico 40 %", fontSize: 10, color: COLOR.texto }, data: [{ yAxis: 40 }] }
+        },
+        {
+          name: "ICR nacional", type: "line", yAxisIndex: 1, connectNulls: false, symbol: "circle", symbolSize: 8, data: semanas.map((s) => obs("ICR_NACIONAL", s)?.valor ?? null),
+          lineStyle: { width: 3, color: COLOR.azul }, itemStyle: { color: COLOR.azul }
+        },
       ],
     }, true);
   }
@@ -432,7 +444,15 @@
     }
     const btn = $("btn-actualizar");
     try {
-      const r = await fetch(API.actualizar, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ modo: estado.modo }) });
+      const headers = {
+        "Content-Type": "application/json",
+        "X-Requested-With": "Vigia-Client"
+      };
+      const adminToken = window.localStorage?.getItem("VIGIA_ADMIN_TOKEN");
+      if (adminToken) {
+        headers["X-Vigia-Auth-Token"] = adminToken;
+      }
+      const r = await fetch(API.actualizar, { method: "POST", headers, body: JSON.stringify({ modo: estado.modo }) });
       const j = await r.json();
       if (r.status === 409) { toast("Ya hay una actualización en curso. Mostrando su progreso.", "error"); }
       else if (!r.ok) throw new Error(j.error || r.status);

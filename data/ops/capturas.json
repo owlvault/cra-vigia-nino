@@ -728,5 +728,295 @@
     "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261014_142133_6f198a34.json",
     "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
     "capturado_en": "2026-10-14T14:21:33.228430+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "71448ee9100d6349dd8f5f7c5cb45d3d34216aab2c5ef35fdb7d31dea8e402c7",
+    "bytes_descargados": 1802,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_142748_71448ee9.json",
+    "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
+    "capturado_en": "2026-11-06T14:27:48.201269+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "946ea83d5c4af5097de126089ad9d29d098fbbc5c6876fd5daa14e751f9c1e02",
+    "bytes_descargados": 5892,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_142749_946ea83d.json",
+    "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
+    "capturado_en": "2026-11-06T14:27:49.356839+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "252cd33d9c9410998138bb4365e36cdeaf5529ca4edc242481aeca06dc418f0d",
+    "bytes_descargados": 1802,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_143352_252cd33d.json",
+    "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
+    "capturado_en": "2026-11-06T14:33:52.849390+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "94137ea0dd61b838fa7f921982c5a914cf505b8e9679f210f7ce92bc3121fbfd",
+    "bytes_descargados": 5892,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_143356_94137ea0.json",
+    "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
+    "capturado_en": "2026-11-06T14:33:56.506163+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "169b4b939d4122fb3b50d308dbd4d83a194b3c3063a3e74fb203927c9c8a0e2b",
+    "bytes_descargados": 1802,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_143416_169b4b93.json",
+    "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
+    "capturado_en": "2026-11-06T14:34:16.996400+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "d3ea0937254d83ecf0b9ae7bdec4912a60541c7c03eab1d6c21707f5de10c075",
+    "bytes_descargados": 5892,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_143418_d3ea0937.json",
+    "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
+    "capturado_en": "2026-11-06T14:34:18.567782+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "b2db9ead32a4ea63628703ddd177494e2015a55be1d8ed2505f683ad339adbe1",
+    "bytes_descargados": 1802,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_144732_b2db9ead.json",
+    "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
+    "capturado_en": "2026-11-06T14:47:33.010717+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "cf743459177c32867c33ebba153a69d28f58443a271b8f9ad1d5e3e298f7c2e2",
+    "bytes_descargados": 5892,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_144737_cf743459.json",
+    "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
+    "capturado_en": "2026-11-06T14:47:37.786877+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "cb852e0c998860d02eff19d39c57186edd53db223d7e5041ec8594ff90fd350c",
+    "bytes_descargados": 1802,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_145014_cb852e0c.json",
+    "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
+    "capturado_en": "2026-11-06T14:50:14.184805+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "7c67041d5f3604beb04856d9e74d004ee258fccf7b16dd7b01482c027a10d8d8",
+    "bytes_descargados": 5892,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_145015_7c67041d.json",
+    "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
+    "capturado_en": "2026-11-06T14:50:15.300227+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "c1d96ca481b82d539a6409b8bd6cfdb21c019e752a1312b2b17cae4458b1b6b7",
+    "bytes_descargados": 1802,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_150348_c1d96ca4.json",
+    "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
+    "capturado_en": "2026-11-06T15:03:48.577346+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "81de6b5fbe95a2f162feee633245ece18ac24da7cb348d6deede963ef5f76e63",
+    "bytes_descargados": 5892,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_150351_81de6b5f.json",
+    "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
+    "capturado_en": "2026-11-06T15:03:51.246168+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "09c57eeda609f70b7f78b694cd13ed9b4a20f2f52d47786b728dc8b80536747d",
+    "bytes_descargados": 1802,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_150415_09c57eed.json",
+    "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
+    "capturado_en": "2026-11-06T15:04:15.432399+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "15fb6409f735e59c0a30aa6b60b444f8370147e4cb57521a28a0e761b1534e09",
+    "bytes_descargados": 5892,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_150422_15fb6409.json",
+    "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
+    "capturado_en": "2026-11-06T15:04:22.079729+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "14452585aadcfef8a4c4b7de603b00eeca7f5e73b4d18e70a8b40690012c7c3b",
+    "bytes_descargados": 1802,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_150442_14452585.json",
+    "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
+    "capturado_en": "2026-11-06T15:04:42.444576+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "9e38be9dff74a1866074555bbd409e01647a3ebb0b360d0fff3cc73ed1a9ed4d",
+    "bytes_descargados": 5892,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_150443_9e38be9d.json",
+    "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
+    "capturado_en": "2026-11-06T15:04:43.538318+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "51ed81eedce33eb5cd96ee57f3fd66967501ebdccfc99ad8b63fbe28961d7407",
+    "bytes_descargados": 1802,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_150601_51ed81ee.json",
+    "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
+    "capturado_en": "2026-11-06T15:06:01.321029+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "27fbe84ce667f3c959a9b7c751780ee8d8cdce39591fdcc91a914c6eca7e31aa",
+    "bytes_descargados": 5892,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_150612_27fbe84c.json",
+    "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
+    "capturado_en": "2026-11-06T15:06:12.547999+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "7cfcd46d8321ff80350adb216f64be3ca0562e724ff878df86ffb9240a4cb0eb",
+    "bytes_descargados": 1802,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_150823_7cfcd46d.json",
+    "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
+    "capturado_en": "2026-11-06T15:08:23.162657+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "c6401beaa8b0ed1b6719f773f1ff9559976efe5bbd6eaf59f7a700f1bbe2f413",
+    "bytes_descargados": 5892,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_150824_c6401bea.json",
+    "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
+    "capturado_en": "2026-11-06T15:08:24.650004+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "ab2f9bf459955b113c815ecd5025414de867002c35a84e8e45530fc3fa0b8f44",
+    "bytes_descargados": 1802,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_151522_ab2f9bf4.json",
+    "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
+    "capturado_en": "2026-11-06T15:15:22.962131+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "bccfd9de7db05c5b43ff7f244d4bfeaf0a7c1496009c2f77d8c68c72bca05b55",
+    "bytes_descargados": 5892,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_151524_bccfd9de.json",
+    "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
+    "capturado_en": "2026-11-06T15:15:24.113237+00:00"
+  },
+  {
+    "id_fuente": "FTE-CPC-NOAA",
+    "estado": "exitosa",
+    "hash_sha256": "c7a4033fb5e19c83fb1cc8fc7af8e508aa7279fb313071e9522386255a040b3c",
+    "bytes_descargados": 171741,
+    "filas_procesadas": 2,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_cpc_noaa\\20261106_185121_c7a4033f.txt",
+    "mensaje": "Captura exitosa de anomalías SST semanales y ONI de NOAA CPC",
+    "capturado_en": "2026-11-06T18:51:21.386299+00:00"
+  },
+  {
+    "id_fuente": "FTE-INS-IRCA",
+    "estado": "sin_cambios",
+    "hash_sha256": "147f333096f842424c33beff2339e492c5212f1723ba182001faf9f6a3b59f21",
+    "bytes_descargados": 272750,
+    "filas_procesadas": 1006,
+    "ruta_archivo_bronce": "",
+    "mensaje": "Sin cambios en el catálogo IRCA de SIVICAP.",
+    "capturado_en": "2026-11-06T18:51:26.499261+00:00"
+  },
+  {
+    "id_fuente": "FTE-IDEAM-CLIMA",
+    "estado": "exitosa",
+    "hash_sha256": "fe3647e017c8faa50411f5d0a518ec71150fa15558dcad7f48bd593b6860a323",
+    "bytes_descargados": 5482,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ideam_clima\\20261106_185131_fe3647e0.json",
+    "mensaje": "Captura exitosa de 23 municipios desde IDEAM (incluyendo Tuta 15837)",
+    "capturado_en": "2026-11-06T18:51:31.445356+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "e7d2d7f9d0d63483b8625237a2eb98cc6ad6466c9ea45666d24e9391d38f51a7",
+    "bytes_descargados": 5892,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_185136_e7d2d7f9.json",
+    "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
+    "capturado_en": "2026-11-06T18:51:36.430106+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "eed357812ae99fbe09ed3f53cab4dca901c46ec38ebd84f2e93454a1ab3c51ab",
+    "bytes_descargados": 1802,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_185137_eed35781.json",
+    "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
+    "capturado_en": "2026-11-06T18:51:37.227983+00:00"
+  },
+  {
+    "id_fuente": "FTE-FIRMS-NASA",
+    "estado": "exitosa",
+    "hash_sha256": "0da0f81f0ec7f8c4b395f5fd2b9d41d75e5ea4b44e28eff986bad70ccf70d775",
+    "bytes_descargados": 2748,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_firms_nasa\\20261106_185137_0da0f81f.json",
+    "mensaje": "Captura FIRMS procesada para 23 municipios (modo: sin_clave/null)",
+    "capturado_en": "2026-11-06T18:51:37.329722+00:00"
+  },
+  {
+    "id_fuente": "FTE-SSPD-SUI",
+    "estado": "exitosa",
+    "hash_sha256": "ac38f406d68f93bf830ca8118d26f30e80561d293e6787b4852a810697db6df2",
+    "bytes_descargados": 10930,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_sspd_sui\\20261106_185137_ac38f406.json",
+    "mensaje": "Captura certificada de 23 municipios desde SSPD SUI",
+    "capturado_en": "2026-11-06T18:51:37.464491+00:00"
   }
 ]
