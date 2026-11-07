@@ -31,6 +31,7 @@ Antes de escribir código, lee el archivo que corresponda a tu tarea:
 | comparar semana a semana / botón «Actualizar datos» | `specs/comparativo-semanal.md` |
 | autenticación, roles, auditoría | `specs/seguridad-acceso.md` |
 | saber por qué algo está hecho así | `adr/` (índice abajo) |
+| consultar los datos o responder preguntas de ciudadanos | `../.claude/skills/vigia-nino-data-analyst/SKILL.md` |
 
 ## Stack
 
