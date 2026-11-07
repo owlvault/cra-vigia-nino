@@ -17,16 +17,11 @@ from datetime import datetime, timezone
 
 logger = logging.getLogger("PipelineCorte")
 
+class ConfiguracionInvalida(ValueError):
+    """La configuración versionada no cumple las reglas de la spec y se rechaza."""
+
+
 class PipelineCorte:
-    VERSION_CONFIG = "v1.0.0-20261008"
-    
-    # Pesos oficiales por capa según specs/indice-riesgo.md
-    PESOS_CAPA = {
-        "A": 0.30, # Amenaza hidroclimática (A-3, A-4, H-1)
-        "H": 0.30, # Vulnerabilidad de la oferta (H-2, H-3, H-4)
-        "S": 0.25, # Desempeño del servicio (S-1, S-2, S-3, S-4, S-5)
-        "R": 0.15  # Respuesta e impacto confirmado (R-1, R-2, R-3, R-4)
-    }
 
     @staticmethod
     def _escribir_atomico(ruta_destino: Path, contenido: str) -> None:
@@ -45,12 +40,34 @@ class PipelineCorte:
         self.plata_dir = self.root_dir / "data" / "plata"
         self.oro_dir.mkdir(parents=True, exist_ok=True)
         self.plata_dir.mkdir(parents=True, exist_ok=True)
-        self.parametros_corte = self._cargar_parametros_corte()
+        # Regla de oro 3: pesos, umbrales y territorio viven en config versionada, no en código
+        self.parametros_corte = self._leer_config("parametros_corte.json")
+        self.parametros_icr = self._leer_config("parametros_icr.json")
+        self.territorio = self._leer_config("territorio_municipios.json")
+        self.validar_parametros_icr(self.parametros_icr)
+        self.VERSION_CONFIG = self.parametros_icr["version"]
+        self.PESOS_CAPA = {capa: c["peso"] for capa, c in self.parametros_icr["capas"].items()}
 
-    def _cargar_parametros_corte(self) -> Dict[str, Any]:
-        """Lee frescura y compuerta de publicación desde config (regla de oro 3)."""
-        ruta = self.root_dir / "data" / "config" / "parametros_corte.json"
+    def _leer_config(self, nombre: str) -> Dict[str, Any]:
+        ruta = self.root_dir / "data" / "config" / nombre
         return json.loads(ruta.read_text(encoding="utf-8"))
+
+    @staticmethod
+    def validar_parametros_icr(conf: Dict[str, Any]) -> None:
+        """RN-ICR-01 (pesos suman 100 %) y caso borde 'umbrales no monótonos se rechazan'."""
+        suma = sum(c["peso"] for c in conf["capas"].values())
+        if abs(suma - 1.0) > 1e-9:
+            raise ConfiguracionInvalida(f"Los pesos de capa suman {suma:.4f}, deben sumar 1")
+        for cod, puntos in conf["quiebres"].items():
+            valores = [v for v, _ in puntos]
+            puntajes = [p for _, p in puntos]
+            creciente = all(a < b for a, b in zip(valores, valores[1:]))
+            decreciente = all(a > b for a, b in zip(valores, valores[1:]))
+            if not (creciente or decreciente) or puntajes != sorted(puntajes):
+                raise ConfiguracionInvalida(f"Quiebres no monótonos para {cod}: {puntos}")
+        desde = [n["icr_desde"] for n in conf["niveles_alerta"]]
+        if desde != sorted(desde):
+            raise ConfiguracionInvalida("Los umbrales de nivel de alerta no son crecientes")
 
     @staticmethod
     def _parsear_fecha(fecha: Optional[str]) -> Optional[datetime]:
@@ -109,22 +126,6 @@ class PipelineCorte:
 
         return (self.ESTADO_RECHAZADO if motivos else self.ESTADO_PUBLICADO), motivos
 
-    # Puntos de quiebre (valor -> puntaje) de specs/indicadores.md, RF-ICR-01
-    QUIEBRES = {
-        "A-3": [(0, 0), (-20, 40), (-40, 60), (-60, 75), (-90, 100)],
-        "A-4": [(0, 0), (10, 40), (20, 60), (30, 75), (60, 100)],
-        "H-1": [(100, 0), (70, 40), (50, 60), (30, 75), (10, 100)],
-        "H-4": [(24, 0), (18, 35), (12, 55), (6, 75), (2, 100)],
-        "S-1": [(24, 0), (22, 40), (18, 60), (12, 75), (4, 100)],
-        "S-2": [(0, 0), (5, 40), (14, 60), (35, 75), (80, 100)],
-        "S-3": [(100, 0), (95, 40), (85, 60), (70, 75), (40, 100)],
-        "S-4": [(20, 0), (30, 40), (40, 60), (50, 75), (70, 100)],
-        "S-5": [(0, 0), (25, 40), (50, 60), (100, 75), (300, 100)],
-    }
-    PUNTAJE_CATEGORICO = {"muy bajo": 0.0, "bajo": 15.0, "moderado": 40.0, "medio": 40.0, "alto": 65.0, "muy alto": 90.0}
-    PUNTAJE_BINARIO_ACTIVO = {"R-1": 0.0, "R-2": 60.0, "R-3": 80.0, "R-4": 100.0}
-    PUNTAJE_BINARIO_INACTIVO = {"R-1": 100.0, "R-2": 0.0, "R-3": 0.0, "R-4": 0.0}
-
     @staticmethod
     def _num(valor: Any) -> Optional[float]:
         """Convierte a número; None, vacío o no numérico => None (sin_dato)."""
@@ -146,7 +147,7 @@ class PipelineCorte:
         """RF-ICR-01: interpolación lineal entre quiebres, recortada a [0, 100]. Sin valor => None."""
         if valor is None:
             return None
-        puntos = self.QUIEBRES[codigo]
+        puntos = self.parametros_icr["quiebres"][codigo]
         # Ordenar por valor ascendente para interpolar sin importar la dirección del indicador
         asc = sorted(puntos, key=lambda p: p[0])
         if valor <= asc[0][0]:
@@ -162,13 +163,15 @@ class PipelineCorte:
         """RF-ICR-02. Categoría ausente o no reconocida => None, nunca un puntaje por defecto."""
         if not isinstance(categoria, str):
             return None
-        return self.PUNTAJE_CATEGORICO.get(categoria.strip().lower())
+        puntaje = self.parametros_icr["puntaje_categorico"].get(categoria.strip().lower())
+        return None if puntaje is None else float(puntaje)
 
     def puntaje_binario(self, codigo: str, valor: Optional[int]) -> Optional[float]:
         """RF-ICR-03. Sin dato => None."""
         if valor is None:
             return None
-        return self.PUNTAJE_BINARIO_ACTIVO[codigo] if valor == 1 else self.PUNTAJE_BINARIO_INACTIVO[codigo]
+        conf = self.parametros_icr["puntaje_binario"][codigo]
+        return float(conf["activo"] if valor == 1 else conf["inactivo"])
 
     def excede_vigencia_icr(self, codigo: str, fecha_dato: Optional[str], fecha_corte: str) -> bool:
         """
@@ -196,79 +199,52 @@ class PipelineCorte:
     ) -> Dict[str, Any]:
         """
         Calcula el ICR de un municipio de acuerdo a las especificaciones RF-ICR-01 a RF-ICR-06.
+        Capas, pesos, agregación, umbrales y piso se leen de parametros_icr.json.
         """
-        # 1. Capa A: Promedio de puntajes disponibles entre A-3, A-4, H-1
-        puntajes_a = []
-        for cod in ["A-3", "A-4", "H-1"]:
-            if cod in indicadores and indicadores[cod].get("puntaje") is not None:
-                puntajes_a.append(indicadores[cod]["puntaje"])
-        subindice_a = round(sum(puntajes_a) / len(puntajes_a), 2) if puntajes_a else None
+        conf = self.parametros_icr
 
-        # 2. Capa H: Promedio de disponibles entre H-2, H-3, H-4
-        puntajes_h = []
-        for cod in ["H-2", "H-3", "H-4"]:
-            if cod in indicadores and indicadores[cod].get("puntaje") is not None:
-                puntajes_h.append(indicadores[cod]["puntaje"])
-        subindice_h = round(sum(puntajes_h) / len(puntajes_h), 2) if puntajes_h else None
+        # 1-4. Subíndice por capa: promedio de puntajes disponibles (máximo para R, RF-ICR-03)
+        subindices: Dict[str, Optional[float]] = {}
+        for capa, c in conf["capas"].items():
+            puntajes = [indicadores[cod]["puntaje"] for cod in c["indicadores"]
+                        if cod in indicadores and indicadores[cod].get("puntaje") is not None]
+            if not puntajes:
+                subindices[capa] = None
+            elif c["agregacion"] == "maximo":
+                subindices[capa] = max(puntajes)
+            else:
+                subindices[capa] = round(sum(puntajes) / len(puntajes), 2)
 
-        # 3. Capa S: Promedio de disponibles entre S-1, S-2, S-3, S-4, S-5
-        puntajes_s = []
-        for cod in ["S-1", "S-2", "S-3", "S-4", "S-5"]:
-            if cod in indicadores and indicadores[cod].get("puntaje") is not None:
-                puntajes_s.append(indicadores[cod]["puntaje"])
-        subindice_s = round(sum(puntajes_s) / len(puntajes_s), 2) if puntajes_s else None
-
-        # 4. Capa R: Máximo de disponibles entre R-1, R-2, R-3, R-4 (RF-ICR-03)
-        puntajes_r = []
-        for cod in ["R-1", "R-2", "R-3", "R-4"]:
-            if cod in indicadores and indicadores[cod].get("puntaje") is not None:
-                puntajes_r.append(indicadores[cod]["puntaje"])
-        subindice_r = max(puntajes_r) if puntajes_r else None
-
-        # 5. Evaluación de cobertura de datos y redistribución de pesos (RF-ICR-04)
-        capas_disponibles = {}
-        if subindice_a is not None: capas_disponibles["A"] = (subindice_a, self.PESOS_CAPA["A"])
-        if subindice_h is not None: capas_disponibles["H"] = (subindice_h, self.PESOS_CAPA["H"])
-        if subindice_s is not None: capas_disponibles["S"] = (subindice_s, self.PESOS_CAPA["S"])
-        if subindice_r is not None: capas_disponibles["R"] = (subindice_r, self.PESOS_CAPA["R"])
-
+        # 5. Cobertura y redistribución de pesos (RF-ICR-04)
+        capas_disponibles = {capa: (sub, conf["capas"][capa]["peso"])
+                             for capa, sub in subindices.items() if sub is not None}
         suma_pesos_disponibles = sum(peso for _, peso in capas_disponibles.values())
         cobertura_pct = round(suma_pesos_disponibles * 100, 1)
 
-        # Regla: Si las capas disponibles suman menos del 60 %, el ICR es 'sin_dato'
-        if suma_pesos_disponibles < 0.60:
+        nivel_por_regla = False
+        if suma_pesos_disponibles < conf["peso_minimo_disponible"]:
             icr_calculado = None
             nivel_alerta = "sin_dato"
-            nivel_por_regla = False
         else:
-            # Redistribución proporcional de pesos
-            icr_ponderado = 0.0
-            for capa, (subind, peso_nominal) in capas_disponibles.items():
-                peso_efectivo = peso_nominal / suma_pesos_disponibles
-                icr_ponderado += subind * peso_efectivo
-            
+            icr_ponderado = sum(sub * peso / suma_pesos_disponibles for sub, peso in capas_disponibles.values())
             icr_calculado = round(icr_ponderado, 1)
 
-            # 6. Asignación de nivel de alerta según umbrales (RF-ICR-05)
-            if icr_calculado < 40.0:
-                nivel_alerta = "sin_alerta"
-            elif icr_calculado < 60.0:
-                nivel_alerta = "amarilla"
-            elif icr_calculado < 75.0:
-                nivel_alerta = "naranja"
-            else:
-                nivel_alerta = "roja"
+            # 6. Nivel de alerta (RF-ICR-05)
+            nivel_alerta = conf["niveles_alerta"][0]["nivel"]
+            for n in conf["niveles_alerta"]:
+                if icr_calculado >= n["icr_desde"]:
+                    nivel_alerta = n["nivel"]
 
-            nivel_por_regla = False
-
-            # 7. Regla de Piso por Impacto Confirmado (RF-ICR-06)
-            # Si R-3 (racionamiento) o R-4 (calamidad) están activos, mínimo Nivel Naranja
-            r3_activo = indicadores.get("R-3", {}).get("valor") == 1
-            r4_activo = indicadores.get("R-4", {}).get("valor") == 1
-            
-            if (r3_activo or r4_activo) and nivel_alerta in ("sin_alerta", "amarilla"):
-                nivel_alerta = "naranja"
+            # 7. Piso por impacto confirmado (RF-ICR-06)
+            piso = conf["piso_por_impacto"]
+            orden = [n["nivel"] for n in conf["niveles_alerta"]]
+            activo = any(indicadores.get(cod, {}).get("valor") == 1 for cod in piso["indicadores_activadores"])
+            if activo and orden.index(nivel_alerta) < orden.index(piso["nivel_minimo"]):
+                nivel_alerta = piso["nivel_minimo"]
                 nivel_por_regla = True
+
+        subindice_a, subindice_h = subindices.get("A"), subindices.get("H")
+        subindice_s, subindice_r = subindices.get("S"), subindices.get("R")
 
         return {
             "divipola": divipola,
@@ -316,53 +292,8 @@ class PipelineCorte:
                 logger.warning(f"No se pudo ejecutar ConectorSUI: {e}")
                 datos_sui = {}
         
-        # Base de municipios emblemáticos y prioritarios de Colombia
-        MUNICIPIOS_MAESTRO = [
-            # La Guajira
-            {"divipola": "44847", "nombre": "Uribia", "depto": "La Guajira", "cod_depto": "44", "poblacion": 196000, "region": "Caribe", "lat": 11.713, "lon": -72.015},
-            {"divipola": "44430", "nombre": "Maicao", "depto": "La Guajira", "cod_depto": "44", "poblacion": 182000, "region": "Caribe", "lat": 11.378, "lon": -72.241},
-            {"divipola": "44001", "nombre": "Riohacha", "depto": "La Guajira", "cod_depto": "44", "poblacion": 210000, "region": "Caribe", "lat": 11.544, "lon": -72.907},
-            {"divipola": "44560", "nombre": "Manaure", "depto": "La Guajira", "cod_depto": "44", "poblacion": 125000, "region": "Caribe", "lat": 11.775, "lon": -72.444},
-            
-            # Magdalena
-            {"divipola": "47001", "nombre": "Santa Marta", "depto": "Magdalena", "cod_depto": "47", "poblacion": 540000, "region": "Caribe", "lat": 11.240, "lon": -74.199},
-            {"divipola": "47555", "nombre": "Plato", "depto": "Magdalena", "cod_depto": "47", "poblacion": 65000, "region": "Caribe", "lat": 9.790, "lon": -74.782},
-            
-            # Bolívar
-            {"divipola": "13244", "nombre": "El Carmen de Bolívar", "depto": "Bolívar", "cod_depto": "13", "poblacion": 78000, "region": "Caribe", "lat": 9.717, "lon": -75.121},
-            {"divipola": "13430", "nombre": "Magangué", "depto": "Bolívar", "cod_depto": "13", "poblacion": 138000, "region": "Caribe", "lat": 9.242, "lon": -74.755},
-            {"divipola": "13001", "nombre": "Cartagena de Indias", "depto": "Bolívar", "cod_depto": "13", "poblacion": 1040000, "region": "Caribe", "lat": 10.391, "lon": -75.479},
-            
-            # Cesar
-            {"divipola": "20001", "nombre": "Valledupar", "depto": "Cesar", "cod_depto": "20", "poblacion": 510000, "region": "Caribe", "lat": 10.463, "lon": -73.253},
-            {"divipola": "20011", "nombre": "Aguachica", "depto": "Cesar", "cod_depto": "20", "poblacion": 112000, "region": "Caribe", "lat": 8.307, "lon": -73.618},
-            
-            # Santander
-            {"divipola": "68079", "nombre": "Barichara", "depto": "Santander", "cod_depto": "68", "poblacion": 12000, "region": "Andina", "lat": 6.635, "lon": -73.224},
-            {"divipola": "68679", "nombre": "San Gil", "depto": "Santander", "cod_depto": "68", "poblacion": 58000, "region": "Andina", "lat": 6.556, "lon": -73.133},
-            {"divipola": "68001", "nombre": "Bucaramanga", "depto": "Santander", "cod_depto": "68", "poblacion": 615000, "region": "Andina", "lat": 7.125, "lon": -73.119},
-            
-            # Cundinamarca y Bogotá
-            {"divipola": "11001", "nombre": "Bogotá, D.C.", "depto": "Bogotá, D.C.", "cod_depto": "11", "poblacion": 7900000, "region": "Andina", "lat": 4.711, "lon": -74.072},
-            {"divipola": "25307", "nombre": "Girardot", "depto": "Cundinamarca", "cod_depto": "25", "poblacion": 120000, "region": "Andina", "lat": 4.303, "lon": -74.802},
-            {"divipola": "25126", "nombre": "Cajicá", "depto": "Cundinamarca", "cod_depto": "25", "poblacion": 85000, "region": "Andina", "lat": 4.918, "lon": -74.027},
-            
-            # Tolima
-            {"divipola": "73001", "nombre": "Ibagué", "depto": "Tolima", "cod_depto": "73", "poblacion": 540000, "region": "Andina", "lat": 4.438, "lon": -75.232},
-            {"divipola": "73268", "nombre": "Espinal", "depto": "Tolima", "cod_depto": "73", "poblacion": 74000, "region": "Andina", "lat": 4.149, "lon": -74.884},
-            
-            # Huila
-            {"divipola": "41001", "nombre": "Neiva", "depto": "Huila", "cod_depto": "41", "poblacion": 365000, "region": "Andina", "lat": 2.927, "lon": -75.281},
-            
-            # Boyacá
-            {"divipola": "15837", "nombre": "Tuta", "depto": "Boyacá", "cod_depto": "15", "poblacion": 10500, "region": "Andina", "lat": 5.694, "lon": -73.230},
-            
-            # Antioquia
-            {"divipola": "05001", "nombre": "Medellín", "depto": "Antioquia", "cod_depto": "05", "poblacion": 2550000, "region": "Andina", "lat": 6.244, "lon": -75.581},
-            
-            # Valle del Cauca
-            {"divipola": "76001", "nombre": "Cali", "depto": "Valle del Cauca", "cod_depto": "76", "poblacion": 2280000, "region": "Pacífica", "lat": 3.451, "lon": -76.532}
-        ]
+        # Territorio evaluado desde config (antes embebido en código)
+        MUNICIPIOS_MAESTRO = self.territorio["municipios"]
 
         # Calcular cada municipio
         municipios_oro = []
@@ -467,7 +398,7 @@ class PipelineCorte:
             res_m = self.calcular_icr_municipio(
                 divipola=div,
                 nombre=m["nombre"],
-                depto=m["depto"],
+                depto=m["departamento"],
                 cod_depto=m["cod_depto"],
                 poblacion=m["poblacion"],
                 indicadores=indicadores_m

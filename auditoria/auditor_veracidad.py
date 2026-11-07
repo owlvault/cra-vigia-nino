@@ -39,13 +39,14 @@ class AuditorVeracidad:
         self.auditoria_dir.mkdir(parents=True, exist_ok=True)
         self.ops_dir.mkdir(parents=True, exist_ok=True)
 
-        # Pesos oficiales según specs/indice-riesgo.md
-        self.PESOS_CAPA = {
-            "A": 0.30,
-            "H": 0.30,
-            "S": 0.25,
-            "R": 0.15
-        }
+        # Pesos y umbrales desde la misma config versionada que usa el pipeline (regla de oro 3).
+        # El recálculo del auditor sigue siendo aritmética independiente.
+        conf_icr = json.loads((self.root_dir / "data" / "config" / "parametros_icr.json").read_text(encoding="utf-8"))
+        self.PESOS_CAPA = {capa: c["peso"] for capa, c in conf_icr["capas"].items()}
+        self.PESO_MINIMO = conf_icr["peso_minimo_disponible"]
+        umbrales = {n["nivel"]: n["icr_desde"] for n in conf_icr["niveles_alerta"]}
+        self.UMBRAL_AMARILLA, self.UMBRAL_NARANJA, self.UMBRAL_ROJA = (
+            umbrales["amarilla"], umbrales["naranja"], umbrales["roja"])
 
         # Catálogo canónico de fuentes oficiales y URLs de origen (specs/ingesta-fuentes.md y RF-CAL-05)
         self.METADATA_FUENTES_OFICIALES = {
@@ -754,7 +755,7 @@ class AuditorVeracidad:
             suma_pesos = sum(peso for _, peso in capas.values())
             cobertura_pct = round(suma_pesos * 100, 1)
 
-            if suma_pesos < 0.60:
+            if suma_pesos < self.PESO_MINIMO:
                 icr_recalc = None
                 nivel_recalc = "sin_dato"
                 piso_recalc = False
@@ -762,9 +763,9 @@ class AuditorVeracidad:
                 icr_pond = sum(sub * (p_nom / suma_pesos) for _, (sub, p_nom) in capas.items())
                 icr_recalc = round(icr_pond, 1)
 
-                if icr_recalc < 40.0: nivel_recalc = "sin_alerta"
-                elif icr_recalc < 60.0: nivel_recalc = "amarilla"
-                elif icr_recalc < 75.0: nivel_recalc = "naranja"
+                if icr_recalc < self.UMBRAL_AMARILLA: nivel_recalc = "sin_alerta"
+                elif icr_recalc < self.UMBRAL_NARANJA: nivel_recalc = "amarilla"
+                elif icr_recalc < self.UMBRAL_ROJA: nivel_recalc = "naranja"
                 else: nivel_recalc = "roja"
 
                 # Regla de piso RF-ICR-06
