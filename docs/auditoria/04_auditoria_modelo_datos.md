@@ -40,6 +40,28 @@
 - Fuente de verdad ambigua: `tablero/js/data.js`, `tablero/semanal/data/comparativo_semanal.json`, `auditoria/` vs `tablero/auditoria/` (`auditoria.js` ya divergió) y `corte_vigente.json` vs `corte_2026-11-06.json` son copias.
 - `FIRMS_MAP_KEY` ausente: una captura histórica falló y A-5 queda nulo en todo el corte.
 
+## Seguimiento de correcciones (2026-11-07)
+
+**Corrección a este informe — hallazgo 3.** `cobertura_datos_pct` como peso de capas disponibles es lo que define RF-ICR-04 («la cobertura de datos registrada es 70 %» cuando falta la capa H); no es un error de cálculo. El problema real era otro: el estado `PUBLICADO_VALIDO` estaba fijo en el código y nunca se aplicaba la compuerta RF-CAL-04.
+
+| Hallazgo | Estado | Commit |
+|---|---|---|
+| 3 — compuerta de publicación | Corregido: RF-CAL-04 aplicada; un corte rechazado va a `data/oro/rechazados/` y no reemplaza el vigente | `f7cf2aa` |
+| 9 — antigüedad sin marca | Corregido: cada indicador lleva `frescura` (RF-CAL-03) | `f7cf2aa` |
+| 10 — fecha de A-1 | Corregido: A-1 usa la semana NOAA y A-2 la del boletín (antes, fechas literales) | `f7cf2aa` |
+| 2 — `sin_dato` convertido en 0 | Corregido: sin valores por defecto en pipeline, conectores SUI/IDEAM/UNGRD ni auditor; R-n sin registro = `sin_dato` | `21ca7a2` |
+| 5 — municipios y pesos en código | Corregido: `parametros_icr.json` y `territorio_municipios.json`; H-4 alineado a la spec | `03764b4` |
+
+Hallazgos nuevos durante la corrección:
+- El pipeline rellenaba datos ausentes con valores inventados (continuidad 24 h, IRCA 12, categoría ENA «Medio», PEC = 1…). Hoy no se activaban con los datos actuales, pero lo habrían hecho ante cualquier faltante. Corregido en `21ca7a2`.
+- `ingesta/tests/test_conectores.py` y `test_auditoria.py` escriben capturas reales en el Bronce del repositorio. Pendiente.
+- Los conectores SUI e IDEAM conservan sus propias funciones de normalización. El pipeline ya no las usa, pero la de H-4 en SUI sigue con los quiebres viejos. Pendiente de retirar.
+
+Pendientes y decisiones:
+- **Decisión CRA:** regla de vigencia máxima (`multiplicador_sin_dato`) implementada pero desactivada. Con N = 3 y los periodos de la spec, quedan fuera H-4, S-2 y la capa R completa, y el ICR nacional sube de 39,3 a 51,0.
+- **Hallazgo 1** (A-3, A-4 y H-1 desde un catálogo estático): requiere conectar mediciones reales de IDEAM.
+- **Hallazgos 4 y 6–8, 11–15:** sin cambios.
+
 ## Prioridades recomendadas
 
 1. Corregir 1–3 antes de otra publicación: cargar mediciones IDEAM reales; estados `sin_dato` / `no_aplica` / `verificado_cero`; cobertura por indicadores.
