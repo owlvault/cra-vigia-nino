@@ -137,7 +137,7 @@ Escenario: Calamidad verificada
 
 ### RF-CIU-06 — Fuente, fecha y frescura en cada dato
 
-Cada dato de la vista ciudadana DEBE llevar la entidad fuente en lenguaje claro (p. ej. «Superintendencia de Servicios Públicos – SUI»), la fecha o el periodo del dato y, si su frescura es `desactualizado`, la advertencia «Dato de [periodo]; puede no reflejar la situación actual».
+Cada dato de la vista ciudadana DEBE llevar la entidad fuente en lenguaje claro (p. ej. «Superintendencia de Servicios Públicos – SUI»), la fecha o el periodo del dato y, si su frescura es `desactualizado`, la advertencia «Dato con fecha [periodo]; puede no reflejar la situación actual». Para los datos semanales (embalses, El Niño) la advertencia aplica cuando el dato supera `dias_max_dato_semanal_sin_advertencia` días.
 
 ```gherkin
 Escenario: IRCA anual
@@ -181,7 +181,7 @@ CUANDO ACT-CIUDADANO consulta un municipio que no está en el corte publicado, e
 
 ### RF-CIU-10 — Compuerta de exposición ciudadana
 
-El sistema DEBE generar la vista ciudadana con un estado `publicable` o `no_publicable` y la lista de condiciones incumplidas de ADR-0006 (C-CIU-01 a C-CIU-04). El medio de entrega NO DEBE exponer una vista `no_publicable`. Los agregados que dependen de población NO DEBEN incluirse mientras la población no provenga de las proyecciones del DANE (C-CIU-04).
+El sistema DEBE generar la vista ciudadana con un estado `publicable` o `no_publicable` y la lista de condiciones incumplidas de ADR-0006 (C-CIU-01 a C-CIU-04). Como parte de C-CIU-03, un corte calculado con una configuración del ICR anterior a `version_minima_configuracion_icr` es `no_publicable`: esos cortes registraban R-2/R-3/R-4 = 0 sin verificación. El medio de entrega NO DEBE exponer una vista `no_publicable`. Los agregados que dependen de población NO DEBEN incluirse mientras la población no provenga de las proyecciones del DANE (C-CIU-04).
 
 ```gherkin
 Escenario: Clasificación pendiente
@@ -228,6 +228,15 @@ DEBE cumplir WCAG 2.1 AA y los lineamientos GOV.CO (RES-04), con la identidad de
 | Nivel subido por regla (`nivel_por_regla`) | Se muestra el nivel y la razón en lenguaje claro: «Hay racionamiento o calamidad pública con soporte oficial» |
 | Cambio de versión de configuración del ICR | La vista indica la fecha del corte; no compara niveles entre versiones distintas |
 
+## Implementación v1
+
+| Pieza | Ubicación |
+|---|---|
+| Configuración (lista blanca, etiquetas, textos, condiciones) | `data/config/canal_ciudadano.json` |
+| Generador | `ingesta/canal_ciudadano.py`, invocado al final de `PipelineCorte.generar_corte_completo` solo para cortes publicados |
+| Salida | `data/oro/ciudadano/vista_vigente.json` y `vista_AAAA-MM-DD.json` |
+| Pruebas | `ingesta/tests/test_canal_ciudadano.py` |
+
 ## Fuera de alcance de esta spec
 
 El medio de entrega (Q-CIU-01), notificaciones a ciudadanos, consultas personalizadas por dirección o barrio, y cualquier canal de escritura (quejas, reportes): esos van por el prestador y la Superintendencia de Servicios Públicos.
@@ -245,3 +254,4 @@ El medio de entrega (Q-CIU-01), notificaciones a ciudadanos, consultas personali
 | Fecha | Cambio | Origen |
 |---|---|---|
 | 2026-11-07 | Versión inicial: coexistencia del canal interno y el ciudadano | ADR-0006; decisión de Camilo |
+| 2026-11-07 | Implementación v1 de la vista; versión mínima de configuración en C-CIU-03 | Prueba con el corte vigente |

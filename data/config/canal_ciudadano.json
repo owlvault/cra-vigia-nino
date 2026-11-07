@@ -1,0 +1,57 @@
+{
+  "version": "v0.1.0-20261107",
+  "descripcion": "Configuración del canal ciudadano (specs/canal-ciudadano.md, ADR-0006). Lista blanca, etiquetas y textos en lenguaje claro.",
+  "condiciones_exposicion": {
+    "clasificacion_informacion_publica": false,
+    "nota_clasificacion": "C-CIU-01: cambiar a true solo cuando la Oficina de Planeación y TIC CRA clasifique esta información como pública (Q-SEG-01, Ley 1712 de 2014).",
+    "textos_aprobados": false,
+    "nota_textos": "C-CIU-02: cambiar a true cuando la Oficina de Comunicaciones CRA apruebe los textos de este archivo (Q-CIU-02).",
+    "version_minima_configuracion_icr": "v1.1.0-20261107",
+    "nota_version_minima": "C-CIU-03: los cortes anteriores a esta versión registraban R-2/R-3/R-4 = 0 sin verificación; mostrarlos como 'No, verificado' sería falso."
+  },
+  "lista_blanca": ["nivel_riesgo", "calidad_agua", "horas_servicio", "racionamiento", "calamidad_publica", "embalses", "estado_el_nino"],
+  "etiquetas_nivel_riesgo": {
+    "sin_alerta": "Bajo",
+    "amarilla": "Medio",
+    "naranja": "Alto",
+    "roja": "Muy alto",
+    "sin_dato": "Sin información"
+  },
+  "textos": {
+    "aviso": "Esta información es un análisis de la Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA). No es una alerta ni una declaratoria oficial de emergencia.",
+    "sin_informacion": "Sin información verificada",
+    "si_verificado": "Sí, con soporte oficial",
+    "no_verificado": "No, verificado",
+    "razon_nivel_por_regla": "Hay racionamiento o calamidad pública con soporte oficial en el municipio.",
+    "advertencia_desactualizado": "Dato con fecha {periodo}; puede no reflejar la situación actual.",
+    "municipio_fuera_de_muestra": "Este municipio aún no está incluido en el análisis.",
+    "embalses_nota": "Son los embalses del sistema eléctrico nacional; solo algunos abastecen acueductos.",
+    "tendencia_sube": "subió {delta} puntos frente a la semana anterior",
+    "tendencia_baja": "bajó {delta} puntos frente a la semana anterior",
+    "tendencia_estable": "se mantuvo estable frente a la semana anterior",
+    "remisiones": {
+      "suministro": "Para horarios de suministro o racionamiento, consulte a su empresa de acueducto y a la alcaldía.",
+      "emergencias": "Ante emergencias, acuda al consejo municipal de gestión del riesgo y a la UNGRD.",
+      "clima": "Para pronósticos y alertas del clima, consulte al IDEAM.",
+      "quejas": "Para quejas por el servicio, diríjase a su empresa de acueducto y, en segunda instancia, a la Superintendencia de Servicios Públicos Domiciliarios."
+    }
+  },
+  "fuentes_legibles": {
+    "SSPD SUI": "Superintendencia de Servicios Públicos – SUI",
+    "INS SIVICAP": "Instituto Nacional de Salud – SIVICAP",
+    "UNGRD Sala de Crisis": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+    "MinVivienda Survey123": "Ministerio de Vivienda, Ciudad y Territorio",
+    "XM": "XM, operador del sistema eléctrico nacional",
+    "NOAA": "Administración Nacional Oceánica y Atmosférica de EE. UU. (NOAA)",
+    "CRA": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)"
+  },
+  "bandas_irca": [
+    {"hasta": 5.0, "texto": "Sin riesgo"},
+    {"hasta": 14.0, "texto": "Riesgo bajo"},
+    {"hasta": 35.0, "texto": "Riesgo medio"},
+    {"hasta": 80.0, "texto": "Riesgo alto"},
+    {"hasta": 100.0, "texto": "Inviable sanitariamente"}
+  ],
+  "nota_bandas_irca": "Res. 2115 de 2007 (MinProtección/MAVDT): 0-5 sin riesgo; 5,1-14 bajo; 14,1-35 medio; 35,1-80 alto; 80,1-100 inviable sanitariamente.",
+  "dias_max_dato_semanal_sin_advertencia": 14
+}

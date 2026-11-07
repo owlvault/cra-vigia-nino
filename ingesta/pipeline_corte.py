@@ -605,4 +605,14 @@ class PipelineCorte:
         )
 
         logger.info(f"Corte exitoso: {len(municipios_oro)} municipios evaluados. ICR Nacional={icr_nacional_ponderado}")
+
+        # 4. Canal ciudadano (specs/canal-ciudadano.md). Va al final y aislado: si falla,
+        #    el canal interno ya quedó publicado y no se ve afectado (RF-CIU-01).
+        try:
+            from ingesta.canal_ciudadano import GeneradorVistaCiudadana, cargar_semanal
+            vista = GeneradorVistaCiudadana(base_dir=str(self.root_dir)).generar(corte_final, cargar_semanal(self.root_dir))
+            corte_final["metadata_corte"]["vista_ciudadana"] = vista["metadata"]["estado"]
+        except Exception as e:
+            logger.error(f"Vista ciudadana no generada; el corte interno sigue publicado: {e}")
+            corte_final["metadata_corte"]["vista_ciudadana"] = f"error: {e}"
         return corte_final
