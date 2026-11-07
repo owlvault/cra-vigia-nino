@@ -2,7 +2,7 @@
   "descripcion": "Municipios evaluados por el corte diario (equivale a oro.dim_territorio, RF-TER-01).",
   "version": "v1.1.0-20261107",
   "origen": "Trasladado desde PipelineCorte.MUNICIPIOS_MAESTRO (código). Coordenadas reemplazadas el 2026-11-07 por las de la cabecera municipal de la DIVIPOLA del DANE (datos.gov.co gdxc-w37w, corte 2024-12-30); las del prototipo diferían hasta 28 km (Uribia).",
-  "pendiente": "La población sigue siendo la del prototipo: reemplazar por las proyecciones de población del DANE del año del corte (RF-TER-06, ADR-0006 C-CIU-04). El campo 'region' es la región natural, de uso descriptivo para el tablero interno; la agregación oficial es por departamento y por zonificación hidrográfica IDEAM (data/config/territorio_hidrografico.json).",
+  "pendiente": "El campo 'poblacion' es solo un valor de respaldo heredado del prototipo: el corte usa la proyección DANE del año del corte (data/config/poblacion_dane.json, RF-TER-06) y registra 'fuente_poblacion' por municipio. Si falta la proyección, el corte lo declara y el canal ciudadano no se publica (C-CIU-04). El campo 'region' es la región natural, de uso descriptivo para el tablero interno; la agregación oficial es por departamento y por zonificación hidrográfica IDEAM (data/config/territorio_hidrografico.json).",
   "municipios": [
     {
       "divipola": "44847",

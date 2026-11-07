@@ -27,7 +27,8 @@ def _municipio(div, nombre, depto, cod, nivel, **inds):
             "A-3": _ind(-88.5), "H-4": _ind(4.0)}
     base.update(inds)
     return {"divipola": div, "nombre": nombre, "departamento": depto, "cod_depto": cod, "nivel_alerta": nivel,
-            "nivel_por_regla": False, "icr": 70.0, "poblacion": 1000, "subindices_capa": {}, "indicadores": base}
+            "nivel_por_regla": False, "icr": 70.0, "poblacion": 1000, "fuente_poblacion": "DANE PPED 2018-2042, proyección 2026",
+            "subindices_capa": {}, "indicadores": base}
 
 
 def _corte(**md):
@@ -196,13 +197,16 @@ def test_publicable_cuando_se_cumplen_las_condiciones(base):
     conf = json.loads(ruta.read_text(encoding="utf-8"))
     conf["condiciones_exposicion"].update(clasificacion_informacion_publica=True, textos_aprobados=True)
     ruta.write_text(json.dumps(conf), encoding="utf-8")
-    ruta_t = base / "data" / "config" / "territorio_municipios.json"
-    terr = json.loads(ruta_t.read_text(encoding="utf-8"))
-    terr["fuente_poblacion"] = "DANE - prueba"
-    ruta_t.write_text(json.dumps(terr), encoding="utf-8")
     md = GeneradorVistaCiudadana(base_dir=str(base)).construir(_corte(), SEMANAL)["metadata"]
     assert md["estado"] == "publicable"
     assert md["motivos_no_publicable"] == []
+
+
+def test_poblacion_de_respaldo_bloquea_la_exposicion(gen):
+    """C-CIU-04: basta un municipio con población del prototipo para no publicar."""
+    corte = _corte()
+    corte["municipios"][0]["fuente_poblacion"] = "prototipo (sin proyección DANE)"
+    assert any(m.startswith("C-CIU-04") and "1 municipios" in m for m in gen.evaluar_compuerta(corte))
 
 
 def test_version_tupla():

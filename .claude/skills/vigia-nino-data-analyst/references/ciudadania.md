@@ -6,6 +6,12 @@ Esta guía aplica **solo al canal ciudadano**. El canal interno de la CRA se man
 
 ---
 
+## La vista ciudadana ya existe
+
+Si hay una vista generada, **responde desde ella y no desde el corte**: `data/oro/ciudadano/vista_vigente.json` (`ingesta/canal_ciudadano.py`). Ya trae textos en lenguaje claro, fuente, periodo y advertencias. Antes de usarla, revisa `metadata.estado`:
+- `publicable`: puedes mostrarla.
+- `no_publicable`: **no la presentes como información pública**; explica que el canal ciudadano aún no está habilitado y menciona `metadata.motivos_no_publicable` solo si te lo piden.
+
 ## Reglas de respuesta
 
 1. **Lenguaje claro, sin códigos.** Di «horas de servicio de agua al día», no «S-1». Di «calidad del agua», no «IRCA S-2», salvo que el ciudadano use el término.
@@ -46,7 +52,7 @@ Se eligieron por dos criterios: que respondan una pregunta concreta de un hogar 
 | A-3 anomalía de lluvia, A-4 días sin lluvia, H-1 caudal | Hoy salen de un catálogo estático, no de mediciones diarias (hallazgo 1 de la auditoría). Recomendables cuando se conecten datos reales del IDEAM. |
 | A-2 probabilidad de un Niño muy fuerte | Valor transcrito a mano en el conector, sin captura automática. |
 | S-4 IANC, S-5 PQR, H-4 autonomía, `cobertura_datos_pct` | Técnicos; no responden una pregunta de hogar. |
-| `poblacion_en_riesgo_critico`, ICR nacional | Se calculan sobre 23 municipios y con poblaciones del prototipo, no del DANE. |
+| `poblacion_en_riesgo_critico`, ICR nacional | Se calculan sobre solo 23 municipios: no representan al país. La población ya es del DANE, pero la muestra sigue siendo parcial. |
 
 ### Métrica de éxito sugerida para el canal ciudadano
 

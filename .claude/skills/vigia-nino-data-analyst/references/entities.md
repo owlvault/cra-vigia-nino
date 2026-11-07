@@ -8,7 +8,8 @@
 - **Atributos**: `nombre`, `departamento`, `cod_depto`, `poblacion`, `region`, `lat`, `lon`.
 - **Cobertura actual**: 23 municipios de 12 departamentos (La Guajira, Magdalena, Bolívar, Cesar, Santander, Bogotá, Cundinamarca, Tolima, Huila, Boyacá, Antioquia, Valle). La spec apunta a ~1.100.
 - **Advertencias**:
-  - `poblacion` y `region` vienen del prototipo, no de las proyecciones DANE. Usa la población para ponderar, pero no la cites como cifra oficial.
+  - En el corte, `poblacion` es la proyección DANE del año del corte (PPED 2018-2042, actualizada por el DANE el 30-jul-2025; ver `fuente_poblacion`). Si `fuente_poblacion` empieza por «prototipo», es un respaldo y no debe citarse. En `territorio_municipios.json`, `poblacion` es solo ese respaldo.
+  - `region` es la región natural del prototipo; solo descriptiva.
   - `lat` y `lon` son la cabecera municipal de la DIVIPOLA del DANE (desde 2026-11-07); es un punto, no un polígono.
 
 ## Área / zona / subzona hidrográfica

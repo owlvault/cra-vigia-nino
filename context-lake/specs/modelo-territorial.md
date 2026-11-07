@@ -136,6 +136,8 @@ Implementación v1: `ingesta/territorio/cruce_hidrografico.py` → `data/config/
 
 **Prioridad:** debe
 
+> Implementación v1 de RF-TER-06: la población por año sale de `data/config/poblacion_dane.json`, extraída de las proyecciones municipales PPED 2018-2042 del DANE (`ingesta/territorio/poblacion_dane.py`). Cada municipio del corte registra `fuente_poblacion`.
+
 ### RF-TER-07 — Geometrías
 
 El sistema DEBE servir geometrías de municipios y departamentos del MGN del DANE simplificadas a no más de 5 MB en total para el tablero, y NO DEBE servir geometrías sin simplificar al navegador.

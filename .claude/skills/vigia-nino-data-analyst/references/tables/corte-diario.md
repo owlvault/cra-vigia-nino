@@ -45,6 +45,7 @@ corte["metadata_corte"]["estado_calidad"] == "PUBLICADO_VALIDO"
 |---|---|---|
 | **divipola** | texto(5) | PK con `fecha_corte` |
 | nombre, departamento, cod_depto, region, lat, lon, poblacion | | Atributos de dimensión repetidos en el hecho; `lat`/`lon` del DANE desde 2026-11-07 |
+| fuente_poblacion | texto | «DANE PPED 2018-2042, proyección AAAA…» o «prototipo (sin proyección DANE)». Solo en cortes posteriores al 2026-11-07 |
 | area_hidrografica, zona_hidrografica, subzona_hidrografica (+ `cod_*`) | texto / int / texto | Zonificación IDEAM (RF-TER-08); null si el cruce no la resolvió. Solo en cortes posteriores al 2026-11-07 |
 | **icr** | float \| null | 1 decimal |
 | **nivel_alerta** | texto | |

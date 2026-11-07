@@ -51,6 +51,7 @@ Parámetros vigentes: `data/config/parametros_icr.json` (versión `v1.1.0-202611
 - **Caveats**:
   - El denominador del departamento incluye municipios sin ICR, así que un municipio `sin_dato` arrastra la media hacia abajo. En la Nación pasa lo mismo.
   - Con 23 municipios, Bogotá (7,9 M hab.) domina el ICR nacional.
+  - Los cortes hasta el 2026-11-06 ponderan con la población del prototipo; los siguientes, con la proyección DANE del año del corte. Con el corte del 06-nov, el cambio sube el ICR nacional de 39,3 a 39,6 y la población en naranja o roja de 1.064.500 a 1.121.278.
   - No lo presentes como «ICR de Colombia»: es el de la muestra.
 
 ## Población en riesgo crítico

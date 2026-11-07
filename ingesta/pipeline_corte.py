@@ -45,6 +45,7 @@ class PipelineCorte:
         self.parametros_icr = self._leer_config("parametros_icr.json")
         self.territorio = self._leer_config("territorio_municipios.json")
         self.hidrografia = self._cargar_hidrografia()
+        self.poblacion_dane = self._cargar_poblacion_dane()
         self.validar_parametros_icr(self.parametros_icr)
         self.VERSION_CONFIG = self.parametros_icr["version"]
         self.PESOS_CAPA = {capa: c["peso"] for capa, c in self.parametros_icr["capas"].items()}
@@ -59,6 +60,24 @@ class PipelineCorte:
             return {}
         datos = json.loads(ruta.read_text(encoding="utf-8"))
         return {m["divipola"]: m for m in datos.get("municipios", []) if m.get("estado") == "resuelto"}
+
+    def _cargar_poblacion_dane(self) -> Dict[str, Any]:
+        """Proyecciones DANE por municipio y año (RF-TER-06). Si no existe el archivo, vacío."""
+        ruta = self.root_dir / "data" / "config" / "poblacion_dane.json"
+        return json.loads(ruta.read_text(encoding="utf-8")) if ruta.exists() else {}
+
+    def poblacion_municipio(self, municipio: Dict[str, Any], anio: str) -> Tuple[int, str]:
+        """
+        Población del año del corte según el DANE. Si falta la proyección, usa el valor
+        de respaldo de territorio_municipios.json y lo declara en la fuente: así la
+        compuerta del canal ciudadano (C-CIU-04) lo detecta.
+        """
+        serie = self.poblacion_dane.get("poblacion_por_anio", {}).get(municipio["divipola"], {})
+        if anio in serie:
+            act = self.poblacion_dane.get("fuente", {}).get("actualizacion_dane") or ""
+            return serie[anio], f"DANE PPED 2018-2042, proyección {anio} ({act})".strip()
+        logger.warning(f"Sin proyección DANE {anio} para {municipio['divipola']}; se usa el valor de respaldo")
+        return municipio["poblacion"], "prototipo (sin proyección DANE)"
 
     def _leer_config(self, nombre: str) -> Dict[str, Any]:
         ruta = self.root_dir / "data" / "config" / nombre
@@ -407,15 +426,17 @@ class PipelineCorte:
                     ind["puntaje"] = None
                     ind["excluido_icr"] = "antigüedad mayor a la vigencia máxima"
 
+            poblacion_m, fuente_poblacion_m = self.poblacion_municipio(m, fecha_corte[:4])
             res_m = self.calcular_icr_municipio(
                 divipola=div,
                 nombre=m["nombre"],
                 depto=m["departamento"],
                 cod_depto=m["cod_depto"],
-                poblacion=m["poblacion"],
+                poblacion=poblacion_m,
                 indicadores=indicadores_m
             )
             res_m["region"] = m["region"]
+            res_m["fuente_poblacion"] = fuente_poblacion_m
             hidro = self.hidrografia.get(div, {})
             for campo in self.CAMPOS_HIDROGRAFICOS:
                 res_m[campo] = hidro.get(campo)

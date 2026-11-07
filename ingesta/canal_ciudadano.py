@@ -62,7 +62,6 @@ class GeneradorVistaCiudadana:
         self.root_dir = Path(base_dir or Path(__file__).resolve().parent.parent)
         cfg = self.root_dir / "data" / "config"
         self.conf = json.loads((cfg / "canal_ciudadano.json").read_text(encoding="utf-8"))
-        self.territorio = json.loads((cfg / "territorio_municipios.json").read_text(encoding="utf-8"))
         self.dir_salida = self.root_dir / "data" / "oro" / "ciudadano"
 
     # ------------------------------------------------------------------ textos
@@ -203,8 +202,10 @@ class GeneradorVistaCiudadana:
         elif _version_tupla(md.get("version_configuracion")) < _version_tupla(cond.get("version_minima_configuracion_icr")):
             motivos.append(f"C-CIU-03 corte calculado con configuración {md.get('version_configuracion')}, "
                            f"anterior a {cond.get('version_minima_configuracion_icr')}")
-        if not str(self.territorio.get("fuente_poblacion", "")).startswith("DANE"):
-            motivos.append("C-CIU-04 la población no proviene de las proyecciones del DANE")
+        sin_dane = [m["divipola"] for m in corte.get("municipios", [])
+                    if not str(m.get("fuente_poblacion", "")).startswith("DANE")]
+        if sin_dane or not corte.get("municipios"):
+            motivos.append(f"C-CIU-04 población sin proyección DANE en {len(sin_dane)} municipios")
         return motivos
 
     # ------------------------------------------------------------------ vista
