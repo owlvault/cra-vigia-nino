@@ -1,6 +1,6 @@
-# Responder a la ciudadanía
+# Responder a la ciudadanía (modo ciudadano)
 
-Este skill se usa para contestar preguntas de **ciudadanos en general**, no de analistas. Antes de calcular, lee esta guía.
+Esta guía aplica **solo al canal ciudadano**. El canal interno de la CRA se mantiene con todo su contenido técnico; ver la tabla «Dos canales» en `SKILL.md`. Especificación: `context-lake/specs/canal-ciudadano.md` (RF-CIU-01 a RF-CIU-10).
 
 > **Marco: `context-lake/adr/ADR-0006-canal-ciudadano.md` (aceptada 2026-11-07).** Habilita un canal ciudadano de solo lectura sobre el subconjunto de información de esta guía. El canal **no está en producción** hasta cumplir C-CIU-01 a C-CIU-04: clasificación de la información (Q-SEG-01), `specs/canal-ciudadano.md` (aún no existe), corte que pase la compuerta y cero datos del prototipo visibles. Mientras tanto, toda respuesta aclara que es **información de análisis de la CRA, no una declaratoria oficial**.
 
@@ -31,10 +31,10 @@ Se eligieron por dos criterios: que respondan una pregunta concreta de un hogar 
 
 | Pregunta ciudadana | Indicador | Cómo presentarlo | Advertencia obligatoria |
 |---|---|---|---|
-| ¿Qué tan en riesgo está el agua de mi municipio? | `nivel_alerta` del corte diario | Como nivel: bajo (sin alerta), medio (amarilla), alto (naranja), muy alto (roja), sin información | «Nivel de riesgo analítico de la CRA, no alerta oficial.» Da la fecha del corte. |
+| ¿Qué tan en riesgo está el agua de mi municipio? | `nivel_alerta` del corte diario | Bajo (`sin_alerta`), Medio (`amarilla`), Alto (`naranja`), Muy alto (`roja`), Sin información (`sin_dato`) (RF-CIU-04) | «Nivel de riesgo analítico de la CRA, no alerta oficial.» Da la fecha del corte. |
 | ¿El agua de la llave es segura? | S-2 IRCA, con las bandas de la Res. 2115 de 2007: 0-5 sin riesgo; 5,1-14 bajo; 14,1-35 medio; 35,1-80 alto; 80,1-100 inviable sanitariamente | Banda en palabras + valor | **El dato es anual de 2024.** Dilo siempre; no describe el agua de hoy. |
 | ¿Cuántas horas al día tengo agua? | S-1 continuidad (h/día) | «En promedio, X horas al día» | Promedio municipal del SUI, periodo 2026-08; puede variar por barrio y prestador. |
-| ¿Hay racionamiento o calamidad declarada? | R-3 racionamiento, R-4 calamidad pública | Sí / No verificado / Sin información | Solo «sí» con soporte en el registro; si el valor es `null`, «sin información verificada». |
+| ¿Hay racionamiento o calamidad declarada? | R-3 racionamiento, R-4 calamidad pública | «Sí, con soporte oficial» (1) / «No, verificado» (0) / «Sin información verificada» (`null`) | RF-CIU-05: `null` nunca se dice «no». |
 | ¿Cómo están los embalses? | `EMBALSES_NAL_PCT` y `EMBALSE_BOGOTA_PCT` (semanal, XM) | % de volumen útil y si sube o baja frente a la semana anterior | Son embalses de generación eléctrica del SIN; solo algunos abastecen acueductos. |
 | ¿El Niño sigue fuerte? | `NINO34_SSTA` (semanal) y `ONI` (trimestral), NOAA | Anomalía en °C, con la categoría de intensidad | El IDEAM es la autoridad nacional: remite a su boletín. |
 

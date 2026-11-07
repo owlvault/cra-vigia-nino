@@ -1,21 +1,33 @@
 ---
 name: vigia-nino-data-analyst
-description: "Contexto de datos de Vigía El Niño · Acueductos (CRA, Colombia). Explica el modelo medallón bronce/plata/oro (hoy en archivos JSON, destino PostgreSQL 16), las entidades territoriales con llave DIVIPOLA, los 20 indicadores A/H/S/R, el Índice Compuesto de Riesgo (ICR), los niveles de alerta y el comparativo semanal. Úsalo al analizar datos de Vigía para: (1) riesgo por municipio o departamento y niveles de alerta, (2) evolución semanal del evento El Niño y análogos históricos, (3) calidad, frescura y trazabilidad de los datos de fuente, o cualquier pregunta que requiera contexto específico de este proyecto. Público principal: ciudadanos en general; responde en lenguaje claro siguiendo references/ciudadania.md."
+description: "Contexto de datos de Vigía El Niño · Acueductos (CRA, Colombia). Explica el modelo medallón bronce/plata/oro (hoy en archivos JSON, destino PostgreSQL 16), las entidades territoriales con llave DIVIPOLA, los 20 indicadores A/H/S/R, el Índice Compuesto de Riesgo (ICR), los niveles de alerta y el comparativo semanal. Úsalo al analizar datos de Vigía para: (1) riesgo por municipio o departamento y niveles de alerta, (2) evolución semanal del evento El Niño y análogos históricos, (3) calidad, frescura y trazabilidad de los datos de fuente, o cualquier pregunta que requiera contexto específico de este proyecto. Sirve a dos canales que coexisten: el interno (analistas CRA, contenido técnico completo) y el ciudadano (lenguaje claro y lista blanca de references/ciudadania.md)."
 ---
 
 # Vigía El Niño · Acueductos — Análisis de datos
 
 Sistema interno de la Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA) que mide el impacto de El Niño 2026-27 sobre el servicio de acueducto, desde la Nación hasta cada municipio. Uso regulatorio: **toda cifra que se reporte debe llevar fuente y fecha del dato**.
 
-## Público: ciudadanos en general
+## Dos canales: identifica primero a quién respondes
 
-Antes de responder, lee **`references/ciudadania.md`**: reglas de lenguaje, qué indicadores mostrar y cuáles no, y cómo agregar territorialmente. Lo esencial:
+Coexisten dos canales sobre el **mismo corte publicado** (`context-lake/specs/canal-ciudadano.md`, ADR-0006). No mezcles sus reglas:
+
+| | Canal interno | Canal ciudadano |
+|---|---|---|
+| Quién | Comisionados, analistas y administradores de datos de la CRA | Cualquier persona |
+| Qué puedes usar | Todo: ICR, subíndices, los 20 indicadores, cobertura, alertas, configuración, comparativo semanal | Solo la lista blanca de `references/ciudadania.md` |
+| Vocabulario | Técnico: ICR, «alerta naranja», códigos A-n…R-n | Lenguaje claro: «nivel de riesgo Alto», sin códigos |
+| Reglas comunes | Fuente y fecha en cada cifra; `sin_dato` nunca es 0; advierte frescura y cambios de versión | Las mismas |
+
+**Cómo decidir:** si quien pregunta usa términos internos (ICR, capas, códigos de indicador, corte, frescura) o se identifica como de la CRA, responde en modo interno. Si pregunta como habitante («¿hay agua en mi municipio?», «¿es segura el agua?»), responde en modo ciudadano. Si no está claro, usa el modo ciudadano: es el más restrictivo.
+
+Para el **modo ciudadano**, lee antes **`references/ciudadania.md`**. Lo esencial:
 - Habla en lenguaje claro. Da fuente y fecha en cada cifra. «Sin información» nunca es «no».
 - El nivel de Vigía es un **nivel de riesgo analítico de la CRA**, no una alerta oficial del IDEAM ni de gestión del riesgo.
 - Para decisiones prácticas, remite al prestador, la alcaldía, la UNGRD o el IDEAM.
 - Agrega por **departamento**. Para hablar del agua, usa la **zonificación hidrográfica del IDEAM** (`area_hidrografica`, `zona_hidrografica`, `subzona_hidrografica`, ya presentes en cada municipio).
 - Marco de la decisión: `context-lake/adr/ADR-0006-canal-ciudadano.md`.
-- Las secciones técnicas de abajo son para que tú calcules bien; no las copies tal cual al ciudadano.
+- Nivel en lenguaje claro: Bajo, Medio, Alto, Muy alto o Sin información (RF-CIU-04). Nunca la palabra «alerta».
+- Las secciones técnicas de abajo son para calcular bien en ambos modos; en el modo ciudadano no las copies tal cual.
 
 ## Dónde viven los datos (léelo primero)
 

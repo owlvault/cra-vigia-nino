@@ -22,7 +22,7 @@ Abrir la información sin reglas tiene riesgos concretos, detectados en la audit
 
 ## Decisión
 
-1. **Se modifica RES-02.** La operación del sistema (ingesta, cálculo, configuración, auditoría, tablero completo) sigue siendo interna de la CRA. Se habilita un **canal ciudadano** de solo lectura sobre un subconjunto de la información.
+1. **Se modifica RES-02. Coexisten dos canales.** El **canal interno** (ingesta, cálculo, configuración, auditoría, tablero completo V-01 a V-08) se mantiene sin cambios para la CRA. Se agrega un **canal ciudadano** de solo lectura sobre un subconjunto de la información, derivado del mismo corte publicado (`specs/canal-ciudadano.md`).
 2. **Contenido del canal ciudadano.** Solo indicadores con dato verificable y frescura conocida:
 
    | Información | Origen | Condición |
@@ -45,7 +45,7 @@ El canal **no se pone en producción** hasta que se cumpla:
 | ID | Condición | Responsable |
 |---|---|---|
 | C-CIU-01 | Q-SEG-01 resuelta: la información del canal está clasificada como **pública** en el esquema de activos de información de la CRA (Ley 1712 de 2014) | Oficina de Planeación y TIC CRA |
-| C-CIU-02 | Existe `specs/canal-ciudadano.md` con requisitos EARS y escenarios BDD (regla de oro 1) | Camilo |
+| C-CIU-02 | Existe `specs/canal-ciudadano.md` con requisitos EARS y escenarios BDD (regla de oro 1). **Cumplida en borrador el 2026-11-07**; falta aprobación de textos (Q-CIU-02) | Camilo |
 | C-CIU-03 | El corte que alimenta el canal pasó la compuerta RF-CAL-04 | ACT-ORQUESTADOR |
 | C-CIU-04 | Ningún dato del prototipo se muestra al público (regla de oro 8): la población y las coordenadas vienen del DANE antes de publicar cualquier agregado por población | ACT-ADMIN-DATOS |
 
@@ -71,7 +71,7 @@ El canal **no se pone en producción** hasta que se cumpla:
 | `AGENTS.md` | Fuera de alcance e índice de decisiones |
 | `specs/seguridad-acceso.md` | Fuera de alcance remite a este ADR |
 | `specs/modelo-territorial.md` | Q-TER-01 resuelta: departamento + zonificación hidrográfica IDEAM |
-| `specs/canal-ciudadano.md` | Por crear (C-CIU-02) |
+| `specs/canal-ciudadano.md` | Creada en borrador 2026-11-07 |
 
 ## Preguntas abiertas
 
@@ -84,3 +84,4 @@ El canal **no se pone en producción** hasta que se cumpla:
 | Fecha | Cambio | Origen |
 |---|---|---|
 | 2026-11-07 | Aceptada | Decisión de Camilo Carvajalino |
+| 2026-11-07 | Se precisa que el canal interno y el ciudadano coexisten; spec creada | Decisión de Camilo Carvajalino |

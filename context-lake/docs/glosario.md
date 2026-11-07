@@ -21,6 +21,8 @@ fuentes: [prototipo, NOAA CPC, Res. MinSalud 2115 de 2007, MinVivienda, DANE, SS
 | Área no municipalizada (ANM) | Unidad territorial DIVIPOLA sin categoría de municipio. Se trata como Municipio en el modelo. | corregimiento departamental | `specs/modelo-territorial.md` |
 | DIVIPOLA | Codificación oficial del DANE: 2 dígitos departamento + 3 dígitos municipio. Llave territorial única del sistema. | código DANE, código municipal | `specs/modelo-territorial.md` |
 | Zonificación hidrográfica | División oficial del IDEAM en áreas (Caribe, Magdalena-Cauca, Orinoco, Amazonas, Pacífico), zonas y subzonas hidrográficas. Cada municipio se asigna a la subzona que contiene su cabecera. | cuenca (salvo en sentido técnico), región hídrica | `specs/modelo-territorial.md` RF-TER-08 |
+| Canal interno / canal ciudadano | Canal interno: tablero completo para la CRA, autenticado. Canal ciudadano: vista de solo lectura en lenguaje claro, derivada del mismo corte publicado (`specs/canal-ciudadano.md`). | portal público, versión pública | ADR-0006 |
+| Nivel de riesgo | Nombre del nivel de alerta en el canal ciudadano: Bajo, Medio, Alto, Muy alto, Sin información. | alerta (en el canal ciudadano) | `specs/canal-ciudadano.md` RF-CIU-04 |
 | Región natural | Agrupación geográfica descriptiva (Caribe, Andina, Pacífica, Orinoquía, Amazonía, Insular). No es unidad de agregación oficial del sistema. | región (a secas) | tablero interno |
 | APS | Área de Prestación de Servicio de un prestador en un municipio. | sistema, mercado | `specs/modelo-territorial.md` |
 | Prestador | Persona prestadora del servicio de acueducto inscrita en el RUPS. | operador, empresa, ESP (salvo cuando sea su razón social) | `specs/ingesta-fuentes.md` |

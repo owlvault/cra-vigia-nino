@@ -29,9 +29,10 @@ Antes de escribir código, lee el archivo que corresponda a tu tarea:
 | generar o enviar alertas | `specs/alertas.md` |
 | construir el tablero web | `specs/tablero-ui.md` |
 | comparar semana a semana / botón «Actualizar datos» | `specs/comparativo-semanal.md` |
+| construir o cambiar el canal ciudadano (y no romper el interno) | `specs/canal-ciudadano.md` |
 | autenticación, roles, auditoría | `specs/seguridad-acceso.md` |
 | saber por qué algo está hecho así | `adr/` (índice abajo) |
-| consultar los datos o responder preguntas de ciudadanos | `../.claude/skills/vigia-nino-data-analyst/SKILL.md` |
+| consultar los datos o responder preguntas (analistas CRA o ciudadanos) | `../.claude/skills/vigia-nino-data-analyst/SKILL.md` |
 
 ## Stack
 
@@ -93,6 +94,7 @@ Antes de escribir código, lee el archivo que corresponda a tu tarea:
 | `specs/alertas.md` | Escalamientos, correo, revisión | borrador |
 | `specs/tablero-ui.md` | Vistas V-01 a V-07, drill territorial, ficha | borrador |
 | `specs/comparativo-semanal.md` | V-08 comparativo semanal, modelo semanal, actualización bajo demanda | borrador |
+| `specs/canal-ciudadano.md` | Canal ciudadano de solo lectura y coexistencia con el canal interno | borrador |
 | `specs/seguridad-acceso.md` | OIDC, roles, auditoría | borrador |
 
 ## Índice de decisiones
