@@ -36,12 +36,78 @@ class PipelineCorte:
         temp_path.write_text(contenido, encoding="utf-8")
         temp_path.replace(ruta_destino)
 
+    ESTADO_PUBLICADO = "PUBLICADO_VALIDO"
+    ESTADO_RECHAZADO = "RECHAZADO"
+
     def __init__(self, base_dir: Optional[str] = None):
         self.root_dir = Path(base_dir or Path(__file__).resolve().parent.parent)
         self.oro_dir = self.root_dir / "data" / "oro"
         self.plata_dir = self.root_dir / "data" / "plata"
         self.oro_dir.mkdir(parents=True, exist_ok=True)
         self.plata_dir.mkdir(parents=True, exist_ok=True)
+        self.parametros_corte = self._cargar_parametros_corte()
+
+    def _cargar_parametros_corte(self) -> Dict[str, Any]:
+        """Lee frescura y compuerta de publicación desde config (regla de oro 3)."""
+        ruta = self.root_dir / "data" / "config" / "parametros_corte.json"
+        return json.loads(ruta.read_text(encoding="utf-8"))
+
+    @staticmethod
+    def _parsear_fecha(fecha: Optional[str]) -> Optional[datetime]:
+        """Acepta AAAA-MM-DD o el formato semanal de NOAA (28OCT2026)."""
+        if not fecha:
+            return None
+        for formato in ("%Y-%m-%d", "%d%b%Y"):
+            try:
+                return datetime.strptime(fecha, formato)
+            except ValueError:
+                continue
+        return None
+
+    def evaluar_frescura(self, codigo: str, fecha_dato: Optional[str], fecha_corte: str, valor: Any) -> Optional[str]:
+        """
+        RF-CAL-03: 'vigente' si fecha_corte - fecha_dato <= multiplicador × periodo esperado;
+        'desactualizado' si es mayor. Indicadores estáticos (periodo nulo) siempre vigentes.
+        Sin valor o sin fecha interpretable: None (no hay dato cuya frescura evaluar).
+        """
+        if valor is None:
+            return None
+        conf = self.parametros_corte["frescura"]
+        periodos = conf["periodo_dias_por_indicador"]
+        if codigo not in periodos:
+            return None
+        periodo = periodos[codigo]
+        if periodo is None:
+            return "vigente"
+        f_dato = self._parsear_fecha(fecha_dato)
+        f_corte = self._parsear_fecha(fecha_corte)
+        if f_dato is None or f_corte is None:
+            return None
+        edad_dias = (f_corte - f_dato).days
+        return "vigente" if edad_dias <= conf["multiplicador_vigente"] * periodo else "desactualizado"
+
+    def evaluar_compuerta(self, municipios: List[Dict[str, Any]]) -> Tuple[str, List[str]]:
+        """
+        RF-CAL-04: publica solo si (a) hay ICR en al menos el % mínimo de municipios y
+        (b) el indicador de amenaza (A-1) está vigente. Devuelve (estado, motivos de rechazo).
+        """
+        conf = self.parametros_corte["compuerta_publicacion"]
+        motivos: List[str] = []
+
+        total = len(municipios)
+        con_icr = sum(1 for m in municipios if m.get("icr") is not None)
+        pct_icr = (con_icr / total * 100) if total else 0.0
+        if pct_icr < conf["min_pct_municipios_con_icr"]:
+            motivos.append(f"cobertura {pct_icr:.0f} % < {conf['min_pct_municipios_con_icr']:.0f} %")
+
+        cod_amenaza = conf["indicador_amenaza_vigente"]
+        amenaza_vigente = any(
+            m.get("indicadores", {}).get(cod_amenaza, {}).get("frescura") == "vigente" for m in municipios
+        )
+        if not amenaza_vigente:
+            motivos.append(f"{cod_amenaza} sin valor vigente")
+
+        return (self.ESTADO_RECHAZADO if motivos else self.ESTADO_PUBLICADO), motivos
 
     def calcular_icr_municipio(
         self,
@@ -307,11 +373,17 @@ class PipelineCorte:
             fecha_sui = sui_info.get("fecha_corte", "2026-08-31")
             a5_val = firms_info.get("indicador_a5_focos_7d")
 
+            # A-1 es la anomalía semanal Niño 3.4: su fecha es la semana NOAA, no una fecha fija.
+            # A-2 proviene de la discusión diagnóstica ENSO: su fecha es la del boletín.
+            f_semana = self._parsear_fecha((amenaza_global.get("indices_semanales") or {}).get("fecha_semana"))
+            fecha_a1 = f_semana.strftime("%Y-%m-%d") if f_semana else None
+            fecha_a2 = amenaza_global.get("fecha_boletin_enso")
+
             # Diccionario consolidado de los 20 indicadores
             indicadores_m = {
                 # Amenaza Global
-                "A-1": {"nombre": "ONI / Niño 3.4", "valor": amenaza_global.get("indicador_a1_nino34"), "unidad": "°C", "fuente": "NOAA CPC", "fecha_dato": amenaza_global.get("fecha_boletin_noaa", "2026-09-30"), "puntaje": None},
-                "A-2": {"nombre": "Probabilidad Niño Muy Fuerte", "valor": amenaza_global.get("indicador_a2_probabilidad_muy_fuerte_pct", 83.0), "unidad": "%", "fuente": "NOAA CPC", "fecha_dato": amenaza_global.get("fecha_boletin_noaa", "2026-10-10"), "puntaje": None},
+                "A-1": {"nombre": "ONI / Niño 3.4", "valor": amenaza_global.get("indicador_a1_nino34"), "unidad": "°C", "fuente": "NOAA CPC", "fecha_dato": fecha_a1, "puntaje": None},
+                "A-2": {"nombre": "Probabilidad Niño Muy Fuerte", "valor": amenaza_global.get("indicador_a2_probabilidad_muy_fuerte_pct", 83.0), "unidad": "%", "fuente": "NOAA CPC", "fecha_dato": fecha_a2, "puntaje": None},
                 # Amenaza Local
                 "A-3": {"nombre": "Anomalía Precipitación 30d", "valor": ideam_info.get("indicador_a3_anomalia_precip_pct", -40.0), "unidad": "%", "fuente": "IDEAM", "fecha_dato": fecha_corte, "puntaje": ideam_info.get("puntaje_a3", 60.0)},
                 "A-4": {"nombre": "Días Consecutivos sin Lluvia", "valor": ideam_info.get("indicador_a4_dias_sin_lluvia", 20), "unidad": "días", "fuente": "IDEAM", "fecha_dato": fecha_corte, "puntaje": ideam_info.get("puntaje_a4", 60.0)},
@@ -335,6 +407,10 @@ class PipelineCorte:
                 "R-3": {"nombre": "Racionamiento Reportado", "valor": r3_val, "unidad": "binario", "fuente": "MinVivienda Survey123", "fecha_dato": fecha_corte, "puntaje": punt_r3},
                 "R-4": {"nombre": "Calamidad Pública Vigente", "valor": r4_val, "unidad": "binario", "fuente": "UNGRD Sala de Crisis", "fecha_dato": fecha_corte, "puntaje": punt_r4}
             }
+
+            # RF-CAL-03: frescura de cada valor frente a su periodo esperado
+            for cod_ind, ind in indicadores_m.items():
+                ind["frescura"] = self.evaluar_frescura(cod_ind, ind.get("fecha_dato"), fecha_corte, ind.get("valor"))
 
             res_m = self.calcular_icr_municipio(
                 divipola=div,
@@ -423,12 +499,16 @@ class PipelineCorte:
                 })
                 id_alerta_seq += 1
 
+        # RF-CAL-04: compuerta de publicación
+        estado_calidad, motivos_rechazo = self.evaluar_compuerta(municipios_oro)
+
         corte_final = {
             "metadata_corte": {
                 "fecha_corte": fecha_corte,
                 "generado_en": ts_utc,
                 "version_configuracion": self.VERSION_CONFIG,
-                "estado_calidad": "PUBLICADO_VALIDO",
+                "estado_calidad": estado_calidad,
+                "motivos_rechazo": motivos_rechazo,
                 "total_municipios_evaluados": len(municipios_oro),
                 "icr_nacional_ponderado": icr_nacional_ponderado,
                 "poblacion_en_riesgo_critico": poblacion_afectada_naranja_roja,
@@ -440,8 +520,15 @@ class PipelineCorte:
             "alertas_activas": alertas
         }
 
-        # 1. Guardar en zona Oro (JSON inmutable y versionado) de manera atómica
         corte_json_str = json.dumps(corte_final, indent=2, ensure_ascii=False)
+
+        # Corte rechazado: se conserva para diagnóstico, pero el tablero sigue con el último publicado.
+        if estado_calidad != self.ESTADO_PUBLICADO:
+            self._escribir_atomico(self.oro_dir / "rechazados" / f"corte_{fecha_corte}.json", corte_json_str)
+            logger.warning(f"Corte {fecha_corte} RECHAZADO: {'; '.join(motivos_rechazo)}")
+            return corte_final
+
+        # 1. Guardar en zona Oro (JSON inmutable y versionado) de manera atómica
         self._escribir_atomico(self.oro_dir / "corte_vigente.json", corte_json_str)
         self._escribir_atomico(self.oro_dir / f"corte_{fecha_corte}.json", corte_json_str)
 

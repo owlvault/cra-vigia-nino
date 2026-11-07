@@ -1,0 +1,35 @@
+{
+  "descripcion": "Parámetros versionados del corte diario: frescura por indicador (RF-CAL-03) y compuerta de publicación (RF-CAL-04).",
+  "spec": ["context-lake/specs/calidad-datos.md", "context-lake/specs/indicadores.md"],
+  "frescura": {
+    "multiplicador_vigente": 1.5,
+    "periodo_dias_por_indicador": {
+      "A-1": 7,
+      "A-2": 30,
+      "A-3": 1,
+      "A-4": 1,
+      "A-5": 1,
+      "H-1": 1,
+      "H-2": null,
+      "H-3": null,
+      "H-4": 1,
+      "H-5": 1,
+      "S-1": 30,
+      "S-2": 30,
+      "S-3": 365,
+      "S-4": 365,
+      "S-5": 30,
+      "S-6": 30,
+      "R-1": 7,
+      "R-2": 1,
+      "R-3": 1,
+      "R-4": 1
+    },
+    "nota": "Periodo esperado según la columna 'Periodo' de specs/indicadores.md (diario=1, semanal=7, mensual=30, anual=365, estático=null). A-1 usa el periodo semanal de Niño 3.4; S-4 usa el periodo anual del IANC."
+  },
+  "compuerta_publicacion": {
+    "min_pct_municipios_con_icr": 90.0,
+    "indicador_amenaza_vigente": "A-1",
+    "nota": "La condición (c) de RF-CAL-04 (tests dbt en error) no aplica mientras la transformación no corra en dbt."
+  }
+}

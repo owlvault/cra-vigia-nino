@@ -101,12 +101,17 @@ class OrquestadorIngesta:
             datos_sui=sui_data
         )
 
-        notificar("Corte oro (ICR)", "exitosa", f"Corte {corte_oro['metadata_corte'].get('fecha_corte')}")
+        meta_corte = corte_oro["metadata_corte"]
+        if meta_corte.get("estado_calidad") == PipelineCorte.ESTADO_PUBLICADO:
+            notificar("Corte oro (ICR)", "exitosa", f"Corte {meta_corte.get('fecha_corte')}")
+        else:
+            motivos = "; ".join(meta_corte.get("motivos_rechazo", []))
+            notificar("Corte oro (ICR)", "fallida", f"Corte {meta_corte.get('fecha_corte')} rechazado: {motivos}")
         duracion = round(time.time() - inicio, 2)
         logger.info(f"Ciclo diario completado exitosamente en {duracion} segundos.")
         
         return {
-            "estado": "EXITOSO",
+            "estado": "EXITOSO" if meta_corte.get("estado_calidad") == PipelineCorte.ESTADO_PUBLICADO else "CORTE_RECHAZADO",
             "duracion_segundos": duracion,
             "resumen_capturas": resultados_captura,
             "corte_publicado": corte_oro["metadata_corte"]

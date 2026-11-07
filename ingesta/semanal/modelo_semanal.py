@@ -916,7 +916,8 @@ def ejecutar_actualizacion(
             from ingesta.orquestador import OrquestadorIngesta
             orq = OrquestadorIngesta(base_dir=base_dir)
             res = orq.ejecutar_ciclo_completo(on_progreso=paso)
-            parcial = any(c.get("estado") == "fallida" for c in res.get("resumen_capturas", {}).values())
+            parcial = (any(c.get("estado") == "fallida" for c in res.get("resumen_capturas", {}).values())
+                       or res.get("estado") == "CORTE_RECHAZADO")
 
         paso("Modelo semanal", "en_ejecucion", "Consolidando plata y oro semanal")
         corte = ModeloSemanal(base_dir=base_dir).construir(id_ejecucion=id_ejecucion)
