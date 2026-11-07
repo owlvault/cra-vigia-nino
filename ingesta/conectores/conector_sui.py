@@ -16,6 +16,7 @@ Cumplimiento de Auditoría (Hallazgo H-04 y Criterio CA-01):
 - Autonomía H-4 y Consumo S-6 diferenciados por prestador y piso térmico.
 """
 
+import calendar
 import json
 import glob
 import hashlib
@@ -103,27 +104,47 @@ class ConectorSUI(ConectorBase):
         elif horas >= 2.0: return round(75.0 + ((6.0 - horas) / 4.0) * 25.0, 2)
         else: return 100.0
 
+    @staticmethod
+    def _num(valor: Any) -> Optional[float]:
+        if valor is None or valor == "":
+            return None
+        try:
+            return float(valor)
+        except (TypeError, ValueError):
+            return None
+
+    @staticmethod
+    def _fin_de_periodo(periodo: Optional[str]) -> Optional[str]:
+        """'2026-08' -> '2026-08-31'. Periodo ausente o inválido => None."""
+        try:
+            anio, mes = (int(x) for x in str(periodo).split("-")[:2])
+        except (TypeError, ValueError):
+            return None
+        return f"{anio:04d}-{mes:02d}-{calendar.monthrange(anio, mes)[1]:02d}"
+
     def ejecutar_captura(self) -> CapturaResultado:
         extracto = self._cargar_extracto_certificado()
         municipios_raw = extracto.get("municipios", {})
-        fecha_corte = extracto.get("fecha_certificacion", datetime.now(timezone.utc).strftime("%Y-%m-%d"))
+        # fecha_dato = último día del periodo reportado (no la fecha de certificación)
+        fecha_corte = self._fin_de_periodo(extracto.get("periodo_corte"))
 
         datos_procesados: Dict[str, Any] = {}
         for divipola, m in municipios_raw.items():
-            s1_cont = float(m.get("s1_cont", 18.0))
-            s3_cob = float(m.get("s3_cob", 85.0))
-            s4_ianc = float(m.get("s4_ianc", 40.0))
-            s5_pqr = float(m.get("s5_pqr", 20.0))
-            s6_consumo = float(m.get("s6_consumo_m3", 12.5))
-            h4_auton = float(m.get("h4_autonomia_h", 12.0))
-            r1_pec = int(m.get("r1_pec", 1))
+            # Campo ausente en el extracto => None (sin_dato), nunca un valor supuesto
+            s1_cont = self._num(m.get("s1_cont"))
+            s3_cob = self._num(m.get("s3_cob"))
+            s4_ianc = self._num(m.get("s4_ianc"))
+            s5_pqr = self._num(m.get("s5_pqr"))
+            s6_consumo = self._num(m.get("s6_consumo_m3"))
+            h4_auton = self._num(m.get("h4_autonomia_h"))
+            r1_pec = m.get("r1_pec") if m.get("r1_pec") in (0, 1) else None
 
-            punt_s1 = self.normalizar_s1_continuidad(s1_cont)
-            punt_s3 = self.normalizar_s3_cobertura(s3_cob)
-            punt_s4 = self.normalizar_s4_ianc(s4_ianc)
-            punt_s5 = self.normalizar_s5_pqr(s5_pqr)
-            punt_h4 = self.normalizar_h4_autonomia(h4_auton)
-            punt_r1 = 0.0 if r1_pec == 1 else 100.0
+            punt_s1 = self.normalizar_s1_continuidad(s1_cont) if s1_cont is not None else None
+            punt_s3 = self.normalizar_s3_cobertura(s3_cob) if s3_cob is not None else None
+            punt_s4 = self.normalizar_s4_ianc(s4_ianc) if s4_ianc is not None else None
+            punt_s5 = self.normalizar_s5_pqr(s5_pqr) if s5_pqr is not None else None
+            punt_h4 = self.normalizar_h4_autonomia(h4_auton) if h4_auton is not None else None
+            punt_r1 = None if r1_pec is None else (0.0 if r1_pec == 1 else 100.0)
 
             datos_procesados[divipola] = {
                 "divipola": divipola,

@@ -36,14 +36,20 @@ class ConectorUNGRDMinVivienda(ConectorBase):
             base_dir=base_dir
         )
         self.config_actos_file = self.root_dir / "data" / "config" / "actos_administrativos_verificados.json"
+        self._registro_actos: Dict[str, Any] = {}
         self.config_mun_file = self.root_dir / "data" / "config" / "catalogo_municipios_ideam.json"
         self.socrata_ungrd_url = "https://www.datos.gov.co/resource/2343-nuqp.json"
+
+    @staticmethod
+    def _binario(valor: Any) -> Optional[int]:
+        return int(valor) if valor in (0, 1) and not isinstance(valor, bool) else None
 
     def _cargar_actos_verificados(self) -> Dict[str, Any]:
         """Carga actos administrativos reales verificados desde archivo controlado auditable."""
         if self.config_actos_file.exists():
             try:
                 datos = json.loads(self.config_actos_file.read_text(encoding="utf-8"))
+                self._registro_actos = datos
                 return datos.get("municipios_con_calamidad_verificada", {})
             except Exception as e:
                 logger.warning(f"Error leyendo actos_administrativos_verificados.json: {e}")
@@ -79,9 +85,11 @@ class ConectorUNGRDMinVivienda(ConectorBase):
     def ejecutar_captura(self) -> CapturaResultado:
         self._consultar_emergencias_socrata()
         actos_verificados = self._cargar_actos_verificados()
+        sin_evento = self._registro_actos.get("municipios_verificados_sin_evento", {})
         catalogo_mun = self._cargar_catalogo_municipios()
 
-        fecha_reporte = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        # La fecha del dato es la de verificación del registro, no la de esta ejecución
+        fecha_reporte = self._registro_actos.get("version")
         snapshot_municipios: Dict[str, Any] = {}
         capa_r_por_divipola: Dict[str, Any] = {}
 
@@ -92,16 +100,19 @@ class ConectorUNGRDMinVivienda(ConectorBase):
             # Verificar si existe declaratoria formal real y comprobada en el registro oficial
             if divipola in actos_verificados:
                 acto = actos_verificados[divipola]
-                r4 = int(acto.get("calamidad_publica", 0))
-                r3 = int(acto.get("racionamiento_reportado", 0))
-                r2 = int(acto.get("carrotanques_activos", 0))
+                r4 = self._binario(acto.get("calamidad_publica"))
+                r3 = self._binario(acto.get("racionamiento_reportado"))
+                r2 = self._binario(acto.get("carrotanques_activos"))
                 decreto = acto.get("soporte_verificado", "")
-                poblacion = acto.get("poblacion_afectada", 0)
+                poblacion = acto.get("poblacion_afectada")
             else:
-                # Municipio sin calamidad ni racionamiento reportado
-                r4, r3, r2 = 0, 0, 0
+                # RF-IND-04: no estar en el registro no prueba ausencia de evento.
+                # Solo vale 0 si la ausencia fue verificada explícitamente para ese indicador.
+                r2 = 0 if divipola in sin_evento.get("R-2", []) else None
+                r3 = 0 if divipola in sin_evento.get("R-3", []) else None
+                r4 = 0 if divipola in sin_evento.get("R-4", []) else None
                 decreto = None
-                poblacion = 0
+                poblacion = None
 
             piso_naranja = bool(r3 == 1 or r4 == 1)
 

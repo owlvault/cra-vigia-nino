@@ -22,5 +22,15 @@
       "soporte_verificado": "Registro UNGRD Emergencia Hídrica Alta Guajira",
       "poblacion_afectada": 125000
     }
+  },
+  "municipios_verificados_sin_evento": {
+    "descripcion": "Municipios cuya ausencia de evento fue verificada explícitamente, por indicador. Un municipio que no aparece aquí ni en municipios_con_calamidad_verificada queda sin_dato (RF-IND-04), no en 0.",
+    "soporte": "Observación del registro: 'Bogotá D.C., Ibagué, San Gil y Magangué no registran decretos de calamidad vigentes a la fecha de corte.' Solo cubre calamidad pública (R-4).",
+    "R-4": [
+      "11001",
+      "73001",
+      "68679",
+      "13430"
+    ]
   }
 }

@@ -562,13 +562,13 @@ class AuditorVeracidad:
                     r_ung = raw_ungrd_data.get(div, {})
                     archivo_origen = Path(files_ungrd[-1]).name if files_ungrd else ""
                     if cod_ind == "R-2":
-                        val_raw = r_ung.get("carrotanques_activos", 0)
+                        val_raw = r_ung.get("carrotanques_activos")
                         origen_campo = "carrotanques_activos"
                     elif cod_ind == "R-3":
-                        val_raw = r_ung.get("racionamiento_reportado", 0)
+                        val_raw = r_ung.get("racionamiento_reportado")
                         origen_campo = "racionamiento_reportado"
                     elif cod_ind == "R-4":
-                        val_raw = r_ung.get("calamidad_publica", 0)
+                        val_raw = r_ung.get("calamidad_publica")
                         origen_campo = "calamidad_publica"
 
                 # 4. A-5 (NASA FIRMS)

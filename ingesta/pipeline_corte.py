@@ -109,6 +109,82 @@ class PipelineCorte:
 
         return (self.ESTADO_RECHAZADO if motivos else self.ESTADO_PUBLICADO), motivos
 
+    # Puntos de quiebre (valor -> puntaje) de specs/indicadores.md, RF-ICR-01
+    QUIEBRES = {
+        "A-3": [(0, 0), (-20, 40), (-40, 60), (-60, 75), (-90, 100)],
+        "A-4": [(0, 0), (10, 40), (20, 60), (30, 75), (60, 100)],
+        "H-1": [(100, 0), (70, 40), (50, 60), (30, 75), (10, 100)],
+        "H-4": [(24, 0), (18, 35), (12, 55), (6, 75), (2, 100)],
+        "S-1": [(24, 0), (22, 40), (18, 60), (12, 75), (4, 100)],
+        "S-2": [(0, 0), (5, 40), (14, 60), (35, 75), (80, 100)],
+        "S-3": [(100, 0), (95, 40), (85, 60), (70, 75), (40, 100)],
+        "S-4": [(20, 0), (30, 40), (40, 60), (50, 75), (70, 100)],
+        "S-5": [(0, 0), (25, 40), (50, 60), (100, 75), (300, 100)],
+    }
+    PUNTAJE_CATEGORICO = {"muy bajo": 0.0, "bajo": 15.0, "moderado": 40.0, "medio": 40.0, "alto": 65.0, "muy alto": 90.0}
+    PUNTAJE_BINARIO_ACTIVO = {"R-1": 0.0, "R-2": 60.0, "R-3": 80.0, "R-4": 100.0}
+    PUNTAJE_BINARIO_INACTIVO = {"R-1": 100.0, "R-2": 0.0, "R-3": 0.0, "R-4": 0.0}
+
+    @staticmethod
+    def _num(valor: Any) -> Optional[float]:
+        """Convierte a número; None, vacío o no numérico => None (sin_dato)."""
+        if valor is None or valor == "":
+            return None
+        try:
+            return float(valor)
+        except (TypeError, ValueError):
+            return None
+
+    @staticmethod
+    def _binario(valor: Any) -> Optional[int]:
+        """1/0 solo si la fuente lo informa; cualquier otra cosa => None (RF-IND-04)."""
+        if valor in (0, 1) and not isinstance(valor, bool):
+            return int(valor)
+        return None
+
+    def normalizar_tramos(self, codigo: str, valor: Optional[float]) -> Optional[float]:
+        """RF-ICR-01: interpolación lineal entre quiebres, recortada a [0, 100]. Sin valor => None."""
+        if valor is None:
+            return None
+        puntos = self.QUIEBRES[codigo]
+        # Ordenar por valor ascendente para interpolar sin importar la dirección del indicador
+        asc = sorted(puntos, key=lambda p: p[0])
+        if valor <= asc[0][0]:
+            return float(asc[0][1])
+        if valor >= asc[-1][0]:
+            return float(asc[-1][1])
+        for (x0, y0), (x1, y1) in zip(asc, asc[1:]):
+            if x0 <= valor <= x1:
+                return round(y0 + (valor - x0) / (x1 - x0) * (y1 - y0), 2)
+        return None
+
+    def puntaje_categorico(self, categoria: Any) -> Optional[float]:
+        """RF-ICR-02. Categoría ausente o no reconocida => None, nunca un puntaje por defecto."""
+        if not isinstance(categoria, str):
+            return None
+        return self.PUNTAJE_CATEGORICO.get(categoria.strip().lower())
+
+    def puntaje_binario(self, codigo: str, valor: Optional[int]) -> Optional[float]:
+        """RF-ICR-03. Sin dato => None."""
+        if valor is None:
+            return None
+        return self.PUNTAJE_BINARIO_ACTIVO[codigo] if valor == 1 else self.PUNTAJE_BINARIO_INACTIVO[codigo]
+
+    def excede_vigencia_icr(self, codigo: str, fecha_dato: Optional[str], fecha_corte: str) -> bool:
+        """
+        Caso borde de specs/indice-riesgo.md: un indicador cuya antigüedad supera
+        'multiplicador_sin_dato' × su periodo esperado se trata como sin_dato en el ICR.
+        """
+        conf = self.parametros_corte["frescura"]
+        mult = conf.get("multiplicador_sin_dato")
+        periodo = conf["periodo_dias_por_indicador"].get(codigo)
+        if mult is None or periodo is None:
+            return False
+        f_dato, f_corte = self._parsear_fecha(fecha_dato), self._parsear_fecha(fecha_corte)
+        if f_dato is None or f_corte is None:
+            return False
+        return (f_corte - f_dato).days > mult * periodo
+
     def calcular_icr_municipio(
         self,
         divipola: str,
@@ -299,78 +375,50 @@ class PipelineCorte:
             xm_info = datos_xm.get(div, {})
             firms_info = datos_firms.get(div, {})
 
-            # Normalizar S-1 (Continuidad h/día: 24->0, 22->40, 18->60, 12->75, 4->100)
-            cont = float(sui_info.get("s1_cont", 24.0))
-            if "puntaje_s1" in sui_info and sui_info["puntaje_s1"] is not None:
-                punt_s1 = float(sui_info["puntaje_s1"])
-            elif cont >= 24.0: punt_s1 = 0.0
-            elif cont >= 22.0: punt_s1 = round(((24.0 - cont) / 2.0) * 40.0, 2)
-            elif cont >= 18.0: punt_s1 = round(40.0 + ((22.0 - cont) / 4.0) * 20.0, 2)
-            elif cont >= 12.0: punt_s1 = round(60.0 + ((18.0 - cont) / 6.0) * 15.0, 2)
-            elif cont >= 4.0: punt_s1 = round(75.0 + ((12.0 - cont) / 8.0) * 25.0, 2)
-            else: punt_s1 = 100.0
+            # Regla de oro 5 / RF-IND-04: un valor ausente en la fuente queda None (sin_dato),
+            # nunca un valor por defecto. El puntaje se calcula aquí, a partir del valor, y
+            # es None cuando no hay valor.
+            cont = self._num(sui_info.get("s1_cont"))
+            cob = self._num(sui_info.get("s3_cob"))
+            ianc = self._num(sui_info.get("s4_ianc"))
+            pqr = self._num(sui_info.get("s5_pqr"))
+            h4_val = self._num(sui_info.get("h4_autonomia_h"))
+            s6_val = self._num(sui_info.get("s6_consumo_m3"))
+            irca_val = self._num(sivicap_info.get("valor_indicador_s2"))
+            a3_val = self._num(ideam_info.get("indicador_a3_anomalia_precip_pct"))
+            a4_val = self._num(ideam_info.get("indicador_a4_dias_sin_lluvia"))
+            h1_val = self._num(ideam_info.get("indicador_h1_caudal_pct"))
+            h2_val = ideam_info.get("indicador_h2_ivh_ena")
+            h3_val = ideam_info.get("indicador_h3_iua_ena")
 
-            # Normalizar S-3 (Cobertura %: 100->0, 95->40, 85->60, 70->75, 40->100)
-            cob = float(sui_info.get("s3_cob", 95.0))
-            if "puntaje_s3" in sui_info and sui_info["puntaje_s3"] is not None:
-                punt_s3 = float(sui_info["puntaje_s3"])
-            elif cob >= 100.0: punt_s3 = 0.0
-            elif cob >= 95.0: punt_s3 = round(((100.0 - cob) / 5.0) * 40.0, 2)
-            elif cob >= 85.0: punt_s3 = round(40.0 + ((95.0 - cob) / 10.0) * 20.0, 2)
-            elif cob >= 70.0: punt_s3 = round(60.0 + ((85.0 - cob) / 15.0) * 15.0, 2)
-            elif cob >= 40.0: punt_s3 = round(75.0 + ((70.0 - cob) / 30.0) * 25.0, 2)
-            else: punt_s3 = 100.0
+            punt_s1 = self.normalizar_tramos("S-1", cont)
+            punt_s3 = self.normalizar_tramos("S-3", cob)
+            punt_s4 = self.normalizar_tramos("S-4", ianc)
+            punt_s5 = self.normalizar_tramos("S-5", pqr)
+            punt_h4 = self.normalizar_tramos("H-4", h4_val)
+            punt_s2 = self.normalizar_tramos("S-2", irca_val)
+            punt_a3 = self.normalizar_tramos("A-3", a3_val)
+            punt_a4 = self.normalizar_tramos("A-4", a4_val)
+            punt_h1 = self.normalizar_tramos("H-1", h1_val)
+            punt_h2 = self.puntaje_categorico(h2_val)
+            punt_h3 = self.puntaje_categorico(h3_val)
 
-            # Normalizar S-4 (IANC %: 20->0, 30->40, 40->60, 50->75, 70->100)
-            ianc = float(sui_info.get("s4_ianc", 30.0))
-            if "puntaje_s4" in sui_info and sui_info["puntaje_s4"] is not None:
-                punt_s4 = float(sui_info["puntaje_s4"])
-            elif ianc <= 20.0: punt_s4 = 0.0
-            elif ianc <= 30.0: punt_s4 = round(((ianc - 20.0) / 10.0) * 40.0, 2)
-            elif ianc <= 40.0: punt_s4 = round(40.0 + ((ianc - 30.0) / 10.0) * 20.0, 2)
-            elif ianc <= 50.0: punt_s4 = round(60.0 + ((ianc - 40.0) / 10.0) * 15.0, 2)
-            elif ianc <= 70.0: punt_s4 = round(75.0 + ((ianc - 50.0) / 20.0) * 25.0, 2)
-            else: punt_s4 = 100.0
+            # Capa R (Respuesta): binarios RF-ICR-03; sin información de la fuente => sin_dato
+            r1_val = self._binario(sui_info.get("r1_pec"))
+            r2_val = self._binario(ungrd_info.get("indicador_r2_carrotanques"))
+            r3_val = self._binario(ungrd_info.get("indicador_r3_racionamiento"))
+            r4_val = self._binario(ungrd_info.get("indicador_r4_calamidad"))
+            punt_r1 = self.puntaje_binario("R-1", r1_val)
+            punt_r2 = self.puntaje_binario("R-2", r2_val)
+            punt_r3 = self.puntaje_binario("R-3", r3_val)
+            punt_r4 = self.puntaje_binario("R-4", r4_val)
 
-            # Normalizar S-5 (Variación PQR: 0->0, 25->40, 50->60, 100->75, 300->100)
-            pqr = float(sui_info.get("s5_pqr", 20.0))
-            if "puntaje_s5" in sui_info and sui_info["puntaje_s5"] is not None:
-                punt_s5 = float(sui_info["puntaje_s5"])
-            elif pqr <= 0: punt_s5 = 0.0
-            elif pqr <= 25.0: punt_s5 = round((pqr / 25.0) * 40.0, 2)
-            elif pqr <= 50.0: punt_s5 = round(40.0 + ((pqr - 25.0) / 25.0) * 20.0, 2)
-            elif pqr <= 100.0: punt_s5 = round(60.0 + ((pqr - 50.0) / 50.0) * 15.0, 2)
-            elif pqr <= 300.0: punt_s5 = round(75.0 + ((pqr - 100.0) / 200.0) * 25.0, 2)
-            else: punt_s5 = 100.0
-
-            # Normalizar H-4 (Autonomía de almacenamiento)
-            h4_val = float(sui_info.get("h4_autonomia_h", 14.0))
-            if "puntaje_h4" in sui_info and sui_info["puntaje_h4"] is not None:
-                punt_h4 = float(sui_info["puntaje_h4"])
-            elif h4_val >= 24.0: punt_h4 = 0.0
-            elif h4_val >= 18.0: punt_h4 = round(((24.0 - h4_val) / 6.0) * 35.0, 2)
-            elif h4_val >= 12.0: punt_h4 = round(35.0 + ((18.0 - h4_val) / 6.0) * 20.0, 2)
-            elif h4_val >= 6.0: punt_h4 = round(55.0 + ((12.0 - h4_val) / 6.0) * 20.0, 2)
-            elif h4_val >= 2.0: punt_h4 = round(75.0 + ((6.0 - h4_val) / 4.0) * 25.0, 2)
-            else: punt_h4 = 100.0
-
-            s6_val = float(sui_info.get("s6_consumo_m3", 12.8))
-
-            # Normalizar S-2 (IRCA desde SIVICAP)
-            irca_val = sivicap_info.get("valor_indicador_s2", 12.0)
-            punt_s2 = sivicap_info.get("puntaje_riesgo_s2", 55.0)
-
-            # Capa R (Respuesta)
-            r1_val = int(sui_info.get("r1_pec", 1))
-            punt_r1 = float(sui_info.get("puntaje_r1", 0.0 if r1_val == 1 else 100.0))
-            r2_val = ungrd_info.get("indicador_r2_carrotanques", 0)
-            punt_r2 = 60.0 if r2_val == 1 else 0.0
-            r3_val = ungrd_info.get("indicador_r3_racionamiento", 0)
-            punt_r3 = 80.0 if r3_val == 1 else 0.0
-            r4_val = ungrd_info.get("indicador_r4_calamidad", 0)
-            punt_r4 = 100.0 if r4_val == 1 else 0.0
-
-            fecha_sui = sui_info.get("fecha_corte", "2026-08-31")
+            # Fechas del dato tomadas de la fuente (RF-IND-01), no literales
+            fecha_sui = sui_info.get("fecha_dato")
+            periodo_irca = sivicap_info.get("periodo_ano")
+            fecha_s2 = f"{periodo_irca}-12-31" if periodo_irca else None
+            fecha_ideam = ideam_info.get("fecha_dato")
+            fecha_ungrd = ungrd_info.get("fecha_dato")
             a5_val = firms_info.get("indicador_a5_focos_7d")
 
             # A-1 es la anomalía semanal Niño 3.4: su fecha es la semana NOAA, no una fecha fija.
@@ -383,34 +431,38 @@ class PipelineCorte:
             indicadores_m = {
                 # Amenaza Global
                 "A-1": {"nombre": "ONI / Niño 3.4", "valor": amenaza_global.get("indicador_a1_nino34"), "unidad": "°C", "fuente": "NOAA CPC", "fecha_dato": fecha_a1, "puntaje": None},
-                "A-2": {"nombre": "Probabilidad Niño Muy Fuerte", "valor": amenaza_global.get("indicador_a2_probabilidad_muy_fuerte_pct", 83.0), "unidad": "%", "fuente": "NOAA CPC", "fecha_dato": fecha_a2, "puntaje": None},
+                "A-2": {"nombre": "Probabilidad Niño Muy Fuerte", "valor": amenaza_global.get("indicador_a2_probabilidad_muy_fuerte_pct"), "unidad": "%", "fuente": "NOAA CPC", "fecha_dato": fecha_a2, "puntaje": None},
                 # Amenaza Local
-                "A-3": {"nombre": "Anomalía Precipitación 30d", "valor": ideam_info.get("indicador_a3_anomalia_precip_pct", -40.0), "unidad": "%", "fuente": "IDEAM", "fecha_dato": fecha_corte, "puntaje": ideam_info.get("puntaje_a3", 60.0)},
-                "A-4": {"nombre": "Días Consecutivos sin Lluvia", "valor": ideam_info.get("indicador_a4_dias_sin_lluvia", 20), "unidad": "días", "fuente": "IDEAM", "fecha_dato": fecha_corte, "puntaje": ideam_info.get("puntaje_a4", 60.0)},
+                "A-3": {"nombre": "Anomalía Precipitación 30d", "valor": a3_val, "unidad": "%", "fuente": "IDEAM", "fecha_dato": fecha_ideam, "puntaje": punt_a3},
+                "A-4": {"nombre": "Días Consecutivos sin Lluvia", "valor": a4_val, "unidad": "días", "fuente": "IDEAM", "fecha_dato": fecha_ideam, "puntaje": punt_a4},
                 "A-5": {"nombre": "Focos de Calor (7d)", "valor": a5_val, "unidad": "conteo", "fuente": "NASA FIRMS", "fecha_dato": fecha_corte, "puntaje": None},
                 # Oferta Hídrica
-                "H-1": {"nombre": "Caudal Fuente Abastecedora", "valor": ideam_info.get("indicador_h1_caudal_pct", 50.0), "unidad": "%", "fuente": "IDEAM", "fecha_dato": fecha_corte, "puntaje": ideam_info.get("puntaje_h1", 60.0)},
-                "H-2": {"nombre": "Vulnerabilidad Hídrica ENA", "valor": ideam_info.get("indicador_h2_ivh_ena", "Medio"), "unidad": "categoría", "fuente": "IDEAM ENA", "fecha_dato": "2022-12-31", "puntaje": ideam_info.get("puntaje_h2", 40.0)},
-                "H-3": {"nombre": "Uso del Agua ENA (IUA)", "valor": ideam_info.get("indicador_h3_iua_ena", "Medio"), "unidad": "categoría", "fuente": "IDEAM ENA", "fecha_dato": "2022-12-31", "puntaje": ideam_info.get("puntaje_h3", 40.0)},
+                "H-1": {"nombre": "Caudal Fuente Abastecedora", "valor": h1_val, "unidad": "%", "fuente": "IDEAM", "fecha_dato": fecha_ideam, "puntaje": punt_h1},
+                "H-2": {"nombre": "Vulnerabilidad Hídrica ENA", "valor": h2_val, "unidad": "categoría", "fuente": "IDEAM ENA", "fecha_dato": "2022-12-31", "puntaje": punt_h2},
+                "H-3": {"nombre": "Uso del Agua ENA (IUA)", "valor": h3_val, "unidad": "categoría", "fuente": "IDEAM ENA", "fecha_dato": "2022-12-31", "puntaje": punt_h3},
                 "H-4": {"nombre": "Autonomía Almacenamiento", "valor": h4_val, "unidad": "horas", "fuente": "SSPD SUI", "fecha_dato": fecha_sui, "puntaje": punt_h4},
                 "H-5": {"nombre": "Volumen Útil Embalse", "valor": xm_info.get("volumen_util_pct"), "unidad": "%", "fuente": "XM Sinergox", "fecha_dato": fecha_corte, "puntaje": None},
                 # Desempeño del Servicio
                 "S-1": {"nombre": "Continuidad", "valor": cont, "unidad": "h/día", "fuente": "SSPD SUI", "fecha_dato": fecha_sui, "puntaje": punt_s1},
-                "S-2": {"nombre": "Calidad del Agua (IRCA)", "valor": irca_val, "unidad": "%", "fuente": "INS SIVICAP", "fecha_dato": "2024-12-31", "puntaje": punt_s2},
+                "S-2": {"nombre": "Calidad del Agua (IRCA)", "valor": irca_val, "unidad": "%", "fuente": "INS SIVICAP", "fecha_dato": fecha_s2, "puntaje": punt_s2},
                 "S-3": {"nombre": "Cobertura Urbana", "valor": cob, "unidad": "%", "fuente": "SSPD SUI / DANE", "fecha_dato": fecha_sui, "puntaje": punt_s3},
                 "S-4": {"nombre": "Agua No Contabilizada (IANC)", "valor": ianc, "unidad": "%", "fuente": "SSPD SUI", "fecha_dato": fecha_sui, "puntaje": punt_s4},
                 "S-5": {"nombre": "Variación PQR por Servicio", "valor": pqr, "unidad": "%", "fuente": "SSPD SUI", "fecha_dato": fecha_sui, "puntaje": punt_s5},
                 "S-6": {"nombre": "Consumo Medio Facturado", "valor": s6_val, "unidad": "m³/susc/mes", "fuente": "SSPD SUI", "fecha_dato": fecha_sui, "puntaje": None},
                 # Respuesta e Impacto
-                "R-1": {"nombre": "PEC Reportado Vigente", "valor": r1_val, "unidad": "binario", "fuente": "SSPD / MinVivienda", "fecha_dato": fecha_corte, "puntaje": punt_r1},
-                "R-2": {"nombre": "Abastecimiento Alterno Activo", "valor": r2_val, "unidad": "binario", "fuente": "UNGRD", "fecha_dato": fecha_corte, "puntaje": punt_r2},
-                "R-3": {"nombre": "Racionamiento Reportado", "valor": r3_val, "unidad": "binario", "fuente": "MinVivienda Survey123", "fecha_dato": fecha_corte, "puntaje": punt_r3},
-                "R-4": {"nombre": "Calamidad Pública Vigente", "valor": r4_val, "unidad": "binario", "fuente": "UNGRD Sala de Crisis", "fecha_dato": fecha_corte, "puntaje": punt_r4}
+                "R-1": {"nombre": "PEC Reportado Vigente", "valor": r1_val, "unidad": "binario", "fuente": "SSPD / MinVivienda", "fecha_dato": fecha_sui, "puntaje": punt_r1},
+                "R-2": {"nombre": "Abastecimiento Alterno Activo", "valor": r2_val, "unidad": "binario", "fuente": "UNGRD", "fecha_dato": fecha_ungrd, "puntaje": punt_r2},
+                "R-3": {"nombre": "Racionamiento Reportado", "valor": r3_val, "unidad": "binario", "fuente": "MinVivienda Survey123", "fecha_dato": fecha_ungrd, "puntaje": punt_r3},
+                "R-4": {"nombre": "Calamidad Pública Vigente", "valor": r4_val, "unidad": "binario", "fuente": "UNGRD Sala de Crisis", "fecha_dato": fecha_ungrd, "puntaje": punt_r4}
             }
 
             # RF-CAL-03: frescura de cada valor frente a su periodo esperado
             for cod_ind, ind in indicadores_m.items():
                 ind["frescura"] = self.evaluar_frescura(cod_ind, ind.get("fecha_dato"), fecha_corte, ind.get("valor"))
+                # Dato demasiado antiguo: se muestra con su frescura, pero no entra al ICR
+                if ind.get("puntaje") is not None and self.excede_vigencia_icr(cod_ind, ind.get("fecha_dato"), fecha_corte):
+                    ind["puntaje"] = None
+                    ind["excluido_icr"] = "antigüedad mayor a la vigencia máxima"
 
             res_m = self.calcular_icr_municipio(
                 divipola=div,

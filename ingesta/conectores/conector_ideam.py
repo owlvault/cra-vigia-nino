@@ -65,7 +65,7 @@ class ConectorIDEAM(ConectorBase):
             logger.info(f"Consulta en vivo a Socrata IDEAM omitida o con timeout ({e}); usando base oficial verificada.")
             return None
 
-    def _puntaje_categorico_ena(self, categoria: str) -> float:
+    def _puntaje_categorico_ena(self, categoria: Optional[str]) -> Optional[float]:
         """Normalización de H-2 e H-3 según specs/indicadores.md y specs/indice-riesgo.md RF-ICR-02."""
         mapa = {
             "Muy Bajo": 0.0,
@@ -75,7 +75,7 @@ class ConectorIDEAM(ConectorBase):
             "Alto": 65.0,
             "Muy Alto": 90.0
         }
-        return mapa.get(categoria, 40.0)
+        return mapa.get(categoria) if isinstance(categoria, str) else None
 
     def _normalizar_a3_precipitacion(self, anomalia_pct: float) -> float:
         """
@@ -155,15 +155,16 @@ class ConectorIDEAM(ConectorBase):
         # Procesar y normalizar a escala municipal para los 23 municipios
         datos_ideam_por_divipola: Dict[str, Any] = {}
         for divipola, m in municipios_base.items():
-            anomalia = float(m.get("anomalia_precip_pct", -40.0))
-            dias_secos = int(m.get("dias_sin_lluvia", 20))
-            caudal = float(m.get("caudal_fuente_pct", 50.0))
-            ivh = m.get("ivh_ena", "Medio")
-            iua = m.get("iua_ena", "Medio")
+            # Campo ausente => None (sin_dato); nunca un valor o categoría supuestos
+            anomalia = float(m["anomalia_precip_pct"]) if m.get("anomalia_precip_pct") is not None else None
+            dias_secos = int(m["dias_sin_lluvia"]) if m.get("dias_sin_lluvia") is not None else None
+            caudal = float(m["caudal_fuente_pct"]) if m.get("caudal_fuente_pct") is not None else None
+            ivh = m.get("ivh_ena")
+            iua = m.get("iua_ena")
 
-            puntaje_a3 = self._normalizar_a3_precipitacion(anomalia)
-            puntaje_a4 = self._normalizar_a4_dias_secos(dias_secos)
-            puntaje_h1 = self._normalizar_h1_caudal(caudal)
+            puntaje_a3 = self._normalizar_a3_precipitacion(anomalia) if anomalia is not None else None
+            puntaje_a4 = self._normalizar_a4_dias_secos(dias_secos) if dias_secos is not None else None
+            puntaje_h1 = self._normalizar_h1_caudal(caudal) if caudal is not None else None
             puntaje_h2 = self._puntaje_categorico_ena(ivh)
             puntaje_h3 = self._puntaje_categorico_ena(iua)
 
