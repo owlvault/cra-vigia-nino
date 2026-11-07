@@ -3,8 +3,8 @@ id: spec-modelo-territorial
 tipo: spec
 proyecto: vigia-nino-acueductos
 estado: borrador
-actualizado: 2026-10-08
-fuentes: [prototipo (drill Nación → Departamento → Municipio), ADR-0002, DANE DIVIPOLA y MGN]
+actualizado: 2026-11-07
+fuentes: [prototipo (drill Nación → Departamento → Municipio), ADR-0002, ADR-0006, DANE DIVIPOLA y MGN, IDEAM Zonificación Hidrográfica 2025]
 ---
 
 # Spec — Modelo territorial
@@ -22,13 +22,15 @@ Definir la jerarquía territorial, cómo se asigna cada dato de fuente a un muni
 
 ```
 Nación (CO)
-└── Región (Caribe, Andina, Pacífica, Orinoquía, Amazonía, Insular)
-    └── Departamento (cod_depto, 2 dígitos; Bogotá D.C. = 11)
-        └── Municipio / ANM (divipola, 5 dígitos)
-            └── APS (divipola + id_prestador_rups)
+└── Departamento (cod_depto, 2 dígitos; Bogotá D.C. = 11)
+    └── Municipio / ANM (divipola, 5 dígitos)
+        └── APS (divipola + id_prestador_rups)
+
+Jerarquía hidrográfica (IDEAM), paralela a la política-administrativa:
+Área hidrográfica (5) └── Zona hidrográfica └── Subzona hidrográfica ← municipio por su cabecera
 ```
 
-> **ASUNCIÓN (sin validar):** La asignación de departamentos a regiones naturales usa la del prototipo (p. ej. Antioquia → Andina, Chocó → Pacífica, Meta → Orinoquía). Confirmar si la CRA usa otra regionalización (Q-TER-01).
+Decisión (ADR-0006, resuelve Q-TER-01): la agregación oficial es por **departamento** y, para el análisis del agua, por **zonificación hidrográfica del IDEAM**. La región natural (Caribe, Andina, Pacífica…) se conserva solo como etiqueta descriptiva del tablero interno; no se agrega por ella.
 
 ## Requisitos funcionales
 
@@ -114,6 +116,26 @@ Escenario: Conteo departamental
 
 **Prioridad:** debe
 
+### RF-TER-08 — Zonificación hidrográfica del municipio
+
+El sistema DEBE asignar a cada municipio el área, la zona y la subzona hidrográfica del IDEAM que contienen el punto de su cabecera municipal publicado por el DANE, consultando la versión vigente de la zonificación. SI el punto no cae en exactamente una subzona, ENTONCES el municipio DEBE quedar `no_resuelto` y NO DEBE asignarse por nombre ni por cercanía.
+
+```gherkin
+Escenario: Cabecera dentro de una subzona
+  Dado la cabecera de Medellín ("05001") en el punto DANE (-75,581775; 6,246631)
+  Cuando se consulta la Zonificación Hidrográfica 2025
+  Entonces su área es "Magdalena Cauca", su zona "Nechí" y su subzona "2701 Río Porce"
+
+Escenario: Punto fuera de toda subzona
+  Dado una cabecera cuyo punto no intersecta ninguna subzona
+  Cuando se consulta la zonificación
+  Entonces el municipio queda con estado "no_resuelto"
+```
+
+Implementación v1: `ingesta/territorio/cruce_hidrografico.py` → `data/config/territorio_hidrografico.json`.
+
+**Prioridad:** debe
+
 ### RF-TER-07 — Geometrías
 
 El sistema DEBE servir geometrías de municipios y departamentos del MGN del DANE simplificadas a no más de 5 MB en total para el tablero, y NO DEBE servir geometrías sin simplificar al navegador.
@@ -149,7 +171,7 @@ Cuencas como unidad de análisis principal (se usan solo para H-2, H-3 y A-5 ví
 
 | ID | Pregunta | Bloquea | Responsable |
 |---|---|---|---|
-| Q-TER-01 | ¿Regionalización oficial que usa la CRA? | Agregados por región | CRA |
+| Q-TER-01 | ~~¿Regionalización oficial que usa la CRA?~~ Resuelta 2026-11-07: departamento + zonificación hidrográfica IDEAM (ADR-0006) | — | — |
 | Q-TER-02 | ¿IDW con estaciones o producto grillado (CHIRPS) para lluvia municipal? | RF-TER-04 | Hidrólogo / IDEAM |
 | Q-TER-03 | ¿Existe en la CRA, SSPD o MinVivienda un inventario de fuentes abastecedoras por municipio con coordenadas de bocatoma? | RF-TER-05, H-1 | CRA / MinVivienda |
 
@@ -158,3 +180,4 @@ Cuencas como unidad de análisis principal (se usan solo para H-2, H-3 y A-5 ví
 | Fecha | Cambio | Origen |
 |---|---|---|
 | 2026-10-08 | Versión inicial | Prototipo |
+| 2026-11-07 | Q-TER-01 resuelta; RF-TER-08 zonificación hidrográfica | ADR-0006 |

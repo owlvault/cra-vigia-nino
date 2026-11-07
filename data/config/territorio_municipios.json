@@ -1,8 +1,8 @@
 {
   "descripcion": "Municipios evaluados por el corte diario (equivale a oro.dim_territorio, RF-TER-01).",
-  "version": "v1.0.0-20261107",
-  "origen": "Trasladado sin cambios desde PipelineCorte.MUNICIPIOS_MAESTRO (código), donde estaba embebido.",
-  "pendiente": "Población, región y coordenadas son valores heredados del prototipo: reemplazar por DIVIPOLA/MGN y proyecciones de población DANE del año del corte (RF-TER-01, RF-TER-06). Regionalización sujeta a Q-TER-01.",
+  "version": "v1.1.0-20261107",
+  "origen": "Trasladado desde PipelineCorte.MUNICIPIOS_MAESTRO (código). Coordenadas reemplazadas el 2026-11-07 por las de la cabecera municipal de la DIVIPOLA del DANE (datos.gov.co gdxc-w37w, corte 2024-12-30); las del prototipo diferían hasta 28 km (Uribia).",
+  "pendiente": "La población sigue siendo la del prototipo: reemplazar por las proyecciones de población del DANE del año del corte (RF-TER-06, ADR-0006 C-CIU-04). El campo 'region' es la región natural, de uso descriptivo para el tablero interno; la agregación oficial es por departamento y por zonificación hidrográfica IDEAM (data/config/territorio_hidrografico.json).",
   "municipios": [
     {
       "divipola": "44847",
@@ -11,8 +11,8 @@
       "cod_depto": "44",
       "poblacion": 196000,
       "region": "Caribe",
-      "lat": 11.713,
-      "lon": -72.015
+      "lat": 11.711904,
+      "lon": -72.265906
     },
     {
       "divipola": "44430",
@@ -21,8 +21,8 @@
       "cod_depto": "44",
       "poblacion": 182000,
       "region": "Caribe",
-      "lat": 11.378,
-      "lon": -72.241
+      "lat": 11.378535,
+      "lon": -72.242738
     },
     {
       "divipola": "44001",
@@ -31,8 +31,8 @@
       "cod_depto": "44",
       "poblacion": 210000,
       "region": "Caribe",
-      "lat": 11.544,
-      "lon": -72.907
+      "lat": 11.528588,
+      "lon": -72.911795
     },
     {
       "divipola": "44560",
@@ -41,8 +41,8 @@
       "cod_depto": "44",
       "poblacion": 125000,
       "region": "Caribe",
-      "lat": 11.775,
-      "lon": -72.444
+      "lat": 11.773767,
+      "lon": -72.438739
     },
     {
       "divipola": "47001",
@@ -51,8 +51,8 @@
       "cod_depto": "47",
       "poblacion": 540000,
       "region": "Caribe",
-      "lat": 11.24,
-      "lon": -74.199
+      "lat": 11.204679,
+      "lon": -74.199829
     },
     {
       "divipola": "47555",
@@ -61,8 +61,8 @@
       "cod_depto": "47",
       "poblacion": 65000,
       "region": "Caribe",
-      "lat": 9.79,
-      "lon": -74.782
+      "lat": 9.796713,
+      "lon": -74.784549
     },
     {
       "divipola": "13244",
@@ -71,8 +71,8 @@
       "cod_depto": "13",
       "poblacion": 78000,
       "region": "Caribe",
-      "lat": 9.717,
-      "lon": -75.121
+      "lat": 9.718653,
+      "lon": -75.121178
     },
     {
       "divipola": "13430",
@@ -81,8 +81,8 @@
       "cod_depto": "13",
       "poblacion": 138000,
       "region": "Caribe",
-      "lat": 9.242,
-      "lon": -74.755
+      "lat": 9.263799,
+      "lon": -74.766742
     },
     {
       "divipola": "13001",
@@ -91,8 +91,8 @@
       "cod_depto": "13",
       "poblacion": 1040000,
       "region": "Caribe",
-      "lat": 10.391,
-      "lon": -75.479
+      "lat": 10.385126,
+      "lon": -75.496269
     },
     {
       "divipola": "20001",
@@ -101,8 +101,8 @@
       "cod_depto": "20",
       "poblacion": 510000,
       "region": "Caribe",
-      "lat": 10.463,
-      "lon": -73.253
+      "lat": 10.460472,
+      "lon": -73.259398
     },
     {
       "divipola": "20011",
@@ -111,8 +111,8 @@
       "cod_depto": "20",
       "poblacion": 112000,
       "region": "Caribe",
-      "lat": 8.307,
-      "lon": -73.618
+      "lat": 8.306811,
+      "lon": -73.614027
     },
     {
       "divipola": "68079",
@@ -121,8 +121,8 @@
       "cod_depto": "68",
       "poblacion": 12000,
       "region": "Andina",
-      "lat": 6.635,
-      "lon": -73.224
+      "lat": 6.634111,
+      "lon": -73.223047
     },
     {
       "divipola": "68679",
@@ -131,8 +131,8 @@
       "cod_depto": "68",
       "poblacion": 58000,
       "region": "Andina",
-      "lat": 6.556,
-      "lon": -73.133
+      "lat": 6.551952,
+      "lon": -73.134776
     },
     {
       "divipola": "68001",
@@ -141,8 +141,8 @@
       "cod_depto": "68",
       "poblacion": 615000,
       "region": "Andina",
-      "lat": 7.125,
-      "lon": -73.119
+      "lat": 7.11647,
+      "lon": -73.132562
     },
     {
       "divipola": "11001",
@@ -151,8 +151,8 @@
       "cod_depto": "11",
       "poblacion": 7900000,
       "region": "Andina",
-      "lat": 4.711,
-      "lon": -74.072
+      "lat": 4.649251,
+      "lon": -74.106992
     },
     {
       "divipola": "25307",
@@ -161,8 +161,8 @@
       "cod_depto": "25",
       "poblacion": 120000,
       "region": "Andina",
-      "lat": 4.303,
-      "lon": -74.802
+      "lat": 4.313069,
+      "lon": -74.798201
     },
     {
       "divipola": "25126",
@@ -171,8 +171,8 @@
       "cod_depto": "25",
       "poblacion": 85000,
       "region": "Andina",
-      "lat": 4.918,
-      "lon": -74.027
+      "lat": 4.920009,
+      "lon": -74.02298
     },
     {
       "divipola": "73001",
@@ -181,8 +181,8 @@
       "cod_depto": "73",
       "poblacion": 540000,
       "region": "Andina",
-      "lat": 4.438,
-      "lon": -75.232
+      "lat": 4.432248,
+      "lon": -75.19425
     },
     {
       "divipola": "73268",
@@ -191,8 +191,8 @@
       "cod_depto": "73",
       "poblacion": 74000,
       "region": "Andina",
-      "lat": 4.149,
-      "lon": -74.884
+      "lat": 4.151314,
+      "lon": -74.885446
     },
     {
       "divipola": "41001",
@@ -201,8 +201,8 @@
       "cod_depto": "41",
       "poblacion": 365000,
       "region": "Andina",
-      "lat": 2.927,
-      "lon": -75.281
+      "lat": 2.935432,
+      "lon": -75.277327
     },
     {
       "divipola": "15837",
@@ -211,8 +211,8 @@
       "cod_depto": "15",
       "poblacion": 10500,
       "region": "Andina",
-      "lat": 5.694,
-      "lon": -73.23
+      "lat": 5.689082,
+      "lon": -73.230285
     },
     {
       "divipola": "05001",
@@ -221,8 +221,8 @@
       "cod_depto": "05",
       "poblacion": 2550000,
       "region": "Andina",
-      "lat": 6.244,
-      "lon": -75.581
+      "lat": 6.246631,
+      "lon": -75.581775
     },
     {
       "divipola": "76001",
@@ -231,8 +231,8 @@
       "cod_depto": "76",
       "poblacion": 2280000,
       "region": "Pacífica",
-      "lat": 3.451,
-      "lon": -76.532
+      "lat": 3.413686,
+      "lon": -76.52133
     }
   ]
 }

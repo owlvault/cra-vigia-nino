@@ -20,6 +20,8 @@ fuentes: [prototipo, NOAA CPC, Res. MinSalud 2115 de 2007, MinVivienda, DANE, SS
 | Municipio | Entidad territorial identificada por código DIVIPOLA de 5 dígitos. Incluye Bogotá D.C. y las áreas no municipalizadas. | ciudad, localidad, ente territorial | todos |
 | Área no municipalizada (ANM) | Unidad territorial DIVIPOLA sin categoría de municipio. Se trata como Municipio en el modelo. | corregimiento departamental | `specs/modelo-territorial.md` |
 | DIVIPOLA | Codificación oficial del DANE: 2 dígitos departamento + 3 dígitos municipio. Llave territorial única del sistema. | código DANE, código municipal | `specs/modelo-territorial.md` |
+| Zonificación hidrográfica | División oficial del IDEAM en áreas (Caribe, Magdalena-Cauca, Orinoco, Amazonas, Pacífico), zonas y subzonas hidrográficas. Cada municipio se asigna a la subzona que contiene su cabecera. | cuenca (salvo en sentido técnico), región hídrica | `specs/modelo-territorial.md` RF-TER-08 |
+| Región natural | Agrupación geográfica descriptiva (Caribe, Andina, Pacífica, Orinoquía, Amazonía, Insular). No es unidad de agregación oficial del sistema. | región (a secas) | tablero interno |
 | APS | Área de Prestación de Servicio de un prestador en un municipio. | sistema, mercado | `specs/modelo-territorial.md` |
 | Prestador | Persona prestadora del servicio de acueducto inscrita en el RUPS. | operador, empresa, ESP (salvo cuando sea su razón social) | `specs/ingesta-fuentes.md` |
 | RUPS | Registro Único de Prestadores de Servicios Públicos, administrado por la SSPD. | — | `specs/ingesta-fuentes.md` |

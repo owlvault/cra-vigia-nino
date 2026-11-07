@@ -44,9 +44,21 @@ class PipelineCorte:
         self.parametros_corte = self._leer_config("parametros_corte.json")
         self.parametros_icr = self._leer_config("parametros_icr.json")
         self.territorio = self._leer_config("territorio_municipios.json")
+        self.hidrografia = self._cargar_hidrografia()
         self.validar_parametros_icr(self.parametros_icr)
         self.VERSION_CONFIG = self.parametros_icr["version"]
         self.PESOS_CAPA = {capa: c["peso"] for capa, c in self.parametros_icr["capas"].items()}
+
+    CAMPOS_HIDROGRAFICOS = ("cod_area_hidrografica", "area_hidrografica", "cod_zona_hidrografica",
+                            "zona_hidrografica", "cod_subzona_hidrografica", "subzona_hidrografica")
+
+    def _cargar_hidrografia(self) -> Dict[str, Dict[str, Any]]:
+        """Zonificación IDEAM por divipola (ADR-0006). Si no existe el cruce, los campos quedan None."""
+        ruta = self.root_dir / "data" / "config" / "territorio_hidrografico.json"
+        if not ruta.exists():
+            return {}
+        datos = json.loads(ruta.read_text(encoding="utf-8"))
+        return {m["divipola"]: m for m in datos.get("municipios", []) if m.get("estado") == "resuelto"}
 
     def _leer_config(self, nombre: str) -> Dict[str, Any]:
         ruta = self.root_dir / "data" / "config" / nombre
@@ -404,6 +416,9 @@ class PipelineCorte:
                 indicadores=indicadores_m
             )
             res_m["region"] = m["region"]
+            hidro = self.hidrografia.get(div, {})
+            for campo in self.CAMPOS_HIDROGRAFICOS:
+                res_m[campo] = hidro.get(campo)
             res_m["lat"] = m["lat"]
             res_m["lon"] = m["lon"]
             municipios_oro.append(res_m)
@@ -539,6 +554,10 @@ class PipelineCorte:
                     "DEPARTAMENTO": m["departamento"],
                     "COD_DEPTO": m["cod_depto"],
                     "REGION": m.get("region", ""),
+                    "AREA_HIDROGRAFICA": m.get("area_hidrografica"),
+                    "ZONA_HIDROGRAFICA": m.get("zona_hidrografica"),
+                    "COD_SUBZONA_HIDROGRAFICA": m.get("cod_subzona_hidrografica"),
+                    "SUBZONA_HIDROGRAFICA": m.get("subzona_hidrografica"),
                     "POBLACION": m["poblacion"],
                     "ICR": m["icr"],
                     "NIVEL_ALERTA": m["nivel_alerta"],
