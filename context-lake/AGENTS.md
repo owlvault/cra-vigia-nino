@@ -61,7 +61,7 @@ Antes de escribir código, lee el archivo que corresponda a tu tarea:
 ## Fuera de alcance
 
 - Alcantarillado y aseo.
-- Acceso de entidades externas o público; API pública.
+- Acceso de entidades externas; API pública. Excepción: canal ciudadano de solo lectura, con las condiciones de `adr/ADR-0006-canal-ciudadano.md` y solo después de `specs/canal-ciudadano.md`.
 - Modelos propios de predicción climática.
 - Captura de datos de prestadores (no reemplaza el SUI).
 - Gestión operativa de la emergencia (carrotanques, inventarios).
@@ -103,6 +103,7 @@ Antes de escribir código, lee el archivo que corresponda a tu tarea:
 | `adr/ADR-0003-arquitectura-medallon.md` | Bronce/plata/oro y configuración versionada | aceptada |
 | `adr/ADR-0004-imagen-institucional-cra.md` | Manual de Identidad Visual CRA DES-MAN04 V02 | aceptada |
 | `adr/ADR-0005-stack-open-source-on-premise.md` | Stack open source on-premise | aceptada |
+| `adr/ADR-0006-canal-ciudadano.md` | Canal ciudadano de solo lectura; agregación por departamento y zonificación hidrográfica IDEAM | aceptada |
 
 ## Preguntas abiertas
 
@@ -117,3 +118,4 @@ Las bloqueantes para iniciar implementación: Q-ARQ-01 (directorio de identidad)
 | Fecha | Cambio | Origen |
 |---|---|---|
 | 2026-10-08 | Versión inicial | Fase 3 del Context Lake |
+| 2026-11-07 | Canal ciudadano (ADR-0006) | Decisión de Camilo |

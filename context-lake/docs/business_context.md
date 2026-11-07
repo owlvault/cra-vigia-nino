@@ -3,7 +3,7 @@ id: business-context
 tipo: business
 proyecto: vigia-nino-acueductos
 estado: borrador
-actualizado: 2026-10-08
+actualizado: 2026-11-07
 fuentes: [conversación con Camilo Carvajalino (CRA) 2026-10-08, prototipo documentacion/fuentes/prototipo-tablero.html, NOAA CPC discusión ENSO 2026-09-10, MinVivienda comunicados sept-2026, MinVivienda circular 2026EE0026348, Superservicios circular 20261000000624]
 ---
 
@@ -93,7 +93,7 @@ Sistema de uso interno de una entidad pública. No genera ingresos. La unidad de
 | ID | Restricción | Fuente |
 |---|---|---|
 | RES-01 | Despliegue on-premise en infraestructura de la CRA con software de código abierto. | Decisión de Camilo, 2026-10-08 (ADR-0005) |
-| RES-02 | Uso exclusivamente interno CRA en la versión 1. | Decisión de Camilo, 2026-10-08 |
+| RES-02 | Operación del sistema exclusivamente interna CRA. Se habilita un canal ciudadano de solo lectura sobre un subconjunto de la información, sujeto a las condiciones de ADR-0006. | Decisión de Camilo, 2026-10-08; modificada 2026-11-07 (ADR-0006) |
 | RES-03 | Alcance de servicio: solo acueducto. | Decisión de Camilo, 2026-10-08 |
 | RES-04 | Imagen institucional CRA y lineamientos GOV.CO. | Decisión de Camilo, 2026-10-08 (ADR-0004) |
 | RES-05 | Solo fuentes oficiales o institucionales; cada dato publicado debe citar fuente y fecha. | Solicitud de Camilo |
@@ -103,7 +103,7 @@ Sistema de uso interno de una entidad pública. No genera ingresos. La unidad de
 ## No-objetivos
 
 - **Alcantarillado y aseo.** Fuera de la v1 (RES-03). No crear tablas, indicadores ni vistas para esos servicios.
-- **Portal público o acceso de entidades externas.** Fuera de la v1 (RES-02). No construir registro de usuarios externos ni API pública.
+- **Acceso de entidades externas, registro de usuarios externos o API pública.** Fuera de la v1 (RES-02). El canal ciudadano de solo lectura de ADR-0006 es la única excepción, y no se construye antes de `specs/canal-ciudadano.md`.
 - **Modelos numéricos propios de predicción climática.** El sistema consume pronósticos oficiales (CPC, IDEAM); no corre modelos de circulación ni downscaling.
 - **Captura manual de datos por prestadores.** El sistema no reemplaza el SUI ni recibe reportes de prestadores.
 - **Gestión operativa de la emergencia** (despacho de carrotanques, inventarios). Solo se observa como indicador.
@@ -123,3 +123,4 @@ Sistema de uso interno de una entidad pública. No genera ingresos. La unidad de
 | Fecha | Cambio | Origen |
 |---|---|---|
 | 2026-10-08 | Versión inicial | Conversación y prototipo |
+| 2026-11-07 | RES-02 modificada: canal ciudadano de solo lectura | ADR-0006 |

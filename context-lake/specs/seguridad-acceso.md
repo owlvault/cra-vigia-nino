@@ -103,7 +103,7 @@ Credenciales de fuentes, SMTP y base de datos NO DEBEN estar en el repositorio.
 
 ## Fuera de alcance de esta spec
 
-Acceso de entidades externas y público (RES-02); API pública.
+Acceso de entidades externas (RES-02); API pública. El canal ciudadano de solo lectura se rige por `adr/ADR-0006-canal-ciudadano.md` y su clasificación de información depende de Q-SEG-01.
 
 ## Preguntas abiertas
 
