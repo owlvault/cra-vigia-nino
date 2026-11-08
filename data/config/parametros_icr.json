@@ -1,46 +1,312 @@
 {
-  "version": "v1.1.0-20261107",
-  "vigente_desde": "2026-11-07T00:00:00+00:00",
+  "version": "v1.2.0-20261108",
+  "vigente_desde": "2026-11-08T00:00:00+00:00",
   "descripcion": "Parámetros versionados del Índice Compuesto de Riesgo (equivale a config.peso y config.umbral, ADR-0003).",
-  "spec": ["context-lake/specs/indice-riesgo.md", "context-lake/specs/indicadores.md"],
+  "spec": [
+    "context-lake/specs/indice-riesgo.md",
+    "context-lake/specs/indicadores.md"
+  ],
   "cambios_respecto_version_anterior": {
-    "version_anterior": "v1.0.0-20261008",
-    "detalle": "H-4 usa los quiebres de specs/indicadores.md (36/24/12/6/0 h -> 0/40/60/75/100). La v1.0.0 usaba en código 24/18/12/6/2 h -> 0/35/55/75/100."
+    "version_anterior": "v1.1.0-20261107",
+    "detalle": "Se agrega la categoría 'crítico' (puntaje 100) para H-3: el Índice de Uso del Agua en año seco del ENA 2014 tiene seis categorías y la tabla de specs/indicadores.md solo cinco. Sin esta entrada, una subzona en estado crítico quedaba como sin_dato. ASUNCIÓN pendiente de validar (Q-IND-04)."
   },
   "capas": {
-    "A": {"nombre": "Amenaza hidroclimática", "peso": 0.30, "indicadores": ["A-3", "A-4", "H-1"], "agregacion": "promedio"},
-    "H": {"nombre": "Vulnerabilidad de la oferta", "peso": 0.30, "indicadores": ["H-2", "H-3", "H-4"], "agregacion": "promedio"},
-    "S": {"nombre": "Desempeño del servicio", "peso": 0.25, "indicadores": ["S-1", "S-2", "S-3", "S-4", "S-5"], "agregacion": "promedio"},
-    "R": {"nombre": "Respuesta e impacto", "peso": 0.15, "indicadores": ["R-1", "R-2", "R-3", "R-4"], "agregacion": "maximo"}
+    "A": {
+      "nombre": "Amenaza hidroclimática",
+      "peso": 0.3,
+      "indicadores": [
+        "A-3",
+        "A-4",
+        "H-1"
+      ],
+      "agregacion": "promedio"
+    },
+    "H": {
+      "nombre": "Vulnerabilidad de la oferta",
+      "peso": 0.3,
+      "indicadores": [
+        "H-2",
+        "H-3",
+        "H-4"
+      ],
+      "agregacion": "promedio"
+    },
+    "S": {
+      "nombre": "Desempeño del servicio",
+      "peso": 0.25,
+      "indicadores": [
+        "S-1",
+        "S-2",
+        "S-3",
+        "S-4",
+        "S-5"
+      ],
+      "agregacion": "promedio"
+    },
+    "R": {
+      "nombre": "Respuesta e impacto",
+      "peso": 0.15,
+      "indicadores": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4"
+      ],
+      "agregacion": "maximo"
+    }
   },
-  "peso_minimo_disponible": 0.60,
+  "peso_minimo_disponible": 0.6,
   "niveles_alerta": [
-    {"nivel": "sin_alerta", "icr_desde": 0},
-    {"nivel": "amarilla", "icr_desde": 40},
-    {"nivel": "naranja", "icr_desde": 60},
-    {"nivel": "roja", "icr_desde": 75}
+    {
+      "nivel": "sin_alerta",
+      "icr_desde": 0
+    },
+    {
+      "nivel": "amarilla",
+      "icr_desde": 40
+    },
+    {
+      "nivel": "naranja",
+      "icr_desde": 60
+    },
+    {
+      "nivel": "roja",
+      "icr_desde": 75
+    }
   ],
   "piso_por_impacto": {
-    "indicadores_activadores": ["R-3", "R-4"],
+    "indicadores_activadores": [
+      "R-3",
+      "R-4"
+    ],
     "nivel_minimo": "naranja"
   },
   "quiebres": {
-    "A-3": [[0, 0], [-20, 40], [-40, 60], [-60, 75], [-90, 100]],
-    "A-4": [[0, 0], [10, 40], [20, 60], [30, 75], [60, 100]],
-    "H-1": [[100, 0], [70, 40], [50, 60], [30, 75], [10, 100]],
-    "H-4": [[36, 0], [24, 40], [12, 60], [6, 75], [0, 100]],
-    "S-1": [[24, 0], [22, 40], [18, 60], [12, 75], [4, 100]],
-    "S-2": [[0, 0], [5, 40], [14, 60], [35, 75], [80, 100]],
-    "S-3": [[100, 0], [95, 40], [85, 60], [70, 75], [40, 100]],
-    "S-4": [[20, 0], [30, 40], [40, 60], [50, 75], [70, 100]],
-    "S-5": [[0, 0], [25, 40], [50, 60], [100, 75], [300, 100]]
+    "A-3": [
+      [
+        0,
+        0
+      ],
+      [
+        -20,
+        40
+      ],
+      [
+        -40,
+        60
+      ],
+      [
+        -60,
+        75
+      ],
+      [
+        -90,
+        100
+      ]
+    ],
+    "A-4": [
+      [
+        0,
+        0
+      ],
+      [
+        10,
+        40
+      ],
+      [
+        20,
+        60
+      ],
+      [
+        30,
+        75
+      ],
+      [
+        60,
+        100
+      ]
+    ],
+    "H-1": [
+      [
+        100,
+        0
+      ],
+      [
+        70,
+        40
+      ],
+      [
+        50,
+        60
+      ],
+      [
+        30,
+        75
+      ],
+      [
+        10,
+        100
+      ]
+    ],
+    "H-4": [
+      [
+        36,
+        0
+      ],
+      [
+        24,
+        40
+      ],
+      [
+        12,
+        60
+      ],
+      [
+        6,
+        75
+      ],
+      [
+        0,
+        100
+      ]
+    ],
+    "S-1": [
+      [
+        24,
+        0
+      ],
+      [
+        22,
+        40
+      ],
+      [
+        18,
+        60
+      ],
+      [
+        12,
+        75
+      ],
+      [
+        4,
+        100
+      ]
+    ],
+    "S-2": [
+      [
+        0,
+        0
+      ],
+      [
+        5,
+        40
+      ],
+      [
+        14,
+        60
+      ],
+      [
+        35,
+        75
+      ],
+      [
+        80,
+        100
+      ]
+    ],
+    "S-3": [
+      [
+        100,
+        0
+      ],
+      [
+        95,
+        40
+      ],
+      [
+        85,
+        60
+      ],
+      [
+        70,
+        75
+      ],
+      [
+        40,
+        100
+      ]
+    ],
+    "S-4": [
+      [
+        20,
+        0
+      ],
+      [
+        30,
+        40
+      ],
+      [
+        40,
+        60
+      ],
+      [
+        50,
+        75
+      ],
+      [
+        70,
+        100
+      ]
+    ],
+    "S-5": [
+      [
+        0,
+        0
+      ],
+      [
+        25,
+        40
+      ],
+      [
+        50,
+        60
+      ],
+      [
+        100,
+        75
+      ],
+      [
+        300,
+        100
+      ]
+    ]
   },
-  "puntaje_categorico": {"muy bajo": 0, "bajo": 15, "moderado": 40, "medio": 40, "alto": 65, "muy alto": 90},
+  "puntaje_categorico": {
+    "muy bajo": 0,
+    "bajo": 15,
+    "moderado": 40,
+    "medio": 40,
+    "alto": 65,
+    "muy alto": 90,
+    "crítico": 100
+  },
   "puntaje_binario": {
-    "R-1": {"activo": 0, "inactivo": 100},
-    "R-2": {"activo": 60, "inactivo": 0},
-    "R-3": {"activo": 80, "inactivo": 0},
-    "R-4": {"activo": 100, "inactivo": 0}
+    "R-1": {
+      "activo": 0,
+      "inactivo": 100
+    },
+    "R-2": {
+      "activo": 60,
+      "inactivo": 0
+    },
+    "R-3": {
+      "activo": 80,
+      "inactivo": 0
+    },
+    "R-4": {
+      "activo": 100,
+      "inactivo": 0
+    }
   },
   "asuncion": "Pesos 30/30/25/15 y todos los umbrales salvo S-2 son propuestas del prototipo, sin validar (Q-ICR-01, Q-IND-02)."
 }

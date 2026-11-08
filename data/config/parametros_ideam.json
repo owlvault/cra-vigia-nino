@@ -1,0 +1,56 @@
+{
+  "version": "v1.0.0-20261108",
+  "descripcion": "Fuentes y parámetros para calcular A-3, A-4, H-2 y H-3 con mediciones del IDEAM (specs/indicadores.md, specs/modelo-territorial.md RF-TER-04).",
+  "fuentes": {
+    "precipitacion_10min": {
+      "url": "https://www.datos.gov.co/resource/s54a-sgyg.json",
+      "dataset": "IDEAM - Precipitación (red de estaciones automáticas, cada 10 minutos)",
+      "codigo_sensor": "0240",
+      "nota": "El sensor 0257 (cada 2 minutos) duplica la misma lluvia en algunas estaciones; se usa solo 0240."
+    },
+    "normales_climatologicas": {
+      "url": "https://www.datos.gov.co/resource/nsz2-kzcq.json",
+      "dataset": "IDEAM - Normales Climatológicas de Colombia (Directriz OMM 1203)",
+      "periodo": "1991-2020",
+      "parametro": "PRECIPITACIÓN"
+    },
+    "municipios_poligonos": {
+      "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Entidades_Territoriales/MapServer/2",
+      "campo_divipola": "num_dane"
+    },
+    "ena_h2_ivh_ano_seco": {
+      "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Indicadores_Hidricos/MapServer/13",
+      "capa": "Índice de Vulnerabilidad Hídrica Año Seco SZH ENA 2010",
+      "campo_categoria": "cat",
+      "fecha_dato": "2010-12-31"
+    },
+    "ena_h3_iua_ano_seco": {
+      "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Indicadores_Hidricos/MapServer/11",
+      "capa": "Índice de Uso del Agua Año Seco SZH ENA 2014",
+      "campo_categoria": "cat_iua_seco",
+      "fecha_dato": "2014-12-31"
+    },
+    "sistema_referencia": 4686
+  },
+  "precipitacion": {
+    "registros_por_dia_completo": 144,
+    "fraccion_minima_registros_dia": 0.8,
+    "fraccion_maxima_registros_dia": 1.0,
+    "nota_registros": "Un día de estación vale si tiene entre 80 % y 100 % de los 144 registros de 10 minutos. Algunas estaciones reportan más de 144 en el sensor 0240 (duplicados u otra resolución); esos días se descartan porque la suma sobrestimaría la lluvia.",
+    "umbral_dia_seco_mm": 1.0,
+    "dias_ventana_anomalia": 30,
+    "dias_validos_minimos_ventana": 27,
+    "dias_historia_consulta": 75,
+    "dias_maximos_sin_dato_reciente": 3,
+    "radio_idw_km": 50,
+    "estaciones_idw": 3,
+    "potencia_idw": 2
+  },
+  "asunciones": [
+    "RF-TER-04: los polígonos municipales del servicio Entidades_Territoriales del IDEAM sustituyen al MGN del DANE (el geoportal del DANE no respondió). El punto de la cabecera DANE sustituye al centroide para el IDW.",
+    "RF-IND-02: la línea base de A-3 es la normal climatológica oficial 1991-2020 del IDEAM (mensual), prorrateada por días de cada mes de la ventana de 30 días. La spec pide la media de la misma ventana diaria 1991-2020; la red automática solo tiene datos desde 2003 y pocas estaciones superan 15 años.",
+    "A-3: la lluvia observada sale de estaciones automáticas y la normal de estaciones convencionales; ambos conjuntos se promedian por municipio con la misma regla (RF-TER-04).",
+    "A-4: si un día reciente no tiene dato municipal, el conteo se detiene ahí y el valor es una cota inferior (nota en el indicador). Con 75 días de historia, una racha mayor también queda como cota inferior; su puntaje ya es 100 desde 60 días.",
+    "A-3: se exigen 27 de 30 días con dato municipal; los días faltantes se completan con la media observada de la ventana."
+  ]
+}

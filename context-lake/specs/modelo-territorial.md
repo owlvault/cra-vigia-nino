@@ -96,12 +96,16 @@ Escenario: Municipio sin estación
 
 **Prioridad:** debe
 
+> **Implementación v1 (2026-11-08):** las estaciones se asignan por contención en los polígonos municipales que publica el IDEAM (servicio `Entidades_Territoriales`, capa Municipio, campo `num_dane`), porque el geoportal del DANE no respondió; el punto de la cabecera DANE sustituye al centroide para el IDW. Un día de estación es válido con 80 % a 100 % de los registros de 10 minutos. Resultado en `data/config/estaciones_ideam.json` (`ingesta/territorio/estaciones_ideam.py`).
+
 ### RF-TER-05 — Fuente abastecedora y estación hidrológica
 
 DONDE exista en `config.fuente_abastecedora` el vínculo entre el municipio, su fuente abastecedora principal y una estación IDEAM de caudal, el sistema DEBE calcular H-1 con esa estación. Para municipios sin vínculo, H-1 es `sin_dato`.
 
 **Prioridad:** debe
 **Depende de:** Q-TER-03
+
+> **Estado 2026-11-08:** no existe `config.fuente_abastecedora`; por esta regla, H-1 es `sin_dato` en todos los municipios hasta resolver Q-TER-03.
 
 ### RF-TER-06 — Agregación departamental y nacional
 

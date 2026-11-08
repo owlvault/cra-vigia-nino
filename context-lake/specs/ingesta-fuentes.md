@@ -195,7 +195,7 @@ Validación de contenido, normalización, cálculo de indicadores, fuentes de al
 |---|---|---|---|
 | Q-ING-01 | ¿La CRA tiene acceso institucional a bodegas o servicios del SUI distintos al público (convenio SSPD-CRA)? ¿Identificadores de los conjuntos en datos.gov.co? | FTE-SUI-* | Camilo / TI CRA |
 | Q-ING-02 | ¿Dónde se publica el estado de reporte de PEC por prestador y con qué acceso? | R-1 | CRA / SSPD |
-| Q-ING-03 | ¿Hay acceso por servicio web a DHIME o solo descarga por interfaz? | FTE-IDEAM-PREC, FTE-IDEAM-CAUD | TI CRA / IDEAM |
+| Q-ING-03 | ¿Hay acceso por servicio web a DHIME o solo descarga por interfaz? Parcialmente resuelta 2026-11-08: FTE-IDEAM-PREC se consume de datos.gov.co (red automática `s54a-sgyg` y normales `nsz2-kzcq`); FTE-IDEAM-CAUD sigue sin servicio identificado | FTE-IDEAM-CAUD | TI CRA / IDEAM |
 | Q-ING-04 | ¿MinVivienda puede compartir con la CRA el consolidado del Survey123 por convenio? | R-3 | Camilo |
 | Q-ING-05 | ¿Tabla de retención documental aplicable? | RNF-ING-02 | Gestión documental CRA |
 | Q-ING-06 | ¿Límite de tamaño por captura? | Casos borde | TI CRA |

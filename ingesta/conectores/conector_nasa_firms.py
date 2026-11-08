@@ -29,16 +29,12 @@ class ConectorNASAFIRMS(ConectorBase):
             entidad="NASA Earthdata / FIRMS",
             base_dir=base_dir
         )
-        self.config_mun_file = self.root_dir / "data" / "config" / "catalogo_municipios_ideam.json"
+        self.config_mun_file = self.root_dir / "data" / "config" / "territorio_municipios.json"
 
     def _cargar_catalogo_municipios(self) -> Dict[str, Any]:
-        if self.config_mun_file.exists():
-            try:
-                datos = json.loads(self.config_mun_file.read_text(encoding="utf-8"))
-                return datos.get("municipios", {})
-            except Exception:
-                pass
-        return {}
+        """Municipios evaluados desde la dimensión territorial (data/config/territorio_municipios.json)."""
+        datos = json.loads(self.config_mun_file.read_text(encoding="utf-8"))
+        return {m["divipola"]: {"nombre": m["nombre"], "depto": m["departamento"]} for m in datos["municipios"]}
 
     def _consultar_api_firms(self, map_key: str) -> Optional[str]:
         """Consulta los focos activos de calor en Colombia en los últimos 7 días."""

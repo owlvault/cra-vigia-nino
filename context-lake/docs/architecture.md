@@ -18,7 +18,7 @@ flowchart LR
   subgraph Fuentes externas oficiales
     SUI[SUI / SSPD Extracto Oficial]
     INS[SIVICAP IRCA MinSalud]
-    IDE[IDEAM Catálogo Territorial 23 Mun.]
+    IDE[IDEAM Red de precipitación + Normales 1991-2020 + ENA]
     CPC[NOAA CPC / IRI Diagnóstico ENOS]
     UNG[UNGRD Decretos Calamidad Verificados]
     MVC[MinVivienda Planes de Emergencia]
@@ -82,7 +82,7 @@ Entidades principales en `oro`:
 |---|---|---|---|
 | **XM Embalses** | `https://apielnec.xm.com.co/api/sin/capacidad-util-reservorio` | HTTPS / Ninguna | Fallback a extracto histórico en `data/bronce/fte_xm_embalses/`. Ponderación multirreservorio por capacidad útil máxima oficial. |
 | **SUI SSPD** | `data/bronce/fte_sui/extracto_oficial_sui_2026.json` (Extracto oficial certificado) | Local Bronce / Certificado SSPD | Fuente primaria formal para H-4 y S-6. Error estricto si el extracto no está disponible. |
-| **IDEAM** | Catálogo oficial de 23 municipios (`data/config/catalogo_municipios_ideam.json`) + DHIME | HTTPS REST / Catálogo verificado | Fallback a series climatológicas oficiales certificadas en Bronce. |
+| **IDEAM** | Precipitación cada 10 min (`datos.gov.co/resource/s54a-sgyg`), normales 1991-2020 (`nsz2-kzcq`), ENA y polígonos municipales (`visualizador.ideam.gov.co/gisserver`). URLs en `data/config/parametros_ideam.json` | HTTPS / Socrata y ArcGIS REST, sin autenticación | Sin dato suficiente, el indicador queda `sin_dato`; no hay respaldo con valores fijos (el catálogo estático se retiró el 2026-11-08). |
 | **UNGRD / MinVivienda** | Catálogo de actos administrativos (`data/config/actos_administrativos_verificados.json`) | Verificación de Decretos Oficiales | Exclusivamente municipios con declaratoria vigente (e.g. Uribia, Manaure) activan R-3/R-4. Cero falsas alarmas. |
 | **NASA FIRMS** | API VIIRS / NRT Area API (`https://firms.modaps.eosdis.nasa.gov/api/area/csv/`) | HTTPS / MAP_KEY | Si la llave no está configurada, degrada a `None` de forma segura sin inyectar valores ficticios. |
 | **NOAA CPC** | `https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/` | HTTPS estricto | Boletín mensual oficial y serie TAO. Probabilidad oficial del 83.0% (octubre 2026). |
@@ -100,3 +100,4 @@ Entidades principales en `oro`:
 |---|---|---|
 | 2026-10-08 | Versión inicial | ADR-0003, ADR-0005 |
 | 2026-10-14 | Actualización tras Auditoría Forense: Conector SUI oficial, endpoints XM/IDEAM, modelo semanal multivariable, pipeline atómico y reactivación de SSL estricto. | Auditoría Forense CRA 2026-10-14 |
+| 2026-11-08 | IDEAM con mediciones reales; retiro de `catalogo_municipios_ideam.json` | Auditoría del modelo de datos, hallazgo 1 |

@@ -49,7 +49,8 @@ Se eligieron por dos criterios: que respondan una pregunta concreta de un hogar 
 | Indicador | Motivo |
 |---|---|
 | ICR numérico (0-100) y subíndices | Es una construcción técnica con pesos sin validar (Q-ICR-01); el nivel comunica mejor. |
-| A-3 anomalía de lluvia, A-4 días sin lluvia, H-1 caudal | Hoy salen de un catálogo estático, no de mediciones diarias (hallazgo 1 de la auditoría). Recomendables cuando se conecten datos reales del IDEAM. |
+| A-3 anomalía de lluvia, A-4 días sin lluvia | Desde el 2026-11-08 son mediciones reales del IDEAM, pero aún no están en la lista blanca de `config.canal_ciudadano`: habilitarlos requiere nueva versión de esa config (RN-CIU-02) y validar la ASUNCIÓN de la línea base (normales mensuales prorrateadas). |
+| H-1 caudal | `sin_dato` en todos los municipios (falta el inventario de fuentes abastecedoras, Q-TER-03). |
 | A-2 probabilidad de un Niño muy fuerte | Valor transcrito a mano en el conector, sin captura automática. |
 | S-4 IANC, S-5 PQR, H-4 autonomía, `cobertura_datos_pct` | Técnicos; no responden una pregunta de hogar. |
 | `poblacion_en_riesgo_critico`, ICR nacional | Se calculan sobre solo 23 municipios: no representan al país. La población ya es del DANE, pero la muestra sigue siendo parcial. |

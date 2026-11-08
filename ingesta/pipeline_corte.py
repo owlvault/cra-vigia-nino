@@ -400,8 +400,8 @@ class PipelineCorte:
                 "A-5": {"nombre": "Focos de Calor (7d)", "valor": a5_val, "unidad": "conteo", "fuente": "NASA FIRMS", "fecha_dato": fecha_corte, "puntaje": None},
                 # Oferta Hídrica
                 "H-1": {"nombre": "Caudal Fuente Abastecedora", "valor": h1_val, "unidad": "%", "fuente": "IDEAM", "fecha_dato": fecha_ideam, "puntaje": punt_h1},
-                "H-2": {"nombre": "Vulnerabilidad Hídrica ENA", "valor": h2_val, "unidad": "categoría", "fuente": "IDEAM ENA", "fecha_dato": "2022-12-31", "puntaje": punt_h2},
-                "H-3": {"nombre": "Uso del Agua ENA (IUA)", "valor": h3_val, "unidad": "categoría", "fuente": "IDEAM ENA", "fecha_dato": "2022-12-31", "puntaje": punt_h3},
+                "H-2": {"nombre": "Vulnerabilidad Hídrica ENA", "valor": h2_val, "unidad": "categoría", "fuente": "IDEAM ENA 2010 (año seco)", "fecha_dato": ideam_info.get("fecha_dato_h2"), "puntaje": punt_h2},
+                "H-3": {"nombre": "Uso del Agua ENA (IUA)", "valor": h3_val, "unidad": "categoría", "fuente": "IDEAM ENA 2014 (año seco)", "fecha_dato": ideam_info.get("fecha_dato_h3"), "puntaje": punt_h3},
                 "H-4": {"nombre": "Autonomía Almacenamiento", "valor": h4_val, "unidad": "horas", "fuente": "SSPD SUI", "fecha_dato": fecha_sui, "puntaje": punt_h4},
                 "H-5": {"nombre": "Volumen Útil Embalse", "valor": xm_info.get("volumen_util_pct"), "unidad": "%", "fuente": "XM Sinergox", "fecha_dato": fecha_corte, "puntaje": None},
                 # Desempeño del Servicio
@@ -417,6 +417,10 @@ class PipelineCorte:
                 "R-3": {"nombre": "Racionamiento Reportado", "valor": r3_val, "unidad": "binario", "fuente": "MinVivienda Survey123", "fecha_dato": fecha_ungrd, "puntaje": punt_r3},
                 "R-4": {"nombre": "Calamidad Pública Vigente", "valor": r4_val, "unidad": "binario", "fuente": "UNGRD Sala de Crisis", "fecha_dato": fecha_ungrd, "puntaje": punt_r4}
             }
+
+            # A-4 que se detuvo en un día sin dato es una cota inferior: se declara
+            if ideam_info.get("a4_cota_inferior") and a4_val is not None:
+                indicadores_m["A-4"]["nota"] = f"Al menos {int(a4_val)} días: el conteo se detuvo en un día sin dato"
 
             # RF-CAL-03: frescura de cada valor frente a su periodo esperado
             for cod_ind, ind in indicadores_m.items():

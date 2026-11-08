@@ -37,7 +37,7 @@ class ConectorUNGRDMinVivienda(ConectorBase):
         )
         self.config_actos_file = self.root_dir / "data" / "config" / "actos_administrativos_verificados.json"
         self._registro_actos: Dict[str, Any] = {}
-        self.config_mun_file = self.root_dir / "data" / "config" / "catalogo_municipios_ideam.json"
+        self.config_mun_file = self.root_dir / "data" / "config" / "territorio_municipios.json"
         self.socrata_ungrd_url = "https://www.datos.gov.co/resource/2343-nuqp.json"
 
     @staticmethod
@@ -56,14 +56,9 @@ class ConectorUNGRDMinVivienda(ConectorBase):
         return {}
 
     def _cargar_catalogo_municipios(self) -> Dict[str, Any]:
-        """Carga los 23 municipios de seguimiento."""
-        if self.config_mun_file.exists():
-            try:
-                datos = json.loads(self.config_mun_file.read_text(encoding="utf-8"))
-                return datos.get("municipios", {})
-            except Exception:
-                pass
-        return {}
+        """Municipios evaluados desde la dimensión territorial (data/config/territorio_municipios.json)."""
+        datos = json.loads(self.config_mun_file.read_text(encoding="utf-8"))
+        return {m["divipola"]: {"nombre": m["nombre"], "depto": m["departamento"]} for m in datos["municipios"]}
 
     def _consultar_emergencias_socrata(self) -> Optional[List[Dict[str, Any]]]:
         """Consulta eventos recientes de sequía o desabastecimiento en datos.gov.co."""

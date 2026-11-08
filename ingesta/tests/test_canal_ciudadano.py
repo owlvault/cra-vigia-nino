@@ -33,7 +33,7 @@ def _municipio(div, nombre, depto, cod, nivel, **inds):
 
 def _corte(**md):
     meta = {"fecha_corte": "2026-11-08", "estado_calidad": "PUBLICADO_VALIDO",
-            "version_configuracion": "v1.1.0-20261107"}
+            "version_configuracion": "v1.2.0-20261108"}
     meta.update(md)
     ibague = _municipio("73001", "Ibagué", "Tolima", "73", "amarilla")
     ibague.update(zona_hidrografica="Alto Magdalena", subzona_hidrografica="Río Totare")

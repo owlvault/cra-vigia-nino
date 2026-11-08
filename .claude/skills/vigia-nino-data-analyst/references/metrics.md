@@ -1,6 +1,6 @@
 # Métricas — Vigía El Niño · Acueductos
 
-Parámetros vigentes: `data/config/parametros_icr.json` (versión `v1.1.0-20261107`). Si cambian, manda la config, no este documento.
+Parámetros vigentes: `data/config/parametros_icr.json` (versión `v1.2.0-20261108`). Si cambian, manda la config, no este documento.
 
 ## Puntaje de indicador (normalización 0-100)
 
@@ -19,7 +19,8 @@ Parámetros vigentes: `data/config/parametros_icr.json` (versión `v1.1.0-202611
 | S-4 IANC (%) | 20 | 30 | 40 | 50 | 70 |
 | S-5 Variación de PQR (%) | 0 | 25 | 50 | 100 | 300 |
 
-- **Categóricos H-2/H-3**: muy bajo 0, bajo 15, moderado/medio 40, alto 65, muy alto 90. Una categoría desconocida da `null`.
+- **Categóricos H-2/H-3**: muy bajo 0, bajo 15, moderado/medio 40, alto 65, muy alto 90, crítico 100 (solo IUA ENA 2014; ASUNCIÓN Q-IND-04, desde `v1.2.0`). Una categoría desconocida da `null`.
+- **A-3 (desde `v1.2.0`)**: (lluvia municipal de 30 días − normal 1991-2020 prorrateada) / normal × 100. Exige 27 de 30 días con dato. **A-4**: días seguidos con lluvia municipal < 1 mm hasta el último día con dato.
 - **Binarios R-n**: R-1 con PEC = 0 y sin PEC = 100; R-2 activo = 60; R-3 activo = 80; R-4 activo = 100; inactivos = 0.
 - **Caveats**:
   - `puntaje = null` cuando `valor = null`.

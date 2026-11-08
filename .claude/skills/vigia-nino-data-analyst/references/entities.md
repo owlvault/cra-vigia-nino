@@ -44,7 +44,7 @@
 - **Llave**: `fecha_corte` (AAAA-MM-DD, UTC).
 - **Archivos**: `data/oro/corte_AAAA-MM-DD.json` (histórico) y `corte_vigente.json` (último publicado). Los rechazados están en `data/oro/rechazados/`.
 - **Estados**: `PUBLICADO_VALIDO` o `RECHAZADO` (con `motivos_rechazo`).
-- **Versión**: `metadata_corte.version_configuracion` (`v1.0.0-20261008` hasta el 06-nov; `v1.1.0-20261107` después).
+- **Versión**: `metadata_corte.version_configuracion` (`v1.0.0-20261008` hasta el 06-nov; `v1.1.0-20261107` el 07-nov, con H-4 de la spec; `v1.2.0-20261108` desde el 08-nov, con mediciones del IDEAM y la categoría «Crítico»).
 
 ## Semana
 

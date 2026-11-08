@@ -64,10 +64,12 @@ Cada indicador cuantitativo del ICR tiene 5 puntos de quiebre. El valor en el pu
 
 Indicadores categóricos:
 
-| Código | Muy bajo | Bajo | Moderado / Medio | Alto | Muy alto |
-|---|---|---|---|---|---|
-| H-2 | 0 | 15 | 40 | 65 | 90 |
-| H-3 | 0 | 15 | 40 | 65 | 90 |
+| Código | Muy bajo | Bajo | Moderado / Medio | Alto | Muy alto | Crítico |
+|---|---|---|---|---|---|---|
+| H-2 | 0 | 15 | 40 | 65 | 90 | — |
+| H-3 | 0 | 15 | 40 | 65 | 90 | 100 |
+
+> **ASUNCIÓN (sin validar):** El Índice de Uso del Agua en año seco del ENA 2014 tiene la categoría «Crítico», por encima de «Muy alto». Se le asigna 100 (extremo de la escala) para que una subzona crítica no quede como `sin_dato` (Q-IND-04). Fuentes vigentes: H-2 = IVH año seco por subzona, ENA 2010; H-3 = IUA año seco por subzona, ENA 2014 (servicio `Indicadores_Hidricos` del IDEAM), en la subzona que contiene la cabecera.
 
 Binarios (R-n): ver RF-ICR-03.
 
@@ -93,6 +95,8 @@ Escenario: Continuidad con dato de dos meses atrás
 El sistema DEBE calcular la línea base de A-3 como la media de la precipitación acumulada en la misma ventana de 30 días del calendario para los años 1991-2020 de cada municipio. SI hay menos de 15 años con dato, ENTONCES A-3 es `sin_dato`.
 
 > **ASUNCIÓN (sin validar):** Periodo de referencia 1991-2020 (normal climatológica OMM vigente). Confirmar con IDEAM qué normal usa en sus boletines.
+
+> **Implementación v1 (2026-11-08):** la red automática del IDEAM en datos abiertos (`s54a-sgyg`) solo tiene datos desde 2003 y, en la ventana de 30 días, pocas estaciones superan 15 años en 1991-2020 (Riohacha: 5). Por eso la línea base es la **normal climatológica oficial 1991-2020 del IDEAM** (`nsz2-kzcq`, Directriz OMM 1203), mensual y prorrateada por los días de cada mes de la ventana, promediada por municipio con la regla RF-TER-04. La lluvia observada exige 27 de 30 días con dato municipal. Parámetros en `data/config/parametros_ideam.json`.
 
 ```gherkin
 Escenario: Déficit del 50 %
@@ -156,6 +160,7 @@ Indicadores de alcantarillado y aseo (RES-03). Pronósticos de lluvia a futuro c
 | Q-IND-01 | ¿Existe fuente oficial de almacenamiento y demanda por sistema para H-4? Si no, H-4 queda `sin_dato` y su peso se redistribuye | H-4 | CRA / SSPD |
 | Q-IND-02 | ¿Quién valida los umbrales y con qué datos históricos? | Estado `validado` | CRA – Subdirección de Regulación |
 | Q-IND-03 | ¿Incluir la predicción climática mensual de IDEAM como indicador A-6? | — | Camilo |
+| Q-IND-04 | ¿Qué puntaje corresponde a la categoría «Crítico» del IUA (ENA 2014)? Se asumió 100 | H-3 | CRA / IDEAM |
 
 ## Historial
 

@@ -139,8 +139,9 @@ WHERE f.estado_dato <> 'sin_dato'      -- equivale a valor IS NOT NULL (hay CHEC
 | Fuente | Indicadores | Periodo esperado | Estado real (nov-2026) |
 |---|---|---|---|
 | NOAA CPC | A-1, NINO*_SSTA, ONI | semanal / trimestral | Al día (semana del 28-oct) |
-| IDEAM | A-3, A-4, H-1 | diario | ⚠️ Catálogo estático en `config`; la fecha avanza con el corte, pero el valor no cambia |
-| IDEAM ENA | H-2, H-3 | estático | Edición 2022 |
+| IDEAM (red automática + normales 1991-2020) | A-3, A-4 | diario | Mediciones reales desde el 2026-11-08 (día anterior al corte). Antes de esa fecha, los cortes usaban un catálogo estático |
+| IDEAM | H-1 | diario | `sin_dato` en todos: falta el vínculo municipio–fuente abastecedora (RF-TER-05, Q-TER-03) |
+| IDEAM ENA | H-2 (ENA 2010), H-3 (ENA 2014) | estático | Categoría de la subzona de la cabecera; H-3 puede valer «Crítico» |
 | SUI (SSPD) | H-4, S-1, S-3…S-6, R-1 | mensual / anual | Extracto del periodo 2026-08 |
 | SIVICAP (INS) | S-2 | mensual | Dato **anual 2024** |
 | UNGRD / MinVivienda | R-2, R-3, R-4 | diario | Registro manual verificado el 2026-10-14 |
@@ -204,7 +205,8 @@ ORDER BY f.semana_iso;
 - **Promediar ICR sin ponderar**: los agregados oficiales ponderan por población → usa `Σ(icr × poblacion) / Σ poblacion`.
 - **Leer la cobertura como % de indicadores**: `cobertura_datos_pct = 100` puede coexistir con A-5 y H-5 vacíos → para el % de indicadores con dato, cuenta `valor is not None` sobre 20.
 - **Comparar cortes de versiones distintas**: los cortes del 08 y 09-oct se calcularon antes de la corrección del 14-oct (153 de 460 celdas cambiaron con la misma `version_configuracion`). La v1.1.0 cambió los quiebres de H-4 → revisa `version_configuracion` antes de comparar ICR entre fechas y advierte la ruptura.
-- **Tomar A-3, A-4 o H-1 como medición diaria**: hoy son constantes de un catálogo → no infieras tendencias de ellos.
+- **Mezclar cortes antes y después del 2026-11-08 para A-3, A-4, H-1, H-2 o H-3**: hasta `v1.1.0` eran constantes de un catálogo; desde `v1.2.0` son mediciones del IDEAM y H-1 es `sin_dato`. El ICR nacional cae de 41,8 a 34,6 por ese cambio, no por una mejora del riesgo → no compares ni grafiques a través de esa ruptura sin advertirla.
+- **A-4 con `nota`**: si el indicador trae «Al menos N días», el conteo se detuvo en un día sin dato; es una cota inferior.
 - **Confundir `semana_actual` con `semana_vigente`** en el corte semanal: la primera es la última semana con datos; la segunda, la última semana cerrada y publicada.
 - **Ver R-2, R-3 o R-4 = 0 como «sin emergencia»**: solo es 0 si la ausencia está verificada; si no hay registro, el valor es `null`.
 

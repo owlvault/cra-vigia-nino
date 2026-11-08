@@ -1,15 +1,23 @@
 {
-  "version": "v0.1.0-20261107",
+  "version": "v0.2.0-20261108",
   "descripcion": "Configuración del canal ciudadano (specs/canal-ciudadano.md, ADR-0006). Lista blanca, etiquetas y textos en lenguaje claro.",
   "condiciones_exposicion": {
     "clasificacion_informacion_publica": false,
     "nota_clasificacion": "C-CIU-01: cambiar a true solo cuando la Oficina de Planeación y TIC CRA clasifique esta información como pública (Q-SEG-01, Ley 1712 de 2014).",
     "textos_aprobados": false,
     "nota_textos": "C-CIU-02: cambiar a true cuando la Oficina de Comunicaciones CRA apruebe los textos de este archivo (Q-CIU-02).",
-    "version_minima_configuracion_icr": "v1.1.0-20261107",
-    "nota_version_minima": "C-CIU-03: los cortes anteriores a esta versión registraban R-2/R-3/R-4 = 0 sin verificación; mostrarlos como 'No, verificado' sería falso."
+    "version_minima_configuracion_icr": "v1.2.0-20261108",
+    "nota_version_minima": "C-CIU-03: antes de v1.1.0 los cortes registraban R-2/R-3/R-4 = 0 sin verificación; antes de v1.2.0, A-3, A-4 y H-1 salían de un catálogo estático y no de mediciones del IDEAM. Mostrar el nivel de esos cortes al público sería falso."
   },
-  "lista_blanca": ["nivel_riesgo", "calidad_agua", "horas_servicio", "racionamiento", "calamidad_publica", "embalses", "estado_el_nino"],
+  "lista_blanca": [
+    "nivel_riesgo",
+    "calidad_agua",
+    "horas_servicio",
+    "racionamiento",
+    "calamidad_publica",
+    "embalses",
+    "estado_el_nino"
+  ],
   "etiquetas_nivel_riesgo": {
     "sin_alerta": "Bajo",
     "amarilla": "Medio",
@@ -46,11 +54,26 @@
     "CRA": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)"
   },
   "bandas_irca": [
-    {"hasta": 5.0, "texto": "Sin riesgo"},
-    {"hasta": 14.0, "texto": "Riesgo bajo"},
-    {"hasta": 35.0, "texto": "Riesgo medio"},
-    {"hasta": 80.0, "texto": "Riesgo alto"},
-    {"hasta": 100.0, "texto": "Inviable sanitariamente"}
+    {
+      "hasta": 5.0,
+      "texto": "Sin riesgo"
+    },
+    {
+      "hasta": 14.0,
+      "texto": "Riesgo bajo"
+    },
+    {
+      "hasta": 35.0,
+      "texto": "Riesgo medio"
+    },
+    {
+      "hasta": 80.0,
+      "texto": "Riesgo alto"
+    },
+    {
+      "hasta": 100.0,
+      "texto": "Inviable sanitariamente"
+    }
   ],
   "nota_bandas_irca": "Res. 2115 de 2007 (MinProtección/MAVDT): 0-5 sin riesgo; 5,1-14 bajo; 14,1-35 medio; 35,1-80 alto; 80,1-100 inviable sanitariamente.",
   "dias_max_dato_semanal_sin_advertencia": 14

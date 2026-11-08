@@ -118,7 +118,7 @@ ORDER BY h.icr DESC;
 1. **Ruptura metodológica del 14-oct**: los cortes 10-08 y 10-09 dan un ICR nacional de 49,4, y el 10-14 da 39,3 con la misma versión. Cambió el 33 % de las celdas.
    - Mal: graficar la caída como mejora del riesgo.
    - Bien: separar las series o anotar la corrección.
-2. **A-3, A-4 y H-1 no son series diarias**: valen lo mismo en todos los cortes desde el 14-oct (catálogo estático en `config`).
+2. **A-3, A-4 y H-1 antes del 2026-11-08 no son mediciones**: hasta la configuración `v1.1.0` salían de un catálogo estático (iguales en todos los cortes). Desde `v1.2.0`, A-3 y A-4 son mediciones del IDEAM y H-1 es `sin_dato`; H-2/H-3 pasaron a ENA 2010/2014 (cambian de categoría en varios municipios).
 3. **S-2 es anual 2024** aunque el periodo esperado sea mensual. Siempre marca su frescura.
 4. **H-2/H-3 son texto**: `df["valor"].astype(float)` falla. Separa los categóricos.
 5. **Los cortes anteriores al 2026-11-07 no tienen `frescura`, `motivos_rechazo` ni el arreglo de `sin_dato`**: allí R-2/R-3/R-4 = 0 puede significar «sin registro».

@@ -59,7 +59,7 @@ Hallazgos nuevos durante la corrección:
 
 Pendientes y decisiones:
 - **Decisión CRA:** regla de vigencia máxima (`multiplicador_sin_dato`) implementada pero desactivada. Con N = 3 y los periodos de la spec, quedan fuera H-4, S-2 y la capa R completa, y el ICR nacional sube de 39,3 a 51,0.
-- **Hallazgo 1** (A-3, A-4 y H-1 desde un catálogo estático): requiere conectar mediciones reales de IDEAM.
+- ~~**Hallazgo 1**~~ (A-3, A-4 y H-1 desde un catálogo estático): **corregido el 2026-11-08**. A-3 y A-4 salen de la red automática de precipitación del IDEAM y de las normales 1991-2020; H-2 y H-3 del ENA (2010 y 2014) por subzona; H-1 queda `sin_dato` por RF-TER-05 hasta resolver Q-TER-03. Se retiró `catalogo_municipios_ideam.json`. Con las mediciones reales el ICR nacional baja de 41,8 a 34,6 y los municipios en rojo pasan de 4 a 1: el catálogo inflaba el riesgo (p. ej. «48 días sin lluvia» en Uribia, donde llovió 19 mm el 7 de noviembre).
 - **Hallazgos 4 y 6–8, 11–15:** sin cambios.
 
 ## Prioridades recomendadas

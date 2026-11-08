@@ -1,197 +1,200 @@
 """
-Conector Oficial IDEAM (Variables Hidrometeorológicas y Estudio Nacional del Agua)
-Fuentes: FTE-IDEAM-PREC, FTE-IDEAM-CAUD, FTE-IDEAM-ENA
+Conector oficial IDEAM — mediciones de precipitación y Estudio Nacional del Agua
+Fuentes: FTE-IDEAM-PREC, FTE-IDEAM-ENA (FTE-IDEAM-CAUD pendiente, ver H-1)
 Indicadores:
-- A-3: Anomalía de precipitación 30 días (%)
-- A-4: Días consecutivos sin lluvia (días)
-- H-1: Caudal de la fuente abastecedora (%)
-- H-2: Índice de Vulnerabilidad Hídrica en año seco (ENA)
-- H-3: Índice de Uso del Agua en año seco (ENA)
+- A-3: anomalía de precipitación 30 días (%)          — red automática + normales 1991-2020
+- A-4: días consecutivos sin lluvia (< 1 mm)           — red automática
+- H-1: caudal de la fuente abastecedora                — sin_dato (RF-TER-05, Q-TER-03)
+- H-2: vulnerabilidad hídrica en año seco (ENA 2010)   — subzona de la cabecera
+- H-3: uso del agua en año seco (ENA 2014)             — subzona de la cabecera
 
-Cumplimiento:
-- Sin diccionarios hardcodeados en código (CA-01)
-- Evaluación de los 23 municipios maestros incluyendo Tuta (15837) (Hallazgo H-03)
-- Consulta a datos abiertos / DHIME y respaldo en data/config/catalogo_municipios_ideam.json
+Reemplaza el catálogo estático anterior (hallazgo 1 de la auditoría): todo
+valor sale de consultas a servicios oficiales del IDEAM, cuyo crudo se guarda
+en bronce. Parámetros y URLs en data/config/parametros_ideam.json; estaciones
+por municipio en data/config/estaciones_ideam.json.
 """
 
-import json
-import glob
 import hashlib
+import json
 import logging
-import urllib.request
+import time
 import urllib.parse
-from typing import Dict, Any, List, Optional
-from datetime import datetime, timezone
-from pathlib import Path
-from ingesta.conector_base import ConectorBase, CapturaResultado
+import urllib.request
+from datetime import date, datetime, timedelta, timezone
+from typing import Any, Dict, List, Optional, Tuple
+
+from ingesta.clima import precipitacion_municipal as pm
+from ingesta.conector_base import CapturaResultado, ConectorBase
 
 logger = logging.getLogger("ConectorIDEAM")
 
+
 class ConectorIDEAM(ConectorBase):
+    TAMANO_LOTE_ESTACIONES = 40
+
     def __init__(self, base_dir: Optional[str] = None):
         super().__init__(
             id_fuente="FTE-IDEAM-CLIMA",
-            nombre_fuente="Precipitación, Caudales e Índices ENA del IDEAM",
+            nombre_fuente="Precipitación y Estudio Nacional del Agua del IDEAM",
             entidad="Instituto de Hidrología, Meteorología y Estudios Ambientales (IDEAM)",
             base_dir=base_dir
         )
-        self.config_ideam_file = self.root_dir / "data" / "config" / "catalogo_municipios_ideam.json"
-        self.socrata_url = "https://www.datos.gov.co/resource/s54a-sgyg.json"
+        cfg = self.root_dir / "data" / "config"
+        self.conf = json.loads((cfg / "parametros_ideam.json").read_text(encoding="utf-8"))
+        self.estaciones = json.loads((cfg / "estaciones_ideam.json").read_text(encoding="utf-8"))
+        self.territorio = json.loads((cfg / "territorio_municipios.json").read_text(encoding="utf-8"))["municipios"]
 
-    def _cargar_catalogo_base(self) -> Dict[str, Any]:
-        """Carga el catálogo maestro de 23 municipios desde archivo de configuración."""
-        if self.config_ideam_file.exists():
-            try:
-                datos = json.loads(self.config_ideam_file.read_text(encoding="utf-8"))
-                return datos.get("municipios", {})
-            except Exception as e:
-                logger.warning(f"Error leyendo catalogo_municipios_ideam.json: {e}")
-        return {}
+    # ------------------------------------------------------------------ red
+    def _get_json(self, url: str, params: Dict[str, str], timeout: int = 180) -> Any:
+        req = urllib.request.Request(f"{url}?{urllib.parse.urlencode(params)}",
+                                     headers={"User-Agent": self.USER_AGENT, "Accept": "application/json"})
+        with urllib.request.urlopen(req, context=self.ssl_context, timeout=timeout) as r:
+            return json.loads(r.read().decode("utf-8"))
 
-    def _consultar_estaciones_socrata(self) -> Optional[List[Dict[str, Any]]]:
-        """Consulta observaciones recientes de estaciones en datos.gov.co."""
-        try:
-            q = {
-                "$select": "departamento, valorobservado, fechaobservacion",
-                "$where": "valorobservado >= 0",
-                "$order": "fechaobservacion DESC",
-                "$limit": 100
-            }
-            url = f"{self.socrata_url}?{urllib.parse.urlencode(q)}"
-            req = urllib.request.Request(url, headers={"User-Agent": self.USER_AGENT, "Accept": "*/*"})
-            with urllib.request.urlopen(req, context=self.ssl_context, timeout=8) as r:
-                return json.loads(r.read().decode("utf-8"))
-        except Exception as e:
-            logger.info(f"Consulta en vivo a Socrata IDEAM omitida o con timeout ({e}); usando base oficial verificada.")
-            return None
+    def consultar_diarios(self, codigos: List[str], desde: date, hasta: date) -> List[List[Any]]:
+        """Lluvia diaria por estación: [código, 'AAAA-MM-DD', mm, n_registros]."""
+        f = self.conf["fuentes"]["precipitacion_10min"]
+        filas: List[List[Any]] = []
+        for i in range(0, len(codigos), self.TAMANO_LOTE_ESTACIONES):
+            lote = ",".join(f"'{c}'" for c in codigos[i:i + self.TAMANO_LOTE_ESTACIONES])
+            res = self._get_json(f["url"], {
+                "$select": "codigoestacion, date_trunc_ymd(fechaobservacion) as dia, "
+                           "sum(valorobservado) as mm, count(*) as n",
+                "$where": (f"codigoestacion in ({lote}) AND codigosensor='{f['codigo_sensor']}' "
+                           f"AND fechaobservacion between '{desde.isoformat()}T00:00:00' "
+                           f"and '{hasta.isoformat()}T23:59:59'"),
+                "$group": "codigoestacion, dia", "$limit": "50000"})
+            filas += [[r["codigoestacion"], r["dia"][:10], round(float(r["mm"]), 2), int(r["n"])] for r in res]
+        return filas
 
-    def _puntaje_categorico_ena(self, categoria: Optional[str]) -> Optional[float]:
-        """Normalización de H-2 e H-3 según specs/indicadores.md y specs/indice-riesgo.md RF-ICR-02."""
-        mapa = {
-            "Muy Bajo": 0.0,
-            "Bajo": 15.0,
-            "Moderado": 40.0,
-            "Medio": 40.0,
-            "Alto": 65.0,
-            "Muy Alto": 90.0
-        }
-        return mapa.get(categoria) if isinstance(categoria, str) else None
+    def consultar_normales(self, codigos: List[str]) -> Dict[str, Dict[str, float]]:
+        f = self.conf["fuentes"]["normales_climatologicas"]
+        res = self._get_json(f["url"], {"$where": f"periodo='{f['periodo']}' AND par_metro='{f['parametro']}'",
+                                        "$limit": "50000"})
+        buscados = set(codigos)
+        normales = {}
+        for r in res:
+            if r["c_digo"] in buscados:
+                normales[r["c_digo"]] = {m: float(r[m]) for m in pm.MESES_NORMAL if r.get(m) not in (None, "")}
+        return normales
 
-    def _normalizar_a3_precipitacion(self, anomalia_pct: float) -> float:
-        """
-        Normalización A-3 (Anomalía 30d):
-        Dirección: ↓ (riesgo sube cuando anomalia es más negativa).
-        Puntos: 0% -> 0; -20% -> 40; -40% -> 60; -60% -> 75; -90% -> 100.
-        """
-        if anomalia_pct >= 0:
-            return 0.0
-        elif anomalia_pct >= -20.0:
-            return round((abs(anomalia_pct) / 20.0) * 40.0, 2)
-        elif anomalia_pct >= -40.0:
-            return round(40.0 + ((abs(anomalia_pct) - 20.0) / 20.0) * 20.0, 2)
-        elif anomalia_pct >= -60.0:
-            return round(60.0 + ((abs(anomalia_pct) - 40.0) / 20.0) * 15.0, 2)
-        elif anomalia_pct >= -90.0:
-            return round(75.0 + ((abs(anomalia_pct) - 60.0) / 30.0) * 25.0, 2)
-        else:
-            return 100.0
+    def consultar_ena(self, lat: float, lon: float, clave: str) -> Optional[str]:
+        f = self.conf["fuentes"][clave]
+        res = self._get_json(f"{f['url']}/query", {
+            "geometry": f"{lon},{lat}", "geometryType": "esriGeometryPoint",
+            "inSR": str(self.conf["fuentes"]["sistema_referencia"]), "spatialRel": "esriSpatialRelIntersects",
+            "outFields": f["campo_categoria"], "returnGeometry": "false", "f": "json"}, timeout=60)
+        if "error" in res:
+            raise RuntimeError(f"IDEAM respondió error en {clave}: {res['error']}")
+        feats = res.get("features", [])
+        return feats[0]["attributes"][f["campo_categoria"]] if len(feats) == 1 else None
 
-    def _normalizar_a4_dias_secos(self, dias: int) -> float:
-        """
-        Normalización A-4 (Días secos consecutivos):
-        Dirección: ↑ (riesgo sube cuando dias sube).
-        Puntos: 0d -> 0; 10d -> 40; 20d -> 60; 30d -> 75; 60d -> 100.
-        """
-        if dias <= 0:
-            return 0.0
-        elif dias <= 10:
-            return round((dias / 10.0) * 40.0, 2)
-        elif dias <= 20:
-            return round(40.0 + ((dias - 10) / 10.0) * 20.0, 2)
-        elif dias <= 30:
-            return round(60.0 + ((dias - 20) / 10.0) * 15.0, 2)
-        elif dias <= 60:
-            return round(75.0 + ((dias - 30) / 30.0) * 25.0, 2)
-        else:
-            return 100.0
+    # ------------------------------------------------------------- cálculo
+    def calcular_municipio(self, divipola: str, diarios: Dict[str, Dict[date, Tuple[float, int]]],
+                           normales: Dict[str, Dict[str, float]], hasta: date) -> Dict[str, Any]:
+        p = self.conf["precipitacion"]
+        asign = self.estaciones["municipios"][divipola]
+        dias = [hasta - timedelta(days=k) for k in range(p["dias_historia_consulta"])]
+        min_reg = int(p["registros_por_dia_completo"] * p["fraccion_minima_registros_dia"])
+        max_reg = int(p["registros_por_dia_completo"] * p["fraccion_maxima_registros_dia"])
 
-    def _normalizar_h1_caudal(self, caudal_pct: float) -> float:
-        """
-        Normalización H-1 (Caudal %):
-        Dirección: ↓ (riesgo sube cuando caudal cae).
-        Puntos: 100% -> 0; 70% -> 40; 50% -> 60; 30% -> 75; 10% -> 100.
-        """
-        if caudal_pct >= 100.0:
-            return 0.0
-        elif caudal_pct >= 70.0:
-            return round(((100.0 - caudal_pct) / 30.0) * 40.0, 2)
-        elif caudal_pct >= 50.0:
-            return round(40.0 + ((70.0 - caudal_pct) / 20.0) * 20.0, 2)
-        elif caudal_pct >= 30.0:
-            return round(60.0 + ((50.0 - caudal_pct) / 20.0) * 15.0, 2)
-        elif caudal_pct >= 10.0:
-            return round(75.0 + ((30.0 - caudal_pct) / 20.0) * 25.0, 2)
-        else:
-            return 100.0
+        serie = pm.serie_municipal(diarios, asign["automaticas"]["dentro"], asign["automaticas"]["cercanas_km"],
+                                   dias, min_reg, p["estaciones_idw"], p["potencia_idw"], max_reg)
+        fin = pm.ultimo_dia_con_dato(serie, hasta, p["dias_maximos_sin_dato_reciente"])
+        res: Dict[str, Any] = {"fecha_dato": fin.isoformat() if fin else None, "a4": None, "a4_cota_inferior": None,
+                               "a3": None, "lluvia_30d_mm": None, "normal_30d_mm": None, "dias_validos_30d": 0}
+        if fin is None:
+            return res
 
+        res["a4"], res["a4_cota_inferior"] = pm.dias_consecutivos_secos(serie, fin, p["umbral_dia_seco_mm"])
+
+        # Línea base: normal municipal (misma regla RF-TER-04 sobre la red de normales)
+        n_dentro = [normales[c] for c in asign["normales"]["dentro"] if c in normales]
+        n_cerca = [(d, normales[c]) for c, d in asign["normales"]["cercanas_km"].items() if c in normales]
+        base = None
+        if n_dentro or len(n_cerca) >= p["estaciones_idw"]:
+            meses = {}
+            for mes in pm.MESES_NORMAL:
+                val, _ = pm.valor_municipal([n[mes] for n in n_dentro if mes in n],
+                                            [(d, n[mes]) for d, n in n_cerca if mes in n],
+                                            p["estaciones_idw"], p["potencia_idw"])
+                if val is not None:
+                    meses[mes] = val
+            base = pm.normal_ventana(meses, fin, p["dias_ventana_anomalia"])
+        res["a3"], res["lluvia_30d_mm"], res["dias_validos_30d"] = pm.anomalia_30d(
+            serie, fin, p["dias_ventana_anomalia"], p["dias_validos_minimos_ventana"], base)
+        res["normal_30d_mm"] = round(base, 1) if base else None
+        return res
+
+    # ------------------------------------------------------------- captura
     def ejecutar_captura(self) -> CapturaResultado:
-        municipios_base = self._cargar_catalogo_base()
-        self._consultar_estaciones_socrata()
+        ahora = datetime.now(timezone.utc)
+        hasta = ahora.date() - timedelta(days=1)  # último día completo
+        desde = hasta - timedelta(days=self.conf["precipitacion"]["dias_historia_consulta"] - 1)
+
+        auto = sorted({c for v in self.estaciones["municipios"].values()
+                       for c in v["automaticas"]["dentro"] + list(v["automaticas"]["cercanas_km"])})
+        norm = sorted({c for v in self.estaciones["municipios"].values()
+                       for c in v["normales"]["dentro"] + list(v["normales"]["cercanas_km"])})
+        filas = self.consultar_diarios(auto, desde, hasta)
+        normales = self.consultar_normales(norm)
+        ena = {}
+        for m in self.territorio:
+            ena[m["divipola"]] = {"h2_ivh_ano_seco": self.consultar_ena(m["lat"], m["lon"], "ena_h2_ivh_ano_seco"),
+                                  "h3_iua_ano_seco": self.consultar_ena(m["lat"], m["lon"], "ena_h3_iua_ano_seco")}
+            time.sleep(0.2)
+
+        diarios: Dict[str, Dict[date, Tuple[float, int]]] = {}
+        for cod, dia, mm, n in filas:
+            diarios.setdefault(cod, {})[date.fromisoformat(dia)] = (mm, n)
+
+        datos: Dict[str, Any] = {}
+        resumen: Dict[str, Any] = {}
+        f_ena2 = self.conf["fuentes"]["ena_h2_ivh_ano_seco"]["fecha_dato"]
+        f_ena3 = self.conf["fuentes"]["ena_h3_iua_ano_seco"]["fecha_dato"]
+        for m in self.territorio:
+            div = m["divipola"]
+            c = self.calcular_municipio(div, diarios, normales, hasta)
+            datos[div] = {
+                "divipola": div, "nombre_municipio": m["nombre"],
+                "indicador_a3_anomalia_precip_pct": c["a3"],
+                "indicador_a4_dias_sin_lluvia": c["a4"],
+                "indicador_h1_caudal_pct": None,  # RF-TER-05: sin vínculo fuente abastecedora–estación (Q-TER-03)
+                "indicador_h2_ivh_ena": ena[div]["h2_ivh_ano_seco"],
+                "indicador_h3_iua_ena": ena[div]["h3_iua_ano_seco"],
+                "fecha_dato": c["fecha_dato"], "fecha_dato_h2": f_ena2, "fecha_dato_h3": f_ena3,
+                "a4_cota_inferior": c["a4_cota_inferior"], "lluvia_30d_mm": c["lluvia_30d_mm"],
+                "normal_30d_mm": c["normal_30d_mm"], "dias_validos_30d": c["dias_validos_30d"],
+                "fuente": "IDEAM (red automática, normales 1991-2020, ENA)",
+            }
+            # Resumen con los nombres de campo que reconcilia el auditor de veracidad
+            resumen[div] = {"nombre": m["nombre"], "anomalia_precip_pct": c["a3"], "dias_sin_lluvia": c["a4"],
+                            "caudal_fuente_pct": None, "ivh_ena": ena[div]["h2_ivh_ano_seco"],
+                            "iua_ena": ena[div]["h3_iua_ano_seco"], "fecha_dato": c["fecha_dato"]}
 
         snapshot = {
-            "fuente": "IDEAM DHIME / ENA",
-            "url_origen": self.socrata_url,
-            "fecha_reporte": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
-            "fecha_captura": datetime.now(timezone.utc).isoformat(),
-            "total_municipios": len(municipios_base),
-            "municipios": municipios_base
+            "fuente": "IDEAM — red automática de precipitación, normales climatológicas 1991-2020 y ENA",
+            "consultas": {k: self.conf["fuentes"][k]["url"] for k in
+                          ("precipitacion_10min", "normales_climatologicas", "ena_h2_ivh_ano_seco", "ena_h3_iua_ano_seco")},
+            "ventana": {"desde": desde.isoformat(), "hasta": hasta.isoformat()},
+            "fecha_reporte": ahora.strftime("%Y-%m-%d"),
+            "fecha_captura": ahora.isoformat(),
+            "version_parametros": self.conf["version"],
+            "crudo": {"diarios_campos": ["codigoestacion", "dia", "mm", "n_registros"], "diarios": filas,
+                      "normales_1991_2020": normales, "ena_por_cabecera": ena},
+            "total_municipios": len(resumen),
+            "municipios": resumen,
         }
+        contenido = json.dumps(snapshot, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+        hash_sha256 = hashlib.sha256(contenido).hexdigest()
+        ruta = self.guardar_en_bronce(contenido, "json", hash_sha256)
 
-        contenido_bytes = json.dumps(snapshot, indent=2, ensure_ascii=False).encode("utf-8")
-        hash_sha256 = hashlib.sha256(contenido_bytes).hexdigest()
-
-        ruta_archivo = self.guardar_en_bronce(contenido_bytes, "json", hash_sha256)
-
-        # Procesar y normalizar a escala municipal para los 23 municipios
-        datos_ideam_por_divipola: Dict[str, Any] = {}
-        for divipola, m in municipios_base.items():
-            # Campo ausente => None (sin_dato); nunca un valor o categoría supuestos
-            anomalia = float(m["anomalia_precip_pct"]) if m.get("anomalia_precip_pct") is not None else None
-            dias_secos = int(m["dias_sin_lluvia"]) if m.get("dias_sin_lluvia") is not None else None
-            caudal = float(m["caudal_fuente_pct"]) if m.get("caudal_fuente_pct") is not None else None
-            ivh = m.get("ivh_ena")
-            iua = m.get("iua_ena")
-
-            puntaje_a3 = self._normalizar_a3_precipitacion(anomalia) if anomalia is not None else None
-            puntaje_a4 = self._normalizar_a4_dias_secos(dias_secos) if dias_secos is not None else None
-            puntaje_h1 = self._normalizar_h1_caudal(caudal) if caudal is not None else None
-            puntaje_h2 = self._puntaje_categorico_ena(ivh)
-            puntaje_h3 = self._puntaje_categorico_ena(iua)
-
-            datos_ideam_por_divipola[divipola] = {
-                "divipola": divipola,
-                "nombre_municipio": m["nombre"],
-                "indicador_a3_anomalia_precip_pct": anomalia,
-                "indicador_a4_dias_sin_lluvia": dias_secos,
-                "indicador_h1_caudal_pct": caudal,
-                "indicador_h2_ivh_ena": ivh,
-                "indicador_h3_iua_ena": iua,
-                "puntaje_a3": puntaje_a3,
-                "puntaje_a4": puntaje_a4,
-                "puntaje_h1": puntaje_h1,
-                "puntaje_h2": puntaje_h2,
-                "puntaje_h3": puntaje_h3,
-                "fuente": "IDEAM (DHIME / ENA)",
-                "fecha_dato": snapshot["fecha_reporte"]
-            }
-
+        con_a4 = sum(1 for d in datos.values() if d["indicador_a4_dias_sin_lluvia"] is not None)
+        con_a3 = sum(1 for d in datos.values() if d["indicador_a3_anomalia_precip_pct"] is not None)
         return CapturaResultado(
-            id_fuente=self.id_fuente,
-            estado="exitosa",
-            hash_sha256=hash_sha256,
-            bytes_descargados=len(contenido_bytes),
-            filas_procesadas=len(municipios_base),
-            ruta_archivo_bronce=str(ruta_archivo),
-            mensaje=f"Captura exitosa de {len(municipios_base)} municipios desde IDEAM (incluyendo Tuta 15837)",
-            datos_extraidos=datos_ideam_por_divipola
+            id_fuente=self.id_fuente, estado="exitosa", hash_sha256=hash_sha256,
+            bytes_descargados=len(contenido), filas_procesadas=len(filas), ruta_archivo_bronce=str(ruta),
+            mensaje=(f"IDEAM: {len(filas)} días-estación de {len(auto)} estaciones; "
+                     f"A-4 en {con_a4}/{len(datos)} y A-3 en {con_a3}/{len(datos)} municipios"),
+            datos_extraidos=datos,
         )

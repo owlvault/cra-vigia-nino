@@ -1,0 +1,5090 @@
+{
+  "descripcion": "Estaciones IDEAM por municipio: dentro del polígono municipal y cercanas a la cabecera (RF-TER-04).",
+  "regla": "Contención en el polígono municipal del IDEAM; cercanas = a menos de 50 km de la cabecera DANE.",
+  "fuentes": {
+    "precipitacion_10min": "https://www.datos.gov.co/resource/s54a-sgyg.json",
+    "normales_climatologicas": "https://www.datos.gov.co/resource/nsz2-kzcq.json",
+    "municipios_poligonos": "https://visualizador.ideam.gov.co/gisserver/rest/services/Entidades_Territoriales/MapServer/2"
+  },
+  "generado_en": "2026-11-08T23:49:55.330642+00:00",
+  "generado_por": "ingesta/territorio/estaciones_ideam.py",
+  "estaciones": {
+    "automaticas": {
+      "0022070030": {
+        "nombre": "SANTA HELENA [22070030]",
+        "lat": 4.124555556,
+        "lon": -75.49952778
+      },
+      "0021085030": {
+        "nombre": "SAN RAFAEL [21085030]",
+        "lat": 2.76,
+        "lon": -75.58
+      },
+      "0022057010": {
+        "nombre": "PIEDRAS DE COBRE  - AUT [22057010]",
+        "lat": 3.90865,
+        "lon": -75.104
+      },
+      "0025027450": {
+        "nombre": "PLATO MAGDALENA AUT [25027450]",
+        "lat": 9.788944,
+        "lon": -74.812264
+      },
+      "1507500207": {
+        "nombre": "IPICHIRRAIN [1507500207]",
+        "lat": 11.715555556,
+        "lon": -72.214444444
+      },
+      "0014015080": {
+        "nombre": "AEROPUERTO RAFAEL NÚÑEZ - AUT [14015080]",
+        "lat": 10.44725,
+        "lon": -75.51602778
+      },
+      "0035167000": {
+        "nombre": "CORPOBOYACA - SANTA INES -AUT [35167000]",
+        "lat": 5.545,
+        "lon": -72.88411111
+      },
+      "0021205940": {
+        "nombre": "VILLA INES [21205940]",
+        "lat": 4.83211,
+        "lon": -74.38056
+      },
+      "0027015330": {
+        "nombre": "AEROPUERTO OLAYA HERRERA [27015330]",
+        "lat": 6.2246389,
+        "lon": -75.5882
+      },
+      "0021205420": {
+        "nombre": "TIBAITATA [21205420]",
+        "lat": 4.688662,
+        "lon": -74.205626
+      },
+      "0026055120": {
+        "nombre": "UNIVERSIDAD DEL VALLE  - AUT [26055120]",
+        "lat": 3.378,
+        "lon": -76.53388889
+      },
+      "0021206980": {
+        "nombre": "SANTA CRUZ DE SIECHA [21206980]",
+        "lat": 4.785022,
+        "lon": -73.870106
+      },
+      "0029015040": {
+        "nombre": "CARMEN DE BOLIVAR  - AUT [29015040]",
+        "lat": 9.71569,
+        "lon": -75.106448
+      },
+      "0026125300": {
+        "nombre": "CALARCA - AUT [26125300]",
+        "lat": 4.528305556,
+        "lon": -75.59638889
+      },
+      "0024037030": {
+        "nombre": "EL PALO - AUT [24037030]",
+        "lat": 5.681722222,
+        "lon": -73.23113889
+      },
+      "0026055100": {
+        "nombre": "FARALLONES - AUT [26055100]",
+        "lat": 3.416055556,
+        "lon": -76.6515
+      },
+      "0015085030": {
+        "nombre": "ESCUELA AGRICOLA CARRAIPIA  - AUT [15085030]",
+        "lat": 11.21675,
+        "lon": -72.35994444
+      },
+      "0027015260": {
+        "nombre": "LA SALADA [27015260]",
+        "lat": 6.048361111,
+        "lon": -75.62466667
+      },
+      "0015017030": {
+        "nombre": "MINCA  - AUT [15017030]",
+        "lat": 11.142548,
+        "lon": -74.111813
+      },
+      "0024017640": {
+        "nombre": "LA CEIBA - AUT [24017640]",
+        "lat": 6.448888889,
+        "lon": -73.30694444
+      },
+      "0021205670": {
+        "nombre": "LA FLORIDA [21205670]",
+        "lat": 4.767988,
+        "lon": -74.434235
+      },
+      "2120700146": {
+        "nombre": "UNIVERSIDAD DE LA SABANA [2120700146]",
+        "lat": 4.854528,
+        "lon": -74.040049
+      },
+      "0021201580": {
+        "nombre": "PASQUILLA [21201580]",
+        "lat": 4.44647201,
+        "lon": -74.154839
+      },
+      "0021215190": {
+        "nombre": "CAJAMARCA - AUT [21215190]",
+        "lat": 4.435666667,
+        "lon": -75.50036111
+      },
+      "2620500209": {
+        "nombre": "ACUEDUCTO ARMENIA - AUT [2620500209]",
+        "lat": 6.161666667,
+        "lon": -75.775805556
+      },
+      "0021235030": {
+        "nombre": "UNIVERSIDAD DE CUNDINAMARCA [21235030]",
+        "lat": 4.306785,
+        "lon": -74.806777
+      },
+      "0015015050": {
+        "nombre": "AEROPUERTO SIMÓN BOLÍVAR - AUT [15015050]",
+        "lat": 11.121211111,
+        "lon": -74.231447222
+      },
+      "2120500135": {
+        "nombre": "UNIVERSIDAD DE LA SABANA [2120500135]",
+        "lat": 4.85414,
+        "lon": -74.03269
+      },
+      "0021115100": {
+        "nombre": "PALACIO-VEGALARGA [21115100]",
+        "lat": 2.942638889,
+        "lon": -75.06638889
+      },
+      "0026207030": {
+        "nombre": "PUENTE IGLESIAS [26207030]",
+        "lat": 5.829944444,
+        "lon": -75.7055
+      },
+      "0024037080": {
+        "nombre": "LA GRUTA  - AUT [24037080]",
+        "lat": 5.566972222,
+        "lon": -73.04672222
+      },
+      "0024035340": {
+        "nombre": "AEROPUERTO ALBERTO LLERAS CAMARGO - AUT [24035340]",
+        "lat": 5.676944444,
+        "lon": -72.96791667
+      },
+      "0021209920": {
+        "nombre": "SANTA ROSITA [21209920]",
+        "lat": 5.105878,
+        "lon": -73.753646
+      },
+      "0025025100": {
+        "nombre": "AEROPUERTO BARACOA - AUT [2502",
+        "lat": 9.281944444,
+        "lon": -74.84527778
+      },
+      "0023190130": {
+        "nombre": "TONA  - AUT [23190130]",
+        "lat": 7.199737,
+        "lon": -72.9692
+      },
+      "0021197030": {
+        "nombre": "LA PLAYA [21197030]",
+        "lat": 4.19225,
+        "lon": -74.500722222
+      },
+      "0025027180": {
+        "nombre": "SAN ANTONIO [25027180]",
+        "lat": 9.039073,
+        "lon": -74.767704
+      },
+      "0023065120": {
+        "nombre": "LA CABRERA [23065120]",
+        "lat": 5.137887,
+        "lon": -74.136578
+      },
+      "0024010840": {
+        "nombre": "PANELAS [24010840]",
+        "lat": 5.634381111,
+        "lon": -73.38647056
+      },
+      "0024017740": {
+        "nombre": "PUENTE CHACON  - AUT [24017740]",
+        "lat": 5.677888889,
+        "lon": -73.54213889
+      },
+      "0024017600": {
+        "nombre": "MONIQUIRÁ  - AUT [24017600]",
+        "lat": 5.878138889,
+        "lon": -73.57025
+      },
+      "0021205970": {
+        "nombre": "HACIENDA SANTA ANA [21205970]",
+        "lat": 5.09046,
+        "lon": -73.88125
+      },
+      "2620500210": {
+        "nombre": "UFRANÁ - AUT [2620500210]",
+        "lat": 6.085388889,
+        "lon": -75.811972222
+      },
+      "0023195040": {
+        "nombre": "UNIVERSIDAD INDUSTRIAL SANTANDER [23195040]",
+        "lat": 7.144722222,
+        "lon": -73.12222222
+      },
+      "0024025090": {
+        "nombre": "MOGOTES - AUT [24025090]",
+        "lat": 6.47,
+        "lon": -72.96888889
+      },
+      "0023085260": {
+        "nombre": "LA SELVA [23085260]",
+        "lat": 6.131916667,
+        "lon": -75.41455556
+      },
+      "0035025080": {
+        "nombre": "PNN CHINGAZA [35025080]",
+        "lat": 4.661,
+        "lon": -73.82733
+      },
+      "0026055110": {
+        "nombre": "LA INDEPENDENCIA - AUT [26055110]",
+        "lat": 3.185361111,
+        "lon": -76.569305556
+      },
+      "0027015280": {
+        "nombre": "PARAMO BELMIRA [27015280]",
+        "lat": 6.632027778,
+        "lon": -75.64444444
+      },
+      "0035027100": {
+        "nombre": "CARAZA [35027100]",
+        "lat": 4.429173,
+        "lon": -74.010245
+      },
+      "0026185050": {
+        "nombre": "SANTA BARBARA [26185050]",
+        "lat": 5.859583333,
+        "lon": -75.55627778
+      },
+      "0027010810": {
+        "nombre": "SANTA ELENA - AUT [27010810]",
+        "lat": 6.196855556,
+        "lon": -75.516861111
+      },
+      "0023195502": {
+        "nombre": "AEROPUERTO PALONEGRO AUT [23195502]",
+        "lat": 7.121472222,
+        "lon": -73.18452778
+      },
+      "0021255170": {
+        "nombre": "MURILLO - AUT [21255170]",
+        "lat": 4.870555556,
+        "lon": -75.173277778
+      },
+      "0015075501": {
+        "nombre": "AEROPUERTO PUERTO BOLIVAR  - AUT [15075501]",
+        "lat": 12.22430556,
+        "lon": -71.98288889
+      },
+      "2620500211": {
+        "nombre": "EL PLAN - AUT [2620500211]",
+        "lat": 5.924722222,
+        "lon": -75.667380556
+      },
+      "1602500063": {
+        "nombre": "MUTISCUA - AUT [1602500063]",
+        "lat": 7.299088889,
+        "lon": -72.745761111
+      },
+      "0015065501": {
+        "nombre": "LA MINA CERREJON  - AUT [15065501]",
+        "lat": 11.13758333,
+        "lon": -72.61594444
+      },
+      "2319500207": {
+        "nombre": "SANTURBAN (EL SALADO) [2319500207]",
+        "lat": 7.335194444,
+        "lon": -72.858972222
+      },
+      "0024035410": {
+        "nombre": "SOGAMOSO - AUT [24035410]",
+        "lat": 5.72647,
+        "lon": -72.92067
+      },
+      "0023217080": {
+        "nombre": "GAMARRA - AUT [23217080]",
+        "lat": 8.284286111,
+        "lon": -73.75338889
+      },
+      "0023195110": {
+        "nombre": "LLANO GRANDE  - AUT [23195110]",
+        "lat": 7.025555556,
+        "lon": -73.16722222
+      },
+      "0028035060": {
+        "nombre": "FEDEARROZ - AUT [28035060]",
+        "lat": 10.46361111,
+        "lon": -73.24805556
+      },
+      "0023180070": {
+        "nombre": "SABANA DE TORRES - AUT [23180070]",
+        "lat": 7.39,
+        "lon": -73.48944444
+      },
+      "0026225060": {
+        "nombre": "HACIENDA COTOVE [26225060]",
+        "lat": 6.533916667,
+        "lon": -75.82733333
+      },
+      "0025027240": {
+        "nombre": "JEGUA [25027240]",
+        "lat": 8.906305556,
+        "lon": -74.96594444
+      },
+      "0024015220": {
+        "nombre": "VILLA CARMEN [24015220]",
+        "lat": 5.509388889,
+        "lon": -73.49577778
+      },
+      "0021206600": {
+        "nombre": "NUEVA GENERACION [21206600]",
+        "lat": 4.786594,
+        "lon": -74.102247
+      },
+      "0028037030": {
+        "nombre": "PUENTE SALGUERO  - AUT [28037030]",
+        "lat": 10.38411111,
+        "lon": -73.23247222
+      },
+      "0023087150": {
+        "nombre": "PUENTE REAL - AUT [23087150]",
+        "lat": 6.143591667,
+        "lon": -75.380136111
+      },
+      "0021160260": {
+        "nombre": "PUERTO LLERAS TOLIMA  - AUT [21160260]",
+        "lat": 3.839777778,
+        "lon": -74.68830556
+      },
+      "0024030560": {
+        "nombre": "MONGUA [24030560]",
+        "lat": 5.758388889,
+        "lon": -72.7945
+      },
+      "0021187030": {
+        "nombre": "CUCUNUBA  - AUT [21187030]",
+        "lat": 4.231946,
+        "lon": -75.092981
+      },
+      "0035027150": {
+        "nombre": "LAS ANIMAS [35027150]",
+        "lat": 4.137972222,
+        "lon": -74.17380556
+      },
+      "0015015120": {
+        "nombre": "UNIMAGDALENA - AUT [15015120]",
+        "lat": 11.223016667,
+        "lon": -74.185925
+      },
+      "0026185020": {
+        "nombre": "MESOPOTAMIA [26185020]",
+        "lat": 5.886361111,
+        "lon": -75.31863889
+      },
+      "0021206920": {
+        "nombre": "VILLA TERESA [21206920]",
+        "lat": 4.356239,
+        "lon": -74.159168
+      },
+      "2901500072": {
+        "nombre": "HOBO - AUT [2901500072]",
+        "lat": 9.672506,
+        "lon": -75.236517
+      },
+      "0024035430": {
+        "nombre": "TUNGUAVITA - AUT [24035430]",
+        "lat": 5.74583,
+        "lon": -73.11636
+      },
+      "0035025060": {
+        "nombre": "LA BOLSA [35025060]",
+        "lat": 4.587059,
+        "lon": -73.995885
+      },
+      "0021185080": {
+        "nombre": "VALLE DE SAN JUAN [21185080]",
+        "lat": 4.216458333,
+        "lon": -75.104611111
+      },
+      "0035197070": {
+        "nombre": "PUENTE LAS CANAS [35197070]",
+        "lat": 5.586694444,
+        "lon": -72.81533333
+      },
+      "0035085060": {
+        "nombre": "ZETAQUIRA - AUT [35085060]",
+        "lat": 5.294944444,
+        "lon": -73.16994444
+      },
+      "0021205660": {
+        "nombre": "MERCEDES [21205660]",
+        "lat": 4.5791,
+        "lon": -74.52318
+      },
+      "0028025502": {
+        "nombre": "AEROPUERTO ALFONSO LÓPEZ - AUT [28025502]",
+        "lat": 10.43616667,
+        "lon": -73.24766667
+      },
+      "0023195200": {
+        "nombre": "CACHIRI  - AUT [23195200]",
+        "lat": 7.47389,
+        "lon": -72.99111
+      },
+      "0021167060": {
+        "nombre": "SAN PABLO TOLIMA  - AUT [21167060]",
+        "lat": 3.92648,
+        "lon": -74.657784
+      },
+      "5311500121": {
+        "nombre": "LA CUMBRE - AUT   [5311500121]",
+        "lat": 3.645194444,
+        "lon": -76.56475
+      },
+      "0024037190": {
+        "nombre": "SAN RAFAEL  - AUT [24037190]",
+        "lat": 5.807611111,
+        "lon": -73.01380556
+      },
+      "0024055070": {
+        "nombre": "SAN  VICENTE DE CHUCURI  - AUT [24055070]",
+        "lat": 6.82339,
+        "lon": -73.47206
+      },
+      "0035035130": {
+        "nombre": "PARAMO CHINGAZA [35035130]",
+        "lat": 4.713667,
+        "lon": -73.80325
+      },
+      "0021097120": {
+        "nombre": "LA ESPERANZA - AUT [21097120]",
+        "lat": 2.728416667,
+        "lon": -75.39638889
+      },
+      "0024015300": {
+        "nombre": "VILLA DE LEIVA  - AUT [24015300]",
+        "lat": 5.64326,
+        "lon": -73.51774
+      },
+      "0015065190": {
+        "nombre": "MONGUI - AUT [15065190]",
+        "lat": 11.22677778,
+        "lon": -72.82063889
+      },
+      "0021245140": {
+        "nombre": "SANTA ISABEL [21245140]",
+        "lat": 4.711861111,
+        "lon": -75.09445556
+      },
+      "0028030190": {
+        "nombre": "CARACOLI GARUPAL  [28030190]",
+        "lat": 10.08869444,
+        "lon": -73.73172222
+      },
+      "0021125010": {
+        "nombre": "SANTA MARIA [21125010]",
+        "lat": 2.935694444,
+        "lon": -75.58905556
+      },
+      "1509500118": {
+        "nombre": "GUACHACA - AUT   [1509500118]",
+        "lat": 11.21015,
+        "lon": -73.84445
+      },
+      "0024030120": {
+        "nombre": "PESCA [24030120]",
+        "lat": 5.523033056,
+        "lon": -73.07684778
+      },
+      "0021095010": {
+        "nombre": "JUNCAL EL AUT [21095010]",
+        "lat": 2.828805556,
+        "lon": -75.33116667
+      },
+      "0021195120": {
+        "nombre": "ITA VALSALICE [21195120]",
+        "lat": 4.39292,
+        "lon": -74.39272
+      },
+      "0025025280": {
+        "nombre": "EL TESORO IDEAM  - AUT [25025280]",
+        "lat": 9.357083333,
+        "lon": -75.28925
+      },
+      "0015070080": {
+        "nombre": "KAURAQUIMANA [15070080]",
+        "lat": 12.21836111,
+        "lon": -71.45869444
+      },
+      "0028015070": {
+        "nombre": "URUMITA AUT [28015070]",
+        "lat": 10.559827778,
+        "lon": -73.008830556
+      },
+      "0035075030": {
+        "nombre": "VILLA LUISA [35075030]",
+        "lat": 5.422222222,
+        "lon": -73.34941667
+      },
+      "0027015310": {
+        "nombre": "METROMEDELLIN [27015310]",
+        "lat": 6.32975,
+        "lon": -75.55211111
+      },
+      "0021130050": {
+        "nombre": "HACIENDA PEREZ - AUT [21130050]",
+        "lat": 3.243555556,
+        "lon": -75.25594444
+      },
+      "0021217180": {
+        "nombre": "MONTEZUMA AUT [21217180]",
+        "lat": 4.4819444,
+        "lon": -75.28611111
+      },
+      "0023085160": {
+        "nombre": "CORRIENTES [23085160]",
+        "lat": 6.311944444,
+        "lon": -75.25355556
+      },
+      "0021195190": {
+        "nombre": "PASCA [21195190]",
+        "lat": 4.307189,
+        "lon": -74.308399
+      },
+      "2119500111": {
+        "nombre": "BASE AEREA MELGAR [2119500111]",
+        "lat": 4.219663,
+        "lon": -74.629444
+      },
+      "2319500065": {
+        "nombre": "GRANJA PIEDECUESTA - AUT [2319500065]",
+        "lat": 6.993333333,
+        "lon": -73.067777778
+      },
+      "0024037290": {
+        "nombre": "PUENTE CHAMEZA  - AUT [24037290]",
+        "lat": 5.759888889,
+        "lon": -72.90652778
+      },
+      "0021206560": {
+        "nombre": "INEM KENNEDY [21206560]",
+        "lat": 4.62547,
+        "lon": -74.156066
+      },
+      "2612500130": {
+        "nombre": "SALENTO - AUT   [2612500130]",
+        "lat": 4.633475,
+        "lon": -75.568858333
+      },
+      "1508500053": {
+        "nombre": "PUERTO ESTRELLA - AUT   [1508500053]",
+        "lat": 12.339194444,
+        "lon": -71.345080556
+      },
+      "0021201200": {
+        "nombre": "ESCUELA LA UNION [21201200]",
+        "lat": 4.34264,
+        "lon": -74.18381
+      },
+      "0029035000": {
+        "nombre": "SINCERIN  - AUT [29035000]",
+        "lat": 10.14258333,
+        "lon": -75.27827778
+      },
+      "0015015100": {
+        "nombre": "PARQUE TAYRONA [15015100]",
+        "lat": 11.301674,
+        "lon": -73.928809
+      },
+      "0035020300": {
+        "nombre": "GUTIERREZ [35020300]",
+        "lat": 4.253917,
+        "lon": -74.002694
+      },
+      "0015080070": {
+        "nombre": "SILLAMANA [15080070]",
+        "lat": 11.89941667,
+        "lon": -71.51588889
+      },
+      "0021237010": {
+        "nombre": "NARINO - AUT [21237010]",
+        "lat": 4.387777778,
+        "lon": -74.838375
+      },
+      "0021197010": {
+        "nombre": "EL PROFUNDO [21197010]",
+        "lat": 4.011694,
+        "lon": -74.504444
+      },
+      "0023195240": {
+        "nombre": "AGUACHICA - AUT [23195240]",
+        "lat": 8.123416667,
+        "lon": -73.57986111
+      },
+      "0023087670": {
+        "nombre": "RIOTEX [23087670]",
+        "lat": 6.18125,
+        "lon": -75.36638889
+      },
+      "0035160020": {
+        "nombre": "LLANO ALARCON [35160020]",
+        "lat": 5.599722222,
+        "lon": -72.91347222
+      },
+      "0021205012": {
+        "nombre": "UNIVERSIDAD NACIONAL [21205012]",
+        "lat": 4.63723,
+        "lon": -74.08892
+      },
+      "0024015380": {
+        "nombre": "CARMEN DE CARUPA [24015380]",
+        "lat": 5.34819,
+        "lon": -73.89817
+      },
+      "0016055120": {
+        "nombre": "AGUAS DE LA VIRGEN  - AUT [16055120]",
+        "lat": 8.22769,
+        "lon": -73.3975
+      },
+      "0026085160": {
+        "nombre": "SILOE - AUT [26085160]",
+        "lat": 3.4255,
+        "lon": -76.56061111
+      },
+      "0022077050": {
+        "nombre": "PIJAITO  - AUT [22077050]",
+        "lat": 4.150388889,
+        "lon": -75.306
+      },
+      "0029015000": {
+        "nombre": "EL GUAMO - AUT [29015000]",
+        "lat": 10.034607,
+        "lon": -74.976638
+      },
+      "0035235050": {
+        "nombre": "TAMARA - AUT [35235050]",
+        "lat": 5.574838056,
+        "lon": -72.941086111
+      },
+      "2120500204": {
+        "nombre": "IDEAM PUENTE ARANDA [2120500204]",
+        "lat": 4.621608,
+        "lon": -74.103408
+      },
+      "0021255160": {
+        "nombre": "HACIENDA PAJONALES [21255160]",
+        "lat": 4.75786,
+        "lon": -74.83091
+      },
+      "0021105030": {
+        "nombre": "ALGECIRAS - AUT [21105030]",
+        "lat": 2.52,
+        "lon": -75.319997222
+      },
+      "2306500204": {
+        "nombre": "ALTO DEL VINO [2306500204]",
+        "lat": 4.876695,
+        "lon": -74.287811
+      },
+      "2633500119": {
+        "nombre": "GUACHAL PALMASECA - AUT   [2633500119]",
+        "lat": 3.559541667,
+        "lon": -76.456897222
+      },
+      "0023197690": {
+        "nombre": "PALOGORDO - AUT [23197690]",
+        "lat": 6.969166667,
+        "lon": -73.13055556
+      },
+      "0023085270": {
+        "nombre": "AEROPUERTO JOSÉ MARÍA CÓRDOVA - AUT [23085270]",
+        "lat": 6.1686111,
+        "lon": -75.426111111
+      },
+      "0024030140": {
+        "nombre": "SIACHOQUE [24030140]",
+        "lat": 5.5135,
+        "lon": -73.243883333
+      },
+      "0021257100": {
+        "nombre": "LA NUEVA - AUT [21257100]",
+        "lat": 4.795083333,
+        "lon": -74.97194444
+      },
+      "0015065180": {
+        "nombre": "AEROPUERTO ALMIRANTE PADILLA - AUT [15065180]",
+        "lat": 11.528216667,
+        "lon": -72.917738889
+      },
+      "0024025030": {
+        "nombre": "LA SIERRA - AUT [24025030]",
+        "lat": 5.96708,
+        "lon": -73.16202
+      },
+      "0037015030": {
+        "nombre": "BERLIN - AUT [37015030]",
+        "lat": 7.187,
+        "lon": -72.8685
+      },
+      "0021205700": {
+        "nombre": "GUASCA [21205700]",
+        "lat": 4.877953,
+        "lon": -73.864453
+      },
+      "0035077090": {
+        "nombre": "PUENTE ADRIANA [35077090]",
+        "lat": 5.385,
+        "lon": -73.36163889
+      },
+      "0026075120": {
+        "nombre": "LA DIANA - AUT [26075120]",
+        "lat": 3.314055556,
+        "lon": -76.18569444
+      },
+      "0021205710": {
+        "nombre": "JARDIN BOTANICO [21205710]",
+        "lat": 4.667867,
+        "lon": -74.101034
+      },
+      "2629700151": {
+        "nombre": "LA VORAGINE - AUT   [2629700151]",
+        "lat": 3.346305556,
+        "lon": -76.589333333
+      },
+      "0029065130": {
+        "nombre": "LA GRAN VIA - AUT [29065130]",
+        "lat": 10.85,
+        "lon": -74.13333333
+      },
+      "0023190440": {
+        "nombre": "NARANJO EL [23190440]",
+        "lat": 7.205,
+        "lon": -73.29972222
+      },
+      "0021135020": {
+        "nombre": "JABALCON [21135020]",
+        "lat": 3.85575,
+        "lon": -75.01575
+      },
+      "0035160010": {
+        "nombre": "POTRERITO AUT [35160010]",
+        "lat": 5.477583333,
+        "lon": -72.94861111
+      },
+      "0025025380": {
+        "nombre": "SAN BENITO - AUT [25025380]",
+        "lat": 9.163888889,
+        "lon": -75.04472222
+      },
+      "0026217010": {
+        "nombre": "LA GALERA - AUT [26217010]",
+        "lat": 6.554972222,
+        "lon": -75.86419444
+      },
+      "0021205791": {
+        "nombre": "EL DORADO CATAM [21205791]",
+        "lat": 4.705583,
+        "lon": -74.150667
+      },
+      "0024015110": {
+        "nombre": "LA BOYERA [24015110]",
+        "lat": 5.303806,
+        "lon": -73.85175
+      },
+      "0029035200": {
+        "nombre": "REPELON - AUT [29035200]",
+        "lat": 10.49,
+        "lon": -75.12694444
+      },
+      "0026085170": {
+        "nombre": "BASE AEREA MARCO FIDEL SUAREZ  - AUT [26085170]",
+        "lat": 3.454414,
+        "lon": -76.499948
+      },
+      "0028017150": {
+        "nombre": "CHEMESQUEMENA [28017150]",
+        "lat": 10.71222222,
+        "lon": -73.40222222
+      },
+      "0021097070": {
+        "nombre": "PUENTE SANTANDER AUT [21097070]",
+        "lat": 2.942611111,
+        "lon": -75.30852778
+      },
+      "2604500039": {
+        "nombre": "CORINTO - AUT  [2604500039]",
+        "lat": 3.18,
+        "lon": -76.25
+      },
+      "0021167080": {
+        "nombre": "LA MORA - AUT [21167080]",
+        "lat": 3.725194444,
+        "lon": -74.82644444
+      },
+      "0024027070": {
+        "nombre": "MERIDA - AUT [24027070]",
+        "lat": 6.444722222,
+        "lon": -73.15833333
+      },
+      "0021206280": {
+        "nombre": "ACAPULCO [21206280]",
+        "lat": 4.64823,
+        "lon": -74.32035
+      },
+      "0021185090": {
+        "nombre": "NATAIMA - AUT [21185090]",
+        "lat": 4.188138889,
+        "lon": -74.96047222
+      },
+      "0021205910": {
+        "nombre": "LA COSECHA [21205910]",
+        "lat": 4.98922,
+        "lon": -74.00119
+      },
+      "0021227010": {
+        "nombre": "PIEDRAS  - AUT [21227010]",
+        "lat": 4.535225,
+        "lon": -74.880530556
+      },
+      "0023195090": {
+        "nombre": "VIVERO SURATA  - AUT [23195090]",
+        "lat": 7.36583,
+        "lon": -72.9875
+      },
+      "2319500043": {
+        "nombre": "FLORIDABLANCA - AUT   [2319500043]",
+        "lat": 7.056797,
+        "lon": -73.090627
+      },
+      "2403500041": {
+        "nombre": "DUITAMA - AUT  [2403500041]",
+        "lat": 5.78755,
+        "lon": -73.05155
+      },
+      "2401500040": {
+        "nombre": "CUCUNUBA - AUT [2401500040]",
+        "lat": 5.21957,
+        "lon": -73.78229
+      },
+      "0021185030": {
+        "nombre": "GUAMO [21185030]",
+        "lat": 4.008833333,
+        "lon": -74.98138889
+      },
+      "0026207080": {
+        "nombre": "BOLOMBOLO - AUT [26207080]",
+        "lat": 5.97,
+        "lon": -75.84
+      },
+      "1206500136": {
+        "nombre": "UNIVERSIDAD UNAD CARTAGENA - AUT   [1206500136]",
+        "lat": 10.400311111,
+        "lon": -75.513280556
+      },
+      "0026075150": {
+        "nombre": "AEROPUERTO ALFONSO BONILLA ARAGÓN - AUT [26075150]",
+        "lat": 3.532991667,
+        "lon": -76.3825
+      },
+      "0021215180": {
+        "nombre": "BATALLON ROOKE  - AUT [21215180]",
+        "lat": 4.4180556,
+        "lon": -75.248055556
+      },
+      "0021127030": {
+        "nombre": "SANTA MARIA  - AUT [21127030]",
+        "lat": 2.971777778,
+        "lon": -75.59244444
+      },
+      "0028010200": {
+        "nombre": "HATICO D LOS INDIO [28010200]",
+        "lat": 10.86022222,
+        "lon": -73.11416667
+      },
+      "3516700232": {
+        "nombre": "EL TOBAL [3516700232]",
+        "lat": 5.512222222,
+        "lon": -72.865555556
+      },
+      "0035095120": {
+        "nombre": "AQUITANIA - AUT [35095120]",
+        "lat": 5.55663,
+        "lon": -72.88175
+      },
+      "0021215160": {
+        "nombre": "CERROS NOROCCIDENTALES  - AUT [21215160]",
+        "lat": 4.470361111,
+        "lon": -75.24386111
+      },
+      "0028035070": {
+        "nombre": "GUATAPURI - AUT [28035070]",
+        "lat": 10.73213889,
+        "lon": -73.39241667
+      },
+      "0025020440": {
+        "nombre": "SAN PEDRO - AUT [25020440]",
+        "lat": 9.401597,
+        "lon": -75.016434
+      },
+      "2401500086": {
+        "nombre": "UNIVERSIDAD PEDAGÓGICA Y TECNOLÓGICA DE COLOMBIA TUNJA - AUT [2401500086]",
+        "lat": 5.553611111,
+        "lon": -73.355277778
+      }
+    },
+    "normales": {
+      "26210090": {
+        "nombre": "Anza",
+        "lat": 6.3,
+        "lon": -75.86
+      },
+      "26200140": {
+        "nombre": "Armenia",
+        "lat": 6.16,
+        "lon": -75.77
+      },
+      "27010800": {
+        "nombre": "La Meseta San Pedro",
+        "lat": 6.4,
+        "lon": -75.61
+      },
+      "27010870": {
+        "nombre": "Belmira",
+        "lat": 6.61,
+        "lon": -75.67
+      },
+      "26210140": {
+        "nombre": "Altamira",
+        "lat": 6.22,
+        "lon": -75.95
+      },
+      "26210070": {
+        "nombre": "Caicedo",
+        "lat": 6.41,
+        "lon": -75.98
+      },
+      "27015260": {
+        "nombre": "La Salada",
+        "lat": 6.05,
+        "lon": -75.62
+      },
+      "23080650": {
+        "nombre": "Campoalegre",
+        "lat": 6.07,
+        "lon": -75.34
+      },
+      "23080750": {
+        "nombre": "Cocorna",
+        "lat": 6.05,
+        "lon": -75.18
+      },
+      "23080740": {
+        "nombre": "Concepción",
+        "lat": 6.4,
+        "lon": -75.26
+      },
+      "26215010": {
+        "nombre": "Concordia",
+        "lat": 6.04,
+        "lon": -75.92
+      },
+      "26210080": {
+        "nombre": "La Herradura",
+        "lat": 6.1,
+        "lon": -75.87
+      },
+      "27010830": {
+        "nombre": "San Isidro",
+        "lat": 6.56,
+        "lon": -75.52
+      },
+      "26200150": {
+        "nombre": "Fredonia",
+        "lat": 5.94,
+        "lon": -75.69
+      },
+      "27010820": {
+        "nombre": "La Cuchilla",
+        "lat": 6.37,
+        "lon": -75.45
+      },
+      "27010770": {
+        "nombre": "El Chuscal",
+        "lat": 6.18,
+        "lon": -75.71
+      },
+      "26180170": {
+        "nombre": "La Unión",
+        "lat": 6.0,
+        "lon": -75.38
+      },
+      "26185020": {
+        "nombre": "Mesopotamia",
+        "lat": 5.89,
+        "lon": -75.32
+      },
+      "23080640": {
+        "nombre": "Marinilla",
+        "lat": 6.16,
+        "lon": -75.32
+      },
+      "27011110": {
+        "nombre": "Astilleros",
+        "lat": 6.26,
+        "lon": -75.68
+      },
+      "26205080": {
+        "nombre": "La Aldea",
+        "lat": 6.34,
+        "lon": -75.7
+      },
+      "27011120": {
+        "nombre": "La Iguana",
+        "lat": 6.32,
+        "lon": -75.66
+      },
+      "27015330": {
+        "nombre": "Aeropuerto Olaya Herrera   AUT",
+        "lat": 6.22,
+        "lon": -75.59
+      },
+      "27010810": {
+        "nombre": "Santa Helena",
+        "lat": 6.2,
+        "lon": -75.52
+      },
+      "26180200": {
+        "nombre": "Montebello",
+        "lat": 5.95,
+        "lon": -75.54
+      },
+      "26230010": {
+        "nombre": "Olaya",
+        "lat": 6.63,
+        "lon": -75.81
+      },
+      "23085110": {
+        "nombre": "El Peñol",
+        "lat": 6.21,
+        "lon": -75.24
+      },
+      "23085270": {
+        "nombre": "Aeropuerto José María Córdova   AUT",
+        "lat": 6.17,
+        "lon": -75.43
+      },
+      "23085260": {
+        "nombre": "La Selva   AUT",
+        "lat": 6.13,
+        "lon": -75.41
+      },
+      "26210110": {
+        "nombre": "Peñalisa",
+        "lat": 5.93,
+        "lon": -75.86
+      },
+      "26230180": {
+        "nombre": "Llanos de San Juan",
+        "lat": 6.43,
+        "lon": -75.72
+      },
+      "23085160": {
+        "nombre": "Corrientes",
+        "lat": 6.31,
+        "lon": -75.25
+      },
+      "26225030": {
+        "nombre": "Hacienda Cotove",
+        "lat": 6.53,
+        "lon": -75.83
+      },
+      "23080920": {
+        "nombre": "Santuario",
+        "lat": 6.13,
+        "lon": -75.27
+      },
+      "26200120": {
+        "nombre": "Otramina",
+        "lat": 6.07,
+        "lon": -75.79
+      },
+      "26200130": {
+        "nombre": "Bolombolo",
+        "lat": 5.97,
+        "lon": -75.84
+      },
+      "29030140": {
+        "nombre": "San José",
+        "lat": 10.44,
+        "lon": -75.11
+      },
+      "29030410": {
+        "nombre": "Casa de Bombas",
+        "lat": 10.41,
+        "lon": -75.13
+      },
+      "29030270": {
+        "nombre": "Loma Grande",
+        "lat": 10.43,
+        "lon": -75.13
+      },
+      "25020970": {
+        "nombre": "Arenal",
+        "lat": 8.46,
+        "lon": -73.94
+      },
+      "29030040": {
+        "nombre": "Arjona",
+        "lat": 10.25,
+        "lon": -75.35
+      },
+      "29030320": {
+        "nombre": "Rocha",
+        "lat": 10.1,
+        "lon": -75.4
+      },
+      "14015080": {
+        "nombre": "Aeropuerto Rafael Nuñez",
+        "lat": 10.45,
+        "lon": -75.52
+      },
+      "14010030": {
+        "nombre": "Bayunca",
+        "lat": 10.52,
+        "lon": -75.4
+      },
+      "29030370": {
+        "nombre": "Santa Ana",
+        "lat": 10.23,
+        "lon": -75.55
+      },
+      "25021300": {
+        "nombre": "El Limón",
+        "lat": 9.27,
+        "lon": -74.65
+      },
+      "25021340": {
+        "nombre": "La Esperanza",
+        "lat": 9.25,
+        "lon": -74.74
+      },
+      "25020960": {
+        "nombre": "Córdoba",
+        "lat": 9.59,
+        "lon": -74.83
+      },
+      "29030480": {
+        "nombre": "Camarón",
+        "lat": 9.86,
+        "lon": -75.31
+      },
+      "29015020": {
+        "nombre": "Carmen de Bolívar",
+        "lat": 9.72,
+        "lon": -75.11
+      },
+      "29015000": {
+        "nombre": "El Guamo   AUT",
+        "lat": 10.06,
+        "lon": -74.85
+      },
+      "25021310": {
+        "nombre": "El Pozón",
+        "lat": 9.0,
+        "lon": -74.41
+      },
+      "25027530": {
+        "nombre": "Barbosa",
+        "lat": 9.02,
+        "lon": -74.64
+      },
+      "25021260": {
+        "nombre": "Barranco de Yuca",
+        "lat": 9.17,
+        "lon": -74.85
+      },
+      "25020950": {
+        "nombre": "San Antonio Alerta",
+        "lat": 9.04,
+        "lon": -74.77
+      },
+      "29030430": {
+        "nombre": "El Viso",
+        "lat": 10.15,
+        "lon": -75.24
+      },
+      "29030170": {
+        "nombre": "Gamero",
+        "lat": 10.2,
+        "lon": -75.2
+      },
+      "29030280": {
+        "nombre": "San Basilio",
+        "lat": 10.09,
+        "lon": -75.2
+      },
+      "29030310": {
+        "nombre": "El Nispero",
+        "lat": 9.93,
+        "lon": -75.42
+      },
+      "29030160": {
+        "nombre": "Flamenco",
+        "lat": 9.97,
+        "lon": -75.4
+      },
+      "29030450": {
+        "nombre": "La Calma",
+        "lat": 9.93,
+        "lon": -75.26
+      },
+      "29030780": {
+        "nombre": "Mampuján",
+        "lat": 9.98,
+        "lon": -75.23
+      },
+      "29035040": {
+        "nombre": "Nueva Florida",
+        "lat": 9.94,
+        "lon": -75.35
+      },
+      "29030530": {
+        "nombre": "Plátano",
+        "lat": 9.92,
+        "lon": -75.24
+      },
+      "29030080": {
+        "nombre": "Puerto Santander",
+        "lat": 10.0,
+        "lon": -75.32
+      },
+      "29035110": {
+        "nombre": "San Pablo",
+        "lat": 10.04,
+        "lon": -75.26
+      },
+      "25021270": {
+        "nombre": "Candelaria",
+        "lat": 9.07,
+        "lon": -74.53
+      },
+      "25021330": {
+        "nombre": "Guaymaral",
+        "lat": 9.12,
+        "lon": -74.61
+      },
+      "25021350": {
+        "nombre": "Mompós",
+        "lat": 9.26,
+        "lon": -74.44
+      },
+      "25021180": {
+        "nombre": "Santa Cruz",
+        "lat": 9.08,
+        "lon": -74.69
+      },
+      "25021280": {
+        "nombre": "Coyongal Alertas",
+        "lat": 8.97,
+        "lon": -74.51
+      },
+      "25027410": {
+        "nombre": "Regidor",
+        "lat": 8.67,
+        "lon": -73.82
+      },
+      "29030050": {
+        "nombre": "San Estanislao",
+        "lat": 10.4,
+        "lon": -75.16
+      },
+      "25021290": {
+        "nombre": "El Jolon",
+        "lat": 9.1,
+        "lon": -74.41
+      },
+      "29030500": {
+        "nombre": "Casa de Piedra",
+        "lat": 9.87,
+        "lon": -75.22
+      },
+      "29030150": {
+        "nombre": "San Cristobal",
+        "lat": 9.87,
+        "lon": -75.25
+      },
+      "29030570": {
+        "nombre": "La Haya",
+        "lat": 9.96,
+        "lon": -75.19
+      },
+      "29030200": {
+        "nombre": "San Cayetano",
+        "lat": 10.1,
+        "lon": -75.14
+      },
+      "14010050": {
+        "nombre": "Cañaveral",
+        "lat": 10.41,
+        "lon": -75.34
+      },
+      "29010120": {
+        "nombre": "Hacienda Caño Negro",
+        "lat": 9.74,
+        "lon": -74.95
+      },
+      "29010130": {
+        "nombre": "Hacienda Indugan",
+        "lat": 9.81,
+        "lon": -74.85
+      },
+      "25025020": {
+        "nombre": "Monterrey Forestal",
+        "lat": 9.73,
+        "lon": -74.84
+      },
+      "29010050": {
+        "nombre": "Zambrano",
+        "lat": 9.7,
+        "lon": -74.82
+      },
+      "35090070": {
+        "nombre": "Guamo de Sisbaca",
+        "lat": 5.37,
+        "lon": -72.92
+      },
+      "35160010": {
+        "nombre": "Potrerito",
+        "lat": 5.48,
+        "lon": -72.95
+      },
+      "24010630": {
+        "nombre": "Arcabuco",
+        "lat": 5.76,
+        "lon": -73.44
+      },
+      "24030590": {
+        "nombre": "Cerinza",
+        "lat": 5.96,
+        "lon": -72.94
+      },
+      "24010830": {
+        "nombre": "San Pedro Iguaque",
+        "lat": 5.64,
+        "lon": -73.45
+      },
+      "24030500": {
+        "nombre": "Colegio Departamental Agropecuario",
+        "lat": 5.56,
+        "lon": -73.28
+      },
+      "24030310": {
+        "nombre": "Cómbita",
+        "lat": 5.63,
+        "lon": -73.32
+      },
+      "24030700": {
+        "nombre": "Covarachía",
+        "lat": 6.51,
+        "lon": -72.73
+      },
+      "24030350": {
+        "nombre": "Duitama",
+        "lat": 5.83,
+        "lon": -73.04
+      },
+      "24030840": {
+        "nombre": "La Antena Tv Rusia",
+        "lat": 5.89,
+        "lon": -73.08
+      },
+      "24035120": {
+        "nombre": "Surbata Bonza",
+        "lat": 5.8,
+        "lon": -73.07
+      },
+      "24030540": {
+        "nombre": "Firavitoba",
+        "lat": 5.66,
+        "lon": -72.98
+      },
+      "24010810": {
+        "nombre": "Gachantivá",
+        "lat": 5.75,
+        "lon": -73.55
+      },
+      "24030230": {
+        "nombre": "Iza",
+        "lat": 5.62,
+        "lon": -72.98
+      },
+      "24030560": {
+        "nombre": "Mongüa",
+        "lat": 5.76,
+        "lon": -72.79
+      },
+      "24030190": {
+        "nombre": "Monguí",
+        "lat": 5.72,
+        "lon": -72.85
+      },
+      "24010750": {
+        "nombre": "Miravalles",
+        "lat": 5.93,
+        "lon": -73.61
+      },
+      "24010710": {
+        "nombre": "Moniquirá",
+        "lat": 5.85,
+        "lon": -73.58
+      },
+      "24010840": {
+        "nombre": "Panelas",
+        "lat": 5.63,
+        "lon": -73.39
+      },
+      "24030790": {
+        "nombre": "Nobsa",
+        "lat": 5.77,
+        "lon": -72.94
+      },
+      "35075010": {
+        "nombre": "Nuevo Colón",
+        "lat": 5.35,
+        "lon": -73.45
+      },
+      "24030450": {
+        "nombre": "El Encanto",
+        "lat": 5.61,
+        "lon": -73.32
+      },
+      "24030510": {
+        "nombre": "El Cerezo",
+        "lat": 5.7,
+        "lon": -73.07
+      },
+      "24025030": {
+        "nombre": "La Sierra   AUT",
+        "lat": 5.97,
+        "lon": -73.16
+      },
+      "24010870": {
+        "nombre": "Palermo",
+        "lat": 5.9,
+        "lon": -73.2
+      },
+      "24035430": {
+        "nombre": "Tunguavita   AUT",
+        "lat": 5.75,
+        "lon": -73.12
+      },
+      "24030120": {
+        "nombre": "Pesca",
+        "lat": 5.52,
+        "lon": -73.08
+      },
+      "35070010": {
+        "nombre": "Ramiriquí",
+        "lat": 5.4,
+        "lon": -73.33
+      },
+      "35075030": {
+        "nombre": "Villa Luisa",
+        "lat": 5.42,
+        "lon": -73.35
+      },
+      "24010180": {
+        "nombre": "Ráquira",
+        "lat": 5.54,
+        "lon": -73.63
+      },
+      "35085020": {
+        "nombre": "Rondón",
+        "lat": 5.36,
+        "lon": -73.2
+      },
+      "35070310": {
+        "nombre": "Teatinos",
+        "lat": 5.42,
+        "lon": -73.38
+      },
+      "24015220": {
+        "nombre": "Villa Carmen",
+        "lat": 5.51,
+        "lon": -73.5
+      },
+      "24030400": {
+        "nombre": "Santa Rosa de Viterbo",
+        "lat": 5.87,
+        "lon": -72.99
+      },
+      "24015090": {
+        "nombre": "Institución Agrícola Santa Sofía",
+        "lat": 5.71,
+        "lon": -73.6
+      },
+      "24037550": {
+        "nombre": "Siachoque",
+        "lat": 5.51,
+        "lon": -73.25
+      },
+      "24035340": {
+        "nombre": "Aeropuerto Alberto Lleras Camargo",
+        "lat": 5.68,
+        "lon": -72.97
+      },
+      "35190010": {
+        "nombre": "Las Cintas",
+        "lat": 5.61,
+        "lon": -72.87
+      },
+      "24030420": {
+        "nombre": "La Finca Pila",
+        "lat": 5.52,
+        "lon": -73.31
+      },
+      "24030380": {
+        "nombre": "Sotaquirá",
+        "lat": 5.75,
+        "lon": -73.23
+      },
+      "35070040": {
+        "nombre": "Tibaná",
+        "lat": 5.32,
+        "lon": -73.4
+      },
+      "24030410": {
+        "nombre": "Tibasosa",
+        "lat": 5.74,
+        "lon": -73.0
+      },
+      "24030800": {
+        "nombre": "Casa Amarilla",
+        "lat": 5.53,
+        "lon": -73.16
+      },
+      "24030770": {
+        "nombre": "El Garrocho",
+        "lat": 5.62,
+        "lon": -73.13
+      },
+      "24035040": {
+        "nombre": "La Copa",
+        "lat": 5.58,
+        "lon": -73.21
+      },
+      "24035300": {
+        "nombre": "San Cristobal",
+        "lat": 5.6,
+        "lon": -73.19
+      },
+      "24035130": {
+        "nombre": "U P T C",
+        "lat": 5.54,
+        "lon": -73.36
+      },
+      "24030820": {
+        "nombre": "Los Azulejos",
+        "lat": 5.66,
+        "lon": -73.21
+      },
+      "24030530": {
+        "nombre": "San Antonio",
+        "lat": 5.7,
+        "lon": -73.23
+      },
+      "24010410": {
+        "nombre": "Hacienda El Emporio",
+        "lat": 5.6,
+        "lon": -73.55
+      },
+      "24015300": {
+        "nombre": "Villa de Leyva",
+        "lat": 5.66,
+        "lon": -73.54
+      },
+      "35080010": {
+        "nombre": "Zetaquira",
+        "lat": 5.28,
+        "lon": -73.17
+      },
+      "26020100": {
+        "nombre": "Buenos Aires",
+        "lat": 3.02,
+        "lon": -76.64
+      },
+      "26050270": {
+        "nombre": "El Silencioso",
+        "lat": 3.12,
+        "lon": -76.72
+      },
+      "26050340": {
+        "nombre": "La Balsa",
+        "lat": 3.1,
+        "lon": -76.6
+      },
+      "26020120": {
+        "nombre": "Caloto",
+        "lat": 3.03,
+        "lon": -76.41
+      },
+      "26040310": {
+        "nombre": "Río Palo",
+        "lat": 3.07,
+        "lon": -76.38
+      },
+      "26040250": {
+        "nombre": "Corinto",
+        "lat": 3.18,
+        "lon": -76.25
+      },
+      "26060200": {
+        "nombre": "Cajones",
+        "lat": 3.23,
+        "lon": -76.14
+      },
+      "26065020": {
+        "nombre": "Miranda",
+        "lat": 3.25,
+        "lon": -76.22
+      },
+      "26045010": {
+        "nombre": "Ingenio Bengala",
+        "lat": 3.26,
+        "lon": -76.41
+      },
+      "26020450": {
+        "nombre": "Mandiva",
+        "lat": 2.97,
+        "lon": -76.53
+      },
+      "26060030": {
+        "nombre": "Villa Rica",
+        "lat": 3.18,
+        "lon": -76.46
+      },
+      "23215030": {
+        "nombre": "Aguas Claras",
+        "lat": 8.23,
+        "lon": -73.6
+      },
+      "23190710": {
+        "nombre": "Barranca Lebrija",
+        "lat": 8.01,
+        "lon": -73.72
+      },
+      "23210130": {
+        "nombre": "Totumal",
+        "lat": 8.25,
+        "lon": -73.58
+      },
+      "28020460": {
+        "nombre": "Codazzi Dc",
+        "lat": 10.04,
+        "lon": -73.24
+      },
+      "23210160": {
+        "nombre": "Gamarra",
+        "lat": 8.33,
+        "lon": -73.74
+      },
+      "23210010": {
+        "nombre": "Puerto Mosquito",
+        "lat": 8.19,
+        "lon": -73.76
+      },
+      "23215050": {
+        "nombre": "La Mata",
+        "lat": 8.61,
+        "lon": -73.64
+      },
+      "28010040": {
+        "nombre": "Manaure",
+        "lat": 10.39,
+        "lon": -73.03
+      },
+      "25021640": {
+        "nombre": "Santa Isabel",
+        "lat": 8.71,
+        "lon": -73.7
+      },
+      "28040010": {
+        "nombre": "Pueblo Bello",
+        "lat": 10.41,
+        "lon": -73.59
+      },
+      "29060090": {
+        "nombre": "San Sebastian de R",
+        "lat": 10.56,
+        "lon": -73.6
+      },
+      "23190580": {
+        "nombre": "Hacienda San Daniel",
+        "lat": 8.09,
+        "lon": -73.62
+      },
+      "23190480": {
+        "nombre": "Los Ángeles",
+        "lat": 8.1,
+        "lon": -73.51
+      },
+      "16050060": {
+        "nombre": "Río De Oro",
+        "lat": 8.29,
+        "lon": -73.39
+      },
+      "28025020": {
+        "nombre": "El Rincón",
+        "lat": 10.27,
+        "lon": -73.13
+      },
+      "28020590": {
+        "nombre": "Leticia",
+        "lat": 10.15,
+        "lon": -73.22
+      },
+      "28020410": {
+        "nombre": "San Benito",
+        "lat": 10.18,
+        "lon": -73.32
+      },
+      "23190520": {
+        "nombre": "La Dorada",
+        "lat": 8.0,
+        "lon": -73.44
+      },
+      "28025502": {
+        "nombre": "Aeropuerto Alfonso Lopez",
+        "lat": 10.44,
+        "lon": -73.25
+      },
+      "28010360": {
+        "nombre": "Atanquez",
+        "lat": 10.7,
+        "lon": -73.35
+      },
+      "28030190": {
+        "nombre": "Caracolí",
+        "lat": 10.09,
+        "lon": -73.73
+      },
+      "28035020": {
+        "nombre": "El Callao",
+        "lat": 10.36,
+        "lon": -73.32
+      },
+      "28010020": {
+        "nombre": "El Descanso",
+        "lat": 10.48,
+        "lon": -73.24
+      },
+      "28035040": {
+        "nombre": "Guaymaral",
+        "lat": 9.9,
+        "lon": -73.65
+      },
+      "28020150": {
+        "nombre": "Hacienda La Esperanza",
+        "lat": 10.03,
+        "lon": -73.67
+      },
+      "28010370": {
+        "nombre": "París de Francia",
+        "lat": 10.31,
+        "lon": -73.33
+      },
+      "28010090": {
+        "nombre": "Patillal",
+        "lat": 10.7,
+        "lon": -73.21
+      },
+      "28030220": {
+        "nombre": "San Angel",
+        "lat": 10.35,
+        "lon": -73.44
+      },
+      "28010070": {
+        "nombre": "Villa Marlene",
+        "lat": 10.19,
+        "lon": -73.47
+      },
+      "28035010": {
+        "nombre": "Villa Rosa",
+        "lat": 10.19,
+        "lon": -73.55
+      },
+      "21205660": {
+        "nombre": "Mercedes",
+        "lat": 4.58,
+        "lon": -74.53
+      },
+      "21205670": {
+        "nombre": "La Florida",
+        "lat": 4.77,
+        "lon": -74.44
+      },
+      "21206180": {
+        "nombre": "Primavera de Matima",
+        "lat": 4.81,
+        "lon": -74.44
+      },
+      "21202120": {
+        "nombre": "Acueducto Fontibon",
+        "lat": 4.67,
+        "lon": -74.15
+      },
+      "21205791": {
+        "nombre": "Aeropuerto El Dorado Catam   AUT",
+        "lat": 4.71,
+        "lon": -74.15
+      },
+      "21200080": {
+        "nombre": "Arrayan San Francisco",
+        "lat": 4.58,
+        "lon": -74.03
+      },
+      "21201300": {
+        "nombre": "Australia",
+        "lat": 4.39,
+        "lon": -74.13
+      },
+      "35020350": {
+        "nombre": "Betania",
+        "lat": 4.22,
+        "lon": -74.15
+      },
+      "21201540": {
+        "nombre": "Bosa",
+        "lat": 4.6,
+        "lon": -74.2
+      },
+      "21201970": {
+        "nombre": "Casablanca",
+        "lat": 4.57,
+        "lon": -74.17
+      },
+      "21200310": {
+        "nombre": "Cerro de Suba",
+        "lat": 4.75,
+        "lon": -74.07
+      },
+      "21200130": {
+        "nombre": "Delirio",
+        "lat": 4.55,
+        "lon": -74.05
+      },
+      "21206300": {
+        "nombre": "Doña Juana",
+        "lat": 4.5,
+        "lon": -74.17
+      },
+      "21200200": {
+        "nombre": "El Hato",
+        "lat": 4.38,
+        "lon": -74.18
+      },
+      "21200240": {
+        "nombre": "El Verjon",
+        "lat": 4.58,
+        "lon": -74.02
+      },
+      "21201230": {
+        "nombre": "Enmanuel D Alzón",
+        "lat": 4.7,
+        "lon": -74.07
+      },
+      "21201200": {
+        "nombre": "Escuela La Unión",
+        "lat": 4.34,
+        "lon": -74.18
+      },
+      "21200320": {
+        "nombre": "Granizo",
+        "lat": 4.62,
+        "lon": -74.05
+      },
+      "21202040": {
+        "nombre": "Juan Rey",
+        "lat": 4.52,
+        "lon": -74.08
+      },
+      "21202080": {
+        "nombre": "La Conejera",
+        "lat": 4.77,
+        "lon": -74.07
+      },
+      "21200340": {
+        "nombre": "La Regadera 2",
+        "lat": 4.4,
+        "lon": -74.15
+      },
+      "21195100": {
+        "nombre": "Las Sopas",
+        "lat": 4.15,
+        "lon": -74.2
+      },
+      "35020310": {
+        "nombre": "Nazareth",
+        "lat": 4.17,
+        "lon": -74.15
+      },
+      "21201580": {
+        "nombre": "Pasquilla",
+        "lat": 4.45,
+        "lon": -74.15
+      },
+      "21202050": {
+        "nombre": "Quiba",
+        "lat": 4.53,
+        "lon": -74.17
+      },
+      "21200400": {
+        "nombre": "San Luis 1 y 2",
+        "lat": 4.63,
+        "lon": -74.03
+      },
+      "21202070": {
+        "nombre": "Saucedal 2",
+        "lat": 4.65,
+        "lon": -74.15
+      },
+      "21201600": {
+        "nombre": "Sede Ideam Kra 10",
+        "lat": 4.61,
+        "lon": -74.07
+      },
+      "21202020": {
+        "nombre": "Serrezuela",
+        "lat": 4.77,
+        "lon": -74.02
+      },
+      "21205240": {
+        "nombre": "Vitelma",
+        "lat": 4.57,
+        "lon": -74.07
+      },
+      "21206280": {
+        "nombre": "Acapulco",
+        "lat": 4.65,
+        "lon": -74.33
+      },
+      "21190090": {
+        "nombre": "Cabrera",
+        "lat": 3.99,
+        "lon": -74.48
+      },
+      "21190330": {
+        "nombre": "Núñez",
+        "lat": 3.91,
+        "lon": -74.51
+      },
+      "35030080": {
+        "nombre": "Las Casas",
+        "lat": 4.44,
+        "lon": -73.94
+      },
+      "24010610": {
+        "nombre": "Carmen de Carupa",
+        "lat": 5.35,
+        "lon": -73.9
+      },
+      "35020240": {
+        "nombre": "Choachi",
+        "lat": 4.53,
+        "lon": -73.93
+      },
+      "35020280": {
+        "nombre": "Choachí 2",
+        "lat": 4.52,
+        "lon": -73.93
+      },
+      "35025060": {
+        "nombre": "La Bolsa",
+        "lat": 4.58,
+        "lon": -73.98
+      },
+      "21200160": {
+        "nombre": "Panonia",
+        "lat": 5.06,
+        "lon": -73.73
+      },
+      "21200620": {
+        "nombre": "Piscis",
+        "lat": 5.08,
+        "lon": -73.7
+      },
+      "21205740": {
+        "nombre": "Silos",
+        "lat": 5.12,
+        "lon": -73.7
+      },
+      "24010140": {
+        "nombre": "Cucunuba",
+        "lat": 5.25,
+        "lon": -73.77
+      },
+      "24011080": {
+        "nombre": "Cucunuba 1",
+        "lat": 5.25,
+        "lon": -73.77
+      },
+      "2401500040": {
+        "nombre": "Cucunubá Aut",
+        "lat": 5.22,
+        "lon": -73.78
+      },
+      "23060180": {
+        "nombre": "El Peñón",
+        "lat": 5.25,
+        "lon": -74.29
+      },
+      "21201070": {
+        "nombre": "El Corazón",
+        "lat": 4.87,
+        "lon": -74.29
+      },
+      "35020290": {
+        "nombre": "Fómeque",
+        "lat": 4.49,
+        "lon": -73.89
+      },
+      "35030230": {
+        "nombre": "Parrados San Isidro",
+        "lat": 4.38,
+        "lon": -73.77
+      },
+      "21190310": {
+        "nombre": "El Pinar",
+        "lat": 4.39,
+        "lon": -74.33
+      },
+      "21201050": {
+        "nombre": "Lourdes",
+        "lat": 4.98,
+        "lon": -73.86
+      },
+      "35065010": {
+        "nombre": "Gachetá",
+        "lat": 4.83,
+        "lon": -73.65
+      },
+      "35060170": {
+        "nombre": "Tasajeras",
+        "lat": 4.89,
+        "lon": -73.6
+      },
+      "35060240": {
+        "nombre": "Gama",
+        "lat": 4.76,
+        "lon": -73.61
+      },
+      "21205700": {
+        "nombre": "Guasca",
+        "lat": 4.88,
+        "lon": -73.87
+      },
+      "21201610": {
+        "nombre": "San Isidro",
+        "lat": 4.85,
+        "lon": -73.89
+      },
+      "21206980": {
+        "nombre": "Santa Cruz Siecha    AUT",
+        "lat": 4.78,
+        "lon": -73.87
+      },
+      "35060200": {
+        "nombre": "El Amoladero",
+        "lat": 4.86,
+        "lon": -73.75
+      },
+      "35060160": {
+        "nombre": "Potreritos",
+        "lat": 4.83,
+        "lon": -73.77
+      },
+      "21200780": {
+        "nombre": "Potrero Largo",
+        "lat": 4.93,
+        "lon": -73.78
+      },
+      "23065060": {
+        "nombre": "Santa Teresa",
+        "lat": 4.84,
+        "lon": -74.46
+      },
+      "35020300": {
+        "nombre": "Gutierrez",
+        "lat": 4.25,
+        "lon": -74.0
+      },
+      "21235010": {
+        "nombre": "Jerusalén",
+        "lat": 4.56,
+        "lon": -74.7
+      },
+      "35060050": {
+        "nombre": "Junín",
+        "lat": 4.79,
+        "lon": -73.67
+      },
+      "35060150": {
+        "nombre": "Tembladares",
+        "lat": 4.7,
+        "lon": -73.67
+      },
+      "21201120": {
+        "nombre": "La Casita",
+        "lat": 4.63,
+        "lon": -74.02
+      },
+      "35020390": {
+        "nombre": "Mundonuevo",
+        "lat": 4.68,
+        "lon": -73.87
+      },
+      "21205770": {
+        "nombre": "Base Aerea Madrid",
+        "lat": 4.73,
+        "lon": -74.27
+      },
+      "21206060": {
+        "nombre": "Casablanca",
+        "lat": 4.72,
+        "lon": -74.25
+      },
+      "21201550": {
+        "nombre": "El Roble",
+        "lat": 4.8,
+        "lon": -74.23
+      },
+      "35070490": {
+        "nombre": "Hacienda Hato Grande",
+        "lat": 4.96,
+        "lon": -73.58
+      },
+      "21205420": {
+        "nombre": "Tibaitata",
+        "lat": 4.69,
+        "lon": -74.21
+      },
+      "21230110": {
+        "nombre": "Narino   AUT",
+        "lat": 4.39,
+        "lon": -74.84
+      },
+      "21230060": {
+        "nombre": "Nariño",
+        "lat": 4.4,
+        "lon": -74.83
+      },
+      "21190210": {
+        "nombre": "Nilo",
+        "lat": 4.31,
+        "lon": -74.65
+      },
+      "23060260": {
+        "nombre": "Finca Chilagua",
+        "lat": 5.06,
+        "lon": -74.38
+      },
+      "23065120": {
+        "nombre": "La Cabrera",
+        "lat": 5.14,
+        "lon": -74.14
+      },
+      "21195060": {
+        "nombre": "Pandi",
+        "lat": 4.19,
+        "lon": -74.49
+      },
+      "21195190": {
+        "nombre": "Pasca   AUT",
+        "lat": 4.31,
+        "lon": -74.31
+      },
+      "23060290": {
+        "nombre": "El Silencio",
+        "lat": 4.97,
+        "lon": -74.41
+      },
+      "21201920": {
+        "nombre": "Alto San Miguel",
+        "lat": 4.45,
+        "lon": -74.3
+      },
+      "21200600": {
+        "nombre": "El Penon Guarani",
+        "lat": 4.43,
+        "lon": -74.3
+      },
+      "21201320": {
+        "nombre": "La Unión",
+        "lat": 4.51,
+        "lon": -74.27
+      },
+      "21201310": {
+        "nombre": "Preventorio Infant",
+        "lat": 4.47,
+        "lon": -74.27
+      },
+      "21202110": {
+        "nombre": "Las Huertas",
+        "lat": 4.58,
+        "lon": -74.23
+      },
+      "21205920": {
+        "nombre": "Suasuque",
+        "lat": 4.82,
+        "lon": -73.96
+      },
+      "21201650": {
+        "nombre": "Santa Rosita",
+        "lat": 5.12,
+        "lon": -73.76
+      },
+      "23060200": {
+        "nombre": "Supata",
+        "lat": 5.06,
+        "lon": -74.24
+      },
+      "21201630": {
+        "nombre": "Granja Tabio",
+        "lat": 4.93,
+        "lon": -74.07
+      },
+      "21206020": {
+        "nombre": "Santillana",
+        "lat": 4.9,
+        "lon": -74.1
+      },
+      "21201190": {
+        "nombre": "Lagunitas",
+        "lat": 5.21,
+        "lon": -73.91
+      },
+      "21201210": {
+        "nombre": "El Hato",
+        "lat": 4.87,
+        "lon": -74.15
+      },
+      "21205980": {
+        "nombre": "Granja Providencia",
+        "lat": 4.79,
+        "lon": -74.2
+      },
+      "21201140": {
+        "nombre": "La Esperanza",
+        "lat": 4.8,
+        "lon": -74.18
+      },
+      "21190030": {
+        "nombre": "Tibacuy",
+        "lat": 4.35,
+        "lon": -74.45
+      },
+      "21208900": {
+        "nombre": "Tocaima",
+        "lat": 4.47,
+        "lon": -74.65
+      },
+      "21206140": {
+        "nombre": "Tibitoc 2",
+        "lat": 4.97,
+        "lon": -73.93
+      },
+      "35025050": {
+        "nombre": "Llano Largo",
+        "lat": 4.48,
+        "lon": -74.03
+      },
+      "35020420": {
+        "nombre": "Une",
+        "lat": 4.4,
+        "lon": -74.02
+      },
+      "21190240": {
+        "nombre": "Ospina Pérez",
+        "lat": 4.08,
+        "lon": -74.49
+      },
+      "21201090": {
+        "nombre": "Viotá",
+        "lat": 4.44,
+        "lon": -74.54
+      },
+      "21205910": {
+        "nombre": "La Cosecha",
+        "lat": 4.99,
+        "lon": -74.0
+      },
+      "21201060": {
+        "nombre": "Pantano Redondo 1",
+        "lat": 5.04,
+        "lon": -74.03
+      },
+      "21130050": {
+        "nombre": "Hacienda Pérez",
+        "lat": 3.24,
+        "lon": -75.26
+      },
+      "21120040": {
+        "nombre": "Potrerito",
+        "lat": 3.14,
+        "lon": -75.38
+      },
+      "21130110": {
+        "nombre": "Praga",
+        "lat": 3.27,
+        "lon": -75.49
+      },
+      "21105030": {
+        "nombre": "Algeciras",
+        "lat": 2.52,
+        "lon": -75.32
+      },
+      "21100070": {
+        "nombre": "Finca Santa Bárbara",
+        "lat": 2.56,
+        "lon": -75.24
+      },
+      "21100080": {
+        "nombre": "Nuevo Paraiso",
+        "lat": 2.62,
+        "lon": -75.21
+      },
+      "21110070": {
+        "nombre": "Baraya",
+        "lat": 3.15,
+        "lon": -75.06
+      },
+      "21105040": {
+        "nombre": "Hacienda Potosí",
+        "lat": 2.7,
+        "lon": -75.3
+      },
+      "21105050": {
+        "nombre": "Los Rosales",
+        "lat": 2.6,
+        "lon": -75.42
+      },
+      "21060090": {
+        "nombre": "El Hobo",
+        "lat": 2.57,
+        "lon": -75.44
+      },
+      "21115020": {
+        "nombre": "Aeropuerto Benito Salas",
+        "lat": 2.95,
+        "lon": -75.29
+      },
+      "21110430": {
+        "nombre": "La Hacienda Girona",
+        "lat": 2.91,
+        "lon": -75.12
+      },
+      "21135050": {
+        "nombre": "La Julia",
+        "lat": 3.1,
+        "lon": -75.53
+      },
+      "21130080": {
+        "nombre": "Organos",
+        "lat": 3.12,
+        "lon": -75.49
+      },
+      "21115100": {
+        "nombre": "Palacio Vegalarga",
+        "lat": 2.94,
+        "lon": -75.07
+      },
+      "21130040": {
+        "nombre": "San Luis",
+        "lat": 3.08,
+        "lon": -75.48
+      },
+      "21110400": {
+        "nombre": "Santa Helena",
+        "lat": 2.85,
+        "lon": -75.11
+      },
+      "21130060": {
+        "nombre": "El Carmen",
+        "lat": 3.01,
+        "lon": -75.56
+      },
+      "21090020": {
+        "nombre": "El Cucharo",
+        "lat": 2.86,
+        "lon": -75.4
+      },
+      "21120090": {
+        "nombre": "El Totumo",
+        "lat": 2.87,
+        "lon": -75.49
+      },
+      "21120100": {
+        "nombre": "El Volcán",
+        "lat": 2.87,
+        "lon": -75.57
+      },
+      "21090040": {
+        "nombre": "Hacienda Papagayo",
+        "lat": 2.78,
+        "lon": -75.35
+      },
+      "21120010": {
+        "nombre": "Hacienda Paraguay",
+        "lat": 2.98,
+        "lon": -75.49
+      },
+      "21120130": {
+        "nombre": "Hacienda Rionegro",
+        "lat": 2.91,
+        "lon": -75.43
+      },
+      "21090110": {
+        "nombre": "Santa Bárbara",
+        "lat": 2.87,
+        "lon": -75.34
+      },
+      "21110440": {
+        "nombre": "El Guadual",
+        "lat": 2.8,
+        "lon": -75.24
+      },
+      "21125010": {
+        "nombre": "Santa María",
+        "lat": 2.94,
+        "lon": -75.59
+      },
+      "21115070": {
+        "nombre": "El Portal",
+        "lat": 3.01,
+        "lon": -75.07
+      },
+      "21110180": {
+        "nombre": "Hato Bogotá",
+        "lat": 3.04,
+        "lon": -75.16
+      },
+      "21110040": {
+        "nombre": "Hato Milagro",
+        "lat": 3.07,
+        "lon": -75.17
+      },
+      "21110160": {
+        "nombre": "Mesa Redonda",
+        "lat": 3.12,
+        "lon": -75.2
+      },
+      "21080080": {
+        "nombre": "La Mina",
+        "lat": 2.79,
+        "lon": -75.63
+      },
+      "21080100": {
+        "nombre": "Las Herreras",
+        "lat": 2.77,
+        "lon": -75.61
+      },
+      "21085030": {
+        "nombre": "San Rafael",
+        "lat": 2.76,
+        "lon": -75.58
+      },
+      "21110290": {
+        "nombre": "La Victoria",
+        "lat": 3.35,
+        "lon": -75.17
+      },
+      "21110120": {
+        "nombre": "La Yeguera",
+        "lat": 3.31,
+        "lon": -75.2
+      },
+      "21110330": {
+        "nombre": "Polonia",
+        "lat": 3.19,
+        "lon": -75.22
+      },
+      "21115060": {
+        "nombre": "San José",
+        "lat": 3.33,
+        "lon": -75.18
+      },
+      "21115080": {
+        "nombre": "Villavieja Ffcc",
+        "lat": 3.18,
+        "lon": -75.25
+      },
+      "21080070": {
+        "nombre": "Hacienda Santa Rosa",
+        "lat": 2.64,
+        "lon": -75.58
+      },
+      "21080030": {
+        "nombre": "Yaguará",
+        "lat": 2.67,
+        "lon": -75.53
+      },
+      "15060020": {
+        "nombre": "Cuestecita",
+        "lat": 11.2,
+        "lon": -72.61
+      },
+      "15065501": {
+        "nombre": "La Mina Cerrejón    AUT",
+        "lat": 11.14,
+        "lon": -72.62
+      },
+      "15060180": {
+        "nombre": "La Gloria",
+        "lat": 11.14,
+        "lon": -72.71
+      },
+      "15085030": {
+        "nombre": "Escuela Agrícola Carraipía   AUT",
+        "lat": 11.22,
+        "lon": -72.36
+      },
+      "15070160": {
+        "nombre": "Escuela Ceura",
+        "lat": 11.44,
+        "lon": -72.47
+      },
+      "15070230": {
+        "nombre": "Guayabal",
+        "lat": 11.44,
+        "lon": -72.55
+      },
+      "15060130": {
+        "nombre": "Hacienda La Esperanza",
+        "lat": 11.14,
+        "lon": -72.51
+      },
+      "15087080": {
+        "nombre": "Paraguachón",
+        "lat": 11.36,
+        "lon": -72.13
+      },
+      "15070130": {
+        "nombre": "El Pájaro",
+        "lat": 11.71,
+        "lon": -72.68
+      },
+      "15070150": {
+        "nombre": "Hacienda Caracas",
+        "lat": 11.48,
+        "lon": -72.56
+      },
+      "15070140": {
+        "nombre": "Mayapo",
+        "lat": 11.65,
+        "lon": -72.79
+      },
+      "15065180": {
+        "nombre": "Aeropuerto Almirante Padilla",
+        "lat": 11.53,
+        "lon": -72.92
+      },
+      "15050010": {
+        "nombre": "Camarones",
+        "lat": 11.43,
+        "lon": -73.05
+      },
+      "15060270": {
+        "nombre": "La Arena",
+        "lat": 11.19,
+        "lon": -72.73
+      },
+      "15060010": {
+        "nombre": "Los Remedios",
+        "lat": 11.38,
+        "lon": -72.91
+      },
+      "15065200": {
+        "nombre": "Caracoli",
+        "lat": 10.75,
+        "lon": -73.0
+      },
+      "28010200": {
+        "nombre": "Hatico de los Indios",
+        "lat": 10.86,
+        "lon": -73.11
+      },
+      "15075501": {
+        "nombre": "Aeropuerto Puerto Bolivar    AUT",
+        "lat": 12.22,
+        "lon": -71.98
+      },
+      "15070060": {
+        "nombre": "Buenos Aires",
+        "lat": 12.27,
+        "lon": -71.42
+      },
+      "15070190": {
+        "nombre": "Caimito",
+        "lat": 12.27,
+        "lon": -71.51
+      },
+      "15070100": {
+        "nombre": "Carrizal",
+        "lat": 12.0,
+        "lon": -72.18
+      },
+      "15070070": {
+        "nombre": "Irraipa",
+        "lat": 12.13,
+        "lon": -71.95
+      },
+      "15080080": {
+        "nombre": "Jasay",
+        "lat": 11.79,
+        "lon": -71.96
+      },
+      "15070110": {
+        "nombre": "Jojoncito",
+        "lat": 11.81,
+        "lon": -71.97
+      },
+      "15070080": {
+        "nombre": "Kauraquimana",
+        "lat": 12.22,
+        "lon": -71.46
+      },
+      "15070240": {
+        "nombre": "Orochon",
+        "lat": 11.81,
+        "lon": -72.19
+      },
+      "15070090": {
+        "nombre": "Perpana",
+        "lat": 12.09,
+        "lon": -71.82
+      },
+      "15080010": {
+        "nombre": "Puerto Estrella",
+        "lat": 12.35,
+        "lon": -71.31
+      },
+      "15080090": {
+        "nombre": "Puerto López",
+        "lat": 11.93,
+        "lon": -71.28
+      },
+      "15085040": {
+        "nombre": "Rancho Grande",
+        "lat": 11.69,
+        "lon": -71.83
+      },
+      "15070010": {
+        "nombre": "Santana Urraich",
+        "lat": 12.09,
+        "lon": -72.05
+      },
+      "15080040": {
+        "nombre": "Siapana",
+        "lat": 12.07,
+        "lon": -71.32
+      },
+      "15080070": {
+        "nombre": "Sillamaná",
+        "lat": 11.9,
+        "lon": -71.52
+      },
+      "15080020": {
+        "nombre": "Sipanao",
+        "lat": 12.12,
+        "lon": -71.27
+      },
+      "28015070": {
+        "nombre": "Urumita",
+        "lat": 10.57,
+        "lon": -73.02
+      },
+      "28010340": {
+        "nombre": "Villanueva",
+        "lat": 10.62,
+        "lon": -72.98
+      },
+      "29060210": {
+        "nombre": "La Palma",
+        "lat": 10.97,
+        "lon": -74.2
+      },
+      "29060070": {
+        "nombre": "San Pablo",
+        "lat": 10.81,
+        "lon": -74.03
+      },
+      "29060310": {
+        "nombre": "Sevillano",
+        "lat": 10.93,
+        "lon": -74.25
+      },
+      "25021630": {
+        "nombre": "Nueva Granada",
+        "lat": 9.8,
+        "lon": -74.39
+      },
+      "25021600": {
+        "nombre": "Apure",
+        "lat": 9.87,
+        "lon": -74.58
+      },
+      "25021610": {
+        "nombre": "El Agrado",
+        "lat": 9.69,
+        "lon": -74.5
+      },
+      "29060120": {
+        "nombre": "Tasajera",
+        "lat": 10.98,
+        "lon": -74.36
+      },
+      "25020900": {
+        "nombre": "San Sebastián",
+        "lat": 9.23,
+        "lon": -74.36
+      },
+      "25021030": {
+        "nombre": "San Zenón",
+        "lat": 9.25,
+        "lon": -74.5
+      },
+      "25021190": {
+        "nombre": "La Mecha",
+        "lat": 9.62,
+        "lon": -74.6
+      },
+      "25021020": {
+        "nombre": "Tierra Grata",
+        "lat": 9.44,
+        "lon": -74.74
+      },
+      "15015050": {
+        "nombre": "Aeropuerto Simon Bolívar",
+        "lat": 11.13,
+        "lon": -74.23
+      },
+      "15010020": {
+        "nombre": "Buritaca",
+        "lat": 11.25,
+        "lon": -73.76
+      },
+      "15010300": {
+        "nombre": "Guachaca",
+        "lat": 11.26,
+        "lon": -73.84
+      },
+      "15010010": {
+        "nombre": "Minca",
+        "lat": 11.14,
+        "lon": -74.12
+      },
+      "15015060": {
+        "nombre": "San Lorenzo",
+        "lat": 11.11,
+        "lon": -74.05
+      },
+      "15010040": {
+        "nombre": "Vista Nieves",
+        "lat": 11.09,
+        "lon": -74.08
+      },
+      "29060160": {
+        "nombre": "El Enano",
+        "lat": 10.9,
+        "lon": -74.19
+      },
+      "29060550": {
+        "nombre": "El Ruby",
+        "lat": 10.85,
+        "lon": -74.19
+      },
+      "29060230": {
+        "nombre": "La Sara",
+        "lat": 10.84,
+        "lon": -74.16
+      },
+      "29065030": {
+        "nombre": "Prado Sevilla",
+        "lat": 10.76,
+        "lon": -74.15
+      },
+      "29060280": {
+        "nombre": "San Isidro",
+        "lat": 10.9,
+        "lon": -74.22
+      },
+      "16055040": {
+        "nombre": "Abrego Centro Administrativo",
+        "lat": 8.09,
+        "lon": -73.22
+      },
+      "16050240": {
+        "nombre": "El Palacio",
+        "lat": 8.61,
+        "lon": -73.35
+      },
+      "16055090": {
+        "nombre": "Institución Agrícola Convención",
+        "lat": 8.47,
+        "lon": -73.34
+      },
+      "16055060": {
+        "nombre": "La Playa",
+        "lat": 8.22,
+        "lon": -73.24
+      },
+      "16055010": {
+        "nombre": "Aeropuerto Aguas Claras",
+        "lat": 8.32,
+        "lon": -73.36
+      },
+      "16050170": {
+        "nombre": "Brotare",
+        "lat": 8.4,
+        "lon": -73.42
+      },
+      "16055100": {
+        "nombre": "Universidad Francisco de Paula Santander",
+        "lat": 8.24,
+        "lon": -73.32
+      },
+      "37010080": {
+        "nombre": "Los Rincón",
+        "lat": 7.2,
+        "lon": -72.71
+      },
+      "37015010": {
+        "nombre": "Silos",
+        "lat": 7.21,
+        "lon": -72.75
+      },
+      "16050020": {
+        "nombre": "Quince Letras",
+        "lat": 8.54,
+        "lon": -73.24
+      },
+      "16055020": {
+        "nombre": "Teorama",
+        "lat": 8.44,
+        "lon": -73.29
+      },
+      "26120160": {
+        "nombre": "Salento",
+        "lat": 4.64,
+        "lon": -75.57
+      },
+      "24040050": {
+        "nombre": "Santa Isabel",
+        "lat": 6.64,
+        "lon": -73.2
+      },
+      "23190590": {
+        "nombre": "La Floresta",
+        "lat": 7.09,
+        "lon": -73.12
+      },
+      "24040060": {
+        "nombre": "Remolino",
+        "lat": 6.61,
+        "lon": -73.28
+      },
+      "24035260": {
+        "nombre": "Capitanejo",
+        "lat": 6.52,
+        "lon": -72.7
+      },
+      "24030300": {
+        "nombre": "Cepita",
+        "lat": 6.75,
+        "lon": -72.98
+      },
+      "24025050": {
+        "nombre": "Charalá",
+        "lat": 6.27,
+        "lon": -73.15
+      },
+      "24015260": {
+        "nombre": "Chima",
+        "lat": 6.36,
+        "lon": -73.37
+      },
+      "24010230": {
+        "nombre": "Confines",
+        "lat": 6.36,
+        "lon": -73.24
+      },
+      "24011070": {
+        "nombre": "El Santuario",
+        "lat": 6.32,
+        "lon": -73.47
+      },
+      "24020120": {
+        "nombre": "Coromoro",
+        "lat": 6.3,
+        "lon": -73.04
+      },
+      "24020220": {
+        "nombre": "Las Pavas",
+        "lat": 6.15,
+        "lon": -72.96
+      },
+      "24020230": {
+        "nombre": "Pueblo Viejo",
+        "lat": 6.25,
+        "lon": -72.95
+      },
+      "24020130": {
+        "nombre": "Curiti 2",
+        "lat": 6.6,
+        "lon": -73.06
+      },
+      "23145020": {
+        "nombre": "El Carmen",
+        "lat": 6.7,
+        "lon": -73.51
+      },
+      "23140070": {
+        "nombre": "Hacienda Dos Bocas",
+        "lat": 6.77,
+        "lon": -73.62
+      },
+      "23190140": {
+        "nombre": "El Playón",
+        "lat": 7.46,
+        "lon": -73.2
+      },
+      "24020040": {
+        "nombre": "Encino",
+        "lat": 6.14,
+        "lon": -73.1
+      },
+      "23190400": {
+        "nombre": "La Galvicia",
+        "lat": 7.12,
+        "lon": -73.06
+      },
+      "24015280": {
+        "nombre": "Gámbita",
+        "lat": 5.94,
+        "lon": -73.34
+      },
+      "24010850": {
+        "nombre": "La Palma",
+        "lat": 5.87,
+        "lon": -73.38
+      },
+      "23190600": {
+        "nombre": "El Pantano",
+        "lat": 7.0,
+        "lon": -73.23
+      },
+      "24060070": {
+        "nombre": "La Parroquia",
+        "lat": 7.08,
+        "lon": -73.33
+      },
+      "23195110": {
+        "nombre": "Llano Grande    AUT",
+        "lat": 7.03,
+        "lon": -73.17
+      },
+      "23190280": {
+        "nombre": "Palo Gordo",
+        "lat": 6.97,
+        "lon": -73.13
+      },
+      "24060060": {
+        "nombre": "Puente La Paz",
+        "lat": 7.11,
+        "lon": -73.42
+      },
+      "24030630": {
+        "nombre": "Baraya",
+        "lat": 6.96,
+        "lon": -72.82
+      },
+      "37010060": {
+        "nombre": "El Portillo",
+        "lat": 7.03,
+        "lon": -72.8
+      },
+      "24030750": {
+        "nombre": "Guaca",
+        "lat": 6.88,
+        "lon": -72.86
+      },
+      "24015250": {
+        "nombre": "La Laja",
+        "lat": 6.24,
+        "lon": -73.42
+      },
+      "23195502": {
+        "nombre": "Aeropuerto Palonegro",
+        "lat": 7.12,
+        "lon": -73.18
+      },
+      "23190440": {
+        "nombre": "El Naranjo",
+        "lat": 7.21,
+        "lon": -73.3
+      },
+      "23190260": {
+        "nombre": "La Laguna",
+        "lat": 7.08,
+        "lon": -73.21
+      },
+      "23190380": {
+        "nombre": "Palmas",
+        "lat": 7.21,
+        "lon": -73.22
+      },
+      "24060050": {
+        "nombre": "La Mesa",
+        "lat": 6.76,
+        "lon": -73.09
+      },
+      "24030950": {
+        "nombre": "Malaga 2",
+        "lat": 6.71,
+        "lon": -72.73
+      },
+      "23190340": {
+        "nombre": "Matajira",
+        "lat": 7.21,
+        "lon": -73.06
+      },
+      "24025040": {
+        "nombre": "Escuela Agrícola Mogotes",
+        "lat": 6.47,
+        "lon": -72.97
+      },
+      "24030340": {
+        "nombre": "Molagavita",
+        "lat": 6.67,
+        "lon": -72.81
+      },
+      "24010240": {
+        "nombre": "Oiba",
+        "lat": 6.26,
+        "lon": -73.3
+      },
+      "24055040": {
+        "nombre": "El Palmar",
+        "lat": 6.55,
+        "lon": -73.29
+      },
+      "23190700": {
+        "nombre": "Granja Piedecuesta",
+        "lat": 6.99,
+        "lon": -73.07
+      },
+      "24025020": {
+        "nombre": "El Cucharo",
+        "lat": 6.53,
+        "lon": -73.2
+      },
+      "23190350": {
+        "nombre": "Llano de Palmas",
+        "lat": 7.24,
+        "lon": -73.2
+      },
+      "23190360": {
+        "nombre": "Portachuelo",
+        "lat": 7.33,
+        "lon": -73.17
+      },
+      "24060040": {
+        "nombre": "Aguasclaras",
+        "lat": 7.26,
+        "lon": -73.55
+      },
+      "24060080": {
+        "nombre": "Payoa 5",
+        "lat": 7.27,
+        "lon": -73.49
+      },
+      "23190320": {
+        "nombre": "Provincia",
+        "lat": 7.4,
+        "lon": -73.44
+      },
+      "23180070": {
+        "nombre": "Sabana de Torres",
+        "lat": 7.39,
+        "lon": -73.49
+      },
+      "24030270": {
+        "nombre": "San Andrés",
+        "lat": 6.83,
+        "lon": -72.84
+      },
+      "24020150": {
+        "nombre": "Hacienda el Mamonal",
+        "lat": 6.58,
+        "lon": -73.11
+      },
+      "24030200": {
+        "nombre": "San Joaquín",
+        "lat": 6.43,
+        "lon": -72.87
+      },
+      "24050070": {
+        "nombre": "La Putana",
+        "lat": 7.13,
+        "lon": -73.52
+      },
+      "24050060": {
+        "nombre": "San Vicente",
+        "lat": 6.87,
+        "lon": -73.41
+      },
+      "24030330": {
+        "nombre": "El Tope",
+        "lat": 6.94,
+        "lon": -72.93
+      },
+      "24010660": {
+        "nombre": "Simacota",
+        "lat": 6.44,
+        "lon": -73.33
+      },
+      "23195200": {
+        "nombre": "Cachiri",
+        "lat": 7.47,
+        "lon": -72.99
+      },
+      "23195090": {
+        "nombre": "Vivero Suratá   AUT",
+        "lat": 7.37,
+        "lon": -72.99
+      },
+      "37015020": {
+        "nombre": "Berlín Automática",
+        "lat": 7.19,
+        "lon": -72.87
+      },
+      "23190300": {
+        "nombre": "El Picacho",
+        "lat": 7.11,
+        "lon": -72.97
+      },
+      "23190130": {
+        "nombre": "Tona   AUT",
+        "lat": 7.2,
+        "lon": -72.97
+      },
+      "24020080": {
+        "nombre": "Valle de San José",
+        "lat": 6.44,
+        "lon": -73.14
+      },
+      "23190450": {
+        "nombre": "Vetas El Pozo",
+        "lat": 7.31,
+        "lon": -72.88
+      },
+      "24050100": {
+        "nombre": "La Fuente",
+        "lat": 6.71,
+        "lon": -73.28
+      },
+      "24055030": {
+        "nombre": "Zapatoca",
+        "lat": 6.79,
+        "lon": -73.28
+      },
+      "25020860": {
+        "nombre": "Hacienda La Frontera",
+        "lat": 9.36,
+        "lon": -74.94
+      },
+      "13090040": {
+        "nombre": "Chalán",
+        "lat": 9.54,
+        "lon": -75.32
+      },
+      "13090060": {
+        "nombre": "El Paraiso",
+        "lat": 9.47,
+        "lon": -75.37
+      },
+      "13095020": {
+        "nombre": "Primates",
+        "lat": 9.53,
+        "lon": -75.35
+      },
+      "25025080": {
+        "nombre": "Aeropuerto Rafael Barvo",
+        "lat": 9.33,
+        "lon": -75.28
+      },
+      "25020990": {
+        "nombre": "Hato Nuevo",
+        "lat": 9.18,
+        "lon": -75.19
+      },
+      "25021000": {
+        "nombre": "Galeras",
+        "lat": 9.17,
+        "lon": -75.05
+      },
+      "25020390": {
+        "nombre": "Charcón",
+        "lat": 9.4,
+        "lon": -75.16
+      },
+      "25020190": {
+        "nombre": "Puerto Asis",
+        "lat": 9.43,
+        "lon": -75.13
+      },
+      "25025380": {
+        "nombre": "San Benito   AUT",
+        "lat": 9.16,
+        "lon": -75.04
+      },
+      "25020760": {
+        "nombre": "Santiago Apostol",
+        "lat": 9.0,
+        "lon": -74.94
+      },
+      "25020400": {
+        "nombre": "Libra Arriba",
+        "lat": 9.32,
+        "lon": -75.3
+      },
+      "13090110": {
+        "nombre": "Palo Alto",
+        "lat": 9.82,
+        "lon": -75.42
+      },
+      "29030380": {
+        "nombre": "Sabanas de Mucacal",
+        "lat": 9.88,
+        "lon": -75.39
+      },
+      "13090010": {
+        "nombre": "Sabanetica",
+        "lat": 9.83,
+        "lon": -75.43
+      },
+      "13090020": {
+        "nombre": "San Onofre",
+        "lat": 9.75,
+        "lon": -75.54
+      },
+      "25020770": {
+        "nombre": "San Pedro",
+        "lat": 9.4,
+        "lon": -75.05
+      },
+      "25021360": {
+        "nombre": "Campo Alegre",
+        "lat": 8.92,
+        "lon": -74.71
+      },
+      "25020500": {
+        "nombre": "Hacienda Villa Cecilia",
+        "lat": 8.82,
+        "lon": -74.73
+      },
+      "25021560": {
+        "nombre": "Isla del Coco",
+        "lat": 8.9,
+        "lon": -74.8
+      },
+      "25021370": {
+        "nombre": "San Luis",
+        "lat": 8.88,
+        "lon": -74.71
+      },
+      "13090090": {
+        "nombre": "Hacienda Santa Angela",
+        "lat": 9.49,
+        "lon": -75.51
+      },
+      "13090100": {
+        "nombre": "Hacienda La Argentina",
+        "lat": 9.49,
+        "lon": -75.47
+      },
+      "13090050": {
+        "nombre": "Toluviejo",
+        "lat": 9.44,
+        "lon": -75.44
+      },
+      "21240070": {
+        "nombre": "Anzoátegui",
+        "lat": 4.64,
+        "lon": -75.09
+      },
+      "21215100": {
+        "nombre": "Cajamarca",
+        "lat": 4.44,
+        "lon": -75.42
+      },
+      "21210140": {
+        "nombre": "El Plan",
+        "lat": 4.38,
+        "lon": -75.5
+      },
+      "21215130": {
+        "nombre": "Hacienda Cucuana",
+        "lat": 4.34,
+        "lon": -75.52
+      },
+      "21210130": {
+        "nombre": "Las Delicias",
+        "lat": 4.38,
+        "lon": -75.51
+      },
+      "21190290": {
+        "nombre": "Carmen de Apicalá",
+        "lat": 4.16,
+        "lon": -74.71
+      },
+      "22050100": {
+        "nombre": "Los Guayabos",
+        "lat": 4.66,
+        "lon": -75.1
+      },
+      "21160030": {
+        "nombre": "Cunday",
+        "lat": 4.07,
+        "lon": -74.69
+      },
+      "21215080": {
+        "nombre": "Chicoral",
+        "lat": 4.23,
+        "lon": -75.0
+      },
+      "21185090": {
+        "nombre": "Nataima   AUT",
+        "lat": 4.19,
+        "lon": -74.96
+      },
+      "21185040": {
+        "nombre": "Aeropuerto Santiago Vila",
+        "lat": 4.28,
+        "lon": -74.8
+      },
+      "21185030": {
+        "nombre": "Guamo",
+        "lat": 4.01,
+        "lon": -74.98
+      },
+      "21180160": {
+        "nombre": "Suárez",
+        "lat": 4.06,
+        "lon": -74.84
+      },
+      "21245040": {
+        "nombre": "Aeropuerto Perales",
+        "lat": 4.42,
+        "lon": -75.14
+      },
+      "21210200": {
+        "nombre": "Buenos Aires",
+        "lat": 4.34,
+        "lon": -75.07
+      },
+      "21220050": {
+        "nombre": "El Aceituno",
+        "lat": 4.35,
+        "lon": -75.05
+      },
+      "21210160": {
+        "nombre": "El Darien",
+        "lat": 4.47,
+        "lon": -75.3
+      },
+      "21210220": {
+        "nombre": "El Palmar",
+        "lat": 4.58,
+        "lon": -75.33
+      },
+      "21210110": {
+        "nombre": "El Placer",
+        "lat": 4.52,
+        "lon": -75.28
+      },
+      "21210080": {
+        "nombre": "El Secreto",
+        "lat": 4.49,
+        "lon": -75.29
+      },
+      "21210170": {
+        "nombre": "Hacienda Palogrande",
+        "lat": 4.33,
+        "lon": -75.4
+      },
+      "21245010": {
+        "nombre": "Hato Perales Opia",
+        "lat": 4.43,
+        "lon": -75.2
+      },
+      "21210120": {
+        "nombre": "La Esmeralda",
+        "lat": 4.49,
+        "lon": -75.24
+      },
+      "21210020": {
+        "nombre": "Las Juntas",
+        "lat": 4.56,
+        "lon": -75.32
+      },
+      "21210030": {
+        "nombre": "Pastales",
+        "lat": 4.51,
+        "lon": -75.3
+      },
+      "21240030": {
+        "nombre": "San Juan de China",
+        "lat": 4.54,
+        "lon": -75.08
+      },
+      "21210180": {
+        "nombre": "Toche",
+        "lat": 4.52,
+        "lon": -75.41
+      },
+      "21250070": {
+        "nombre": "La Sierra",
+        "lat": 4.8,
+        "lon": -74.94
+      },
+      "21190300": {
+        "nombre": "El Salero",
+        "lat": 4.23,
+        "lon": -74.61
+      },
+      "21190410": {
+        "nombre": "Hacienda La Granja",
+        "lat": 4.16,
+        "lon": -74.59
+      },
+      "21250050": {
+        "nombre": "Alto del Oso",
+        "lat": 4.85,
+        "lon": -75.25
+      },
+      "21255170": {
+        "nombre": "Murillo   AUT",
+        "lat": 4.87,
+        "lon": -75.17
+      },
+      "22060070": {
+        "nombre": "Ortega",
+        "lat": 3.94,
+        "lon": -75.22
+      },
+      "21227010": {
+        "nombre": "Piedras",
+        "lat": 4.54,
+        "lon": -74.88
+      },
+      "22020030": {
+        "nombre": "Gaitania",
+        "lat": 3.09,
+        "lon": -75.67
+      },
+      "22020060": {
+        "nombre": "Rioclaro",
+        "lat": 3.05,
+        "lon": -75.64
+      },
+      "21160040": {
+        "nombre": "Aco",
+        "lat": 3.75,
+        "lon": -74.81
+      },
+      "21160080": {
+        "nombre": "Boquerón",
+        "lat": 3.75,
+        "lon": -74.9
+      },
+      "21165010": {
+        "nombre": "Pst de Monta",
+        "lat": 3.79,
+        "lon": -74.92
+      },
+      "21165030": {
+        "nombre": "Lozanía",
+        "lat": 3.9,
+        "lon": -74.77
+      },
+      "21130010": {
+        "nombre": "Purificación",
+        "lat": 3.85,
+        "lon": -74.94
+      },
+      "22070030": {
+        "nombre": "Santa Helena",
+        "lat": 4.12,
+        "lon": -75.5
+      },
+      "22075030": {
+        "nombre": "Riomanso",
+        "lat": 4.21,
+        "lon": -75.42
+      },
+      "21180040": {
+        "nombre": "Rovira 2",
+        "lat": 4.24,
+        "lon": -75.24
+      },
+      "21135020": {
+        "nombre": "Jabalcon",
+        "lat": 3.86,
+        "lon": -75.02
+      },
+      "22050090": {
+        "nombre": "Molino Murra",
+        "lat": 3.92,
+        "lon": -75.02
+      },
+      "22060100": {
+        "nombre": "Piedras de Cobre",
+        "lat": 3.91,
+        "lon": -75.1
+      },
+      "21180120": {
+        "nombre": "Hacienda La Lorena",
+        "lat": 4.03,
+        "lon": -75.11
+      },
+      "21210190": {
+        "nombre": "La Resaca",
+        "lat": 4.27,
+        "lon": -75.15
+      },
+      "21240110": {
+        "nombre": "La Bodega",
+        "lat": 4.74,
+        "lon": -75.14
+      },
+      "21245140": {
+        "nombre": "Santa Isabel",
+        "lat": 4.71,
+        "lon": -75.09
+      },
+      "21255110": {
+        "nombre": "Santa Isabel",
+        "lat": 4.7,
+        "lon": -75.13
+      },
+      "21170030": {
+        "nombre": "Hacienda La Maporita  DC",
+        "lat": 3.95,
+        "lon": -74.86
+      },
+      "21170020": {
+        "nombre": "Las Dos Aguas",
+        "lat": 4.26,
+        "lon": -74.78
+      },
+      "21170040": {
+        "nombre": "Las Mesas",
+        "lat": 3.91,
+        "lon": -74.82
+      },
+      "21180210": {
+        "nombre": "Valle de San Juan",
+        "lat": 4.19,
+        "lon": -75.11
+      },
+      "21185080": {
+        "nombre": "Valle de San Juan",
+        "lat": 4.22,
+        "lon": -75.1
+      },
+      "21250100": {
+        "nombre": "La Estrella",
+        "lat": 4.76,
+        "lon": -74.9
+      },
+      "21250460": {
+        "nombre": "Venadillo",
+        "lat": 4.66,
+        "lon": -74.92
+      },
+      "21160200": {
+        "nombre": "Conc L Bustamante",
+        "lat": 3.89,
+        "lon": -74.57
+      },
+      "21160180": {
+        "nombre": "Puerto Lleras",
+        "lat": 3.84,
+        "lon": -74.69
+      },
+      "21160070": {
+        "nombre": "Villarrica",
+        "lat": 3.93,
+        "lon": -74.61
+      },
+      "26080310": {
+        "nombre": "Ideam Sede Cali",
+        "lat": 3.48,
+        "lon": -76.52
+      },
+      "26080280": {
+        "nombre": "Pichinde",
+        "lat": 3.44,
+        "lon": -76.6
+      },
+      "26055120": {
+        "nombre": "Universidad del Valle    AUT",
+        "lat": 3.38,
+        "lon": -76.53
+      },
+      "26060020": {
+        "nombre": "Cabuyal",
+        "lat": 3.32,
+        "lon": -76.35
+      },
+      "53110020": {
+        "nombre": "Cisneros",
+        "lat": 3.78,
+        "lon": -76.76
+      },
+      "53110030": {
+        "nombre": "Providencia",
+        "lat": 3.63,
+        "lon": -76.72
+      },
+      "53100040": {
+        "nombre": "Queremal",
+        "lat": 3.53,
+        "lon": -76.71
+      },
+      "26090520": {
+        "nombre": "El Castillo",
+        "lat": 3.67,
+        "lon": -76.2
+      },
+      "26090460": {
+        "nombre": "El Paraiso",
+        "lat": 3.65,
+        "lon": -76.2
+      },
+      "26095320": {
+        "nombre": "El Vinculo   AUT",
+        "lat": 3.36,
+        "lon": -76.3
+      },
+      "26070760": {
+        "nombre": "Florida",
+        "lat": 3.33,
+        "lon": -76.24
+      },
+      "26075110": {
+        "nombre": "La Diana",
+        "lat": 3.31,
+        "lon": -76.19
+      },
+      "26070610": {
+        "nombre": "La Soledad",
+        "lat": 3.37,
+        "lon": -76.17
+      },
+      "26090630": {
+        "nombre": "Guacarí",
+        "lat": 3.77,
+        "lon": -76.33
+      },
+      "26055040": {
+        "nombre": "Samarkanda",
+        "lat": 3.17,
+        "lon": -76.7
+      },
+      "53110040": {
+        "nombre": "Aguaclara",
+        "lat": 3.68,
+        "lon": -76.54
+      },
+      "53110100": {
+        "nombre": "La Cumbre",
+        "lat": 3.65,
+        "lon": -76.57
+      },
+      "26075040": {
+        "nombre": "Aeropuerto Alfonso Bonilla",
+        "lat": 3.54,
+        "lon": -76.39
+      },
+      "26090880": {
+        "nombre": "Austria",
+        "lat": 3.58,
+        "lon": -76.18
+      },
+      "26075090": {
+        "nombre": "Chambu",
+        "lat": 3.48,
+        "lon": -76.22
+      },
+      "26070170": {
+        "nombre": "Esperanza Pradera",
+        "lat": 3.53,
+        "lon": -76.21
+      },
+      "26070110": {
+        "nombre": "La Zapata",
+        "lat": 3.53,
+        "lon": -76.21
+      },
+      "26075010": {
+        "nombre": "Palmira Ica",
+        "lat": 3.51,
+        "lon": -76.31
+      },
+      "26095180": {
+        "nombre": "San Emigdio",
+        "lat": 3.55,
+        "lon": -76.2
+      },
+      "26090300": {
+        "nombre": "Tenjo",
+        "lat": 3.52,
+        "lon": -76.17
+      },
+      "26080070": {
+        "nombre": "Vijes",
+        "lat": 3.7,
+        "lon": -76.43
+      },
+      "26085130": {
+        "nombre": "La Buitrera",
+        "lat": 3.58,
+        "lon": -76.57
+      }
+    }
+  },
+  "municipios": {
+    "44847": {
+      "automaticas": {
+        "dentro": [
+          "0015070080",
+          "0015075501",
+          "0015080070",
+          "1507500207",
+          "1508500053"
+        ],
+        "cercanas_km": {}
+      },
+      "normales": {
+        "dentro": [
+          "15070010",
+          "15070060",
+          "15070070",
+          "15070080",
+          "15070090",
+          "15070100",
+          "15070110",
+          "15070190",
+          "15070240",
+          "15075501",
+          "15080010",
+          "15080020",
+          "15080040",
+          "15080070",
+          "15080080",
+          "15080090",
+          "15085040"
+        ],
+        "cercanas_km": {
+          "15070160": 37.53,
+          "15070150": 41.12,
+          "15087080": 41.84,
+          "15070230": 43.26,
+          "15070130": 45.09
+        }
+      }
+    },
+    "44430": {
+      "automaticas": {
+        "dentro": [
+          "0015085030"
+        ],
+        "cercanas_km": {
+          "1507500207": 37.6,
+          "0015065501": 48.73
+        }
+      },
+      "normales": {
+        "dentro": [
+          "15070160",
+          "15070230",
+          "15085030",
+          "15087080"
+        ],
+        "cercanas_km": {
+          "15070150": 36.37,
+          "15060130": 39.41,
+          "15060020": 44.7,
+          "15070240": 48.32,
+          "15065501": 48.95
+        }
+      }
+    },
+    "44001": {
+      "automaticas": {
+        "dentro": [
+          "0015065180",
+          "0015065190"
+        ],
+        "cercanas_km": {}
+      },
+      "normales": {
+        "dentro": [
+          "15050010",
+          "15060010",
+          "15060270",
+          "15065180"
+        ],
+        "cercanas_km": {
+          "15070140": 18.93,
+          "15070130": 32.32,
+          "15070150": 38.71,
+          "15070230": 40.64,
+          "15060180": 48.49,
+          "15070160": 49.14,
+          "15060020": 49.17
+        }
+      }
+    },
+    "44560": {
+      "automaticas": {
+        "dentro": [],
+        "cercanas_km": {
+          "1507500207": 25.26
+        }
+      },
+      "normales": {
+        "dentro": [
+          "15070140",
+          "15070150"
+        ],
+        "cercanas_km": {
+          "15070130": 27.21,
+          "15070240": 27.37,
+          "15070160": 37.27,
+          "15070100": 37.76,
+          "15070230": 39.04
+        }
+      }
+    },
+    "47001": {
+      "automaticas": {
+        "dentro": [
+          "0015015050",
+          "0015015100",
+          "0015015120",
+          "0015015120",
+          "0015017030",
+          "1509500118"
+        ],
+        "cercanas_km": {
+          "0029065130": 40.1
+        }
+      },
+      "normales": {
+        "dentro": [
+          "15010010",
+          "15010020",
+          "15010040",
+          "15010300",
+          "15015050",
+          "15015060"
+        ],
+        "cercanas_km": {
+          "29060210": 26.1,
+          "29060120": 30.49,
+          "29060310": 31.03,
+          "29060160": 33.9,
+          "29060280": 33.95,
+          "29060550": 39.45,
+          "29060230": 40.78,
+          "29060070": 47.64,
+          "29065030": 49.74
+        }
+      }
+    },
+    "47555": {
+      "automaticas": {
+        "dentro": [
+          "0025027450"
+        ],
+        "cercanas_km": {
+          "0029015000": 33.8,
+          "0029015040": 36.41
+        }
+      },
+      "normales": {
+        "dentro": [
+          "25021600",
+          "25021610"
+        ],
+        "cercanas_km": {
+          "29010130": 7.32,
+          "25025020": 9.59,
+          "29010050": 11.43,
+          "29010120": 19.2,
+          "25020960": 23.52,
+          "25021190": 28.2,
+          "29015000": 30.14,
+          "29015020": 36.67,
+          "25021020": 39.96,
+          "25021630": 43.23,
+          "29030570": 47.98,
+          "29030500": 48.4
+        }
+      }
+    },
+    "13244": {
+      "automaticas": {
+        "dentro": [
+          "0029015040",
+          "2901500072"
+        ],
+        "cercanas_km": {
+          "0025027450": 34.74,
+          "0025020440": 37.08,
+          "0029015000": 38.54,
+          "0025025280": 44.23
+        }
+      },
+      "normales": {
+        "dentro": [
+          "29015020",
+          "29030480"
+        ],
+        "cercanas_km": {
+          "29010120": 18.91,
+          "29030500": 20.01,
+          "29030150": 21.97,
+          "29030530": 25.9,
+          "29030570": 27.88,
+          "29030450": 27.99,
+          "13090040": 29.49,
+          "25025020": 30.84,
+          "29010130": 31.4,
+          "29030780": 31.41,
+          "25020190": 32.11,
+          "13095020": 32.7,
+          "29010050": 33.07,
+          "29030380": 34.49,
+          "13090110": 34.63,
+          "25020960": 34.98,
+          "29035040": 35.13,
+          "25020390": 35.69,
+          "13090010": 36.03,
+          "25020770": 36.28,
+          "29030080": 38.12,
+          "29035110": 38.83,
+          "13090060": 38.84,
+          "29030310": 40.3,
+          "29030160": 41.4,
+          "29030280": 42.18,
+          "29030200": 42.45,
+          "25020860": 44.56,
+          "13090100": 45.92,
+          "13090020": 46.03,
+          "25025080": 46.59,
+          "13090050": 46.71,
+          "29015000": 48.2,
+          "25020400": 48.47,
+          "13090090": 49.64,
+          "29030430": 49.7
+        }
+      }
+    },
+    "13430": {
+      "automaticas": {
+        "dentro": [
+          "0025025100",
+          "0025027180"
+        ],
+        "cercanas_km": {
+          "0025020440": 31.39,
+          "0025025380": 32.47,
+          "0025027240": 45.37
+        }
+      },
+      "normales": {
+        "dentro": [
+          "25020950",
+          "25021020",
+          "25021260",
+          "25021340",
+          "25027530"
+        ],
+        "cercanas_km": {
+          "25021300": 12.83,
+          "25020860": 21.81,
+          "25021180": 22.11,
+          "25021330": 23.49,
+          "25021030": 29.31,
+          "25025380": 32.14,
+          "25021000": 32.79,
+          "25021270": 33.76,
+          "25020770": 34.57,
+          "25020760": 34.96,
+          "25021350": 35.86,
+          "25020960": 36.93,
+          "25021360": 38.73,
+          "25021560": 40.62,
+          "25021370": 43.13,
+          "25021280": 43.15,
+          "25021290": 43.19,
+          "25021190": 43.63,
+          "25020190": 43.93,
+          "25020900": 44.8,
+          "25020390": 45.73,
+          "25020990": 47.38,
+          "29010050": 48.85,
+          "25021310": 48.93,
+          "25020500": 49.51
+        }
+      }
+    },
+    "13001": {
+      "automaticas": {
+        "dentro": [
+          "0014015080",
+          "1206500136"
+        ],
+        "cercanas_km": {
+          "0029035000": 36.0,
+          "0029035200": 42.04
+        }
+      },
+      "normales": {
+        "dentro": [
+          "14010030"
+        ],
+        "cercanas_km": {
+          "14015080": 7.67,
+          "14010050": 17.31,
+          "29030370": 18.22,
+          "29030040": 21.95,
+          "29030320": 33.41,
+          "29030050": 36.82,
+          "29030430": 38.34,
+          "29030170": 38.4,
+          "29030410": 40.15,
+          "29030270": 40.37,
+          "29030140": 42.68,
+          "29030280": 46.13,
+          "29035110": 46.27,
+          "29030080": 46.97,
+          "29030160": 47.35
+        }
+      }
+    },
+    "20001": {
+      "automaticas": {
+        "dentro": [
+          "0028017150",
+          "0028025502",
+          "0028030190",
+          "0028035060",
+          "0028035070",
+          "0028037030"
+        ],
+        "cercanas_km": {
+          "0028015070": 29.54,
+          "0028010200": 47.2
+        }
+      },
+      "normales": {
+        "dentro": [
+          "28010020",
+          "28010070",
+          "28010090",
+          "28010360",
+          "28010370",
+          "28020150",
+          "28025502",
+          "28030190",
+          "28030220",
+          "28035010",
+          "28035020",
+          "28035040"
+        ],
+        "cercanas_km": {
+          "28025020": 25.47,
+          "28010040": 26.28,
+          "28015070": 28.87,
+          "28020410": 31.88,
+          "28020590": 34.79,
+          "28010340": 35.32,
+          "28040010": 36.59,
+          "29060090": 38.85,
+          "15065200": 42.9,
+          "28020460": 46.8,
+          "28010200": 47.33
+        }
+      }
+    },
+    "20011": {
+      "automaticas": {
+        "dentro": [
+          "0023195240"
+        ],
+        "cercanas_km": {
+          "0023217080": 15.54,
+          "0016055120": 25.4
+        }
+      },
+      "normales": {
+        "dentro": [
+          "23190710",
+          "23210130",
+          "23215030"
+        ],
+        "cercanas_km": {
+          "23210160": 14.1,
+          "23210010": 20.66,
+          "16050170": 23.73,
+          "23190580": 24.12,
+          "16050060": 24.72,
+          "23190480": 25.69,
+          "16055010": 27.99,
+          "16055100": 33.2,
+          "23215050": 33.83,
+          "16055090": 35.18,
+          "16055020": 38.6,
+          "23190520": 39.13,
+          "25020970": 39.7,
+          "16055060": 42.27,
+          "16050240": 44.5,
+          "25021640": 45.82,
+          "25027410": 46.3,
+          "16050020": 48.63,
+          "16055040": 49.62
+        }
+      }
+    },
+    "68079": {
+      "automaticas": {
+        "dentro": [],
+        "cercanas_km": {
+          "0024027070": 22.24,
+          "0024017640": 22.59,
+          "0024025090": 33.49,
+          "0024055070": 34.63,
+          "0023197690": 38.63,
+          "2319500065": 43.47,
+          "0023195110": 43.96,
+          "2319500043": 49.22
+        }
+      },
+      "normales": {
+        "dentro": [
+          "24040050"
+        ],
+        "cercanas_km": {
+          "24040060": 6.84,
+          "24050100": 10.52,
+          "24025020": 11.85,
+          "24055040": 11.92,
+          "24020150": 13.86,
+          "24020130": 18.4,
+          "24055030": 18.44,
+          "24060050": 20.29,
+          "24020080": 23.45,
+          "24010660": 24.61,
+          "24030300": 29.77,
+          "24010230": 30.54,
+          "23145020": 32.53,
+          "24025040": 33.38,
+          "24050060": 33.38,
+          "24015260": 34.53,
+          "23190280": 38.74,
+          "23190600": 40.69,
+          "24025050": 41.28,
+          "24020120": 42.3,
+          "24010240": 42.46,
+          "23190700": 43.03,
+          "24011070": 44.32,
+          "23195110": 44.41,
+          "24030200": 45.13,
+          "24030340": 45.79,
+          "23140070": 46.37,
+          "24030330": 46.95,
+          "24030270": 47.58,
+          "24030750": 48.52,
+          "24015250": 48.93,
+          "23190260": 49.6
+        }
+      }
+    },
+    "68679": {
+      "automaticas": {
+        "dentro": [],
+        "cercanas_km": {
+          "0024027070": 12.2,
+          "0024025090": 20.47,
+          "0024017640": 22.21,
+          "0023197690": 46.39,
+          "0024055070": 47.94,
+          "2319500065": 49.63
+        }
+      },
+      "normales": {
+        "dentro": [],
+        "cercanas_km": {
+          "24020150": 4.15,
+          "24025020": 7.61,
+          "24020130": 9.84,
+          "24040050": 12.16,
+          "24020080": 12.46,
+          "24055040": 17.15,
+          "24040060": 17.29,
+          "24025040": 20.36,
+          "24060050": 23.66,
+          "24050100": 23.79,
+          "24010230": 24.31,
+          "24010660": 24.9,
+          "24030300": 27.88,
+          "24020120": 29.91,
+          "24055030": 30.95,
+          "24025050": 31.4,
+          "24030200": 32.24,
+          "24015260": 33.63,
+          "24010240": 37.25,
+          "24030340": 38.2,
+          "24020230": 39.3,
+          "23145020": 44.59,
+          "24030270": 44.9,
+          "24030700": 44.96,
+          "24011070": 45.14,
+          "24020040": 45.97,
+          "23190280": 46.49,
+          "24050060": 46.63,
+          "24015250": 46.87,
+          "24030750": 47.45,
+          "24030950": 48.04,
+          "24035260": 48.16,
+          "24020220": 48.69,
+          "24030330": 48.72,
+          "23190700": 49.23
+        }
+      }
+    },
+    "68001": {
+      "automaticas": {
+        "dentro": [
+          "0023195040"
+        ],
+        "cercanas_km": {
+          "0023195502": 5.76,
+          "2319500043": 8.09,
+          "0023195110": 10.81,
+          "2319500065": 15.45,
+          "0023197690": 16.38,
+          "0023190130": 20.26,
+          "0023190440": 20.91,
+          "0037015030": 30.17,
+          "0023195090": 32.01,
+          "2319500207": 38.76,
+          "0023195200": 42.7,
+          "1602500063": 47.26,
+          "0024055070": 49.66,
+          "0023180070": 49.75
+        }
+      },
+      "normales": {
+        "dentro": [
+          "23190400",
+          "23190590"
+        ],
+        "cercanas_km": {
+          "23195502": 5.25,
+          "23190260": 9.46,
+          "23195110": 10.46,
+          "23190340": 13.12,
+          "23190380": 14.19,
+          "23190350": 15.62,
+          "23190700": 15.67,
+          "23190280": 16.29,
+          "23190600": 16.83,
+          "23190300": 17.95,
+          "23190130": 20.2,
+          "23190440": 21.2,
+          "24060070": 22.16,
+          "23190360": 24.1,
+          "24030330": 29.75,
+          "37015020": 30.1,
+          "24060060": 31.72,
+          "23195090": 32.28,
+          "23190450": 35.2,
+          "37010060": 37.94,
+          "24030630": 38.63,
+          "23190140": 38.92,
+          "24055030": 39.78,
+          "24060050": 39.92,
+          "24030750": 39.95,
+          "24050060": 41.09,
+          "23195200": 42.34,
+          "24050070": 42.78,
+          "24060080": 42.97,
+          "37015010": 43.47,
+          "24030300": 44.09,
+          "24030270": 45.36,
+          "23190320": 46.3,
+          "37010080": 47.54,
+          "24050100": 48.04,
+          "24060040": 48.74,
+          "23180070": 49.8
+        }
+      }
+    },
+    "11001": {
+      "automaticas": {
+        "dentro": [
+          "0021201200",
+          "0021201580",
+          "0021205012",
+          "0021205710",
+          "0021205791",
+          "0021206560",
+          "0021206600",
+          "0021206920",
+          "0035027150",
+          "2120500204"
+        ],
+        "cercanas_km": {
+          "0021205420": 11.78,
+          "0035025060": 14.12,
+          "0021206280": 23.65,
+          "2120700146": 24.0,
+          "2120500135": 24.22,
+          "0035027100": 26.72,
+          "0021206980": 30.28,
+          "0035025080": 31.02,
+          "2306500204": 32.27,
+          "0035035130": 34.42,
+          "0021205940": 36.5,
+          "0021205700": 37.0,
+          "0021205670": 38.59,
+          "0021205910": 39.58,
+          "0021195120": 42.61,
+          "0021195190": 44.1,
+          "0035020300": 45.45,
+          "0021205660": 46.78
+        }
+      },
+      "normales": {
+        "dentro": [
+          "21195100",
+          "21200080",
+          "21200130",
+          "21200200",
+          "21200240",
+          "21200310",
+          "21200320",
+          "21200340",
+          "21200400",
+          "21201120",
+          "21201200",
+          "21201230",
+          "21201300",
+          "21201540",
+          "21201580",
+          "21201600",
+          "21201970",
+          "21202020",
+          "21202040",
+          "21202050",
+          "21202070",
+          "21202080",
+          "21202120",
+          "21205240",
+          "21205791",
+          "21206300",
+          "35020310",
+          "35020350"
+        ],
+        "cercanas_km": {
+          "21205420": 12.28,
+          "21202110": 15.66,
+          "35025060": 16.04,
+          "21206060": 17.69,
+          "21201140": 18.61,
+          "21205980": 18.74,
+          "21205770": 20.17,
+          "35025050": 20.66,
+          "21201550": 21.61,
+          "35020240": 23.68,
+          "21201320": 23.79,
+          "35020280": 24.32,
+          "21206280": 24.72,
+          "21201210": 25.0,
+          "21205920": 25.02,
+          "35020390": 26.49,
+          "21201310": 26.9,
+          "21206020": 27.89,
+          "35020420": 29.35,
+          "35030080": 29.73,
+          "35020290": 29.87,
+          "21206980": 30.02,
+          "21201920": 30.8,
+          "21201630": 31.49,
+          "21201070": 31.84,
+          "21200600": 32.44,
+          "21201610": 32.81,
+          "21205700": 36.71,
+          "21190310": 37.98,
+          "21205670": 39.27,
+          "21205910": 39.7,
+          "21206140": 40.7,
+          "21206180": 41.0,
+          "35060160": 42.41,
+          "21195190": 43.93,
+          "21201060": 44.28,
+          "23065060": 44.5,
+          "21201050": 45.84,
+          "35020300": 45.95,
+          "35060200": 45.98,
+          "21205660": 47.51,
+          "21200780": 47.83,
+          "35030230": 47.87,
+          "23060200": 47.99,
+          "35060150": 48.76,
+          "23060290": 48.98
+        }
+      }
+    },
+    "25307": {
+      "automaticas": {
+        "dentro": [
+          "0021235030"
+        ],
+        "cercanas_km": {
+          "0021237010": 9.43,
+          "2119500111": 21.4,
+          "0021185090": 22.73,
+          "0021227010": 26.33,
+          "0021187030": 33.91,
+          "0021197030": 35.62,
+          "0021185080": 35.63,
+          "0021185030": 39.46,
+          "0021205660": 42.48,
+          "0021167060": 45.72,
+          "0021195120": 45.83,
+          "0021197010": 46.74,
+          "0021255160": 49.59
+        }
+      },
+      "normales": {
+        "dentro": [],
+        "cercanas_km": {
+          "21185040": 3.68,
+          "21170020": 6.24,
+          "21230110": 9.73,
+          "21230060": 10.29,
+          "21190210": 16.44,
+          "21190290": 19.63,
+          "21185090": 22.56,
+          "21190300": 22.82,
+          "21208900": 23.97,
+          "21215080": 24.21,
+          "21227010": 26.81,
+          "21220050": 28.22,
+          "21180160": 28.52,
+          "21190410": 28.68,
+          "21235010": 29.54,
+          "21160030": 29.57,
+          "21210200": 30.28,
+          "21201090": 31.92,
+          "21185080": 35.03,
+          "21195060": 36.81,
+          "21180210": 37.18,
+          "21190030": 38.83,
+          "21185030": 39.27,
+          "21210190": 39.3,
+          "21245040": 39.72,
+          "21240030": 40.16,
+          "21250460": 40.87,
+          "21170030": 40.95,
+          "21205660": 42.01,
+          "21190240": 42.89,
+          "21170040": 44.88,
+          "21165030": 46.04,
+          "21245010": 46.41,
+          "21180120": 46.76,
+          "21160070": 47.43,
+          "21240070": 48.66,
+          "21180040": 49.66
+        }
+      }
+    },
+    "25126": {
+      "automaticas": {
+        "dentro": [],
+        "cercanas_km": {
+          "2120500135": 7.4,
+          "2120700146": 7.52,
+          "0021205910": 8.07,
+          "0021206600": 17.24,
+          "0021205700": 18.17,
+          "0021206980": 22.63,
+          "0021205970": 24.61,
+          "0023065120": 27.3,
+          "0021205791": 27.72,
+          "0021205710": 29.34,
+          "2306500204": 29.73,
+          "0021205012": 32.28,
+          "0021205420": 32.73,
+          "0035035130": 33.45,
+          "2120500204": 34.36,
+          "0021206560": 35.92,
+          "0035025080": 36.05,
+          "0021209920": 36.29,
+          "0035025060": 37.14,
+          "0021205940": 40.81,
+          "2401500040": 42.66,
+          "0021206280": 44.71,
+          "0024015110": 46.7,
+          "0021205670": 48.6,
+          "0024015380": 49.58
+        }
+      },
+      "normales": {
+        "dentro": [],
+        "cercanas_km": {
+          "21201630": 5.33,
+          "21205910": 8.19,
+          "21206020": 8.82,
+          "21206140": 11.7,
+          "21205920": 13.13,
+          "21201060": 13.37,
+          "21201210": 15.13,
+          "21201610": 16.66,
+          "21202020": 16.68,
+          "21202080": 17.47,
+          "21205700": 17.52,
+          "21201050": 19.25,
+          "21200310": 19.61,
+          "21201140": 21.93,
+          "21206980": 23.01,
+          "21205980": 24.37,
+          "21201230": 25.01,
+          "21201550": 26.54,
+          "21200780": 26.94,
+          "21205791": 27.27,
+          "23065120": 27.68,
+          "23060200": 28.64,
+          "35060160": 29.76,
+          "21201070": 30.1,
+          "35060200": 30.97,
+          "21202120": 31.16,
+          "35020390": 31.62,
+          "21201120": 32.25,
+          "21200400": 32.26,
+          "21205420": 32.92,
+          "21202070": 33.16,
+          "21200320": 33.49,
+          "21206060": 33.58,
+          "21205770": 34.58,
+          "21201190": 34.59,
+          "21201600": 34.86,
+          "21200160": 35.99,
+          "21201650": 36.65,
+          "21200240": 37.81,
+          "21200080": 37.82,
+          "35025060": 38.11,
+          "21205240": 39.27,
+          "21200620": 39.96,
+          "21201540": 40.63,
+          "21200130": 41.25,
+          "35060050": 41.7,
+          "21205740": 42.12,
+          "21201970": 42.19,
+          "23060260": 42.5,
+          "35065010": 42.52,
+          "2401500040": 42.86,
+          "23060290": 43.23,
+          "21202110": 44.22,
+          "35020240": 44.57,
+          "21202040": 44.93,
+          "21206280": 45.37,
+          "35020280": 45.66,
+          "35060150": 46.13,
+          "24010140": 46.17,
+          "24011080": 46.17,
+          "21202050": 46.33,
+          "35060170": 46.98,
+          "23060180": 47.13,
+          "21206180": 47.8,
+          "35025050": 48.93,
+          "35060240": 49.09,
+          "21205670": 49.12,
+          "23065060": 49.23,
+          "35070490": 49.28,
+          "21206300": 49.46,
+          "24010610": 49.71
+        }
+      }
+    },
+    "73001": {
+      "automaticas": {
+        "dentro": [
+          "0021215160",
+          "0021215180",
+          "0021217180"
+        ],
+        "cercanas_km": {
+          "0021187030": 24.94,
+          "0021185080": 25.97,
+          "0021245140": 33.0,
+          "0022077050": 33.7,
+          "0021215190": 33.94,
+          "0021227010": 36.61,
+          "0021185090": 37.53,
+          "0021237010": 39.76,
+          "0021235030": 45.17,
+          "0026125300": 45.84,
+          "2612500130": 47.17,
+          "0021257100": 47.27,
+          "0022070030": 48.13,
+          "0021255170": 48.79
+        }
+      },
+      "normales": {
+        "dentro": [
+          "21210020",
+          "21210030",
+          "21210080",
+          "21210110",
+          "21210120",
+          "21210160",
+          "21210170",
+          "21210180",
+          "21210200",
+          "21210220",
+          "21220050",
+          "21240030",
+          "21245010",
+          "21245040"
+        ],
+        "cercanas_km": {
+          "21210190": 18.7,
+          "21180040": 21.97,
+          "21215100": 25.04,
+          "21185080": 25.81,
+          "21240070": 25.83,
+          "22050100": 27.4,
+          "21180210": 28.51,
+          "21255110": 30.61,
+          "21215080": 31.14,
+          "21245140": 32.98,
+          "21210140": 34.39,
+          "21240110": 34.74,
+          "22075030": 35.17,
+          "21210130": 35.48,
+          "21227010": 36.84,
+          "21185090": 37.42,
+          "21215130": 37.54,
+          "21230110": 39.55,
+          "21250460": 39.57,
+          "21230060": 40.54,
+          "21180120": 45.69,
+          "21250050": 46.86,
+          "21185040": 46.88,
+          "26120160": 47.63,
+          "22070030": 48.53,
+          "21255170": 48.75,
+          "21250100": 48.91,
+          "21250070": 49.66,
+          "21170020": 49.76
+        }
+      }
+    },
+    "73268": {
+      "automaticas": {
+        "dentro": [
+          "0021185090"
+        ],
+        "cercanas_km": {
+          "0021185030": 19.09,
+          "0021235030": 19.36,
+          "0021187030": 24.7,
+          "0021185080": 25.36,
+          "0021237010": 26.81,
+          "2119500111": 29.39,
+          "0021167060": 35.53,
+          "0021135020": 35.9,
+          "0022057010": 36.27,
+          "0021160260": 40.97,
+          "0021227010": 42.69,
+          "0021197030": 42.91,
+          "0021197010": 45.02,
+          "0022077050": 46.64,
+          "0021167080": 47.83,
+          "0021215180": 49.96
+        }
+      },
+      "normales": {
+        "dentro": [
+          "21185090",
+          "21215080"
+        ],
+        "cercanas_km": {
+          "21180160": 11.34,
+          "21170020": 16.82,
+          "21185040": 17.16,
+          "21185030": 18.89,
+          "21190290": 19.48,
+          "21170030": 22.56,
+          "21160030": 23.49,
+          "21185080": 24.99,
+          "21180210": 25.27,
+          "21230110": 27.01,
+          "21170040": 27.8,
+          "21180120": 28.32,
+          "21230060": 28.33,
+          "21220050": 28.65,
+          "21210200": 29.31,
+          "22050090": 29.74,
+          "21165030": 30.74,
+          "21190210": 31.51,
+          "21190300": 31.77,
+          "21210190": 32.17,
+          "21190410": 32.78,
+          "21130010": 34.05,
+          "21135020": 35.67,
+          "22060100": 35.87,
+          "21160070": 39.23,
+          "21165010": 40.36,
+          "21180040": 40.54,
+          "21160180": 40.85,
+          "21245040": 41.1,
+          "21227010": 43.22,
+          "22060070": 43.92,
+          "21208900": 44.01,
+          "21195060": 44.07,
+          "21190240": 44.57,
+          "21160080": 44.65,
+          "21160040": 45.4,
+          "21160200": 45.48,
+          "21245010": 46.66,
+          "21240030": 48.3,
+          "21190090": 48.42,
+          "21190330": 49.54,
+          "21235010": 49.88,
+          "21201090": 49.98
+        }
+      }
+    },
+    "41001": {
+      "automaticas": {
+        "dentro": [
+          "0021097070",
+          "0021115100"
+        ],
+        "cercanas_km": {
+          "0021095010": 13.28,
+          "0021097120": 26.55,
+          "0021130050": 34.34,
+          "0021125010": 34.62,
+          "0021127030": 35.23,
+          "0021085030": 38.86,
+          "0021105030": 46.44
+        }
+      },
+      "normales": {
+        "dentro": [
+          "21110400",
+          "21110430",
+          "21115020",
+          "21115100",
+          "21130040",
+          "21130080",
+          "21135050"
+        ],
+        "cercanas_km": {
+          "21090110": 10.07,
+          "21110440": 15.62,
+          "21090020": 16.0,
+          "21120130": 17.19,
+          "21110180": 17.46,
+          "21090040": 19.07,
+          "21110040": 19.13,
+          "21110160": 22.25,
+          "21120010": 24.13,
+          "21115070": 24.47,
+          "21120090": 24.71,
+          "21120040": 25.44,
+          "21105040": 26.3,
+          "21115080": 27.36,
+          "21110330": 29.01,
+          "21130060": 32.47,
+          "21120100": 33.31,
+          "21130050": 33.92,
+          "21110070": 33.93,
+          "21125010": 34.73,
+          "21100080": 35.86,
+          "21085030": 38.86,
+          "21105050": 40.52,
+          "21080030": 40.73,
+          "21080100": 41.27,
+          "21100070": 41.95,
+          "22020060": 42.24,
+          "21080080": 42.37,
+          "21110120": 42.53,
+          "21130110": 44.06,
+          "21060090": 44.47,
+          "21115060": 45.19,
+          "21105030": 46.44,
+          "22020030": 46.87,
+          "21080070": 47.0,
+          "21110290": 47.61
+        }
+      }
+    },
+    "15837": {
+      "automaticas": {
+        "dentro": [
+          "0024037030"
+        ],
+        "cercanas_km": {
+          "0024035430": 14.1,
+          "0024010840": 18.32,
+          "0024030140": 19.58,
+          "2401500086": 20.45,
+          "2403500041": 22.6,
+          "0024037080": 24.43,
+          "0024030120": 25.08,
+          "0024037190": 27.34,
+          "0024035340": 29.06,
+          "0024025030": 31.82,
+          "0024015300": 32.21,
+          "0035075030": 32.47,
+          "0035235050": 34.43,
+          "0024035410": 34.51,
+          "0024017740": 34.53,
+          "0024015220": 35.53,
+          "0035160020": 36.44,
+          "0024037290": 36.68,
+          "0035077090": 36.81,
+          "0035160010": 39.05,
+          "0035095120": 41.29,
+          "0035167000": 41.52,
+          "0024017600": 43.09,
+          "0035085060": 44.33,
+          "3516700232": 44.9,
+          "0035197070": 47.31,
+          "0024030560": 48.83
+        }
+      },
+      "normales": {
+        "dentro": [
+          "24030530",
+          "24030820"
+        ],
+        "cercanas_km": {
+          "24030380": 6.77,
+          "24035300": 10.86,
+          "24030310": 11.9,
+          "24035040": 12.34,
+          "24030450": 13.26,
+          "24030770": 13.5,
+          "24035430": 13.96,
+          "24030500": 15.37,
+          "24030510": 17.78,
+          "24010840": 18.85,
+          "24030800": 19.32,
+          "24037550": 20.03,
+          "24030420": 20.77,
+          "24035120": 21.6,
+          "24035130": 21.93,
+          "24010870": 23.69,
+          "24010630": 24.51,
+          "24010830": 24.92,
+          "24030120": 25.1,
+          "24010850": 26.06,
+          "24030410": 26.1,
+          "24030350": 26.24,
+          "24030840": 27.85,
+          "24030540": 27.88,
+          "24030230": 28.74,
+          "24035340": 28.82,
+          "24015280": 30.43,
+          "24025030": 32.19,
+          "35075030": 32.72,
+          "24030400": 33.34,
+          "24030790": 33.35,
+          "35070010": 33.99,
+          "35070310": 34.2,
+          "24015300": 34.42,
+          "24015220": 35.88,
+          "24010810": 36.02,
+          "24010410": 36.74,
+          "35085020": 36.75,
+          "35160010": 38.76,
+          "35190010": 40.83,
+          "24015090": 40.97,
+          "24030190": 42.22,
+          "24010710": 42.63,
+          "24030590": 44.03,
+          "35075010": 44.87,
+          "35070040": 45.13,
+          "35080010": 45.97,
+          "24010180": 47.24,
+          "24030560": 49.35,
+          "35090070": 49.38,
+          "24010750": 49.82
+        }
+      }
+    },
+    "05001": {
+      "automaticas": {
+        "dentro": [
+          "0027010810",
+          "0027015330"
+        ],
+        "cercanas_km": {
+          "0027015310": 9.81,
+          "0023085270": 19.27,
+          "0023085260": 22.46,
+          "0027015260": 22.55,
+          "2620500209": 23.44,
+          "0023087670": 24.89,
+          "0023087150": 25.06,
+          "2620500210": 31.13,
+          "0023085160": 37.0,
+          "2620500211": 37.02,
+          "0026225060": 41.91,
+          "0026207080": 41.97,
+          "0026185050": 43.13,
+          "0027015280": 43.41,
+          "0026217010": 46.36,
+          "0026207030": 48.31,
+          "0026185020": 49.51
+        }
+      },
+      "normales": {
+        "dentro": [
+          "26205080",
+          "27010810",
+          "27011110",
+          "27011120",
+          "27015330"
+        ],
+        "cercanas_km": {
+          "27010770": 15.99,
+          "27010800": 17.34,
+          "23085270": 18.82,
+          "27010820": 20.01,
+          "27015260": 22.27,
+          "26200140": 22.93,
+          "23085260": 23.0,
+          "26230180": 25.48,
+          "26200120": 30.26,
+          "23080640": 30.5,
+          "26210090": 31.32,
+          "23080650": 33.17,
+          "26180200": 33.31,
+          "26180170": 35.35,
+          "27010830": 35.51,
+          "26210080": 35.79,
+          "26200150": 36.13,
+          "23080920": 36.82,
+          "23085160": 37.34,
+          "23085110": 38.0,
+          "23080740": 39.44,
+          "26210140": 40.81,
+          "27010870": 41.56,
+          "26225030": 41.78,
+          "26200130": 41.97,
+          "26215010": 43.89,
+          "26210110": 46.75,
+          "26210070": 47.61,
+          "26185020": 49.1,
+          "23080750": 49.51,
+          "26230010": 49.53
+        }
+      }
+    },
+    "76001": {
+      "automaticas": {
+        "dentro": [
+          "0026055100",
+          "0026055120",
+          "0026085160",
+          "0026085170",
+          "2629700151"
+        ],
+        "cercanas_km": {
+          "2633500119": 17.73,
+          "0026075150": 20.33,
+          "0026055110": 25.94,
+          "5311500121": 26.19,
+          "0026075120": 38.87,
+          "2604500039": 39.78
+        }
+      },
+      "normales": {
+        "dentro": [
+          "26055120",
+          "26080280",
+          "26080310"
+        ],
+        "cercanas_km": {
+          "26085130": 19.27,
+          "26075040": 20.24,
+          "26045010": 21.09,
+          "26060020": 21.68,
+          "53100040": 24.61,
+          "26095320": 25.28,
+          "26075010": 25.79,
+          "53110100": 26.83,
+          "26060030": 26.86,
+          "53110040": 29.69,
+          "26070760": 32.59,
+          "53110030": 32.63,
+          "26080070": 33.41,
+          "26055040": 33.58,
+          "26075090": 34.25,
+          "26050340": 35.96,
+          "26070170": 36.9,
+          "26070110": 36.9,
+          "26065020": 38.08,
+          "26075110": 38.54,
+          "26095180": 38.75,
+          "26070610": 39.3,
+          "26050270": 39.41,
+          "26040250": 39.78,
+          "26090300": 40.75,
+          "26040310": 41.31,
+          "26090880": 42.16,
+          "26090460": 44.3,
+          "26020120": 44.42,
+          "26090630": 44.95,
+          "26090520": 45.65,
+          "26020100": 45.72,
+          "26060200": 47.0,
+          "53110020": 48.59,
+          "26020450": 49.35
+        }
+      }
+    }
+  }
+}
