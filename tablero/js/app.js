@@ -184,6 +184,69 @@ const CATALOGO_INDICADORES_MASTER = [
   { codigo: "R-4", capa: "R", nombre: "Declaratoria de Calamidad Pública por Sequía Vigente", unidad: "binario (1/0)", fuente: "UNGRD / Alcaldía", escala: "Municipio", formula: "1 si el municipio cuenta con Decreto de Calamidad Pública por Ley 1523; 0 sin decreto", dir: "↑", en_icr: true, umbrales: { optimo: "0", amarilla: "0", naranja: "1", roja: "1", extremo: "1" } }
 ];
 
+/* -------------------------------------------------------------------------
+   Configuración del ICR publicada por el pipeline (data/config/parametros_icr.json → data.js).
+   Es la fuente única de capas, pesos, pertenencia al ICR y puntos de quiebre: el catálogo
+   de arriba solo aporta nombres, fórmulas y fuentes. Corre antes que aula.js, que lo reutiliza.
+   ------------------------------------------------------------------------- */
+const CONFIG_ICR = (window.VIGIA_DATA && window.VIGIA_DATA.config_icr) || null;
+// Bandas de la escala 0-100: el valor del indicador que corresponde a cada puntaje de quiebre
+const PUNTOS_BANDA = { optimo: 0, amarilla: 40, naranja: 60, roja: 75, extremo: 100 };
+
+function bandaDePuntaje(p) {
+  if (p >= 100) return 'extremo';
+  if (p >= 75) return 'roja';
+  if (p >= 60) return 'naranja';
+  if (p >= 40) return 'amarilla';
+  return 'optimo';
+}
+
+(function alinearCatalogoConConfig() {
+  if (!CONFIG_ICR || !CONFIG_ICR.capas) return;
+  const capaDe = {};
+  Object.entries(CONFIG_ICR.capas).forEach(([k, c]) => (c.indicadores || []).forEach(cod => { capaDe[cod] = k; }));
+  const quiebres = CONFIG_ICR.quiebres || {};
+  const binarios = CONFIG_ICR.puntaje_binario || {};
+  const categorias = CONFIG_ICR.puntaje_categorico || {};
+  const capitalizar = s => s.charAt(0).toUpperCase() + s.slice(1);
+
+  CATALOGO_INDICADORES_MASTER.forEach(ind => {
+    const cod = ind.codigo;
+    ind.en_icr = Boolean(capaDe[cod]);
+    if (capaDe[cod]) ind.capa = capaDe[cod];
+    const vacio = { optimo: '—', amarilla: '—', naranja: '—', roja: '—', extremo: '—' };
+
+    if (quiebres[cod]) {
+      const u = { ...vacio };
+      Object.entries(PUNTOS_BANDA).forEach(([banda, pts]) => {
+        const par = quiebres[cod].find(([, p]) => p === pts);
+        if (par) u[banda] = String(par[0]).replace('.', ',');
+      });
+      ind.umbrales = u;
+      ind.umbrales_origen = 'config';
+    } else if (binarios[cod]) {
+      const u = { ...vacio };
+      const b = binarios[cod];
+      u[bandaDePuntaje(b.inactivo)] = '0';
+      u[bandaDePuntaje(b.activo)] = '1';
+      ind.umbrales = u;
+      ind.umbrales_origen = 'config';
+    } else if (ind.en_icr && Object.keys(categorias).length) {
+      // Indicadores categóricos del ENA (H-2, H-3): primera categoría de cada banda
+      const u = { ...vacio };
+      Object.entries(categorias).forEach(([cat, p]) => {
+        const banda = bandaDePuntaje(p);
+        if (u[banda] === '—') u[banda] = capitalizar(cat);
+      });
+      ind.umbrales = u;
+      ind.umbrales_origen = 'config';
+    } else {
+      // No pondera en el ICR: sus umbrales son de referencia y no generan puntaje
+      ind.umbrales_origen = 'referencia';
+    }
+  });
+})();
+
 function escaparHtml(str) {
   if (str === null || str === undefined) return '';
   return String(str)
@@ -260,8 +323,21 @@ document.addEventListener('DOMContentLoaded', () => {
     data.catalogoIndicadores = CATALOGO_INDICADORES_MASTER;
   }
 
-  // Pesos de capa de data/config/parametros_icr.json (v1.2.0-20261108); igual que js/aula.js
-  const PESOS_ICR = { A: 0.30, H: 0.30, S: 0.25, R: 0.15 };
+  // Pesos, nombres de capa y umbrales de nivel: de la config publicada (respaldo: v1.2.0-20261108)
+  const PESOS_ICR = CONFIG_ICR
+    ? Object.fromEntries(Object.entries(CONFIG_ICR.capas).map(([k, c]) => [k, c.peso]))
+    : { A: 0.30, H: 0.30, S: 0.25, R: 0.15 };
+  const NOMBRE_CAPA = CONFIG_ICR
+    ? Object.fromEntries(Object.entries(CONFIG_ICR.capas).map(([k, c]) => [k, c.nombre]))
+    : { A: 'Amenaza hidroclimática', H: 'Vulnerabilidad de la oferta', S: 'Desempeño del servicio', R: 'Respuesta e impacto' };
+  const NIVELES_ICR = (CONFIG_ICR && CONFIG_ICR.niveles_alerta) ||
+    [{ nivel: 'sin_alerta', icr_desde: 0 }, { nivel: 'amarilla', icr_desde: 40 }, { nivel: 'naranja', icr_desde: 60 }, { nivel: 'roja', icr_desde: 75 }];
+  const pctPeso = k => `${Math.round((PESOS_ICR[k] || 0) * 100)} %`;
+  const VARIABLE_MAPA_COD = { s1: 'S-1', a3: 'A-3', s2: 'S-2' };
+  // RF-UI-03: rutas del enlace profundo (#/municipio/44847 y #/territorio/44 se resuelven aparte)
+  const RUTA_DE_VISTA = { 'V-01': 'resumen', 'V-02': 'amenaza', 'V-03': 'territorio', 'V-05': 'indicadores', 'V-06': 'alertas', 'V-07': 'fuentes', 'AULA': 'aula' };
+  const VISTA_DE_RUTA = Object.fromEntries(Object.entries(RUTA_DE_VISTA).map(([v, r]) => [r, v]));
+  const HEX_NIVEL = { roja: '#B3261E', naranja: '#E07A10', amarilla: '#F2C200', sin_alerta: '#2E7D4F', sin_dato: '#B9C4CC' };
   const PESOS_ICR_TEXTO = Object.entries(PESOS_ICR).map(([k, v]) => `${String(v.toFixed(2)).replace('.', ',')} × ${k}`).join(' + ');
   const COLOR_NIVEL = { roja: 'var(--alerta-roja)', naranja: 'var(--alerta-naranja)', amarilla: 'var(--alerta-amarilla)', sin_alerta: 'var(--alerta-sin)', sin_dato: 'var(--alerta-sin-dato)' };
   const NOMBRE_NIVEL = { roja: 'Roja', naranja: 'Naranja', amarilla: 'Amarilla', sin_alerta: 'Sin alerta', sin_dato: 'Sin dato' };
@@ -289,6 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
     muniLayer: null,
     muniMarkers: {},
     regionActual: 'TODOS',
+    hashListo: false,
     // Filtros y estados para ayudas visuales de indicadores
     filtroCatalogoCapa: 'TODOS',
     busquedaCatalogo: '',
@@ -321,6 +398,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initAlertasV06();
   initFuentesV07();
   initExportaciones();
+
+  // RF-UI-03: enlace profundo. Se aplica la ruta inicial y luego cada cambio (atrás/adelante o enlace pegado)
+  aplicarRutaDesdeHash();
+  state.hashListo = true;
+  window.addEventListener('hashchange', aplicarRutaDesdeHash);
 
   // Exponer para interacción desde popups cartográficos
   window.abrirFichaDesdeMapa = function (divipola) {
@@ -480,11 +562,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* -------------------------------------------------------------------------
+     RF-UI-03 — Enlace profundo: #/municipio/44847, #/territorio/44, #/amenaza, …
+     ------------------------------------------------------------------------- */
+
+  function actualizarHash(ruta) {
+    if (!state.hashListo) return;            // durante el arranque manda la URL recibida
+    const nuevo = `#/${ruta}`;
+    if (location.hash !== nuevo) history.pushState(null, '', nuevo);
+  }
+
+  function aplicarRutaDesdeHash() {
+    const [seccion, id] = location.hash.replace(/^#\/?/, '').split('/');
+    if (!seccion) return;
+    const previo = state.hashListo;
+    state.hashListo = false;                 // aplicar la ruta no debe reescribirla
+    try {
+      if (seccion === 'municipio' && id && state.corte.municipios.some(m => m.divipola === id)) {
+        abrirFichaMunicipal(id);
+      } else if (seccion === 'territorio') {
+        cambiarVista('V-03');
+        const sel = document.getElementById('select-filtro-depto');
+        const existe = id && state.corte.departamentos.some(d => d.cod_depto === id);
+        state.filtroDepto = existe ? id : 'TODOS';
+        if (sel) sel.value = state.filtroDepto;
+        renderTablaTerritorio();
+        if (existe) setTimeout(() => hacerZoomDepartamento(id), 200);
+      } else if (VISTA_DE_RUTA[seccion]) {
+        cambiarVista(VISTA_DE_RUTA[seccion]);
+      }
+    } finally {
+      state.hashListo = previo;
+    }
+  }
+
   function cambiarVista(idVista) {
     if (idVista === 'STORY') {
       mostrarModoStory();
       return;
     }
+
+    if (idVista === 'V-04') actualizarHash(`municipio/${state.municipioSeleccionadoId}`);
+    else if (idVista === 'V-03' && state.filtroDepto && state.filtroDepto !== 'TODOS') actualizarHash(`territorio/${state.filtroDepto}`);
+    else if (RUTA_DE_VISTA[idVista]) actualizarHash(RUTA_DE_VISTA[idVista]);
 
     const ejecutarCambio = () => {
       ocultarModoStory();
@@ -1249,12 +1369,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const contenedorBarras = document.getElementById('barras-anomalia-nino') || document.getElementById('bars-nino-regiones');
       if (contenedorBarras) {
         contenedorBarras.innerHTML = regiones.map(r => {
-          const pctWidth = Math.min((r.anom / 6.0) * 100, 100);
+          if (r.anom === null || r.anom === undefined) {
+            return `<div style="margin-bottom:14px;font-size:13px;font-weight:700">${r.nombre}: <span class="sin-dato-txt">Sin dato</span></div>`;
+          }
+          const pctWidth = Math.max(0, Math.min((r.anom / 6.0) * 100, 100));
           return `
             <div style="margin-bottom:14px">
               <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:4px">
                 <span>${r.nombre}</span>
-                <span style="color:var(--alerta-naranja)">+${r.anom.toFixed(1)} °C <span style="color:var(--texto-claro);font-weight:400">(${r.sst} °C)</span></span>
+                <span style="color:${r.anom >= 0.5 ? 'var(--alerta-naranja)' : 'var(--texto)'}">${fmtSigno(r.anom, 1)} °C <span style="color:var(--texto-claro);font-weight:400">(${fmt(r.sst, 1)} °C)</span></span>
               </div>
               <div style="height:14px;background-color:var(--linea-suave);border-radius:7px;overflow:hidden;position:relative">
                 <div style="position:absolute;left:${(0.5 / 6.0) * 100}%;top:0;bottom:0;width:2px;background-color:#000;z-index:2" title="Umbral El Niño (+0.5 °C)"></div>
@@ -1266,36 +1389,49 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Actualizar diagnóstico regional dinámico en V-02
-    if (state.corte && state.corte.municipios) {
+    // Diagnóstico por región: solo con municipios que tienen dato (RF-UI-05: sin dato nunca es 0)
+    const cont = document.getElementById('v02-diagnostico-regional');
+    if (cont && state.corte.municipios) {
       const munis = state.corte.municipios;
-      const caribe = munis.filter(m => m.region === 'Caribe');
-      const andina = munis.filter(m => m.region === 'Andina');
-
-      const calcStats = (lista) => {
-        if (!lista.length) return { dias: 0, anom: 0, focos: 0 };
-        const dias = Math.round(lista.reduce((acc, m) => acc + (m.indicadores?.['A-4']?.valor || 0), 0) / lista.length);
-        const anom = (lista.reduce((acc, m) => acc + (m.indicadores?.['A-3']?.valor || 0), 0) / lista.length).toFixed(1);
-        const focos = lista.reduce((acc, m) => acc + (m.indicadores?.['A-5']?.valor || 0), 0);
-        return { dias, anom, focos };
+      const valores = (lista, cod) => lista.map(m => m.indicadores?.[cod]?.valor).filter(v => typeof v === 'number');
+      const mediana = arr => {
+        const s = [...arr].sort((a, b) => a - b);
+        return s.length % 2 ? s[(s.length - 1) / 2] : (s[s.length / 2 - 1] + s[s.length / 2]) / 2;
       };
+      const dato = (arr, n, texto) => arr.length
+        ? `${texto(arr)} <span class="dato-cobertura">(${arr.length} de ${n} con dato)</span>`
+        : '<span class="sin-dato-txt">Sin dato</span>';
 
-      const sc = calcStats(caribe);
-      const sa = calcStats(andina);
-      const probExt = amenaza.indicador_a2_probabilidad_muy_fuerte_pct || 83.0;
+      const regiones = [...new Set(munis.map(m => m.region).filter(Boolean))];
+      const tarjetas = regiones.map(reg => {
+        const lista = munis.filter(m => m.region === reg);
+        const n = lista.length;
+        const a3 = valores(lista, 'A-3'), a4 = valores(lista, 'A-4'), a5 = valores(lista, 'A-5');
+        return `
+          <div class="v02-region">
+            <h4>${escaparHtml(reg)} <span>${n} ${n === 1 ? 'municipio' : 'municipios'}</span></h4>
+            <dl>
+              <dt>Lluvia de 30 días frente a lo normal (A-3, mediana)</dt>
+              <dd>${dato(a3, n, arr => `<strong>${fmtSigno(mediana(arr), 1)} %</strong>`)}</dd>
+              <dt>Días seguidos sin lluvia (A-4, mediana)</dt>
+              <dd>${dato(a4, n, arr => `<strong>${fmt(mediana(arr), 0)} días</strong>`)}</dd>
+              <dt>Focos de calor en 7 días (A-5, suma)</dt>
+              <dd>${dato(a5, n, arr => `<strong>${fmt(arr.reduce((s, v) => s + v, 0), 0)}</strong>`)}</dd>
+            </dl>
+          </div>`;
+      }).join('');
 
-      const pCaribe = document.getElementById('v02-desc-caribe');
-      if (pCaribe) {
-        pCaribe.innerHTML = `Promedio de <strong>${sc.dias} días consecutivos</strong> con precipitación menor a 1 mm. Déficit acumulado de lluvia a 30 días de <strong>${sc.anom} %</strong> frente a la normal histórica. Focos térmicos registrados en cuencas: <strong>${sc.focos}</strong>.`;
-      }
-      const pAndina = document.getElementById('v02-desc-andina');
-      if (pAndina) {
-        pAndina.innerHTML = `Promedio de <strong>${sa.dias} días consecutivos sin lluvia</strong>. Déficit acumulado de <strong>${sa.anom} %</strong>. Focos térmicos registrados en cuencas: <strong>${sa.focos}</strong>.`;
-      }
-      const pCpc = document.getElementById('v02-desc-cpc');
-      if (pCpc) {
-        pCpc.innerHTML = `Los modelos acoplados Océano-Atmósfera pronostican una probabilidad del <strong>${probExt}%</strong> de mantener anomalías extremas RONI &ge; +2.0 °C.`;
-      }
+      const prob = amenaza.indicador_a2_probabilidad_muy_fuerte_pct;
+      const probTxt = typeof prob === 'number'
+        ? `<strong>${fmt(prob, 0)} %</strong> de probabilidad de que El Niño alcance intensidad muy fuerte o superior en los próximos tres trimestres`
+        : '<span class="sin-dato-txt">Sin dato</span> de probabilidad de intensidad muy fuerte';
+      const boletin = amenaza.fecha_boletin_enso ? ` Boletín ENSO del ${escaparHtml(amenaza.fecha_boletin_enso)}.` : '';
+
+      cont.innerHTML = `${tarjetas}
+        <div class="v02-region">
+          <h4>Pronóstico NOAA CPC / IRI <span>A-2 · contexto, no pondera en el ICR</span></h4>
+          <p>${probTxt}.${boletin}</p>
+        </div>`;
     }
   }
 
@@ -1341,6 +1477,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (selectDepto) {
       selectDepto.addEventListener('change', (e) => {
         state.filtroDepto = e.target.value;
+        actualizarHash(state.filtroDepto !== 'TODOS' ? `territorio/${state.filtroDepto}` : 'territorio');
         renderTablaTerritorio();
         if (state.filtroDepto !== 'TODOS') {
           hacerZoomDepartamento(state.filtroDepto);
@@ -1361,7 +1498,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const select = document.getElementById('select-filtro-depto');
     if (!select) return;
     const deptos = state.corte.departamentos;
-    select.innerHTML = '<option value="TODOS">Todos los Departamentos (12)</option>' +
+    select.innerHTML = `<option value="TODOS">Todos los departamentos (${deptos.length})</option>` +
     deptos.map(d => `<option value="${escaparHtml(d.cod_depto)}">${escaparHtml(d.departamento)} (${escaparHtml(d.total_municipios)})</option>`).join('');
   }
 
@@ -1399,29 +1536,57 @@ document.addEventListener('DOMContentLoaded', () => {
         'sin_dato': '#B9C4CC'
       };
       return col[muni.nivel_alerta] || '#B9C4CC';
-    } else if (variable === 's1') {
-      const cont = muni.indicadores['S-1']?.valor;
-      if (cont === null || cont === undefined) return '#B9C4CC';
-      if (cont >= 22) return '#2E7D4F';
-      if (cont >= 18) return '#F2C200';
-      if (cont >= 12) return '#E07A10';
-      return '#B3261E';
-    } else if (variable === 'a3') {
-      const anom = muni.indicadores['A-3']?.valor;
-      if (anom === null || anom === undefined) return '#B9C4CC';
-      if (anom >= -20) return '#2E7D4F';
-      if (anom >= -40) return '#F2C200';
-      if (anom >= -60) return '#E07A10';
-      return '#B3261E';
-    } else if (variable === 's2') {
-      const irca = muni.indicadores['S-2']?.valor;
-      if (irca === null || irca === undefined) return '#B9C4CC';
-      if (irca <= 5) return '#2E7D4F';
-      if (irca <= 14) return '#F2C200';
-      if (irca <= 35) return '#E07A10';
-      return '#B3261E';
     }
-    return '#B9C4CC';
+    // S-1, A-3 y S-2: color por el puntaje 0-100 del indicador, con los mismos quiebres del ICR (config)
+    const cod = VARIABLE_MAPA_COD[variable];
+    const p = cod ? muni.indicadores?.[cod]?.puntaje : null;
+    if (typeof p !== 'number') return '#B9C4CC';
+    return HEX_NIVEL[nivelDePuntaje(p)];
+  }
+
+  // Nivel de un puntaje 0-100 según los umbrales de nivel de la config
+  function nivelDePuntaje(p) {
+    if (typeof p !== 'number') return 'sin_dato';
+    let nivel = 'sin_alerta';
+    NIVELES_ICR.forEach(n => { if (p >= n.icr_desde) nivel = n.nivel; });
+    return nivel;
+  }
+
+  // Leyenda del mapa según la variable activa, con cortes de la config y conteo de municipios (RF-UI-02)
+  function renderLeyendaMapa(municipios) {
+    const cont = document.getElementById('mapa-leyenda-dinamica');
+    if (!cont) return;
+    const variable = state.variableMapa;
+    const cod = VARIABLE_MAPA_COD[variable];
+    const conteo = { roja: 0, naranja: 0, amarilla: 0, sin_alerta: 0, sin_dato: 0 };
+    municipios.forEach(m => {
+      const nivel = cod ? nivelDePuntaje(m.indicadores?.[cod]?.puntaje) : (m.nivel_alerta || 'sin_dato');
+      conteo[nivel in conteo ? nivel : 'sin_dato']++;
+    });
+
+    const orden = [...NIVELES_ICR].sort((a, b) => b.icr_desde - a.icr_desde);
+    const cat = cod ? getInfoIndicador(cod) : null;
+    const banda = { roja: 'roja', naranja: 'naranja', amarilla: 'amarilla', sin_alerta: 'optimo' };
+    const rango = (n, i) => {
+      if (!cat) {
+        const hasta = i > 0 ? orden[i - 1].icr_desde : null;
+        return hasta === null ? `ICR ≥ ${n.icr_desde}` : (n.icr_desde === 0 ? `ICR < ${hasta}` : `${n.icr_desde}–${hasta - 1}`);
+      }
+      const v = cat.umbrales?.[banda[n.nivel]];
+      if (n.nivel === 'sin_alerta') return `antes de ${cat.umbrales?.amarilla ?? '—'} ${cat.unidad}`;
+      return `desde ${v ?? '—'} ${cat.unidad}`;
+    };
+    const titulo = cod ? `${cod} · ${cat?.nombre || ''}` : 'Nivel por ICR';
+    cont.innerHTML = `<span class="leyenda-titulo-mapa">${escaparHtml(titulo)}</span>` +
+      orden.map((n, i) => `
+        <div class="leyenda-item">
+          <span class="leyenda-box" style="background-color:${HEX_NIVEL[n.nivel]}"></span>
+          <span>${escaparHtml(nombreNivel(n.nivel))} (${escaparHtml(rango(n, i))}) <strong>(${conteo[n.nivel]})</strong></span>
+        </div>`).join('') + `
+        <div class="leyenda-item">
+          <span class="leyenda-box" style="background-color:${HEX_NIVEL.sin_dato}"></span>
+          <span>Sin dato <strong>(${conteo.sin_dato})</strong></span>
+        </div>`;
   }
 
   function renderMapaColombia() {
@@ -1561,10 +1726,10 @@ document.addEventListener('DOMContentLoaded', () => {
         fillOpacity: 0.95
       });
 
-      const s1Val = m.indicadores['S-1']?.valor !== undefined ? `${escaparHtml(m.indicadores['S-1'].valor)} h/d` : 'Sin dato';
-      const a3Val = m.indicadores['A-3']?.valor !== undefined ? `${escaparHtml(m.indicadores['A-3'].valor)}%` : 'Sin dato';
-      const s2Val = m.indicadores['S-2']?.valor !== undefined ? `${escaparHtml(m.indicadores['S-2'].valor)} pts` : 'Sin dato';
-      const nivelLabel = escaparHtml(String(m.nivel_alerta || '').toUpperCase().replace('_', ' '));
+      const s1Val = escaparHtml(conUnidad(fmtInd(m, 'S-1', 1), 'h/día'));
+      const a3Val = escaparHtml(conUnidad(fmtInd(m, 'A-3', 1, true), '%'));
+      const s2Val = escaparHtml(conUnidad(fmtInd(m, 'S-2', 1), '%'));
+      const nivelLabel = escaparHtml(nombreNivel(m.nivel_alerta));
 
       const popupHtml = `
         <div class="cra-map-popup-card">
@@ -1577,18 +1742,18 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div class="cra-map-metric-row">
             <span>Índice Compuesto (ICR):</span>
-            <span class="val" style="color:${colHex}">${escaparHtml(m.icr)} pts</span>
+            <span class="val" style="color:${HEX_NIVEL[m.nivel_alerta] || HEX_NIVEL.sin_dato}">${typeof m.icr === 'number' ? escaparHtml(fmt(m.icr, 1)) + ' pts' : 'Sin dato'}</span>
           </div>
           <div class="cra-map-metric-row">
-            <span>Población Afectada:</span>
-            <span class="val">${(m.poblacion || 0).toLocaleString('es-CO')} hab.</span>
+            <span>Población del municipio:</span>
+            <span class="val">${typeof m.poblacion === 'number' ? escaparHtml(fmt(m.poblacion, 0)) + ' hab.' : 'Sin dato'}</span>
           </div>
           <div class="cra-map-metric-row">
             <span>Continuidad de Agua (S-1):</span>
             <span class="val">${s1Val}</span>
           </div>
           <div class="cra-map-metric-row">
-            <span>Déficit de Lluvias (A-3):</span>
+            <span>Lluvia 30 días vs. normal (A-3):</span>
             <span class="val">${a3Val}</span>
           </div>
           <div class="cra-map-metric-row">
@@ -1732,21 +1897,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Actualizar conteos dinámicos en la leyenda
-    const counts = { roja: 0, naranja: 0, amarilla: 0, sin_alerta: 0 };
-    municipios.forEach(m => {
-      if (counts[m.nivel_alerta] !== undefined) counts[m.nivel_alerta]++;
-    });
-
-    const elRoja = document.getElementById('leyenda-count-roja');
-    const elNar = document.getElementById('leyenda-count-naranja');
-    const elAm = document.getElementById('leyenda-count-amarilla');
-    const elSin = document.getElementById('leyenda-count-sin');
-
-    if (elRoja) elRoja.textContent = `(${counts.roja})`;
-    if (elNar) elNar.textContent = `(${counts.naranja})`;
-    if (elAm) elAm.textContent = `(${counts.amarilla})`;
-    if (elSin) elSin.textContent = `(${counts.sin_alerta})`;
+    renderLeyendaMapa(municipios);
   }
 
   function renderTablaTerritorio() {
@@ -1779,21 +1930,33 @@ document.addEventListener('DOMContentLoaded', () => {
       conteoEl.textContent = `${filtrados.length} municipios encontrados`;
     }
 
+    // Celda de indicador con fuente, fecha y frescura al pasar el cursor (RF-UI-05)
+    const celdaInd = (m, cod, unidad, dec = 1, signo = false) => {
+      const i = m.indicadores?.[cod];
+      if (!i || typeof i.valor !== 'number') return '<td><span class="sin-dato-txt">Sin dato</span></td>';
+      const txt = signo ? fmtSigno(i.valor, dec) : fmt(i.valor, dec);
+      const tip = `${cod} · ${i.fuente || 'sin fuente'} · ${i.fecha_dato || 'sin fecha'} · ${i.frescura || 'sin evaluar'}`;
+      return `<td title="${escaparHtml(tip)}">${escaparHtml(txt)} ${unidad}</td>`;
+    };
+    const celdaR3 = m => {
+      const v = m.indicadores?.['R-3']?.valor;
+      if (v === 1) return '<td><strong>Sí</strong></td>';
+      if (v === 0) return '<td>No</td>';
+      return '<td><span class="sin-dato-txt">Sin dato</span></td>';
+    };
+
     tbody.innerHTML = filtrados.map(m => `
       <tr data-abrir-municipio="${escaparHtml(m.divipola)}" class="${m.divipola === state.municipioSeleccionadoId ? 'selected' : ''}">
         <td><span style="font-family:monospace;font-weight:700;color:var(--cra-cian-texto)">${escaparHtml(m.divipola)}</span></td>
-        <td><strong>${escaparHtml(m.nombre)}</strong></td>
+        <td><button type="button" class="link-muni" data-abrir-municipio="${escaparHtml(m.divipola)}" title="Abrir la ficha municipal">${escaparHtml(m.nombre)}</button></td>
         <td>${escaparHtml(m.departamento)}</td>
-        <td><span class="chip-alerta ${escaparHtml(m.nivel_alerta)}">${escaparHtml(String(m.nivel_alerta || '').replace('_', ' '))}</span></td>
-        <td><strong style="font-size:14px;color:var(--texto-fuerte)">${m.icr !== null ? Number(m.icr).toFixed(1) : 'Sin dato'}</strong></td>
-        <td>${m.indicadores['S-1']?.valor ? escaparHtml(m.indicadores['S-1'].valor) + ' h' : '—'}</td>
-        <td>${m.indicadores['A-3']?.valor ? escaparHtml(m.indicadores['A-3'].valor) + ' %' : '—'}</td>
-        <td>${m.indicadores['S-2']?.valor ? escaparHtml(m.indicadores['S-2'].valor) + ' %' : '—'}</td>
-        <td>
-          <button class="btn-secundario" style="padding:4px 8px;font-size:11px" data-abrir-municipio="${escaparHtml(m.divipola)}">
-            Ficha ➔
-          </button>
-        </td>
+        <td><span class="chip-alerta ${escaparHtml(m.nivel_alerta)}">${escaparHtml(nombreNivel(m.nivel_alerta))}</span></td>
+        <td><strong style="font-size:14px;color:var(--texto-fuerte)">${typeof m.icr === 'number' ? fmt(m.icr, 1) : '<span class="sin-dato-txt">Sin dato</span>'}</strong></td>
+        ${celdaInd(m, 'S-1', 'h')}
+        ${celdaInd(m, 'A-3', '%', 1, true)}
+        ${celdaInd(m, 'S-2', '%')}
+        ${celdaR3(m)}
+        <td style="font-variant-numeric:tabular-nums">${typeof m.poblacion === 'number' ? fmt(m.poblacion, 0) : '<span class="sin-dato-txt">Sin dato</span>'}</td>
       </tr>
     `).join('');
 
@@ -1831,23 +1994,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Nivel e ICR
     const badgeNivel = document.getElementById('ficha-muni-nivel-badge');
     badgeNivel.className = `chip-alerta ${muni.nivel_alerta}`;
-    badgeNivel.textContent = `Nivel: ${muni.nivel_alerta.replace('_', ' ')}`;
+    badgeNivel.textContent = `Nivel: ${nombreNivel(muni.nivel_alerta)}`;
     if (muni.nivel_por_regla) {
-      badgeNivel.textContent += ` (Piso por Impacto Confirmado)`;
+      badgeNivel.textContent += ' (piso por impacto confirmado)';
     }
 
     const icrValEl = document.getElementById('ficha-icr-val');
-    icrValEl.textContent = muni.icr !== null ? muni.icr.toFixed(1) : 'S/D';
-    icrValEl.style.color = muni.nivel_alerta === 'roja' ? 'var(--alerta-roja)' :
-      (muni.nivel_alerta === 'naranja' ? 'var(--alerta-naranja)' :
-        (muni.nivel_alerta === 'amarilla' ? 'var(--alerta-amarilla)' : 'var(--alerta-sin)'));
+    icrValEl.textContent = typeof muni.icr === 'number' ? fmt(muni.icr, 1) : 'Sin dato';
+    icrValEl.style.color = COLOR_NIVEL[muni.nivel_alerta] || COLOR_NIVEL.sin_dato;
 
-    // Subíndices de las 4 Capas
-    const capas = muni.subindices_capa;
-    renderCapaBox('capa-a', 'Amenaza (A) · 30%', capas.amenaza_A, 'var(--cra-cian)');
-    renderCapaBox('capa-h', 'Oferta Hídrica (H) · 30%', capas.vulnerabilidad_H, '#17729A');
-    renderCapaBox('capa-s', 'Servicio (S) · 25%', capas.servicio_S, 'var(--bandera-azul)');
-    renderCapaBox('capa-r', 'Respuesta/Impacto (R) · 15%', capas.respuesta_R, 'var(--alerta-roja)');
+    // Subíndices de las 4 Capas (nombre y peso de la config)
+    const capas = muni.subindices_capa || {};
+    renderCapaBox('capa-a', `${NOMBRE_CAPA.A} (A) · ${pctPeso('A')}`, capas.amenaza_A, 'var(--cra-cian)');
+    renderCapaBox('capa-h', `${NOMBRE_CAPA.H} (H) · ${pctPeso('H')}`, capas.vulnerabilidad_H, '#17729A');
+    renderCapaBox('capa-s', `${NOMBRE_CAPA.S} (S) · ${pctPeso('S')}`, capas.servicio_S, 'var(--bandera-azul)');
+    renderCapaBox('capa-r', `${NOMBRE_CAPA.R} (R) · ${pctPeso('R')}`, capas.respuesta_R, 'var(--alerta-roja)');
+
+    // RF-UI-03: la URL refleja el municipio abierto
+    actualizarHash(`municipio/${muni.divipola}`);
 
     // Batería de los 20 Indicadores
     setupFiltrosCapaMuni(muni);
@@ -1875,12 +2039,13 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderCapaBox(elementId, titulo, valor, color) {
     const el = document.getElementById(elementId);
     if (!el) return;
-    const valText = valor !== null ? valor.toFixed(1) : 'S/D';
-    const pct = valor !== null ? Math.min(valor, 100) : 0;
+    const hay = typeof valor === 'number';
+    const valText = hay ? fmt(valor, 1) : 'Sin dato';
+    const pct = hay ? Math.min(valor, 100) : 0;
     el.innerHTML = `
       <div class="capa-titulo">
-        <span>${titulo}</span>
-        <span>${valText} pts</span>
+        <span>${escaparHtml(titulo)}</span>
+        <span>${hay ? valText + ' pts' : ''}</span>
       </div>
       <div class="capa-score">${valText}</div>
       <div class="capa-progress">
@@ -1905,32 +2070,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Resumen de Severidad Territorial del Municipio
     const resumenContainer = document.getElementById('muni-severidad-resumen');
     if (resumenContainer) {
-      let nRoja = 0, nNaranja = 0, nAmarilla = 0, nSin = 0;
+      // Sin dato y contexto se cuentan aparte: nunca como "normales" (RF-UI-05)
+      const n = { roja: 0, naranja: 0, amarilla: 0, sin_alerta: 0, sin_dato: 0, contexto: 0 };
       Object.entries(indicadores).forEach(([cod, ind]) => {
-        const p = ind.puntaje;
-        if (p !== null) {
-          if (p >= 75) nRoja++;
-          else if (p >= 60) nNaranja++;
-          else if (p >= 40) nAmarilla++;
-          else nSin++;
-        } else {
-          nSin++;
-        }
+        if (ind.valor === null || ind.valor === undefined) n.sin_dato++;
+        else if (typeof ind.puntaje !== 'number') n.contexto++;
+        else n[nivelDePuntaje(ind.puntaje)]++;
       });
 
       resumenContainer.innerHTML = `
-        <span class="sev-chip sev-roja" title="Indicadores en umbral de Alerta Máxima (≥75 pts)">
-          🔴 ${nRoja} Críticos
-        </span>
-        <span class="sev-chip sev-naranja" title="Indicadores en umbral de Alerta Alta (60-75 pts)">
-          🟠 ${nNaranja} Alerta Alta
-        </span>
-        <span class="sev-chip sev-amarilla" title="Indicadores en umbral de Alerta Media (40-60 pts)">
-          🟡 ${nAmarilla} Alerta Media
-        </span>
-        <span class="sev-chip sev-sin" title="Indicadores en operación favorable o estable (<40 pts)">
-          🟢 ${nSin} Normales
-        </span>
+        <span class="sev-chip sev-roja" title="Puntaje ≥ 75">🔴 ${n.roja} en rojo</span>
+        <span class="sev-chip sev-naranja" title="Puntaje 60 a 74">🟠 ${n.naranja} en naranja</span>
+        <span class="sev-chip sev-amarilla" title="Puntaje 40 a 59">🟡 ${n.amarilla} en amarillo</span>
+        <span class="sev-chip sev-sin" title="Puntaje menor a 40">🟢 ${n.sin_alerta} sin alerta</span>
+        <span class="sev-chip sev-sindato" title="Indicadores sin valor en este corte">${n.sin_dato} sin dato</span>
+        <span class="sev-chip sev-sindato" title="Con valor, pero no ponderan en el ICR">${n.contexto} de contexto</span>
       `;
     }
 
@@ -1955,8 +2109,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const cat = getInfoIndicador(cod);
       const capaKey = cat.capa ? cat.capa.toLowerCase() : cod[0].toLowerCase();
 
-      const valText = ind.valor !== null ? `${ind.valor}` : 'S/D';
-      const unidadText = ind.unidad ? ind.unidad : '';
+      const sinValor = ind.valor === null || ind.valor === undefined;
+      const valText = sinValor ? 'Sin dato' : (typeof ind.valor === 'number' ? fmt(ind.valor, 1) : `${ind.valor}`);
+      const unidadText = sinValor ? '' : (ind.unidad || '');
       const puntaje = ind.puntaje !== null ? ind.puntaje : null;
       const puntajeText = puntaje !== null ? puntaje.toFixed(1) : '—';
       const pct = puntaje !== null ? Math.min(Math.max(puntaje, 0), 100) : 0;
@@ -1992,7 +2147,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         colorBarra = '#94A3B8';
         diagClass = 'sin';
-        diagText = 'Variable de Contexto';
+        diagText = sinValor ? 'Sin dato en este corte' : 'Contexto: no pondera en el ICR';
         bordeClass = 'borde-sin';
       }
 
@@ -2036,7 +2191,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="ind-progress-ring-wrap" title="Puntaje Normalizado CRA: ${escaparHtml(puntajeText)} / 100 pts">
                 <div class="ind-progress-ring" style="--val:${pct};--ring-color:${colorBarra};"></div>
                 <span class="ind-progress-ring-val">${puntaje !== null ? puntaje.toFixed(0) : '—'}</span>
-                <span class="ind-progress-ring-sub">ICR</span>
+                <span class="ind-progress-ring-sub">pts</span>
               </div>
               <div>
                 <div class="ind-val-big">${escaparHtml(valText)} <span class="ind-val-unit">${escaparHtml(unidadText)}</span></div>
@@ -2053,10 +2208,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="spectrum-seg seg-roj" title="Zona Roja: Alerta Máxima (75-90)"></div>
                 <div class="spectrum-seg seg-ext" title="Zona Carmesí: Extremo (90-100)"></div>
               </div>
-              <div class="spectrum-pin-wrap">
+              <div class="spectrum-pin-wrap" ${puntaje === null ? 'hidden' : ''}>
                 <div class="spectrum-pin" style="left:${pct}%" title="Posición municipal actual: ${escaparHtml(puntajeText)} pts">
                   <div class="spectrum-pin-arrow"></div>
-                  <div class="spectrum-pin-label">${puntaje !== null ? puntaje.toFixed(1) : 'S/D'}</div>
+                  <div class="spectrum-pin-label">${puntaje !== null ? fmt(puntaje, 1) : ''}</div>
                 </div>
               </div>
               <div class="spectrum-labels-5">
@@ -2115,6 +2270,11 @@ document.addEventListener('DOMContentLoaded', () => {
         "Exigencia de verificación del estado de radicación y aprobación del Plan de Emergencia y Contingencia (PEC).",
         "Campañas de uso eficiente y ahorro del agua dirigidas a suscriptores residenciales y comerciales."
       ];
+    } else if (muni.nivel_alerta === 'sin_dato') {
+      acciones = [
+        "Completar la información faltante antes de clasificar el municipio: el ICR no alcanza la cobertura mínima de datos.",
+        "Revisar en el monitor de fuentes qué indicadores no llegaron en este corte y solicitar el dato a la entidad responsable."
+      ];
     } else {
       acciones = [
         "Mantenimiento de monitoreo ordinario en el ciclo diario del sistema Vigía.",
@@ -2122,8 +2282,9 @@ document.addEventListener('DOMContentLoaded', () => {
       ];
     }
 
+    // Son opciones para el análisis de la CRA, no decisiones adoptadas
     container.innerHTML = `
-      <h4>Medidas Regulatorias y Operativas Sugeridas (CRA / Nivel ${muni.nivel_alerta.toUpperCase()}):</h4>
+      <h4>Opciones de respuesta para evaluar (nivel ${escaparHtml(nombreNivel(muni.nivel_alerta))}):</h4>
       <ul>
         ${acciones.map(a => `<li>${a}</li>`).join('')}
       </ul>
@@ -2131,6 +2292,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function abrirFichaMunicipal(divipola) {
+    if (state.corte.municipios.some(m => m.divipola === divipola)) state.municipioSeleccionadoId = divipola;
     cambiarVista('V-04');
     initFichaV04(divipola);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2140,24 +2302,17 @@ document.addEventListener('DOMContentLoaded', () => {
      GRÁFICOS ANALÍTICOS ECHARTS — FICHA MUNICIPAL (RADAR 4D Y VELOCÍMETRO ICR)
      ========================================================================= */
   function calcularPromediosNacionales() {
+    // Promedio de cada capa solo entre los municipios que tienen dato en esa capa
     const munis = state.corte.municipios || [];
-    if (!munis.length) return { A: 50, H: 50, S: 50, R: 50 };
-
-    let sumA = 0, sumH = 0, sumS = 0, sumR = 0;
-    munis.forEach(m => {
-      sumA += (m.subindices_capa?.amenaza_A ?? 0);
-      sumH += (m.subindices_capa?.vulnerabilidad_H ?? 0);
-      sumS += (m.subindices_capa?.servicio_S ?? 0);
-      sumR += (m.subindices_capa?.respuesta_R ?? 0);
-    });
-    const n = munis.length;
-    return {
-      A: +(sumA / n).toFixed(1),
-      H: +(sumH / n).toFixed(1),
-      S: +(sumS / n).toFixed(1),
-      R: +(sumR / n).toFixed(1)
+    const prom = campo => {
+      const v = munis.map(m => m.subindices_capa?.[campo]).filter(x => typeof x === 'number');
+      return v.length ? +(v.reduce((s, x) => s + x, 0) / v.length).toFixed(1) : '-';
     };
+    return { A: prom('amenaza_A'), H: prom('vulnerabilidad_H'), S: prom('servicio_S'), R: prom('respuesta_R'), n: munis.length };
   }
+
+  function valorRadar(v) { return typeof v === 'number' ? v : '-'; }
+  function textoRadar(v) { return typeof v === 'number' ? `${fmt(v, 1)} pts` : 'Sin dato'; }
 
   function renderGraficosFichaECharts(muni) {
     if (typeof echarts === 'undefined') {
@@ -2168,10 +2323,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const promedios = calcularPromediosNacionales();
     const colorAlerta = muni.nivel_alerta === 'roja' ? '#B3261E' :
       (muni.nivel_alerta === 'naranja' ? '#E07A10' :
-        (muni.nivel_alerta === 'amarilla' ? '#C79E00' : '#2E7D4F'));
+        (muni.nivel_alerta === 'amarilla' ? '#C79E00' :
+          (muni.nivel_alerta === 'sin_dato' ? '#8C9BA5' : '#2E7D4F')));
     const colorArea = muni.nivel_alerta === 'roja' ? 'rgba(179, 38, 30, 0.32)' :
       (muni.nivel_alerta === 'naranja' ? 'rgba(224, 122, 16, 0.32)' :
-        (muni.nivel_alerta === 'amarilla' ? 'rgba(242, 194, 0, 0.32)' : 'rgba(46, 125, 79, 0.32)'));
+        (muni.nivel_alerta === 'amarilla' ? 'rgba(242, 194, 0, 0.32)' :
+          (muni.nivel_alerta === 'sin_dato' ? 'rgba(140, 155, 165, 0.2)' : 'rgba(46, 125, 79, 0.32)')));
 
     // 1. Radar 4D (Capas A, H, S, R)
     const domRadar = document.getElementById('chart-radar-4d');
@@ -2196,10 +2353,10 @@ document.addEventListener('DOMContentLoaded', () => {
             return `
               <div style="font-weight:800;margin-bottom:6px;font-size:13px;color:${esMuni ? '#43B2D7' : '#B9C4CC'}">${params.name}</div>
               <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:12px">
-                <span style="color:#E6F5FA">• Amenaza (A):</span><b>${vals[0]} pts</b>
-                <span style="color:#E6F5FA">• Oferta Hídrica (H):</span><b>${vals[1]} pts</b>
-                <span style="color:#E6F5FA">• Falla Servicio (S):</span><b>${vals[2]} pts</b>
-                <span style="color:#E6F5FA">• Capacidad Respuesta (R):</span><b>${vals[3]} pts</b>
+                <span style="color:#E6F5FA">• ${escaparHtml(NOMBRE_CAPA.A)} (A):</span><b>${textoRadar(vals[0])}</b>
+                <span style="color:#E6F5FA">• ${escaparHtml(NOMBRE_CAPA.H)} (H):</span><b>${textoRadar(vals[1])}</b>
+                <span style="color:#E6F5FA">• ${escaparHtml(NOMBRE_CAPA.S)} (S):</span><b>${textoRadar(vals[2])}</b>
+                <span style="color:#E6F5FA">• ${escaparHtml(NOMBRE_CAPA.R)} (R):</span><b>${textoRadar(vals[3])}</b>
               </div>
             `;
           }
@@ -2211,10 +2368,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         radar: {
           indicator: [
-            { name: 'Amenaza (A)\nClimática', max: 100 },
-            { name: 'Oferta Hídrica (H)\nVulnerabilidad', max: 100 },
-            { name: 'Falla Servicio (S)\nContinuidad/Calidad', max: 100 },
-            { name: 'Capacidad (R)\nRespuesta/Planes', max: 100 }
+            ...['A', 'H', 'S', 'R'].map(k => ({ name: `${k} · ${NOMBRE_CAPA[k].replace(/^(\S+ \S+) /, '$1\n')}`, max: 100 }))
           ],
           shape: 'polygon',
           radius: '68%',
@@ -2247,10 +2401,10 @@ document.addEventListener('DOMContentLoaded', () => {
           data: [
             {
               value: [
-                muni.subindices_capa?.amenaza_A ?? 0,
-                muni.subindices_capa?.vulnerabilidad_H ?? 0,
-                muni.subindices_capa?.servicio_S ?? 0,
-                muni.subindices_capa?.respuesta_R ?? 0
+                valorRadar(muni.subindices_capa?.amenaza_A),
+                valorRadar(muni.subindices_capa?.vulnerabilidad_H),
+                valorRadar(muni.subindices_capa?.servicio_S),
+                valorRadar(muni.subindices_capa?.respuesta_R)
               ],
               name: muni.nombre,
               symbol: 'circle',
@@ -2261,7 +2415,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             {
               value: [promedios.A, promedios.H, promedios.S, promedios.R],
-              name: 'Promedio Nacional (23 mun.)',
+              name: `Promedio de los ${promedios.n} municipios analizados`,
               symbol: 'none',
               lineStyle: { type: 'dashed', width: 2, color: '#8C9BA5' },
               itemStyle: { color: '#8C9BA5' },
@@ -2281,7 +2435,10 @@ document.addEventListener('DOMContentLoaded', () => {
         state.chartGauge = echarts.init(domGauge);
       }
 
-      const icrVal = muni.icr !== null ? muni.icr : 0;
+      const icrVal = typeof muni.icr === 'number' ? muni.icr : 0;
+      // Bandas del medidor con los umbrales de nivel de la config
+      const ordenN = [...NIVELES_ICR].sort((a, b) => a.icr_desde - b.icr_desde);
+      const bandasGauge = ordenN.map((n, i) => [i + 1 < ordenN.length ? ordenN[i + 1].icr_desde / 100 : 1, HEX_NIVEL[n.nivel]]);
       const optionGauge = {
         animationDuration: 900,
         animationEasing: 'cubicOut',
@@ -2298,12 +2455,7 @@ document.addEventListener('DOMContentLoaded', () => {
             axisLine: {
               lineStyle: {
                 width: 14,
-                color: [
-                  [0.40, '#2E7D4F'],  // Sin Alerta (<40)
-                  [0.60, '#F2C200'],  // Amarilla (40-60)
-                  [0.75, '#E07A10'],  // Naranja (60-75)
-                  [1.00, '#B3261E']   // Roja (>=75)
-                ]
+                color: bandasGauge
               }
             },
             pointer: {
@@ -2343,7 +2495,8 @@ document.addEventListener('DOMContentLoaded', () => {
             detail: {
               valueAnimation: true,
               formatter: function (value) {
-                return '{score|' + value.toFixed(1) + '}{unit| pts}\n{desc|NIVEL ' + muni.nivel_alerta.toUpperCase().replace('_', ' ') + '}';
+                if (typeof muni.icr !== 'number') return '{score|Sin dato}\n{desc|COBERTURA INSUFICIENTE}';
+                return '{score|' + fmt(value, 1) + '}{unit| pts}\n{desc|NIVEL ' + nombreNivel(muni.nivel_alerta).toUpperCase() + '}';
               },
               rich: {
                 score: {
@@ -2446,7 +2599,42 @@ document.addEventListener('DOMContentLoaded', () => {
     initModalIndicadorEvents();
 
     // 5. Renderizado Inicial
+    actualizarResumenCatalogo();
     renderCatalogoV05();
+  }
+
+  // Contadores y nombres de capa del catálogo, derivados del catálogo alineado con la config
+  function actualizarResumenCatalogo() {
+    const cat = data.catalogoIndicadores || CATALOGO_INDICADORES_MASTER;
+    const enIcr = cat.filter(i => i.en_icr).length;
+    const capaDe = i => (i.capa || i.codigo[0]).toUpperCase();
+    const kpis = document.querySelectorAll('.grid-kpis-catalogo .card-kpi-cat');
+    const fijar = (idx, num, titulo, sub) => {
+      const k = kpis[idx];
+      if (!k) return;
+      k.querySelector('.cat-kpi-num').textContent = num;
+      if (titulo) k.querySelector('.cat-kpi-text strong').textContent = titulo;
+      if (sub) k.querySelector('.cat-kpi-text span').textContent = sub;
+    };
+    fijar(0, cat.length, 'Indicadores del catálogo', 'Escala municipal, departamental o nacional');
+    fijar(1, enIcr, 'Ponderados en el ICR', ['A', 'H', 'S', 'R'].map(k => `${k}: ${pctPeso(k)}`).join(' | '));
+    fijar(2, cat.length - enIcr, 'De contexto', cat.filter(i => !i.en_icr).map(i => i.codigo).join(', '));
+    const fuentes = data.fuentes || [];
+    fijar(3, fuentes.length, 'Conectores con bitácora', fuentes.length ? 'Ver detalle en Fuentes' : 'Sin bitácora de capturas publicada');
+
+    document.querySelectorAll('#filtro-catalogo-capas .pill-capa-btn').forEach(btn => {
+      const f = btn.getAttribute('data-filtro');
+      const badge = btn.querySelector('.pill-badge');
+      if (!badge) return;
+      if (f === 'TODOS') badge.textContent = cat.length;
+      else if (f === 'ICR') badge.textContent = enIcr;
+      else {
+        badge.textContent = cat.filter(i => capaDe(i) === f).length;
+        // Nombre de la capa desde la config, conservando el punto de color y el contador
+        const nodoTexto = [...btn.childNodes].find(n => n.nodeType === 3 && n.textContent.trim());
+        if (nodoTexto && NOMBRE_CAPA[f]) nodoTexto.textContent = ` Capa ${f} · ${NOMBRE_CAPA[f]} `;
+      }
+    });
   }
 
   function renderCatalogoV05() {
@@ -2492,18 +2680,18 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         gridVisual.innerHTML = items.map(ind => {
           const capaKey = ind.capa ? ind.capa.toLowerCase() : ind.codigo[0].toLowerCase();
-          const nombresCapa = { a: 'Amenaza Macro/Clima', h: 'Oferta y Vulnerabilidad Hídrica', s: 'Sensibilidad del Servicio', r: 'Respuesta y Daño' };
-          const capaNombre = nombresCapa[capaKey] || `Capa ${capaKey.toUpperCase()}`;
+          const capaNombre = NOMBRE_CAPA[capaKey.toUpperCase()] || `Capa ${capaKey.toUpperCase()}`;
 
-          // ICR Weight Tag
+          // Pertenencia y peso en el ICR (config)
           let icrTag = '';
           if (ind.en_icr) {
-            const pesos = { a: '30%', h: '30%', s: '25%', r: '15%' };
-            const peso = pesos[capaKey] || '';
-            icrTag = `<span class="ind-meta-pill" style="background:#E8EEF9;color:#003189;font-weight:800">ICR Capa ${capaKey.toUpperCase()} (${peso})</span>`;
+            icrTag = `<span class="ind-meta-pill" style="background:#E8EEF9;color:#003189;font-weight:800">ICR · capa ${capaKey.toUpperCase()} (${pctPeso(capaKey.toUpperCase())})</span>`;
           } else {
-            icrTag = `<span class="ind-meta-pill" style="background:#FFF3E0;color:#E07A10;font-weight:800">Contexto / Alerta</span>`;
+            icrTag = `<span class="ind-meta-pill" style="background:#FFF3E0;color:#9A4F00;font-weight:800">Contexto: no pondera en el ICR</span>`;
           }
+          const origenUmbral = ind.umbrales_origen === 'config'
+            ? 'Configuración del ICR'
+            : 'Referencia (no genera puntaje)';
 
           // Direction of Risk Tag
           let dirBadge = '';
@@ -2557,8 +2745,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <!-- Herramienta Visual: Medidor de Espectro Semafórico de Umbrales -->
                 <div class="ind-card-spectrum-sec">
                   <div class="ind-spectrum-head">
-                    <span>Espectro Semafórico de Puntos de Quiebre</span>
-                    <span style="font-size:10px;color:var(--cra-cian-texto)">Regla CRA</span>
+                    <span>Puntos de quiebre (0 · 40 · 60 · 75 · 100 pts)</span>
+                    <span style="font-size:10px;color:var(--cra-cian-texto)">${escaparHtml(origenUmbral)}</span>
                   </div>
                   <div class="spectrum-meter">
                     <div class="spectrum-track" title="0 a 100 puntos normalizados">
@@ -2701,14 +2889,13 @@ document.addEventListener('DOMContentLoaded', () => {
     state.indicadorModalSeleccionado = codigo;
 
     const capaKey = ind.capa ? ind.capa.toLowerCase() : ind.codigo[0].toLowerCase();
-    const nombresCapa = { a: 'Capa A · Amenaza Clima', h: 'Capa H · Oferta Hídrica', s: 'Capa S · Sensibilidad del Servicio', r: 'Capa R · Respuesta y Daño' };
-    const pesosCapa = { a: 'Ponderado en ICR (30%)', h: 'Ponderado en ICR (30%)', s: 'Ponderado en ICR (25%)', r: 'Ponderado en ICR (15%)' };
+    const K = capaKey.toUpperCase();
 
     // 1. Textos y Cabecera
     document.getElementById('modal-ind-cod').textContent = ind.codigo;
-    document.getElementById('modal-ind-capa').textContent = nombresCapa[capaKey] || `Capa ${capaKey.toUpperCase()}`;
+    document.getElementById('modal-ind-capa').textContent = `Capa ${K} · ${NOMBRE_CAPA[K] || ''}`;
     document.getElementById('modal-ind-capa').className = `modal-capa-badge capa-${capaKey}`;
-    document.getElementById('modal-ind-icr').textContent = ind.en_icr ? (pesosCapa[capaKey] || 'Ponderado en ICR') : 'Variable de Contexto / Alerta Temprana';
+    document.getElementById('modal-ind-icr').textContent = ind.en_icr ? `Ponderado en el ICR (capa ${K}: ${pctPeso(K)})` : 'Contexto: no pondera en el ICR';
     document.getElementById('modal-ind-nombre').textContent = ind.nombre;
     document.getElementById('modal-ind-formula').textContent = ind.formula;
 
@@ -2805,11 +2992,11 @@ document.addEventListener('DOMContentLoaded', () => {
               <strong style="color:var(--texto-fuerte)">${ind.umbrales.naranja}</strong>
             </div>
             <div style="display:flex;flex-direction:column;align-items:center">
-              <span class="lbl-roj">75 pts · Máximo Riesgo</span>
+              <span class="lbl-roj">75 pts · Roja</span>
               <strong style="color:var(--texto-fuerte)">${ind.umbrales.roja}</strong>
             </div>
             <div style="display:flex;flex-direction:column;align-items:flex-end">
-              <span class="lbl-ext">90-100 pts · Extremo</span>
+              <span class="lbl-ext">100 pts · Máximo</span>
               <strong style="color:var(--texto-fuerte)">${ind.umbrales.extremo}</strong>
             </div>
           </div>
@@ -2819,21 +3006,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Distribución Territorial en los Municipios Monitoreados
     const munis = state.corte.municipios || [];
-    let cRoja = 0, cNaranja = 0, cAmarilla = 0, cSin = 0;
+    let cRoja = 0, cNaranja = 0, cAmarilla = 0, cSin = 0, cSinDato = 0;
     const listaAfectados = [];
 
     munis.forEach(m => {
       const itm = m.indicadores ? m.indicadores[codigo] : null;
       if (itm) {
         const p = itm.puntaje;
-        if (p !== null) {
-          if (p >= 75) cRoja++;
-          else if (p >= 60) cNaranja++;
-          else if (p >= 40) cAmarilla++;
-          else cSin++;
-        } else {
-          cSin++;
-        }
+        const nivel = itm.valor === null || itm.valor === undefined ? 'sin_dato'
+          : (typeof p === 'number' ? nivelDePuntaje(p) : 'contexto');
+        if (nivel === 'roja') cRoja++;
+        else if (nivel === 'naranja') cNaranja++;
+        else if (nivel === 'amarilla') cAmarilla++;
+        else if (nivel === 'sin_alerta') cSin++;
+        else if (nivel === 'sin_dato') cSinDato++;
 
         listaAfectados.push({
           divipola: m.divipola,
@@ -2842,7 +3028,7 @@ document.addEventListener('DOMContentLoaded', () => {
           valor: itm.valor,
           unidad: itm.unidad,
           puntaje: itm.puntaje,
-          nivel: p >= 75 ? 'roja' : (p >= 60 ? 'naranja' : (p >= 40 ? 'amarilla' : 'sin_alerta'))
+          nivel
         });
       }
     });
@@ -2854,22 +3040,27 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="dist-card dist-roja">
           <div class="dist-count" style="color:var(--alerta-roja)">${cRoja}</div>
           <div class="dist-label" style="color:var(--alerta-roja)">Nivel Rojo (Crítico)</div>
-          <div class="dist-pct">${((cRoja / tot) * 100).toFixed(1)} % del territorio</div>
+          <div class="dist-pct">${((cRoja / tot) * 100).toFixed(1)} % de los municipios</div>
         </div>
         <div class="dist-card dist-naranja">
           <div class="dist-count" style="color:var(--alerta-naranja)">${cNaranja}</div>
           <div class="dist-label" style="color:var(--alerta-naranja)">Nivel Naranja (Alto)</div>
-          <div class="dist-pct">${((cNaranja / tot) * 100).toFixed(1)} % del territorio</div>
+          <div class="dist-pct">${((cNaranja / tot) * 100).toFixed(1)} % de los municipios</div>
         </div>
         <div class="dist-card dist-amarilla">
           <div class="dist-count" style="color:#826600">${cAmarilla}</div>
           <div class="dist-label" style="color:#826600">Nivel Amarillo (Medio)</div>
-          <div class="dist-pct">${((cAmarilla / tot) * 100).toFixed(1)} % del territorio</div>
+          <div class="dist-pct">${((cAmarilla / tot) * 100).toFixed(1)} % de los municipios</div>
         </div>
         <div class="dist-card dist-sin">
           <div class="dist-count" style="color:var(--alerta-sin)">${cSin}</div>
-          <div class="dist-label" style="color:var(--alerta-sin)">Normal / Estable</div>
-          <div class="dist-pct">${((cSin / tot) * 100).toFixed(1)} % del territorio</div>
+          <div class="dist-label" style="color:var(--alerta-sin)">Sin alerta</div>
+          <div class="dist-pct">${((cSin / tot) * 100).toFixed(1)} % de los municipios</div>
+        </div>
+        <div class="dist-card dist-sin">
+          <div class="dist-count" style="color:var(--texto-claro)">${cSinDato}</div>
+          <div class="dist-label" style="color:var(--texto-claro)">Sin dato</div>
+          <div class="dist-pct">${((cSinDato / tot) * 100).toFixed(1)} % de los municipios</div>
         </div>
       `;
     }
@@ -2890,9 +3081,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <tr>
           <td><strong>${escaparHtml(m.nombre)}</strong> <span style="font-size:11px;color:var(--texto-claro)">(${escaparHtml(m.divipola)})</span></td>
           <td>${escaparHtml(m.departamento)}</td>
-          <td><strong>${m.valor !== null ? escaparHtml(m.valor) : 'S/D'}</strong> <span style="font-size:11px;color:var(--texto-claro)">${escaparHtml(m.unidad)}</span></td>
-          <td><strong>${m.puntaje !== null ? Number(m.puntaje).toFixed(1) : '—'}</strong> / 100</td>
-          <td><span class="chip-alerta ${escaparHtml(m.nivel)}">${escaparHtml(String(m.nivel || '').replace('_', ' '))}</span></td>
+          <td>${m.valor !== null && m.valor !== undefined ? `<strong>${escaparHtml(typeof m.valor === 'number' ? fmt(m.valor, 1) : m.valor)}</strong> <span style="font-size:11px;color:var(--texto-claro)">${escaparHtml(m.unidad)}</span>` : '<span class="sin-dato-txt">Sin dato</span>'}</td>
+          <td>${typeof m.puntaje === 'number' ? `<strong>${fmt(m.puntaje, 1)}</strong> / 100` : '—'}</td>
+          <td><span class="chip-alerta ${escaparHtml(m.nivel === 'contexto' ? 'sin_dato' : m.nivel)}">${escaparHtml(m.nivel === 'contexto' ? 'Contexto' : nombreNivel(m.nivel))}</span></td>
           <td>
             <button class="btn-secundario btn-ir-muni-modal" data-divipola="${escaparHtml(m.divipola)}" style="padding:3px 8px;font-size:11px">
               Ver Ficha
@@ -2916,13 +3107,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (orientacionBox) {
       let orientacionTexto = '';
       if (capaKey === 's') {
-        orientacionTexto = `<strong>Mandato Regulatorio CRA (Dimensión Servicio):</strong> Si este indicador supera los 60 puntos (Naranja) o 75 puntos (Rojo), la CRA y la SSPD deben ordenar la revisión inmediata de turnos de bombeo sectorizados, costos transitorios de distribución alternativa (carrotanques/plantas portátiles) y autorizar la flexibilización tarifaria de contingencia estipulada en el Libro 2 de la Resolución CRA 943 de 2021.`;
+        orientacionTexto = `<strong>Opciones para evaluar (capa de servicio):</strong> Si este indicador supera los 60 puntos (naranja) o 75 puntos (roja), la CRA puede evaluar con la SSPD la revisión de turnos de bombeo sectorizados, costos transitorios de distribución alternativa (carrotanques/plantas portátiles) y la pertinencia de medidas tarifarias de contingencia, previa verificación jurídica del marco vigente.`;
       } else if (capaKey === 'a') {
-        orientacionTexto = `<strong>Mandato Regulatorio CRA (Dimensión Amenaza Clima):</strong> Este indicador mide la presión exógena hidrometeorológica. La superación del umbral de advertencia activa los comités semanales interinstitucionales con IDEAM y la UNGRD, anticipando la probabilidad de sequía y declaratorias formales de desabastecimiento.`;
+        orientacionTexto = `<strong>Opciones para evaluar (capa de amenaza):</strong> Este indicador mide la presión hidrometeorológica externa. Superar el umbral naranja es una señal para llevar el caso a la coordinación interinstitucional con IDEAM y la UNGRD, anticipando la probabilidad de sequía y declaratorias formales de desabastecimiento.`;
       } else if (capaKey === 'h') {
-        orientacionTexto = `<strong>Mandato Regulatorio CRA (Dimensión Oferta Hídrica):</strong> Monitorea la capacidad de resiliencia del ecosistema y la infraestructura. Valores críticos exigen a los prestadores activar fuentes subterráneas de respaldo, tanques de compensación y reducir el consumo no autorizado en la red de aducción.`;
+        orientacionTexto = `<strong>Opciones para evaluar (capa de oferta):</strong> Monitorea la capacidad de resiliencia del ecosistema y la infraestructura. Ante valores críticos se puede pedir a los prestadores evaluar fuentes subterráneas de respaldo, tanques de compensación y reducir el consumo no autorizado en la red de aducción.`;
       } else {
-        orientacionTexto = `<strong>Mandato Regulatorio CRA (Dimensión Respuesta):</strong> Verifica si el municipio cuenta con Plan de Emergencia y Contingencia (PEC) radicado y si ha declarado formalmente Calamidad Pública. La ausencia de PEC en municipios de alta amenaza dispara requerimientos perentorios conjuntos con la Procuraduría Delegada para Asuntos Ambientales.`;
+        orientacionTexto = `<strong>Opciones para evaluar (capa de respuesta):</strong> Verifica si el municipio cuenta con Plan de Emergencia y Contingencia (PEC) y si ha declarado formalmente calamidad pública. La ausencia de PEC en municipios de alta amenaza es un caso prioritario para el seguimiento con la SSPD.`;
       }
       orientacionBox.innerHTML = orientacionTexto;
     }
@@ -2946,11 +3137,11 @@ document.addEventListener('DOMContentLoaded', () => {
       <tr data-abrir-municipio="${escaparHtml(alt.divipola)}">
         <td><span style="font-family:monospace;font-weight:700">${escaparHtml(alt.id_alerta)}</span></td>
         <td><strong>${escaparHtml(alt.municipio)}</strong> <span style="color:var(--texto-claro)">(${escaparHtml(alt.departamento)})</span></td>
-        <td><span class="chip-alerta ${escaparHtml(alt.nivel)}">${escaparHtml(alt.nivel)}</span></td>
-        <td><strong>${escaparHtml(alt.icr)}</strong> pts</td>
+        <td><span class="chip-alerta ${escaparHtml(alt.nivel)}">${escaparHtml(nombreNivel(alt.nivel))}</span></td>
+        <td>${typeof alt.icr === 'number' ? `<strong>${escaparHtml(fmt(alt.icr, 1))}</strong> pts` : '<span class="sin-dato-txt">Sin dato</span>'}</td>
         <td style="font-size:12px">${escaparHtml(alt.motivo)}</td>
-        <td><span style="background:${alt.prioridad === 'ALTA' ? '#FFEBEE' : '#FFF8E1'};color:${alt.prioridad === 'ALTA' ? 'var(--alerta-roja)' : 'var(--alerta-amarilla)'};padding:2px 6px;border-radius:3px;font-weight:800;font-size:11px">${escaparHtml(alt.prioridad)}</span></td>
-        <td><span style="font-size:11px;font-weight:700;color:var(--cra-cian-texto)">${escaparHtml(alt.estado_revision)}</span></td>
+        <td><span style="background:${alt.prioridad === 'ALTA' ? '#FFEBEE' : '#FFF8E1'};color:${alt.prioridad === 'ALTA' ? 'var(--alerta-roja)' : '#7A5C00'};padding:2px 6px;border-radius:3px;font-weight:800;font-size:11px">${escaparHtml(alt.prioridad)}</span></td>
+        <td><span style="font-size:11px;font-weight:700;color:var(--cra-cian-texto)">${escaparHtml(String(alt.estado_revision || '').replace(/_/g, ' ').toLowerCase())}</span></td>
         <td><button class="btn-secundario" style="padding:4px 8px;font-size:11px" data-abrir-municipio="${escaparHtml(alt.divipola)}">Revisar</button></td>
       </tr>
     `).join('');
@@ -2960,33 +3151,89 @@ document.addEventListener('DOMContentLoaded', () => {
      10. VISTA V-07: MONITOR DE FUENTES Y FRESCURA
      ========================================================================= */
   function initFuentesV07() {
+    const munis = state.corte.municipios || [];
+    const total = munis.length;
+    const catalogo = data.catalogoIndicadores || CATALOGO_INDICADORES_MASTER;
+
+    // 1. Cobertura por indicador, calculada sobre el corte vigente
+    const cobertura = catalogo.map(ind => {
+      const c = { cod: ind.codigo, nombre: ind.nombre, en_icr: ind.en_icr, fuentes: new Set(), con: 0, vigente: 0, desactualizado: 0 };
+      munis.forEach(m => {
+        const i = m.indicadores?.[ind.codigo];
+        if (!i) return;
+        if (i.fuente) c.fuentes.add(i.fuente);
+        if (i.valor !== null && i.valor !== undefined) {
+          c.con++;
+          if (i.frescura === 'vigente') c.vigente++;
+          else if (i.frescura === 'desactualizado') c.desactualizado++;
+        }
+      });
+      return c;
+    });
+
+    const tbodyCob = document.getElementById('tbody-cobertura-indicadores');
+    if (tbodyCob) {
+      tbodyCob.innerHTML = cobertura.map(c => {
+        const pct = total ? Math.round((c.con / total) * 100) : 0;
+        const tono = c.con === 0 ? 'nula' : (pct < 60 ? 'baja' : 'ok');
+        const fres = c.con === 0 ? '<span class="sin-dato-txt">Sin dato</span>'
+          : [c.vigente ? `<span class="fres fres-ok">${c.vigente} vigente${c.vigente > 1 ? 's' : ''}</span>` : '',
+             c.desactualizado ? `<span class="fres fres-viejo">${c.desactualizado} desactualizado${c.desactualizado > 1 ? 's' : ''}</span>` : ''].join(' ');
+        return `
+          <tr>
+            <td><span class="ind-cod-badge">${escaparHtml(c.cod)}</span> ${escaparHtml(c.nombre)}</td>
+            <td style="font-size:12px">${escaparHtml([...c.fuentes].join(' · ') || '—')}</td>
+            <td>
+              <div class="cob-barra cob-${tono}" role="img" aria-label="${c.con} de ${total} municipios con dato">
+                <span style="width:${pct}%"></span>
+              </div>
+              <span class="cob-txt">${c.con} de ${total}</span>
+            </td>
+            <td>${fres}</td>
+            <td>${c.en_icr ? 'Pondera' : '<span style="color:var(--texto-claro)">Contexto</span>'}</td>
+          </tr>`;
+      }).join('');
+    }
+
+    // 2. Bitácora de conectores (publicada por el pipeline desde data/ops/capturas.json)
+    const fuentes = data.fuentes || [];
     const tbody = document.getElementById('tbody-monitor-fuentes');
-    if (!tbody) return;
+    const fecha = iso => (iso ? String(iso).replace('T', ' ').slice(0, 16) + ' UTC' : '—');
+    const ESTADO = { exitosa: ['Exitosa', 'est-ok'], sin_cambios: ['Sin cambios', 'est-ok'], fallida: ['Fallida', 'est-falla'] };
+    if (tbody) {
+      tbody.innerHTML = fuentes.length ? fuentes.map(f => {
+        const u = f.ultima || {};
+        const v = f.ultima_valida;
+        const [estTxt, estCls] = ESTADO[u.estado] || [u.estado || '—', 'est-otro'];
+        const hash = v && v.hash_sha256 ? v.hash_sha256 : '';
+        return `
+          <tr>
+            <td><span style="font-family:monospace;font-weight:800;color:var(--cra-cian-texto)">${escaparHtml(f.id_fuente)}</span></td>
+            <td style="font-size:12px;white-space:nowrap">${escaparHtml(fecha(u.capturado_en))}</td>
+            <td><span class="est-pill ${estCls}">${escaparHtml(estTxt)}</span><div class="v07-msg">${escaparHtml(u.mensaje || '')}</div></td>
+            <td style="font-size:12px;white-space:nowrap">${v ? escaparHtml(fecha(v.capturado_en)) : '<span class="sin-dato-txt">Ninguno</span>'}</td>
+            <td style="font-variant-numeric:tabular-nums">${v && typeof v.filas_procesadas === 'number' ? fmt(v.filas_procesadas, 0) : '—'}</td>
+            <td><span style="font-family:monospace;font-size:11px" title="${escaparHtml(hash)}">${hash ? escaparHtml(hash.slice(0, 12)) + '…' : '—'}</span></td>
+            <td style="font-size:12px">${fmt(f.total_capturas, 0)} ${f.total_capturas === 1 ? 'ejecución' : 'ejecuciones'}${f.fallidas ? ` · <span style="color:var(--alerta-roja);font-weight:700">${fmt(f.fallidas, 0)} ${f.fallidas === 1 ? 'fallida' : 'fallidas'}</span>` : ''}</td>
+          </tr>`;
+      }).join('') : `<tr><td colspan="7" style="text-align:center;padding:24px"><span class="sin-dato-txt">Sin bitácora de capturas publicada.</span> Ejecute el pipeline para generarla.</td></tr>`;
+    }
 
-    const fuentes = (data && data.fuentesMonitor && data.fuentesMonitor.length > 0) ? data.fuentesMonitor : [
-      { id: "F-01", nombre: "Índices SST Semanales & ONI", entidad: "NOAA CPC", frecuencia: "Semanal", estado: "Al día", ultima_captura: "2026-10-08", latencia: "< 24 h", filas: 1240, hash: "a7f9c2d1" },
-      { id: "F-02", nombre: "Estaciones Pluviométricas & Caudales", entidad: "IDEAM DHIME", frecuencia: "Diaria", estado: "Al día", ultima_captura: "2026-10-09", latencia: "< 6 h", filas: 48920, hash: "3e8b19a0" },
-      { id: "F-03", nombre: "Focos de Calor VIIRS/MODIS", entidad: "NASA FIRMS", frecuencia: "Tiempo Real", estado: "Al día", ultima_captura: "2026-10-09", latencia: "< 3 h", filas: 3150, hash: "c41f7d82" },
-      { id: "F-04", nombre: "Continuidad, IANC & Reclamos PQR", entidad: "SSPD SUI", frecuencia: "Mensual", estado: "Al día", ultima_captura: "2026-10-05", latencia: "< 48 h", filas: 15400, hash: "99b38e21" },
-      { id: "F-05", nombre: "Calidad del Agua Potable (IRCA)", entidad: "INS SIVICAP", frecuencia: "Quincenal", estado: "Al día", ultima_captura: "2026-10-07", latencia: "< 24 h", filas: 8930, hash: "fa026d44" },
-      { id: "F-06", nombre: "Volumen Útil de Embalses", entidad: "XM Sinergox", frecuencia: "Diaria", estado: "Al día", ultima_captura: "2026-10-09", latencia: "< 4 h", filas: 640, hash: "5b81a70f" },
-      { id: "F-07", nombre: "Reportes de Calamidad y Carrotanques", entidad: "UNGRD", frecuencia: "Evento", estado: "Al día", ultima_captura: "2026-10-09", latencia: "< 12 h", filas: 230, hash: "81f09e33" },
-      { id: "F-08", nombre: "Marco Geoestadístico Nacional (MGN)", entidad: "DANE", frecuencia: "Anual", estado: "Certificado", ultima_captura: "2026-09-15", latencia: "Oficial", filas: 1122, hash: "e201b87a" }
-    ];
-
-    tbody.innerHTML = fuentes.map(f => `
-      <tr>
-        <td><span style="font-family:monospace;font-weight:800;color:var(--cra-cian-texto)">${escaparHtml(f.id)}</span></td>
-        <td><strong>${escaparHtml(f.nombre)}</strong></td>
-        <td>${escaparHtml(f.entidad)}</td>
-        <td>${escaparHtml(f.frecuencia)}</td>
-        <td><span class="frescura-pill" style="font-size:11px"><span class="frescura-dot"></span> ${escaparHtml(f.estado)}</span></td>
-        <td style="font-variant-numeric:tabular-nums;font-size:12px">${escaparHtml(f.ultima_captura)}</td>
-        <td>${escaparHtml(f.latencia)}</td>
-        <td><strong>${Number(f.filas || 0).toLocaleString('es-CO')}</strong></td>
-        <td><span style="font-family:monospace;font-size:11px">${escaparHtml(f.hash)}</span></td>
-      </tr>
-    `).join('');
+    // 3. Resumen superior
+    const kpis = document.getElementById('v07-kpis');
+    if (kpis) {
+      const sinNada = cobertura.filter(c => c.con === 0).map(c => c.cod);
+      const enIcr = cobertura.filter(c => c.en_icr);
+      const completos = enIcr.filter(c => c.con === total).length;
+      const fallando = fuentes.filter(f => f.ultima && f.ultima.estado === 'fallida').map(f => f.id_fuente);
+      const tarjeta = (num, txt, sub, tono = '') => `
+        <div class="v07-kpi ${tono}"><strong>${num}</strong><span>${escaparHtml(txt)}</span>${sub ? `<small>${escaparHtml(sub)}</small>` : ''}</div>`;
+      kpis.innerHTML =
+        tarjeta(`${completos}/${enIcr.length}`, 'indicadores del ICR con dato en todos los municipios', '') +
+        tarjeta(sinNada.length, 'indicadores sin ningún dato', sinNada.join(', '), sinNada.length ? 'v07-alerta' : '') +
+        tarjeta(fuentes.length - fallando.length + '/' + fuentes.length, 'conectores con última ejecución sin falla', fallando.join(', '), fallando.length ? 'v07-alerta' : '') +
+        tarjeta(escaparHtml(state.corte.metadata_corte?.fecha_corte || '—'), 'fecha del corte', state.corte.metadata_corte?.estado_calidad === 'PUBLICADO_VALIDO' ? 'Pasó la compuerta de calidad' : (state.corte.metadata_corte?.estado_calidad || ''));
+    }
   }
 
   /* =========================================================================

@@ -20,7 +20,19 @@
   /* =========================================================================
      CONSTANTES DEL MODELO (fiel a ingesta/pipeline_corte.py)
      ========================================================================= */
-  const PESOS = { A: 0.30, H: 0.30, S: 0.25, R: 0.15 };
+  // Pesos y quiebres de la config publicada por el pipeline (data.js → config_icr); respaldo v1.2.0-20261108
+  const CONFIG = (window.VIGIA_DATA && window.VIGIA_DATA.config_icr) || null;
+  const PESOS = CONFIG
+    ? Object.fromEntries(Object.entries(CONFIG.capas).map(([k, c]) => [k, c.peso]))
+    : { A: 0.30, H: 0.30, S: 0.25, R: 0.15 };
+  const QUIEBRES = (CONFIG && CONFIG.quiebres) || {};
+  // Valor del indicador en un puntaje de quiebre (60 = inicio de naranja), en formato es-CO
+  const quiebre = (cod, pts, respaldo) => {
+    const par = (QUIEBRES[cod] || []).find(([, p]) => p === pts);
+    return par ? String(par[0]).replace('.', ',').replace('-', '−') : respaldo;
+  };
+  const pesoTxt = k => `${Math.round(PESOS[k] * 100)} %`;
+  const pesoDec = k => PESOS[k].toFixed(2).replace('.', ',');
 
   const COMPOSICION_ICR = {
     A: { cods: ['A-3', 'A-4', 'H-1'], regla: 'Promedio de A-3, A-4 y H-1' },
@@ -85,16 +97,16 @@
   const MATRIZ = [
     { cod: 'A-1', si: 'ONI / Niño 3.4 ≥ +1.5 °C', nivel: 'amarilla', entonces: 'Activar la fase de alistamiento: revisar vigencia de los PEC, inventariar fuentes alternas (pozos, carrotanques) y comunicar el escenario a prestadores de municipios vulnerables.' },
     { cod: 'A-2', si: 'Probabilidad de evento muy fuerte ≥ 65 %', nivel: 'amarilla', entonces: 'Construir escenarios de déficit a 3–6 meses y priorizar municipios con cuencas frágiles (H-2, H-3 altos) y baja autonomía (H-4).' },
-    { cod: 'A-3', si: 'Déficit de lluvia 30 días ≤ −45 %', nivel: 'naranja', entonces: 'Intensificar campañas de uso eficiente y aumentar la frecuencia de aforo de caudal en las bocatomas.' },
-    { cod: 'A-4', si: 'Días secos consecutivos ≥ 25', nivel: 'naranja', entonces: 'Preparar la sectorización del suministro y verificar el estado de bombas y captaciones alternas.' },
+    { cod: 'A-3', si: `Déficit de lluvia 30 días ≤ ${quiebre('A-3', 60, '−40')} %`, nivel: 'naranja', entonces: 'Intensificar campañas de uso eficiente y aumentar la frecuencia de aforo de caudal en las bocatomas.' },
+    { cod: 'A-4', si: `Días secos consecutivos ≥ ${quiebre('A-4', 60, '20')}`, nivel: 'naranja', entonces: 'Preparar la sectorización del suministro y verificar el estado de bombas y captaciones alternas.' },
     { cod: 'A-5', si: 'Focos de calor en la microcuenca ≥ 8 (7 días)', nivel: 'naranja', entonces: 'Coordinar con CAR, bomberos y CMGRD la protección de la cuenca; anticipar picos de turbiedad y ajustar la dosificación en planta.' },
-    { cod: 'H-1', si: 'Caudal en bocatoma ≤ 40 % de lo normal', nivel: 'naranja', entonces: 'Activar la fase de alerta del PEC: turnos sectorizados, puesta en marcha de fuentes alternas y reporte a la SSPD.' },
-    { cod: 'H-4', si: 'Autonomía de tanques ≤ 10 horas', nivel: 'naranja', entonces: 'Optimizar llenado y operación de tanques, priorizar sectores altos y usuarios sensibles, y alistar abastecimiento alterno.' },
+    { cod: 'H-1', si: `Caudal en bocatoma ≤ ${quiebre('H-1', 60, '50')} % de lo normal`, nivel: 'naranja', entonces: 'Activar la fase de alerta del PEC: turnos sectorizados, puesta en marcha de fuentes alternas y reporte a la SSPD.' },
+    { cod: 'H-4', si: `Autonomía de tanques ≤ ${quiebre('H-4', 60, '12')} horas`, nivel: 'naranja', entonces: 'Optimizar llenado y operación de tanques, priorizar sectores altos y usuarios sensibles, y alistar abastecimiento alterno.' },
     { cod: 'H-5', si: 'Volumen útil de embalse ≤ 32 %', nivel: 'naranja', entonces: 'Coordinar con el operador del embalse caudales mínimos y adoptar medidas de ahorro obligatorio en el sistema abastecido.' },
-    { cod: 'S-1', si: 'Continuidad ≤ 14 horas/día', nivel: 'naranja', entonces: 'Publicar y socializar el esquema de turnos, garantizar suministro a hospitales, escuelas y hogares de cuidado; seguimiento especial SSPD.' },
-    { cod: 'S-2', si: 'IRCA > 14 % (riesgo medio o mayor)', nivel: 'naranja', entonces: 'Muestreo intensivo, revisión de procesos de potabilización y alerta sanitaria (recomendar hervir el agua). Si IRCA > 35 %: agua no apta.' },
-    { cod: 'S-4', si: 'Agua no contabilizada (IANC) ≥ 55 %', nivel: 'naranja', entonces: 'Programa urgente de detección y reparación de fugas, control de presiones y de conexiones no autorizadas.' },
-    { cod: 'S-5', si: 'Reclamos por fallas (PQR) ≥ +50 % vs. año anterior', nivel: 'naranja', entonces: 'Reforzar la atención y comunicación al usuario e identificar los sectores con fallas recurrentes.' },
+    { cod: 'S-1', si: `Continuidad ≤ ${quiebre('S-1', 60, '18')} horas/día`, nivel: 'naranja', entonces: 'Publicar y socializar el esquema de turnos, garantizar suministro a hospitales, escuelas y hogares de cuidado; seguimiento especial SSPD.' },
+    { cod: 'S-2', si: `IRCA ≥ ${quiebre('S-2', 60, '14')} % (riesgo medio o mayor)`, nivel: 'naranja', entonces: 'Muestreo intensivo, revisión de procesos de potabilización y alerta sanitaria (recomendar hervir el agua). Si IRCA > 35 %: agua no apta.' },
+    { cod: 'S-4', si: `Agua no contabilizada (IANC) ≥ ${quiebre('S-4', 60, '40')} %`, nivel: 'naranja', entonces: 'Programa urgente de detección y reparación de fugas, control de presiones y de conexiones no autorizadas.' },
+    { cod: 'S-5', si: `Reclamos por fallas (PQR) ≥ +${quiebre('S-5', 60, '50')} % vs. año anterior`, nivel: 'naranja', entonces: 'Reforzar la atención y comunicación al usuario e identificar los sectores con fallas recurrentes.' },
     { cod: 'R-1', si: 'PEC no vigente / no radicado (= 0)', nivel: 'naranja', entonces: 'Requerir al prestador la actualización y radicación inmediata del Plan de Emergencia y Contingencia.' },
     { cod: 'R-2', si: 'Carrotanques operando (= 1)', nivel: 'naranja', entonces: 'Verificar calidad del agua distribuida, cobertura de los puntos de entrega y costos del esquema de abastecimiento alterno.' },
     { cod: 'R-3', si: 'Racionamiento oficial (= 1)', nivel: 'naranja', entonces: 'Regla de piso: el municipio pasa como mínimo a Naranja. Exigir transparencia en los turnos y equidad entre sectores.' },
@@ -198,10 +210,10 @@
       ok: 2, exp: 'A-1 se mueve meses antes de que falte el agua. S-1, S-5 y R-3 son señales de impacto: indican que la sequía ya llegó a los hogares.' },
     { p: 'El caudal de la bocatoma (H-1) cae al 38 % de lo normal. ¿Cuál es la acción más adecuada?',
       ops: ['Esperar a que se declare calamidad pública.', 'Activar la fase de alerta del PEC: sectorización, fuentes alternas y reporte a la SSPD.', 'No hacer nada hasta que bajen las horas de servicio.', 'Suspender el muestreo de calidad del agua.'],
-      ok: 1, exp: 'Un caudal por debajo del 40 % es umbral naranja: hay que activar el PEC antes de que el usuario pierda el servicio.' },
+      ok: 1, exp: `Un caudal por debajo del ${quiebre('H-1', 60, '50')} % ya es naranja (y bajo el ${quiebre('H-1', 75, '30')} % sería rojo): hay que activar el PEC antes de que el usuario pierda el servicio.` },
     { p: '¿Qué capa del ICR tiene el menor peso en el cálculo?',
-      ops: ['A · Amenaza (30 %)', 'H · Oferta hídrica (30 %)', 'S · Servicio (25 %)', 'R · Respuesta e impacto (15 %)'],
-      ok: 3, exp: 'R pesa 15 % porque refleja hechos ya confirmados; además, su efecto se refuerza con la regla de piso a Naranja.' }
+      ops: [`A · Amenaza (${pesoTxt('A')})`, `H · Oferta hídrica (${pesoTxt('H')})`, `S · Servicio (${pesoTxt('S')})`, `R · Respuesta e impacto (${pesoTxt('R')})`],
+      ok: 3, exp: `R pesa ${pesoTxt('R')} porque refleja hechos ya confirmados; además, su efecto se refuerza con la regla de piso a Naranja.` }
   ];
 
   const GLOSARIO = [
@@ -700,7 +712,7 @@
             <div class="au-capa-letra">${k}</div>
             <h4>${NOMBRE_CAPA[k]}</h4>
             <p class="au-capa-pregunta">${preg}</p>
-            <div class="au-capa-peso"><span>Peso</span><div class="au-capa-peso-barra"><span style="width:${PESOS[k] * 100 / 0.30 * 100 / 100}%"></span></div><span>${PESOS[k] * 100} %</span></div>
+            <div class="au-capa-peso"><span>Peso</span><div class="au-capa-peso-barra"><span style="width:${(PESOS[k] / Math.max(...Object.values(PESOS))) * 100}%"></span></div><span>${pesoTxt(k)}</span></div>
             <div class="au-eslabon-cods">${COMPOSICION_ICR[k].cods.map(chipCod).join('')}</div>
             <span class="au-capa-calc">${COMPOSICION_ICR[k].regla}</span>
           </article>`).join('')}
@@ -718,7 +730,7 @@
             <select class="au-select" id="au-icr-muni"><option value="">— Escenario libre —</option>${ctx.opcionesMunis}</select>
           </div>
           ${['A', 'H', 'S', 'R'].map(k => `<div class="au-icr-fila" data-capa="${k}">
-              <label for="au-sl-${k}"><span class="au-cod" data-capa="${k}">${k}</span>${NOMBRE_CAPA[k].split(' ')[0]} (${PESOS[k] * 100} %)</label>
+              <label for="au-sl-${k}"><span class="au-cod" data-capa="${k}">${k}</span>${NOMBRE_CAPA[k].split(' ')[0]} (${pesoTxt(k)})</label>
               <input type="range" id="au-sl-${k}" min="0" max="100" step="0.1" value="${{ A: 70, H: 55, S: 45, R: 20 }[k]}">
               <output for="au-sl-${k}" id="au-out-${k}">0</output>
             </div>`).join('')}
@@ -910,7 +922,7 @@
       $('#au-icr-res').style.setProperty('--nivel-color', NIVELES[nivel].color);
       $('#au-icr-regla').classList.toggle('visible', piso);
       $('#au-icr-formula').innerHTML =
-        `ICR = 0,30×${fmt(v.A)} + 0,30×${fmt(v.H)} + 0,25×${fmt(v.S)} + 0,15×${fmt(v.R)}<br>= ${fmt(v.A * PESOS.A)} + ${fmt(v.H * PESOS.H)} + ${fmt(v.S * PESOS.S)} + ${fmt(v.R * PESOS.R)} = <strong>${fmt(icr)}</strong>`;
+        `ICR = ${pesoDec('A')}×${fmt(v.A)} + ${pesoDec('H')}×${fmt(v.H)} + ${pesoDec('S')}×${fmt(v.S)} + ${pesoDec('R')}×${fmt(v.R)}<br>= ${fmt(v.A * PESOS.A)} + ${fmt(v.H * PESOS.H)} + ${fmt(v.S * PESOS.S)} + ${fmt(v.R * PESOS.R)} = <strong>${fmt(icr)}</strong>`;
     };
     ['A', 'H', 'S', 'R'].forEach(k => sl(k).addEventListener('input', () => { $('#au-icr-muni').value = ''; calc(); }));
     [r3, r4].forEach(t => t.addEventListener('change', calc));

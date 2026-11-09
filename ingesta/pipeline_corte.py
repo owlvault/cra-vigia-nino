@@ -115,6 +115,63 @@ class PipelineCorte:
         ruta = self.root_dir / "data" / "config" / nombre
         return json.loads(ruta.read_text(encoding="utf-8"))
 
+    # Claves de parametros_icr.json que el tablero necesita para no repetir pesos, umbrales ni capas en código
+    CLAVES_CONFIG_TABLERO = ("version", "capas", "niveles_alerta", "quiebres",
+                             "puntaje_categorico", "puntaje_binario", "piso_por_impacto")
+
+    def monitor_fuentes(self) -> List[Dict[str, Any]]:
+        """
+        Resumen por fuente de la bitácora ops/capturas.json (RF-ING-01) para la vista V-07:
+        última captura (cualquier estado) y última captura válida (exitosa o sin cambios).
+        Nada se completa por defecto: si no hay bitácora, la lista queda vacía.
+        """
+        ruta = self.root_dir / "data" / "ops" / "capturas.json"
+        if not ruta.exists():
+            return []
+        try:
+            capturas = json.loads(ruta.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError) as e:
+            logger.warning(f"No se pudo leer la bitácora de capturas: {e}")
+            return []
+        resumen: Dict[str, Dict[str, Any]] = {}
+        for c in capturas:
+            fid = c.get("id_fuente")
+            if not fid:
+                continue
+            r = resumen.setdefault(fid, {"id_fuente": fid, "total_capturas": 0, "fallidas": 0,
+                                         "ultima": None, "ultima_valida": None})
+            r["total_capturas"] += 1
+            if c.get("estado") == "fallida":
+                r["fallidas"] += 1
+            r["ultima"] = {k: c.get(k) for k in ("estado", "capturado_en", "mensaje", "filas_procesadas")}
+            if c.get("estado") == "exitosa":
+                r["ultima_valida"] = {k: c.get(k) for k in
+                                      ("capturado_en", "hash_sha256", "filas_procesadas", "ruta_archivo_bronce")}
+            elif c.get("estado") == "sin_cambios" and r["ultima_valida"]:
+                # Confirma que el crudo vigente sigue igual: se actualiza la fecha, no las filas ni la ruta
+                r["ultima_valida"]["capturado_en"] = c.get("capturado_en")
+        return sorted(resumen.values(), key=lambda r: r["id_fuente"])
+
+    def publicar_data_js(self, corte_json_str: str) -> None:
+        """
+        Escribe tablero/js/data.js con el corte, la configuración del ICR vigente y el monitor de fuentes.
+        Se escapa '</' para que el JSON no pueda cerrar la etiqueta <script>.
+        """
+        config_tablero = {k: self.parametros_icr[k] for k in self.CLAVES_CONFIG_TABLERO if k in self.parametros_icr}
+        seguro = lambda s: s.replace("</", "<\\/")  # noqa: E731
+        contenido = (
+            "// Datos Maestros Integrados — Vigía El Niño · Acueductos. Generado por pipeline_corte: no editar.\n"
+            f"window.VIGIA_DATA = {{ corte: {seguro(corte_json_str)},\n"
+            f"config_icr: {seguro(json.dumps(config_tablero, ensure_ascii=False))},\n"
+            f"fuentes: {seguro(json.dumps(self.monitor_fuentes(), ensure_ascii=False))} }};\n"
+        )
+        self._escribir_atomico(self.root_dir / "tablero" / "js" / "data.js", contenido)
+
+    def republicar_tablero(self) -> None:
+        """Regenera data.js desde el corte vigente sin volver a capturar fuentes (cambios de config o de UI)."""
+        ruta = self.oro_dir / "corte_vigente.json"
+        self.publicar_data_js(ruta.read_text(encoding="utf-8"))
+
     @staticmethod
     def validar_parametros_icr(conf: Dict[str, Any]) -> None:
         """RN-ICR-01 (pesos suman 100 %) y caso borde 'umbrales no monótonos se rechazan'."""
@@ -425,7 +482,8 @@ class PipelineCorte:
             # Fechas del dato tomadas de la fuente (RF-IND-01), no literales
             fecha_sui = sui_info.get("fecha_dato")
             periodo_irca = sivicap_info.get("periodo_ano")
-            fecha_s2 = f"{periodo_irca}-12-31" if periodo_irca else None
+            # IRCA mensual (Fase 1) trae su fecha; el anual se fecha al cierre del año
+            fecha_s2 = sivicap_info.get("fecha_dato") or (f"{periodo_irca}-12-31" if periodo_irca else None)
             fecha_ideam = ideam_info.get("fecha_dato")
             fecha_ungrd = ungrd_info.get("fecha_dato")
             a5_val = firms_info.get("indicador_a5_focos_7d")
@@ -488,6 +546,8 @@ class PipelineCorte:
             )
             res_m["region"] = m.get("region")
             res_m["tipo_municipio"] = m.get("tipo_municipio")
+            # Contexto (no entra al ICR): nivel de riesgo de desabastecimiento de MinVivienda (FTE-MVCT-RIESGO)
+            res_m["contexto_minvivienda"] = ungrd_info.get("contexto_minvivienda")
             res_m["fuente_poblacion"] = fuente_poblacion_m
             hidro = self.hidrografia.get(div, {})
             for campo in self.CAMPOS_HIDROGRAFICOS:
@@ -621,11 +681,7 @@ class PipelineCorte:
         self._escribir_atomico(self.oro_dir / f"corte_{fecha_corte}.json", corte_json_str)
 
         # 2. Sincronizar atómicamente con el frontend principal (tablero/js/data.js)
-        # Escapar secuencias '</' para prevenir cierre prematuro de etiquetas <script> e inyección XSS
-        corte_json_js_safe = corte_json_str.replace("</", "<\\/")
-        data_js_content = f"// Datos Maestros Integrados — Vigía El Niño · Acueductos\nwindow.VIGIA_DATA = {{ corte: {corte_json_js_safe} }};\n"
-        tablero_js_dir = self.root_dir / "tablero" / "js"
-        self._escribir_atomico(tablero_js_dir / "data.js", data_js_content)
+        self.publicar_data_js(corte_json_str)
 
         # 3. Sincronizar atómicamente con ArcGIS GeoJSON (tablero/vigia_corte_actualizado_arcgis.geojson)
         features = []

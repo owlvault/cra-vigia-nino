@@ -305,10 +305,10 @@
           <span class="noaa-badge-top">Amenaza Global ENSO · NOAA Climate Prediction Center</span>
           <h3>Advertencia de El Niño en Fortalecimiento</h3>
           <p id="noaa-resumen-desc">
-            Anomalía en la región <strong>Niño 3.4 a +3.4 °C</strong> (con picos en la región Niño 1+2 de +5.4 °C) y una probabilidad del <strong>83.0 %</strong> de consolidar un evento de carácter histórico (RONI &ge; +2.5 °C).
+            —
           </p>
           <div style="margin-top:12px;font-size:12px;opacity:0.85" id="noaa-oni-resumen">
-            Trimestre ASO 2026: +2.46 °C (Muy Fuerte / Histórico)
+            —
           </div>
         </div>
         <div class="grid-noaa-indices">
@@ -516,29 +516,10 @@
 
         <div class="card-panel">
           <h3 style="font-size:16px;font-weight:800;color:var(--texto-fuerte);margin-bottom:14px">
-            Días Consecutivos sin Lluvia (A-4) y Focos de Calor (A-5)
+            Lluvia y focos de calor por región
           </h3>
           <div id="v02-diagnostico-regional">
-            <div style="background-color:var(--tinte);border-radius:var(--radio-md);padding:16px;margin-bottom:16px">
-              <h4 style="font-size:13px;font-weight:800;color:var(--texto-fuerte);margin-bottom:6px">Caribe & La
-                Guajira:</h4>
-              <p style="font-size:13px;color:var(--texto)" id="v02-desc-caribe">
-                Cargando diagnóstico regional...
-              </p>
-            </div>
-            <div style="background-color:var(--tinte);border-radius:var(--radio-md);padding:16px;margin-bottom:16px">
-              <h4 style="font-size:13px;font-weight:800;color:var(--texto-fuerte);margin-bottom:6px">Región Andina:</h4>
-              <p style="font-size:13px;color:var(--texto)" id="v02-desc-andina">
-                Cargando diagnóstico regional...
-              </p>
-            </div>
-            <div style="background-color:var(--tinte);border-radius:var(--radio-md);padding:16px">
-              <h4 style="font-size:13px;font-weight:800;color:var(--texto-fuerte);margin-bottom:6px">Discusión
-                Diagnóstica CPC / IRI:</h4>
-              <p style="font-size:13px;color:var(--texto)" id="v02-desc-cpc">
-                Cargando proyección climática multimodelo...
-              </p>
-            </div>
+            <p style="font-size:13px;color:var(--texto-claro)">Cargando diagnóstico regional…</p>
           </div>
         </div>
       </div>
@@ -611,28 +592,8 @@
             <div id="mapa-colombia-leaflet"></div>
           </div>
 
-          <div class="mapa-leyenda" id="mapa-leyenda-dinamica">
-            <div class="leyenda-item">
-              <span class="leyenda-box" style="background-color:var(--alerta-roja)"></span>
-              <span>Roja (&ge; 75) <strong id="leyenda-count-roja">(1)</strong></span>
-            </div>
-            <div class="leyenda-item">
-              <span class="leyenda-box" style="background-color:var(--alerta-naranja)"></span>
-              <span>Naranja (60 - 74) <strong id="leyenda-count-naranja">(3)</strong></span>
-            </div>
-            <div class="leyenda-item">
-              <span class="leyenda-box" style="background-color:var(--alerta-amarilla)"></span>
-              <span>Amarilla (40 - 59) <strong id="leyenda-count-amarilla">(9)</strong></span>
-            </div>
-            <div class="leyenda-item">
-              <span class="leyenda-box" style="background-color:var(--alerta-sin)"></span>
-              <span>Sin Alerta (&lt; 40) <strong id="leyenda-count-sin">(10)</strong></span>
-            </div>
-            <div class="leyenda-item">
-              <span class="leyenda-box" style="background-color:var(--alerta-sin-dato)"></span>
-              <span>Sin Dato Suficiente</span>
-            </div>
-          </div>
+          <!-- Leyenda generada por app.js según la variable activa (cortes de la config del ICR) -->
+          <div class="mapa-leyenda" id="mapa-leyenda-dinamica" aria-live="polite"></div>
         </div>
 
         <!-- Columna Derecha: Tabla Territorial Filtrable -->
@@ -648,7 +609,8 @@
               <option value="roja">Roja</option>
               <option value="naranja">Naranja</option>
               <option value="amarilla">Amarilla</option>
-              <option value="sin_alerta">Sin Alerta</option>
+              <option value="sin_alerta">Sin alerta</option>
+              <option value="sin_dato">Sin dato</option>
             </select>
           </div>
 
@@ -750,7 +712,7 @@
                 <span class="badge-grafico">Modelo Multidimensional</span>
                 <h4>Perfil de Riesgo por Capas (Radar 4D)</h4>
               </div>
-              <span class="grafico-sub">Municipio vs. Promedio Nacional (23 mun.)</span>
+              <span class="grafico-sub">Municipio frente al promedio de los municipios analizados</span>
             </div>
             <div id="chart-radar-4d" style="width: 100%; height: 320px;"></div>
           </div>
@@ -761,7 +723,7 @@
                 <span class="badge-grafico">Termómetro Regulatorio</span>
                 <h4>Velocímetro de Riesgo ICR</h4>
               </div>
-              <span class="grafico-sub">Umbrales Oficiales CRA (Res. 943/2021)</span>
+              <span class="grafico-sub">Umbrales de la configuración vigente del ICR</span>
             </div>
             <div id="chart-gauge-icr" style="width: 100%; height: 320px;"></div>
           </div>
@@ -775,8 +737,7 @@
               Batería Oficial de los 20 Indicadores Sectoriales
             </h3>
             <p style="font-size:13px;color:var(--texto-claro);margin-top:4px">
-              Evaluación estandarizada por semáforo de riesgo y calibración algorítmica respecto a umbrales oficiales de
-              la CRA.
+              Puntaje de 0 a 100 de cada indicador según los puntos de quiebre de la configuración vigente del ICR.
             </p>
           </div>
           <!-- Resumen de severidad del municipio -->
@@ -1002,7 +963,7 @@
       <div class="seccion-header">
         <div>
           <h2 id="v07-title">Monitor Operativo de Ingesta y Calidad de Datos</h2>
-          <p>Trazabilidad criptográfica SHA-256, estado de compuertas y latencia de las 18 fuentes oficiales.</p>
+          <p>Cobertura de cada indicador en el corte vigente y bitácora real de capturas de los conectores (SHA-256).</p>
         </div>
         <div>
           <a href="auditoria/index.html" target="_blank" class="btn-principal" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px" title="Abrir Módulo Independiente de Auditoría y Veracidad">
@@ -1012,25 +973,44 @@
         </div>
       </div>
 
-      <div class="card-panel">
+      <div class="v07-kpis" id="v07-kpis" aria-live="polite"></div>
+
+      <div class="card-panel" style="margin-bottom:20px">
+        <h3 class="v07-titulo">¿Qué datos llegaron en este corte?</h3>
+        <p class="v07-sub">Municipios con valor por indicador y frescura del dato. Un indicador sin dato no aporta al ICR; nunca se toma como cero.</p>
         <div class="tabla-container">
           <table class="tabla-vigia">
             <thead>
               <tr>
-                <th>ID Fuente</th>
-                <th>Nombre del Conector</th>
-                <th>Entidad Oficial</th>
-                <th>Frecuencia</th>
-                <th>Estado Conector</th>
-                <th>Última Captura Exitosa</th>
-                <th>Latencia</th>
-                <th>Filas Procesadas</th>
-                <th>Hash Trazabilidad (SHA-256)</th>
+                <th>Indicador</th>
+                <th>Fuente</th>
+                <th>Municipios con dato</th>
+                <th>Frescura</th>
+                <th>ICR</th>
               </tr>
             </thead>
-            <tbody id="tbody-monitor-fuentes">
-              <!-- Renderizado dinámico -->
-            </tbody>
+            <tbody id="tbody-cobertura-indicadores"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card-panel">
+        <h3 class="v07-titulo">Bitácora de conectores</h3>
+        <p class="v07-sub">Última ejecución de cada conector según data/ops/capturas.json y huella SHA-256 del último crudo válido en bronce.</p>
+        <div class="tabla-container">
+          <table class="tabla-vigia">
+            <thead>
+              <tr>
+                <th>Conector</th>
+                <th>Última ejecución</th>
+                <th>Resultado</th>
+                <th>Último crudo válido</th>
+                <th>Filas</th>
+                <th>SHA-256</th>
+                <th>Historial</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-monitor-fuentes"></tbody>
           </table>
         </div>
       </div>

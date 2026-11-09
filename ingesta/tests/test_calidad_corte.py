@@ -93,3 +93,56 @@ def test_corte_rechazado_no_reemplaza_al_publicado(pipeline, base_aislada):
     assert (oro / "rechazados" / f"corte_{fecha}.json").exists()
     assert not (oro / f"corte_{fecha}.json").exists()
     assert not (base_aislada / "tablero" / "js" / "data.js").exists()
+
+
+def _leer_data_js(base: Path) -> dict:
+    """Evalúa data.js como JSON: 'window.VIGIA_DATA = {...};' con claves sin comillas."""
+    txt = (base / "tablero" / "js" / "data.js").read_text(encoding="utf-8")
+    cuerpo = txt.split("window.VIGIA_DATA = ", 1)[1].rstrip().rstrip(";")
+    for clave in ("corte", "config_icr", "fuentes"):
+        cuerpo = cuerpo.replace(f"{clave}: ", f'"{clave}": ', 1)
+    return json.loads(cuerpo.replace(r"<\/", "</"))
+
+
+def test_data_js_publica_config_icr_y_monitor_de_fuentes(pipeline, base_aislada):
+    """El tablero lee pesos, capas y quiebres de la config publicada y la bitácora real de capturas (V-07)."""
+    ops = base_aislada / "data" / "ops"
+    ops.mkdir(parents=True)
+    (ops / "capturas.json").write_text(json.dumps([
+        {"id_fuente": "FTE-X", "estado": "exitosa", "hash_sha256": "abc", "filas_procesadas": 5,
+         "ruta_archivo_bronce": "data/bronce/x.json", "mensaje": "ok", "capturado_en": "2026-11-01T00:00:00+00:00"},
+        {"id_fuente": "FTE-X", "estado": "fallida", "hash_sha256": "", "filas_procesadas": 0,
+         "ruta_archivo_bronce": "", "mensaje": "caída", "capturado_en": "2026-11-02T00:00:00+00:00"},
+    ]), encoding="utf-8")
+
+    pipeline.publicar_data_js(json.dumps({"metadata_corte": {"fecha_corte": "2026-11-09"}, "nota": "</script>"}))
+    datos = _leer_data_js(base_aislada)
+
+    assert datos["corte"]["nota"] == "</script>"
+    assert datos["config_icr"]["capas"] == pipeline.parametros_icr["capas"]
+    assert datos["config_icr"]["quiebres"] == pipeline.parametros_icr["quiebres"]
+    [fx] = datos["fuentes"]
+    assert fx["ultima"]["estado"] == "fallida"
+    assert fx["ultima_valida"]["hash_sha256"] == "abc"
+    assert (fx["total_capturas"], fx["fallidas"]) == (2, 1)
+    assert "</script" not in (base_aislada / "tablero" / "js" / "data.js").read_text(encoding="utf-8")
+
+
+def test_monitor_de_fuentes_sin_bitacora_queda_vacio(pipeline):
+    """Sin bitácora no se inventan fuentes 'al día'."""
+    assert pipeline.monitor_fuentes() == []
+
+
+def test_monitor_sin_cambios_conserva_filas_del_ultimo_crudo(pipeline, base_aislada):
+    """Una captura 'sin_cambios' actualiza la fecha de verificación, no las filas ni la huella del crudo."""
+    ops = base_aislada / "data" / "ops"
+    ops.mkdir(parents=True)
+    (ops / "capturas.json").write_text(json.dumps([
+        {"id_fuente": "FTE-N", "estado": "exitosa", "hash_sha256": "h1", "filas_procesadas": 7,
+         "ruta_archivo_bronce": "b.txt", "mensaje": "ok", "capturado_en": "2026-11-01T00:00:00+00:00"},
+        {"id_fuente": "FTE-N", "estado": "sin_cambios", "hash_sha256": "h1", "filas_procesadas": 0,
+         "ruta_archivo_bronce": "", "mensaje": "igual", "capturado_en": "2026-11-08T00:00:00+00:00"},
+    ]), encoding="utf-8")
+    [fn] = pipeline.monitor_fuentes()
+    assert fn["ultima_valida"] == {"capturado_en": "2026-11-08T00:00:00+00:00", "hash_sha256": "h1",
+                                   "filas_procesadas": 7, "ruta_archivo_bronce": "b.txt"}
