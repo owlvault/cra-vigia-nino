@@ -5,7 +5,7 @@
     "hash_sha256": "dcc41aea6118b6f5dbf87f105772777170d7587c8646ddbc233b5cdb63945420",
     "bytes_descargados": 171464,
     "filas_procesadas": 2,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_cpc_noaa\\20261008_183211_dcc41aea.txt",
+    "ruta_archivo_bronce": "data/bronce/fte_cpc_noaa/20261008_183211_dcc41aea.txt",
     "mensaje": "Captura exitosa de anomalías SST semanales y ONI de NOAA CPC",
     "capturado_en": "2026-10-08T18:32:11.478387+00:00"
   },
@@ -15,7 +15,7 @@
     "hash_sha256": "147f333096f842424c33beff2339e492c5212f1723ba182001faf9f6a3b59f21",
     "bytes_descargados": 272750,
     "filas_procesadas": 1006,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ins_irca\\20261008_183227_147f3330.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ins_irca/20261008_183227_147f3330.json",
     "mensaje": "Captura exitosa de 1006 municipios desde SIVICAP",
     "capturado_en": "2026-10-08T18:32:27.959510+00:00"
   },
@@ -45,7 +45,7 @@
     "hash_sha256": "573955bfdca5de8922aa8b28aa6dfb7ef4f297aa4fc47da070bd2f754617b174",
     "bytes_descargados": 4553,
     "filas_procesadas": 22,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ideam_clima\\20261008_183402_573955bf.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ideam_clima/20261008_183402_573955bf.json",
     "mensaje": "Captura exitosa de 22 municipios desde IDEAM",
     "capturado_en": "2026-10-08T18:34:03.020162+00:00"
   },
@@ -55,7 +55,7 @@
     "hash_sha256": "32300c122dc2fd08d3eb339e90ec849a3e1e38c00a7fd873f0ca6f2c6b625c9b",
     "bytes_descargados": 5226,
     "filas_procesadas": 17,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261008_183403_32300c12.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261008_183403_32300c12.json",
     "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
     "capturado_en": "2026-10-08T18:34:03.093801+00:00"
   },
@@ -65,7 +65,7 @@
     "hash_sha256": "d84bfb289bbb5250b3977a2c797480f61d9f26daaa575ce73f848dcf28a050e1",
     "bytes_descargados": 1765,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261008_183403_d84bfb28.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261008_183403_d84bfb28.json",
     "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
     "capturado_en": "2026-10-08T18:34:03.163359+00:00"
   },
@@ -75,7 +75,7 @@
     "hash_sha256": "334961fd7c2e59c1a906466e941775035da8ab6129983498f6f26eaec3326fd2",
     "bytes_descargados": 1283,
     "filas_procesadas": 10,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_firms_nasa\\20261008_183403_334961fd.json",
+    "ruta_archivo_bronce": "data/bronce/fte_firms_nasa/20261008_183403_334961fd.json",
     "mensaje": "Captura exitosa de anomalías térmicas en 10 municipios",
     "capturado_en": "2026-10-08T18:34:03.229196+00:00"
   },
@@ -105,7 +105,7 @@
     "hash_sha256": "d7f64e192da8815b5e132a2dd71cb0d2c54cca62656840229d1d5c6a82cad0df",
     "bytes_descargados": 4553,
     "filas_procesadas": 22,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ideam_clima\\20261008_183416_d7f64e19.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ideam_clima/20261008_183416_d7f64e19.json",
     "mensaje": "Captura exitosa de 22 municipios desde IDEAM",
     "capturado_en": "2026-10-08T18:34:16.187684+00:00"
   },
@@ -115,7 +115,7 @@
     "hash_sha256": "21148478bae6120df0c9e694ed9f181ab9f3029dd1d88e26c19fc7570e94be93",
     "bytes_descargados": 5226,
     "filas_procesadas": 17,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261008_183416_21148478.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261008_183416_21148478.json",
     "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
     "capturado_en": "2026-10-08T18:34:16.274454+00:00"
   },
@@ -125,7 +125,7 @@
     "hash_sha256": "06209bc458cdd6bfb4094ddf572eb5e3241ec85e84edcb51f6f02266bf334d14",
     "bytes_descargados": 1765,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261008_183416_06209bc4.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261008_183416_06209bc4.json",
     "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
     "capturado_en": "2026-10-08T18:34:16.357884+00:00"
   },
@@ -135,7 +135,7 @@
     "hash_sha256": "69365b189a70ed4c6a717596a4cc92f847c262ddcb111bca14110fca1fcabaeb",
     "bytes_descargados": 1283,
     "filas_procesadas": 10,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_firms_nasa\\20261008_183416_69365b18.json",
+    "ruta_archivo_bronce": "data/bronce/fte_firms_nasa/20261008_183416_69365b18.json",
     "mensaje": "Captura exitosa de anomalías térmicas en 10 municipios",
     "capturado_en": "2026-10-08T18:34:16.433625+00:00"
   },
@@ -145,7 +145,7 @@
     "hash_sha256": "205b727b6e4b8ed073c7c5ff7aa5deb17b592db228a6ee7d92416a54fb55058c",
     "bytes_descargados": 1765,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261008_183501_205b727b.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261008_183501_205b727b.json",
     "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
     "capturado_en": "2026-10-08T18:35:01.274033+00:00"
   },
@@ -155,7 +155,7 @@
     "hash_sha256": "e7b7dab14c879da0b3532259efd00b27326a14219454118743512d0c5868f283",
     "bytes_descargados": 5226,
     "filas_procesadas": 17,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261008_183501_e7b7dab1.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261008_183501_e7b7dab1.json",
     "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
     "capturado_en": "2026-10-08T18:35:01.368980+00:00"
   },
@@ -185,7 +185,7 @@
     "hash_sha256": "c86a51c496079f46e9facb764da76e41fa1a5781d62b504861b7438963982f0a",
     "bytes_descargados": 4553,
     "filas_procesadas": 22,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ideam_clima\\20261008_183555_c86a51c4.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ideam_clima/20261008_183555_c86a51c4.json",
     "mensaje": "Captura exitosa de 22 municipios desde IDEAM",
     "capturado_en": "2026-10-08T18:35:56.631741+00:00"
   },
@@ -195,7 +195,7 @@
     "hash_sha256": "394df406294c0b89a290064103009ee43ef49b113060b2b94f43e513864cf38b",
     "bytes_descargados": 5226,
     "filas_procesadas": 17,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261008_183557_394df406.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261008_183557_394df406.json",
     "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
     "capturado_en": "2026-10-08T18:35:58.646447+00:00"
   },
@@ -205,7 +205,7 @@
     "hash_sha256": "cf76f94f3940407a6e7873bed75248426a59cf40557d8b48e065bae53ffc7b48",
     "bytes_descargados": 1765,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261008_183559_cf76f94f.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261008_183559_cf76f94f.json",
     "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
     "capturado_en": "2026-10-08T18:36:00.051353+00:00"
   },
@@ -215,7 +215,7 @@
     "hash_sha256": "8bbed1a9a6cfcce76fe8121c73187a5bd8edfa5bb091d2ff15979d0e8a7c7202",
     "bytes_descargados": 1283,
     "filas_procesadas": 10,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_firms_nasa\\20261008_183601_8bbed1a9.json",
+    "ruta_archivo_bronce": "data/bronce/fte_firms_nasa/20261008_183601_8bbed1a9.json",
     "mensaje": "Captura exitosa de anomalías térmicas en 10 municipios",
     "capturado_en": "2026-10-08T18:36:01.349654+00:00"
   },
@@ -225,7 +225,7 @@
     "hash_sha256": "db31855762b2b31efcbc970cbdca8239ae1b01faa2c41a786c10dc206cb7682e",
     "bytes_descargados": 1765,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261008_184443_db318557.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261008_184443_db318557.json",
     "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
     "capturado_en": "2026-10-08T18:44:43.712067+00:00"
   },
@@ -235,7 +235,7 @@
     "hash_sha256": "7725fbe602ce6d3e5d9dfe4429210e3d53d9f11ffb65968707853160befcd801",
     "bytes_descargados": 5226,
     "filas_procesadas": 17,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261008_184443_7725fbe6.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261008_184443_7725fbe6.json",
     "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
     "capturado_en": "2026-10-08T18:44:43.860658+00:00"
   },
@@ -245,7 +245,7 @@
     "hash_sha256": "19534a83d065ade107bf78aba67beb65ae35d108cd41bcc19bd142efa7e07410",
     "bytes_descargados": 1765,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261008_200505_19534a83.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261008_200505_19534a83.json",
     "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
     "capturado_en": "2026-10-08T20:05:06.050138+00:00"
   },
@@ -255,7 +255,7 @@
     "hash_sha256": "0edf07f013f8ca612b36532a0f61eb59c8b0b4b63f7db00288c1f84054dc2181",
     "bytes_descargados": 5226,
     "filas_procesadas": 17,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261008_200506_0edf07f0.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261008_200506_0edf07f0.json",
     "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
     "capturado_en": "2026-10-08T20:05:06.150023+00:00"
   },
@@ -265,7 +265,7 @@
     "hash_sha256": "6db3889dc713fe3d6200fc9bb8e029bf97a7ae8e7dd0a753f9992b9533287928",
     "bytes_descargados": 1765,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261008_200631_6db3889d.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261008_200631_6db3889d.json",
     "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
     "capturado_en": "2026-10-08T20:06:31.472555+00:00"
   },
@@ -275,7 +275,7 @@
     "hash_sha256": "eaabf6da0e0d795b09154f0e8381362aaa3c23bf9f0c9d7cbfd4fbcb1bf574f7",
     "bytes_descargados": 5226,
     "filas_procesadas": 17,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261008_200631_eaabf6da.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261008_200631_eaabf6da.json",
     "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
     "capturado_en": "2026-10-08T20:06:31.557526+00:00"
   },
@@ -285,7 +285,7 @@
     "hash_sha256": "6f9f2f0d9cc82165ef290f5945055faf8bf6da12c9e300a506e3262f0ad0849b",
     "bytes_descargados": 1765,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261008_201849_6f9f2f0d.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261008_201849_6f9f2f0d.json",
     "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
     "capturado_en": "2026-10-08T20:18:49.355956+00:00"
   },
@@ -295,7 +295,7 @@
     "hash_sha256": "dea46aa580fb5ccb44ca9ad920efe318f7ef9c8232c48a7cf2a3e7a22e12b124",
     "bytes_descargados": 5226,
     "filas_procesadas": 17,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261008_201849_dea46aa5.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261008_201849_dea46aa5.json",
     "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
     "capturado_en": "2026-10-08T20:18:49.454430+00:00"
   },
@@ -325,7 +325,7 @@
     "hash_sha256": "62cc1d228d686d53974a1164762f36e738bd332fa097c7b3889fe0fc2ba1c676",
     "bytes_descargados": 4553,
     "filas_procesadas": 22,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ideam_clima\\20261009_160249_62cc1d22.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ideam_clima/20261009_160249_62cc1d22.json",
     "mensaje": "Captura exitosa de 22 municipios desde IDEAM",
     "capturado_en": "2026-10-09T16:02:49.144161+00:00"
   },
@@ -335,7 +335,7 @@
     "hash_sha256": "dd2fba10f0bab7f50e4a13bc21de57ac20aafdbd56d2f9650592faa383a8c5ce",
     "bytes_descargados": 5226,
     "filas_procesadas": 17,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261009_160249_dd2fba10.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261009_160249_dd2fba10.json",
     "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
     "capturado_en": "2026-10-09T16:02:49.249013+00:00"
   },
@@ -345,7 +345,7 @@
     "hash_sha256": "4ca2f877ceec288245e3b4d66a1835942f5aec251786b742b86de94889a7fb1d",
     "bytes_descargados": 1765,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261009_160249_4ca2f877.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261009_160249_4ca2f877.json",
     "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
     "capturado_en": "2026-10-09T16:02:49.386661+00:00"
   },
@@ -355,7 +355,7 @@
     "hash_sha256": "52190ae01852f72830b9636d9dc114243d3fb5572ffcb45e0116b37e2911172d",
     "bytes_descargados": 1283,
     "filas_procesadas": 10,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_firms_nasa\\20261009_160249_52190ae0.json",
+    "ruta_archivo_bronce": "data/bronce/fte_firms_nasa/20261009_160249_52190ae0.json",
     "mensaje": "Captura exitosa de anomalías térmicas en 10 municipios",
     "capturado_en": "2026-10-09T16:02:49.519055+00:00"
   },
@@ -365,7 +365,7 @@
     "hash_sha256": "279e5117270e739690ab17cb4300d2bdfb15a41aebee4a3d3aa1eb0947107612",
     "bytes_descargados": 1765,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261013_131739_279e5117.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261013_131739_279e5117.json",
     "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
     "capturado_en": "2026-10-13T13:17:39.718887+00:00"
   },
@@ -375,7 +375,7 @@
     "hash_sha256": "d5da6d4188c35d55a7404c03b1b563d14b6e5ed980f5bbbad69faaa10e89a2cd",
     "bytes_descargados": 5226,
     "filas_procesadas": 17,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261013_131739_d5da6d41.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261013_131739_d5da6d41.json",
     "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
     "capturado_en": "2026-10-13T13:17:39.924362+00:00"
   },
@@ -385,29 +385,9 @@
     "hash_sha256": "258a28f845244b79fc143a85a559778058e3b28ea3c03349a304d99b2e8dce0b",
     "bytes_descargados": 171527,
     "filas_procesadas": 2,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_cpc_noaa\\20261013_134943_258a28f8.txt",
+    "ruta_archivo_bronce": "data/bronce/fte_cpc_noaa/20261013_134943_258a28f8.txt",
     "mensaje": "Captura exitosa de anomalías SST semanales y ONI de NOAA CPC",
     "capturado_en": "2026-10-13T13:49:43.288753+00:00"
-  },
-  {
-    "id_fuente": "FTE-XM-HISTORICO",
-    "estado": "exitosa",
-    "hash_sha256": "",
-    "bytes_descargados": 0,
-    "filas_procesadas": 210,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_historico",
-    "mensaje": "210 tramos nuevos de 210 consultados",
-    "capturado_en": "2026-10-13T13:51:18.293245+00:00"
-  },
-  {
-    "id_fuente": "FTE-UNGRD-HISTORICO",
-    "estado": "exitosa",
-    "hash_sha256": "",
-    "bytes_descargados": 0,
-    "filas_procesadas": 3,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_historico",
-    "mensaje": "3 tramos nuevos de 3 consultados",
-    "capturado_en": "2026-10-13T13:51:26.338950+00:00"
   },
   {
     "id_fuente": "FTE-FIRMS-HISTORICO",
@@ -425,7 +405,7 @@
     "hash_sha256": "afb9be564bc54b7b6079750b2b76e3b4dd73a2c45b2c469175536658b2ebf7c5",
     "bytes_descargados": 1765,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261013_140458_afb9be56.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261013_140458_afb9be56.json",
     "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
     "capturado_en": "2026-10-13T14:04:58.287578+00:00"
   },
@@ -435,7 +415,7 @@
     "hash_sha256": "3ffcbf0c74d13df1b349b11400d0cdc56bc626cf37ed0f333f8ec9e5d6f6979a",
     "bytes_descargados": 5226,
     "filas_procesadas": 17,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261013_140458_3ffcbf0c.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261013_140458_3ffcbf0c.json",
     "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
     "capturado_en": "2026-10-13T14:04:58.517583+00:00"
   },
@@ -445,7 +425,7 @@
     "hash_sha256": "55207b18033fe477cb117378b2ae2898a3b36189118e837fb9b31dbb592b0146",
     "bytes_descargados": 1765,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261014_134858_55207b18.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261014_134858_55207b18.json",
     "mensaje": "Captura exitosa de 6 embalses abastecedores desde XM",
     "capturado_en": "2026-10-14T13:48:58.581265+00:00"
   },
@@ -455,7 +435,7 @@
     "hash_sha256": "7e93118a5227fd9b1e3763636831a095a94988d66ef06a606d81e1f085add773",
     "bytes_descargados": 5226,
     "filas_procesadas": 17,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261014_134858_7e93118a.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261014_134858_7e93118a.json",
     "mensaje": "Captura exitosa de 17 municipios con contingencia activa",
     "capturado_en": "2026-10-14T13:48:58.694624+00:00"
   },
@@ -465,7 +445,7 @@
     "hash_sha256": "4b505e7b18da99d9c32d34359a6cbddab660178dc853a5586e8122ce2af5585a",
     "bytes_descargados": 1802,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261014_135553_4b505e7b.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261014_135553_4b505e7b.json",
     "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 90.0%, SIN: 75.68%)",
     "capturado_en": "2026-10-14T13:55:53.796505+00:00"
   },
@@ -475,7 +455,7 @@
     "hash_sha256": "509d2d480b88abe373754b1fcaac0b9f82659ee038dd6c79824b583d4b330403",
     "bytes_descargados": 5482,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ideam_clima\\20261014_135657_509d2d48.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ideam_clima/20261014_135657_509d2d48.json",
     "mensaje": "Captura exitosa de 23 municipios desde IDEAM (incluyendo Tuta 15837)",
     "capturado_en": "2026-10-14T13:56:57.841157+00:00"
   },
@@ -485,7 +465,7 @@
     "hash_sha256": "ff53022831b87849ac61540aa09382ad0505e05456f85c189d37e8454ae77853",
     "bytes_descargados": 5892,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261014_135728_ff530228.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261014_135728_ff530228.json",
     "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
     "capturado_en": "2026-10-14T13:57:28.291813+00:00"
   },
@@ -495,7 +475,7 @@
     "hash_sha256": "d637c4e103af9176c7307804a7edc906fd3f238b9b0fb86daa28b9ee605f5c2e",
     "bytes_descargados": 10930,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_sspd_sui\\20261014_135832_d637c4e1.json",
+    "ruta_archivo_bronce": "data/bronce/fte_sspd_sui/20261014_135832_d637c4e1.json",
     "mensaje": "Captura certificada de 23 municipios desde SSPD SUI",
     "capturado_en": "2026-10-14T13:58:32.890586+00:00"
   },
@@ -525,7 +505,7 @@
     "hash_sha256": "d9f16913bcc85bbb9db69d993b07263c6451273b11e98c50b70e745f5cd7eb2a",
     "bytes_descargados": 5482,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ideam_clima\\20261014_140436_d9f16913.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ideam_clima/20261014_140436_d9f16913.json",
     "mensaje": "Captura exitosa de 23 municipios desde IDEAM (incluyendo Tuta 15837)",
     "capturado_en": "2026-10-14T14:04:36.607517+00:00"
   },
@@ -535,7 +515,7 @@
     "hash_sha256": "6f57fa9d99210ecc073ef9318854baa348d6fe276f468499085e2c12b4728102",
     "bytes_descargados": 5892,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261014_140439_6f57fa9d.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261014_140439_6f57fa9d.json",
     "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
     "capturado_en": "2026-10-14T14:04:39.176146+00:00"
   },
@@ -545,7 +525,7 @@
     "hash_sha256": "c357e875ec3e4d9811c2e5862c4b745f8212480f34ef156255dc2a57c5a764d2",
     "bytes_descargados": 1802,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261014_140439_c357e875.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261014_140439_c357e875.json",
     "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 90.0%, SIN: 75.68%)",
     "capturado_en": "2026-10-14T14:04:40.030508+00:00"
   },
@@ -555,7 +535,7 @@
     "hash_sha256": "bf3afc474c6f3435e905b23c1f50ad6d459834283c16fcd17bcd684642339f10",
     "bytes_descargados": 2748,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_firms_nasa\\20261014_140440_bf3afc47.json",
+    "ruta_archivo_bronce": "data/bronce/fte_firms_nasa/20261014_140440_bf3afc47.json",
     "mensaje": "Captura FIRMS procesada para 23 municipios (modo: sin_clave/null)",
     "capturado_en": "2026-10-14T14:04:40.118046+00:00"
   },
@@ -565,7 +545,7 @@
     "hash_sha256": "abf9d8030e909dca242130c726e2efc618a55a7176e05936afcdc6b111e88e22",
     "bytes_descargados": 10930,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_sspd_sui\\20261014_140440_abf9d803.json",
+    "ruta_archivo_bronce": "data/bronce/fte_sspd_sui/20261014_140440_abf9d803.json",
     "mensaje": "Captura certificada de 23 municipios desde SSPD SUI",
     "capturado_en": "2026-10-14T14:04:40.214911+00:00"
   },
@@ -595,7 +575,7 @@
     "hash_sha256": "15102a58dd491ff055aa56b6088c545eb1992e68b3c798669bdbb422d21bba93",
     "bytes_descargados": 5482,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ideam_clima\\20261014_140922_15102a58.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ideam_clima/20261014_140922_15102a58.json",
     "mensaje": "Captura exitosa de 23 municipios desde IDEAM (incluyendo Tuta 15837)",
     "capturado_en": "2026-10-14T14:09:22.616649+00:00"
   },
@@ -605,7 +585,7 @@
     "hash_sha256": "20f1932b721ae43f1d1c712274a0029d21549f1b7dd5fe212bdca69f89d8f0dc",
     "bytes_descargados": 5892,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261014_140924_20f1932b.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261014_140924_20f1932b.json",
     "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
     "capturado_en": "2026-10-14T14:09:24.447656+00:00"
   },
@@ -615,7 +595,7 @@
     "hash_sha256": "1b7c0618415edb9dd1222d6f1353afde529a8e876f70f4849682e0e0cf9daf7f",
     "bytes_descargados": 1802,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261014_140925_1b7c0618.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261014_140925_1b7c0618.json",
     "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 90.0%, SIN: 75.68%)",
     "capturado_en": "2026-10-14T14:09:25.357242+00:00"
   },
@@ -625,7 +605,7 @@
     "hash_sha256": "baba3364393018bcb6c24cf3fa2b55e7a814095fbc2e1643decff2f43f355b77",
     "bytes_descargados": 2748,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_firms_nasa\\20261014_140925_baba3364.json",
+    "ruta_archivo_bronce": "data/bronce/fte_firms_nasa/20261014_140925_baba3364.json",
     "mensaje": "Captura FIRMS procesada para 23 municipios (modo: sin_clave/null)",
     "capturado_en": "2026-10-14T14:09:25.437660+00:00"
   },
@@ -635,7 +615,7 @@
     "hash_sha256": "bc1ce67dbd9971d79ad63ac75aaeddff43d626d8b820269f9a7207553e9b98ba",
     "bytes_descargados": 10930,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_sspd_sui\\20261014_140925_bc1ce67d.json",
+    "ruta_archivo_bronce": "data/bronce/fte_sspd_sui/20261014_140925_bc1ce67d.json",
     "mensaje": "Captura certificada de 23 municipios desde SSPD SUI",
     "capturado_en": "2026-10-14T14:09:25.540354+00:00"
   },
@@ -665,7 +645,7 @@
     "hash_sha256": "efcaab8d3b364ada202799ae762a1f149c661dc667154d55a307915357e2135d",
     "bytes_descargados": 5482,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ideam_clima\\20261014_142046_efcaab8d.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ideam_clima/20261014_142046_efcaab8d.json",
     "mensaje": "Captura exitosa de 23 municipios desde IDEAM (incluyendo Tuta 15837)",
     "capturado_en": "2026-10-14T14:20:47.014198+00:00"
   },
@@ -675,7 +655,7 @@
     "hash_sha256": "1f93d044b9160064c6312f0c4174ba62aea9005b9f6b9adffd4b41ca64e01462",
     "bytes_descargados": 5892,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261014_142048_1f93d044.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261014_142048_1f93d044.json",
     "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
     "capturado_en": "2026-10-14T14:20:48.224659+00:00"
   },
@@ -685,7 +665,7 @@
     "hash_sha256": "81151dcfc8c917cea4e1bb9253839281e200245ad24fb6b02c5b0c81a32e1235",
     "bytes_descargados": 1802,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261014_142049_81151dcf.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261014_142049_81151dcf.json",
     "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 90.0%, SIN: 75.68%)",
     "capturado_en": "2026-10-14T14:20:49.620395+00:00"
   },
@@ -695,7 +675,7 @@
     "hash_sha256": "fe28af1cec4cc9a7894feb0ba998fefc583d02c390cd15aa6e115423b6a6c52b",
     "bytes_descargados": 2748,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_firms_nasa\\20261014_142049_fe28af1c.json",
+    "ruta_archivo_bronce": "data/bronce/fte_firms_nasa/20261014_142049_fe28af1c.json",
     "mensaje": "Captura FIRMS procesada para 23 municipios (modo: sin_clave/null)",
     "capturado_en": "2026-10-14T14:20:49.831159+00:00"
   },
@@ -705,7 +685,7 @@
     "hash_sha256": "89afeee85b71ca151db68030dde53c9592dfebea4677f71e2a00559dac1ea67d",
     "bytes_descargados": 10930,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_sspd_sui\\20261014_142049_89afeee8.json",
+    "ruta_archivo_bronce": "data/bronce/fte_sspd_sui/20261014_142049_89afeee8.json",
     "mensaje": "Captura certificada de 23 municipios desde SSPD SUI",
     "capturado_en": "2026-10-14T14:20:50.012976+00:00"
   },
@@ -715,7 +695,7 @@
     "hash_sha256": "1e768ce6fdcdb869d0ee3bb2b102f5c5c32906851da4de059ef2b098bdf9aebc",
     "bytes_descargados": 1802,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261014_142131_1e768ce6.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261014_142131_1e768ce6.json",
     "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 90.0%, SIN: 75.68%)",
     "capturado_en": "2026-10-14T14:21:31.603986+00:00"
   },
@@ -725,7 +705,7 @@
     "hash_sha256": "6f198a348329be91066bb22b990ebde61156a4d4c6f194fac09615c8609f31a0",
     "bytes_descargados": 5892,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261014_142133_6f198a34.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261014_142133_6f198a34.json",
     "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
     "capturado_en": "2026-10-14T14:21:33.228430+00:00"
   },
@@ -735,7 +715,7 @@
     "hash_sha256": "71448ee9100d6349dd8f5f7c5cb45d3d34216aab2c5ef35fdb7d31dea8e402c7",
     "bytes_descargados": 1802,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_142748_71448ee9.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261106_142748_71448ee9.json",
     "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
     "capturado_en": "2026-11-06T14:27:48.201269+00:00"
   },
@@ -745,7 +725,7 @@
     "hash_sha256": "946ea83d5c4af5097de126089ad9d29d098fbbc5c6876fd5daa14e751f9c1e02",
     "bytes_descargados": 5892,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_142749_946ea83d.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261106_142749_946ea83d.json",
     "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
     "capturado_en": "2026-11-06T14:27:49.356839+00:00"
   },
@@ -755,7 +735,7 @@
     "hash_sha256": "252cd33d9c9410998138bb4365e36cdeaf5529ca4edc242481aeca06dc418f0d",
     "bytes_descargados": 1802,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_143352_252cd33d.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261106_143352_252cd33d.json",
     "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
     "capturado_en": "2026-11-06T14:33:52.849390+00:00"
   },
@@ -765,7 +745,7 @@
     "hash_sha256": "94137ea0dd61b838fa7f921982c5a914cf505b8e9679f210f7ce92bc3121fbfd",
     "bytes_descargados": 5892,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_143356_94137ea0.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261106_143356_94137ea0.json",
     "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
     "capturado_en": "2026-11-06T14:33:56.506163+00:00"
   },
@@ -775,7 +755,7 @@
     "hash_sha256": "169b4b939d4122fb3b50d308dbd4d83a194b3c3063a3e74fb203927c9c8a0e2b",
     "bytes_descargados": 1802,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_143416_169b4b93.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261106_143416_169b4b93.json",
     "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
     "capturado_en": "2026-11-06T14:34:16.996400+00:00"
   },
@@ -785,7 +765,7 @@
     "hash_sha256": "d3ea0937254d83ecf0b9ae7bdec4912a60541c7c03eab1d6c21707f5de10c075",
     "bytes_descargados": 5892,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_143418_d3ea0937.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261106_143418_d3ea0937.json",
     "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
     "capturado_en": "2026-11-06T14:34:18.567782+00:00"
   },
@@ -795,7 +775,7 @@
     "hash_sha256": "b2db9ead32a4ea63628703ddd177494e2015a55be1d8ed2505f683ad339adbe1",
     "bytes_descargados": 1802,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_144732_b2db9ead.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261106_144732_b2db9ead.json",
     "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
     "capturado_en": "2026-11-06T14:47:33.010717+00:00"
   },
@@ -805,7 +785,7 @@
     "hash_sha256": "cf743459177c32867c33ebba153a69d28f58443a271b8f9ad1d5e3e298f7c2e2",
     "bytes_descargados": 5892,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_144737_cf743459.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261106_144737_cf743459.json",
     "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
     "capturado_en": "2026-11-06T14:47:37.786877+00:00"
   },
@@ -815,7 +795,7 @@
     "hash_sha256": "cb852e0c998860d02eff19d39c57186edd53db223d7e5041ec8594ff90fd350c",
     "bytes_descargados": 1802,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_145014_cb852e0c.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261106_145014_cb852e0c.json",
     "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
     "capturado_en": "2026-11-06T14:50:14.184805+00:00"
   },
@@ -825,7 +805,7 @@
     "hash_sha256": "7c67041d5f3604beb04856d9e74d004ee258fccf7b16dd7b01482c027a10d8d8",
     "bytes_descargados": 5892,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_145015_7c67041d.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261106_145015_7c67041d.json",
     "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
     "capturado_en": "2026-11-06T14:50:15.300227+00:00"
   },
@@ -835,7 +815,7 @@
     "hash_sha256": "c1d96ca481b82d539a6409b8bd6cfdb21c019e752a1312b2b17cae4458b1b6b7",
     "bytes_descargados": 1802,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_150348_c1d96ca4.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261106_150348_c1d96ca4.json",
     "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
     "capturado_en": "2026-11-06T15:03:48.577346+00:00"
   },
@@ -845,7 +825,7 @@
     "hash_sha256": "81de6b5fbe95a2f162feee633245ece18ac24da7cb348d6deede963ef5f76e63",
     "bytes_descargados": 5892,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_150351_81de6b5f.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261106_150351_81de6b5f.json",
     "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
     "capturado_en": "2026-11-06T15:03:51.246168+00:00"
   },
@@ -855,7 +835,7 @@
     "hash_sha256": "09c57eeda609f70b7f78b694cd13ed9b4a20f2f52d47786b728dc8b80536747d",
     "bytes_descargados": 1802,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_150415_09c57eed.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261106_150415_09c57eed.json",
     "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
     "capturado_en": "2026-11-06T15:04:15.432399+00:00"
   },
@@ -865,7 +845,7 @@
     "hash_sha256": "15fb6409f735e59c0a30aa6b60b444f8370147e4cb57521a28a0e761b1534e09",
     "bytes_descargados": 5892,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_150422_15fb6409.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261106_150422_15fb6409.json",
     "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
     "capturado_en": "2026-11-06T15:04:22.079729+00:00"
   },
@@ -875,7 +855,7 @@
     "hash_sha256": "14452585aadcfef8a4c4b7de603b00eeca7f5e73b4d18e70a8b40690012c7c3b",
     "bytes_descargados": 1802,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_150442_14452585.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261106_150442_14452585.json",
     "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
     "capturado_en": "2026-11-06T15:04:42.444576+00:00"
   },
@@ -885,7 +865,7 @@
     "hash_sha256": "9e38be9dff74a1866074555bbd409e01647a3ebb0b360d0fff3cc73ed1a9ed4d",
     "bytes_descargados": 5892,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_150443_9e38be9d.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261106_150443_9e38be9d.json",
     "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
     "capturado_en": "2026-11-06T15:04:43.538318+00:00"
   },
@@ -895,7 +875,7 @@
     "hash_sha256": "51ed81eedce33eb5cd96ee57f3fd66967501ebdccfc99ad8b63fbe28961d7407",
     "bytes_descargados": 1802,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_150601_51ed81ee.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261106_150601_51ed81ee.json",
     "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
     "capturado_en": "2026-11-06T15:06:01.321029+00:00"
   },
@@ -905,7 +885,7 @@
     "hash_sha256": "27fbe84ce667f3c959a9b7c751780ee8d8cdce39591fdcc91a914c6eca7e31aa",
     "bytes_descargados": 5892,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_150612_27fbe84c.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261106_150612_27fbe84c.json",
     "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
     "capturado_en": "2026-11-06T15:06:12.547999+00:00"
   },
@@ -915,7 +895,7 @@
     "hash_sha256": "7cfcd46d8321ff80350adb216f64be3ca0562e724ff878df86ffb9240a4cb0eb",
     "bytes_descargados": 1802,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_150823_7cfcd46d.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261106_150823_7cfcd46d.json",
     "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
     "capturado_en": "2026-11-06T15:08:23.162657+00:00"
   },
@@ -925,7 +905,7 @@
     "hash_sha256": "c6401beaa8b0ed1b6719f773f1ff9559976efe5bbd6eaf59f7a700f1bbe2f413",
     "bytes_descargados": 5892,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_150824_c6401bea.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261106_150824_c6401bea.json",
     "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
     "capturado_en": "2026-11-06T15:08:24.650004+00:00"
   },
@@ -935,7 +915,7 @@
     "hash_sha256": "ab2f9bf459955b113c815ecd5025414de867002c35a84e8e45530fc3fa0b8f44",
     "bytes_descargados": 1802,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_151522_ab2f9bf4.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261106_151522_ab2f9bf4.json",
     "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
     "capturado_en": "2026-11-06T15:15:22.962131+00:00"
   },
@@ -945,7 +925,7 @@
     "hash_sha256": "bccfd9de7db05c5b43ff7f244d4bfeaf0a7c1496009c2f77d8c68c72bca05b55",
     "bytes_descargados": 5892,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_151524_bccfd9de.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261106_151524_bccfd9de.json",
     "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
     "capturado_en": "2026-11-06T15:15:24.113237+00:00"
   },
@@ -955,7 +935,7 @@
     "hash_sha256": "c7a4033fb5e19c83fb1cc8fc7af8e508aa7279fb313071e9522386255a040b3c",
     "bytes_descargados": 171741,
     "filas_procesadas": 2,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_cpc_noaa\\20261106_185121_c7a4033f.txt",
+    "ruta_archivo_bronce": "data/bronce/fte_cpc_noaa/20261106_185121_c7a4033f.txt",
     "mensaje": "Captura exitosa de anomalías SST semanales y ONI de NOAA CPC",
     "capturado_en": "2026-11-06T18:51:21.386299+00:00"
   },
@@ -975,7 +955,7 @@
     "hash_sha256": "fe3647e017c8faa50411f5d0a518ec71150fa15558dcad7f48bd593b6860a323",
     "bytes_descargados": 5482,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ideam_clima\\20261106_185131_fe3647e0.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ideam_clima/20261106_185131_fe3647e0.json",
     "mensaje": "Captura exitosa de 23 municipios desde IDEAM (incluyendo Tuta 15837)",
     "capturado_en": "2026-11-06T18:51:31.445356+00:00"
   },
@@ -985,7 +965,7 @@
     "hash_sha256": "e7d2d7f9d0d63483b8625237a2eb98cc6ad6466c9ea45666d24e9391d38f51a7",
     "bytes_descargados": 5892,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_ungrd_mvct\\20261106_185136_e7d2d7f9.json",
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261106_185136_e7d2d7f9.json",
     "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
     "capturado_en": "2026-11-06T18:51:36.430106+00:00"
   },
@@ -995,7 +975,7 @@
     "hash_sha256": "eed357812ae99fbe09ed3f53cab4dca901c46ec38ebd84f2e93454a1ab3c51ab",
     "bytes_descargados": 1802,
     "filas_procesadas": 6,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_xm_embalses\\20261106_185137_eed35781.json",
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261106_185137_eed35781.json",
     "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 81.8%, SIN: 78.0%)",
     "capturado_en": "2026-11-06T18:51:37.227983+00:00"
   },
@@ -1005,7 +985,7 @@
     "hash_sha256": "0da0f81f0ec7f8c4b395f5fd2b9d41d75e5ea4b44e28eff986bad70ccf70d775",
     "bytes_descargados": 2748,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_firms_nasa\\20261106_185137_0da0f81f.json",
+    "ruta_archivo_bronce": "data/bronce/fte_firms_nasa/20261106_185137_0da0f81f.json",
     "mensaje": "Captura FIRMS procesada para 23 municipios (modo: sin_clave/null)",
     "capturado_en": "2026-11-06T18:51:37.329722+00:00"
   },
@@ -1015,8 +995,2288 @@
     "hash_sha256": "ac38f406d68f93bf830ca8118d26f30e80561d293e6787b4852a810697db6df2",
     "bytes_descargados": 10930,
     "filas_procesadas": 23,
-    "ruta_archivo_bronce": "G:\\Mi unidad\\03_Carrera_MBA_y_Consultoria\\Proyectos\\vigia-nino-acueductos\\data\\bronce\\fte_sspd_sui\\20261106_185137_ac38f406.json",
+    "ruta_archivo_bronce": "data/bronce/fte_sspd_sui/20261106_185137_ac38f406.json",
     "mensaje": "Captura certificada de 23 municipios desde SSPD SUI",
     "capturado_en": "2026-11-06T18:51:37.464491+00:00"
+  },
+  {
+    "id_fuente": "FTE-SSPD-SUI",
+    "estado": "exitosa",
+    "hash_sha256": "fa26caf511526d72e5f541c735fd6e47fbaa962007430a9c46a8a38b14d7825a",
+    "bytes_descargados": 5213,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_sui/extracto_oficial_sui_2026.json",
+    "mensaje": "Registro reconciliado de extracto_oficial_sui_2026.json",
+    "capturado_en": "2026-11-06T19:18:08.240000+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "08a246350ffef1cf3accaddf6178765635cdacd9f1698e6f57607c802d3f5c1c",
+    "bytes_descargados": 17065,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_historico/20261013_135119_66c90075.json",
+    "mensaje": "Registro reconciliado de 20261013_135119_66c90075.json",
+    "capturado_en": "2026-10-13T13:51:19.899000+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "8bf098a14f6d33751cf85ca46822a349af333b05b4f879018cc3ca20631ef685",
+    "bytes_descargados": 2299482,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_historico/20261013_135122_4e161a13.json",
+    "mensaje": "Registro reconciliado de 20261013_135122_4e161a13.json",
+    "capturado_en": "2026-10-13T13:51:22.558000+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "8b109a940856ab6516c0194876fe0aea916e254661dbe1c269e253b0f474c6d7",
+    "bytes_descargados": 1264195,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_historico/20261013_135126_9222c0de.json",
+    "mensaje": "Registro reconciliado de 20261013_135126_9222c0de.json",
+    "capturado_en": "2026-10-13T13:51:26.329000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "f96af0c9a4dc018bc2e19a0548ac9ff0ac15eb913c1dbab81fde2aaebd62b700",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134943_1a426b74.json",
+    "mensaje": "Registro reconciliado de 20261013_134943_1a426b74.json",
+    "capturado_en": "2026-10-13T13:49:43.870000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "f457f774fc9261036fee8137c9f3def0e07706c4fa2c9507657a77834bf1c580",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134944_41da06a3.json",
+    "mensaje": "Registro reconciliado de 20261013_134944_41da06a3.json",
+    "capturado_en": "2026-10-13T13:49:44.316000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "f4183641b5f75724a717bee9b4b76362548b27728bd27f62ce05fd9d7c4cc778",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134944_cbbb93a1.json",
+    "mensaje": "Registro reconciliado de 20261013_134944_cbbb93a1.json",
+    "capturado_en": "2026-10-13T13:49:44.572000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "8528d8a2c48478e11cbe4d79b07c4650a1e110edf98e9d58c1cd5ec64976c007",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134945_a01081c7.json",
+    "mensaje": "Registro reconciliado de 20261013_134945_a01081c7.json",
+    "capturado_en": "2026-10-13T13:49:45.046000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "e799d780626e1def79a305442010b4aff8c6f98d3d3ec1934fef4b1b627fab54",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134945_a3d68531.json",
+    "mensaje": "Registro reconciliado de 20261013_134945_a3d68531.json",
+    "capturado_en": "2026-10-13T13:49:45.398000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "f930f6cddab3ead9bf563a04b3bf731565ca34cf56a1a91d83a6c375727bf099",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134945_b44b1f99.json",
+    "mensaje": "Registro reconciliado de 20261013_134945_b44b1f99.json",
+    "capturado_en": "2026-10-13T13:49:45.711000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "7a3977b4b623799caa83f16b3af54fc6f8f1a78c8be6e23337d3e953e0d0217c",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134946_4f729607.json",
+    "mensaje": "Registro reconciliado de 20261013_134946_4f729607.json",
+    "capturado_en": "2026-10-13T13:49:46.116000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "0775a16720e1021ab0463fac44b9b6e5213271f415e359d8e51fbe98bf708f59",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134946_85f259d8.json",
+    "mensaje": "Registro reconciliado de 20261013_134946_85f259d8.json",
+    "capturado_en": "2026-10-13T13:49:46.518000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "02de6219542aab4ac7a634ddf2b764778aeb77cfbe1860e4ac780488c97c7779",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134946_ee2f3327.json",
+    "mensaje": "Registro reconciliado de 20261013_134946_ee2f3327.json",
+    "capturado_en": "2026-10-13T13:49:46.819000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "538510e09c4a4d0dfc51d17358662a8e22e7b0d9a1ad65b643674877d2643a9e",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134947_7f3b1cd4.json",
+    "mensaje": "Registro reconciliado de 20261013_134947_7f3b1cd4.json",
+    "capturado_en": "2026-10-13T13:49:47.196000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "b5e851e3649e55c18c014cd52cb0689ab492ca1f1308f060be1ef041d48ea8d0",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134947_e465f70a.json",
+    "mensaje": "Registro reconciliado de 20261013_134947_e465f70a.json",
+    "capturado_en": "2026-10-13T13:49:47.848000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "3800b98cd121bb0f8ffa891f9082dfe5901bf54ba8f7fce510fff694ca7a313b",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134947_f3850117.json",
+    "mensaje": "Registro reconciliado de 20261013_134947_f3850117.json",
+    "capturado_en": "2026-10-13T13:49:47.485000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "c065940f55c261379c89b86dbf659c2bd77474b5bcb47f1e453ad6e53a75fbd2",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134948_01e03735.json",
+    "mensaje": "Registro reconciliado de 20261013_134948_01e03735.json",
+    "capturado_en": "2026-10-13T13:49:49.010000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "d1fc2f025dbcf480e9f62a9bd75b35a2c67b1cf59624653c42aa79faaa91cca5",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134948_45aad0e8.json",
+    "mensaje": "Registro reconciliado de 20261013_134948_45aad0e8.json",
+    "capturado_en": "2026-10-13T13:49:48.281000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "5fb6ce47dcb2236cc8d9d562a8f128bb82d3f0f5607553a2cf33326ab9b89253",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134948_e9ab8738.json",
+    "mensaje": "Registro reconciliado de 20261013_134948_e9ab8738.json",
+    "capturado_en": "2026-10-13T13:49:48.669000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "24fe416676507ed76b5384fbbac1a1b830c79129e91706c7386851eb00729844",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134949_4357848c.json",
+    "mensaje": "Registro reconciliado de 20261013_134949_4357848c.json",
+    "capturado_en": "2026-10-13T13:49:49.369000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "5b7f16610cf21a61453c32502520f867ffab1526645cf8661c7020c7c8f80e6b",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134949_855cb768.json",
+    "mensaje": "Registro reconciliado de 20261013_134949_855cb768.json",
+    "capturado_en": "2026-10-13T13:49:49.797000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "3aad8a07fe7f803e4747e65d8efcf906b000f978506ae0da75e3e5fcbbe9435b",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134950_7d18e4f2.json",
+    "mensaje": "Registro reconciliado de 20261013_134950_7d18e4f2.json",
+    "capturado_en": "2026-10-13T13:49:50.133000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "1beee8ac8962426b77cf1ba9993e98ddc712101c75e93716908958b2934ef4ef",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134950_ebb7cda4.json",
+    "mensaje": "Registro reconciliado de 20261013_134950_ebb7cda4.json",
+    "capturado_en": "2026-10-13T13:49:50.498000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "192b852e4e56f8681a9de5aec129a250bfa8af51236eb6d7d3364f4e8adc3158",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134950_fcbcb590.json",
+    "mensaje": "Registro reconciliado de 20261013_134950_fcbcb590.json",
+    "capturado_en": "2026-10-13T13:49:50.828000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "581a0269695c24e126248b02229b6214c3b7f0a31ff34f7bed1adc1df536abde",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134951_4ab58b9c.json",
+    "mensaje": "Registro reconciliado de 20261013_134951_4ab58b9c.json",
+    "capturado_en": "2026-10-13T13:49:51.918000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "7987cd4100341f7cbd22d253e690a53d8a66485ea9245d43fc399adcad3bf41f",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134951_bc99d1cf.json",
+    "mensaje": "Registro reconciliado de 20261013_134951_bc99d1cf.json",
+    "capturado_en": "2026-10-13T13:49:51.536000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "1076edad19d07a415af265ba061846b664bbf1297633da151913aa8f5dce603a",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134951_d28828dc.json",
+    "mensaje": "Registro reconciliado de 20261013_134951_d28828dc.json",
+    "capturado_en": "2026-10-13T13:49:51.141000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "a2255b07a9dceac1ac1ed4fd22ecf7889b89b2cfdba8c320ad614e4f09e978c4",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134952_2fcfcfee.json",
+    "mensaje": "Registro reconciliado de 20261013_134952_2fcfcfee.json",
+    "capturado_en": "2026-10-13T13:49:52.663000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "d6e0facfe68a95736ef43bdb13ba22ee8183be0881e8476e806846aa49003901",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134952_8167ca02.json",
+    "mensaje": "Registro reconciliado de 20261013_134952_8167ca02.json",
+    "capturado_en": "2026-10-13T13:49:52.987000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "6077623e113dbb1f2d098c31729996b6f64e2eb3d2ac70d561ffff867d3c493b",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134952_e3915653.json",
+    "mensaje": "Registro reconciliado de 20261013_134952_e3915653.json",
+    "capturado_en": "2026-10-13T13:49:52.231000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "1f1dd0241380193e48e041b861690b98575acf721036ce85ba7b2ca61b79cb49",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134953_24d388db.json",
+    "mensaje": "Registro reconciliado de 20261013_134953_24d388db.json",
+    "capturado_en": "2026-10-13T13:49:53.795000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "a97ebe5d9019a6816c7df45ee42fddded09e7a33c900eece1e686a74b1f83e2d",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134953_4bd2c142.json",
+    "mensaje": "Registro reconciliado de 20261013_134953_4bd2c142.json",
+    "capturado_en": "2026-10-13T13:49:53.335000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "cfaf28a34b948da8dba0da75897fabac5bfc6cf30ff4de7e05442471cf10e122",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134954_be9c5e88.json",
+    "mensaje": "Registro reconciliado de 20261013_134954_be9c5e88.json",
+    "capturado_en": "2026-10-13T13:49:54.800000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "10cd1dbdbabb472d8820022a708f28156aa162c01cf1536e1c5b1d772acb73b3",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134954_dd3f8435.json",
+    "mensaje": "Registro reconciliado de 20261013_134954_dd3f8435.json",
+    "capturado_en": "2026-10-13T13:49:54.199000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "98d7ad3f2d6f394a3e2afb43c66c6f1c188c1639c29a1c436b3d2e3fb529dc42",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134954_fdd319b6.json",
+    "mensaje": "Registro reconciliado de 20261013_134954_fdd319b6.json",
+    "capturado_en": "2026-10-13T13:49:54.545000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "4bb035bd444a907e14a4b67d8ab81d3255a193a81e9ba5a28060e04ecf8ca47b",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134955_179d029d.json",
+    "mensaje": "Registro reconciliado de 20261013_134955_179d029d.json",
+    "capturado_en": "2026-10-13T13:49:55.194000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "46adabb46f00b95bf4fca8a5b3a91b75cdac5c55d040d488553a811f6d4b940f",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134955_48485bc2.json",
+    "mensaje": "Registro reconciliado de 20261013_134955_48485bc2.json",
+    "capturado_en": "2026-10-13T13:49:55.486000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "0d15f65c44922f2c5bd9cd8310b5108c847f202acafdde849dc201c284acb313",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134956_7bc71f61.json",
+    "mensaje": "Registro reconciliado de 20261013_134956_7bc71f61.json",
+    "capturado_en": "2026-10-13T13:49:56.253000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "d987976f12370b9acc31adfd3965ecf271bbf404002cc5daee5268ded86cd5a5",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134956_fadf64cb.json",
+    "mensaje": "Registro reconciliado de 20261013_134956_fadf64cb.json",
+    "capturado_en": "2026-10-13T13:49:56.777000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "a86a05827199d5bcbd1918fd31b543e0c5b72f6ea38700ccbedabdd9984096ba",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134957_2dd63907.json",
+    "mensaje": "Registro reconciliado de 20261013_134957_2dd63907.json",
+    "capturado_en": "2026-10-13T13:49:57.346000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "5f7d60fa0835ac1c5d9ccbcecafafb70b809c99a6e95161d3ac7f3baf1687267",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134957_d34faae0.json",
+    "mensaje": "Registro reconciliado de 20261013_134957_d34faae0.json",
+    "capturado_en": "2026-10-13T13:49:57.882000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "bdcabf6acdfd5262e789d5ba9d4ca04967949b5f551c7af49b429ba3e8530a6a",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134958_237f67be.json",
+    "mensaje": "Registro reconciliado de 20261013_134958_237f67be.json",
+    "capturado_en": "2026-10-13T13:49:59.014000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "1296232fdf8bd10a925ae239f4112482d40d876dd074fd607401d1745b9529a4",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134958_d80a18de.json",
+    "mensaje": "Registro reconciliado de 20261013_134958_d80a18de.json",
+    "capturado_en": "2026-10-13T13:49:58.430000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "b625747f683fe655b3997e8c96e21fa2ae929e8ea9e2581db5f0ee27163d3e2c",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_134959_1edc61d4.json",
+    "mensaje": "Registro reconciliado de 20261013_134959_1edc61d4.json",
+    "capturado_en": "2026-10-13T13:49:59.609000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "97abaeae99c3a1b8e3df4f7e90fcb9b2ef67106b95d1f3cd9f0c4dce97f6b766",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135000_0a07a4e4.json",
+    "mensaje": "Registro reconciliado de 20261013_135000_0a07a4e4.json",
+    "capturado_en": "2026-10-13T13:50:00.939000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "3e79ad12b9a4d395f88edc7cf499e3fc8d88ea776ab5fc3fad8cf8be4dce2c8d",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135000_a205881d.json",
+    "mensaje": "Registro reconciliado de 20261013_135000_a205881d.json",
+    "capturado_en": "2026-10-13T13:50:00.132000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "1e079a7f31bc5bbd12c134b9d1b9fb2e9ea838beb94c8644c405a27c607537d8",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135001_4b8af5aa.json",
+    "mensaje": "Registro reconciliado de 20261013_135001_4b8af5aa.json",
+    "capturado_en": "2026-10-13T13:50:01.515000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "08b6b9626b0690ce6998187e9ab1cd905c5b55f103787a59ad1940d7c4eaf24c",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135002_3c99e3fb.json",
+    "mensaje": "Registro reconciliado de 20261013_135002_3c99e3fb.json",
+    "capturado_en": "2026-10-13T13:50:02.633000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "b83aae49beb9b0c403fcd4f1efb8b858c4c46a3f5c8d4bf42188a35f9dae29ad",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135002_80af52cd.json",
+    "mensaje": "Registro reconciliado de 20261013_135002_80af52cd.json",
+    "capturado_en": "2026-10-13T13:50:02.041000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "e5794b2be900bad83a5511674e5fc48f404f4e3e93b4c3e6dd7a749f60285065",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135003_17c5678b.json",
+    "mensaje": "Registro reconciliado de 20261013_135003_17c5678b.json",
+    "capturado_en": "2026-10-13T13:50:03.722000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "77e9a02b8be1d174504fc62fe45c3fcf7069c308693e2c960ad06f265b1fd98b",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135003_51d70adb.json",
+    "mensaje": "Registro reconciliado de 20261013_135003_51d70adb.json",
+    "capturado_en": "2026-10-13T13:50:03.142000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "bbdf479500403c709dbfe8da5d3535c1d9dc19eb2b65863bd01490c55c296e58",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135004_46ebe060.json",
+    "mensaje": "Registro reconciliado de 20261013_135004_46ebe060.json",
+    "capturado_en": "2026-10-13T13:50:04.989000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "5899ec4c1d9047daba6fb86ac98539b3bd78053290c818fd1a0ed66b1a9b1e2a",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135004_6a119a76.json",
+    "mensaje": "Registro reconciliado de 20261013_135004_6a119a76.json",
+    "capturado_en": "2026-10-13T13:50:04.374000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "c689370fe0b38463346f0cd590422a28af6b804d7000f30698f2b668741ee610",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135005_3868c158.json",
+    "mensaje": "Registro reconciliado de 20261013_135005_3868c158.json",
+    "capturado_en": "2026-10-13T13:50:05.939000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "2b2ddc406f38e5c3362ca90ce724af02c16840f598d4ec8278e23fc5a434a244",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135005_9a64f15f.json",
+    "mensaje": "Registro reconciliado de 20261013_135005_9a64f15f.json",
+    "capturado_en": "2026-10-13T13:50:05.647000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "831a946295b1a55e67c10c0a047c668d0df61e73fd6e21b3f849f213bf1829d5",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135006_43d690fc.json",
+    "mensaje": "Registro reconciliado de 20261013_135006_43d690fc.json",
+    "capturado_en": "2026-10-13T13:50:06.423000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "c2d730a1c30c207dbcc39958e7ddee3df2beadfee7f3d454a9794a981a139b53",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135006_88ea68b5.json",
+    "mensaje": "Registro reconciliado de 20261013_135006_88ea68b5.json",
+    "capturado_en": "2026-10-13T13:50:06.711000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "b3c5331d1789f8ee8f1605c853f74eea754078a3a1fbf5d0b52fa0e2ac876c7e",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135007_9b733ced.json",
+    "mensaje": "Registro reconciliado de 20261013_135007_9b733ced.json",
+    "capturado_en": "2026-10-13T13:50:07.811000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "62b31591306e859f768eb05249ed23b875047da32ee05d7e3d689ac430e801d6",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135007_b6475c07.json",
+    "mensaje": "Registro reconciliado de 20261013_135007_b6475c07.json",
+    "capturado_en": "2026-10-13T13:50:07.557000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "24ee2026f2ed3e51ca4991341ccf3c3e7708c5bed4dc64e2932af98071316174",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135007_f8b3afee.json",
+    "mensaje": "Registro reconciliado de 20261013_135007_f8b3afee.json",
+    "capturado_en": "2026-10-13T13:50:07.227000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "28409921f4d824ed90a9b4e746a267551afb353995f9985c1ad37a4368dd7caa",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135008_049aab90.json",
+    "mensaje": "Registro reconciliado de 20261013_135008_049aab90.json",
+    "capturado_en": "2026-10-13T13:50:08.599000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "daf7ea576bde7854ac03cea898ca103888802186f97162d5309e8d8ff83f331b",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135008_177d58b7.json",
+    "mensaje": "Registro reconciliado de 20261013_135008_177d58b7.json",
+    "capturado_en": "2026-10-13T13:50:08.297000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "88108cd8e75eab8bb3e3513d8ee6b924956c4a8a794b7d8936a49e5a4d067515",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135008_c5118052.json",
+    "mensaje": "Registro reconciliado de 20261013_135008_c5118052.json",
+    "capturado_en": "2026-10-13T13:50:08.947000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "ac1a1840bb6ef2c33afb8ca9f3187379978ed123cbaff223f430499ba6ec660c",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135008_cab8f70c.json",
+    "mensaje": "Registro reconciliado de 20261013_135008_cab8f70c.json",
+    "capturado_en": "2026-10-13T13:50:08.046000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "9db30536a75b20da597a39b69966274ef9a35ec3bab2990001f53b7501f71325",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135009_3f46479c.json",
+    "mensaje": "Registro reconciliado de 20261013_135009_3f46479c.json",
+    "capturado_en": "2026-10-13T13:50:09.206000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "3b8ee69f14e106c8160ef629fe4d988c33424cdf39209996f976c367c70a8ded",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135009_48c7d9b2.json",
+    "mensaje": "Registro reconciliado de 20261013_135009_48c7d9b2.json",
+    "capturado_en": "2026-10-13T13:50:09.718000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "41cd1934e145b9838e2b24150e617405af9beb34af382d997782586ac5a57bee",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135009_d95020a0.json",
+    "mensaje": "Registro reconciliado de 20261013_135009_d95020a0.json",
+    "capturado_en": "2026-10-13T13:50:10.048000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "134f5772405a1b43b5a211ea0e886c6d9d94e04cc5857c69ee2a57f839a95dcd",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135009_df3db1cf.json",
+    "mensaje": "Registro reconciliado de 20261013_135009_df3db1cf.json",
+    "capturado_en": "2026-10-13T13:50:09.463000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "b72b22041265bf28e24db2217d8501650c78d28b8627efdf05064346bc37d2ae",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135010_1490e67a.json",
+    "mensaje": "Registro reconciliado de 20261013_135010_1490e67a.json",
+    "capturado_en": "2026-10-13T13:50:10.819000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "c9e420770f94548b4ef2481870a612d111da16a3ec7756eb993f981512ce781d",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135010_687dd6c7.json",
+    "mensaje": "Registro reconciliado de 20261013_135010_687dd6c7.json",
+    "capturado_en": "2026-10-13T13:50:10.311000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "b97f5c1926bf3c87fd98e7fb66df3ae72ed2c35601588e5a2d268ffa8a0b17ef",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135011_2fbd3d72.json",
+    "mensaje": "Registro reconciliado de 20261013_135011_2fbd3d72.json",
+    "capturado_en": "2026-10-13T13:50:11.638000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "9c847bc33ee596034e7607e4154d056ed0deae67ed7074a7f29821cf87b838dd",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135011_5d2e7dae.json",
+    "mensaje": "Registro reconciliado de 20261013_135011_5d2e7dae.json",
+    "capturado_en": "2026-10-13T13:50:11.929000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "1851382422e030c32e1777790f08c315f60c9b10fc26789dff6452e16ed63cbb",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135011_8479d165.json",
+    "mensaje": "Registro reconciliado de 20261013_135011_8479d165.json",
+    "capturado_en": "2026-10-13T13:50:11.395000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "a7a7d6a32c9ba0760b0000f95d71dc1792b267da5161417bfdbef7be86bc0f71",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135011_f13c37a1.json",
+    "mensaje": "Registro reconciliado de 20261013_135011_f13c37a1.json",
+    "capturado_en": "2026-10-13T13:50:11.074000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "f0944909664e3001c95d7be7896f69df15fe5fe6f633f48132423da67d4ecf2b",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135012_964d653b.json",
+    "mensaje": "Registro reconciliado de 20261013_135012_964d653b.json",
+    "capturado_en": "2026-10-13T13:50:12.425000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "c22baa77d0b6890ed27586ae17df5e3b09796205c5ae854bb634d48129a23fde",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135012_cd6cbfd5.json",
+    "mensaje": "Registro reconciliado de 20261013_135012_cd6cbfd5.json",
+    "capturado_en": "2026-10-13T13:50:12.915000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "b71158524656a55afab9d5376575bd4c8d216c65eba205aca28972428fb47ddb",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135012_e4b00178.json",
+    "mensaje": "Registro reconciliado de 20261013_135012_e4b00178.json",
+    "capturado_en": "2026-10-13T13:50:12.673000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "8cc6850e4e25f20753602e19c6ac4cfa4ab9c0d70a8bf8d02423f5399377325f",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135012_fa02e83f.json",
+    "mensaje": "Registro reconciliado de 20261013_135012_fa02e83f.json",
+    "capturado_en": "2026-10-13T13:50:12.155000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "f6ecb4a5340a7162502491eae5a68ce9a82c252b2946c5cb7045f51b026297bf",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135013_01fbb287.json",
+    "mensaje": "Registro reconciliado de 20261013_135013_01fbb287.json",
+    "capturado_en": "2026-10-13T13:50:13.351000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "d97d957fe2651a32c5035726fd9f185711190deec07318caa293603555579a4f",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135013_b7e83d0b.json",
+    "mensaje": "Registro reconciliado de 20261013_135013_b7e83d0b.json",
+    "capturado_en": "2026-10-13T13:50:13.600000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "f34bf7b1ca2ab9207bd25b3d452610cf68df6b8b5716c9714fa348976bccf80f",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135014_9ccdcdd2.json",
+    "mensaje": "Registro reconciliado de 20261013_135014_9ccdcdd2.json",
+    "capturado_en": "2026-10-13T13:50:14.816000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "d59f5256111a7d0b158994b1ca87ae39a17678a1349db82534b040ef011771c6",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135015_00096d91.json",
+    "mensaje": "Registro reconciliado de 20261013_135015_00096d91.json",
+    "capturado_en": "2026-10-13T13:50:15.822000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "23bb2d4bbc75fc6b52b7bc9ec6e959ca983d8109ef42cbb220fef9b334cc70a4",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135015_3e315a15.json",
+    "mensaje": "Registro reconciliado de 20261013_135015_3e315a15.json",
+    "capturado_en": "2026-10-13T13:50:15.577000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "dd8926f8e9dc680505839be2ece5305ff5c997707729a6b3fb8a4cd5ce6db371",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135015_59973811.json",
+    "mensaje": "Registro reconciliado de 20261013_135015_59973811.json",
+    "capturado_en": "2026-10-13T13:50:15.090000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "05605de9a34acbb8203489cdf0f45de1ea806be0fbbb3c8b7957e9246991385d",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135015_e9fb29a5.json",
+    "mensaje": "Registro reconciliado de 20261013_135015_e9fb29a5.json",
+    "capturado_en": "2026-10-13T13:50:15.320000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "45dd3beb7bb6bbdeeb033baedec9becbe6838061ebf909409bc644b577224fb1",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135016_958cafbf.json",
+    "mensaje": "Registro reconciliado de 20261013_135016_958cafbf.json",
+    "capturado_en": "2026-10-13T13:50:16.109000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "0b87fc8bff6b3d3da4a6921d97893259b16ae57c73245be45dc31d8436ec5025",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135016_ba807f79.json",
+    "mensaje": "Registro reconciliado de 20261013_135016_ba807f79.json",
+    "capturado_en": "2026-10-13T13:50:16.448000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "1fad82fd109c8f7af7e226a8c320db89cc8672c5e96f354e6c463f40fce90f33",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135016_e33b584f.json",
+    "mensaje": "Registro reconciliado de 20261013_135016_e33b584f.json",
+    "capturado_en": "2026-10-13T13:50:16.828000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "a4f517b46fc7c360b34e11d9bba3753763a63341116fac7548575514de791f63",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135017_8eee0577.json",
+    "mensaje": "Registro reconciliado de 20261013_135017_8eee0577.json",
+    "capturado_en": "2026-10-13T13:50:17.574000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "89d5b6089fb00311c69b5641a9e64ce515173dcd186c96c7121d7e1d68cbd579",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135017_934d5a24.json",
+    "mensaje": "Registro reconciliado de 20261013_135017_934d5a24.json",
+    "capturado_en": "2026-10-13T13:50:17.245000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "24ad4c25f0b5ba8c630a6e58f56431d70cbaabf38f1b396ef622a73b0bff831e",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135018_1da55e35.json",
+    "mensaje": "Registro reconciliado de 20261013_135018_1da55e35.json",
+    "capturado_en": "2026-10-13T13:50:18.302000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "e2f02ab8752f58d0fd57fbcdf4a61cc3d9a988978b71edee33f02b4cc7f744fd",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135018_5d287735.json",
+    "mensaje": "Registro reconciliado de 20261013_135018_5d287735.json",
+    "capturado_en": "2026-10-13T13:50:18.787000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "01751037f4e972cd1d6f33ee5dab5ff255aca6f7b1a10b3c642348fe7d14eec1",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135018_bf13c3df.json",
+    "mensaje": "Registro reconciliado de 20261013_135018_bf13c3df.json",
+    "capturado_en": "2026-10-13T13:50:19+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "8ae9d40bb6445f9649f2be34430b098a0d16e6c2efdb94e6fe4ebe6af9c91654",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135018_e34de853.json",
+    "mensaje": "Registro reconciliado de 20261013_135018_e34de853.json",
+    "capturado_en": "2026-10-13T13:50:18.535000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "9b5a468494f2d70a48a0cc1f641d6f9b9a2649225a506c56c5b3bc8781369afa",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135019_01497faa.json",
+    "mensaje": "Registro reconciliado de 20261013_135019_01497faa.json",
+    "capturado_en": "2026-10-13T13:50:19.245000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "92aa5c797a971da1ae60f01d08850b203e1172c86ff1d46e5b939050b10beab7",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135019_f00c9d77.json",
+    "mensaje": "Registro reconciliado de 20261013_135019_f00c9d77.json",
+    "capturado_en": "2026-10-13T13:50:19.484000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "18dffec19bf7b57f97f1a19306bcb0fa9db7bba353f68bded58b21e2d8cd74be",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135019_f7b6504e.json",
+    "mensaje": "Registro reconciliado de 20261013_135019_f7b6504e.json",
+    "capturado_en": "2026-10-13T13:50:20.052000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "e3ae1859ba9b0b8b542cd544487ac9318ef2854c1eb2369c2950a0c5ccff3887",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135020_529bd70d.json",
+    "mensaje": "Registro reconciliado de 20261013_135020_529bd70d.json",
+    "capturado_en": "2026-10-13T13:50:20.621000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "99c357d4960b5b023c72c7c13dd3b02f12c464b27651afb43925a85fabaaf281",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135020_9ae5adb3.json",
+    "mensaje": "Registro reconciliado de 20261013_135020_9ae5adb3.json",
+    "capturado_en": "2026-10-13T13:50:20.849000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "c3b5dcac149c90f9b3821f8b0b33a90194f1958994569cfbab1b3a509dd07606",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135020_bb2ab722.json",
+    "mensaje": "Registro reconciliado de 20261013_135020_bb2ab722.json",
+    "capturado_en": "2026-10-13T13:50:20.320000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "515ea2b868751a6f5a793a5b45e6b34f23a430d8a445dfd63f6234d6127e4b92",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135021_079df511.json",
+    "mensaje": "Registro reconciliado de 20261013_135021_079df511.json",
+    "capturado_en": "2026-10-13T13:50:21.895000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "b6f4a766dec38b696a86aad3d7ca4f18baf6517158c1829afebea9efaae73dba",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135021_3363deff.json",
+    "mensaje": "Registro reconciliado de 20261013_135021_3363deff.json",
+    "capturado_en": "2026-10-13T13:50:21.643000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "c0e458c782226a8eda11ac5ac714ceedcbfa4a1231a3de07d2f3fec1daa7a113",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135021_347bc099.json",
+    "mensaje": "Registro reconciliado de 20261013_135021_347bc099.json",
+    "capturado_en": "2026-10-13T13:50:21.369000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "cfa1669d435cd7e302a1588bf2497f9b464da3608b247ad4801dffb9599f84e2",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135021_3a22de05.json",
+    "mensaje": "Registro reconciliado de 20261013_135021_3a22de05.json",
+    "capturado_en": "2026-10-13T13:50:21.140000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "90044730a1c8ce3b4948a5606dcc6b44297c73f15850cfde94fbac7d18c12c83",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135022_1075af69.json",
+    "mensaje": "Registro reconciliado de 20261013_135022_1075af69.json",
+    "capturado_en": "2026-10-13T13:50:22.141000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "3a3ac7baf23fc4cfed5ea6beaa2ddf550ca85d5a2f2116506aef503f59de6582",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135022_550d2d8f.json",
+    "mensaje": "Registro reconciliado de 20261013_135022_550d2d8f.json",
+    "capturado_en": "2026-10-13T13:50:23.019000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "eb349e1670a8ddeb8c943d10308356b5d38717adb24ecfb3a763c5af99db5cf2",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135022_614ab783.json",
+    "mensaje": "Registro reconciliado de 20261013_135022_614ab783.json",
+    "capturado_en": "2026-10-13T13:50:22.751000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "159a15e5a5bc48325516caf8cee4168960057f234f94fb0867445c39a570d240",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135022_bb8edb1d.json",
+    "mensaje": "Registro reconciliado de 20261013_135022_bb8edb1d.json",
+    "capturado_en": "2026-10-13T13:50:22.464000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "ac341b4a3d4816500e82181fdd058d507031d827bdce3169381cf5129f76f7cd",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135023_3ade3a61.json",
+    "mensaje": "Registro reconciliado de 20261013_135023_3ade3a61.json",
+    "capturado_en": "2026-10-13T13:50:23.519000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "c5706c7b7672a2bb77ad703821aac71037f8b2dc66d0927bab84c22563538be0",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135023_3fb83014.json",
+    "mensaje": "Registro reconciliado de 20261013_135023_3fb83014.json",
+    "capturado_en": "2026-10-13T13:50:24.014000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "d10b882f6ad89c3f860c6ac330bd78413f9cda01628614039cf2cc64556feeb4",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135023_95d83da6.json",
+    "mensaje": "Registro reconciliado de 20261013_135023_95d83da6.json",
+    "capturado_en": "2026-10-13T13:50:23.765000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "34b2f49bf97cae31bc1e5ad031e4e1c917622cee635bac785c8282d893d14f1f",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135023_e36135c2.json",
+    "mensaje": "Registro reconciliado de 20261013_135023_e36135c2.json",
+    "capturado_en": "2026-10-13T13:50:23.264000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "39f57e551bedacfe7a466749abbc229c6c974540a1ed41560afd8287fec01cd1",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135024_201fa91a.json",
+    "mensaje": "Registro reconciliado de 20261013_135024_201fa91a.json",
+    "capturado_en": "2026-10-13T13:50:24.779000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "2bfb71a7d20a1940fa389aef4048baaa57c0f1dd411d45ed4281b8a71a1ca560",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135024_61f50639.json",
+    "mensaje": "Registro reconciliado de 20261013_135024_61f50639.json",
+    "capturado_en": "2026-10-13T13:50:25.010000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "f4361cdd135393d4bb45ffdb44ddf0b0b7f7a45e56c12e66a6f97828d929bab7",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135024_c1148a17.json",
+    "mensaje": "Registro reconciliado de 20261013_135024_c1148a17.json",
+    "capturado_en": "2026-10-13T13:50:24.241000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "47bf4a76c26a353791544f90c111ec5641ad16ce12ee0a8f6ceb3b66347ec7e2",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135024_de52f7a4.json",
+    "mensaje": "Registro reconciliado de 20261013_135024_de52f7a4.json",
+    "capturado_en": "2026-10-13T13:50:24.514000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "161ce6f1c43bb811a1c979f44a0b6d3b6e5977cc6508b38dc31cbf0c0d19d157",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135025_91a25f52.json",
+    "mensaje": "Registro reconciliado de 20261013_135025_91a25f52.json",
+    "capturado_en": "2026-10-13T13:50:25.270000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "d24ada1a23f40cee4a196f3d4a081e9defb22012fc31e086101ff89362f7c31e",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135025_9e12f2ac.json",
+    "mensaje": "Registro reconciliado de 20261013_135025_9e12f2ac.json",
+    "capturado_en": "2026-10-13T13:50:25.527000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "4478dba4c26701717da3ea6600170611d05699b98b893865d1a7ba760ef77001",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135025_c608478d.json",
+    "mensaje": "Registro reconciliado de 20261013_135025_c608478d.json",
+    "capturado_en": "2026-10-13T13:50:26.048000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "5abee3911ddaae5f52de685a320f785625e0b1c505f129dbc6588a9832361af1",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135026_0426894a.json",
+    "mensaje": "Registro reconciliado de 20261013_135026_0426894a.json",
+    "capturado_en": "2026-10-13T13:50:26.513000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "c9655e1590cb669b583ab2821c54785f20dace4b9846974981badc2f0f1b75f1",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135026_095721f1.json",
+    "mensaje": "Registro reconciliado de 20261013_135026_095721f1.json",
+    "capturado_en": "2026-10-13T13:50:26.278000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "41a4be28e16f1d644147fbe5bce66d684310734aa6352d71dc170b85d5d58452",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135026_398bb32d.json",
+    "mensaje": "Registro reconciliado de 20261013_135026_398bb32d.json",
+    "capturado_en": "2026-10-13T13:50:26.993000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "20ce844db8dfd7258e58ece0b5d1362c5e05cabd673ce32890e0b289fec2ea45",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135026_a008082f.json",
+    "mensaje": "Registro reconciliado de 20261013_135026_a008082f.json",
+    "capturado_en": "2026-10-13T13:50:26.785000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "fd2c9db5320354a15b1bc24af5dcdc1c96dbb5ce8707ffeb44055a64cdd3bb7a",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135027_2bed6002.json",
+    "mensaje": "Registro reconciliado de 20261013_135027_2bed6002.json",
+    "capturado_en": "2026-10-13T13:50:27.506000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "e9b37af589db6b05d3c2ff051b7c20e992381254c6c7290f4559cb426a0dfad1",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135027_e6e431c6.json",
+    "mensaje": "Registro reconciliado de 20261013_135027_e6e431c6.json",
+    "capturado_en": "2026-10-13T13:50:27.236000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "99f8a4fa9fa128f878e93c52465467c37484518d283b3ef5952aed6fcc8c7487",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135028_188e5fc1.json",
+    "mensaje": "Registro reconciliado de 20261013_135028_188e5fc1.json",
+    "capturado_en": "2026-10-13T13:50:28.094000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "390d9b09c0f587af21b79146d69373c14b56501d665a3bb1595ca5326438b0a7",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135028_7f6391d3.json",
+    "mensaje": "Registro reconciliado de 20261013_135028_7f6391d3.json",
+    "capturado_en": "2026-10-13T13:50:28.660000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "eb93120370d23fee115dceb1c36bc630619e9086dcdc66a0b5c69e21f615458c",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135029_a3a649ab.json",
+    "mensaje": "Registro reconciliado de 20261013_135029_a3a649ab.json",
+    "capturado_en": "2026-10-13T13:50:29.210000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "679c46da42a00a7fb4ad88916e6fa11deb810e4758b012bffa0277acf4afbf09",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135029_e502a103.json",
+    "mensaje": "Registro reconciliado de 20261013_135029_e502a103.json",
+    "capturado_en": "2026-10-13T13:50:29.801000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "bef5aa1b81c3af2e5b7ff7ea77f43d2242ac2070707f756799a5df304e1759f1",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135029_e70ad73c.json",
+    "mensaje": "Registro reconciliado de 20261013_135029_e70ad73c.json",
+    "capturado_en": "2026-10-13T13:50:29.527000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "a5e411fd3139580b3fd1697826589efe546d1680b45073cbd2260e7a185d56f2",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135030_65f3fb94.json",
+    "mensaje": "Registro reconciliado de 20261013_135030_65f3fb94.json",
+    "capturado_en": "2026-10-13T13:50:30.040000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "9fa530ca26c060d6f92099f27f1771ae67548073de1fab65a6693b9337207ae5",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135030_c0244311.json",
+    "mensaje": "Registro reconciliado de 20261013_135030_c0244311.json",
+    "capturado_en": "2026-10-13T13:50:30.271000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "2593bdbb55a0f313f6dd7403589d302f3d72f2da2f1d3bf9d52e7942baf8fe87",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135031_1221d169.json",
+    "mensaje": "Registro reconciliado de 20261013_135031_1221d169.json",
+    "capturado_en": "2026-10-13T13:50:31.430000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "6369fb2fdbbfb491b94b93dd6c4b5322b4d77dfe04772c1f7e8220763f5d187b",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135031_e902af01.json",
+    "mensaje": "Registro reconciliado de 20261013_135031_e902af01.json",
+    "capturado_en": "2026-10-13T13:50:31.795000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "103ad765cc4fd3ab8972cc07424382109ad5f67418e42919986c2691aa5dfd0a",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135032_25ef1d5b.json",
+    "mensaje": "Registro reconciliado de 20261013_135032_25ef1d5b.json",
+    "capturado_en": "2026-10-13T13:50:32.800000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "17e28d15b16b3f29c7c75e5eae3d540c9d4c053dba2ce83d941c3f5023e8a7d9",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135032_40586d76.json",
+    "mensaje": "Registro reconciliado de 20261013_135032_40586d76.json",
+    "capturado_en": "2026-10-13T13:50:32.498000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "42b851a1140d6c8e71d388a7361d94b905cf498b920d1dcdaf2b618edd691575",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135032_b4125b9f.json",
+    "mensaje": "Registro reconciliado de 20261013_135032_b4125b9f.json",
+    "capturado_en": "2026-10-13T13:50:32.207000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "4589203504bdd5f66b55b241ec083a6e55c116eb114e2a12c1a0579109d7ed98",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135033_4a1f2106.json",
+    "mensaje": "Registro reconciliado de 20261013_135033_4a1f2106.json",
+    "capturado_en": "2026-10-13T13:50:33.447000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "43dd03271814cb99c7ec97c55cb61c914331b8bb8b42dcb5de9d9c56995838e7",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135033_9b4d3208.json",
+    "mensaje": "Registro reconciliado de 20261013_135033_9b4d3208.json",
+    "capturado_en": "2026-10-13T13:50:33.109000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "63c5cfbed1240d26d16dc3234b85bc2b3a45a19906900c2a448d05e84edaff65",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135033_9d1121b3.json",
+    "mensaje": "Registro reconciliado de 20261013_135033_9d1121b3.json",
+    "capturado_en": "2026-10-13T13:50:34.029000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "2ccdc3c6e0c5af10e3472fdfb604c30258c074a2c5b094662f3ac0893f6c70d8",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135033_e6857578.json",
+    "mensaje": "Registro reconciliado de 20261013_135033_e6857578.json",
+    "capturado_en": "2026-10-13T13:50:33.736000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "d9d69bc4f90a5e133624d895bca5499b2f6c7b61ea66ff60e2c8ef908a0054ee",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135034_41f9e4fb.json",
+    "mensaje": "Registro reconciliado de 20261013_135034_41f9e4fb.json",
+    "capturado_en": "2026-10-13T13:50:34.977000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "c24d2ebd7c34ff43ef6267c09c4784299aa1625a64656e96f9f8052a11eb58c0",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135034_66620808.json",
+    "mensaje": "Registro reconciliado de 20261013_135034_66620808.json",
+    "capturado_en": "2026-10-13T13:50:34.290000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "b2ca00cc94c8dac44329263de924142b6db2a27350406aeb8d289912e00fec1a",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135034_ef93c8da.json",
+    "mensaje": "Registro reconciliado de 20261013_135034_ef93c8da.json",
+    "capturado_en": "2026-10-13T13:50:34.681000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "1649ab910ae971a05a89da67f4f277d66050e3f12d9930118c61168351d24182",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135035_7005fca0.json",
+    "mensaje": "Registro reconciliado de 20261013_135035_7005fca0.json",
+    "capturado_en": "2026-10-13T13:50:35.868000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "45526202ab9b23401661736a7bd49d3cb05df1301d7b1588a804a1646e849b75",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135035_f1f835e6.json",
+    "mensaje": "Registro reconciliado de 20261013_135035_f1f835e6.json",
+    "capturado_en": "2026-10-13T13:50:35.244000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "8826a8320fa4bf1de8af3355c4db5a30c4db34f31e705371ca4b77a85331b80e",
+    "bytes_descargados": 3080,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135035_f47b6a83.json",
+    "mensaje": "Registro reconciliado de 20261013_135035_f47b6a83.json",
+    "capturado_en": "2026-10-13T13:50:35.543000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "07d6ae29ab05dcaf6e29e278204bff34df2fee30dd34dca28d539f216eb97d8b",
+    "bytes_descargados": 66455,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135036_126aef87.json",
+    "mensaje": "Registro reconciliado de 20261013_135036_126aef87.json",
+    "capturado_en": "2026-10-13T13:50:36.640000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "74d1b21ad174f27584a8db406a5185a7fc8e3f27f17637c68d1ec6ee35d25c0d",
+    "bytes_descargados": 1686,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135036_3722880b.json",
+    "mensaje": "Registro reconciliado de 20261013_135036_3722880b.json",
+    "capturado_en": "2026-10-13T13:50:36.180000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "416c7b02301718c42965b11acbfb6acd95fc2870b75bcd8cf5a1b731bede4975",
+    "bytes_descargados": 66440,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135036_ccbccdd5.json",
+    "mensaje": "Registro reconciliado de 20261013_135036_ccbccdd5.json",
+    "capturado_en": "2026-10-13T13:50:37.010000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "51fe25e1ea980487d377ae3bb9b0990e8efd56a81cc1ce59cbf523370b2d99a3",
+    "bytes_descargados": 66456,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135037_317c6fe2.json",
+    "mensaje": "Registro reconciliado de 20261013_135037_317c6fe2.json",
+    "capturado_en": "2026-10-13T13:50:37.861000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "c95a27a79388d82281abed72fab6e892b2193a9d24ff6525735b808ce82c6636",
+    "bytes_descargados": 66464,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135037_9e430298.json",
+    "mensaje": "Registro reconciliado de 20261013_135037_9e430298.json",
+    "capturado_en": "2026-10-13T13:50:37.418000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "53440d8c76a6a107c5aff63dafd81b9cdbce88c83f854a96a93dc50b0405bacc",
+    "bytes_descargados": 66475,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135038_b1173ce9.json",
+    "mensaje": "Registro reconciliado de 20261013_135038_b1173ce9.json",
+    "capturado_en": "2026-10-13T13:50:38.327000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "a2fa04c712629f74d20a62a68d54d52c1161c6750dba7d3e46405644a12f8b9a",
+    "bytes_descargados": 66449,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135038_e9b29697.json",
+    "mensaje": "Registro reconciliado de 20261013_135038_e9b29697.json",
+    "capturado_en": "2026-10-13T13:50:38.807000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "125efe2616e90b1707ff1e9b39df28a11d57f6bd2fb09dbe548945860084f437",
+    "bytes_descargados": 66440,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135039_a4bcd952.json",
+    "mensaje": "Registro reconciliado de 20261013_135039_a4bcd952.json",
+    "capturado_en": "2026-10-13T13:50:39.926000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "642a7163035b2cb15c6150a4a3b87bb6cf45b9994d047f83ff296c903d91894e",
+    "bytes_descargados": 66355,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135039_caa72fd2.json",
+    "mensaje": "Registro reconciliado de 20261013_135039_caa72fd2.json",
+    "capturado_en": "2026-10-13T13:50:39.502000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "c7eb1ce6c9f353ddb5f52bf4e5e9719fa763687e13abf6b54bcf96ab9604ae34",
+    "bytes_descargados": 65937,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135041_ba85b3eb.json",
+    "mensaje": "Registro reconciliado de 20261013_135041_ba85b3eb.json",
+    "capturado_en": "2026-10-13T13:50:41.124000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "c6e1b23887b88d035e2ab091c98920bdaff405c031ee3a0a2592cb1d813eb2a7",
+    "bytes_descargados": 66044,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135041_ced82cf8.json",
+    "mensaje": "Registro reconciliado de 20261013_135041_ced82cf8.json",
+    "capturado_en": "2026-10-13T13:50:41.924000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "71a361f39dacbae003329c7e631d358d25e70cd3b48c6af35c5181f0182d42b2",
+    "bytes_descargados": 68980,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135042_be1b3563.json",
+    "mensaje": "Registro reconciliado de 20261013_135042_be1b3563.json",
+    "capturado_en": "2026-10-13T13:50:42.917000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "192861b01aef740d492ad73dccaf09ce0b81cb9bc4126349328c3daa4d7c9040",
+    "bytes_descargados": 69474,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135043_8d12e512.json",
+    "mensaje": "Registro reconciliado de 20261013_135043_8d12e512.json",
+    "capturado_en": "2026-10-13T13:50:43.799000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "33e7eca36ecb587a943b053fdfbba248d0c6bceef0e422f09ca5b8b6bbeb9cea",
+    "bytes_descargados": 69474,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135044_f48181bd.json",
+    "mensaje": "Registro reconciliado de 20261013_135044_f48181bd.json",
+    "capturado_en": "2026-10-13T13:50:44.698000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "62363318f68c5fb5f34c4ff9feed6188cc8d29c95f025c9e551a9c6c4c1428a5",
+    "bytes_descargados": 69481,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135045_e6694612.json",
+    "mensaje": "Registro reconciliado de 20261013_135045_e6694612.json",
+    "capturado_en": "2026-10-13T13:50:45.645000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "5dafabb36e6609787398952ce8d51e3672bcff97b65762ce15d974593ada50d9",
+    "bytes_descargados": 69474,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135046_01485e34.json",
+    "mensaje": "Registro reconciliado de 20261013_135046_01485e34.json",
+    "capturado_en": "2026-10-13T13:50:46.511000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "dbeb35b532993adf066b70a3987121657f68ab3d14b1e4bfd0071762a05b8a47",
+    "bytes_descargados": 69506,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135047_7a7db237.json",
+    "mensaje": "Registro reconciliado de 20261013_135047_7a7db237.json",
+    "capturado_en": "2026-10-13T13:50:47.546000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "4454684e60399d043d76bca23e3889d41f0cbe1460664958ee40f3977e030409",
+    "bytes_descargados": 69386,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135048_1d995d83.json",
+    "mensaje": "Registro reconciliado de 20261013_135048_1d995d83.json",
+    "capturado_en": "2026-10-13T13:50:48.362000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "93ec64f383dddb6e4ca3c5dc90aa60c7a90e817fd19ba15e21fd3942c97c14f6",
+    "bytes_descargados": 69496,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135049_dfae9a66.json",
+    "mensaje": "Registro reconciliado de 20261013_135049_dfae9a66.json",
+    "capturado_en": "2026-10-13T13:50:49.286000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "522cc651f5df2386373b35674a2914c71ba3d92e66ca4b39c45dd97bd3160e3f",
+    "bytes_descargados": 69368,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135050_086d89b6.json",
+    "mensaje": "Registro reconciliado de 20261013_135050_086d89b6.json",
+    "capturado_en": "2026-10-13T13:50:50.238000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "201b6123a94afc4d098dc4d2504e2a49b960a88cc32c53b7ea19bf1de17f12e9",
+    "bytes_descargados": 69459,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135051_74d8b351.json",
+    "mensaje": "Registro reconciliado de 20261013_135051_74d8b351.json",
+    "capturado_en": "2026-10-13T13:50:51.149000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "a9a3e22b1a3ea9f99361128036aa4d284ae4f11d8925b215356878b75f17155f",
+    "bytes_descargados": 21277,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135051_df7d8df5.json",
+    "mensaje": "Registro reconciliado de 20261013_135051_df7d8df5.json",
+    "capturado_en": "2026-10-13T13:50:51.696000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "46ecc8eb43489d03ff7b08c6d10d88b18832c451d60b4c9001761d07ce14a8a2",
+    "bytes_descargados": 72139,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135052_1cdf7d8b.json",
+    "mensaje": "Registro reconciliado de 20261013_135052_1cdf7d8b.json",
+    "capturado_en": "2026-10-13T13:50:52.675000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "63f50a9846575f17e9b2b1ca1dce65704ee680aba7cd48b69a64804ae3b7bec8",
+    "bytes_descargados": 72340,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135052_daefd2b0.json",
+    "mensaje": "Registro reconciliado de 20261013_135052_daefd2b0.json",
+    "capturado_en": "2026-10-13T13:50:52.114000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "7b34d0c0e7e49e248bc24fbbbacf73857973a5b072b53f2eb2da5a78e5be818c",
+    "bytes_descargados": 72036,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135053_b78dc9b8.json",
+    "mensaje": "Registro reconciliado de 20261013_135053_b78dc9b8.json",
+    "capturado_en": "2026-10-13T13:50:53.643000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "bee50bd76e44f67d2664059ad92b76c8b56de9857b8eaad1be5c07d073d874bb",
+    "bytes_descargados": 72231,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135054_3b49f783.json",
+    "mensaje": "Registro reconciliado de 20261013_135054_3b49f783.json",
+    "capturado_en": "2026-10-13T13:50:54.421000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "c1dfd621939ef66b32e1c997d25b7a20c5c2fc2252f6f56f6302d62351653baa",
+    "bytes_descargados": 72330,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135054_6d0d10b2.json",
+    "mensaje": "Registro reconciliado de 20261013_135054_6d0d10b2.json",
+    "capturado_en": "2026-10-13T13:50:54.781000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "fc6c5d85a796e0378039709494f97c8b5bbf48c9b6766caeb9ce0c03c2ae50bb",
+    "bytes_descargados": 72018,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135055_66a47b42.json",
+    "mensaje": "Registro reconciliado de 20261013_135055_66a47b42.json",
+    "capturado_en": "2026-10-13T13:50:55.724000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "de9c6310b25fb5bf1a3dbd4fc4b72901250ad15cc5c3a5352722f25fe692d6a5",
+    "bytes_descargados": 72439,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135055_c1b0cde8.json",
+    "mensaje": "Registro reconciliado de 20261013_135055_c1b0cde8.json",
+    "capturado_en": "2026-10-13T13:50:55.344000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "12f013f7227e8f88852fcce91556a60029a244ad8933854d1fe8f1775ff69fd7",
+    "bytes_descargados": 72364,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135056_9269a418.json",
+    "mensaje": "Registro reconciliado de 20261013_135056_9269a418.json",
+    "capturado_en": "2026-10-13T13:50:56.769000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "d21d2c8875383f5470a4965e9d09a548a07df1d6e2cd3b892fbbe9bf8567e049",
+    "bytes_descargados": 72358,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135057_37a88147.json",
+    "mensaje": "Registro reconciliado de 20261013_135057_37a88147.json",
+    "capturado_en": "2026-10-13T13:50:57.525000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "43c88a43027b5572df8d75c99ed0e7f7846a09d7e8adba30b963af9c3a3a3df4",
+    "bytes_descargados": 72424,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135057_3f1b04f8.json",
+    "mensaje": "Registro reconciliado de 20261013_135057_3f1b04f8.json",
+    "capturado_en": "2026-10-13T13:50:57.901000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "62b4febacfae845fa3b64ff930f5f32213b91fee03c6bcb94ca2bccd4e549291",
+    "bytes_descargados": 72449,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135057_a0b37d09.json",
+    "mensaje": "Registro reconciliado de 20261013_135057_a0b37d09.json",
+    "capturado_en": "2026-10-13T13:50:57.152000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "181793cd5d5c84265141e1a12edca2bb5bb2cb678634e0b6959013c80d9a2ce3",
+    "bytes_descargados": 72339,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135058_6d2ed6f9.json",
+    "mensaje": "Registro reconciliado de 20261013_135058_6d2ed6f9.json",
+    "capturado_en": "2026-10-13T13:50:58.353000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "179d6bc5cd2847f1a8eca70ba787d41c50dbb9e9f0ba1d93e7cb6c4917cff1e1",
+    "bytes_descargados": 71914,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135058_e444b6d3.json",
+    "mensaje": "Registro reconciliado de 20261013_135058_e444b6d3.json",
+    "capturado_en": "2026-10-13T13:50:58.752000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "54616ceea12370f2cee2d8f40369aa78a5c91ccdd5aee6c34f5f210f79af9358",
+    "bytes_descargados": 69688,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135059_11131695.json",
+    "mensaje": "Registro reconciliado de 20261013_135059_11131695.json",
+    "capturado_en": "2026-10-13T13:50:59.685000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "322a70b342d76fa9f1d1171241da14b512afdbee33aa9088853b8fb6026c7fa4",
+    "bytes_descargados": 72220,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135059_8258a503.json",
+    "mensaje": "Registro reconciliado de 20261013_135059_8258a503.json",
+    "capturado_en": "2026-10-13T13:50:59.286000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "610e6168ef171ba4ea71c7a4c2ee093f94862601e90c382eb699bd0ee9577b81",
+    "bytes_descargados": 69376,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135100_020c7ad5.json",
+    "mensaje": "Registro reconciliado de 20261013_135100_020c7ad5.json",
+    "capturado_en": "2026-10-13T13:51:00.125000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "8e948b78eb8c8cef23a80bcfb3cb7802970312a019a51fedbe2174b8e8e31e01",
+    "bytes_descargados": 69091,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135100_b1387bda.json",
+    "mensaje": "Registro reconciliado de 20261013_135100_b1387bda.json",
+    "capturado_en": "2026-10-13T13:51:00.918000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "cc24026d702ca9619411cbe828ad470c149e1d7e9efd2b74c4c9a6331d2b7999",
+    "bytes_descargados": 69390,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135100_f086d2b3.json",
+    "mensaje": "Registro reconciliado de 20261013_135100_f086d2b3.json",
+    "capturado_en": "2026-10-13T13:51:00.536000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "651c2c985ae25bfdb8f6dfbc9f07b2a1287359a2597d21a49441be84f231f5bb",
+    "bytes_descargados": 69270,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135101_981b44fa.json",
+    "mensaje": "Registro reconciliado de 20261013_135101_981b44fa.json",
+    "capturado_en": "2026-10-13T13:51:01.399000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "3b4334a81a25dd61a3cf9d8deb58f2f1f35a40c4b89aecc7eaf9035da97f47c5",
+    "bytes_descargados": 69375,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135101_d7266d7b.json",
+    "mensaje": "Registro reconciliado de 20261013_135101_d7266d7b.json",
+    "capturado_en": "2026-10-13T13:51:01.737000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "6d0ec1379f23bfabce85ceff37e5604dd8a01f58875b5c7d0f6579142e89920c",
+    "bytes_descargados": 69382,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135102_a9d75f3f.json",
+    "mensaje": "Registro reconciliado de 20261013_135102_a9d75f3f.json",
+    "capturado_en": "2026-10-13T13:51:02.799000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "6484c9511781bcb9f0f680f7da1b45f5043f7fddc2c2b88d518a20ce77ad7212",
+    "bytes_descargados": 69093,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135103_f38fe3bf.json",
+    "mensaje": "Registro reconciliado de 20261013_135103_f38fe3bf.json",
+    "capturado_en": "2026-10-13T13:51:03.833000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "3708ce60df3f57c58cc54d1c1ccb341d4a545260e37d444cc97b484397cea456",
+    "bytes_descargados": 69391,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135104_b50169a2.json",
+    "mensaje": "Registro reconciliado de 20261013_135104_b50169a2.json",
+    "capturado_en": "2026-10-13T13:51:04.849000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "8675101990efa6c2576eb904e3a1cd9715966dba57213a7b6a7a9f4179441d33",
+    "bytes_descargados": 69272,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135105_5a0f1642.json",
+    "mensaje": "Registro reconciliado de 20261013_135105_5a0f1642.json",
+    "capturado_en": "2026-10-13T13:51:05.693000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "ba4a08c630b75ae3e0bee6685e9c3694ba56be98a95fd214d6fd16b19f949342",
+    "bytes_descargados": 69399,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135106_46c3c234.json",
+    "mensaje": "Registro reconciliado de 20261013_135106_46c3c234.json",
+    "capturado_en": "2026-10-13T13:51:06.575000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "bf1ce94766a5ec4a77b07150413e633f8e0dbd6b0ebf3e81e743ea4ac3d6fa9a",
+    "bytes_descargados": 71038,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135107_e9519ce5.json",
+    "mensaje": "Registro reconciliado de 20261013_135107_e9519ce5.json",
+    "capturado_en": "2026-10-13T13:51:07.416000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "04afb5b9f476933df5a785f9b637dfc4a5f64da6a4a8d46bf2cb226cee096924",
+    "bytes_descargados": 72405,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135108_ed1900f7.json",
+    "mensaje": "Registro reconciliado de 20261013_135108_ed1900f7.json",
+    "capturado_en": "2026-10-13T13:51:08.385000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "8906ecc69772e16f95dfa2f55455a67bf1c5ae4855bf6c4c391a1c282b0c91ee",
+    "bytes_descargados": 72413,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135109_53e6f923.json",
+    "mensaje": "Registro reconciliado de 20261013_135109_53e6f923.json",
+    "capturado_en": "2026-10-13T13:51:09.300000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "1a7272182638d838ea613b5bc7f9ad4d12ea94f18d9bfec307369493acb704a0",
+    "bytes_descargados": 72447,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135110_856b05c0.json",
+    "mensaje": "Registro reconciliado de 20261013_135110_856b05c0.json",
+    "capturado_en": "2026-10-13T13:51:10.172000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "504bac28c3e061b80d58d32ad6fac45ae416a34adb8adc2303a02cdbe04a7428",
+    "bytes_descargados": 72448,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135111_8defcec0.json",
+    "mensaje": "Registro reconciliado de 20261013_135111_8defcec0.json",
+    "capturado_en": "2026-10-13T13:51:11.231000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "83917d75118684cab8c4578d087c797974f62d2df95e9250579c6ab0ea90e514",
+    "bytes_descargados": 72339,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135112_4831a7e1.json",
+    "mensaje": "Registro reconciliado de 20261013_135112_4831a7e1.json",
+    "capturado_en": "2026-10-13T13:51:12.260000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "ca368b86b68bc5081b3c73033fd9fc5e7a01896313059a5cc2256311da7ecd19",
+    "bytes_descargados": 72351,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135112_764b7bbd.json",
+    "mensaje": "Registro reconciliado de 20261013_135112_764b7bbd.json",
+    "capturado_en": "2026-10-13T13:51:12.740000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "e5440c4ed00891df80cc1516fff813742f7c4cce79ef65fe4750e5faef27a2d2",
+    "bytes_descargados": 72452,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135113_2dc760d6.json",
+    "mensaje": "Registro reconciliado de 20261013_135113_2dc760d6.json",
+    "capturado_en": "2026-10-13T13:51:13.404000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "2e58da317fbc04472649159ce1d9ac964f5928930915ee7d78459f9ae61c4a96",
+    "bytes_descargados": 72457,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135113_f7d0cb0a.json",
+    "mensaje": "Registro reconciliado de 20261013_135113_f7d0cb0a.json",
+    "capturado_en": "2026-10-13T13:51:13.928000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "9a80d54bca11c6fa94313c30eba7103ba3f44dd55383a4c2d12627ec358297d7",
+    "bytes_descargados": 72352,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135114_9cebd718.json",
+    "mensaje": "Registro reconciliado de 20261013_135114_9cebd718.json",
+    "capturado_en": "2026-10-13T13:51:14.698000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "c5d6419d49b0cf99a776b1bf7083179d4f6f66d5e2701de65063042048218aa5",
+    "bytes_descargados": 72458,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135114_f75e18b3.json",
+    "mensaje": "Registro reconciliado de 20261013_135114_f75e18b3.json",
+    "capturado_en": "2026-10-13T13:51:14.279000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "7257acc177bc21c3c01b7c6f4f9db4a87e915f9ed3a66af7146bc1fe06544331",
+    "bytes_descargados": 72451,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135115_8240818c.json",
+    "mensaje": "Registro reconciliado de 20261013_135115_8240818c.json",
+    "capturado_en": "2026-10-13T13:51:15.154000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "551ab027a5633a85fab34a1087f3186baef6833bfab285f36b72c64539700402",
+    "bytes_descargados": 72446,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135115_b5b309fe.json",
+    "mensaje": "Registro reconciliado de 20261013_135115_b5b309fe.json",
+    "capturado_en": "2026-10-13T13:51:15.613000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "9d934447d737d9f55750a9592e57f6f8eb185f2b24c304ab57c9e851f3a06107",
+    "bytes_descargados": 72447,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135116_17efa21a.json",
+    "mensaje": "Registro reconciliado de 20261013_135116_17efa21a.json",
+    "capturado_en": "2026-10-13T13:51:16.822000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "9269b42e30837f7be560b62d84fdc3f849aca4b5426b8ab176815e9cf09a3e1b",
+    "bytes_descargados": 72459,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135116_6381bb22.json",
+    "mensaje": "Registro reconciliado de 20261013_135116_6381bb22.json",
+    "capturado_en": "2026-10-13T13:51:16.057000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "1dedb47c663c0edec68d619964af3c2419ef0abbb0c5d8981ad70ba58c4929aa",
+    "bytes_descargados": 72449,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135116_aa36ea62.json",
+    "mensaje": "Registro reconciliado de 20261013_135116_aa36ea62.json",
+    "capturado_en": "2026-10-13T13:51:16.419000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "84e8c37c1f21d0b92209fa327657d3aab9d1ec7942ca8bc6d10885ba5be97646",
+    "bytes_descargados": 72447,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135117_0d97b862.json",
+    "mensaje": "Registro reconciliado de 20261013_135117_0d97b862.json",
+    "capturado_en": "2026-10-13T13:51:17.680000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "e1fdd18cd41b8e62bc7f4e314b411a1d6999e76a90d8c4f4882611a529a66f64",
+    "bytes_descargados": 72444,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135117_37f051e1.json",
+    "mensaje": "Registro reconciliado de 20261013_135117_37f051e1.json",
+    "capturado_en": "2026-10-13T13:51:17.297000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "0bf451bed56afc3f63358b4e6d0ba9aae3a222091e76c9f6eb3e3b1ff6285bbd",
+    "bytes_descargados": 5410,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135118_14051e73.json",
+    "mensaje": "Registro reconciliado de 20261013_135118_14051e73.json",
+    "capturado_en": "2026-10-13T13:51:18.287000+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-HIST",
+    "estado": "exitosa",
+    "hash_sha256": "c1495c3af9aa7167d3b544719c46ebfeed99e34c08615fbc189ce2cea092c802",
+    "bytes_descargados": 72440,
+    "filas_procesadas": 1,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_historico/20261013_135118_8aae254b.json",
+    "mensaje": "Registro reconciliado de 20261013_135118_8aae254b.json",
+    "capturado_en": "2026-10-13T13:51:18.073000+00:00"
+  },
+  {
+    "id_fuente": "FTE-CPC-NOAA",
+    "estado": "sin_cambios",
+    "hash_sha256": "c7a4033fb5e19c83fb1cc8fc7af8e508aa7279fb313071e9522386255a040b3c",
+    "bytes_descargados": 171741,
+    "filas_procesadas": 0,
+    "ruta_archivo_bronce": "",
+    "mensaje": "Los datos de NOAA CPC no presentan cambios frente a la última captura.",
+    "capturado_en": "2026-11-09T00:50:28.164489+00:00"
+  },
+  {
+    "id_fuente": "FTE-INS-IRCA",
+    "estado": "sin_cambios",
+    "hash_sha256": "147f333096f842424c33beff2339e492c5212f1723ba182001faf9f6a3b59f21",
+    "bytes_descargados": 272750,
+    "filas_procesadas": 1006,
+    "ruta_archivo_bronce": "",
+    "mensaje": "Sin cambios en el catálogo IRCA de SIVICAP.",
+    "capturado_en": "2026-11-09T00:50:29.550175+00:00"
+  },
+  {
+    "id_fuente": "FTE-IDEAM-CLIMA",
+    "estado": "fallida",
+    "hash_sha256": "",
+    "bytes_descargados": 0,
+    "filas_procesadas": 0,
+    "ruta_archivo_bronce": "",
+    "mensaje": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
+    "capturado_en": "2026-11-09T00:51:45.853318+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "a4ababfd9cf967b83a6eb7d6a0e8fe41465c34bc895f07babde8512fca6f9868",
+    "bytes_descargados": 6132,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261109_005147_a4ababfd.json",
+    "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
+    "capturado_en": "2026-11-09T00:51:47.183198+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "fb3e0899e01631488d19de00d34b58a0f15e8c97ec549b86fcb08af93ba29b4b",
+    "bytes_descargados": 1802,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261109_005147_fb3e0899.json",
+    "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 80.8%, SIN: 78.7%)",
+    "capturado_en": "2026-11-09T00:51:47.898525+00:00"
+  },
+  {
+    "id_fuente": "FTE-FIRMS-NASA",
+    "estado": "exitosa",
+    "hash_sha256": "5b2701fc0a59053c47acadae844fbfcad73ce348ab3c517c07495b71dd92258c",
+    "bytes_descargados": 2748,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "data/bronce/fte_firms_nasa/20261109_005148_5b2701fc.json",
+    "mensaje": "Captura FIRMS procesada para 23 municipios (modo: sin_clave/null)",
+    "capturado_en": "2026-11-09T00:51:48.250221+00:00"
+  },
+  {
+    "id_fuente": "FTE-SSPD-SUI",
+    "estado": "exitosa",
+    "hash_sha256": "e190d2091c3b94c7fd2afd79b2ed10ba2810c8ed38eb2d1c8395896e4df9b442",
+    "bytes_descargados": 7326,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "data/bronce/fte_sspd_sui/20261109_005148_e190d209.json",
+    "mensaje": "Captura certificada de 23 municipios desde SSPD SUI",
+    "capturado_en": "2026-11-09T00:51:48.608453+00:00"
+  },
+  {
+    "id_fuente": "FTE-CPC-NOAA",
+    "estado": "sin_cambios",
+    "hash_sha256": "c7a4033fb5e19c83fb1cc8fc7af8e508aa7279fb313071e9522386255a040b3c",
+    "bytes_descargados": 171741,
+    "filas_procesadas": 0,
+    "ruta_archivo_bronce": "",
+    "mensaje": "Los datos de NOAA CPC no presentan cambios frente a la última captura.",
+    "capturado_en": "2026-11-09T01:03:07.768890+00:00"
+  },
+  {
+    "id_fuente": "FTE-INS-IRCA",
+    "estado": "sin_cambios",
+    "hash_sha256": "147f333096f842424c33beff2339e492c5212f1723ba182001faf9f6a3b59f21",
+    "bytes_descargados": 272750,
+    "filas_procesadas": 1006,
+    "ruta_archivo_bronce": "",
+    "mensaje": "Sin cambios en el catálogo IRCA de SIVICAP.",
+    "capturado_en": "2026-11-09T01:03:09.148573+00:00"
+  },
+  {
+    "id_fuente": "FTE-IDEAM-CLIMA",
+    "estado": "exitosa",
+    "hash_sha256": "fc36cd37da936256dee161bbe0b6d20cacb12fb6958086b6ee34dbd91ee19bb5",
+    "bytes_descargados": 544591,
+    "filas_procesadas": 12548,
+    "ruta_archivo_bronce": "data/bronce/fte_ideam_clima/20261109_010412_fc36cd37.json",
+    "mensaje": "IDEAM: 12548 días-estación de 186 estaciones; A-4 en 22/23 y A-3 en 21/23 municipios",
+    "capturado_en": "2026-11-09T01:04:12.335506+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "c5a221f28cec54ed3d49698ba829a64bd06172ec6093aef95ca233aa2fd04742",
+    "bytes_descargados": 6132,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261109_010413_c5a221f2.json",
+    "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)",
+    "capturado_en": "2026-11-09T01:04:13.560422+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "7b55850ce11b5891aae28c3a9e08f758d9231d686d6524dc0238dd44181a1880",
+    "bytes_descargados": 1802,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261109_010414_7b55850c.json",
+    "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 80.8%, SIN: 78.7%)",
+    "capturado_en": "2026-11-09T01:04:14.390953+00:00"
+  },
+  {
+    "id_fuente": "FTE-FIRMS-NASA",
+    "estado": "exitosa",
+    "hash_sha256": "fc4d350c2686bdaf2c85c4c096e496918544e22a1ad11d757b6f10835aa7120f",
+    "bytes_descargados": 2748,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "data/bronce/fte_firms_nasa/20261109_010414_fc4d350c.json",
+    "mensaje": "Captura FIRMS procesada para 23 municipios (modo: sin_clave/null)",
+    "capturado_en": "2026-11-09T01:04:14.944971+00:00"
+  },
+  {
+    "id_fuente": "FTE-SSPD-SUI",
+    "estado": "exitosa",
+    "hash_sha256": "a131603af5233e9447db3b4e49b0af6dc70d5b5241f2de4e0c85e346bd5dc050",
+    "bytes_descargados": 7326,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "data/bronce/fte_sspd_sui/20261109_010415_a131603a.json",
+    "mensaje": "Captura certificada de 23 municipios desde SSPD SUI",
+    "capturado_en": "2026-11-09T01:04:15.428044+00:00"
   }
 ]

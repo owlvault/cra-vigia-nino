@@ -51,16 +51,21 @@
 | 10 — fecha de A-1 | Corregido: A-1 usa la semana NOAA y A-2 la del boletín (antes, fechas literales) | `f7cf2aa` |
 | 2 — `sin_dato` convertido en 0 | Corregido: sin valores por defecto en pipeline, conectores SUI/IDEAM/UNGRD ni auditor; R-n sin registro = `sin_dato` | `21ca7a2` |
 | 5 — municipios y pesos en código | Corregido: `parametros_icr.json` y `territorio_municipios.json`; H-4 alineado a la spec | `03764b4` |
+| 1 — A-3, A-4 y H-1 desde catálogo estático | Corregido: mediciones diarias automáticas + normales 1991-2020 + ENA 2010/2014 del IDEAM; H-1 `sin_dato` por RF-TER-05; retirado `catalogo_municipios_ideam.json` | `bbab546` |
+| 6 — trazabilidad de Bronce rota | Corregido: `capturas.json` reconciliado con el 100 % de los archivos en `data/bronce/` (incluidos históricos XM/UNGRD y extracto SUI), sin directorios y con rutas relativas POSIX portables (`data/bronce/...`) | `2026-11-08` |
+| 13 — restricciones DDL en `comparativo_semanal.sql` | Corregido: `'suma'` en CHECK de `agregacion`, FK a `config.variable_semanal (codigo, version_config)`, CHECK `sin_dato ⇔ NULL` en `fct_variable_semana` y unión por versión de configuración en `v_comparativo_semanal` | `2026-11-08` |
+| 15 — rutas Windows e IDEAM simulado en modelo semanal | Corregido: rutas relativas en `origen_bronce` y precipitación semanal agregada desde mediciones reales de estaciones IDEAM (`crudo.diarios`) | `2026-11-08` |
 
 Hallazgos nuevos durante la corrección:
 - El pipeline rellenaba datos ausentes con valores inventados (continuidad 24 h, IRCA 12, categoría ENA «Medio», PEC = 1…). Hoy no se activaban con los datos actuales, pero lo habrían hecho ante cualquier faltante. Corregido en `21ca7a2`.
-- `ingesta/tests/test_conectores.py` y `test_auditoria.py` escriben capturas reales en el Bronce del repositorio. Pendiente.
-- Los conectores SUI e IDEAM conservan sus propias funciones de normalización. El pipeline ya no las usa, pero la de H-4 en SUI sigue con los quiebres viejos. Pendiente de retirar.
+- ~~`ingesta/tests/test_conectores.py` y `test_auditoria.py` escriben capturas reales en el Bronce del repositorio.~~ **Corregido (2026-11-08):** aislados con `tmp_path` y pruebas tautológicas de `test_indice_riesgo.py` reemplazadas por llamadas reales a `PipelineCorte`.
+- ~~Los conectores SUI e IDEAM conservan sus propias funciones de normalización.~~ **Corregido (2026-11-08):** retiradas las funciones de normalización heredadas en `conector_sui.py` y `conector_sivicap.py` (regla de oro 3).
+- Sincronizados `auditoria/js/auditoria.js` y `tablero/auditoria/js/auditoria.js`, automatizada la regeneración del dictamen de auditoría al publicar un corte completo y habilitada la carga de certificados intermedios del almacén CA del sistema operativo para los servicios GIS del IDEAM.
 
 Pendientes y decisiones:
 - **Decisión CRA:** regla de vigencia máxima (`multiplicador_sin_dato`) implementada pero desactivada. Con N = 3 y los periodos de la spec, quedan fuera H-4, S-2 y la capa R completa, y el ICR nacional sube de 39,3 a 51,0.
 - ~~**Hallazgo 1**~~ (A-3, A-4 y H-1 desde un catálogo estático): **corregido el 2026-11-08**. A-3 y A-4 salen de la red automática de precipitación del IDEAM y de las normales 1991-2020; H-2 y H-3 del ENA (2010 y 2014) por subzona; H-1 queda `sin_dato` por RF-TER-05 hasta resolver Q-TER-03. Se retiró `catalogo_municipios_ideam.json`. Con las mediciones reales el ICR nacional baja de 41,8 a 34,6 y los municipios en rojo pasan de 4 a 1: el catálogo inflaba el riesgo (p. ej. «48 días sin lluvia» en Uribia, donde llovió 19 mm el 7 de noviembre).
-- **Hallazgos 4 y 6–8, 11–15:** sin cambios.
+- **Hallazgos estructurales de evolución futura (7–8, 11–12, 14):** corresponden al paso de archivos JSON a base de datos relacional PostgreSQL (`dim_territorio`, `dim_indicador`, `fct_indicador_municipio`) y a la ampliación de cobertura más allá de los 23 municipios priorizados.
 
 ## Prioridades recomendadas
 

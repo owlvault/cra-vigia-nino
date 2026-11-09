@@ -9,7 +9,7 @@
   },
   "metadata_export": {
     "sistema": "Vigía El Niño · Acueductos (CRA)",
-    "fecha_corte": "2026-11-06",
+    "fecha_corte": "2026-11-09",
     "entidades": 23,
     "formato": "Esri-Ready GeoJSON WGS84 (EPSG:4326)",
     "observaciones": "Generado automáticamente por PipelineCorte de manera atómica"
@@ -20,8 +20,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -72.015,
-          11.713
+          -72.265906,
+          11.711904
         ]
       },
       "properties": {
@@ -30,25 +30,29 @@
         "DEPARTAMENTO": "La Guajira",
         "COD_DEPTO": "44",
         "REGION": "Caribe",
-        "POBLACION": 196000,
-        "ICR": 89.1,
-        "NIVEL_ALERTA": "roja",
-        "SUB_AMENAZA": 94.17,
-        "SUB_VULNERABILIDAD": 89.17,
+        "AREA_HIDROGRAFICA": "Caribe",
+        "ZONA_HIDROGRAFICA": "Caribe - Guajira",
+        "COD_SUBZONA_HIDROGRAFICA": "1507",
+        "SUBZONA_HIDROGRAFICA": "Directos Caribe - Ay.Sharimahana Alta Guajira",
+        "POBLACION": 208712,
+        "ICR": 64.7,
+        "NIVEL_ALERTA": "naranja",
+        "SUB_AMENAZA": 22.65,
+        "SUB_VULNERABILIDAD": 79.44,
         "SUB_SERVICIO": 76.23,
         "SUB_RESPUESTA": 100.0,
         "S1_CONTINUIDAD_H": 4.5,
         "S2_IRCA_PTS": 1.8,
-        "A3_DEFICIT_LLUVIA_PCT": -88.5,
-        "A4_DIAS_SECOS": 48,
+        "A3_DEFICIT_LLUVIA_PCT": -25.3,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 15.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 4.0,
         "R1_PLAN_EMERGENCIA": 0,
         "R2_ABASTECIMIENTO_ALTERNO": 1,
         "R3_RACIONAMIENTO": 1,
         "R4_CALAMIDAD": 1,
-        "FECHA_CORTE": "2026-11-06"
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -56,8 +60,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -72.241,
-          11.378
+          -72.242738,
+          11.378535
         ]
       },
       "properties": {
@@ -66,25 +70,29 @@
         "DEPARTAMENTO": "La Guajira",
         "COD_DEPTO": "44",
         "REGION": "Caribe",
-        "POBLACION": 182000,
-        "ICR": 85.0,
-        "NIVEL_ALERTA": "roja",
-        "SUB_AMENAZA": 85.28,
-        "SUB_VULNERABILIDAD": 85.0,
+        "AREA_HIDROGRAFICA": "Caribe",
+        "ZONA_HIDROGRAFICA": "Caribe - Guajira",
+        "COD_SUBZONA_HIDROGRAFICA": "1508",
+        "SUBZONA_HIDROGRAFICA": "Río Carraipia - Paraguachon, Directos al Golfo Maracaibo",
+        "POBLACION": 218184,
+        "ICR": 56.9,
+        "NIVEL_ALERTA": "amarilla",
+        "SUB_AMENAZA": 0.0,
+        "SUB_VULNERABILIDAD": 76.67,
         "SUB_SERVICIO": 75.7,
         "SUB_RESPUESTA": 100.0,
         "S1_CONTINUIDAD_H": 7.0,
         "S2_IRCA_PTS": 8.1,
-        "A3_DEFICIT_LLUVIA_PCT": -76.0,
-        "A4_DIAS_SECOS": 39,
+        "A3_DEFICIT_LLUVIA_PCT": 0.8,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 22.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 6.0,
         "R1_PLAN_EMERGENCIA": 0,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
-        "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
+        "R4_CALAMIDAD": null,
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -92,8 +100,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -72.907,
-          11.544
+          -72.911795,
+          11.528588
         ]
       },
       "properties": {
@@ -102,25 +110,29 @@
         "DEPARTAMENTO": "La Guajira",
         "COD_DEPTO": "44",
         "REGION": "Caribe",
-        "POBLACION": 210000,
-        "ICR": 63.5,
-        "NIVEL_ALERTA": "naranja",
-        "SUB_AMENAZA": 79.17,
-        "SUB_VULNERABILIDAD": 74.44,
+        "AREA_HIDROGRAFICA": "Caribe",
+        "ZONA_HIDROGRAFICA": "Caribe - Guajira",
+        "COD_SUBZONA_HIDROGRAFICA": "1506",
+        "SUBZONA_HIDROGRAFICA": "Río Ranchería",
+        "POBLACION": 211811,
+        "ICR": 41.2,
+        "NIVEL_ALERTA": "amarilla",
+        "SUB_AMENAZA": 0.9,
+        "SUB_VULNERABILIDAD": 78.33,
         "SUB_SERVICIO": 69.77,
         "SUB_RESPUESTA": 0.0,
         "S1_CONTINUIDAD_H": 9.5,
         "S2_IRCA_PTS": 10.2,
-        "A3_DEFICIT_LLUVIA_PCT": -68.0,
-        "A4_DIAS_SECOS": 34,
+        "A3_DEFICIT_LLUVIA_PCT": -0.9,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 28.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 8.0,
         "R1_PLAN_EMERGENCIA": 1,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
-        "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
+        "R4_CALAMIDAD": null,
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -128,8 +140,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -72.444,
-          11.775
+          -72.438739,
+          11.773767
         ]
       },
       "properties": {
@@ -138,25 +150,29 @@
         "DEPARTAMENTO": "La Guajira",
         "COD_DEPTO": "44",
         "REGION": "Caribe",
-        "POBLACION": 125000,
-        "ICR": 86.7,
+        "AREA_HIDROGRAFICA": "Caribe",
+        "ZONA_HIDROGRAFICA": "Caribe - Guajira",
+        "COD_SUBZONA_HIDROGRAFICA": "1507",
+        "SUBZONA_HIDROGRAFICA": "Directos Caribe - Ay.Sharimahana Alta Guajira",
+        "POBLACION": 98481,
+        "ICR": 81.2,
         "NIVEL_ALERTA": "roja",
-        "SUB_AMENAZA": 90.0,
-        "SUB_VULNERABILIDAD": 89.17,
+        "SUB_AMENAZA": null,
+        "SUB_VULNERABILIDAD": 79.44,
         "SUB_SERVICIO": 71.91,
         "SUB_RESPUESTA": 100.0,
         "S1_CONTINUIDAD_H": 5.0,
         "S2_IRCA_PTS": 0.7,
-        "A3_DEFICIT_LLUVIA_PCT": -82.0,
-        "A4_DIAS_SECOS": 44,
+        "A3_DEFICIT_LLUVIA_PCT": null,
+        "A4_DIAS_SECOS": null,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 18.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 4.0,
         "R1_PLAN_EMERGENCIA": 0,
         "R2_ABASTECIMIENTO_ALTERNO": 1,
         "R3_RACIONAMIENTO": 1,
         "R4_CALAMIDAD": 1,
-        "FECHA_CORTE": "2026-11-06"
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -164,8 +180,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.199,
-          11.24
+          -74.199829,
+          11.204679
         ]
       },
       "properties": {
@@ -174,25 +190,29 @@
         "DEPARTAMENTO": "Magdalena",
         "COD_DEPTO": "47",
         "REGION": "Caribe",
-        "POBLACION": 540000,
-        "ICR": 56.0,
-        "NIVEL_ALERTA": "amarilla",
-        "SUB_AMENAZA": 69.5,
-        "SUB_VULNERABILIDAD": 66.11,
+        "AREA_HIDROGRAFICA": "Caribe",
+        "ZONA_HIDROGRAFICA": "Caribe - Guajira",
+        "COD_SUBZONA_HIDROGRAFICA": "1501",
+        "SUBZONA_HIDROGRAFICA": "Río  Piedras - Río Manzanares",
+        "POBLACION": 588662,
+        "ICR": 35.3,
+        "NIVEL_ALERTA": "sin_alerta",
+        "SUB_AMENAZA": 0.0,
+        "SUB_VULNERABILIDAD": 66.67,
         "SUB_SERVICIO": 61.28,
         "SUB_RESPUESTA": 0.0,
         "S1_CONTINUIDAD_H": 11.0,
         "S2_IRCA_PTS": 2.1,
-        "A3_DEFICIT_LLUVIA_PCT": -54.0,
-        "A4_DIAS_SECOS": 26,
+        "A3_DEFICIT_LLUVIA_PCT": 17.0,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 38.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 8.0,
         "R1_PLAN_EMERGENCIA": 1,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
-        "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
+        "R4_CALAMIDAD": null,
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -200,8 +220,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.782,
-          9.79
+          -74.784549,
+          9.796713
         ]
       },
       "properties": {
@@ -210,25 +230,29 @@
         "DEPARTAMENTO": "Magdalena",
         "COD_DEPTO": "47",
         "REGION": "Caribe",
-        "POBLACION": 65000,
-        "ICR": 73.6,
-        "NIVEL_ALERTA": "naranja",
-        "SUB_AMENAZA": 75.33,
-        "SUB_VULNERABILIDAD": 60.0,
+        "AREA_HIDROGRAFICA": "Magdalena Cauca",
+        "ZONA_HIDROGRAFICA": "Bajo Magdalena",
+        "COD_SUBZONA_HIDROGRAFICA": "2907",
+        "SUBZONA_HIDROGRAFICA": "Directos Bajo Magdalena entre El Banco y El Plato",
+        "POBLACION": 75598,
+        "ICR": 53.5,
+        "NIVEL_ALERTA": "amarilla",
+        "SUB_AMENAZA": 0.0,
+        "SUB_VULNERABILIDAD": 68.33,
         "SUB_SERVICIO": 71.95,
         "SUB_RESPUESTA": 100.0,
         "S1_CONTINUIDAD_H": 8.0,
         "S2_IRCA_PTS": 6.5,
-        "A3_DEFICIT_LLUVIA_PCT": -62.0,
-        "A4_DIAS_SECOS": 31,
+        "A3_DEFICIT_LLUVIA_PCT": null,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 32.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 6.0,
         "R1_PLAN_EMERGENCIA": 0,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
-        "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
+        "R4_CALAMIDAD": null,
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -236,8 +260,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -75.121,
-          9.717
+          -75.121178,
+          9.718653
         ]
       },
       "properties": {
@@ -246,25 +270,29 @@
         "DEPARTAMENTO": "Bolívar",
         "COD_DEPTO": "13",
         "REGION": "Caribe",
-        "POBLACION": 78000,
-        "ICR": 75.9,
-        "NIVEL_ALERTA": "roja",
-        "SUB_AMENAZA": 76.94,
-        "SUB_VULNERABILIDAD": 68.33,
+        "AREA_HIDROGRAFICA": "Magdalena Cauca",
+        "ZONA_HIDROGRAFICA": "Bajo Magdalena",
+        "COD_SUBZONA_HIDROGRAFICA": "2901",
+        "SUBZONA_HIDROGRAFICA": "Directos al Bajo Magdalena entre El Plato y Calamar (MI)",
+        "POBLACION": 77564,
+        "ICR": 64.3,
+        "NIVEL_ALERTA": "naranja",
+        "SUB_AMENAZA": 26.6,
+        "SUB_VULNERABILIDAD": 80.0,
         "SUB_SERVICIO": 69.1,
         "SUB_RESPUESTA": 100.0,
         "S1_CONTINUIDAD_H": 6.5,
         "S2_IRCA_PTS": 0.0,
-        "A3_DEFICIT_LLUVIA_PCT": -64.0,
-        "A4_DIAS_SECOS": 33,
+        "A3_DEFICIT_LLUVIA_PCT": -33.2,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 30.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 6.0,
         "R1_PLAN_EMERGENCIA": 0,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
-        "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
+        "R4_CALAMIDAD": null,
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -272,8 +300,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.755,
-          9.242
+          -74.766742,
+          9.263799
         ]
       },
       "properties": {
@@ -282,25 +310,29 @@
         "DEPARTAMENTO": "Bolívar",
         "COD_DEPTO": "13",
         "REGION": "Caribe",
-        "POBLACION": 138000,
-        "ICR": 48.4,
-        "NIVEL_ALERTA": "amarilla",
-        "SUB_AMENAZA": 65.0,
-        "SUB_VULNERABILIDAD": 47.22,
+        "AREA_HIDROGRAFICA": "Magdalena Cauca",
+        "ZONA_HIDROGRAFICA": "Bajo Magdalena- Cauca -San Jorge",
+        "COD_SUBZONA_HIDROGRAFICA": "2502",
+        "SUBZONA_HIDROGRAFICA": "Bajo San Jorge - La Mojana",
+        "POBLACION": 152489,
+        "ICR": 32.8,
+        "NIVEL_ALERTA": "sin_alerta",
+        "SUB_AMENAZA": 3.7,
+        "SUB_VULNERABILIDAD": 56.67,
         "SUB_SERVICIO": 58.9,
         "SUB_RESPUESTA": 0.0,
         "S1_CONTINUIDAD_H": 13.0,
         "S2_IRCA_PTS": 3.0,
-        "A3_DEFICIT_LLUVIA_PCT": -48.0,
-        "A4_DIAS_SECOS": 22,
+        "A3_DEFICIT_LLUVIA_PCT": -3.7,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 42.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 10.0,
         "R1_PLAN_EMERGENCIA": 1,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
         "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -308,8 +340,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -75.479,
-          10.391
+          -75.496269,
+          10.385126
         ]
       },
       "properties": {
@@ -318,25 +350,29 @@
         "DEPARTAMENTO": "Bolívar",
         "COD_DEPTO": "13",
         "REGION": "Caribe",
-        "POBLACION": 1040000,
-        "ICR": 34.9,
-        "NIVEL_ALERTA": "sin_alerta",
-        "SUB_AMENAZA": 54.17,
-        "SUB_VULNERABILIDAD": 38.33,
+        "AREA_HIDROGRAFICA": "Caribe",
+        "ZONA_HIDROGRAFICA": "Caribe - Litoral",
+        "COD_SUBZONA_HIDROGRAFICA": "1206",
+        "SUBZONA_HIDROGRAFICA": "Arroyos Directos al Caribe",
+        "POBLACION": 1010995,
+        "ICR": 40.0,
+        "NIVEL_ALERTA": "amarilla",
+        "SUB_AMENAZA": 37.91,
+        "SUB_VULNERABILIDAD": 71.67,
         "SUB_SERVICIO": 28.64,
         "SUB_RESPUESTA": 0.0,
         "S1_CONTINUIDAD_H": 22.5,
         "S2_IRCA_PTS": 2.9,
-        "A3_DEFICIT_LLUVIA_PCT": -42.0,
-        "A4_DIAS_SECOS": 18,
+        "A3_DEFICIT_LLUVIA_PCT": -61.0,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 65.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 18.0,
         "R1_PLAN_EMERGENCIA": 1,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
-        "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
+        "R4_CALAMIDAD": null,
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -344,8 +380,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.253,
-          10.463
+          -73.259398,
+          10.460472
         ]
       },
       "properties": {
@@ -354,25 +390,29 @@
         "DEPARTAMENTO": "Cesar",
         "COD_DEPTO": "20",
         "REGION": "Caribe",
-        "POBLACION": 510000,
-        "ICR": 51.5,
+        "AREA_HIDROGRAFICA": "Magdalena Cauca",
+        "ZONA_HIDROGRAFICA": "Cesar",
+        "COD_SUBZONA_HIDROGRAFICA": "2801",
+        "SUBZONA_HIDROGRAFICA": "Alto Cesar",
+        "POBLACION": 629217,
+        "ICR": 45.0,
         "NIVEL_ALERTA": "amarilla",
-        "SUB_AMENAZA": 64.0,
-        "SUB_VULNERABILIDAD": 61.67,
+        "SUB_AMENAZA": 28.8,
+        "SUB_VULNERABILIDAD": 75.0,
         "SUB_SERVICIO": 55.24,
         "SUB_RESPUESTA": 0.0,
         "S1_CONTINUIDAD_H": 14.0,
         "S2_IRCA_PTS": 2.4,
-        "A3_DEFICIT_LLUVIA_PCT": -46.0,
-        "A4_DIAS_SECOS": 24,
+        "A3_DEFICIT_LLUVIA_PCT": -33.6,
+        "A4_DIAS_SECOS": 1.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 48.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 12.0,
         "R1_PLAN_EMERGENCIA": 1,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
-        "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
+        "R4_CALAMIDAD": null,
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -380,8 +420,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.618,
-          8.307
+          -73.614027,
+          8.306811
         ]
       },
       "properties": {
@@ -390,25 +430,29 @@
         "DEPARTAMENTO": "Cesar",
         "COD_DEPTO": "20",
         "REGION": "Caribe",
-        "POBLACION": 112000,
-        "ICR": 70.3,
-        "NIVEL_ALERTA": "naranja",
-        "SUB_AMENAZA": 72.75,
-        "SUB_VULNERABILIDAD": 57.78,
+        "AREA_HIDROGRAFICA": "Magdalena Cauca",
+        "ZONA_HIDROGRAFICA": "Medio Magdalena",
+        "COD_SUBZONA_HIDROGRAFICA": "2321",
+        "SUBZONA_HIDROGRAFICA": "Quebrada El Carmen y Otros Directos al Magdalena",
+        "POBLACION": 137624,
+        "ICR": 55.2,
+        "NIVEL_ALERTA": "amarilla",
+        "SUB_AMENAZA": 30.27,
+        "SUB_VULNERABILIDAD": 50.0,
         "SUB_SERVICIO": 64.61,
         "SUB_RESPUESTA": 100.0,
         "S1_CONTINUIDAD_H": 9.0,
         "S2_IRCA_PTS": 1.7,
-        "A3_DEFICIT_LLUVIA_PCT": -58.0,
-        "A4_DIAS_SECOS": 29,
+        "A3_DEFICIT_LLUVIA_PCT": -40.7,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 35.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 8.0,
         "R1_PLAN_EMERGENCIA": 0,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
-        "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
+        "R4_CALAMIDAD": null,
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -416,8 +460,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.224,
-          6.635
+          -73.223047,
+          6.634111
         ]
       },
       "properties": {
@@ -426,25 +470,29 @@
         "DEPARTAMENTO": "Santander",
         "COD_DEPTO": "68",
         "REGION": "Andina",
-        "POBLACION": 12000,
-        "ICR": 64.7,
-        "NIVEL_ALERTA": "naranja",
-        "SUB_AMENAZA": 80.28,
-        "SUB_VULNERABILIDAD": 74.44,
+        "AREA_HIDROGRAFICA": "Magdalena Cauca",
+        "ZONA_HIDROGRAFICA": "Sogamoso",
+        "COD_SUBZONA_HIDROGRAFICA": "2401",
+        "SUBZONA_HIDROGRAFICA": "Río Suárez",
+        "POBLACION": 13156,
+        "ICR": 30.8,
+        "NIVEL_ALERTA": "sin_alerta",
+        "SUB_AMENAZA": 0.0,
+        "SUB_VULNERABILIDAD": 41.67,
         "SUB_SERVICIO": 73.16,
         "SUB_RESPUESTA": 0.0,
         "S1_CONTINUIDAD_H": 6.0,
         "S2_IRCA_PTS": 23.2,
-        "A3_DEFICIT_LLUVIA_PCT": -65.0,
-        "A4_DIAS_SECOS": 35,
+        "A3_DEFICIT_LLUVIA_PCT": 92.6,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 24.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 8.0,
         "R1_PLAN_EMERGENCIA": 1,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
-        "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
+        "R4_CALAMIDAD": null,
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -452,8 +500,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.133,
-          6.556
+          -73.134776,
+          6.551952
         ]
       },
       "properties": {
@@ -462,25 +510,29 @@
         "DEPARTAMENTO": "Santander",
         "COD_DEPTO": "68",
         "REGION": "Andina",
-        "POBLACION": 58000,
-        "ICR": 47.2,
-        "NIVEL_ALERTA": "amarilla",
-        "SUB_AMENAZA": 68.0,
-        "SUB_VULNERABILIDAD": 51.11,
+        "AREA_HIDROGRAFICA": "Magdalena Cauca",
+        "ZONA_HIDROGRAFICA": "Sogamoso",
+        "COD_SUBZONA_HIDROGRAFICA": "2402",
+        "SUBZONA_HIDROGRAFICA": "Río Fonce",
+        "POBLACION": 71064,
+        "ICR": 22.6,
+        "NIVEL_ALERTA": "sin_alerta",
+        "SUB_AMENAZA": 0.0,
+        "SUB_VULNERABILIDAD": 37.22,
         "SUB_SERVICIO": 45.88,
         "SUB_RESPUESTA": 0.0,
         "S1_CONTINUIDAD_H": 16.0,
         "S2_IRCA_PTS": 0.8,
-        "A3_DEFICIT_LLUVIA_PCT": -52.0,
-        "A4_DIAS_SECOS": 25,
+        "A3_DEFICIT_LLUVIA_PCT": 102.7,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 40.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 14.0,
         "R1_PLAN_EMERGENCIA": 1,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
         "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -488,8 +540,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.119,
-          7.125
+          -73.132562,
+          7.11647
         ]
       },
       "properties": {
@@ -498,25 +550,29 @@
         "DEPARTAMENTO": "Santander",
         "COD_DEPTO": "68",
         "REGION": "Andina",
-        "POBLACION": 615000,
-        "ICR": 28.1,
+        "AREA_HIDROGRAFICA": "Magdalena Cauca",
+        "ZONA_HIDROGRAFICA": "Medio Magdalena",
+        "COD_SUBZONA_HIDROGRAFICA": "2319",
+        "SUBZONA_HIDROGRAFICA": "Río Lebrija y otros directos al Magdalena",
+        "POBLACION": 618548,
+        "ICR": 18.0,
         "NIVEL_ALERTA": "sin_alerta",
-        "SUB_AMENAZA": 50.0,
-        "SUB_VULNERABILIDAD": 34.44,
+        "SUB_AMENAZA": 0.0,
+        "SUB_VULNERABILIDAD": 50.56,
         "SUB_SERVICIO": 11.2,
         "SUB_RESPUESTA": 0.0,
         "S1_CONTINUIDAD_H": 23.8,
         "S2_IRCA_PTS": 1.5,
-        "A3_DEFICIT_LLUVIA_PCT": -34.0,
-        "A4_DIAS_SECOS": 14,
+        "A3_DEFICIT_LLUVIA_PCT": 40.2,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 62.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 20.0,
         "R1_PLAN_EMERGENCIA": 1,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
-        "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
+        "R4_CALAMIDAD": null,
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -524,8 +580,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.072,
-          4.711
+          -74.106992,
+          4.649251
         ]
       },
       "properties": {
@@ -534,25 +590,29 @@
         "DEPARTAMENTO": "Bogotá, D.C.",
         "COD_DEPTO": "11",
         "REGION": "Andina",
-        "POBLACION": 7900000,
-        "ICR": 40.6,
-        "NIVEL_ALERTA": "amarilla",
-        "SUB_AMENAZA": 57.67,
-        "SUB_VULNERABILIDAD": 51.67,
+        "AREA_HIDROGRAFICA": "Magdalena Cauca",
+        "ZONA_HIDROGRAFICA": "Alto Magdalena",
+        "COD_SUBZONA_HIDROGRAFICA": "2120",
+        "SUBZONA_HIDROGRAFICA": "Río Bogotá",
+        "POBLACION": 7945996,
+        "ICR": 37.0,
+        "NIVEL_ALERTA": "sin_alerta",
+        "SUB_AMENAZA": 29.1,
+        "SUB_VULNERABILIDAD": 68.33,
         "SUB_SERVICIO": 31.16,
         "SUB_RESPUESTA": 0.0,
         "S1_CONTINUIDAD_H": 21.0,
         "S2_IRCA_PTS": 1.1,
-        "A3_DEFICIT_LLUVIA_PCT": -38.0,
-        "A4_DIAS_SECOS": 16,
+        "A3_DEFICIT_LLUVIA_PCT": -34.2,
+        "A4_DIAS_SECOS": 1.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 46.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 24.0,
         "R1_PLAN_EMERGENCIA": 1,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
         "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -560,8 +620,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.802,
-          4.303
+          -74.798201,
+          4.313069
         ]
       },
       "properties": {
@@ -570,25 +630,29 @@
         "DEPARTAMENTO": "Cundinamarca",
         "COD_DEPTO": "25",
         "REGION": "Andina",
-        "POBLACION": 120000,
-        "ICR": 53.2,
+        "AREA_HIDROGRAFICA": "Magdalena Cauca",
+        "ZONA_HIDROGRAFICA": "Alto Magdalena",
+        "COD_SUBZONA_HIDROGRAFICA": "2120",
+        "SUBZONA_HIDROGRAFICA": "Río Bogotá",
+        "POBLACION": 104326,
+        "ICR": 48.9,
         "NIVEL_ALERTA": "amarilla",
-        "SUB_AMENAZA": 69.0,
-        "SUB_VULNERABILIDAD": 61.67,
+        "SUB_AMENAZA": 41.46,
+        "SUB_VULNERABILIDAD": 75.0,
         "SUB_SERVICIO": 55.87,
         "SUB_RESPUESTA": 0.0,
         "S1_CONTINUIDAD_H": 13.5,
         "S2_IRCA_PTS": 1.7,
-        "A3_DEFICIT_LLUVIA_PCT": -55.0,
-        "A4_DIAS_SECOS": 28,
+        "A3_DEFICIT_LLUVIA_PCT": -69.5,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 45.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 12.0,
         "R1_PLAN_EMERGENCIA": 1,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
-        "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
+        "R4_CALAMIDAD": null,
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -596,8 +660,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.027,
-          4.918
+          -74.02298,
+          4.920009
         ]
       },
       "properties": {
@@ -606,25 +670,29 @@
         "DEPARTAMENTO": "Cundinamarca",
         "COD_DEPTO": "25",
         "REGION": "Andina",
-        "POBLACION": 85000,
-        "ICR": 32.8,
+        "AREA_HIDROGRAFICA": "Magdalena Cauca",
+        "ZONA_HIDROGRAFICA": "Alto Magdalena",
+        "COD_SUBZONA_HIDROGRAFICA": "2120",
+        "SUBZONA_HIDROGRAFICA": "Río Bogotá",
+        "POBLACION": 126436,
+        "ICR": 36.5,
         "NIVEL_ALERTA": "sin_alerta",
-        "SUB_AMENAZA": 50.33,
-        "SUB_VULNERABILIDAD": 40.56,
+        "SUB_AMENAZA": 30.34,
+        "SUB_VULNERABILIDAD": 72.78,
         "SUB_SERVICIO": 22.29,
         "SUB_RESPUESTA": 0.0,
         "S1_CONTINUIDAD_H": 23.5,
         "S2_IRCA_PTS": 5.3,
-        "A3_DEFICIT_LLUVIA_PCT": -32.0,
-        "A4_DIAS_SECOS": 12,
+        "A3_DEFICIT_LLUVIA_PCT": -40.9,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 55.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 16.0,
         "R1_PLAN_EMERGENCIA": 1,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
-        "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
+        "R4_CALAMIDAD": null,
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -632,8 +700,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -75.232,
-          4.438
+          -75.19425,
+          4.432248
         ]
       },
       "properties": {
@@ -642,25 +710,29 @@
         "DEPARTAMENTO": "Tolima",
         "COD_DEPTO": "73",
         "REGION": "Andina",
-        "POBLACION": 540000,
-        "ICR": 45.5,
-        "NIVEL_ALERTA": "amarilla",
-        "SUB_AMENAZA": 61.08,
-        "SUB_VULNERABILIDAD": 42.78,
+        "AREA_HIDROGRAFICA": "Magdalena Cauca",
+        "ZONA_HIDROGRAFICA": "Alto Magdalena",
+        "COD_SUBZONA_HIDROGRAFICA": "2124",
+        "SUBZONA_HIDROGRAFICA": "Río Totare",
+        "POBLACION": 557317,
+        "ICR": 38.5,
+        "NIVEL_ALERTA": "sin_alerta",
+        "SUB_AMENAZA": 10.2,
+        "SUB_VULNERABILIDAD": 70.56,
         "SUB_SERVICIO": 57.28,
         "SUB_RESPUESTA": 0.0,
         "S1_CONTINUIDAD_H": 17.5,
         "S2_IRCA_PTS": 28.2,
-        "A3_DEFICIT_LLUVIA_PCT": -45.0,
-        "A4_DIAS_SECOS": 21,
+        "A3_DEFICIT_LLUVIA_PCT": -10.2,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 52.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 14.0,
         "R1_PLAN_EMERGENCIA": 1,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
         "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -668,8 +740,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.884,
-          4.149
+          -74.885446,
+          4.151314
         ]
       },
       "properties": {
@@ -678,25 +750,29 @@
         "DEPARTAMENTO": "Tolima",
         "COD_DEPTO": "73",
         "REGION": "Andina",
-        "POBLACION": 74000,
-        "ICR": 70.4,
+        "AREA_HIDROGRAFICA": "Magdalena Cauca",
+        "ZONA_HIDROGRAFICA": "Alto Magdalena",
+        "COD_SUBZONA_HIDROGRAFICA": "2118",
+        "SUBZONA_HIDROGRAFICA": "Río Luisa y otros directos al Magdalena",
+        "POBLACION": 71952,
+        "ICR": 62.3,
         "NIVEL_ALERTA": "naranja",
-        "SUB_AMENAZA": 71.0,
-        "SUB_VULNERABILIDAD": 63.89,
+        "SUB_AMENAZA": 31.23,
+        "SUB_VULNERABILIDAD": 76.67,
         "SUB_SERVICIO": 59.7,
         "SUB_RESPUESTA": 100.0,
         "S1_CONTINUIDAD_H": 10.0,
         "S2_IRCA_PTS": 0.0,
-        "A3_DEFICIT_LLUVIA_PCT": -56.0,
-        "A4_DIAS_SECOS": 27,
+        "A3_DEFICIT_LLUVIA_PCT": -43.3,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 36.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 10.0,
         "R1_PLAN_EMERGENCIA": 0,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
-        "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
+        "R4_CALAMIDAD": null,
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -704,8 +780,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -75.281,
-          2.927
+          -75.277327,
+          2.935432
         ]
       },
       "properties": {
@@ -714,25 +790,29 @@
         "DEPARTAMENTO": "Huila",
         "COD_DEPTO": "41",
         "REGION": "Andina",
-        "POBLACION": 365000,
-        "ICR": 48.1,
+        "AREA_HIDROGRAFICA": "Magdalena Cauca",
+        "ZONA_HIDROGRAFICA": "Alto Magdalena",
+        "COD_SUBZONA_HIDROGRAFICA": "2111",
+        "SUBZONA_HIDROGRAFICA": "Rio Fortalecillas y otros",
+        "POBLACION": 408218,
+        "ICR": 42.5,
         "NIVEL_ALERTA": "amarilla",
-        "SUB_AMENAZA": 65.75,
-        "SUB_VULNERABILIDAD": 53.33,
+        "SUB_AMENAZA": 28.8,
+        "SUB_VULNERABILIDAD": 71.67,
         "SUB_SERVICIO": 49.48,
         "SUB_RESPUESTA": 0.0,
         "S1_CONTINUIDAD_H": 15.0,
         "S2_IRCA_PTS": 0.8,
-        "A3_DEFICIT_LLUVIA_PCT": -51.0,
-        "A4_DIAS_SECOS": 23,
+        "A3_DEFICIT_LLUVIA_PCT": -37.6,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 44.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 12.0,
         "R1_PLAN_EMERGENCIA": 1,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
-        "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
+        "R4_CALAMIDAD": null,
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -740,8 +820,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.23,
-          5.694
+          -73.230285,
+          5.689082
         ]
       },
       "properties": {
@@ -750,25 +830,29 @@
         "DEPARTAMENTO": "Boyacá",
         "COD_DEPTO": "15",
         "REGION": "Andina",
-        "POBLACION": 10500,
-        "ICR": 65.6,
-        "NIVEL_ALERTA": "naranja",
-        "SUB_AMENAZA": 63.0,
-        "SUB_VULNERABILIDAD": 55.56,
+        "AREA_HIDROGRAFICA": "Magdalena Cauca",
+        "ZONA_HIDROGRAFICA": "Sogamoso",
+        "COD_SUBZONA_HIDROGRAFICA": "2403",
+        "SUBZONA_HIDROGRAFICA": "Río Chicamocha",
+        "POBLACION": 8196,
+        "ICR": 53.6,
+        "NIVEL_ALERTA": "amarilla",
+        "SUB_AMENAZA": 21.9,
+        "SUB_VULNERABILIDAD": 56.67,
         "SUB_SERVICIO": 60.03,
         "SUB_RESPUESTA": 100.0,
         "S1_CONTINUIDAD_H": 11.5,
         "S2_IRCA_PTS": 2.2,
-        "A3_DEFICIT_LLUVIA_PCT": -46.0,
-        "A4_DIAS_SECOS": 22,
+        "A3_DEFICIT_LLUVIA_PCT": -23.8,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 48.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 10.0,
         "R1_PLAN_EMERGENCIA": 0,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
-        "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
+        "R4_CALAMIDAD": null,
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -776,8 +860,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -75.581,
-          6.244
+          -75.581775,
+          6.246631
         ]
       },
       "properties": {
@@ -786,25 +870,29 @@
         "DEPARTAMENTO": "Antioquia",
         "COD_DEPTO": "05",
         "REGION": "Andina",
-        "POBLACION": 2550000,
-        "ICR": 22.9,
+        "AREA_HIDROGRAFICA": "Magdalena Cauca",
+        "ZONA_HIDROGRAFICA": "Nechí",
+        "COD_SUBZONA_HIDROGRAFICA": "2701",
+        "SUBZONA_HIDROGRAFICA": "Río Porce",
+        "POBLACION": 2526795,
+        "ICR": 22.0,
         "NIVEL_ALERTA": "sin_alerta",
-        "SUB_AMENAZA": 42.0,
-        "SUB_VULNERABILIDAD": 26.11,
+        "SUB_AMENAZA": 6.5,
+        "SUB_VULNERABILIDAD": 58.89,
         "SUB_SERVICIO": 9.68,
         "SUB_RESPUESTA": 0.0,
         "S1_CONTINUIDAD_H": 23.9,
         "S2_IRCA_PTS": 0.7,
-        "A3_DEFICIT_LLUVIA_PCT": -28.0,
-        "A4_DIAS_SECOS": 9,
+        "A3_DEFICIT_LLUVIA_PCT": -6.5,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 68.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 20.0,
         "R1_PLAN_EMERGENCIA": 1,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
-        "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
+        "R4_CALAMIDAD": null,
+        "FECHA_CORTE": "2026-11-09"
       }
     },
     {
@@ -812,8 +900,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -76.532,
-          3.451
+          -76.52133,
+          3.413686
         ]
       },
       "properties": {
@@ -822,25 +910,29 @@
         "DEPARTAMENTO": "Valle del Cauca",
         "COD_DEPTO": "76",
         "REGION": "Pacífica",
-        "POBLACION": 2280000,
-        "ICR": 29.4,
+        "AREA_HIDROGRAFICA": "Magdalena Cauca",
+        "ZONA_HIDROGRAFICA": "Cauca",
+        "COD_SUBZONA_HIDROGRAFICA": "2630",
+        "SUBZONA_HIDROGRAFICA": "Ríos Lilí, Melendez y Canaveralejo",
+        "POBLACION": 2269983,
+        "ICR": 25.1,
         "NIVEL_ALERTA": "sin_alerta",
-        "SUB_AMENAZA": 47.67,
-        "SUB_VULNERABILIDAD": 38.33,
+        "SUB_AMENAZA": 0.0,
+        "SUB_VULNERABILIDAD": 71.67,
         "SUB_SERVICIO": 14.48,
         "SUB_RESPUESTA": 0.0,
         "S1_CONTINUIDAD_H": 23.7,
         "S2_IRCA_PTS": 0.1,
-        "A3_DEFICIT_LLUVIA_PCT": -31.0,
-        "A4_DIAS_SECOS": 11,
+        "A3_DEFICIT_LLUVIA_PCT": 117.0,
+        "A4_DIAS_SECOS": 0.0,
         "A5_FOCOS_CALOR_7D": null,
-        "H1_CAUDAL_PCT": 60.0,
+        "H1_CAUDAL_PCT": null,
         "H4_AUTONOMIA_H": 18.0,
         "R1_PLAN_EMERGENCIA": 1,
-        "R2_ABASTECIMIENTO_ALTERNO": 0,
-        "R3_RACIONAMIENTO": 0,
-        "R4_CALAMIDAD": 0,
-        "FECHA_CORTE": "2026-11-06"
+        "R2_ABASTECIMIENTO_ALTERNO": null,
+        "R3_RACIONAMIENTO": null,
+        "R4_CALAMIDAD": null,
+        "FECHA_CORTE": "2026-11-09"
       }
     }
   ]

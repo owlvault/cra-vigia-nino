@@ -51,60 +51,6 @@ class ConectorSUI(ConectorBase):
         return {}
 
     @staticmethod
-    def normalizar_s1_continuidad(cont: float) -> float:
-        """S-1 Continuidad (h/día): 24->0, 22->40, 18->60, 12->75, 4->100."""
-        if cont >= 24.0: return 0.0
-        elif cont >= 22.0: return round(((24.0 - cont) / 2.0) * 40.0, 2)
-        elif cont >= 18.0: return round(40.0 + ((22.0 - cont) / 4.0) * 20.0, 2)
-        elif cont >= 12.0: return round(60.0 + ((18.0 - cont) / 6.0) * 15.0, 2)
-        elif cont >= 4.0: return round(75.0 + ((12.0 - cont) / 8.0) * 25.0, 2)
-        else: return 100.0
-
-    @staticmethod
-    def normalizar_s3_cobertura(cob: float) -> float:
-        """S-3 Cobertura (%): 100->0, 95->40, 85->60, 70->75, 40->100."""
-        if cob >= 100.0: return 0.0
-        elif cob >= 95.0: return round(((100.0 - cob) / 5.0) * 40.0, 2)
-        elif cob >= 85.0: return round(40.0 + ((95.0 - cob) / 10.0) * 20.0, 2)
-        elif cob >= 70.0: return round(60.0 + ((85.0 - cob) / 15.0) * 15.0, 2)
-        elif cob >= 40.0: return round(75.0 + ((70.0 - cob) / 30.0) * 25.0, 2)
-        else: return 100.0
-
-    @staticmethod
-    def normalizar_s4_ianc(ianc: float) -> float:
-        """S-4 IANC (%): 20->0, 30->40, 40->60, 50->75, 70->100."""
-        if ianc <= 20.0: return 0.0
-        elif ianc <= 30.0: return round(((ianc - 20.0) / 10.0) * 40.0, 2)
-        elif ianc <= 40.0: return round(40.0 + ((ianc - 30.0) / 10.0) * 20.0, 2)
-        elif ianc <= 50.0: return round(60.0 + ((ianc - 40.0) / 10.0) * 15.0, 2)
-        elif ianc <= 70.0: return round(75.0 + ((ianc - 50.0) / 20.0) * 25.0, 2)
-        else: return 100.0
-
-    @staticmethod
-    def normalizar_s5_pqr(pqr: float) -> float:
-        """S-5 Variación PQR: 0->0, 25->40, 50->60, 100->75, 300->100."""
-        if pqr <= 0: return 0.0
-        elif pqr <= 25.0: return round((pqr / 25.0) * 40.0, 2)
-        elif pqr <= 50.0: return round(40.0 + ((pqr - 25.0) / 25.0) * 20.0, 2)
-        elif pqr <= 100.0: return round(60.0 + ((pqr - 50.0) / 50.0) * 15.0, 2)
-        elif pqr <= 300.0: return round(75.0 + ((pqr - 100.0) / 200.0) * 25.0, 2)
-        else: return 100.0
-
-    @staticmethod
-    def normalizar_h4_autonomia(horas: float) -> float:
-        """
-        H-4 Autonomía de Almacenamiento (horas):
-        Dirección: ↓ (riesgo sube cuando disminuye la autonomía).
-        Puntos: >=24h -> 0; 18h -> 35; 12h -> 55; 6h -> 75; <=2h -> 100.
-        """
-        if horas >= 24.0: return 0.0
-        elif horas >= 18.0: return round(((24.0 - horas) / 6.0) * 35.0, 2)
-        elif horas >= 12.0: return round(35.0 + ((18.0 - horas) / 6.0) * 20.0, 2)
-        elif horas >= 6.0: return round(55.0 + ((12.0 - horas) / 6.0) * 20.0, 2)
-        elif horas >= 2.0: return round(75.0 + ((6.0 - horas) / 4.0) * 25.0, 2)
-        else: return 100.0
-
-    @staticmethod
     def _num(valor: Any) -> Optional[float]:
         if valor is None or valor == "":
             return None
@@ -130,7 +76,8 @@ class ConectorSUI(ConectorBase):
 
         datos_procesados: Dict[str, Any] = {}
         for divipola, m in municipios_raw.items():
-            # Campo ausente en el extracto => None (sin_dato), nunca un valor supuesto
+            # Campo ausente en el extracto => None (sin_dato), nunca un valor supuesto.
+            # La normalización a puntaje [0, 100] la realiza PipelineCorte desde parametros_icr.json (regla de oro 3).
             s1_cont = self._num(m.get("s1_cont"))
             s3_cob = self._num(m.get("s3_cob"))
             s4_ianc = self._num(m.get("s4_ianc"))
@@ -138,13 +85,6 @@ class ConectorSUI(ConectorBase):
             s6_consumo = self._num(m.get("s6_consumo_m3"))
             h4_auton = self._num(m.get("h4_autonomia_h"))
             r1_pec = m.get("r1_pec") if m.get("r1_pec") in (0, 1) else None
-
-            punt_s1 = self.normalizar_s1_continuidad(s1_cont) if s1_cont is not None else None
-            punt_s3 = self.normalizar_s3_cobertura(s3_cob) if s3_cob is not None else None
-            punt_s4 = self.normalizar_s4_ianc(s4_ianc) if s4_ianc is not None else None
-            punt_s5 = self.normalizar_s5_pqr(s5_pqr) if s5_pqr is not None else None
-            punt_h4 = self.normalizar_h4_autonomia(h4_auton) if h4_auton is not None else None
-            punt_r1 = None if r1_pec is None else (0.0 if r1_pec == 1 else 100.0)
 
             datos_procesados[divipola] = {
                 "divipola": divipola,
@@ -157,12 +97,6 @@ class ConectorSUI(ConectorBase):
                 "s6_consumo_m3": s6_consumo,
                 "h4_autonomia_h": h4_auton,
                 "r1_pec": r1_pec,
-                "puntaje_s1": punt_s1,
-                "puntaje_s3": punt_s3,
-                "puntaje_s4": punt_s4,
-                "puntaje_s5": punt_s5,
-                "puntaje_h4": punt_h4,
-                "puntaje_r1": punt_r1,
                 "fecha_dato": fecha_corte
             }
 

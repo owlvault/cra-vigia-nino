@@ -363,18 +363,21 @@ class ModeloSemanal:
                 try:
                     data = self._leer_json(arch)
                     archivos_leidos.append(str(arch.relative_to(self.root)))
-                    f_rep = data.get("fecha_reporte")
-                    if f_rep:
-                        f = date.fromisoformat(str(f_rep)[:10])
+                    diarios = (data.get("crudo") or {}).get("diarios") or []
+                    for fila in diarios:
+                        if len(fila) < 4:
+                            continue
+                        _, dia_str, mm, n_reg = fila[:4]
+                        # Día válido según parametros_ideam.json (80 % a 100 % de 144 registros)
+                        if not (115 <= int(n_reg) <= 144):
+                            continue
+                        f = date.fromisoformat(str(dia_str)[:10])
                         sem = semana_iso(f)
-                        muns = data.get("municipios", {})
-                        if muns:
-                            vals_anom = [m.get("indicador_a3_anomalia_precip_pct") for m in muns.values() if isinstance(m.get("indicador_a3_anomalia_precip_pct"), (int, float))]
-                            vals_mm = [m.get("precipitacion_acumulada_30d_mm") for m in muns.values() if isinstance(m.get("precipitacion_acumulada_30d_mm"), (int, float))]
-                            prom_anom = sum(vals_anom) / len(vals_anom) if vals_anom else 0.0
-                            prom_mm_dia = (sum(vals_mm) / len(vals_mm) / 30.0) if vals_mm else round(max(0.5, 4.0 * (1.0 + prom_anom / 100.0)), 2)
-                            if sem not in por_semana:
-                                por_semana[sem] = {"mm_dia": prom_mm_dia, "var_ref_pct": prom_anom, "ult_fecha": f, "estaciones": len(muns)}
+                        info = por_semana.setdefault(sem, {"suma_mm": 0.0, "estaciones": 0, "ult_fecha": f})
+                        info["suma_mm"] += float(mm)
+                        info["estaciones"] += 1
+                        if f > info["ult_fecha"]:
+                            info["ult_fecha"] = f
                 except Exception:
                     pass
 
@@ -923,6 +926,12 @@ def ejecutar_actualizacion(
         corte = ModeloSemanal(base_dir=base_dir).construir(id_ejecucion=id_ejecucion)
         meta = corte["metadata"]
         paso("Modelo semanal", "exitosa", f"Semana vigente {meta['semana_vigente']}")
+        if modo == "completo":
+            try:
+                from auditoria.auditor_veracidad import AuditorVeracidad
+                AuditorVeracidad(base_dir=base_dir).ejecutar_auditoria_completa()
+            except Exception as e_aud:
+                logger.warning(f"No se pudo actualizar el dictamen de auditoría: {e_aud}")
         paso("Publicación", "exitosa", "Corte semanal publicado en oro y tablero")
         registro.update(estado="parcial" if parcial else "exitoso",
                         hash_entradas=meta["hash_entradas"], semana_publicada=meta["semana_vigente"],

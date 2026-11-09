@@ -41,7 +41,15 @@ def _get_json(url: str, params: Dict[str, str]) -> Any:
     """GET con verificación TLS estricta (architecture.md, política 1)."""
     consulta = f"{url}?{urllib.parse.urlencode(params)}"
     req = urllib.request.Request(consulta, headers={"User-Agent": "VigiaElNino-CRA/1.0"})
-    with urllib.request.urlopen(req, timeout=60, context=ssl.create_default_context()) as r:
+    ctx = ssl.create_default_context()
+    if hasattr(ssl, "enum_certificates"):
+        for cert, encoding, _ in ssl.enum_certificates("CA"):
+            if encoding == "x509_asn":
+                try:
+                    ctx.load_verify_locations(cadata=cert)
+                except ssl.SSLError:
+                    pass
+    with urllib.request.urlopen(req, timeout=60, context=ctx) as r:
         return json.loads(r.read().decode("utf-8"))
 
 

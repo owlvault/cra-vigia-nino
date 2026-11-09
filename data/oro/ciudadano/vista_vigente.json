@@ -1,0 +1,1216 @@
+{
+  "metadata": {
+    "estado": "no_publicable",
+    "motivos_no_publicable": [
+      "C-CIU-01 clasificación de información pendiente (Q-SEG-01)",
+      "C-CIU-02 textos del canal sin aprobar (Q-CIU-02)"
+    ],
+    "fecha_corte": "2026-11-09",
+    "generado_en": "2026-11-09T01:04:17.209106+00:00",
+    "version_canal": "v0.2.0-20261108",
+    "version_configuracion_icr": "v1.2.0-20261108",
+    "semana_semanal": "2026-W42",
+    "aviso": "Esta información es un análisis de la Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA). No es una alerta ni una declaratoria oficial de emergencia.",
+    "remisiones": {
+      "suministro": "Para horarios de suministro o racionamiento, consulte a su empresa de acueducto y a la alcaldía.",
+      "emergencias": "Ante emergencias, acuda al consejo municipal de gestión del riesgo y a la UNGRD.",
+      "clima": "Para pronósticos y alertas del clima, consulte al IDEAM.",
+      "quejas": "Para quejas por el servicio, diríjase a su empresa de acueducto y, en segunda instancia, a la Superintendencia de Servicios Públicos Domiciliarios."
+    },
+    "municipio_fuera_de_muestra": "Este municipio aún no está incluido en el análisis."
+  },
+  "nacional": {
+    "embalses": {
+      "nacional": {
+        "valor": 75.476,
+        "nivel": "Normal",
+        "delta": 0.342,
+        "tendencia": "mejora",
+        "fuente": "XM, operador del sistema eléctrico nacional",
+        "periodo": "12 de octubre de 2026",
+        "advertencia": "Dato con fecha 12 de octubre de 2026; puede no reflejar la situación actual.",
+        "texto": "Embalses del país: 75,5 % de su volumen útil; subió 0,3 puntos frente a la semana anterior"
+      },
+      "bogota": {
+        "valor": 66.368,
+        "nivel": "Atención",
+        "delta": -0.055,
+        "tendencia": "estable",
+        "fuente": "XM, operador del sistema eléctrico nacional",
+        "periodo": "12 de octubre de 2026",
+        "advertencia": "Dato con fecha 12 de octubre de 2026; puede no reflejar la situación actual.",
+        "texto": "Embalses que abastecen a Bogotá: 66,4 % de su volumen útil; se mantuvo estable frente a la semana anterior"
+      },
+      "nota": "Son los embalses del sistema eléctrico nacional; solo algunos abastecen acueductos."
+    },
+    "estado_el_nino": {
+      "semanal": {
+        "valor": 3.3,
+        "nivel": "Muy fuerte",
+        "delta": 0.1,
+        "tendencia": "empeora",
+        "fuente": "Administración Nacional Oceánica y Atmosférica de EE. UU. (NOAA)",
+        "periodo": "14 de octubre de 2026",
+        "advertencia": "Dato con fecha 14 de octubre de 2026; puede no reflejar la situación actual.",
+        "texto": "La temperatura del océano Pacífico central está 3,3 °C por encima de lo normal (intensidad: muy fuerte)"
+      },
+      "trimestral": {
+        "valor": 2.16,
+        "nivel": "Muy fuerte",
+        "delta": 0.0,
+        "tendencia": "estable",
+        "fuente": "Administración Nacional Oceánica y Atmosférica de EE. UU. (NOAA)",
+        "periodo": "JAS 2026",
+        "advertencia": "Dato con fecha JAS 2026; puede no reflejar la situación actual."
+      },
+      "remision": "Para pronósticos y alertas del clima, consulte al IDEAM."
+    }
+  },
+  "departamentos": [
+    {
+      "cod_depto": "05",
+      "departamento": "Antioquia",
+      "municipios_por_nivel": {
+        "Bajo": 1,
+        "Medio": 0,
+        "Alto": 0,
+        "Muy alto": 0,
+        "Sin información": 0
+      },
+      "municipios": [
+        {
+          "divipola": "05001",
+          "municipio": "Medellín",
+          "departamento": "Antioquia",
+          "zona_hidrografica": "Nechí – Río Porce",
+          "nivel_riesgo": {
+            "texto": "Bajo",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Sin riesgo",
+            "valor": 0.7,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 23,9 horas de servicio al día",
+            "valor": 23.9,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": null,
+            "advertencia": null
+          }
+        }
+      ]
+    },
+    {
+      "cod_depto": "11",
+      "departamento": "Bogotá, D.C.",
+      "municipios_por_nivel": {
+        "Bajo": 1,
+        "Medio": 0,
+        "Alto": 0,
+        "Muy alto": 0,
+        "Sin información": 0
+      },
+      "municipios": [
+        {
+          "divipola": "11001",
+          "municipio": "Bogotá, D.C.",
+          "departamento": "Bogotá, D.C.",
+          "zona_hidrografica": "Alto Magdalena – Río Bogotá",
+          "nivel_riesgo": {
+            "texto": "Bajo",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Sin riesgo",
+            "valor": 1.1,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 21 horas de servicio al día",
+            "valor": 21.0,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "No, verificado",
+            "valor": 0,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": "14 de octubre de 2026",
+            "advertencia": "Dato con fecha 14 de octubre de 2026; puede no reflejar la situación actual."
+          }
+        }
+      ]
+    },
+    {
+      "cod_depto": "13",
+      "departamento": "Bolívar",
+      "municipios_por_nivel": {
+        "Bajo": 1,
+        "Medio": 1,
+        "Alto": 1,
+        "Muy alto": 0,
+        "Sin información": 0
+      },
+      "municipios": [
+        {
+          "divipola": "13244",
+          "municipio": "El Carmen de Bolívar",
+          "departamento": "Bolívar",
+          "zona_hidrografica": "Bajo Magdalena – Directos al Bajo Magdalena entre El Plato y Calamar (MI)",
+          "nivel_riesgo": {
+            "texto": "Alto",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Sin riesgo",
+            "valor": 0.0,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 6,5 horas de servicio al día",
+            "valor": 6.5,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": null,
+            "advertencia": null
+          }
+        },
+        {
+          "divipola": "13430",
+          "municipio": "Magangué",
+          "departamento": "Bolívar",
+          "zona_hidrografica": "Bajo Magdalena- Cauca -San Jorge – Bajo San Jorge - La Mojana",
+          "nivel_riesgo": {
+            "texto": "Bajo",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Sin riesgo",
+            "valor": 3.0,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 13 horas de servicio al día",
+            "valor": 13.0,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "No, verificado",
+            "valor": 0,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": "14 de octubre de 2026",
+            "advertencia": "Dato con fecha 14 de octubre de 2026; puede no reflejar la situación actual."
+          }
+        },
+        {
+          "divipola": "13001",
+          "municipio": "Cartagena de Indias",
+          "departamento": "Bolívar",
+          "zona_hidrografica": "Caribe - Litoral – Arroyos Directos al Caribe",
+          "nivel_riesgo": {
+            "texto": "Medio",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Sin riesgo",
+            "valor": 2.9,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 22,5 horas de servicio al día",
+            "valor": 22.5,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": null,
+            "advertencia": null
+          }
+        }
+      ]
+    },
+    {
+      "cod_depto": "15",
+      "departamento": "Boyacá",
+      "municipios_por_nivel": {
+        "Bajo": 0,
+        "Medio": 1,
+        "Alto": 0,
+        "Muy alto": 0,
+        "Sin información": 0
+      },
+      "municipios": [
+        {
+          "divipola": "15837",
+          "municipio": "Tuta",
+          "departamento": "Boyacá",
+          "zona_hidrografica": "Sogamoso – Río Chicamocha",
+          "nivel_riesgo": {
+            "texto": "Medio",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Sin riesgo",
+            "valor": 2.2,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 11,5 horas de servicio al día",
+            "valor": 11.5,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": null,
+            "advertencia": null
+          }
+        }
+      ]
+    },
+    {
+      "cod_depto": "20",
+      "departamento": "Cesar",
+      "municipios_por_nivel": {
+        "Bajo": 0,
+        "Medio": 2,
+        "Alto": 0,
+        "Muy alto": 0,
+        "Sin información": 0
+      },
+      "municipios": [
+        {
+          "divipola": "20001",
+          "municipio": "Valledupar",
+          "departamento": "Cesar",
+          "zona_hidrografica": "Cesar – Alto Cesar",
+          "nivel_riesgo": {
+            "texto": "Medio",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Sin riesgo",
+            "valor": 2.4,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 14 horas de servicio al día",
+            "valor": 14.0,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": null,
+            "advertencia": null
+          }
+        },
+        {
+          "divipola": "20011",
+          "municipio": "Aguachica",
+          "departamento": "Cesar",
+          "zona_hidrografica": "Medio Magdalena – Quebrada El Carmen y Otros Directos al Magdalena",
+          "nivel_riesgo": {
+            "texto": "Medio",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Sin riesgo",
+            "valor": 1.7,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 9 horas de servicio al día",
+            "valor": 9.0,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": null,
+            "advertencia": null
+          }
+        }
+      ]
+    },
+    {
+      "cod_depto": "25",
+      "departamento": "Cundinamarca",
+      "municipios_por_nivel": {
+        "Bajo": 1,
+        "Medio": 1,
+        "Alto": 0,
+        "Muy alto": 0,
+        "Sin información": 0
+      },
+      "municipios": [
+        {
+          "divipola": "25307",
+          "municipio": "Girardot",
+          "departamento": "Cundinamarca",
+          "zona_hidrografica": "Alto Magdalena – Río Bogotá",
+          "nivel_riesgo": {
+            "texto": "Medio",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Sin riesgo",
+            "valor": 1.7,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 13,5 horas de servicio al día",
+            "valor": 13.5,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": null,
+            "advertencia": null
+          }
+        },
+        {
+          "divipola": "25126",
+          "municipio": "Cajicá",
+          "departamento": "Cundinamarca",
+          "zona_hidrografica": "Alto Magdalena – Río Bogotá",
+          "nivel_riesgo": {
+            "texto": "Bajo",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Riesgo bajo",
+            "valor": 5.3,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 23,5 horas de servicio al día",
+            "valor": 23.5,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": null,
+            "advertencia": null
+          }
+        }
+      ]
+    },
+    {
+      "cod_depto": "41",
+      "departamento": "Huila",
+      "municipios_por_nivel": {
+        "Bajo": 0,
+        "Medio": 1,
+        "Alto": 0,
+        "Muy alto": 0,
+        "Sin información": 0
+      },
+      "municipios": [
+        {
+          "divipola": "41001",
+          "municipio": "Neiva",
+          "departamento": "Huila",
+          "zona_hidrografica": "Alto Magdalena – Rio Fortalecillas y otros",
+          "nivel_riesgo": {
+            "texto": "Medio",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Sin riesgo",
+            "valor": 0.8,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 15 horas de servicio al día",
+            "valor": 15.0,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": null,
+            "advertencia": null
+          }
+        }
+      ]
+    },
+    {
+      "cod_depto": "44",
+      "departamento": "La Guajira",
+      "municipios_por_nivel": {
+        "Bajo": 0,
+        "Medio": 2,
+        "Alto": 1,
+        "Muy alto": 1,
+        "Sin información": 0
+      },
+      "municipios": [
+        {
+          "divipola": "44847",
+          "municipio": "Uribia",
+          "departamento": "La Guajira",
+          "zona_hidrografica": "Caribe - Guajira – Directos Caribe - Ay.Sharimahana Alta Guajira",
+          "nivel_riesgo": {
+            "texto": "Alto",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Sin riesgo",
+            "valor": 1.8,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 4,5 horas de servicio al día",
+            "valor": 4.5,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sí, con soporte oficial",
+            "valor": 1,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": "14 de octubre de 2026",
+            "advertencia": "Dato con fecha 14 de octubre de 2026; puede no reflejar la situación actual."
+          },
+          "calamidad_publica": {
+            "texto": "Sí, con soporte oficial",
+            "valor": 1,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": "14 de octubre de 2026",
+            "advertencia": "Dato con fecha 14 de octubre de 2026; puede no reflejar la situación actual."
+          }
+        },
+        {
+          "divipola": "44430",
+          "municipio": "Maicao",
+          "departamento": "La Guajira",
+          "zona_hidrografica": "Caribe - Guajira – Río Carraipia - Paraguachon, Directos al Golfo Maracaibo",
+          "nivel_riesgo": {
+            "texto": "Medio",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Riesgo bajo",
+            "valor": 8.1,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 7 horas de servicio al día",
+            "valor": 7.0,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": null,
+            "advertencia": null
+          }
+        },
+        {
+          "divipola": "44001",
+          "municipio": "Riohacha",
+          "departamento": "La Guajira",
+          "zona_hidrografica": "Caribe - Guajira – Río Ranchería",
+          "nivel_riesgo": {
+            "texto": "Medio",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Riesgo bajo",
+            "valor": 10.2,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 9,5 horas de servicio al día",
+            "valor": 9.5,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": null,
+            "advertencia": null
+          }
+        },
+        {
+          "divipola": "44560",
+          "municipio": "Manaure",
+          "departamento": "La Guajira",
+          "zona_hidrografica": "Caribe - Guajira – Directos Caribe - Ay.Sharimahana Alta Guajira",
+          "nivel_riesgo": {
+            "texto": "Muy alto",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Sin riesgo",
+            "valor": 0.7,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 5 horas de servicio al día",
+            "valor": 5.0,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sí, con soporte oficial",
+            "valor": 1,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": "14 de octubre de 2026",
+            "advertencia": "Dato con fecha 14 de octubre de 2026; puede no reflejar la situación actual."
+          },
+          "calamidad_publica": {
+            "texto": "Sí, con soporte oficial",
+            "valor": 1,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": "14 de octubre de 2026",
+            "advertencia": "Dato con fecha 14 de octubre de 2026; puede no reflejar la situación actual."
+          }
+        }
+      ]
+    },
+    {
+      "cod_depto": "47",
+      "departamento": "Magdalena",
+      "municipios_por_nivel": {
+        "Bajo": 1,
+        "Medio": 1,
+        "Alto": 0,
+        "Muy alto": 0,
+        "Sin información": 0
+      },
+      "municipios": [
+        {
+          "divipola": "47001",
+          "municipio": "Santa Marta",
+          "departamento": "Magdalena",
+          "zona_hidrografica": "Caribe - Guajira – Río  Piedras - Río Manzanares",
+          "nivel_riesgo": {
+            "texto": "Bajo",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Sin riesgo",
+            "valor": 2.1,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 11 horas de servicio al día",
+            "valor": 11.0,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": null,
+            "advertencia": null
+          }
+        },
+        {
+          "divipola": "47555",
+          "municipio": "Plato",
+          "departamento": "Magdalena",
+          "zona_hidrografica": "Bajo Magdalena – Directos Bajo Magdalena entre El Banco y El Plato",
+          "nivel_riesgo": {
+            "texto": "Medio",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Riesgo bajo",
+            "valor": 6.5,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 8 horas de servicio al día",
+            "valor": 8.0,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": null,
+            "advertencia": null
+          }
+        }
+      ]
+    },
+    {
+      "cod_depto": "68",
+      "departamento": "Santander",
+      "municipios_por_nivel": {
+        "Bajo": 3,
+        "Medio": 0,
+        "Alto": 0,
+        "Muy alto": 0,
+        "Sin información": 0
+      },
+      "municipios": [
+        {
+          "divipola": "68079",
+          "municipio": "Barichara",
+          "departamento": "Santander",
+          "zona_hidrografica": "Sogamoso – Río Suárez",
+          "nivel_riesgo": {
+            "texto": "Bajo",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Riesgo medio",
+            "valor": 23.2,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 6 horas de servicio al día",
+            "valor": 6.0,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": null,
+            "advertencia": null
+          }
+        },
+        {
+          "divipola": "68679",
+          "municipio": "San Gil",
+          "departamento": "Santander",
+          "zona_hidrografica": "Sogamoso – Río Fonce",
+          "nivel_riesgo": {
+            "texto": "Bajo",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Sin riesgo",
+            "valor": 0.8,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 16 horas de servicio al día",
+            "valor": 16.0,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "No, verificado",
+            "valor": 0,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": "14 de octubre de 2026",
+            "advertencia": "Dato con fecha 14 de octubre de 2026; puede no reflejar la situación actual."
+          }
+        },
+        {
+          "divipola": "68001",
+          "municipio": "Bucaramanga",
+          "departamento": "Santander",
+          "zona_hidrografica": "Medio Magdalena – Río Lebrija y otros directos al Magdalena",
+          "nivel_riesgo": {
+            "texto": "Bajo",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Sin riesgo",
+            "valor": 1.5,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 23,8 horas de servicio al día",
+            "valor": 23.8,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": null,
+            "advertencia": null
+          }
+        }
+      ]
+    },
+    {
+      "cod_depto": "73",
+      "departamento": "Tolima",
+      "municipios_por_nivel": {
+        "Bajo": 1,
+        "Medio": 0,
+        "Alto": 1,
+        "Muy alto": 0,
+        "Sin información": 0
+      },
+      "municipios": [
+        {
+          "divipola": "73001",
+          "municipio": "Ibagué",
+          "departamento": "Tolima",
+          "zona_hidrografica": "Alto Magdalena – Río Totare",
+          "nivel_riesgo": {
+            "texto": "Bajo",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Riesgo medio",
+            "valor": 28.2,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 17,5 horas de servicio al día",
+            "valor": 17.5,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "No, verificado",
+            "valor": 0,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": "14 de octubre de 2026",
+            "advertencia": "Dato con fecha 14 de octubre de 2026; puede no reflejar la situación actual."
+          }
+        },
+        {
+          "divipola": "73268",
+          "municipio": "Espinal",
+          "departamento": "Tolima",
+          "zona_hidrografica": "Alto Magdalena – Río Luisa y otros directos al Magdalena",
+          "nivel_riesgo": {
+            "texto": "Alto",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Sin riesgo",
+            "valor": 0.0,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 10 horas de servicio al día",
+            "valor": 10.0,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": null,
+            "advertencia": null
+          }
+        }
+      ]
+    },
+    {
+      "cod_depto": "76",
+      "departamento": "Valle del Cauca",
+      "municipios_por_nivel": {
+        "Bajo": 1,
+        "Medio": 0,
+        "Alto": 0,
+        "Muy alto": 0,
+        "Sin información": 0
+      },
+      "municipios": [
+        {
+          "divipola": "76001",
+          "municipio": "Cali",
+          "departamento": "Valle del Cauca",
+          "zona_hidrografica": "Cauca – Ríos Lilí, Melendez y Canaveralejo",
+          "nivel_riesgo": {
+            "texto": "Bajo",
+            "razon": null,
+            "fuente": "Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA)",
+            "periodo": "9 de noviembre de 2026",
+            "advertencia": null
+          },
+          "calidad_agua": {
+            "texto": "Sin riesgo",
+            "valor": 0.1,
+            "unidad": "IRCA (0 a 100)",
+            "fuente": "Instituto Nacional de Salud – SIVICAP",
+            "periodo": "2024",
+            "advertencia": "Dato con fecha 2024; puede no reflejar la situación actual."
+          },
+          "horas_servicio": {
+            "texto": "En promedio, 23,7 horas de servicio al día",
+            "valor": 23.7,
+            "unidad": "horas/día",
+            "fuente": "Superintendencia de Servicios Públicos – SUI",
+            "periodo": "agosto de 2026",
+            "advertencia": "Dato con fecha agosto de 2026; puede no reflejar la situación actual."
+          },
+          "racionamiento": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Ministerio de Vivienda, Ciudad y Territorio",
+            "periodo": null,
+            "advertencia": null
+          },
+          "calamidad_publica": {
+            "texto": "Sin información verificada",
+            "valor": null,
+            "fuente": "Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)",
+            "periodo": null,
+            "advertencia": null
+          }
+        }
+      ]
+    }
+  ]
+}

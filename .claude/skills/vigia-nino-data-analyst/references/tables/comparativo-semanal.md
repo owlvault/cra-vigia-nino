@@ -105,8 +105,8 @@ analogo = next(a for a in s["analogos"] if a["id_evento"] == "2015-16")["series"
 
 ## Trampas comunes
 
-1. **La vista usa la config más reciente**: si cambian los `niveles` de una variable, las semanas pasadas se reetiquetan aunque `version_config` diga otra cosa. Para un análisis histórico, une `config.variable_semanal` por `vigente_desde <= generado_en`.
-2. **`agregacion` no coincide entre JSON y DDL**: el JSON usa `'suma'` (incendios, focos, desabastecimiento) y el CHECK del DDL solo admite `'suma_ultima_captura'`. Una carga directa fallaría.
-3. **57 % de las filas de plata son `sin_dato`**: muchas variables solo existen en semanas recientes. Siempre reporta `n` con dato.
-4. **`fct_variable_semana` en SQL** no tiene CHECK `sin_dato ⇔ NULL`; en plata sí.
+1. **La vista prioriza la versión de configuración del hecho**: `oro.v_comparativo_semanal` une `config.variable_semanal` priorizando `c.version_config = f.version_config`.
+2. **`agregacion` alineada entre JSON y DDL**: el CHECK de `config.variable_semanal` admite tanto `'suma'` como `'suma_ultima_captura'`.
+3. **Almacén histórico de semanas cerradas (`RF-SEM-09`)**: muchas variables solo existen en semanas recientes o están congeladas en semanas cerradas (`data/oro/semanal/historico/`). Siempre reporta `n` con dato.
+4. **`fct_variable_semana` en SQL** incluye el CHECK `(estado_dato = 'sin_dato') = (valor IS NULL)` y FK hacia `config.variable_semanal (codigo, version_config)`.
 5. **Desplazamiento 4 semanas**: solo existe en el JSON (`fct_variable_semana["4"]`), no en el DDL.

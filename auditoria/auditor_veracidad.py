@@ -359,12 +359,17 @@ class AuditorVeracidad:
             if p.is_dir():
                 continue
 
+            try:
+                ruta_rel = p.resolve().relative_to(self.root_dir.resolve()).as_posix()
+            except Exception:
+                ruta_rel = str(p).replace("\\", "/")
+
             archivos_evaluados += 1
             if not p.exists():
                 detalles.append({
                     "id_fuente": id_fuente,
                     "archivo": p.name,
-                    "ruta": str(p),
+                    "ruta": ruta_rel,
                     "estado": "FALTA_ARCHIVO",
                     "mensaje": "El archivo crudo registrado no existe en disco.",
                     "hash_registrado": hash_registrado,
@@ -375,9 +380,15 @@ class AuditorVeracidad:
                 archivos_corruptos += 1
                 continue
 
-            # Calcular SHA-256 en vivo
+            # Calcular SHA-256 en vivo (tolerando conversión CRLF de git core.autocrlf en Windows)
             contenido = p.read_bytes()
             hash_calculado = hashlib.sha256(contenido).hexdigest()
+            if hash_calculado.lower() != hash_registrado.lower() and b"\r\n" in contenido:
+                contenido_lf = contenido.replace(b"\r\n", b"\n")
+                hash_lf = hashlib.sha256(contenido_lf).hexdigest()
+                if hash_lf.lower() == hash_registrado.lower():
+                    hash_calculado = hash_lf
+                    contenido = contenido_lf
             tamano = len(contenido)
             total_bytes += tamano
 
@@ -391,7 +402,7 @@ class AuditorVeracidad:
             detalles.append({
                 "id_fuente": id_fuente,
                 "archivo": p.name,
-                "ruta": str(p),
+                "ruta": ruta_rel,
                 "estado": estado_archivo,
                 "hash_registrado": hash_registrado,
                 "hash_calculado": hash_calculado,
@@ -930,6 +941,20 @@ class AuditorVeracidad:
                     else:
                         evaluacion_reglas["RN-CAL-06"]["fallas"] += 1
                         violaciones_rango.append({"muni": nom, "ind": cod_ind, "valor": val, "regla": "RN-CAL-06"})
+
+                if cod_ind == "A-3" and val is not None:
+                    if -100.0 <= float(val) <= 1000.0:
+                        evaluacion_reglas["RN-CAL-03"]["cumplidas"] += 1
+                    else:
+                        evaluacion_reglas["RN-CAL-03"]["fallas"] += 1
+                        violaciones_rango.append({"muni": nom, "ind": cod_ind, "valor": val, "regla": "RN-CAL-03"})
+
+                if cod_ind == "A-4" and val is not None:
+                    if 0.0 <= float(val) <= 365.0:
+                        evaluacion_reglas["RN-CAL-03"]["cumplidas"] += 1
+                    else:
+                        evaluacion_reglas["RN-CAL-03"]["fallas"] += 1
+                        violaciones_rango.append({"muni": nom, "ind": cod_ind, "valor": val, "regla": "RN-CAL-03"})
 
                 if cod_ind == "H-1" and val is not None:
                     if 0.0 <= float(val) <= 200.0:

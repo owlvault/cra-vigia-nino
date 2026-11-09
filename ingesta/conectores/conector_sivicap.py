@@ -40,28 +40,6 @@ class ConectorSIVICAP(ConectorBase):
         else:
             return "INVIABLE_SANITARIAMENTE"
 
-    def _calcular_puntaje_normalizado(self, irca: float) -> float:
-        """
-        Normalización por tramos según specs/indicadores.md y specs/indice-riesgo.md:
-        Puntos de quiebre: 0 -> 0; 5 -> 40; 14 -> 60; 35 -> 75; 80 -> 100
-        """
-        if irca <= 0:
-            return 0.0
-        elif irca <= 5.0:
-            # Tramo 0 a 5 -> 0 a 40
-            return round((irca / 5.0) * 40.0, 2)
-        elif irca <= 14.0:
-            # Tramo 5 a 14 -> 40 a 60
-            return round(40.0 + ((irca - 5.0) / (14.0 - 5.0)) * 20.0, 2)
-        elif irca <= 35.0:
-            # Tramo 14 a 35 -> 60 a 75
-            return round(60.0 + ((irca - 14.0) / (35.0 - 14.0)) * 15.0, 2)
-        elif irca <= 80.0:
-            # Tramo 35 a 80 -> 75 a 100
-            return round(75.0 + ((irca - 35.0) / (80.0 - 35.0)) * 25.0, 2)
-        else:
-            return 100.0
-
     def ejecutar_captura(self) -> CapturaResultado:
         # Consulta de los últimos registros disponibles a nivel municipal
         soql_params = {
@@ -97,13 +75,7 @@ class ConectorSIVICAP(ConectorBase):
                 irca_rural = None
                 
             valor_evaluado = irca_urbano if irca_urbano is not None else irca_rural
-            
-            if valor_evaluado is not None:
-                nivel_normativo = self._clasificar_irca(valor_evaluado)
-                puntaje_riesgo = self._calcular_puntaje_normalizado(valor_evaluado)
-            else:
-                nivel_normativo = "SIN_DATO"
-                puntaje_riesgo = None
+            nivel_normativo = self._clasificar_irca(valor_evaluado) if valor_evaluado is not None else "SIN_DATO"
                 
             indicadores_s2_por_divipola[divipola] = {
                 "divipola": divipola,
@@ -114,7 +86,6 @@ class ConectorSIVICAP(ConectorBase):
                 "irca_rural": irca_rural,
                 "valor_indicador_s2": valor_evaluado,
                 "nivel_riesgo_s2": nivel_normativo,
-                "puntaje_riesgo_s2": puntaje_riesgo,
                 "fuente": "INS - SIVICAP (datos.gov.co: nxt2-39c3)",
                 "fecha_captura": datetime.now(timezone.utc).isoformat()
             }

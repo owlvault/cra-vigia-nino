@@ -34,7 +34,15 @@ Anillo = Sequence[Sequence[float]]
 def _get_json(url: str, params: Dict[str, str], timeout: int = 180) -> Any:
     req = urllib.request.Request(f"{url}?{urllib.parse.urlencode(params)}",
                                  headers={"User-Agent": "VigiaElNino-CRA/1.0"})
-    with urllib.request.urlopen(req, timeout=timeout, context=ssl.create_default_context()) as r:
+    ctx = ssl.create_default_context()
+    if hasattr(ssl, "enum_certificates"):
+        for cert, encoding, _ in ssl.enum_certificates("CA"):
+            if encoding == "x509_asn":
+                try:
+                    ctx.load_verify_locations(cadata=cert)
+                except ssl.SSLError:
+                    pass
+    with urllib.request.urlopen(req, timeout=timeout, context=ctx) as r:
         return json.loads(r.read().decode("utf-8"))
 
 

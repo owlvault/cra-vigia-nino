@@ -652,9 +652,9 @@ DESVIACIÓN       = 0.00 pts
       <div style="background:#F8FAFC;border:1px solid var(--linea);border-radius:8px;padding:16px">
         <h5 style="margin-bottom:8px;font-weight:800;color:var(--cra-azul-oscuro)">3. Regla de Piso Regulatorio (RF-ICR-06):</h5>
         <p style="font-size:13px">
-          ${m.regla_piso_recalculada ?
-        '<strong>PISO ACTIVO:</strong> El municipio reporta racionamiento (R-3) o calamidad (R-4), fijando su nivel como mínimo en NARANJA.' :
-        'No aplica piso obligatorio. El nivel de alerta se asigna por umbral escalar estricto.'}
+          ${m.regla_piso_recalculada ? 
+            '<strong>PISO ACTIVO:</strong> El municipio reporta racionamiento (R-3) o calamidad (R-4), fijando su nivel como mínimo en NARANJA.' : 
+            'No aplica piso obligatorio. El nivel de alerta se asigna por umbral escalar estricto.'}
         </p>
       </div>
     `;
@@ -683,7 +683,7 @@ DESVIACIÓN       = 0.00 pts
 
       const filtradas = filas.filter(f => {
         // Texto
-        const coincideTexto = !q ||
+        const coincideTexto = !q || 
           f.municipio.toLowerCase().includes(q) ||
           f.divipola.includes(q) ||
           f.indicador.toLowerCase().includes(q) ||

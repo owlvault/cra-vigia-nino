@@ -85,6 +85,13 @@ class ConectorBase(ABC):
         
         # Contexto SSL seguro con verificación estricta de certificados (Bug B-05 corregido)
         self.ssl_context = ssl.create_default_context()
+        if hasattr(ssl, "enum_certificates"):
+            for cert, encoding, _ in ssl.enum_certificates("CA"):
+                if encoding == "x509_asn":
+                    try:
+                        self.ssl_context.load_verify_locations(cadata=cert)
+                    except ssl.SSLError:
+                        pass
 
 
     def _obtener_ultimo_hash(self) -> Optional[str]:
@@ -103,7 +110,7 @@ class ConectorBase(ABC):
         return None
 
     def _registrar_captura_en_ops(self, resultado: CapturaResultado):
-        """Registra la auditoría en ops.captura (RF-ING-01)."""
+        """Registra la auditoría en ops.captura (RF-ING-01) con ruta relativa portable."""
         capturas = []
         if self.log_capturas_file.exists():
             try:
@@ -111,11 +118,17 @@ class ConectorBase(ABC):
                     capturas = json.load(f)
             except Exception:
                 capturas = []
-        
+
+        if resultado.ruta_archivo_bronce:
+            try:
+                resultado.ruta_archivo_bronce = Path(resultado.ruta_archivo_bronce).resolve().relative_to(self.root_dir.resolve()).as_posix()
+            except Exception:
+                resultado.ruta_archivo_bronce = str(resultado.ruta_archivo_bronce).replace("\\", "/")
+
         capturas.append(resultado.to_dict())
-        # Limitar historial en ops a los últimos 500 eventos
-        if len(capturas) > 500:
-            capturas = capturas[-500:]
+        # Limitar historial en ops a los últimos 2000 eventos
+        if len(capturas) > 2000:
+            capturas = capturas[-2000:]
             
         with open(self.log_capturas_file, "w", encoding="utf-8") as f:
             json.dump(capturas, f, indent=2, ensure_ascii=False)

@@ -18,10 +18,7 @@ def test_escenario_continuidad_entre_umbrales(pipeline):
     Cuando se normaliza
     Entonces el puntaje es 67.5
     """
-    cont = 15.0
-    # Tramo 18h (60) a 12h (75) -> Delta=6h, Delta_puntaje=15
-    # (18 - 15) / 6 = 0.5 -> 60 + 0.5*15 = 67.5
-    puntaje = round(60.0 + ((18.0 - cont) / 6.0) * 15.0, 2)
+    puntaje = pipeline.normalizar_tramos("S-1", 15.0)
     assert puntaje == 67.5
 
 def test_escenario_calamidad_declarada_con_pec_al_dia(pipeline):
@@ -31,15 +28,23 @@ def test_escenario_calamidad_declarada_con_pec_al_dia(pipeline):
     Cuando se calcula el subíndice R
     Entonces el subíndice R es 100 (máximo, no promedio)
     """
-    indicadores = {
-        "R-1": {"valor": 1, "puntaje": 0.0},
-        "R-3": {"valor": 0, "puntaje": 0.0},
-        "R-4": {"valor": 1, "puntaje": 100.0}
-    }
-    # En Capa R el subíndice es el máximo
-    puntajes_r = [ind["puntaje"] for ind in indicadores.values() if ind.get("puntaje") is not None]
-    subindice_r = max(puntajes_r)
-    assert subindice_r == 100.0
+    res = pipeline.calcular_icr_municipio(
+        divipola="77777",
+        nombre="MunicipioCalamidad",
+        depto="La Guajira",
+        cod_depto="44",
+        poblacion=20000,
+        indicadores={
+            "A-3": {"valor": -50.0, "puntaje": 65.0},
+            "H-2": {"valor": "Alto", "puntaje": 75.0},
+            "S-1": {"valor": 12.0, "puntaje": 75.0},
+            "R-1": {"valor": 1, "puntaje": pipeline.puntaje_binario("R-1", 1)},
+            "R-2": {"valor": None, "puntaje": pipeline.puntaje_binario("R-2", None)},
+            "R-3": {"valor": 0, "puntaje": pipeline.puntaje_binario("R-3", 0)},
+            "R-4": {"valor": 1, "puntaje": pipeline.puntaje_binario("R-4", 1)},
+        }
+    )
+    assert res["subindices_capa"]["respuesta_R"] == 100.0
 
 def test_escenario_capa_h_sin_datos_redistribucion(pipeline):
     """
@@ -50,21 +55,21 @@ def test_escenario_capa_h_sin_datos_redistribucion(pipeline):
     Y el ICR es 47.86 (aprox 47.9)
     Y la cobertura de datos registrada es 70 %
     """
-    # Pesos nominales: A=0.30, H=0.30, S=0.25, R=0.15
-    # Disponibles: A=0.30, S=0.25, R=0.15 -> Suma = 0.70 (70%)
-    w_disp = 0.30 + 0.25 + 0.15
-    assert round(w_disp * 100, 1) == 70.0
-    
-    w_ef_a = 0.30 / w_disp
-    w_ef_s = 0.25 / w_disp
-    w_ef_r = 0.15 / w_disp
-    
-    assert round(w_ef_a * 100, 2) == 42.86
-    assert round(w_ef_s * 100, 2) == 35.71
-    assert round(w_ef_r * 100, 2) == 21.43
-    
-    icr = (70.0 * w_ef_a) + (50.0 * w_ef_s) + (0.0 * w_ef_r)
-    assert round(icr, 2) == 47.86
+    res = pipeline.calcular_icr_municipio(
+        divipola="66666",
+        nombre="MunicipioSinCapaH",
+        depto="Bolívar",
+        cod_depto="13",
+        poblacion=30000,
+        indicadores={
+            "A-3": {"valor": -55.0, "puntaje": 70.0},
+            "S-1": {"valor": 20.0, "puntaje": 50.0},
+            "R-1": {"valor": 1, "puntaje": 0.0}
+        }
+    )
+    assert res["subindices_capa"]["vulnerabilidad_H"] is None
+    assert res["cobertura_datos_pct"] == 70.0
+    assert res["icr"] == 47.9
 
 def test_escenario_piso_por_impacto_confirmado(pipeline):
     """

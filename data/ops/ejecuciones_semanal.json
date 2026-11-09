@@ -232,5 +232,129 @@
     "hash_entradas": "0e78d25316821d2c764730799bf08194725b4aeab3033e89e122d3a51ed9409d",
     "semana_publicada": "2026-W42",
     "mensaje": "Actualización completada"
+  },
+  {
+    "id_ejecucion": "1348af10-9b6d-4f75-82b6-01c1e9304f36",
+    "modo": "completo",
+    "inicio": "2026-11-09T00:50:24.493221+00:00",
+    "fin": "2026-11-09T00:52:12.309612+00:00",
+    "estado": "parcial",
+    "pasos": [
+      {
+        "paso": "NOAA",
+        "estado": "sin_cambios",
+        "mensaje": "Los datos de NOAA CPC no presentan cambios frente a la última captura."
+      },
+      {
+        "paso": "SIVICAP",
+        "estado": "sin_cambios",
+        "mensaje": "Sin cambios en el catálogo IRCA de SIVICAP."
+      },
+      {
+        "paso": "IDEAM",
+        "estado": "fallida",
+        "mensaje": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+      },
+      {
+        "paso": "UNGRD_MVCT",
+        "estado": "exitosa",
+        "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)"
+      },
+      {
+        "paso": "XM",
+        "estado": "exitosa",
+        "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 80.8%, SIN: 78.7%)"
+      },
+      {
+        "paso": "FIRMS",
+        "estado": "exitosa",
+        "mensaje": "Captura FIRMS procesada para 23 municipios (modo: sin_clave/null)"
+      },
+      {
+        "paso": "SUI",
+        "estado": "exitosa",
+        "mensaje": "Captura certificada de 23 municipios desde SSPD SUI"
+      },
+      {
+        "paso": "Corte oro (ICR)",
+        "estado": "fallida",
+        "mensaje": "Corte 2026-11-09 rechazado: A-1 sin valor vigente"
+      },
+      {
+        "paso": "Modelo semanal",
+        "estado": "exitosa",
+        "mensaje": "Semana vigente 2026-W42"
+      },
+      {
+        "paso": "Publicación",
+        "estado": "exitosa",
+        "mensaje": "Corte semanal publicado en oro y tablero"
+      }
+    ],
+    "hash_entradas": "f2ec2b53eaee8c0f20a5864f2aa2976235e99e2be5b02648c238be3deebb59b7",
+    "semana_publicada": "2026-W42",
+    "mensaje": "Actualización completada con fuentes fallidas"
+  },
+  {
+    "id_ejecucion": "e01c586c-8fee-43e7-91da-b898ae345557",
+    "modo": "completo",
+    "inicio": "2026-11-09T01:03:02.798417+00:00",
+    "fin": "2026-11-09T01:05:12.538566+00:00",
+    "estado": "exitoso",
+    "pasos": [
+      {
+        "paso": "NOAA",
+        "estado": "sin_cambios",
+        "mensaje": "Los datos de NOAA CPC no presentan cambios frente a la última captura."
+      },
+      {
+        "paso": "SIVICAP",
+        "estado": "sin_cambios",
+        "mensaje": "Sin cambios en el catálogo IRCA de SIVICAP."
+      },
+      {
+        "paso": "IDEAM",
+        "estado": "exitosa",
+        "mensaje": "IDEAM: 12548 días-estación de 186 estaciones; A-4 en 22/23 y A-3 en 21/23 municipios"
+      },
+      {
+        "paso": "UNGRD_MVCT",
+        "estado": "exitosa",
+        "mensaje": "Captura verificada de 23 municipios desde UNGRD/MinVivienda (2 con piso de alerta)"
+      },
+      {
+        "paso": "XM",
+        "estado": "exitosa",
+        "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 80.8%, SIN: 78.7%)"
+      },
+      {
+        "paso": "FIRMS",
+        "estado": "exitosa",
+        "mensaje": "Captura FIRMS procesada para 23 municipios (modo: sin_clave/null)"
+      },
+      {
+        "paso": "SUI",
+        "estado": "exitosa",
+        "mensaje": "Captura certificada de 23 municipios desde SSPD SUI"
+      },
+      {
+        "paso": "Corte oro (ICR)",
+        "estado": "exitosa",
+        "mensaje": "Corte 2026-11-09"
+      },
+      {
+        "paso": "Modelo semanal",
+        "estado": "exitosa",
+        "mensaje": "Semana vigente 2026-W42"
+      },
+      {
+        "paso": "Publicación",
+        "estado": "exitosa",
+        "mensaje": "Corte semanal publicado en oro y tablero"
+      }
+    ],
+    "hash_entradas": "c972070d76576a24decfbb82d81fee53f5a69d3adc50c04da232b2a26c3b7c7d",
+    "semana_publicada": "2026-W42",
+    "mensaje": "Actualización completada"
   }
 ]

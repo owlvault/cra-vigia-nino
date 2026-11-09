@@ -29,12 +29,13 @@ CREATE TABLE IF NOT EXISTS config.variable_semanal (
     fuente              varchar(120)  NOT NULL,
     origen              varchar(40)   NOT NULL,          -- noaa_semanal | noaa_oni | bronce_xm | bronce_ideam | bronce_firms | oro_corte
     campo               varchar(80)   NOT NULL,
-    agregacion          varchar(30)   NOT NULL CHECK (agregacion IN ('ultimo','promedio','suma_ultima_captura','arrastre')),
+    agregacion          varchar(30)   NOT NULL CHECK (agregacion IN ('ultimo','promedio','suma','suma_ultima_captura','arrastre')),
     direccion           varchar(20)   NOT NULL CHECK (direccion IN ('sube_empeora','baja_empeora')),
     tolerancia_estable  numeric(14,4) NOT NULL DEFAULT 0,
     en_analogos         boolean       NOT NULL DEFAULT false,
     niveles             jsonb         NOT NULL DEFAULT '[]'::jsonb,  -- [{desde,hasta,etiqueta,riesgo}]
-    PRIMARY KEY (codigo, vigente_desde)
+    PRIMARY KEY (codigo, vigente_desde),
+    UNIQUE (codigo, version_config)
 );
 
 CREATE TABLE IF NOT EXISTS config.evento_analogo (
@@ -103,7 +104,7 @@ CREATE TABLE IF NOT EXISTS oro.fct_variable_semana (
     codigo             varchar(40)   NOT NULL,
     semana_evento      smallint,
     valor              numeric(16,4),
-    estado_dato        varchar(12)   NOT NULL,
+    estado_dato        varchar(12)   NOT NULL CHECK (estado_dato IN ('dato','arrastre','sin_dato')),
     semana_referencia  char(8),                                   -- por defecto semana anterior
     valor_referencia   numeric(16,4),
     delta_abs          numeric(16,4),
@@ -114,7 +115,9 @@ CREATE TABLE IF NOT EXISTS oro.fct_variable_semana (
     fecha_dato         date,
     fuente             varchar(120)  NOT NULL,
     version_config     varchar(40)   NOT NULL,
-    PRIMARY KEY (semana_iso, codigo)
+    PRIMARY KEY (semana_iso, codigo),
+    FOREIGN KEY (codigo, version_config) REFERENCES config.variable_semanal(codigo, version_config),
+    CHECK ((estado_dato = 'sin_dato') = (valor IS NULL))
 );
 
 CREATE TABLE IF NOT EXISTS oro.fct_analogo_semana (
@@ -174,5 +177,5 @@ JOIN oro.dim_semana d USING (semana_iso)
 JOIN LATERAL (
     SELECT * FROM config.variable_semanal c
     WHERE c.codigo = f.codigo
-    ORDER BY c.vigente_desde DESC LIMIT 1
+    ORDER BY (c.version_config = f.version_config) DESC, c.vigente_desde DESC LIMIT 1
 ) v ON true;

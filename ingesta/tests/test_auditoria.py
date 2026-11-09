@@ -3,12 +3,25 @@ Pruebas Automatizadas del Motor de Auditoría y Veracidad de Datos
 Proyecto: Vigía El Niño · Acueductos (CRA)
 """
 
+import shutil
 import pytest
+from pathlib import Path
 from auditoria.auditor_veracidad import AuditorVeracidad
 
 @pytest.fixture
-def auditor():
-    return AuditorVeracidad()
+def auditor(tmp_path: Path):
+    a = AuditorVeracidad()
+    # Aislar directorios de escritura para no modificar ops, auditoria ni tablero durante pytest
+    ops_tmp = tmp_path / "ops"
+    ops_tmp.mkdir(parents=True, exist_ok=True)
+    if (a.ops_dir / "capturas.json").exists():
+        shutil.copy2(a.ops_dir / "capturas.json", ops_tmp / "capturas.json")
+    a.ops_dir = ops_tmp
+    a.auditoria_dir = tmp_path / "auditoria"
+    a.auditoria_dir.mkdir(parents=True, exist_ok=True)
+    a.tablero_dir = tmp_path / "tablero"
+    (a.tablero_dir / "auditoria").mkdir(parents=True, exist_ok=True)
+    return a
 
 def test_auditoria_integridad_criptografica(auditor):
     """Verifica que todos los archivos de zona bronce tengan integridad SHA-256 inmutable."""

@@ -11,11 +11,7 @@
   "frescura_horas_aviso": 36,
   "semanas_matriz": 12,
   "desplazamientos_referencia": [1, 4],
-  "origenes_no_verificados": {
-    "bronce_xm": "conector_xm_embalses.py publica valores fijos en código (no consulta la API XM). Ej.: Chuza 43,8 % vs 92,1 % real XM al 2026-10-01.",
-    "bronce_ideam": "conector_ideam.py publica valores fijos en código (no consulta DHIME ni datos.gov.co).",
-    "bronce_firms": "conector_nasa_firms.py publica valores fijos en código (no consulta la API FIRMS)."
-  },
+  "origenes_no_verificados": {},
   "almacen_historico": {
     "directorio": "data/oro/semanal/historico",
     "dias_gracia_cierre": 7,
@@ -160,19 +156,19 @@
       "agregacion": "suma", "direccion": "sube_empeora", "tolerancia_estable": 0, "en_analogos": true, "solo_analogos": true, "niveles": []
     },
     {
-      "codigo": "PRECIP_ANOM_PCT", "activa": false, "motivo_inactiva": "Origen bronce_ideam no verificado (valores fijos en código).", "grupo": "colombia", "nombre": "Anomalía de precipitación",
+      "codigo": "PRECIP_ANOM_PCT", "activa": false, "motivo_inactiva": "Serie histórica heterogénea: antes del 2026-11-08 provenía de catálogo estático; desde v1.2.0 proviene de la red automática y normales 1991-2020 del IDEAM.", "grupo": "colombia", "nombre": "Anomalía de precipitación",
       "descripcion": "Promedio de la anomalía de precipitación a 30 días en los municipios monitoreados (muestra).",
       "unidad": "%", "decimales": 1, "fuente": "IDEAM DHIME", "origen": "bronce_ideam", "campo": "anomalia_precip_pct",
       "agregacion": "promedio", "direccion": "baja_empeora", "tolerancia_estable": 1.0, "en_analogos": false, "niveles": []
     },
     {
-      "codigo": "DIAS_SIN_LLUVIA", "activa": false, "motivo_inactiva": "Origen bronce_ideam no verificado (valores fijos en código).", "grupo": "colombia", "nombre": "Días consecutivos sin lluvia",
+      "codigo": "DIAS_SIN_LLUVIA", "activa": false, "motivo_inactiva": "Serie histórica heterogénea: antes del 2026-11-08 provenía de catálogo estático; desde v1.2.0 proviene de la red automática del IDEAM.", "grupo": "colombia", "nombre": "Días consecutivos sin lluvia",
       "descripcion": "Promedio de días consecutivos sin lluvia en los municipios monitoreados (muestra).",
       "unidad": "días", "decimales": 1, "fuente": "IDEAM DHIME", "origen": "bronce_ideam", "campo": "dias_sin_lluvia",
       "agregacion": "promedio", "direccion": "sube_empeora", "tolerancia_estable": 0.5, "en_analogos": false, "niveles": []
     },
     {
-      "codigo": "FOCOS_CALOR_7D", "activa": false, "motivo_inactiva": "Origen bronce_firms no verificado y la recuperación FIRMS requiere FIRMS_MAP_KEY.", "grupo": "colombia", "nombre": "Focos de calor (7 días)",
+      "codigo": "FOCOS_CALOR_7D", "activa": false, "motivo_inactiva": "Requiere configurar FIRMS_MAP_KEY en el entorno para consultar NASA FIRMS VIIRS.", "grupo": "colombia", "nombre": "Focos de calor (7 días)",
       "descripcion": "Focos de calor VIIRS detectados en Colombia en la semana.",
       "unidad": "focos", "decimales": 0, "fuente": "NASA FIRMS VIIRS", "origen": "firms_historico", "campo": "focos",
       "agregacion": "suma", "direccion": "sube_empeora", "tolerancia_estable": 2, "en_analogos": false, "niveles": []
@@ -180,7 +176,7 @@
     {
       "codigo": "ICR_NACIONAL", "grupo": "riesgo", "nombre": "ICR nacional ponderado",
       "descripcion": "Índice Compuesto de Riesgo ponderado por población del último corte publicado de la semana.",
-      "advertencia": "Calculado por el pipeline con insumos IDEAM/XM/FIRMS aún no verificados.",
+      "advertencia": "Cambios metodológicos en v1.1.0 (quiebres H-4 y población DANE) y v1.2.0 (mediciones reales IDEAM en A-3, A-4, H-2 y H-3; H-1 sin_dato).",
       "unidad": "pts", "decimales": 1, "fuente": "Vigía · corte oro", "origen": "oro_corte", "campo": "icr_nacional_ponderado",
       "agregacion": "ultimo", "direccion": "sube_empeora", "tolerancia_estable": 0.2, "en_analogos": false,
       "niveles": [

@@ -10,7 +10,7 @@
 Úsalos para **trazar** de dónde sale una cifra, no para analizar tendencias.
 
 ### Regla
-Nunca escribas, edites ni borres en `data/bronce/`: solo los conectores insertan (regla de oro 2). Ojo: `ingesta/tests/test_conectores.py` y `test_auditoria.py` hacen capturas reales y escriben ahí.
+Nunca escribas, edites ni borres en `data/bronce/`: solo los conectores insertan (regla de oro 2). Las pruebas automatizadas (`ingesta/tests/test_conectores.py` y `test_auditoria.py`) usan directorios temporales aislados (`tmp_path`).
 
 ---
 
@@ -31,7 +31,7 @@ Nunca escribas, edites ni borres en `data/bronce/`: solo los conectores insertan
 
 | Archivo | Contenido | Notas |
 |---|---|---|
-| `data/ops/capturas.json` | Lista de capturas: `id_fuente`, `estado` (`exitosa` / `sin_cambios` / `fallida`), `hash_sha256`, `ruta_archivo_bronce`, `capturado_en` | Rutas absolutas de Windows. 214 de 298 archivos de bronce **no** tienen registro (históricos XM/UNGRD y el extracto SUI). |
+| `data/ops/capturas.json` | Lista de capturas: `id_fuente`, `estado` (`exitosa` / `sin_cambios` / `fallida`), `hash_sha256`, `ruta_archivo_bronce`, `capturado_en` | Rutas relativas POSIX (`data/bronce/...`). Reconciliado con el 100 % de los archivos en `data/bronce/` (incluidos históricos XM/UNGRD y el extracto SUI). |
 | `data/ops/auditoria_corte_*.json` | Resultado de cada auditoría de veracidad | |
 | `data/ops/ejecuciones_semanal.json` | Bitácora del botón «Actualizar datos» (`ops.ejecucion_semanal`) | |
 | `auditoria/reporte_auditoria_vigente.json` | Último dictamen (`veredicto_oficial`) | Copia también en `tablero/auditoria/` |
@@ -86,7 +86,7 @@ LIMIT 5;
 
 ## Trampas comunes
 
-1. **Rutas de Windows**: normaliza siempre con `split("data/bronce/")` después de cambiar `\` por `/`. Un `os.path.exists()` directo da falso.
+1. **Rutas relativas POSIX**: `capturas.json` usa rutas relativas al repositorio (`data/bronce/...`).
 2. **`sin_cambios` repite el hash** de la captura anterior, trae `ruta_archivo_bronce` vacía y no genera archivo nuevo. Para trazarla, busca la captura `exitosa` con el mismo hash.
-3. **El auditor no certifica hoy**: el dictamen vigente (`reporte_auditoria_vigente.json`) es `CON_OBSERVACIONES` y audita el corte del **2026-10-14**, no el vigente. Al correrlo fuera de la máquina original, los archivos salen como «FALTA_ARCHIVO» por las rutas de Windows.
+3. **Auditoría automática por corte**: `reporte_auditoria_vigente.json` se regenera automáticamente al finalizar `modelo_semanal` en modo completo y valida todos los hashes SHA-256 contra `data/bronce/`.
 4. **El catálogo estático del IDEAM ya no existe** (`catalogo_municipios_ideam.json`, retirado el 2026-11-08). Si lo ves en un análisis o en un corte antiguo, sus valores de A-3/A-4/H-1 no eran mediciones.
