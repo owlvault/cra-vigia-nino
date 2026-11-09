@@ -1,0 +1,36 @@
+{
+  "version": "v1.0.0-20261109",
+  "descripcion": "Respaldo satelital nacional para A-3 y A-4 (Fase 0): CHIRPS v3.0 del Climate Hazards Center (UCSB) con USGS/FEWS NET. Se usa solo donde las estaciones del IDEAM no producen valor.",
+  "fuentes": {
+    "diario_final": "https://data.chc.ucsb.edu/products/CHIRPS/v3.0/daily/final/sat/{anio}/",
+    "diario_prelim": "https://data.chc.ucsb.edu/products/CHIRPS/v3.0/daily/prelim/sat/{anio}/",
+    "mensual_latam": "https://data.chc.ucsb.edu/products/CHIRPS/v3.0/monthly/latam/tifs/chirps-v3.0.{anio}.{mes:02d}.tif",
+    "patron_final": "chirps-v3.0.sat.{anio}.{mes:02d}.{dia:02d}.tif",
+    "patron_prelim": "chirps-v3.0.prelim.{anio}.{mes:02d}.{dia:02d}.tif",
+    "entidad": "Climate Hazards Center, University of California Santa Barbara (con USGS EROS y FEWS NET)",
+    "documentacion": "https://data.chc.ucsb.edu/products/CHIRPS/v3.0/README-CHIRPSv3.0.txt"
+  },
+  "ventana_colombia": {
+    "nota": "Caja alineada a la rejilla de 0,05° de CHIRPS; incluye San Andrés y Providencia.",
+    "lon_min": -82.0,
+    "lat_min": -4.3,
+    "lon_max": -66.8,
+    "lat_max": 13.6
+  },
+  "precipitacion": {
+    "dias_historia_consulta": 75,
+    "dias_maximos_atraso": 14,
+    "umbral_dia_seco_mm": 1.0,
+    "dias_ventana_anomalia": 30,
+    "dias_validos_minimos_ventana": 27,
+    "periodo_normal": [1991, 2020],
+    "pausa_segundos_entre_archivos": 3.0
+  },
+  "asunciones": [
+    "RN-ING-01: CHIRPS es producido por un organismo científico público (UCSB, con USGS) e incorpora estaciones del IDEAM. Se trata como fuente secundaria: el valor de estaciones IDEAM tiene prioridad.",
+    "A-3: anomalía CHIRPS contra la normal CHIRPS 1991-2020 del mismo píxel (consistencia interna: no se mezcla lluvia satelital con normales de estación).",
+    "A-4: CHIRPS diario reparte el total de cada péntada según la distribución diaria de IMERG (README de CHIRPS v3). La racha de días secos es aproximada; se declara en el método del indicador.",
+    "Latencia: el preliminar se publica dos días después de cada péntada; la fecha del dato puede tener entre 3 y 10 días de atraso y la frescura lo declara.",
+    "Lluvia municipal = media de los píxeles cuyo centro cae en el polígono municipal del IDEAM; si ninguno (municipio menor que un píxel de ~5,5 km), los píxeles que toca; sin polígono, el píxel de la cabecera DANE."
+  ]
+}

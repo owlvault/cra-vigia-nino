@@ -260,6 +260,13 @@ document.addEventListener('DOMContentLoaded', () => {
     data.catalogoIndicadores = CATALOGO_INDICADORES_MASTER;
   }
 
+  // Pesos de capa de data/config/parametros_icr.json (v1.2.0-20261108); igual que js/aula.js
+  const PESOS_ICR = { A: 0.30, H: 0.30, S: 0.25, R: 0.15 };
+  const PESOS_ICR_TEXTO = Object.entries(PESOS_ICR).map(([k, v]) => `${String(v.toFixed(2)).replace('.', ',')} × ${k}`).join(' + ');
+  const COLOR_NIVEL = { roja: 'var(--alerta-roja)', naranja: 'var(--alerta-naranja)', amarilla: 'var(--alerta-amarilla)', sin_alerta: 'var(--alerta-sin)', sin_dato: 'var(--alerta-sin-dato)' };
+  const NOMBRE_NIVEL = { roja: 'Roja', naranja: 'Naranja', amarilla: 'Amarilla', sin_alerta: 'Sin alerta', sin_dato: 'Sin dato' };
+
+
   // Estado global de la aplicación
   const state = {
     vistaActual: 'V-01',
@@ -628,534 +635,304 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('story-content-area');
     if (!container) return;
 
-    const meta = state.corte.metadata_corte;
-    const amenaza = state.corte.amenaza_global;
+    const R = resumenCorte();
     const munis = state.corte.municipios;
 
     if (paso === 1) {
-      // ACTO I: LA AMENAZA MACRO (ENSO)
+      // ACTO I: LA AMENAZA MACRO (ENSO) — cifras de amenaza_global del corte
+      const regiones = [
+        { nombre: 'Niño 1+2', zona: 'Costa de Sudamérica', anom: R.sem.nino12_anomalia, sst: R.sem.nino12_sst },
+        { nombre: 'Niño 3', zona: 'Pacífico oriental', anom: R.sem.nino3_anomalia, sst: R.sem.nino3_sst },
+        { nombre: 'Niño 3.4', zona: 'Referencia oficial', anom: R.sem.nino34_anomalia, sst: R.sem.nino34_sst, ref: true },
+        { nombre: 'Niño 4', zona: 'Pacífico occidental', anom: R.sem.nino4_anomalia, sst: R.sem.nino4_sst }
+      ];
+      const maxAnom = Math.max(1, ...regiones.map(r => Number(r.anom) || 0));
       container.innerHTML = `
         <div class="story-chapter-body">
           <div class="story-narrative-panel">
             <div>
-              <span class="chapter-number-pill">Acto I · La Física de la Amenaza</span>
-              <h3 class="story-chapter-title">El Océano Pacífico se Calienta: +3.2 °C en Niño 3.4</h3>
+              <span class="chapter-number-pill">Acto I · La amenaza</span>
+              <h3 class="story-chapter-title">El Pacífico está ${escaparHtml(fmtSigno(R.nino34, 1))} °C más caliente</h3>
               <div class="story-narrative-text">
-                <p>
-                  El monitoreo de la <strong>NOAA (Climate Prediction Center)</strong> y del <strong>IDEAM</strong> confirma que el fenómeno El Niño 2026-27 ha ingresado en una fase clasificada como <strong>Muy Fuerte (Histórico)</strong>.
-                </p>
-                <p>
-                  La temperatura superficial del mar en la región <strong>Niño 3.4</strong> exhibe una anomalía de <strong>+3.2 °C</strong> (con picos en la región Niño 1+2 de <strong>+5.3 °C</strong>). El Índice Oceánico El Niño (ONI) para el trimestre julio-septiembre se consolidó en <strong>+2.16 °C</strong>, superando con holgura el umbral de emergencia regulatoria (+0.5 °C).
-                </p>
-                <p>
-                  Los modelos internacionales asignan un <strong>75 % de probabilidad</strong> de que el evento mantenga una severidad extrema hasta el primer trimestre de 2027, trasladando un déficit de lluvias superior al <strong>70 %</strong> a las cuencas abastecedoras de Colombia.
-                </p>
+                <p>La región <strong>Niño 3.4</strong> marca ${escaparHtml(fmtSigno(R.nino34, 1))} °C sobre lo normal (semana ${escaparHtml(R.fechaSemana)}).
+                El ONI del trimestre ${escaparHtml(R.oniTrimestre)} es ${escaparHtml(fmtSigno(R.oni, 2))} °C: evento <strong>${escaparHtml(R.intensidad)}</strong>.</p>
               </div>
-
               <div class="story-insight-box">
                 <div class="story-insight-header">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                  Diagnóstico Regulatorio CRA
+                  Lectura para la CRA
                 </div>
-                La inercia térmica oceánica tiene un desfase de 4 a 6 semanas antes de reflejarse en los caudales mínimos de bocatomas. La ventana de prevención para acueductos se cierra en octubre.
+                El calor del océano tarda semanas en llegar a las fuentes de agua. Este es el tiempo para preparar a los prestadores.
               </div>
             </div>
-
             <div class="story-kpi-grid">
-              <div class="story-kpi-pill">
-                <div class="val">+3.2 °C</div>
-                <div class="lbl">Anomalía Niño 3.4</div>
-              </div>
-              <div class="story-kpi-pill">
-                <div class="val">+2.16 °C</div>
-                <div class="lbl">Índice ONI Trimestral</div>
-              </div>
-              <div class="story-kpi-pill">
-                <div class="val">75.0 %</div>
-                <div class="lbl">Probabilidad Muy Fuerte</div>
-              </div>
-              <div class="story-kpi-pill">
-                <div class="val">42 días</div>
-                <div class="lbl">Secos en Caribe</div>
-              </div>
+              ${kpiPill(fmtSigno(R.nino34, 1) + ' °C', 'Anomalía Niño 3.4')}
+              ${kpiPill(fmtSigno(R.oni, 2) + ' °C', 'ONI ' + R.oniTrimestre)}
+              ${kpiPill(R.probMuyFuerte == null ? 'Sin dato' : fmt(R.probMuyFuerte, 0) + ' %', 'Probabilidad evento muy fuerte')}
+              ${kpiPill(R.a3.n ? fmtSigno(R.a3.mediana, 1) + ' %' : 'Sin dato', 'Lluvia 30 días (mediana)')}
             </div>
           </div>
-
           <div class="story-visual-panel">
             <div class="story-visual-header">
-              <span class="story-visual-title">Comparativa Térmica ENSO y Ciclo Histórico de Crisis</span>
-              <span style="font-size:12px;color:var(--cra-cian-texto);font-weight:700">Fuente: NOAA CPC 2026-10-08</span>
+              <span class="story-visual-title">Anomalía de temperatura por región del Pacífico</span>
+              <span style="font-size:12px;color:var(--cra-cian-texto);font-weight:700">Fuente: ${escaparHtml(R.fuenteEnso)} · semana ${escaparHtml(R.fechaSemana)}</span>
             </div>
             <div class="story-visual-content">
-              <!-- Visualizador de termómetros ENSO -->
-              <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:12px;margin-bottom:20px">
-                <div style="background:var(--tinte);padding:14px;border-radius:var(--radio-md);text-align:center;border-top:4px solid var(--alerta-roja)">
-                  <div style="font-size:11px;font-weight:800;color:var(--texto-claro)">Niño 1+2 (Costa)</div>
-                  <div style="font-size:24px;font-weight:900;color:var(--alerta-roja);margin:4px 0">+5.3 °C</div>
-                  <div style="font-size:11px;color:var(--texto)">SST: 26.1 °C</div>
-                </div>
-                <div style="background:var(--tinte);padding:14px;border-radius:var(--radio-md);text-align:center;border-top:4px solid var(--alerta-roja)">
-                  <div style="font-size:11px;font-weight:800;color:var(--texto-claro)">Niño 3 (Oriental)</div>
-                  <div style="font-size:24px;font-weight:900;color:var(--alerta-roja);margin:4px 0">+4.0 °C</div>
-                  <div style="font-size:11px;color:var(--texto)">SST: 29.0 °C</div>
-                </div>
-                <div style="background:var(--tinte);padding:14px;border-radius:var(--radio-md);text-align:center;border-top:4px solid var(--alerta-naranja)">
-                  <div style="font-size:11px;font-weight:800;color:var(--cra-cian-texto)">Niño 3.4 (Referencia)</div>
-                  <div style="font-size:24px;font-weight:900;color:var(--alerta-naranja);margin:4px 0">+3.2 °C</div>
-                  <div style="font-size:11px;color:var(--texto)">SST: 29.9 °C</div>
-                </div>
-                <div style="background:var(--tinte);padding:14px;border-radius:var(--radio-md);text-align:center;border-top:4px solid var(--alerta-amarilla)">
-                  <div style="font-size:11px;font-weight:800;color:var(--texto-claro)">Niño 4 (Occidental)</div>
-                  <div style="font-size:24px;font-weight:900;color:#C79E00;margin:4px 0">+1.2 °C</div>
-                  <div style="font-size:11px;color:var(--texto)">SST: 29.9 °C</div>
-                </div>
+              <div class="story-termometros" role="img" aria-label="${escaparHtml(regiones.map(r => r.nombre + ' ' + fmtSigno(r.anom, 1) + ' grados').join(', '))}">
+                ${regiones.map(r => `
+                  <div class="story-termo ${r.ref ? 'ref' : ''}">
+                    <div class="story-termo-tubo"><div class="story-termo-relleno" style="height:${Math.max(4, Math.round((Number(r.anom) || 0) / maxAnom * 100))}%"></div></div>
+                    <div class="story-termo-val">${escaparHtml(fmtSigno(r.anom, 1))} °C</div>
+                    <div class="story-termo-nom">${escaparHtml(r.nombre)}</div>
+                    <div class="story-termo-zona">${escaparHtml(r.zona)} · ${escaparHtml(fmt(r.sst, 1))} °C</div>
+                  </div>`).join('')}
               </div>
-
-              <!-- Tabla de comparación histórica -->
-              <div style="background:#FFFFFF;border:1px solid var(--linea);border-radius:var(--radio-md);padding:16px;flex:1">
-                <h4 style="font-size:14px;font-weight:800;margin-bottom:10px;color:var(--texto-fuerte)">Comparativa Histórica de Eventos El Niño Mayores</h4>
-                <div class="tabla-container">
-                  <table class="tabla-vigia">
-                    <thead>
-                      <tr>
-                        <th>Evento / Año</th>
-                        <th>Pico ONI</th>
-                        <th>Categoría</th>
-                        <th>Impacto Acueductos Colombia</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><strong>El Niño 1997-98</strong></td>
-                        <td>+2.40 °C</td>
-                        <td>Super El Niño</td>
-                        <td>Racionamiento en más de 200 municipios; crisis severa en Guajira y Boyacá.</td>
-                      </tr>
-                      <tr>
-                        <td><strong>El Niño 2015-16</strong></td>
-                        <td>+2.60 °C</td>
-                        <td>Histórico</td>
-                        <td>Colapso de embalses en Cundinamarca y Caribe; activación decarrotanques en 340 municipios.</td>
-                      </tr>
-                      <tr style="background:var(--cra-cian-suave);font-weight:700">
-                        <td><strong style="color:var(--cra-cian-texto)">El Niño 2026-27 (Actual)</strong></td>
-                        <td><span class="chip-alerta roja">+3.20 °C</span></td>
-                        <td>Muy Fuerte / Histórico</td>
-                        <td>10.9M de personas en riesgo crítico; 5 municipios en Alerta Roja confirmada.</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+              <div style="background:#FFFFFF;border:1px solid var(--linea);border-radius:var(--radio-md);padding:16px;margin-top:16px">
+                <h4 style="font-size:14px;font-weight:800;margin-bottom:10px;color:var(--texto-fuerte)">Pico del ONI frente a los grandes Niños</h4>
+                ${barraHist('1997-98', 2.4, false)}
+                ${barraHist('2015-16', 2.6, false)}
+                ${barraHist('2026-27 (' + R.oniTrimestre + ')', R.oni, true)}
+                <p style="font-size:11px;color:var(--texto-claro);margin-top:8px">Picos históricos del ONI publicados por NOAA CPC. El valor actual es el último trimestre del corte, no el pico final del evento.</p>
               </div>
             </div>
           </div>
         </div>
       `;
     } else if (paso === 2) {
-      // ACTO II: EL EMBUDO TERRITORIAL (FOCOS CRÍTICOS)
+      // ACTO II: DÓNDE SE CONCENTRA EL RIESGO — municipios y departamentos del corte
+      const criticos = R.criticos;
+      const deptoTop = R.deptosCriticos[0];
       container.innerHTML = `
         <div class="story-chapter-body">
           <div class="story-narrative-panel">
             <div>
-              <span class="chapter-number-pill">Acto II · Geografía del Riesgo</span>
-              <h3 class="story-chapter-title">Tres Corredores en Jaque: La Guajira, Bajo Magdalena y Santander</h3>
+              <span class="chapter-number-pill">Acto II · Dónde</span>
+              <h3 class="story-chapter-title">${escaparHtml(criticos.length)} de ${escaparHtml(R.total)} municipios en riesgo alto</h3>
               <div class="story-narrative-text">
-                <p>
-                  El impacto territorial es asimétrico. El algoritmo del Vigía detecta que la crisis se canaliza a través de <strong>tres frentes hidrogeográficos críticos</strong>:
-                </p>
-                <p>
-                  <strong>1. Corredor Árido de La Guajira:</strong> <em>Manaure (87.1), Uribia (85.8), Maicao (83.0) y Riohacha (77.2)</em> ocupan 4 de los 5 puestos más vulnerables de Colombia en <strong>Alerta Roja</strong>. Fuentes subterráneas hipersalinas y nula reserva de agua.
-                </p>
-                <p>
-                  <strong>2. Bajo Magdalena y Depresión Momposina:</strong> <em>Plato (71.6), El Carmen de Bolívar (73.9) y Magangué (59.7)</em>. La caída de niveles fluviales a mínimos históricos deja en seco las barcazas de captación superficial.
-                </p>
-                <p>
-                  <strong>3. Foco del Chicamocha y Guanentá:</strong> <em>Barichara (75.4, Roja)</em> enfrenta racionamiento de más de 18 horas diarias por desecamiento de quebradas menores, en contraste con Bucaramanga que cuenta con embalses de regulación.
-                </p>
-              </div>
-
-              <div class="story-insight-box critico">
-                <div class="story-insight-header">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                  Alerta Territorial Prioritaria
-                </div>
-                5 municipios en Alerta Roja y 12 en Alerta Naranja concentran el 78 % del riesgo nacional. Los sistemas dependientes de fuentes superficiales sin embalse colapsan primero.
+                <p>${criticos.length
+                  ? `Están en nivel naranja o rojo: ${criticos.map(m => `<strong>${escaparHtml(m.nombre)}</strong> (${escaparHtml(m.departamento)}, ICR ${escaparHtml(fmt(m.icr, 1))})`).join(', ')}.`
+                  : 'Ningún municipio monitoreado está en nivel naranja o rojo.'}</p>
+                ${deptoTop ? `<p><strong>${escaparHtml(deptoTop.departamento)}</strong> concentra la mayor población en riesgo alto: ${escaparHtml(fmt(deptoTop.poblacion_naranja_roja, 0))} habitantes.</p>` : ''}
               </div>
             </div>
-
             <div class="story-kpi-grid">
-              <div class="story-kpi-pill">
-                <div class="val" style="color:var(--alerta-roja)">5 Munis</div>
-                <div class="lbl">Alerta Roja Máxima</div>
-              </div>
-              <div class="story-kpi-pill">
-                <div class="val" style="color:var(--alerta-naranja)">12 Munis</div>
-                <div class="lbl">Alerta Naranja Alta</div>
-              </div>
-              <div class="story-kpi-pill">
-                <div class="val">84.1 pts</div>
-                <div class="lbl">ICR Medio en La Guajira</div>
-              </div>
-              <div class="story-kpi-pill">
-                <div class="val">&lt; 6 h/d</div>
-                <div class="lbl">Continuidad en Puntos Rojos</div>
-              </div>
+              ${kpiPill(fmt(R.niveles.roja || 0, 0), 'Municipios en rojo', 'var(--alerta-roja)')}
+              ${kpiPill(fmt(R.niveles.naranja || 0, 0), 'Municipios en naranja', 'var(--alerta-naranja)')}
+              ${kpiPill(fmt(R.niveles.amarilla || 0, 0), 'Municipios en amarillo', '#8A6D00')}
+              ${kpiPill(fmt(R.niveles.sin_alerta || 0, 0), 'Sin alerta', 'var(--alerta-sin)')}
             </div>
           </div>
-
           <div class="story-visual-panel">
             <div class="story-visual-header">
-              <span class="story-visual-title">Focos Territoriales en Alerta Roja y Corredores de Sequía</span>
-              <button class="btn-secundario" onclick="window.verEnMapaDesdeStory('44847')" style="font-size:11px;padding:4px 10px">Ver en Mapa Completo ➔</button>
+              <span class="story-visual-title">Municipios en nivel naranja y rojo</span>
+              ${criticos[0] ? `<button class="btn-secundario" onclick="window.verEnMapaDesdeStory('${escaparHtml(criticos[0].divipola)}')" style="font-size:11px;padding:4px 10px">Ver en el mapa ➔</button>` : ''}
             </div>
             <div class="story-visual-content">
-              <!-- Tarjetas de los 5 municipios en Alerta Roja -->
-              <div style="display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:16px">
-                ${munis.filter(m => m.nivel_alerta === 'roja').map(m => `
-                  <div style="background:var(--tinte);border:1px solid #FFCDD2;border-left:5px solid var(--alerta-roja);border-radius:var(--radio-md);padding:12px 16px;display:flex;justify-content:space-between;align-items:center">
-                    <div>
-                      <div style="display:flex;align-items:center;gap:8px">
-                        <span class="pulse-indicator"></span>
-                        <strong style="font-size:15px;color:var(--texto-fuerte)">${escaparHtml(m.nombre)}</strong>
-                        <span style="font-size:12px;color:var(--texto-claro)">(${escaparHtml(m.departamento)})</span>
-                      </div>
+              ${barraNiveles(R.niveles, R.total)}
+              <div style="display:grid;grid-template-columns:1fr;gap:10px;margin-top:16px">
+                ${criticos.map(m => `
+                  <div class="story-muni-card ${escaparHtml(m.nivel_alerta)}">
+                    <div style="min-width:0">
+                      <strong style="font-size:15px;color:var(--texto-fuerte)">${escaparHtml(m.nombre)}</strong>
+                      <span style="font-size:12px;color:var(--texto-claro)">(${escaparHtml(m.departamento)})</span>
                       <div style="font-size:12px;color:var(--texto);margin-top:3px">
-                        Continuidad: <strong>${escaparHtml(m.indicadores['S-1']?.valor ?? '—')} h/d</strong> · Lluvia 30d: <strong>${escaparHtml(m.indicadores['A-3']?.valor ?? '—')} %</strong> · Población: <strong>${Number(m.poblacion || 0).toLocaleString('es-CO')} hab.</strong>
+                        Servicio: <strong>${escaparHtml(conUnidad(fmtInd(m, 'S-1', 1), 'h/día'))}</strong> · Lluvia 30 días: <strong>${escaparHtml(conUnidad(fmtInd(m, 'A-3', 1, true), '%'))}</strong> · <strong>${escaparHtml(fmt(m.poblacion, 0))}</strong> hab.
                       </div>
                     </div>
                     <div style="display:flex;align-items:center;gap:12px">
                       <div style="text-align:right">
-                        <div style="font-size:18px;font-weight:900;color:var(--alerta-roja)">${Number(m.icr || 0).toFixed(1)}</div>
-                        <div style="font-size:10px;text-transform:uppercase;color:var(--texto-claro);font-weight:700">ICR RIESGO</div>
+                        <div style="font-size:18px;font-weight:900;color:var(--texto-fuerte)">${escaparHtml(fmt(m.icr, 1))}</div>
+                        <span class="chip-alerta ${escaparHtml(m.nivel_alerta)}">${escaparHtml(nombreNivel(m.nivel_alerta))}</span>
                       </div>
                       <button class="btn-secundario" onclick="window.verEnMapaDesdeStory('${escaparHtml(m.divipola)}')" style="padding:4px 8px;font-size:11px">Localizar</button>
                     </div>
-                  </div>
-                `).join('')}
-              </div>
-
-              <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:var(--radio-md);padding:12px 14px;font-size:12px;color:#166534">
-                <strong>Análisis Espacial CRA:</strong> Los acueductos de La Guajira y el Chicamocha operan sin reservas hídricas de contingencia. La intervención técnica exige carrotanques y pozos de emergencia inmediatos.
+                  </div>`).join('')}
               </div>
             </div>
           </div>
         </div>
       `;
     } else if (paso === 3) {
-      // ACTO III: CAUSALIDAD DEL RIESGO (4 CAPAS DEL ICR)
+      // ACTO III: POR QUÉ — las 4 capas del ICR con pesos de la configuración vigente
+      const alto = R.icrMax, bajo = R.icrMin;
+      const capas = [
+        { k: 'amenaza_A', capa: 'A', nombre: 'Amenaza' },
+        { k: 'vulnerabilidad_H', capa: 'H', nombre: 'Vulnerabilidad de la oferta' },
+        { k: 'servicio_S', capa: 'S', nombre: 'Desempeño del servicio' },
+        { k: 'respuesta_R', capa: 'R', nombre: 'Respuesta e impacto' }
+      ];
+      let brecha = null;
+      if (alto && bajo) {
+        capas.forEach(c => {
+          const a = alto.subindices_capa?.[c.k], b = bajo.subindices_capa?.[c.k];
+          if (a == null || b == null) return;
+          if (!brecha || Math.abs(a - b) > Math.abs(brecha.a - brecha.b)) brecha = { ...c, a, b };
+        });
+      }
+      const tarjeta = (m, tono) => !m ? '' : `
+        <div class="story-compara ${tono}">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px">
+            <strong style="font-size:15px;color:var(--texto-fuerte)">${escaparHtml(m.nombre)} <span style="font-weight:600;color:var(--texto-claro);font-size:12px">(${escaparHtml(m.departamento)})</span></strong>
+            <span class="chip-alerta ${escaparHtml(m.nivel_alerta)}">ICR ${escaparHtml(fmt(m.icr, 1))}</span>
+          </div>
+          ${capas.map(c => {
+            const v = m.subindices_capa?.[c.k];
+            return `<div style="margin-bottom:8px">
+              <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:700"><span>${escaparHtml(c.nombre)} (${c.capa})</span><span>${v == null ? 'Sin dato' : escaparHtml(fmt(v, 1)) + ' pts'}</span></div>
+              <div class="story-barra"><div style="width:${v == null ? 0 : Math.min(100, v)}%;background:${colorPuntaje(v)}"></div></div>
+            </div>`;
+          }).join('')}
+        </div>`;
       container.innerHTML = `
         <div class="story-chapter-body">
           <div class="story-narrative-panel">
             <div>
-              <span class="chapter-number-pill">Acto III · Modelo Algorítmico CRA</span>
-              <h3 class="story-chapter-title">Por Qué Colapsa el Servicio: La Vulnerabilidad Compuesta</h3>
+              <span class="chapter-number-pill">Acto III · Por qué</span>
+              <h3 class="story-chapter-title">La sequía sola no explica el riesgo</h3>
               <div class="story-narrative-text">
-                <p>
-                  Un error clásico es culpar exclusivamente a la sequía. El modelo del <strong>Índice Compuesto de Riesgo (ICR)</strong> demuestra que el desabastecimiento surge de la interacción perversa de 4 dimensiones técnicas:
-                </p>
-                <p>
-                  $$ICR = 0.25 \\times A + 0.25 \\times H + 0.35 \\times S + 0.15 \\times G$$
-                </p>
-                <p>
-                  - <strong>Capa A (Amenaza, 25%):</strong> Falta de lluvia y temperatura.<br>
-                  - <strong>Capa H (Vulnerabilidad Hídrica, 25%):</strong> Caudal de fuentes y pérdidas en red (IANC).<br>
-                  - <strong>Capa S (Servicio al Usuario, 35%):</strong> Horas de continuidad e índice de calidad IRCA.<br>
-                  - <strong>Capa G (Gobernanza y Respuesta, 15%):</strong> Planes de contingencia y solvencia del operador.
-                </p>
+                <p>El ICR suma cuatro capas. Con la misma amenaza, el riesgo cambia según la fuente, el servicio y la respuesta de cada municipio.</p>
+                <p class="story-formula">ICR = ${PESOS_ICR_TEXTO}</p>
               </div>
-
-              <div class="story-insight-box">
+              ${brecha ? `<div class="story-insight-box">
                 <div class="story-insight-header">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-                  Caso Testigo de Resiliencia
+                  Qué separa a los dos extremos
                 </div>
-                ¿Por qué Bucaramanga (ICR 31.3) y Barichara (ICR 75.4) tienen resultados opuestos ante el mismo Niño? Bucaramanga posee el Embalse de Tona (>90 días de autonomía) y pérdidas del 28%; Barichara depende de quebradas secas y pierde el 62% del agua tratada.
-              </div>
+                La mayor diferencia entre ${escaparHtml(alto.nombre)} y ${escaparHtml(bajo.nombre)} está en la capa <strong>${escaparHtml(brecha.nombre)}</strong>: ${escaparHtml(fmt(brecha.a, 1))} frente a ${escaparHtml(fmt(brecha.b, 1))} puntos.
+              </div>` : ''}
             </div>
-
             <div class="story-kpi-grid">
-              <div class="story-kpi-pill">
-                <div class="val">35 %</div>
-                <div class="lbl">Peso Capa Servicio (S)</div>
-              </div>
-              <div class="story-kpi-pill">
-                <div class="val">25 %</div>
-                <div class="lbl">Peso Capa Hídrica (H)</div>
-              </div>
-              <div class="story-kpi-pill">
-                <div class="val">25 %</div>
-                <div class="lbl">Peso Amenaza (A)</div>
-              </div>
-              <div class="story-kpi-pill">
-                <div class="val">15 %</div>
-                <div class="lbl">Peso Respuesta (G)</div>
-              </div>
+              ${capas.map(c => kpiPill(fmt(PESOS_ICR[c.capa] * 100, 0) + ' %', 'Peso ' + c.nombre.toLowerCase())).join('')}
             </div>
           </div>
-
           <div class="story-visual-panel">
             <div class="story-visual-header">
-              <span class="story-visual-title">Comparador de Vulnerabilidad por Capas: Uribia vs Bucaramanga</span>
-              <span style="font-size:12px;color:var(--texto-claro)">Diagnóstico CRA</span>
+              <span class="story-visual-title">Mayor y menor ICR del corte, capa por capa</span>
+              <span style="font-size:12px;color:var(--texto-claro)">Configuración ${escaparHtml(R.versionConfig)}</span>
             </div>
             <div class="story-visual-content">
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
-                <!-- Tarjeta Uribia -->
-                <div style="background:#FFF5F5;border:1px solid #FFCDD2;border-radius:var(--radio-md);padding:16px">
-                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-                    <strong style="color:var(--alerta-roja);font-size:15px">Uribia (La Guajira)</strong>
-                    <span class="chip-alerta roja">ICR: 85.8</span>
-                  </div>
-                  <div style="font-size:12px;margin-bottom:10px;color:var(--texto)">Vulnerabilidad Crítica Extrema</div>
-                  <div style="margin-bottom:6px">
-                    <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:700"><span>Amenaza (A):</span><span>94.2 pts</span></div>
-                    <div style="height:6px;background:#FFEBEE;border-radius:3px;overflow:hidden"><div style="width:94%;height:100%;background:var(--alerta-roja)"></div></div>
-                  </div>
-                  <div style="margin-bottom:6px">
-                    <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:700"><span>Vulnerabilidad Hídrica (H):</span><span>78.3 pts</span></div>
-                    <div style="height:6px;background:#FFEBEE;border-radius:3px;overflow:hidden"><div style="width:78%;height:100%;background:var(--alerta-roja)"></div></div>
-                  </div>
-                  <div style="margin-bottom:6px">
-                    <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:700"><span>Capacidad de Servicio (S):</span><span>76.2 pts</span></div>
-                    <div style="height:6px;background:#FFEBEE;border-radius:3px;overflow:hidden"><div style="width:76%;height:100%;background:var(--alerta-roja)"></div></div>
-                  </div>
-                  <div>
-                    <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:700"><span>Falta de Gobernanza (G):</span><span>100.0 pts</span></div>
-                    <div style="height:6px;background:#FFEBEE;border-radius:3px;overflow:hidden"><div style="width:100%;height:100%;background:var(--alerta-roja)"></div></div>
-                  </div>
-                </div>
-
-                <!-- Tarjeta Bucaramanga -->
-                <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:var(--radio-md);padding:16px">
-                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-                    <strong style="color:var(--alerta-sin);font-size:15px">Bucaramanga (Santander)</strong>
-                    <span class="chip-alerta sin_alerta">ICR: 31.3</span>
-                  </div>
-                  <div style="font-size:12px;margin-bottom:10px;color:var(--texto)">Alta Resiliencia Estructural</div>
-                  <div style="margin-bottom:6px">
-                    <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:700"><span>Amenaza (A):</span><span>42.0 pts</span></div>
-                    <div style="height:6px;background:#E8F5E9;border-radius:3px;overflow:hidden"><div style="width:42%;height:100%;background:var(--alerta-sin)"></div></div>
-                  </div>
-                  <div style="margin-bottom:6px">
-                    <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:700"><span>Vulnerabilidad Hídrica (H):</span><span>28.5 pts</span></div>
-                    <div style="height:6px;background:#E8F5E9;border-radius:3px;overflow:hidden"><div style="width:28%;height:100%;background:var(--alerta-sin)"></div></div>
-                  </div>
-                  <div style="margin-bottom:6px">
-                    <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:700"><span>Capacidad de Servicio (S):</span><span>22.0 pts</span></div>
-                    <div style="height:6px;background:#E8F5E9;border-radius:3px;overflow:hidden"><div style="width:22%;height:100%;background:var(--alerta-sin)"></div></div>
-                  </div>
-                  <div>
-                    <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:700"><span>Falta de Gobernanza (G):</span><span>25.0 pts</span></div>
-                    <div style="height:6px;background:#E8F5E9;border-radius:3px;overflow:hidden"><div style="width:25%;height:100%;background:var(--alerta-sin)"></div></div>
-                  </div>
-                </div>
-              </div>
-
-              <div style="background:var(--tinte);border-radius:var(--radio-md);padding:14px;font-size:13px;color:var(--texto-fuerte)">
-                <strong>Conclusión Algorítmica:</strong> Las pérdidas físicas de agua en la red (IANC > 60%) y la inexistencia de planes de emergencia (PEC) multiplican por tres el riesgo de desabastecimiento frente al impacto climático puro.
-              </div>
+              <div class="story-compara-grid">${tarjeta(alto, 'alto')}${tarjeta(bajo, 'bajo')}</div>
+              <p style="font-size:11px;color:var(--texto-claro);margin-top:10px">Puntaje de 0 (sin riesgo) a 100 (riesgo máximo) por capa.</p>
             </div>
           </div>
         </div>
       `;
     } else if (paso === 4) {
-      // ACTO IV: EL IMPACTO HUMANO Y PRESTADORES
+      // ACTO IV: A QUIÉN AFECTA — población por nivel, racionamiento y calamidad verificados
+      const pctCritica = R.pobTotal ? R.pobCritica / R.pobTotal * 100 : 0;
       container.innerHTML = `
         <div class="story-chapter-body">
           <div class="story-narrative-panel">
             <div>
-              <span class="chapter-number-pill">Acto IV · Costo Social y Operativo</span>
-              <h3 class="story-chapter-title">10.9 Millones de Colombianos en Riesgo Operativo</h3>
+              <span class="chapter-number-pill">Acto IV · A quién afecta</span>
+              <h3 class="story-chapter-title">${escaparHtml(fmt(R.pobCritica, 0))} personas viven en municipios de riesgo alto</h3>
               <div class="story-narrative-text">
-                <p>
-                  El impacto del estiaje no es un número estadístico; se traduce en hogares sin suministro continuo y prestadores de servicios al borde de la quiebra operativa:
-                </p>
-                <p>
-                  - <strong>10.870.500 personas</strong> habitan en municipios calificados en niveles Naranja y Rojo.<br>
-                  - El <strong>68 % de la población en riesgo</strong> pertenece a los <strong>estratos socioeconómicos 1 y 2</strong>, quienes sufren con mayor dureza los sobrecostos de comprar agua en pimpinas o carro-tanques.<br>
-                  - <strong>14 acueductos</strong> ya tienen racionamientos sectorizados activos con menos de 6 horas de suministro al día.<br>
-                  - Los prestadores comunitarios y pequeños carecen de flujo de caja para solventar el bombeo diésel continuo de pozos profundos.
-                </p>
+                <p>Es el ${escaparHtml(fmt(pctCritica, 1))} % de los ${escaparHtml(fmt(R.pobTotal, 0))} habitantes de los ${escaparHtml(R.total)} municipios monitoreados (proyección DANE).</p>
+                <p>${R.racionamiento.length
+                  ? `Racionamiento reportado con soporte: ${R.racionamiento.map(m => `<strong>${escaparHtml(m.nombre)}</strong>`).join(', ')}.`
+                  : 'Ningún municipio tiene racionamiento reportado con soporte.'}
+                ${R.calamidad.length ? ` Calamidad pública vigente: ${R.calamidad.map(m => `<strong>${escaparHtml(m.nombre)}</strong>`).join(', ')}.` : ''}</p>
               </div>
-
-              <div class="story-insight-box critico">
+              <div class="story-insight-box">
                 <div class="story-insight-header">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                  Fragilidad de Prestadores Comunitarios
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                  Cobertura del dato
                 </div>
-                En menos de 45 días continuos de sequía, los pequeños operadores entran en insolvencia financiera por costos no previstos de combustible y compra de agua en bloque.
+                Racionamiento: ${escaparHtml(R.r3ConDato)} de ${escaparHtml(R.total)} municipios con dato. Calamidad: ${escaparHtml(R.r4ConDato)} de ${escaparHtml(R.total)}. Sin dato no significa que no ocurra.
               </div>
             </div>
-
             <div class="story-kpi-grid">
-              <div class="story-kpi-pill">
-                <div class="val" style="color:var(--alerta-roja)">10.9 M</div>
-                <div class="lbl">Población en Naranja y Rojo</div>
-              </div>
-              <div class="story-kpi-pill">
-                <div class="val">68 %</div>
-                <div class="lbl">Estratos 1 y 2</div>
-              </div>
-              <div class="story-kpi-pill">
-                <div class="val" style="color:var(--alerta-naranja)">14 Munis</div>
-                <div class="lbl">Racionamientos Activos</div>
-              </div>
-              <div class="story-kpi-pill">
-                <div class="val">73</div>
-                <div class="lbl">Prestadores en Alerta</div>
-              </div>
+              ${kpiPill(fmt(R.pobCritica, 0), 'Habitantes en naranja y rojo', 'var(--alerta-roja)')}
+              ${kpiPill(fmt(pctCritica, 1) + ' %', 'De la población monitoreada')}
+              ${kpiPill(fmt(R.racionamiento.length, 0), 'Con racionamiento reportado', 'var(--alerta-naranja)')}
+              ${kpiPill(fmt(R.calamidad.length, 0), 'Con calamidad pública')}
             </div>
           </div>
-
           <div class="story-visual-panel">
             <div class="story-visual-header">
-              <span class="story-visual-title">Distribución Poblacional por Nivel de Riesgo y Estrato</span>
-              <span style="font-size:12px;color:var(--texto-claro)">DANE / SUI SSPD</span>
+              <span class="story-visual-title">Habitantes por nivel de riesgo</span>
+              <span style="font-size:12px;color:var(--texto-claro)">${escaparHtml(R.fuentePoblacion)}</span>
             </div>
             <div class="story-visual-content">
-              <!-- Barras de población por nivel -->
-              <div style="margin-bottom:20px">
-                <div style="margin-bottom:8px">
-                  <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:800;color:var(--alerta-roja)">
-                    <span>Nivel Rojo (Alerta Máxima)</span>
-                    <span>1.480.000 hab. (13.6%)</span>
+              ${['roja', 'naranja', 'amarilla', 'sin_alerta', 'sin_dato'].filter(n => R.pobPorNivel[n] > 0).map(n => `
+                <div style="margin-bottom:10px">
+                  <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:800;color:var(--texto-fuerte)">
+                    <span><span class="chip-alerta ${n}">${escaparHtml(nombreNivel(n))}</span></span>
+                    <span>${escaparHtml(fmt(R.pobPorNivel[n], 0))} hab. (${escaparHtml(fmt(R.pobTotal ? R.pobPorNivel[n] / R.pobTotal * 100 : 0, 1))} %)</span>
                   </div>
-                  <div style="height:14px;background:#FFEBEE;border-radius:7px;overflow:hidden">
-                    <div style="width:13.6%;height:100%;background:var(--alerta-roja)"></div>
-                  </div>
-                </div>
-
-                <div style="margin-bottom:8px">
-                  <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:800;color:var(--alerta-naranja)">
-                    <span>Nivel Naranja (Alerta Alta)</span>
-                    <span>9.390.500 hab. (86.4%)</span>
-                  </div>
-                  <div style="height:14px;background:#FFE8D6;border-radius:7px;overflow:hidden">
-                    <div style="width:86.4%;height:100%;background:var(--alerta-naranja)"></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:800;color:var(--alerta-sin)">
-                    <span>Sin Alerta / Resilientes</span>
-                    <span>4.120.000 hab. (Estable)</span>
-                  </div>
-                  <div style="height:14px;background:#E8F5E9;border-radius:7px;overflow:hidden">
-                    <div style="width:38%;height:100%;background:var(--alerta-sin)"></div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Lista de municipios con racionamiento activo -->
-              <div style="background:#FFFFFF;border:1px solid var(--linea);border-radius:var(--radio-md);padding:14px;flex:1">
-                <h4 style="font-size:13px;font-weight:800;color:var(--texto-fuerte);margin-bottom:8px">Municipios con Esquemas de Racionamiento Declarados:</h4>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px">
-                  <div style="padding:6px 10px;background:var(--tinte);border-radius:4px">🔴 <strong>Uribia:</strong> 4 h/d (Turnos cada 48h)</div>
-                  <div style="padding:6px 10px;background:var(--tinte);border-radius:4px">🔴 <strong>Manaure:</strong> 3 h/d (Crítico)</div>
-                  <div style="padding:6px 10px;background:var(--tinte);border-radius:4px">🔴 <strong>Barichara:</strong> 6 h/d (Sectorizado)</div>
-                  <div style="padding:6px 10px;background:var(--tinte);border-radius:4px">🟠 <strong>Plato:</strong> 8 h/d (Bajo caudal)</div>
-                  <div style="padding:6px 10px;background:var(--tinte);border-radius:4px">🟠 <strong>El Carmen de B.:</strong> 7 h/d (Turnos)</div>
-                  <div style="padding:6px 10px;background:var(--tinte);border-radius:4px">🟠 <strong>Espinal:</strong> 10 h/d (Presión reducida)</div>
-                </div>
+                  <div class="story-barra grande"><div style="width:${R.pobTotal ? R.pobPorNivel[n] / R.pobTotal * 100 : 0}%;background:${COLOR_NIVEL[n]}"></div></div>
+                </div>`).join('')}
+              <div style="background:#FFFFFF;border:1px solid var(--linea);border-radius:var(--radio-md);padding:14px;margin-top:12px">
+                <h4 style="font-size:13px;font-weight:800;color:var(--texto-fuerte);margin-bottom:8px">Horas de servicio en los municipios de riesgo alto</h4>
+                ${R.criticos.map(m => {
+                  const h = m.indicadores?.['S-1']?.valor;
+                  return `<div style="display:grid;grid-template-columns:minmax(110px,1fr) 3fr auto;gap:10px;align-items:center;font-size:12px;margin-bottom:6px">
+                    <strong>${escaparHtml(m.nombre)}</strong>
+                    <div class="story-barra"><div style="width:${h == null ? 0 : h / 24 * 100}%;background:var(--cra-cian)"></div></div>
+                    <span>${h == null ? 'Sin dato' : escaparHtml(fmt(h, 1)) + ' de 24 h'}</span>
+                  </div>`;
+                }).join('') || '<p style="font-size:12px">Sin municipios en riesgo alto.</p>'}
+                <p style="font-size:11px;color:var(--texto-claro);margin-top:6px">Continuidad SSPD SUI, periodo ${escaparHtml(R.fechaS1)}.</p>
               </div>
             </div>
           </div>
         </div>
       `;
     } else if (paso === 5) {
-      // ACTO V: TABLERO DE COMANDO Y RUTA CRA
+      // ACTO V: QUÉ HACER — opciones para evaluar, priorizadas con el corte (no son decisiones adoptadas)
+      const deptos = [...new Set(R.criticos.map(m => m.departamento))];
+      const primero = R.criticos[0];
+      const opciones = [
+        { titulo: 'Seguimiento a los municipios en riesgo alto', borde: 'var(--alerta-roja)',
+          texto: `${R.criticos.length} municipios en naranja y rojo${deptos.length ? ' (' + deptos.join(', ') + ')' : ''}: revisar con la SSPD y los prestadores sus planes de emergencia y contingencia.` },
+        { titulo: 'Abastecimiento alterno', borde: 'var(--alerta-naranja)',
+          texto: `${R.racionamiento.length} municipios reportan racionamiento con soporte. Evaluar el tratamiento de costos de fuentes alternas (carrotanques, pozos).` },
+        { titulo: 'Desincentivo al consumo excesivo', borde: 'var(--cra-cian)',
+          texto: 'Evaluar la aplicación de las medidas regulatorias de consumo excesivo en los municipios con riesgo alto.' },
+        { titulo: 'Calidad del agua durante el racionamiento', borde: 'var(--bandera-azul)',
+          texto: `El IRCA disponible es de ${R.anioIrca}. Coordinar con las autoridades de salud la vigilancia donde hay racionamiento.` }
+      ];
       container.innerHTML = `
         <div class="story-chapter-body">
           <div class="story-narrative-panel">
             <div>
-              <span class="chapter-number-pill">Acto V · Hoja de Ruta Regulatoria</span>
-              <h3 class="story-chapter-title">Decisiones Normativas Inmediatas de la Comisión</h3>
+              <span class="chapter-number-pill">Acto V · Qué hacer</span>
+              <h3 class="story-chapter-title">Cuatro frentes para priorizar</h3>
               <div class="story-narrative-text">
-                <p>
-                  Para contener el desabastecimiento y proteger a los usuarios, la Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA) activa cuatro instrumentos normativos y operativos inmediatos:
-                </p>
-                <p>
-                  <strong>1. Desincentivo Económico al Sobreconsumo:</strong> Cobro de tarifa duplicada para consumos que superen el tope de subsistencia (13 m³/mes en clima frío, 16 m³/mes en templado/cálido).<br>
-                  <strong>2. Flexibilización para Fuentes Alternas:</strong> Incorporación transitoria de costos de carrotanques y pozos sin modificar el estudio tarifario.<br>
-                  <strong>3. Mesa Interinstitucional de Contingencia:</strong> Reporte diario al SNGRD (UNGRD, MinVivienda, SuperServicios).<br>
-                  <strong>4. Vigilancia Intensiva de Calidad (SIVICAP):</strong> Prevención de brotes epidemiológicos por concentración de contaminantes.
-                </p>
+                <p>El corte del ${escaparHtml(R.fechaCorte)} ordena dónde actuar primero. Las opciones son para evaluar; no son decisiones adoptadas por la Comisión.</p>
               </div>
-
               <div class="story-insight-box">
                 <div class="story-insight-header">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                  Mandato Regulatorio CRA
+                  Alcance
                 </div>
-                El sistema Vigía aporta el sustento probatorio vinculante para motivar las resoluciones de emergencia tarifaria y racionamiento temporal ante los alcaldes y la SSPD.
+                Vigía es un análisis técnico de la CRA. No reemplaza las alertas del IDEAM ni las declaratorias de la UNGRD.
               </div>
             </div>
-
             <div style="display:flex;flex-direction:column;gap:10px;margin-top:14px">
               <button class="btn-iniciar-story" onclick="window.print()" style="width:100%;justify-content:center">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-                Descargar / Imprimir Informe Ejecutivo de Situación
+                Imprimir informe de situación
               </button>
             </div>
           </div>
-
           <div class="story-visual-panel">
             <div class="story-visual-header">
-              <span class="story-visual-title">Matriz de Acciones Regulatorias Prioritarias CRA</span>
-              <span style="font-size:12px;color:var(--alerta-sin);font-weight:800">4 Instrumentos Activos</span>
+              <span class="story-visual-title">Opciones de respuesta para evaluar</span>
+              <span style="font-size:12px;color:var(--texto-claro);font-weight:700">Priorizadas con el corte ${escaparHtml(R.fechaCorte)}</span>
             </div>
             <div class="story-visual-content">
               <div style="display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:16px">
-                <div style="background:#FFFFFF;border:1px solid var(--linea);border-radius:var(--radio-md);padding:14px;border-left:4px solid var(--cra-cian)">
-                  <div style="display:flex;justify-content:space-between;align-items:center">
-                    <strong style="color:var(--texto-fuerte);font-size:14px">1. Desincentivo al Sobreconsumo (Resolución CRA)</strong>
-                    <span style="background:#E6F5FA;color:var(--cra-cian-texto);font-size:11px;font-weight:800;padding:2px 8px;border-radius:4px">VIGENTE</span>
-                  </div>
-                  <p style="font-size:12px;color:var(--texto);margin-top:4px">
-                    Aplica a los 17 municipios en nivel Naranja y Rojo. Recaudo transferido al Fondo Nacional Ambiental para la protección de cuencas abastecedoras.
-                  </p>
-                </div>
-
-                <div style="background:#FFFFFF;border:1px solid var(--linea);border-radius:var(--radio-md);padding:14px;border-left:4px solid var(--alerta-naranja)">
-                  <div style="display:flex;justify-content:space-between;align-items:center">
-                    <strong style="color:var(--texto-fuerte);font-size:14px">2. Esquema Transitorio de Abastecimiento Alterno</strong>
-                    <span style="background:#FFE8D6;color:var(--alerta-naranja);font-size:11px;font-weight:800;padding:2px 8px;border-radius:4px">PRIORIZADO</span>
-                  </div>
-                  <p style="font-size:12px;color:var(--texto);margin-top:4px">
-                    Reconocimiento de costos de acarreo con carrotanques en La Guajira, Bolívar y Magdalena para evitar la quiebra de pequeños prestadores.
-                  </p>
-                </div>
-
-                <div style="background:#FFFFFF;border:1px solid var(--linea);border-radius:var(--radio-md);padding:14px;border-left:4px solid var(--alerta-roja)">
-                  <div style="display:flex;justify-content:space-between;align-items:center">
-                    <strong style="color:var(--texto-fuerte);font-size:14px">3. Mesa de Respuesta Interinstitucional (CRA - UNGRD - SSPD)</strong>
-                    <span style="background:#FFEBEE;color:var(--alerta-roja);font-size:11px;font-weight:800;padding:2px 8px;border-radius:4px">DIARIA</span>
-                  </div>
-                  <p style="font-size:12px;color:var(--texto);margin-top:4px">
-                    Reporte diario automatizado con el índice ICR para despacho de plantas potabilizadoras móviles y recursos del FNGRD.
-                  </p>
-                </div>
-
-                <div style="background:#FFFFFF;border:1px solid var(--linea);border-radius:var(--radio-md);padding:14px;border-left:4px solid var(--bandera-azul)">
-                  <div style="display:flex;justify-content:space-between;align-items:center">
-                    <strong style="color:var(--texto-fuerte);font-size:14px">4. Supervisión de Calidad Microbiológica (SIVICAP)</strong>
-                    <span style="background:#EBF3FF;color:var(--bandera-azul);font-size:11px;font-weight:800;padding:2px 8px;border-radius:4px">ACTIVO</span>
-                  </div>
-                  <p style="font-size:12px;color:var(--texto);margin-top:4px">
-                    Muestreo acelerado semanal de cloro residual e índice IRCA en municipios con racionamiento para impedir contaminación en red por despresurización.
-                  </p>
-                </div>
+                ${opciones.map((o, i) => `
+                  <div style="background:#FFFFFF;border:1px solid var(--linea);border-radius:var(--radio-md);padding:14px;border-left:4px solid ${o.borde}">
+                    <strong style="color:var(--texto-fuerte);font-size:14px">${i + 1}. ${escaparHtml(o.titulo)}</strong>
+                    <p style="font-size:12px;color:var(--texto);margin-top:4px">${escaparHtml(o.texto)}</p>
+                  </div>`).join('')}
               </div>
-
-              <!-- Enlaces rápidos finales -->
-              <div style="display:flex;gap:10px;justify-content:flex-end">
-                <button class="btn-secundario" onclick="window.verEnMapaDesdeStory('44847')">
-                  🗺️ Explorar Mapa Territorial Profesional
-                </button>
-                <button class="btn-secundario" onclick="window.abrirFichaDesdeMapa('44847')">
-                  📑 Abrir Ficha de Uribia (La Guajira)
-                </button>
-              </div>
+              ${primero ? `<div style="display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap">
+                <button class="btn-secundario" onclick="window.verEnMapaDesdeStory('${escaparHtml(primero.divipola)}')">Explorar el mapa</button>
+                <button class="btn-secundario" onclick="window.abrirFichaDesdeMapa('${escaparHtml(primero.divipola)}')">Abrir ficha de ${escaparHtml(primero.nombre)}</button>
+              </div>` : ''}
             </div>
           </div>
         </div>
@@ -1164,58 +941,159 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* =========================================================================
-     3. CADENA CAUSAL DEL RIESGO EN V-01 (RESUMEN)
+     RESUMEN DEL CORTE: única fuente de las cifras narrativas
+     (Recorrido Ejecutivo, cadena causal y textos de V-01)
+     ========================================================================= */
+  function nombreNivel(n) { return NOMBRE_NIVEL[n] || n; }
+
+  /** Número en formato es-CO (coma decimal, punto de miles). */
+  function fmt(v, dec = 1) {
+    if (v === null || v === undefined || v === '' || isNaN(Number(v))) return 'Sin dato';
+    return Number(v).toLocaleString('es-CO', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+  }
+  function fmtSigno(v, dec = 1) {
+    if (v === null || v === undefined || isNaN(Number(v))) return 'Sin dato';
+    return (Number(v) > 0 ? '+' : '') + fmt(v, dec);
+  }
+  function fmtInd(m, cod, dec = 1, signo = false) {
+    const v = m.indicadores?.[cod]?.valor;
+    if (v === null || v === undefined) return 'Sin dato';
+    return signo ? fmtSigno(v, dec) : fmt(v, dec);
+  }
+  function conUnidad(txt, unidad) { return txt === 'Sin dato' ? txt : `${txt} ${unidad}`; }
+  function colorPuntaje(v) {
+    if (v == null) return 'var(--alerta-sin-dato)';
+    if (v >= 75) return 'var(--alerta-roja)';
+    if (v >= 60) return 'var(--alerta-naranja)';
+    if (v >= 40) return 'var(--alerta-amarilla)';
+    return 'var(--alerta-sin)';
+  }
+  function kpiPill(val, lbl, color) {
+    return `<div class="story-kpi-pill"><div class="val"${color ? ` style="color:${color}"` : ''}>${escaparHtml(val)}</div><div class="lbl">${escaparHtml(lbl)}</div></div>`;
+  }
+  function barraHist(etiqueta, oni, actual) {
+    const pct = Math.min(100, (Number(oni) || 0) / 3 * 100);
+    return `<div style="display:grid;grid-template-columns:minmax(120px,1fr) 3fr auto;gap:10px;align-items:center;font-size:12px;margin-bottom:6px">
+      <strong style="color:${actual ? 'var(--cra-cian-texto)' : 'var(--texto-fuerte)'}">${escaparHtml(etiqueta)}</strong>
+      <div class="story-barra"><div style="width:${pct}%;background:${actual ? 'var(--cra-cian)' : 'var(--texto-claro)'}"></div></div>
+      <span>${escaparHtml(fmtSigno(oni, 2))} °C</span>
+    </div>`;
+  }
+  function barraNiveles(niveles, total) {
+    const orden = ['roja', 'naranja', 'amarilla', 'sin_alerta', 'sin_dato'].filter(n => niveles[n] > 0);
+    return `<div class="story-niveles-barra" role="img" aria-label="${escaparHtml(orden.map(n => niveles[n] + ' ' + nombreNivel(n)).join(', '))}">
+      ${orden.map(n => `<div class="seg ${n}" style="flex:${niveles[n]}" title="${escaparHtml(nombreNivel(n))}: ${niveles[n]}"><span>${niveles[n]}</span></div>`).join('')}
+    </div>
+    <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--texto-claro);margin-top:4px"><span>Más riesgo</span><span>${escaparHtml(total)} municipios</span><span>Menos riesgo</span></div>`;
+  }
+
+  function resumenCorte() {
+    const c = state.corte;
+    const meta = c.metadata_corte || {};
+    const am = c.amenaza_global || {};
+    const sem = am.indices_semanales || {};
+    const oni = am.indice_oni_trimestral || {};
+    const M = c.municipios || [];
+    const conValor = cod => M.filter(m => typeof m.indicadores?.[cod]?.valor === 'number');
+    const mediana = arr => {
+      if (!arr.length) return null;
+      const s = [...arr].sort((a, b) => a - b), k = Math.floor(s.length / 2);
+      return s.length % 2 ? s[k] : (s[k - 1] + s[k]) / 2;
+    };
+    const a3 = conValor('A-3');
+    const a3Peor = a3.slice().sort((x, y) => x.indicadores['A-3'].valor - y.indicadores['A-3'].valor)[0];
+    const s4 = conValor('S-4');
+    const h4 = conValor('H-4');
+    const criticos = M.filter(m => m.nivel_alerta === 'roja' || m.nivel_alerta === 'naranja').sort((a, b) => (b.icr || 0) - (a.icr || 0));
+    const conIcr = M.filter(m => typeof m.icr === 'number').sort((a, b) => b.icr - a.icr);
+    const pobPorNivel = {};
+    M.forEach(m => { pobPorNivel[m.nivel_alerta] = (pobPorNivel[m.nivel_alerta] || 0) + (m.poblacion || 0); });
+    const fechas = cod => [...new Set(M.map(m => m.indicadores?.[cod]?.fecha_dato).filter(Boolean))].sort();
+    const fuentesPob = [...new Set(M.map(m => m.fuente_poblacion).filter(Boolean))];
+    const irca = fechas('S-2');
+    return {
+      fechaCorte: meta.fecha_corte,
+      versionConfig: meta.version_configuracion || '—',
+      total: M.length,
+      niveles: meta.conteo_niveles_nacional || {},
+      sem,
+      nino34: sem.nino34_anomalia,
+      nino12: sem.nino12_anomalia,
+      fechaSemana: sem.fecha_semana || '—',
+      oni: oni.oni_anomalia,
+      oniTrimestre: [oni.trimestre, oni.ano].filter(Boolean).join(' ') || '—',
+      intensidad: oni.intensidad_evento || 'sin clasificar',
+      probMuyFuerte: am.indicador_a2_probabilidad_muy_fuerte_pct ?? null,
+      fuenteEnso: am.fuente || 'NOAA CPC',
+      a3: {
+        n: a3.length,
+        mediana: mediana(a3.map(m => m.indicadores['A-3'].valor)),
+        peor: a3Peor ? { nombre: a3Peor.nombre, valor: a3Peor.indicadores['A-3'].valor } : null,
+        fecha: fechas('A-3').pop() || '—',
+        desactualizado: a3.some(m => m.indicadores['A-3'].frescura === 'desactualizado')
+      },
+      s4: { n: s4.length, mediana: mediana(s4.map(m => m.indicadores['S-4'].valor)) },
+      h4: { n: h4.length, mediana: mediana(h4.map(m => m.indicadores['H-4'].valor)) },
+      criticos,
+      icrMax: conIcr[0] || null,
+      icrMin: conIcr[conIcr.length - 1] || null,
+      pobCritica: meta.poblacion_en_riesgo_critico ?? criticos.reduce((s, m) => s + (m.poblacion || 0), 0),
+      pobTotal: M.reduce((s, m) => s + (m.poblacion || 0), 0),
+      pobPorNivel,
+      fuentePoblacion: fuentesPob.length === 1 ? fuentesPob[0] : 'DANE',
+      racionamiento: M.filter(m => m.indicadores?.['R-3']?.valor === 1),
+      calamidad: M.filter(m => m.indicadores?.['R-4']?.valor === 1),
+      r3ConDato: conValor('R-3').length,
+      r4ConDato: conValor('R-4').length,
+      s1Criticos: criticos.map(m => m.indicadores?.['S-1']?.valor).filter(v => typeof v === 'number'),
+      fechaS1: fechas('S-1').pop() || '—',
+      anioIrca: irca.length ? irca[irca.length - 1].slice(0, 4) : 'sin fecha',
+      deptosCriticos: (c.departamentos || []).filter(d => d.poblacion_naranja_roja > 0).sort((a, b) => b.poblacion_naranja_roja - a.poblacion_naranja_roja)
+    };
+  }
+
+  /* =========================================================================
+     3. CADENA CAUSAL DEL RIESGO EN V-01 (RESUMEN) — derivada del corte
      ========================================================================= */
   function initCadenaCausal() {
     const grid = document.getElementById('grid-cadena-causal');
     const drawer = document.getElementById('cadena-detalle-drawer');
     if (!grid || !drawer) return;
 
+    const R = resumenCorte();
+    const s1 = R.s1Criticos;
     const eslabones = [
       {
-        num: "Eslabón 1",
-        titulo: "Amenaza Macro",
-        valor: "+3.2 °C",
-        desc: "Anomalía Niño 3.4 (Histórico)",
-        detalle: "El calentamiento oceánico persistente traslada ondas de calor y estiaje severo a Colombia, con probabilidad del 75% de mantener condición muy fuerte.",
-        indicador: "A-1 (ONI +2.16 °C, Niño 3.4 +3.2 °C)",
-        impacto: "Amenaza natural de nivel crítico"
+        num: 'Eslabón 1', titulo: 'El océano se calienta',
+        valor: fmtSigno(R.nino34, 1) + ' °C', desc: 'Anomalía Niño 3.4',
+        detalle: `Semana ${R.fechaSemana}. ONI ${R.oniTrimestre}: ${fmtSigno(R.oni, 2)} °C (${R.intensidad}). Probabilidad de evento muy fuerte: ${R.probMuyFuerte == null ? 'sin dato' : fmt(R.probMuyFuerte, 0) + ' %'}.`,
+        indicador: 'A-1 y A-2 · ' + R.fuenteEnso, impacto: 'Amenaza de origen oceánico'
       },
       {
-        num: "Eslabón 2",
-        titulo: "Déficit Lluvias",
-        valor: "-78.6 %",
-        desc: "Déficit en cuencas Caribe y Andina",
-        detalle: "Se registran más de 42 días continuos sin precipitación efectiva en el Caribe y caudales al 45% del promedio en la Región Andina.",
-        indicador: "A-3 (Anomalía precipitación 30 días)",
-        impacto: "Agotamiento de microcuencas abastecedoras"
+        num: 'Eslabón 2', titulo: 'Llueve menos',
+        valor: R.a3.n ? fmtSigno(R.a3.mediana, 1) + ' %' : 'Sin dato', desc: 'Lluvia 30 días (mediana)',
+        detalle: R.a3.n
+          ? `Mediana de ${R.a3.n} de ${R.total} municipios con dato. El mayor déficit está en ${R.a3.peor.nombre} (${fmtSigno(R.a3.peor.valor, 1)} %). Dato al ${R.a3.fecha}${R.a3.desactualizado ? ', marcado como desactualizado' : ''}.`
+          : 'Ningún municipio tiene dato de lluvia en este corte.',
+        indicador: 'A-3 · IDEAM', impacto: 'Menos agua en las fuentes'
       },
       {
-        num: "Eslabón 3",
-        titulo: "Vulnerabilidad Red",
-        valor: "68 %",
-        desc: "Pérdidas de agua en red (IANC)",
-        detalle: "El 68% del agua tratada se pierde por fugas y tuberías obsoletas, impidiendo que el caudal disponible llegue a los tanques de distribución.",
-        indicador: "H-5 (Índice de Agua No Contabilizada IANC)",
-        impacto: "Acelerador del colapso operativo"
+        num: 'Eslabón 3', titulo: 'La red pierde agua',
+        valor: R.s4.n ? fmt(R.s4.mediana, 0) + ' %' : 'Sin dato', desc: 'Agua no contabilizada (mediana)',
+        detalle: `Mediana del IANC en ${R.s4.n} municipios. La autonomía de almacenamiento mediana es de ${R.h4.n ? fmt(R.h4.mediana, 0) + ' horas' : 'sin dato'}: poco margen si la fuente baja.`,
+        indicador: 'S-4 y H-4 · SSPD SUI', impacto: 'Menos margen ante la sequía'
       },
       {
-        num: "Eslabón 4",
-        titulo: "Servicio al Usuario",
-        valor: "< 6 h/d",
-        desc: "Continuidad en zonas rojas",
-        detalle: "14 municipios sufren racionamiento estricto, obligando a las familias a almacenar agua en condiciones que incrementan el riesgo sanitario (IRCA).",
-        indicador: "S-1 (Continuidad diaria) y S-2 (IRCA)",
-        impacto: "Crisis de bienestar y salud pública"
+        num: 'Eslabón 4', titulo: 'El servicio se recorta',
+        valor: s1.length ? `${fmt(Math.min(...s1), 1)}–${fmt(Math.max(...s1), 1)} h` : 'Sin dato', desc: 'Horas al día en riesgo alto',
+        detalle: `Continuidad en los ${R.criticos.length} municipios en naranja y rojo (periodo ${R.fechaS1}). Racionamiento con soporte en ${R.racionamiento.length}: ${R.racionamiento.map(m => m.nombre).join(', ') || 'ninguno'}.`,
+        indicador: 'S-1 y R-3', impacto: 'Hogares con menos horas de agua'
       },
       {
-        num: "Eslabón 5",
-        titulo: "Población en Riesgo",
-        valor: "10.9 M",
-        desc: "Habitantes en Naranja y Rojo",
-        detalle: "Más de 10.87 millones de colombianos (68% en estratos 1 y 2) dependen de acueductos en riesgo inminente de suspensión o desabastecimiento.",
-        indicador: "Población combinada Naranja y Roja",
-        impacto: "Emergencia humanitaria y regulatoria"
+        num: 'Eslabón 5', titulo: 'Personas expuestas',
+        valor: fmt(R.pobCritica, 0), desc: 'Habitantes en naranja y rojo',
+        detalle: `Equivale al ${fmt(R.pobTotal ? R.pobCritica / R.pobTotal * 100 : 0, 1)} % de los ${fmt(R.pobTotal, 0)} habitantes de los ${R.total} municipios monitoreados.`,
+        indicador: 'Población DANE del corte', impacto: 'Prioridad de seguimiento'
       }
     ];
 
@@ -1277,34 +1155,36 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('kpi-alerta-naranja').textContent = niveles.naranja;
     document.getElementById('kpi-alerta-amarilla').textContent = niveles.amarilla;
     document.getElementById('kpi-sin-alerta').textContent = niveles.sin_alerta;
-    document.getElementById('kpi-poblacion-riesgo').textContent = `${(meta.poblacion_en_riesgo_critico / 1000000).toFixed(1)} M`;
+    document.getElementById('kpi-poblacion-riesgo').textContent = fmt(meta.poblacion_en_riesgo_critico, 0);
+    const bannerDesc = document.getElementById('story-banner-desc');
+    if (bannerDesc) bannerDesc.textContent = `Cinco actos, del océano al grifo: ${fmt(meta.poblacion_en_riesgo_critico, 0)} habitantes viven hoy en municipios de riesgo alto.`;
 
     // Actualizar Tarjeta NOAA Global
     if (amenaza && amenaza.indices_semanales) {
       const sem = amenaza.indices_semanales;
-      document.getElementById('noaa-nino12-anom').textContent = `+${sem.nino12_anomalia.toFixed(1)} °C`;
-      document.getElementById('noaa-nino12-sst').textContent = `${sem.nino12_sst.toFixed(1)} °C`;
+      document.getElementById('noaa-nino12-anom').textContent = `${fmtSigno(sem.nino12_anomalia, 1)} °C`;
+      document.getElementById('noaa-nino12-sst').textContent = `${fmt(sem.nino12_sst, 1)} °C`;
 
-      document.getElementById('noaa-nino3-anom').textContent = `+${sem.nino3_anomalia.toFixed(1)} °C`;
-      document.getElementById('noaa-nino3-sst').textContent = `${sem.nino3_sst.toFixed(1)} °C`;
+      document.getElementById('noaa-nino3-anom').textContent = `${fmtSigno(sem.nino3_anomalia, 1)} °C`;
+      document.getElementById('noaa-nino3-sst').textContent = `${fmt(sem.nino3_sst, 1)} °C`;
 
-      document.getElementById('noaa-nino34-anom').textContent = `+${sem.nino34_anomalia.toFixed(1)} °C`;
-      document.getElementById('noaa-nino34-sst').textContent = `${sem.nino34_sst.toFixed(1)} °C`;
+      document.getElementById('noaa-nino34-anom').textContent = `${fmtSigno(sem.nino34_anomalia, 1)} °C`;
+      document.getElementById('noaa-nino34-sst').textContent = `${fmt(sem.nino34_sst, 1)} °C`;
 
-      document.getElementById('noaa-nino4-anom').textContent = `+${sem.nino4_anomalia.toFixed(1)} °C`;
-      document.getElementById('noaa-nino4-sst').textContent = `${sem.nino4_sst.toFixed(1)} °C`;
+      document.getElementById('noaa-nino4-anom').textContent = `${fmtSigno(sem.nino4_anomalia, 1)} °C`;
+      document.getElementById('noaa-nino4-sst').textContent = `${fmt(sem.nino4_sst, 1)} °C`;
 
       if (amenaza.indice_oni_trimestral) {
         document.getElementById('noaa-oni-resumen').innerHTML = `
           Trimestre ${escaparHtml(amenaza.indice_oni_trimestral.trimestre)} ${escaparHtml(amenaza.indice_oni_trimestral.ano)}: 
-          <strong>+${Number(amenaza.indice_oni_trimestral.oni_anomalia || 0).toFixed(2)} °C</strong> (${escaparHtml(amenaza.indice_oni_trimestral.intensidad_evento)})
+          <strong>${escaparHtml(fmtSigno(amenaza.indice_oni_trimestral.oni_anomalia, 2))} °C</strong> (${escaparHtml(amenaza.indice_oni_trimestral.intensidad_evento)})
         `;
       }
 
       const descBanner = document.getElementById('noaa-resumen-desc');
       if (descBanner) {
-        const prob = amenaza.indicador_a2_probabilidad_muy_fuerte_pct !== undefined ? Number(amenaza.indicador_a2_probabilidad_muy_fuerte_pct).toFixed(1) : '83.0';
-        descBanner.innerHTML = `Anomalía en la región <strong>Niño 3.4 a +${Number(sem.nino34_anomalia || 0).toFixed(1)} °C</strong> (con picos en la región Niño 1+2 de +${Number(sem.nino12_anomalia || 0).toFixed(1)} °C) y una probabilidad del <strong>${escaparHtml(prob)} %</strong> de consolidar un evento de carácter histórico (RONI &ge; +2.5 °C).`;
+        const prob = amenaza.indicador_a2_probabilidad_muy_fuerte_pct != null ? fmt(amenaza.indicador_a2_probabilidad_muy_fuerte_pct, 0) : 'sin dato';
+        descBanner.innerHTML = `Anomalía en la región <strong>Niño 3.4 a ${escaparHtml(fmtSigno(sem.nino34_anomalia, 1))} °C</strong> (Niño 1+2: ${escaparHtml(fmtSigno(sem.nino12_anomalia, 1))} °C). Probabilidad de evento muy fuerte: <strong>${escaparHtml(prob)} %</strong>.`;
       }
     }
 
@@ -1325,16 +1205,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const ordenados = [...state.corte.municipios].sort((a, b) => (b.icr || 0) - (a.icr || 0)).slice(0, 10);
 
     tbody.innerHTML = ordenados.map(m => {
-      const contHoras = m.indicadores['S-1']?.valor !== null && m.indicadores['S-1']?.valor !== undefined ? `${escaparHtml(m.indicadores['S-1'].valor)} h/d` : 'Sin dato';
-      const racionamiento = m.indicadores['R-3']?.valor === 1 ? '<span style="color:var(--alerta-roja);font-weight:800">SÍ (Confirmado)</span>' : '<span style="color:var(--alerta-sin)">No reportado</span>';
+      const contHoras = fmtInd(m, 'S-1', 1) === 'Sin dato' ? '<span class="sin-dato-txt">Sin dato</span>' : `${escaparHtml(fmtInd(m, 'S-1', 1))} h/día`;
+      const r3 = m.indicadores['R-3']?.valor;
+      const racionamiento = r3 === 1 ? '<span style="color:var(--alerta-roja);font-weight:800">Sí, con soporte</span>'
+        : r3 === 0 ? '<span style="color:var(--texto)">No (verificado)</span>'
+        : '<span class="sin-dato-txt">Sin dato</span>';
 
       return `
         <tr data-abrir-municipio="${escaparHtml(m.divipola)}">
           <td>
             <strong>${escaparHtml(m.nombre)}</strong> <span style="color:var(--texto-claro)">(${escaparHtml(m.departamento)})</span>
           </td>
-          <td><span class="chip-alerta ${escaparHtml(m.nivel_alerta)}">${escaparHtml(String(m.nivel_alerta || '').replace('_', ' '))}</span></td>
-          <td><strong style="font-size:15px;color:var(--texto-fuerte)">${Number(m.icr || 0).toFixed(1)}</strong></td>
+          <td><span class="chip-alerta ${escaparHtml(m.nivel_alerta)}">${escaparHtml(nombreNivel(m.nivel_alerta))}</span></td>
+          <td><strong style="font-size:15px;color:var(--texto-fuerte)">${escaparHtml(fmt(m.icr, 1))}</strong></td>
           <td>${contHoras}</td>
           <td>${racionamiento}</td>
           <td>

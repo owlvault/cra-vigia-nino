@@ -20,6 +20,7 @@ from ingesta.conectores.conector_ungrd_minvivienda import ConectorUNGRDMinVivien
 from ingesta.conectores.conector_xm_embalses import ConectorXMEmbalses
 from ingesta.conectores.conector_nasa_firms import ConectorNASAFIRMS
 from ingesta.conectores.conector_sui import ConectorSUI
+from ingesta.conectores.conector_chirps import ConectorCHIRPS
 from ingesta.pipeline_corte import PipelineCorte
 
 logger = logging.getLogger("OrquestadorVigia")
@@ -34,6 +35,7 @@ class OrquestadorIngesta:
             "NOAA": ConectorNOAA(base_dir=base_dir),
             "SIVICAP": ConectorSIVICAP(base_dir=base_dir),
             "IDEAM": ConectorIDEAM(base_dir=base_dir),
+            "CHIRPS": ConectorCHIRPS(base_dir=base_dir),   # respaldo satelital nacional de A-3/A-4
             "UNGRD_MVCT": ConectorUNGRDMinVivienda(base_dir=base_dir),
             "XM": ConectorXMEmbalses(base_dir=base_dir),
             "FIRMS": ConectorNASAFIRMS(base_dir=base_dir),
@@ -87,6 +89,7 @@ class OrquestadorIngesta:
         xm_data = datos_extraidos.get("XM", {}).get("h5_por_divipola", {})
         firms_data = datos_extraidos.get("FIRMS", {})
         sui_data = datos_extraidos.get("SUI", {})
+        chirps_data = datos_extraidos.get("CHIRPS", {})
 
         # 3. Ejecutar consolidación en zona Oro
         logger.info("-> Ejecutando cálculo analítico del Índice Compuesto de Riesgo (ICR)...")
@@ -98,7 +101,8 @@ class OrquestadorIngesta:
             datos_ungrd_mvct=ungrd_data,
             datos_xm=xm_data,
             datos_firms=firms_data,
-            datos_sui=sui_data
+            datos_sui=sui_data,
+            datos_chirps=chirps_data
         )
 
         meta_corte = corte_oro["metadata_corte"]

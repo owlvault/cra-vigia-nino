@@ -139,6 +139,17 @@ Para cada ICR, la API DEBE poder devolver el aporte de cada capa y de cada indic
 | RN-ICR-01 | La suma de pesos de capa DEBE ser 100 % en cada versión de configuración | RF-ICR-07 |
 | RN-ICR-02 | El ICR se redondea a 1 decimal solo para mostrar; se almacena con precisión completa | todos |
 
+### RF-ICR-07 — Calidad del ICR declarada (Fase 0, ADR-0007 propuesta)
+
+Cada municipio DEBE llevar `calidad_icr`: `completo` si las cuatro capas tienen subíndice, `parcial` si el ICR existe con redistribución de pesos (≥ `peso_minimo_disponible`), `sin_dato` si no hay ICR. También lleva `capas_sin_dato`. El corte DEBE publicar `conteo_calidad_icr` y `cobertura_indicadores` (municipios con valor, municipios donde aplica y conteo por método).
+
+```gherkin
+Escenario: ICR sin capa de servicio
+  Dado subíndices A = 60, H = 70, S = sin_dato, R = sin_dato
+  Cuando se calcula el ICR
+  Entonces calidad_icr es "parcial" y capas_sin_dato es ["S", "R"]
+```
+
 ## Casos borde y errores
 
 | Situación | Comportamiento esperado |

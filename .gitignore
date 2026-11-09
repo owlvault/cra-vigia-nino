@@ -40,3 +40,6 @@ build/
 *.gslides
 
 
+
+# Cachés reproducibles de CHIRPS (se regeneran desde la fuente; Fase 0)
+data/plata/chirps/

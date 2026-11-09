@@ -77,7 +77,39 @@ class PipelineCorte:
             act = self.poblacion_dane.get("fuente", {}).get("actualizacion_dane") or ""
             return serie[anio], f"DANE PPED 2018-2042, proyección {anio} ({act})".strip()
         logger.warning(f"Sin proyección DANE {anio} para {municipio['divipola']}; se usa el valor de respaldo")
+        if municipio.get("poblacion") is None:   # municipio agregado en la Fase 0, sin respaldo del prototipo
+            return 0, "sin población (sin proyección DANE ni respaldo)"
         return municipio["poblacion"], "prototipo (sin proyección DANE)"
+
+    # Precedencia de fuentes para A-3 y A-4 (Fase 0, cobertura nacional): la medición de
+    # estaciones del IDEAM manda; CHIRPS v3 solo llena donde las estaciones no dan valor.
+    FUENTE_CHIRPS = "CHIRPS v3.0 (UCSB CHC)"
+
+    def elegir_precipitacion(self, ideam: Dict[str, Any], chirps: Dict[str, Any], campo: str) -> Dict[str, Any]:
+        """Valor, fuente, fecha, método y cota inferior (A-4) del indicador de lluvia para un municipio."""
+        v = self._num(ideam.get(campo))
+        if v is not None:
+            return {"valor": v, "fuente": "IDEAM", "fecha_dato": ideam.get("fecha_dato"),
+                    "metodo": "estaciones_ideam", "cota_inferior": ideam.get("a4_cota_inferior")}
+        v = self._num(chirps.get(campo))
+        if v is not None:
+            version = chirps.get("version_dato")
+            return {"valor": v, "fuente": self.FUENTE_CHIRPS, "fecha_dato": chirps.get("fecha_dato"),
+                    "metodo": f"satelite_chirps_{version}" if version else "satelite_chirps",
+                    "cota_inferior": chirps.get("a4_cota_inferior")}
+        # Sin valor en ninguna: se conserva la fecha del IDEAM (como antes) y el método queda declarado
+        return {"valor": None, "fuente": "IDEAM", "fecha_dato": ideam.get("fecha_dato"),
+                "metodo": "sin_dato", "cota_inferior": None}
+
+    @staticmethod
+    def _municipios_con_embalse() -> set:
+        """H-5 solo aplica donde un embalse del catálogo XM abastece al municipio."""
+        try:
+            from ingesta.conectores.conector_xm_embalses import ConectorXMEmbalses
+            return {d for e in ConectorXMEmbalses.CATALOGO_EMBALSES.values() for d in e["municipios_asociados"]}
+        except Exception as e:  # noqa: BLE001
+            logger.warning(f"No se pudo leer el catálogo de embalses: {e}")
+            return set()
 
     def _leer_config(self, nombre: str) -> Dict[str, Any]:
         ruta = self.root_dir / "data" / "config" / nombre
@@ -277,6 +309,14 @@ class PipelineCorte:
         subindice_a, subindice_h = subindices.get("A"), subindices.get("H")
         subindice_s, subindice_r = subindices.get("S"), subindices.get("R")
 
+        # Fase 0: un ICR sin todas las capas no es comparable con uno completo; se declara
+        if icr_calculado is None:
+            calidad_icr = "sin_dato"
+        elif suma_pesos_disponibles >= 1.0 - 1e-9:
+            calidad_icr = "completo"
+        else:
+            calidad_icr = "parcial"
+
         return {
             "divipola": divipola,
             "nombre": nombre,
@@ -287,6 +327,8 @@ class PipelineCorte:
             "nivel_alerta": nivel_alerta,
             "nivel_por_regla": nivel_por_regla,
             "cobertura_datos_pct": cobertura_pct,
+            "calidad_icr": calidad_icr,
+            "capas_sin_dato": [capa for capa, sub in subindices.items() if sub is None],
             "subindices_capa": {
                 "amenaza_A": subindice_a,
                 "vulnerabilidad_H": subindice_h,
@@ -305,7 +347,8 @@ class PipelineCorte:
         datos_ungrd_mvct: Dict[str, Any],
         datos_xm: Dict[str, Any],
         datos_firms: Dict[str, Any],
-        datos_sui: Optional[Dict[str, Any]] = None
+        datos_sui: Optional[Dict[str, Any]] = None,
+        datos_chirps: Optional[Dict[str, Any]] = None
     ) -> Dict[str, Any]:
         """
         Consolida todas las fuentes y genera el corte analítico completo versionado en zona oro.
@@ -325,6 +368,8 @@ class PipelineCorte:
         
         # Territorio evaluado desde config (antes embebido en código)
         MUNICIPIOS_MAESTRO = self.territorio["municipios"]
+        municipios_h5 = self._municipios_con_embalse()
+        datos_chirps = datos_chirps or {}
 
         # Calcular cada municipio
         municipios_oro = []
@@ -332,6 +377,8 @@ class PipelineCorte:
             div = m["divipola"]
             sui_info = datos_sui.get(div, {})
             ideam_info = datos_ideam.get(div, {})
+            prec_a3 = self.elegir_precipitacion(ideam_info, datos_chirps.get(div, {}), "indicador_a3_anomalia_precip_pct")
+            prec_a4 = self.elegir_precipitacion(ideam_info, datos_chirps.get(div, {}), "indicador_a4_dias_sin_lluvia")
             sivicap_info = datos_sivicap.get(div, {})
             ungrd_info = datos_ungrd_mvct.get(div, {})
             xm_info = datos_xm.get(div, {})
@@ -347,8 +394,8 @@ class PipelineCorte:
             h4_val = self._num(sui_info.get("h4_autonomia_h"))
             s6_val = self._num(sui_info.get("s6_consumo_m3"))
             irca_val = self._num(sivicap_info.get("valor_indicador_s2"))
-            a3_val = self._num(ideam_info.get("indicador_a3_anomalia_precip_pct"))
-            a4_val = self._num(ideam_info.get("indicador_a4_dias_sin_lluvia"))
+            a3_val = prec_a3["valor"]
+            a4_val = prec_a4["valor"]
             h1_val = self._num(ideam_info.get("indicador_h1_caudal_pct"))
             h2_val = ideam_info.get("indicador_h2_ivh_ena")
             h3_val = ideam_info.get("indicador_h3_iua_ena")
@@ -395,15 +442,15 @@ class PipelineCorte:
                 "A-1": {"nombre": "ONI / Niño 3.4", "valor": amenaza_global.get("indicador_a1_nino34"), "unidad": "°C", "fuente": "NOAA CPC", "fecha_dato": fecha_a1, "puntaje": None},
                 "A-2": {"nombre": "Probabilidad Niño Muy Fuerte", "valor": amenaza_global.get("indicador_a2_probabilidad_muy_fuerte_pct"), "unidad": "%", "fuente": "NOAA CPC", "fecha_dato": fecha_a2, "puntaje": None},
                 # Amenaza Local
-                "A-3": {"nombre": "Anomalía Precipitación 30d", "valor": a3_val, "unidad": "%", "fuente": "IDEAM", "fecha_dato": fecha_ideam, "puntaje": punt_a3},
-                "A-4": {"nombre": "Días Consecutivos sin Lluvia", "valor": a4_val, "unidad": "días", "fuente": "IDEAM", "fecha_dato": fecha_ideam, "puntaje": punt_a4},
+                "A-3": {"nombre": "Anomalía Precipitación 30d", "valor": a3_val, "unidad": "%", "fuente": prec_a3["fuente"], "fecha_dato": prec_a3["fecha_dato"], "puntaje": punt_a3, "metodo": prec_a3["metodo"]},
+                "A-4": {"nombre": "Días Consecutivos sin Lluvia", "valor": a4_val, "unidad": "días", "fuente": prec_a4["fuente"], "fecha_dato": prec_a4["fecha_dato"], "puntaje": punt_a4, "metodo": prec_a4["metodo"]},
                 "A-5": {"nombre": "Focos de Calor (7d)", "valor": a5_val, "unidad": "conteo", "fuente": "NASA FIRMS", "fecha_dato": fecha_corte, "puntaje": None},
                 # Oferta Hídrica
                 "H-1": {"nombre": "Caudal Fuente Abastecedora", "valor": h1_val, "unidad": "%", "fuente": "IDEAM", "fecha_dato": fecha_ideam, "puntaje": punt_h1},
                 "H-2": {"nombre": "Vulnerabilidad Hídrica ENA", "valor": h2_val, "unidad": "categoría", "fuente": "IDEAM ENA 2010 (año seco)", "fecha_dato": ideam_info.get("fecha_dato_h2"), "puntaje": punt_h2},
                 "H-3": {"nombre": "Uso del Agua ENA (IUA)", "valor": h3_val, "unidad": "categoría", "fuente": "IDEAM ENA 2014 (año seco)", "fecha_dato": ideam_info.get("fecha_dato_h3"), "puntaje": punt_h3},
                 "H-4": {"nombre": "Autonomía Almacenamiento", "valor": h4_val, "unidad": "horas", "fuente": "SSPD SUI", "fecha_dato": fecha_sui, "puntaje": punt_h4},
-                "H-5": {"nombre": "Volumen Útil Embalse", "valor": xm_info.get("volumen_util_pct"), "unidad": "%", "fuente": "XM Sinergox", "fecha_dato": fecha_corte, "puntaje": None},
+                "H-5": {"nombre": "Volumen Útil Embalse", "valor": xm_info.get("volumen_util_pct"), "unidad": "%", "fuente": "XM Sinergox", "fecha_dato": fecha_corte, "puntaje": None, "aplica": div in municipios_h5},
                 # Desempeño del Servicio
                 "S-1": {"nombre": "Continuidad", "valor": cont, "unidad": "h/día", "fuente": "SSPD SUI", "fecha_dato": fecha_sui, "puntaje": punt_s1},
                 "S-2": {"nombre": "Calidad del Agua (IRCA)", "valor": irca_val, "unidad": "%", "fuente": "INS SIVICAP", "fecha_dato": fecha_s2, "puntaje": punt_s2},
@@ -419,7 +466,7 @@ class PipelineCorte:
             }
 
             # A-4 que se detuvo en un día sin dato es una cota inferior: se declara
-            if ideam_info.get("a4_cota_inferior") and a4_val is not None:
+            if prec_a4["cota_inferior"] and a4_val is not None:
                 indicadores_m["A-4"]["nota"] = f"Al menos {int(a4_val)} días: el conteo se detuvo en un día sin dato"
 
             # RF-CAL-03: frescura de cada valor frente a su periodo esperado
@@ -439,7 +486,8 @@ class PipelineCorte:
                 poblacion=poblacion_m,
                 indicadores=indicadores_m
             )
-            res_m["region"] = m["region"]
+            res_m["region"] = m.get("region")
+            res_m["tipo_municipio"] = m.get("tipo_municipio")
             res_m["fuente_poblacion"] = fuente_poblacion_m
             hidro = self.hidrografia.get(div, {})
             for campo in self.CAMPOS_HIDROGRAFICOS:
@@ -525,6 +573,21 @@ class PipelineCorte:
         # RF-CAL-04: compuerta de publicación
         estado_calidad, motivos_rechazo = self.evaluar_compuerta(municipios_oro)
 
+        # Fase 0: trazabilidad de la cobertura nacional (cuántos municipios tienen cada dato y de qué método)
+        conteo_calidad_icr = {c: sum(1 for m in municipios_oro if m.get("calidad_icr") == c)
+                              for c in ("completo", "parcial", "sin_dato")}
+        cobertura_indicadores: Dict[str, Any] = {}
+        for m in municipios_oro:
+            for cod, ind in m["indicadores"].items():
+                c = cobertura_indicadores.setdefault(cod, {"con_valor": 0, "aplica": 0})
+                if ind.get("aplica", True):
+                    c["aplica"] += 1
+                    if ind.get("valor") is not None:
+                        c["con_valor"] += 1
+                if ind.get("metodo") and ind.get("valor") is not None:
+                    met = c.setdefault("por_metodo", {})
+                    met[ind["metodo"]] = met.get(ind["metodo"], 0) + 1
+
         corte_final = {
             "metadata_corte": {
                 "fecha_corte": fecha_corte,
@@ -535,7 +598,9 @@ class PipelineCorte:
                 "total_municipios_evaluados": len(municipios_oro),
                 "icr_nacional_ponderado": icr_nacional_ponderado,
                 "poblacion_en_riesgo_critico": poblacion_afectada_naranja_roja,
-                "conteo_niveles_nacional": conteo_niveles_nacion
+                "conteo_niveles_nacional": conteo_niveles_nacion,
+                "conteo_calidad_icr": conteo_calidad_icr,
+                "cobertura_indicadores": cobertura_indicadores
             },
             "amenaza_global": amenaza_global,
             "municipios": municipios_oro,
@@ -586,6 +651,8 @@ class PipelineCorte:
                     "POBLACION": m["poblacion"],
                     "ICR": m["icr"],
                     "NIVEL_ALERTA": m["nivel_alerta"],
+                    "CALIDAD_ICR": m.get("calidad_icr"),
+                    "COBERTURA_DATOS_PCT": m.get("cobertura_datos_pct"),
                     "SUB_AMENAZA": sub.get("amenaza_A"),
                     "SUB_VULNERABILIDAD": sub.get("vulnerabilidad_H"),
                     "SUB_SERVICIO": sub.get("servicio_S"),

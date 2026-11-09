@@ -236,6 +236,10 @@ class GeneradorVistaCiudadana:
                 "aviso": self.conf["textos"]["aviso"],
                 "remisiones": self.conf["textos"]["remisiones"],
                 "municipio_fuera_de_muestra": self.conf["textos"]["municipio_fuera_de_muestra"],
+                "descripcion_nivel": self.conf["textos"].get("descripcion_nivel", {}),
+                "titulos_remision": self.conf["textos"].get("titulos_remision", {}),
+                "embalses_nota": self.conf["textos"].get("embalses_nota"),
+                "bandas_calidad_agua": self.conf.get("bandas_irca", []),
             },
             "nacional": self._nacional(semanal),
             "departamentos": sorted(deptos.values(), key=lambda d: d["departamento"]),
@@ -251,7 +255,23 @@ class GeneradorVistaCiudadana:
             temp = destino.with_name(f"{nombre}.tmp.{int(time.time() * 1000)}")
             temp.write_text(contenido, encoding="utf-8")
             temp.replace(destino)
+        self._publicar_para_pagina(contenido)
         return vista
+
+    def _publicar_para_pagina(self, contenido: str) -> None:
+        """Copia la vista a tablero/ciudadano/js/vista.js para la página ciudadana.
+
+        RNF-CIU-02: la página solo lee este archivo, nunca data.js ni el corte interno.
+        Se escapa '</' para que el JSON no pueda cerrar la etiqueta <script> (igual que data.js).
+        """
+        destino = self.root_dir / "tablero" / "ciudadano" / "js" / "vista.js"
+        destino.parent.mkdir(parents=True, exist_ok=True)
+        seguro = contenido.replace("</", "<\\/")
+        js = ("// Vista ciudadana derivada del corte publicado (specs/canal-ciudadano.md). Generado: no editar.\n"
+              f"window.VIGIA_CIUDADANO = {seguro};\n")
+        temp = destino.with_name(f"vista.js.tmp.{int(time.time() * 1000)}")
+        temp.write_text(js, encoding="utf-8")
+        temp.replace(destino)
 
 
 def cargar_semanal(root_dir: Path) -> Optional[Dict[str, Any]]:

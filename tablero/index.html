@@ -49,7 +49,7 @@
     </div>
 
     <div class="encabezado-metadata">
-      <a href="semanal/index.html" class="btn-iniciar-story" id="link-comparativo-semanal" style="text-decoration:none"
+      <a href="semanal/index.html" class="btn-iniciar-story btn-secundario-cra" id="link-comparativo-semanal" style="text-decoration:none"
         title="Comparar semana a semana el comportamiento real de El Niño en Colombia">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <path d="M3 3v18h18" />
@@ -57,18 +57,21 @@
         </svg>
         <span>Comparativo semanal</span>
       </a>
-      <a href="auditoria/index.html" target="_blank" class="btn-iniciar-story"
-        style="background:#0D2C4D;color:#FFF;border-color:var(--cra-cian);text-decoration:none"
+      <a href="auditoria/index.html" target="_blank" class="btn-iniciar-story btn-secundario-cra"
+        style="text-decoration:none"
         title="Abrir Sistema Independiente de Auditoría y Veracidad">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cra-cian)" stroke-width="2.5">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         </svg>
         <span>Auditoría de Veracidad</span>
       </a>
-      <button class="btn-iniciar-story" id="btn-header-story" title="Abrir Recorrido Ejecutivo Guiado">
-        <span class="pulse-indicator"></span>
-        <span>Recorrido Ejecutivo</span>
-      </button>
+      <a href="ciudadano/index.html" target="_blank" class="btn-iniciar-story btn-secundario-cra" id="link-canal-ciudadano"
+        title="Vista previa de la página para la ciudadanía (aún no publicable)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M12 2.7c-3 4-6 7.3-6 11a6 6 0 0 0 12 0c0-3.7-3-7-6-11z" />
+        </svg>
+        <span>Vista ciudadana</span>
+      </a>
       <div class="corte-info-card">
         <div class="fecha-label">Fecha de Corte Vigente</div>
         <div class="fecha-valor" id="corte-fecha-val">2026-11-09</div>
@@ -104,13 +107,13 @@
         <rect x="14" y="14" width="7" height="7" />
         <rect x="3" y="14" width="7" height="7" />
       </svg>
-      V-01 Resumen
+      Resumen
     </button>
     <button class="nav-tab-btn" data-vista="V-02" id="tab-v02">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
       </svg>
-      V-02 Amenaza
+      Amenaza
     </button>
     <button class="nav-tab-btn" data-vista="V-03" id="tab-v03">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -118,7 +121,7 @@
         <line x1="8" y1="2" x2="8" y2="18" />
         <line x1="16" y1="6" x2="16" y2="22" />
       </svg>
-      V-03 Territorio & Mapa
+      Territorio y mapa
     </button>
     <button class="nav-tab-btn" data-vista="V-04" id="tab-v04">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -128,7 +131,7 @@
         <line x1="16" y1="17" x2="8" y2="17" />
         <polyline points="10 9 9 9 8 9" />
       </svg>
-      V-04 Ficha Municipal
+      Ficha municipal
     </button>
     <button class="nav-tab-btn" data-vista="V-05" id="tab-v05">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -139,21 +142,21 @@
         <line x1="3" y1="12" x2="3.01" y2="12" />
         <line x1="3" y1="18" x2="3.01" y2="18" />
       </svg>
-      V-05 Indicadores (20)
+      Indicadores
     </button>
     <button class="nav-tab-btn" data-vista="V-06" id="tab-v06">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
         <path d="M13.73 21a2 2 0 0 1-3.46 0" />
       </svg>
-      V-06 Alertas <span class="badge-count" id="badge-total-alertas">4</span>
+      Alertas <span class="badge-count" id="badge-total-alertas">4</span>
     </button>
     <button class="nav-tab-btn" data-vista="V-07" id="tab-v07">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <circle cx="12" cy="12" r="10" />
         <polyline points="12 6 12 12 16 14" />
       </svg>
-      V-07 Fuentes & Ingesta
+      Fuentes
     </button>
   </nav>
 
@@ -285,8 +288,7 @@
         <div class="banner-story-text">
           <span class="banner-story-tag">Instrumento de Decisión Regulatoria</span>
           <h3>El Camino del Riesgo: Del Océano Pacífico a los Grifos Colombianos</h3>
-          <p>Un recorrido narrativo en 5 actos para desentrañar la física de la amenaza, los corredores de sequía y la
-            vulnerabilidad en 10.9 millones de habitantes.</p>
+          <p id="story-banner-desc">Cinco actos, del océano al grifo: qué pasa, dónde, por qué, a quién afecta y qué hacer.</p>
         </div>
         <button class="btn-iniciar-story" id="btn-banner-iniciar-story">
           <span>Iniciar Recorrido Ejecutivo</span>
@@ -317,8 +319,8 @@
                 title="¿Qué significa la región Niño 1+2? (Explicación para no técnicos)" aria-expanded="false"
                 style="width:15px;height:15px;font-size:9px;background:rgba(255,255,255,0.18);color:#FFF;border-color:rgba(255,255,255,0.35)">?</button>
             </div>
-            <div class="anom-val" id="noaa-nino12-anom">+5.3 °C</div>
-            <div class="sst-val" id="noaa-nino12-sst">26.1 °C</div>
+            <div class="anom-val" id="noaa-nino12-anom">—</div>
+            <div class="sst-val" id="noaa-nino12-sst">—</div>
           </div>
           <div class="noaa-index-box">
             <div class="region-title" style="display:flex;align-items:center;justify-content:center;gap:4px">
@@ -327,8 +329,8 @@
                 title="¿Qué significa la región Niño 3? (Explicación para no técnicos)" aria-expanded="false"
                 style="width:15px;height:15px;font-size:9px;background:rgba(255,255,255,0.18);color:#FFF;border-color:rgba(255,255,255,0.35)">?</button>
             </div>
-            <div class="anom-val" id="noaa-nino3-anom">+4.0 °C</div>
-            <div class="sst-val" id="noaa-nino3-sst">29.0 °C</div>
+            <div class="anom-val" id="noaa-nino3-anom">—</div>
+            <div class="sst-val" id="noaa-nino3-sst">—</div>
           </div>
           <div class="noaa-index-box">
             <div class="region-title" style="display:flex;align-items:center;justify-content:center;gap:4px">
@@ -337,8 +339,8 @@
                 title="¿Qué significa la región Niño 3.4? (Explicación para no técnicos)" aria-expanded="false"
                 style="width:15px;height:15px;font-size:9px;background:rgba(255,255,255,0.18);color:#FFF;border-color:rgba(255,255,255,0.35)">?</button>
             </div>
-            <div class="anom-val" id="noaa-nino34-anom">+3.2 °C</div>
-            <div class="sst-val" id="noaa-nino34-sst">29.9 °C</div>
+            <div class="anom-val" id="noaa-nino34-anom">—</div>
+            <div class="sst-val" id="noaa-nino34-sst">—</div>
           </div>
           <div class="noaa-index-box">
             <div class="region-title" style="display:flex;align-items:center;justify-content:center;gap:4px">
@@ -347,8 +349,8 @@
                 title="¿Qué significa la región Niño 4? (Explicación para no técnicos)" aria-expanded="false"
                 style="width:15px;height:15px;font-size:9px;background:rgba(255,255,255,0.18);color:#FFF;border-color:rgba(255,255,255,0.35)">?</button>
             </div>
-            <div class="anom-val" id="noaa-nino4-anom">+1.2 °C</div>
-            <div class="sst-val" id="noaa-nino4-sst">29.9 °C</div>
+            <div class="anom-val" id="noaa-nino4-anom">—</div>
+            <div class="sst-val" id="noaa-nino4-sst">—</div>
           </div>
         </div>
         <div class="panel-exp-desplegable" id="exp-noaa-box" style="display:none;grid-column:1/-1;margin-top:12px"
@@ -384,8 +386,8 @@
         </div>
         <div class="card-kpi">
           <div class="kpi-label">Población en Riesgo Crítico</div>
-          <div class="kpi-valor" id="kpi-poblacion-riesgo">0.5 M</div>
-          <div class="kpi-desc">Habitantes en Naranja y Rojo</div>
+          <div class="kpi-valor" id="kpi-poblacion-riesgo">—</div>
+          <div class="kpi-desc">Habitantes en naranja y rojo (DANE)</div>
         </div>
       </div>
 

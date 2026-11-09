@@ -107,6 +107,7 @@ Antes de escribir código, lee el archivo que corresponda a tu tarea:
 | `adr/ADR-0004-imagen-institucional-cra.md` | Manual de Identidad Visual CRA DES-MAN04 V02 | aceptada |
 | `adr/ADR-0005-stack-open-source-on-premise.md` | Stack open source on-premise | aceptada |
 | `adr/ADR-0006-canal-ciudadano.md` | Canal ciudadano de solo lectura; agregación por departamento y zonificación hidrográfica IDEAM | aceptada |
+| `adr/ADR-0007-cobertura-nacional-fuentes-publicas.md` | Cobertura nacional (1.122 municipios) con fuentes públicas; CHIRPS como respaldo de A-3/A-4; calidad del ICR declarada | propuesta |
 
 ## Preguntas abiertas
 

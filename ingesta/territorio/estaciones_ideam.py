@@ -10,6 +10,8 @@ Se hace para dos redes: automática (lluvia diaria reciente) y normales 1991-202
 Las estaciones no se mueven: el resultado es una dimensión en config que se
 regenera cuando cambie la red o se agreguen municipios.
 
+Requiere las capas locales (python -m ingesta.territorio.geometrias_ideam).
+
 Uso:
     python -m ingesta.territorio.estaciones_ideam
 """
@@ -25,6 +27,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Sequence, Tuple
 
 from ingesta.clima.precipitacion_municipal import distancia_km
+from ingesta.territorio.geometrias_ideam import poligonos_municipales
 
 logger = logging.getLogger("EstacionesIDEAM")
 RAIZ = Path(__file__).resolve().parents[2]
@@ -110,10 +113,10 @@ def asignar(municipios: List[Dict[str, Any]], poligonos: Dict[str, Dict[str, Any
     """Por municipio: códigos dentro del polígono y {código: km a la cabecera} dentro del radio."""
     resultado = {}
     for m in municipios:
-        geom = poligonos[m["divipola"]]
+        geom = poligonos.get(m["divipola"])   # sin polígono (municipio nuevo): solo cercanas
         dentro, cercanas = [], {}
         for e in estaciones:
-            if punto_en_geometria(e["lon"], e["lat"], geom):
+            if geom is not None and punto_en_geometria(e["lon"], e["lat"], geom):
                 dentro.append(e["codigo"])
             else:
                 d = distancia_km(m["lat"], m["lon"], e["lat"], e["lon"])
@@ -129,10 +132,8 @@ def construir(base_dir: Path = RAIZ) -> Dict[str, Any]:
     municipios = json.loads((cfg / "territorio_municipios.json").read_text(encoding="utf-8"))["municipios"]
     radio = conf["precipitacion"]["radio_idw_km"]
 
-    poligonos = {}
-    for m in municipios:
-        poligonos[m["divipola"]] = poligono_municipio(conf, m["divipola"])
-        time.sleep(0.3)
+    # Fase 0: polígonos descargados en bloque (geometrias_ideam), no uno por municipio
+    poligonos = poligonos_municipales(base_dir)
     auto, normales = estaciones_automaticas(conf), estaciones_normales(conf)
     a_auto, a_norm = asignar(municipios, poligonos, auto, radio), asignar(municipios, poligonos, normales, radio)
 

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Cómo está el agua en tu municipio? · Vigía El Niño · CRA</title>
+  <meta name="description"
+    content="Consulta el nivel de riesgo de desabastecimiento de agua de tu municipio durante El Niño 2026-27, las horas de servicio, la calidad del agua y el estado de los embalses. Análisis de la CRA.">
+  <!-- RF-CIU-10: mientras la vista no sea publicable, la página no se indexa (ciudadano.js la habilita) -->
+  <meta name="robots" content="noindex" id="meta-robots">
+  <link rel="stylesheet" href="css/ciudadano.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+  <a class="sr-only" href="#consulta">Ir a la consulta</a>
+
+  <div class="govco-bar" role="banner">
+    <a href="https://www.gov.co" target="_blank" rel="noopener noreferrer" aria-label="Portal del Estado Colombiano GOV.CO">GOV.CO</a>
+    <span>República de Colombia</span>
+  </div>
+  <div class="franja-bandera" aria-hidden="true"><div class="amarillo"></div><div class="azul"></div><div class="rojo"></div></div>
+
+  <header class="encabezado">
+    <div class="marca">
+      <span class="logo-cra" title="Comisión de Regulación de Agua Potable y Saneamiento Básico"><b>CRA</b><i><span></span><span></span><span></span></i></span>
+      <div class="marca-txt">
+        <strong>Vigía El Niño · Agua</strong>
+        <span>Información para la ciudadanía</span>
+      </div>
+    </div>
+    <span class="corte-chip" id="corte-chip">Datos del análisis más reciente</span>
+  </header>
+
+  <!-- Compuerta RF-CIU-10: se muestra solo si la vista no es publicable -->
+  <div class="banda-previa" id="banda-previa" hidden>
+    <details>
+      <summary>Vista previa interna: esta página aún no está autorizada para publicarse.</summary>
+      <ul id="motivos-previa"></ul>
+    </details>
+  </div>
+
+  <main id="contenido">
+
+    <!-- 1. Héroe: la pregunta del ciudadano -->
+    <section class="heroe" aria-labelledby="titulo-heroe">
+      <div class="contenedor heroe-grid">
+        <div>
+          <span class="eyebrow">El Niño 2026-27</span>
+          <h1 class="titular" id="titulo-heroe">¿Cómo está el agua en <em>tu municipio</em>?</h1>
+          <span class="mini-bandera" aria-hidden="true"><span></span><span></span><span></span></span>
+          <p class="apoyo">Riesgo de quedarte sin agua, horas de servicio y calidad, en un solo lugar.</p>
+
+          <div class="buscador" id="consulta">
+            <label for="buscar">Escribe tu municipio</label>
+            <div class="buscador-caja">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></svg>
+              <input id="buscar" type="text" autocomplete="off" placeholder="Por ejemplo: Uribia"
+                role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias">
+            </div>
+            <ul class="lista-sugerencias" id="sugerencias" role="listbox" aria-label="Municipios" hidden></ul>
+            <div class="atajos" id="atajos" aria-label="Consultas frecuentes"></div>
+          </div>
+
+          <p class="aviso-alcance" id="aviso-alcance">Esta información es un análisis de la Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA). No es una alerta ni una declaratoria oficial de emergencia.</p>
+        </div>
+
+        <svg class="gota" viewBox="0 0 300 360" role="img" aria-label="Gota de agua con el nivel de las fuentes bajando">
+          <defs>
+            <linearGradient id="g-gota" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#E6F5FA"/><stop offset=".55" stop-color="#43B2D7"/><stop offset="1" stop-color="#17729A"/>
+            </linearGradient>
+            <radialGradient id="g-brillo" cx=".35" cy=".3" r=".5">
+              <stop offset="0" stop-color="#FFFFFF" stop-opacity=".9"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+            </radialGradient>
+            <clipPath id="clip-gota"><path d="M150 12 C150 12 40 150 40 230 a110 110 0 0 0 220 0 C260 150 150 12 150 12Z"/></clipPath>
+            <linearGradient id="g-agua" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#43B2D7"/><stop offset="1" stop-color="#003189"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="150" cy="346" rx="96" ry="10" fill="#1F2A36" opacity=".08"/>
+          <path d="M150 12 C150 12 40 150 40 230 a110 110 0 0 0 220 0 C260 150 150 12 150 12Z" fill="#F4F6F8" stroke="#D9D9D9" stroke-width="2"/>
+          <g clip-path="url(#clip-gota)">
+            <g class="gota-agua">
+              <path d="M0 250 Q37 238 75 250 T150 250 T225 250 T300 250 T375 250 V360 H0Z" fill="url(#g-agua)" opacity=".95"/>
+              <path d="M0 258 Q37 248 75 258 T150 258 T225 258 T300 258 T375 258 V360 H0Z" fill="#17729A" opacity=".5"/>
+            </g>
+          </g>
+          <path d="M150 12 C150 12 40 150 40 230 a110 110 0 0 0 220 0 C260 150 150 12 150 12Z" fill="url(#g-brillo)" opacity=".7"/>
+          <line x1="268" y1="150" x2="290" y2="150" stroke="#8C9BA5" stroke-width="2"/>
+          <line x1="268" y1="250" x2="290" y2="250" stroke="#17729A" stroke-width="3"/>
+          <path d="M282 166 v62" stroke="#E07A10" stroke-width="3" />
+          <polygon points="276,222 288,222 282,234" fill="#E07A10"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 2. Ficha del municipio (la llena ciudadano.js) -->
+    <section class="seccion" id="seccion-ficha" aria-labelledby="titulo-ficha" aria-live="polite">
+      <div class="contenedor" id="ficha">
+        <div class="vacio-ficha">
+          <span class="eyebrow">Tu consulta</span>
+          <h2 class="titular" id="titulo-ficha" style="margin:0 auto">Elige un municipio para ver su situación</h2>
+          <p class="apoyo" style="margin:12px auto 0">Usa el buscador de arriba o la lista por departamento.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. El país: El Niño y embalses -->
+    <section class="seccion" aria-labelledby="titulo-pais">
+      <div class="contenedor">
+        <span class="eyebrow">Todo el país</span>
+        <h2 class="titular" id="titulo-pais">El Pacífico se calienta, <em>las fuentes lo sienten</em></h2>
+        <div class="pais-grid">
+          <article class="casilla" id="casilla-nino" data-reveal></article>
+          <article class="casilla" id="casilla-embalses" data-reveal></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Por departamento -->
+    <section class="seccion" aria-labelledby="titulo-deptos">
+      <div class="contenedor">
+        <span class="eyebrow">Por departamento</span>
+        <h2 class="titular" id="titulo-deptos">Municipios analizados, <em>por nivel de riesgo</em></h2>
+        <div class="leyenda" id="leyenda" aria-label="Convenciones de nivel de riesgo"></div>
+        <div class="deptos" id="deptos"></div>
+      </div>
+    </section>
+
+    <!-- 5. ¿A quién acudo? -->
+    <section class="seccion" aria-labelledby="titulo-acudir">
+      <div class="contenedor">
+        <span class="eyebrow">Qué hacer</span>
+        <h2 class="titular" id="titulo-acudir">¿A quién <em>acudo</em>?</h2>
+        <div class="acudir" id="acudir"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie-grid">
+      <div>
+        <strong style="color:var(--texto-fuerte)">Comisión de Regulación de Agua Potable y Saneamiento Básico</strong><br>
+        Carrera 12 No. 97-80, Edificio Pijao, Bogotá D.C. · <a href="https://www.cra.gov.co" target="_blank" rel="noopener noreferrer">www.cra.gov.co</a>
+      </div>
+      <div id="pie-version"></div>
+    </div>
+  </footer>
+  <div class="barra-cian" aria-hidden="true"></div>
+
+  <script src="js/vista.js"></script>
+  <script src="js/ciudadano.js"></script>
+</body>
+
+</html>

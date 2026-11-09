@@ -43,6 +43,9 @@ class ConectorIDEAM(ConectorBase):
         self.conf = json.loads((cfg / "parametros_ideam.json").read_text(encoding="utf-8"))
         self.estaciones = json.loads((cfg / "estaciones_ideam.json").read_text(encoding="utf-8"))
         self.territorio = json.loads((cfg / "territorio_municipios.json").read_text(encoding="utf-8"))["municipios"]
+        # H-2/H-3 son estáticos: el cruce cabecera–subzona ENA se hace una vez (cruce_hidrografico.construir_ena)
+        ruta_ena = cfg / "ena_municipios.json"
+        self.ena_config = json.loads(ruta_ena.read_text(encoding="utf-8")) if ruta_ena.exists() else None
 
     # ------------------------------------------------------------------ red
     def _get_json(self, url: str, params: Dict[str, str], timeout: int = 180) -> Any:
@@ -88,6 +91,24 @@ class ConectorIDEAM(ConectorBase):
             raise RuntimeError(f"IDEAM respondió error en {clave}: {res['error']}")
         feats = res.get("features", [])
         return feats[0]["attributes"][f["campo_categoria"]] if len(feats) == 1 else None
+
+    def categorias_ena(self) -> Dict[str, Dict[str, Optional[str]]]:
+        """
+        H-2/H-3 por municipio. Fase 0: se leen del cruce estático data/config/ena_municipios.json
+        (capas ENA descargadas en bloque). Sin ese archivo se consulta el servicio punto a punto,
+        como antes (solo viable para pocos municipios: RF-ING-07).
+        """
+        if self.ena_config is not None:
+            mun = self.ena_config["municipios"]
+            return {m["divipola"]: {"h2_ivh_ano_seco": mun.get(m["divipola"], {}).get("h2_ivh_ano_seco"),
+                                    "h3_iua_ano_seco": mun.get(m["divipola"], {}).get("h3_iua_ano_seco")}
+                    for m in self.territorio}
+        ena = {}
+        for m in self.territorio:
+            ena[m["divipola"]] = {"h2_ivh_ano_seco": self.consultar_ena(m["lat"], m["lon"], "ena_h2_ivh_ano_seco"),
+                                  "h3_iua_ano_seco": self.consultar_ena(m["lat"], m["lon"], "ena_h3_iua_ano_seco")}
+            time.sleep(1.0)
+        return ena
 
     # ------------------------------------------------------------- cálculo
     def calcular_municipio(self, divipola: str, diarios: Dict[str, Dict[date, Tuple[float, int]]],
@@ -138,11 +159,7 @@ class ConectorIDEAM(ConectorBase):
                        for c in v["normales"]["dentro"] + list(v["normales"]["cercanas_km"])})
         filas = self.consultar_diarios(auto, desde, hasta)
         normales = self.consultar_normales(norm)
-        ena = {}
-        for m in self.territorio:
-            ena[m["divipola"]] = {"h2_ivh_ano_seco": self.consultar_ena(m["lat"], m["lon"], "ena_h2_ivh_ano_seco"),
-                                  "h3_iua_ano_seco": self.consultar_ena(m["lat"], m["lon"], "ena_h3_iua_ano_seco")}
-            time.sleep(0.2)
+        ena = self.categorias_ena()
 
         diarios: Dict[str, Dict[date, Tuple[float, int]]] = {}
         for cod, dia, mm, n in filas:
@@ -176,6 +193,8 @@ class ConectorIDEAM(ConectorBase):
             "fuente": "IDEAM — red automática de precipitación, normales climatológicas 1991-2020 y ENA",
             "consultas": {k: self.conf["fuentes"][k]["url"] for k in
                           ("precipitacion_10min", "normales_climatologicas", "ena_h2_ivh_ano_seco", "ena_h3_iua_ano_seco")},
+            "ena_origen": ({"archivo": "data/config/ena_municipios.json", "fuentes": self.ena_config.get("fuentes")}
+                           if self.ena_config is not None else "consulta puntual al servicio"),
             "ventana": {"desde": desde.isoformat(), "hasta": hasta.isoformat()},
             "fecha_reporte": ahora.strftime("%Y-%m-%d"),
             "fecha_captura": ahora.isoformat(),

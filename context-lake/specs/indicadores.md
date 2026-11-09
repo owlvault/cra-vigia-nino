@@ -29,6 +29,9 @@ Definir los 20 indicadores: fórmula, unidad, escala, fuente, periodicidad y umb
 | A-2 | Probabilidad de El Niño muy fuerte | Probabilidad máxima de intensidad "muy fuerte" o superior en los próximos 3 trimestres | % | Nación | FTE-CPC-PROB | mensual | ↑ | No (contexto) |
 | A-3 | Anomalía de precipitación 30 días | (Σ lluvia 30 d − Σ línea base 30 d) / Σ línea base 30 d × 100 | % | Municipio | FTE-IDEAM-PREC | diario | ↓ | Sí, capa A |
 | A-4 | Días consecutivos sin lluvia | Días hasta la fecha de corte con lluvia municipal < 1 mm | días | Municipio | FTE-IDEAM-PREC | diario | ↑ | Sí, capa A |
+
+> **Fase 0 (ADR-0007, propuesta):** A-3 y A-4 usan primero las estaciones del IDEAM. Si no dan valor, se usa FTE-CHIRPS con su propia normal 1991-2020. Cada valor declara `fuente` y `metodo`. H-5 lleva `aplica = false` donde ningún embalse del catálogo XM abastece al municipio.
+
 | A-5 | Focos de calor en el municipio (7 d) | Conteo de detecciones con confianza nominal o alta dentro del polígono | conteo | Municipio | FTE-FIRMS | diario | ↑ | No (informativo) |
 | H-1 | Caudal de la fuente abastecedora | Caudal medio 7 d / caudal medio multianual del mismo mes × 100 | % | Fuente abastecedora | FTE-IDEAM-CAUD | diario | ↓ | Sí, capa A |
 | H-2 | Índice de vulnerabilidad hídrica en año seco | Categoría ENA de la subzona hidrográfica que contiene la cabecera | categoría | Subzona | FTE-IDEAM-ENA | estático | ↑ | Sí, capa H |

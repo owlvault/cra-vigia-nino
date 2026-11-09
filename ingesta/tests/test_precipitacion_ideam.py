@@ -146,8 +146,9 @@ def test_conector_calcula_con_mediciones_y_no_inventa(conector, monkeypatch):
     monkeypatch.setattr(conector, "consultar_diarios", lambda codigos, desde, h: filas)
     monkeypatch.setattr(conector, "consultar_normales",
                         lambda codigos: {"N1": {m: 60.0 for m in pm.MESES_NORMAL}})
-    monkeypatch.setattr(conector, "consultar_ena",
-                        lambda lat, lon, clave: "Crítico" if "h3" in clave else "Alto")
+    # Fase 0: H-2/H-3 vienen del cruce estático data/config/ena_municipios.json
+    conector.ena_config = {"municipios": {"44847": {"h2_ivh_ano_seco": "Alto", "h3_iua_ano_seco": "Crítico"}}}
+    monkeypatch.setattr(conector, "consultar_ena", lambda *a: pytest.fail("no debe consultar el servicio por municipio"))
     res = conector.ejecutar_captura()
     uribia = res.datos_extraidos["44847"]
     assert uribia["indicador_a4_dias_sin_lluvia"] == 5
@@ -168,3 +169,20 @@ def test_categoria_critico_tiene_puntaje(tmp_path):
     p = PipelineCorte(base_dir=str(tmp_path))
     assert p.puntaje_categorico("Crítico") == 100.0
     assert p.puntaje_categorico("Muy Alto") == 90.0
+
+
+def test_sin_cruce_estatico_consulta_ena_por_municipio(conector, monkeypatch):
+    """Compatibilidad: sin data/config/ena_municipios.json se consulta el servicio punto a punto."""
+    conector.ena_config = None
+    conector.territorio = [m for m in conector.territorio if m["divipola"] == "44847"]
+    monkeypatch.setattr(conector, "consultar_ena", lambda lat, lon, clave: "Crítico" if "h3" in clave else "Alto")
+    assert conector.categorias_ena() == {"44847": {"h2_ivh_ano_seco": "Alto", "h3_iua_ano_seco": "Crítico"}}
+
+
+def test_ena_estatico_cubre_el_territorio():
+    ena = json.loads((RAIZ / "data" / "config" / "ena_municipios.json").read_text(encoding="utf-8"))
+    territorio = json.loads((RAIZ / "data" / "config" / "territorio_municipios.json").read_text(encoding="utf-8"))
+    assert set(ena["municipios"]) == {m["divipola"] for m in territorio["municipios"]}
+    # El ENA 2010 (IVH) no cubre el archipiélago de San Andrés: sin dato, no un valor supuesto
+    assert ena["municipios"]["88001"]["h2_ivh_ano_seco"] is None
+    assert ena["cobertura"]["h3"] == len(territorio["municipios"])

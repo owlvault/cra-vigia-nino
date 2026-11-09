@@ -270,3 +270,15 @@ def test_corte_rechazado_no_genera_vista(base):
     p.generar_corte_completo(amenaza_global={}, datos_ideam={}, datos_sivicap={}, datos_ungrd_mvct={},
                              datos_xm={}, datos_firms={}, datos_sui={})
     assert not (base / "data" / "oro" / "ciudadano" / "vista_vigente.json").exists()
+
+
+def test_pagina_ciudadana_recibe_solo_la_vista(base):
+    """RNF-CIU-02: la página ciudadana lee tablero/ciudadano/js/vista.js, copia exacta de la vista."""
+    gen = GeneradorVistaCiudadana(base_dir=str(base))
+    vista = gen.generar(_corte())
+    js = (base / "tablero" / "ciudadano" / "js" / "vista.js").read_text(encoding="utf-8")
+    assert js.splitlines()[1].startswith("window.VIGIA_CIUDADANO = ")
+    cuerpo = js.split("window.VIGIA_CIUDADANO = ", 1)[1].rstrip().rstrip(";")
+    assert json.loads(cuerpo.replace(r"<\/", "</")) == vista
+    assert "</" not in cuerpo
+    assert '"icr"' not in cuerpo and '"subindices_capa"' not in cuerpo

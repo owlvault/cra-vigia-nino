@@ -1,0 +1,4520 @@
+{
+  "descripcion": "Categorías ENA (año seco) de la subzona que contiene la cabecera municipal: H-2 (IVH, ENA 2010) y H-3 (IUA, ENA 2014).",
+  "regla": "Punto de la cabecera DANE dentro de una única subzona de la capa ENA del IDEAM; si no, None.",
+  "fuentes": {
+    "ena_ivh_ano_seco": {
+      "capa": "Indice de Vulnerabilidad Hidrica Año Seco SZH ENA 2010",
+      "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Indicadores_Hidricos/MapServer/13",
+      "sha256_capa": "d2179f59980753b61b2fd92cc9bb6d1f968346ea8e46b4d330dd1659cb539d93"
+    },
+    "ena_iua_ano_seco": {
+      "capa": "Indice de Uso del Agua Año Seco SZH ENA 2014",
+      "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Indicadores_Hidricos/MapServer/11",
+      "sha256_capa": "0f7cb67bce5bbba09078074d4f650a243b686faf7ee7765fb87288f17175f4f0"
+    }
+  },
+  "fecha_dato": {
+    "h2": "2010-12-31",
+    "h3": "2014-12-31"
+  },
+  "generado_en": "2026-11-09T14:31:27.011583+00:00",
+  "generado_por": "ingesta/territorio/cruce_hidrografico.py",
+  "cobertura": {
+    "h2": 1120,
+    "h3": 1122,
+    "total": 1122
+  },
+  "municipios": {
+    "05001": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05002": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05004": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05021": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05030": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05031": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05034": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05036": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05038": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05040": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05042": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05044": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05045": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05051": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "05055": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05059": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05079": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05086": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05088": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05091": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05093": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05101": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05107": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05113": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05120": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05125": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05129": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05134": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05138": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05142": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05145": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05147": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05148": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05150": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05154": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05172": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05190": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05197": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05206": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05209": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05212": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05234": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05237": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05240": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05250": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05264": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05266": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05282": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05284": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05306": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05308": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05310": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05313": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05315": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05318": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05321": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05347": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05353": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05360": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05361": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05364": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05368": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05376": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05380": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05390": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05400": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05411": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05425": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05440": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05467": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05475": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "05480": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05483": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05490": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05495": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05501": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05541": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05543": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05576": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05579": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05585": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "05591": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "05604": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05607": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05615": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05628": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05631": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05642": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05647": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05649": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05652": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05656": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05658": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05659": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05660": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05664": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05665": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05667": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05670": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05674": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05679": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05686": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05690": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05697": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "05736": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05756": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05761": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05789": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05790": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05792": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05809": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05819": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05837": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "05842": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05847": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "05854": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05856": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05858": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05861": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05873": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "05885": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05887": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "05890": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05893": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "05895": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "08001": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08078": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08137": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08141": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08296": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08372": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08421": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08433": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08436": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08520": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08549": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08558": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08560": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08573": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08606": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08634": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08638": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08675": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08685": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08758": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08770": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08832": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "08849": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "11001": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13001": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13006": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "13030": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "13042": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "13052": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13062": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13074": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "13140": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13160": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "13188": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "13212": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "13222": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13244": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13248": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13268": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "13300": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "13430": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "13433": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13440": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "13442": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13458": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "13468": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "13473": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "13490": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "13549": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "13580": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "13600": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "13620": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13647": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13650": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "13654": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13655": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "13657": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13667": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "13670": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "13673": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13683": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13688": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "13744": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "13760": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13780": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "13810": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "13836": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13838": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13873": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "13894": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15001": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15022": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15047": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15051": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15087": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15090": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15092": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15097": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15104": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15106": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15109": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15114": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15131": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15135": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15162": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15172": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15176": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15180": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15183": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15185": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15187": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15189": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15204": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15212": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15215": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15218": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15223": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "15224": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15226": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15232": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15236": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15238": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15244": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15248": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15272": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15276": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15293": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15296": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15299": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15317": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15322": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15325": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15332": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15362": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15367": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15368": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15377": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15380": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15401": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15403": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15407": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15425": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15442": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15455": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15464": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15466": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15469": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15476": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15480": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15491": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15494": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15500": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15507": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15511": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15514": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15516": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15518": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15522": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15531": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15533": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15537": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15542": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15550": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15572": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15580": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15599": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15600": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15621": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15632": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15638": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15646": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15660": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15664": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15667": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15673": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15676": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15681": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15686": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15690": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15693": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15696": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15720": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15723": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15740": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15753": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15755": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15757": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15759": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15761": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15762": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15763": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15764": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15774": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15776": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15778": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15790": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15798": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15804": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15806": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15808": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15810": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15814": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15816": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "15820": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15822": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15832": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "15835": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15837": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15839": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "15842": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15861": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15879": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "15897": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "17001": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "17013": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "17042": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "17050": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "17088": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "17174": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "17272": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "17380": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "17388": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "17433": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "17442": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "17444": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "17446": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "17486": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "17495": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "17513": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "17524": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "17541": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "17614": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "17616": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "17653": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "17662": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "17665": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "17777": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "17867": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "17873": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "17877": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "18001": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "18029": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "18094": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "18150": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "18205": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "18247": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "18256": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "18410": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "18460": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "18479": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "18592": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "18610": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "18753": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "18756": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "18785": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "18860": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "19001": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "19022": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "19050": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "19075": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "19100": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "19110": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "19130": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "19137": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "19142": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "19212": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "19256": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "19290": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "19300": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "19318": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "19355": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "19364": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "19392": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "19397": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "19418": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "19450": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "19455": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "19473": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "19513": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "19517": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "19532": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "19533": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "19548": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "19573": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "19585": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "19622": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "19693": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "19698": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "19701": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "19743": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "19760": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "19780": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "19785": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "19807": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "19809": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "19821": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "19824": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "19845": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "20001": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "20011": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "20013": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "20032": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "20045": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "20060": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "20175": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "20178": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "20228": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "20238": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "20250": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "20295": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "20310": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "20383": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "20400": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "20443": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "20517": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "20550": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "20570": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "20614": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "20621": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "20710": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "20750": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "20770": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "20787": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23001": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23068": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "23079": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "23090": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23162": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23168": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23182": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "23189": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23300": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23350": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "23417": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23419": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23464": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23466": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "23500": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23555": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "23570": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "23574": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23580": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "23586": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23660": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23670": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23672": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23675": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23678": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23682": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "23686": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23807": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "23815": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "23855": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "25001": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25019": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25035": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25040": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25053": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25086": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25095": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25099": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25120": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25123": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25126": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25148": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25151": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25154": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25168": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25175": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25178": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25181": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25183": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25200": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25214": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25224": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25245": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25258": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25260": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25269": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25279": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25281": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25286": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25288": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25290": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25293": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25295": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25297": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25299": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25307": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25312": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25317": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25320": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25322": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25324": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25326": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25328": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25335": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25339": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25368": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25372": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25377": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25386": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25394": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25398": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25402": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25407": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25426": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25430": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25436": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25438": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "25473": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25483": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25486": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25488": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25489": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25491": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25506": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25513": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25518": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "25524": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25530": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "25535": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25572": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "25580": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25592": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25594": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25596": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25599": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25612": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25645": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25649": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25653": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "25658": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25662": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25718": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25736": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25740": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25743": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25745": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25754": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25758": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25769": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25772": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25777": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25779": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25781": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25785": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25793": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25797": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25799": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25805": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25807": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25815": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25817": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25823": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25839": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "25841": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25843": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25845": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25851": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25862": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25867": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25871": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "25873": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25875": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25878": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25885": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "25898": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "25899": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "27001": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "27006": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "27025": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "27050": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "27073": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "27075": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "27077": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "27099": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "27135": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "27150": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "27160": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "27205": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "27245": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "27250": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "27361": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "27372": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "27413": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "27425": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "27430": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "27450": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "27491": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "27493": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "27495": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "27580": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "27600": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "27615": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "27660": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "27745": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "27787": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "27800": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "27810": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "41001": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "41006": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "41013": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "41016": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "41020": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "41026": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "41078": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "41132": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "41206": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "41244": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "41298": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "41306": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "41319": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "41349": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "41357": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "41359": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "41378": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "41396": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "41483": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "41503": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "41518": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "41524": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "41530": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "41548": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "41551": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "41615": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "41660": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "41668": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "41676": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "41770": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "41791": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "41797": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "41799": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "41801": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "41807": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "41872": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "41885": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "44001": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "44035": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "44078": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "44090": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "44098": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "44110": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "44279": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "44378": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "44420": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "44430": {
+      "h2_ivh_ano_seco": "Muy Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "44560": {
+      "h2_ivh_ano_seco": "Muy Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "44650": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "44847": {
+      "h2_ivh_ano_seco": "Muy Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "44855": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "44874": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47001": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47030": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "47053": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47058": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47161": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47170": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47189": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47205": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47245": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47258": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47268": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47288": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47318": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47460": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47541": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47545": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47551": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47555": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47570": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47605": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47660": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "47675": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47692": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47703": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47707": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47720": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47745": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47798": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47960": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "47980": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "50001": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "50006": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "50110": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "50124": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "50150": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "50223": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "50226": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "50245": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "50251": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "50270": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "50287": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "50313": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "50318": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "50325": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "50330": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "50350": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "50370": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "50400": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "50450": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "50568": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "50573": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "50577": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "50590": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "50606": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "50680": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "50683": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "50686": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "50689": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "50711": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "52001": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "52019": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "52022": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52036": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52051": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "52079": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "52083": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52110": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "52203": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52207": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52210": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52215": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52224": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52227": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52233": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "52240": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "52250": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "52254": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado",
+      "metodo": "servicio"
+    },
+    "52256": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "52258": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "52260": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52287": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52317": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52320": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52323": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52352": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52354": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52356": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52378": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52381": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52385": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52390": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "52399": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52405": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "52411": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52418": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52427": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "52435": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "52473": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "52480": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "52490": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "52506": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52520": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "52540": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "52560": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52565": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52573": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52585": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52612": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "52621": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "52678": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52683": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52685": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "52687": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "52693": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52694": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52696": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "52699": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52720": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52786": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52788": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52835": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "52838": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "52885": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "54001": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "54003": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "54051": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "54099": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "54109": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "54125": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "54128": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "54172": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "54174": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "54206": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "54223": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "54239": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "54245": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "54250": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "54261": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "54313": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "54344": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "54347": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "54377": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "54385": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "54398": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "54405": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "54418": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "54480": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "54498": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "54518": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "54520": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "54553": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "54599": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "54660": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "54670": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "54673": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "54680": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "54720": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "54743": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "54800": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "54810": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "54820": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "54871": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "54874": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "63001": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "63111": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "63130": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "63190": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "63212": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "63272": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "63302": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "63401": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "63470": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "63548": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "63594": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "63690": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "66001": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "66045": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "66075": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "66088": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "66170": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "66318": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "66383": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "66400": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "66440": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "66456": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "66572": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "66594": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "66682": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "66687": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68001": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68013": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68020": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68051": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68077": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68079": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68081": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68092": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68101": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68121": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68132": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68147": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68152": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68160": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68162": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68167": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68169": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68176": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68179": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68190": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68207": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68209": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68211": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68217": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68229": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68235": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68245": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68250": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68255": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68264": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68266": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68271": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68276": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68296": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68298": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68307": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68318": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68320": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68322": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68324": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68327": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68344": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68368": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68370": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68377": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68385": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68397": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68406": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68418": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68425": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68432": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68444": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68464": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68468": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68498": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68500": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68502": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68522": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68524": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68533": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68547": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68549": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68572": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68573": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68575": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68615": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68655": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68669": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68673": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68679": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68682": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68684": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68686": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68689": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68705": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68720": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68745": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68755": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68770": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68773": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68780": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68820": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68855": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "68861": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68867": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "68872": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "68895": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70001": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70110": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70124": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70204": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "70215": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70221": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "70230": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "70233": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70235": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70265": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70400": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70418": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70429": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70473": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70508": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70523": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "70670": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70678": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70702": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70708": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70713": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "70717": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70742": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70771": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "70820": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "70823": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73001": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "73024": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "73026": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "73030": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73043": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "73055": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73067": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "73124": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "73148": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "73152": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73168": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "73200": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "73217": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73226": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73236": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "73268": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73270": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73275": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73283": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "73319": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73347": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "73349": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "73352": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "73408": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73411": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73443": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "73449": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "73461": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73483": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "73504": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "73520": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "73547": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "73555": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "73563": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73585": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "73616": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "73622": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "73624": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73671": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73675": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "73678": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Moderado"
+    },
+    "73686": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73770": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "73854": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73861": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73870": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "73873": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "76001": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "76020": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "76036": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "76041": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "76054": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "76100": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "76109": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "76111": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "76113": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "76122": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "76126": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "76130": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "76147": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "76233": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "76243": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "76246": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "76248": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "76250": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "76275": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "76306": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "76318": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "76364": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "76377": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "76400": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "76403": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "76497": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "76520": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "76563": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "76606": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "76616": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "76622": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "76670": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "76736": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "76823": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "76828": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "76834": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "76845": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Alto"
+    },
+    "76863": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "76869": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "76890": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "76892": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Crítico"
+    },
+    "76895": {
+      "h2_ivh_ano_seco": "Alto",
+      "h3_iua_ano_seco": "Muy Alto"
+    },
+    "81001": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "81065": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "81220": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "81300": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "81591": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "81736": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "81794": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "85001": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "85010": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "85015": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "85125": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "85136": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "85139": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "85162": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "85225": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "85230": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "85250": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "85263": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "85279": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "85300": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "85315": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "85325": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "85400": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "85410": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "85430": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "85440": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Bajo"
+    },
+    "86001": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "86219": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "86320": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "86568": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "86569": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "86571": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "86573": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "86749": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "86755": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "86757": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "86760": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "86865": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "86885": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "88001": {
+      "h2_ivh_ano_seco": null,
+      "h3_iua_ano_seco": "Crítico",
+      "metodo": "servicio"
+    },
+    "88564": {
+      "h2_ivh_ano_seco": null,
+      "h3_iua_ano_seco": "Crítico",
+      "metodo": "servicio"
+    },
+    "91001": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "91263": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "91405": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "91407": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "91430": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "91460": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "91530": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "91536": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "91540": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "91669": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "91798": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "94001": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "94343": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "94883": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "94884": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "94885": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "94886": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "94887": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "94888": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "95001": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "95015": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "95025": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "95200": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "97001": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "97161": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "97511": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "97666": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "97777": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "97889": {
+      "h2_ivh_ano_seco": "Muy bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "99001": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "99524": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "99624": {
+      "h2_ivh_ano_seco": "Bajo",
+      "h3_iua_ano_seco": "Muy Bajo"
+    },
+    "99773": {
+      "h2_ivh_ano_seco": "Medio",
+      "h3_iua_ano_seco": "Muy Bajo"
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "version": "v0.2.0-20261108",
+  "version": "v0.3.0-20261109",
   "descripcion": "Configuración del canal ciudadano (specs/canal-ciudadano.md, ADR-0006). Lista blanca, etiquetas y textos en lenguaje claro.",
   "condiciones_exposicion": {
     "clasificacion_informacion_publica": false,
@@ -42,6 +42,19 @@
       "emergencias": "Ante emergencias, acuda al consejo municipal de gestión del riesgo y a la UNGRD.",
       "clima": "Para pronósticos y alertas del clima, consulte al IDEAM.",
       "quejas": "Para quejas por el servicio, diríjase a su empresa de acueducto y, en segunda instancia, a la Superintendencia de Servicios Públicos Domiciliarios."
+    },
+    "descripcion_nivel": {
+      "Bajo": "El servicio de agua resiste la sequía con sus propios medios.",
+      "Medio": "Llueve menos de lo normal. Es momento de ahorrar agua y estar atento a los avisos de su empresa de acueducto.",
+      "Alto": "El servicio ya se afecta o hay racionamiento o calamidad con soporte oficial. Siga las indicaciones de su empresa de acueducto y de la alcaldía.",
+      "Muy alto": "El suministro está en riesgo serio. Ahorre agua, almacénela de forma segura y siga las indicaciones de la alcaldía.",
+      "Sin información": "No hay datos suficientes para estimar el riesgo de este municipio."
+    },
+    "titulos_remision": {
+      "suministro": "Horarios y racionamiento",
+      "emergencias": "Emergencias",
+      "clima": "Clima y lluvias",
+      "quejas": "Quejas por el servicio"
     }
   },
   "fuentes_legibles": {
@@ -76,5 +89,12 @@
     }
   ],
   "nota_bandas_irca": "Res. 2115 de 2007 (MinProtección/MAVDT): 0-5 sin riesgo; 5,1-14 bajo; 14,1-35 medio; 35,1-80 alto; 80,1-100 inviable sanitariamente.",
-  "dias_max_dato_semanal_sin_advertencia": 14
+  "dias_max_dato_semanal_sin_advertencia": 14,
+  "historial": [
+    {
+      "fecha": "2026-11-09",
+      "version": "v0.3.0-20261109",
+      "cambio": "Se agregan textos.descripcion_nivel y textos.titulos_remision para la página ciudadana (RNF-CIU-01: textos en configuración, no en código). Pendientes de aprobación de Comunicaciones (Q-CIU-02)."
+    }
+  ]
 }

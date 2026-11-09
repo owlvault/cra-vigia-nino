@@ -75,9 +75,12 @@ def construir(archivo: Path, base_dir: Path = RAIZ) -> Dict[str, Any]:
     territorio = json.loads((base_dir / "data" / "config" / "territorio_municipios.json").read_text(encoding="utf-8"))
     divipolas = [m["divipola"] for m in territorio["municipios"]]
     wb = openpyxl.load_workbook(archivo, read_only=True, data_only=True)
-    totales = leer_totales(wb[HOJA].iter_rows(values_only=True), divipolas)
-    actualizacion = next((c for fila in wb["PPED"].iter_rows(values_only=True) for c in fila
-                          if isinstance(c, str) and c.startswith("Actualizado")), None)
+    try:
+        totales = leer_totales(wb[HOJA].iter_rows(values_only=True), divipolas)
+        actualizacion = next((c for fila in wb["PPED"].iter_rows(values_only=True) for c in fila
+                              if isinstance(c, str) and c.startswith("Actualizado")), None)
+    finally:
+        wb.close()  # en Windows, el modo read_only deja el archivo bloqueado si no se cierra
     faltantes = sorted(set(divipolas) - set(totales))
     return {
         "descripcion": "Población total proyectada por municipio y año (RF-TER-06). Se usa la del año del corte.",

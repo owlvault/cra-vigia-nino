@@ -96,7 +96,9 @@ def test_cambiar_un_peso_no_requiere_tocar_codigo(base_aislada):
 
 def test_territorio_viene_de_config(pipeline):
     municipios = pipeline.territorio["municipios"]
-    assert len(municipios) == 23
+    assert len(municipios) == 1122                       # Fase 0: DIVIPOLA nacional completa
+    assert len({m["divipola"] for m in municipios}) == 1122
+    assert sum(1 for m in municipios if m.get("piloto")) == 23
     assert all(re.fullmatch(r"\d{5}", m["divipola"]) for m in municipios)
     assert all(m["divipola"][:2] == m["cod_depto"] for m in municipios)
 

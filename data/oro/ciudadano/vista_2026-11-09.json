@@ -6,8 +6,8 @@
       "C-CIU-02 textos del canal sin aprobar (Q-CIU-02)"
     ],
     "fecha_corte": "2026-11-09",
-    "generado_en": "2026-11-09T01:04:17.209106+00:00",
-    "version_canal": "v0.2.0-20261108",
+    "generado_en": "2026-11-09T11:49:53.620631+00:00",
+    "version_canal": "v0.3.0-20261109",
     "version_configuracion_icr": "v1.2.0-20261108",
     "semana_semanal": "2026-W42",
     "aviso": "Esta información es un análisis de la Comisión de Regulación de Agua Potable y Saneamiento Básico (CRA). No es una alerta ni una declaratoria oficial de emergencia.",
@@ -17,7 +17,43 @@
       "clima": "Para pronósticos y alertas del clima, consulte al IDEAM.",
       "quejas": "Para quejas por el servicio, diríjase a su empresa de acueducto y, en segunda instancia, a la Superintendencia de Servicios Públicos Domiciliarios."
     },
-    "municipio_fuera_de_muestra": "Este municipio aún no está incluido en el análisis."
+    "municipio_fuera_de_muestra": "Este municipio aún no está incluido en el análisis.",
+    "descripcion_nivel": {
+      "Bajo": "El servicio de agua resiste la sequía con sus propios medios.",
+      "Medio": "Llueve menos de lo normal. Es momento de ahorrar agua y estar atento a los avisos de su empresa de acueducto.",
+      "Alto": "El servicio ya se afecta o hay racionamiento o calamidad con soporte oficial. Siga las indicaciones de su empresa de acueducto y de la alcaldía.",
+      "Muy alto": "El suministro está en riesgo serio. Ahorre agua, almacénela de forma segura y siga las indicaciones de la alcaldía.",
+      "Sin información": "No hay datos suficientes para estimar el riesgo de este municipio."
+    },
+    "titulos_remision": {
+      "suministro": "Horarios y racionamiento",
+      "emergencias": "Emergencias",
+      "clima": "Clima y lluvias",
+      "quejas": "Quejas por el servicio"
+    },
+    "embalses_nota": "Son los embalses del sistema eléctrico nacional; solo algunos abastecen acueductos.",
+    "bandas_calidad_agua": [
+      {
+        "hasta": 5.0,
+        "texto": "Sin riesgo"
+      },
+      {
+        "hasta": 14.0,
+        "texto": "Riesgo bajo"
+      },
+      {
+        "hasta": 35.0,
+        "texto": "Riesgo medio"
+      },
+      {
+        "hasta": 80.0,
+        "texto": "Riesgo alto"
+      },
+      {
+        "hasta": 100.0,
+        "texto": "Inviable sanitariamente"
+      }
+    ]
   },
   "nacional": {
     "embalses": {

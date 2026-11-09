@@ -1193,8 +1193,9 @@ body {
 }
 
 .btn-iniciar-story {
-  background-color: var(--bandera-amarillo);
-  color: var(--texto-fuerte);
+  /* Botón primario del sistema de diseño (el amarillo de bandera queda solo en la franja, Manual p. 7) */
+  background-color: var(--cra-cian-texto);
+  color: #FFFFFF;
   border: none;
   padding: 12px 24px;
   border-radius: var(--radio-md);
@@ -1211,7 +1212,7 @@ body {
 }
 
 .btn-iniciar-story:hover {
-  background-color: #FFD533;
+  background-color: var(--cra-cian-hover);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
 }
@@ -3503,3 +3504,220 @@ body {
 
 
 
+
+/* =========================================================================
+   RECORRIDO EJECUTIVO v2 — gráficos derivados del corte (fondo blanco, tokens CRA)
+   ========================================================================= */
+.sin-dato-txt {
+  color: var(--texto-claro);
+  font-style: italic;
+  background: repeating-linear-gradient(45deg, transparent 0 4px, rgba(185, 196, 204, .35) 4px 6px);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.story-formula {
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  color: var(--cra-cian-texto);
+  background: var(--cra-cian-suave);
+  border-radius: var(--radio-md);
+  padding: 8px 12px;
+  display: inline-block;
+}
+
+/* Termómetros por región Niño */
+.story-termometros {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+.story-termo { text-align: center; }
+.story-termo-tubo {
+  position: relative;
+  height: 160px;
+  width: 34px;
+  margin: 0 auto 8px;
+  border-radius: 17px;
+  background: linear-gradient(90deg, #EEF2F5, #FFFFFF 45%, #E3E9EE);
+  border: 1px solid var(--linea);
+  overflow: hidden;
+  box-shadow: inset 0 2px 6px rgba(31, 42, 54, .08);
+}
+.story-termo-relleno {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  border-radius: 17px;
+  background: linear-gradient(0deg, var(--alerta-roja), var(--alerta-naranja) 70%, #F5B567);
+  box-shadow: 0 0 14px rgba(224, 122, 16, .35);
+  transform-origin: bottom;
+  animation: story-sube 1s cubic-bezier(.16, 1, .3, 1) both;
+}
+.story-termo.ref .story-termo-tubo { border: 2px solid var(--cra-cian); }
+.story-termo-val { font-size: 20px; font-weight: 900; color: var(--texto-fuerte); font-variant-numeric: tabular-nums; }
+.story-termo-nom { font-size: 12px; font-weight: 800; color: var(--cra-cian-texto); }
+.story-termo-zona { font-size: 11px; color: var(--texto-claro); }
+
+/* Barras genéricas */
+.story-barra {
+  height: 8px;
+  background: var(--tinte);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.story-barra.grande { height: 14px; border-radius: 7px; }
+.story-barra > div {
+  height: 100%;
+  border-radius: inherit;
+  transform-origin: left;
+  animation: story-crece .9s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+/* Barra apilada de niveles */
+.story-niveles-barra {
+  display: flex;
+  height: 38px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(31, 42, 54, .10);
+}
+.story-niveles-barra .seg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 14px;
+  min-width: 28px;
+  transform-origin: left;
+  animation: story-crece .9s cubic-bezier(.16, 1, .3, 1) both;
+}
+.story-niveles-barra .seg.roja { background: var(--alerta-roja); color: #FFF; }
+.story-niveles-barra .seg.naranja { background: var(--alerta-naranja); color: var(--texto-fuerte); }
+.story-niveles-barra .seg.amarilla { background: var(--alerta-amarilla); color: var(--texto-fuerte); }
+.story-niveles-barra .seg.sin_alerta { background: var(--alerta-sin); color: #FFF; }
+.story-niveles-barra .seg.sin_dato {
+  background: repeating-linear-gradient(45deg, var(--alerta-sin-dato) 0 6px, #D5DDE2 6px 10px);
+  color: var(--texto-fuerte);
+}
+
+/* Tarjetas de municipio crítico */
+.story-muni-card {
+  background: var(--superficie);
+  border: 1px solid var(--linea);
+  border-left: 5px solid var(--alerta-naranja);
+  border-radius: var(--radio-md);
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.story-muni-card.roja { border-left-color: var(--alerta-roja); }
+
+/* Comparador de capas */
+.story-compara-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.story-compara {
+  background: var(--superficie);
+  border: 1px solid var(--linea);
+  border-top: 4px solid var(--alerta-roja);
+  border-radius: var(--radio-md);
+  padding: 16px;
+}
+.story-compara.bajo { border-top-color: var(--alerta-sin); }
+
+@keyframes story-crece { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes story-sube { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+@media (max-width: 700px) {
+  .story-termometros { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .story-compara-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story-termo-relleno, .story-barra > div, .story-niveles-barra .seg { animation: none; }
+}
+
+/* =========================================================================
+   RESPONSIVE ≥ 360 px (RNF-UI-02): la página nunca desplaza en horizontal
+   ========================================================================= */
+html, body { max-width: 100%; overflow-x: hidden; }
+.encabezado-metadata { flex-wrap: wrap; }
+.grid-kpis > *, .cadena-causal-grid > *, .story-chapter-body > * { min-width: 0; }
+.tabla-container { max-width: 100%; overflow-x: auto; }
+
+@media (max-width: 760px) {
+  .govco-bar { padding: 0 16px; }
+  .govco-tag { display: none; }
+  .encabezado-cra { padding: 14px 16px; }
+  .cra-branding { gap: 12px; min-width: 0; }
+  .cra-title-group { min-width: 0; }
+  .cra-title-group h1 { font-size: 18px; }
+  .cra-title-group p { font-size: 12px; }
+  .encabezado-metadata { width: 100%; gap: 8px; }
+  .encabezado-metadata .btn-iniciar-story { flex: 1 1 140px; justify-content: center; font-size: 12px; padding: 8px 10px; }
+  .corte-info-card { text-align: left; }
+  .nav-tablero { padding: 0 8px; }
+  .nav-tab-btn { padding: 12px 12px; }
+  .app-container { padding: 16px; }
+  .grid-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .card-kpi { padding: 14px; }
+  .banner-storytelling-callout { flex-direction: column; align-items: stretch; }
+}
+
+/* Botón secundario CRA: borde y texto cian institucional sobre blanco */
+.btn-iniciar-story.btn-secundario-cra {
+  background-color: #FFFFFF;
+  color: var(--cra-cian-texto);
+  border: 1px solid var(--cra-cian-texto);
+  box-shadow: none;
+  padding: 10px 18px;
+}
+.btn-iniciar-story.btn-secundario-cra:hover { background-color: var(--cra-cian-suave); }
+.btn-iniciar-story:focus-visible { outline: 2px solid var(--bandera-azul); outline-offset: 2px; }
+
+/* =========================================================================
+   RESUMEN SOBRE BLANCO (decisión 2026-11-09): aviso del recorrido y ENSO
+   pasan de bloques oscuros a tarjetas blancas con acento cian institucional
+   ========================================================================= */
+.banner-storytelling-callout {
+  background: var(--superficie);
+  color: var(--texto);
+  border: 1px solid var(--linea);
+  border-left: 6px solid var(--cra-cian);
+  box-shadow: var(--sombra-card);
+}
+.banner-storytelling-callout::before {
+  background: radial-gradient(circle, rgba(67, 178, 215, 0.16) 0%, transparent 70%);
+}
+.banner-storytelling-callout .banner-story-tag { background: var(--cra-cian-suave); color: var(--cra-cian-texto); }
+.banner-story-text h3 { color: var(--texto-fuerte); }
+.banner-story-text p { opacity: 1; }
+
+.card-noaa-global {
+  background: var(--superficie);
+  color: var(--texto);
+  border: 1px solid var(--linea);
+  border-top: 4px solid var(--cra-cian);
+  box-shadow: var(--sombra-card);
+}
+.card-noaa-global .noaa-badge-top { background: var(--cra-cian-suave); border-color: transparent; color: var(--cra-cian-texto); }
+.card-noaa-global .noaa-main h3 { color: var(--texto-fuerte); }
+.card-noaa-global .noaa-main p { opacity: 1; }
+.noaa-index-box {
+  background: linear-gradient(180deg, #FFFFFF, var(--tinte));
+  border: 1px solid var(--linea-suave);
+  backdrop-filter: none;
+}
+.noaa-index-box .region-title { color: var(--cra-cian-texto); opacity: 1; }
+.noaa-index-box .anom-val { color: #A85500; }
+.noaa-index-box .sst-val { color: var(--texto); opacity: 1; }
+.card-noaa-global .btn-info-noaa {
+  background: var(--cra-cian-suave) !important;
+  color: var(--cra-cian-texto) !important;
+  border-color: var(--cra-cian) !important;
+}
+a.btn-iniciar-story { text-decoration: none; }
+@media (min-width: 1100px) {
+  .vista-panel#vista-v-01 .grid-kpis { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}

@@ -42,7 +42,9 @@ El catálogo vive en `config.fuente` y es editable por ACT-ADMIN-DATOS. Valores 
 | FTE-MVCT-AFECT | Reportes de afectación | MinVivienda (Survey123) | Racionamiento, desabastecimiento | Q-ING-04 | Diaria | R-3 |
 | FTE-DANE | DIVIPOLA, MGN, proyecciones de población | DANE | Llave territorial, geometrías, población | Descarga de archivos oficiales | Trimestral | `specs/modelo-territorial.md` |
 | FTE-XM | Nivel de embalses | XM Sinergox | Volumen útil diario | API pública XM | Diaria 06:00 | H-5 |
-| FTE-FIRMS | Focos de calor | NASA FIRMS | Detecciones VIIRS/MODIS | API con MAP_KEY | Diaria 04:00 | A-5 |
+| FTE-FIRMS | Focos de calor | NASA FIRMS | Detecciones VIIRS (NRT), conteo por polígono municipal | API con MAP_KEY | Diaria 04:00 | A-5 |
+| FTE-CHIRPS | Precipitación satelital con estaciones (respaldo de A-3/A-4, ADR-0007) | Climate Hazards Center UCSB / USGS | Lluvia diaria 0,05° (prelim y final) y mensual 1991-2020 | Lectura remota por ventana de GeoTIFF (`data.chc.ucsb.edu`) | Diaria 06:00 | A-3, A-4 (solo donde IDEAM no da valor) |
+| FTE-IDEAM-GEO | Polígonos municipales, zonificación hidrográfica y capas ENA | IDEAM | Geometrías (descarga en bloque) | ArcGIS REST paginado → `data/config/geo/` | Por edición | RF-TER-04, H-2, H-3 |
 
 > **ASUNCIÓN (sin validar):** Las URLs de archivo de NOAA CPC listadas son las publicadas históricamente por CPC. Origen: conocimiento previo. Verificar al construir el conector antes de implementar RF-ING-01 para FTE-CPC-SEM y FTE-CPC-ONI.
 

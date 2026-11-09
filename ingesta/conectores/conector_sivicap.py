@@ -18,6 +18,7 @@ from ingesta.conector_base import ConectorBase, CapturaResultado
 class ConectorSIVICAP(ConectorBase):
     DATASET_ID = "nxt2-39c3"
     ENDPOINT = f"https://www.datos.gov.co/resource/{DATASET_ID}.json"
+    ANIOS_ATRAS = 3   # el INS publica el IRCA anual con ~1 año de rezago; 3 años cubren municipios que no reportaron el último
 
     def __init__(self, base_dir: Optional[str] = None):
         super().__init__(
@@ -41,16 +42,19 @@ class ConectorSIVICAP(ConectorBase):
             return "INVIABLE_SANITARIAMENTE"
 
     def ejecutar_captura(self) -> CapturaResultado:
-        # Consulta de los últimos registros disponibles a nivel municipal
+        # Último IRCA disponible por municipio (specs/indicadores.md S-2). Antes el año estaba
+        # fijo en 2024; ahora se traen los últimos años en orden ascendente y, como en el
+        # auditor de veracidad, la última fila de cada municipio (el año más reciente) prevalece.
+        anio_desde = datetime.now(timezone.utc).year - self.ANIOS_ATRAS
         soql_params = {
-            "$where": "a_o = '2024' AND municipiocodigo != '#TODOS'",
-            "$limit": "5000",
-            "$order": "departamento ASC, municipio ASC"
+            "$where": f"a_o >= '{anio_desde}' AND municipiocodigo != '#TODOS'",
+            "$limit": "50000",
+            "$order": "a_o ASC, departamento ASC, municipio ASC"
         }
         query_string = urllib.parse.urlencode(soql_params)
         url_completa = f"{self.ENDPOINT}?{query_string}"
         
-        contenido_bytes, _ = self.descargar_url(url_completa)
+        contenido_bytes, _ = self.descargar_url(url_completa, timeout=60)
         hash_sha256 = hashlib.sha256(contenido_bytes).hexdigest()
         
         # Procesamiento y estandarización a zona plata/oro

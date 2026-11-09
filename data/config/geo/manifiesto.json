@@ -1,0 +1,46 @@
+{
+  "descripcion": "Capas geográficas del IDEAM descargadas en bloque para los cruces espaciales nacionales.",
+  "generado_por": "ingesta/territorio/geometrias_ideam.py",
+  "capas": {
+    "municipios": {
+      "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Entidades_Territoriales/MapServer/2",
+      "nombre_capa": "Municipio",
+      "entidades": 1122,
+      "sistema_referencia": "EPSG:4686",
+      "generalizacion_grados": 0.002,
+      "descargado_en": "2026-11-09T14:16:00.750654+00:00",
+      "sha256": "adea5ba39adab303087f6a7e6171b53dfb345be0ee893ac031d04c0c2e2dfdf3",
+      "bytes": 2434234
+    },
+    "zonificacion_hidrografica": {
+      "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Unidades_Analisis/MapServer/10",
+      "nombre_capa": "Zonificación Hidrográfica 2025",
+      "entidades": 321,
+      "sistema_referencia": "EPSG:4686",
+      "generalizacion_grados": 0.002,
+      "descargado_en": "2026-11-09T14:16:16.805813+00:00",
+      "sha256": "d701f1d3066a0dbb1b6451e5667369c307cbf45a935d9bc8f528186daca5b650",
+      "bytes": 1394899
+    },
+    "ena_ivh_ano_seco": {
+      "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Indicadores_Hidricos/MapServer/13",
+      "nombre_capa": "Indice de Vulnerabilidad Hidrica Año Seco SZH ENA 2010",
+      "entidades": 310,
+      "sistema_referencia": "EPSG:4686",
+      "generalizacion_grados": 0.002,
+      "descargado_en": "2026-11-09T14:16:33.531385+00:00",
+      "sha256": "d2179f59980753b61b2fd92cc9bb6d1f968346ea8e46b4d330dd1659cb539d93",
+      "bytes": 1469778
+    },
+    "ena_iua_ano_seco": {
+      "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Indicadores_Hidricos/MapServer/11",
+      "nombre_capa": "Indice de Uso del Agua Año Seco SZH ENA 2014",
+      "entidades": 316,
+      "sistema_referencia": "EPSG:4686",
+      "generalizacion_grados": 0.002,
+      "descargado_en": "2026-11-09T14:16:49.734130+00:00",
+      "sha256": "0f7cb67bce5bbba09078074d4f650a243b686faf7ee7765fb87288f17175f4f0",
+      "bytes": 1496179
+    }
+  }
+}
