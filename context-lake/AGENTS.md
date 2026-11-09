@@ -22,6 +22,7 @@ Antes de escribir código, lee el archivo que corresponda a tu tarea:
 | entender el stack, esquemas y convenciones | `docs/architecture.md` |
 | construir cualquier pantalla, color, tipografía o logo | `docs/design_system.md` |
 | escribir un conector de fuente | `specs/ingesta-fuentes.md` |
+| recibir extractos nacionales de SSPD, INS, UNGRD o MinVivienda | `specs/contratos-datos-fase1.md` |
 | validar datos o publicar un corte | `specs/calidad-datos.md` |
 | asignar datos a municipios o agregar | `specs/modelo-territorial.md` |
 | calcular un indicador | `specs/indicadores.md` |
@@ -95,6 +96,7 @@ Antes de escribir código, lee el archivo que corresponda a tu tarea:
 | `specs/tablero-ui.md` | Vistas V-01 a V-07, drill territorial, ficha | borrador |
 | `specs/comparativo-semanal.md` | V-08 comparativo semanal, modelo semanal, actualización bajo demanda | borrador |
 | `specs/canal-ciudadano.md` | Canal ciudadano de solo lectura y coexistencia con el canal interno | borrador |
+| `specs/contratos-datos-fase1.md` | Contratos SUI por APS, eventos de la capa R e IRCA mensual (Fase 1) | borrador |
 | `specs/seguridad-acceso.md` | OIDC, roles, auditoría | borrador |
 
 ## Índice de decisiones

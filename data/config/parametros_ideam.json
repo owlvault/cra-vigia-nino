@@ -1,5 +1,5 @@
 {
-  "version": "v1.0.0-20261108",
+  "version": "v1.1.0-20261109",
   "descripcion": "Fuentes y parámetros para calcular A-3, A-4, H-2 y H-3 con mediciones del IDEAM (specs/indicadores.md, specs/modelo-territorial.md RF-TER-04).",
   "fuentes": {
     "precipitacion_10min": {
@@ -53,5 +53,14 @@
     "A-3: la lluvia observada sale de estaciones automáticas y la normal de estaciones convencionales; ambos conjuntos se promedian por municipio con la misma regla (RF-TER-04).",
     "A-4: si un día reciente no tiene dato municipal, el conteo se detiene ahí y el valor es una cota inferior (nota en el indicador). Con 75 días de historia, una racha mayor también queda como cota inferior; su puntaje ya es 100 desde 60 días.",
     "A-3: se exigen 27 de 30 días con dato municipal; los días faltantes se completan con la media observada de la ventana."
-  ]
+  ],
+  "control_calidad_estaciones": {
+    "activo": true,
+    "referencia": "CHIRPS v3 municipal diario (data/plata/chirps/diario_municipal.json)",
+    "dias_ventana": 60,
+    "min_dias_validos": 30,
+    "min_referencia_mm": 100.0,
+    "fraccion_maxima": 0.1,
+    "justificacion": "Validación del 2026-11-09 (data/ops/validacion_chirps_2026-10-31.json): 11 estaciones automáticas con 0 mm en ~70 días con registros completos (p. ej. Aeropuerto Condoto, 1.429 mm según CHIRPS) y 56 de 513 por debajo del 10 % de la referencia. Sin control, 47 municipios mostraban rachas secas de 10+ días; con control, 18."
+  }
 }

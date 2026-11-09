@@ -41,6 +41,30 @@ class ConectorSIVICAP(ConectorBase):
         else:
             return "INVIABLE_SANITARIAMENTE"
 
+    def _aplicar_irca_mensual(self, por_div: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+        from ingesta.fase1 import contrato_irca as ci
+        archivos = sorted(self.bronce_dir.glob("irca_mensual_*.csv"))
+        if not archivos:
+            return None
+        cfg = self.root_dir / "data" / "config" / "territorio_municipios.json"
+        divipolas = {m["divipola"] for m in json.loads(cfg.read_text(encoding="utf-8"))["municipios"]}
+        texto = archivos[-1].read_text(encoding="utf-8")
+        ultimos, rechazos = ci.leer(texto, divipolas)
+        aplicados = 0
+        for div, m in ultimos.items():
+            anual = por_div.get(div)
+            if anual and anual.get("periodo_ano") and str(anual["periodo_ano"]) > m["periodo"][:4]:
+                continue   # el anual publicado es de un año posterior al mensual: se conserva
+            por_div[div] = {**(anual or {"divipola": div}), "periodo_ano": m["periodo"][:4],
+                            "periodo_mes": m["periodo"], "fecha_dato": m["fecha_dato"],
+                            "irca_urbano": m["irca_urbano"], "irca_rural": m["irca_rural"],
+                            "valor_indicador_s2": m["valor"], "nivel_riesgo_s2": self._clasificar_irca(m["valor"]),
+                            "fuente": f"INS - SIVICAP (IRCA mensual, {archivos[-1].name})",
+                            "fecha_captura": datetime.now(timezone.utc).isoformat()}
+            aplicados += 1
+        return {"archivo": archivos[-1].name, "sha256": hashlib.sha256(texto.encode("utf-8")).hexdigest(),
+                "aplicados": aplicados, "rechazos": rechazos}
+
     def ejecutar_captura(self) -> CapturaResultado:
         # Último IRCA disponible por municipio (specs/indicadores.md S-2). Antes el año estaba
         # fijo en 2024; ahora se traen los últimos años en orden ascendente y, como en el
@@ -93,6 +117,11 @@ class ConectorSIVICAP(ConectorBase):
                 "fuente": "INS - SIVICAP (datos.gov.co: nxt2-39c3)",
                 "fecha_captura": datetime.now(timezone.utc).isoformat()
             }
+
+        # Fase 1: IRCA mensual (contrato irca_mensual_v1) prevalece si es más reciente que el anual
+        mensual = self._aplicar_irca_mensual(indicadores_s2_por_divipola)
+        if mensual:
+            hash_sha256 = hashlib.sha256(contenido_bytes + mensual["sha256"].encode()).hexdigest()
 
         # Verificar idempotencia
         ultimo_hash = self._obtener_ultimo_hash()

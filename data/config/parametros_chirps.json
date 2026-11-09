@@ -1,6 +1,6 @@
 {
-  "version": "v1.0.0-20261109",
-  "descripcion": "Respaldo satelital nacional para A-3 y A-4 (Fase 0): CHIRPS v3.0 del Climate Hazards Center (UCSB) con USGS/FEWS NET. Se usa solo donde las estaciones del IDEAM no producen valor.",
+  "version": "v1.1.0-20261109",
+  "descripcion": "Respaldo satelital nacional para A-3 y A-4 (Fase 0): CHIRPS v3.0 del Climate Hazards Center (UCSB) con USGS/FEWS NET. Por la validación del 2026-11-09 NO entra al ICR (usar_en_icr): se usa como referencia y como control de calidad de las estaciones IDEAM.",
   "fuentes": {
     "diario_final": "https://data.chc.ucsb.edu/products/CHIRPS/v3.0/daily/final/sat/{anio}/",
     "diario_prelim": "https://data.chc.ucsb.edu/products/CHIRPS/v3.0/daily/prelim/sat/{anio}/",
@@ -23,7 +23,10 @@
     "umbral_dia_seco_mm": 1.0,
     "dias_ventana_anomalia": 30,
     "dias_validos_minimos_ventana": 27,
-    "periodo_normal": [1991, 2020],
+    "periodo_normal": [
+      1991,
+      2020
+    ],
     "pausa_segundos_entre_archivos": 3.0
   },
   "asunciones": [
@@ -32,5 +35,10 @@
     "A-4: CHIRPS diario reparte el total de cada péntada según la distribución diaria de IMERG (README de CHIRPS v3). La racha de días secos es aproximada; se declara en el método del indicador.",
     "Latencia: el preliminar se publica dos días después de cada péntada; la fecha del dato puede tener entre 3 y 10 días de atraso y la frescura lo declara.",
     "Lluvia municipal = media de los píxeles cuyo centro cae en el polígono municipal del IDEAM; si ninguno (municipio menor que un píxel de ~5,5 km), los píxeles que toca; sin polígono, el píxel de la cabecera DANE."
-  ]
+  ],
+  "usar_en_icr": {
+    "A-3": false,
+    "A-4": false,
+    "justificacion": "Validación del 2026-11-09 contra estaciones IDEAM en 1.006 municipios (data/ops/validacion_chirps_2026-10-31.json). A-4: CHIRPS diario reparte el total de la péntada y borra las rachas secas (0 de 47 rachas de 10+ días detectadas). A-3: sesgo de +32 pp frente a la red automática aun con control de calidad (42 % en el mismo tramo); mezclar ambas fuentes en un ranking sesga a los municipios con satélite. Se mantiene como referencia y como control de calidad de estaciones. Activar A-3 requiere decisión de la CRA con concepto hidrológico (Q-ADR7-01)."
+  }
 }

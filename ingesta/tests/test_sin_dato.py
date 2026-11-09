@@ -126,6 +126,7 @@ def test_ungrd_municipio_sin_registro_queda_sin_dato(base_aislada):
 
     con = ConectorUNGRDMinVivienda(base_dir=str(base_aislada))
     con._consultar_emergencias_socrata = lambda: None  # sin red en pruebas
+    con._consultar_minvivienda = lambda catalogo: None  # sin red en pruebas
     res = con.ejecutar_captura()
     capa_r = res.datos_extraidos["capa_r_por_divipola"]
 

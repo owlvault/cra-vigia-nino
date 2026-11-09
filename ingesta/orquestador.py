@@ -34,8 +34,9 @@ class OrquestadorIngesta:
         self.conectores = {
             "NOAA": ConectorNOAA(base_dir=base_dir),
             "SIVICAP": ConectorSIVICAP(base_dir=base_dir),
+            # CHIRPS va antes que IDEAM: su caché municipal es la referencia del control de calidad de estaciones
+            "CHIRPS": ConectorCHIRPS(base_dir=base_dir),
             "IDEAM": ConectorIDEAM(base_dir=base_dir),
-            "CHIRPS": ConectorCHIRPS(base_dir=base_dir),   # respaldo satelital nacional de A-3/A-4
             "UNGRD_MVCT": ConectorUNGRDMinVivienda(base_dir=base_dir),
             "XM": ConectorXMEmbalses(base_dir=base_dir),
             "FIRMS": ConectorNASAFIRMS(base_dir=base_dir),

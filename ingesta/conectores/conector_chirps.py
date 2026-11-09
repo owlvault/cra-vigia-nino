@@ -123,10 +123,13 @@ class ConectorCHIRPS(ConectorBase):
             serie = {d: v for d, v in serie.items() if d.isoformat() in cache["dias"]}
             c = indicadores_municipio(serie, self.normales["normales"].get(div, {}), hasta, p)
             fin = c["fecha_dato"]
+            # usar_en_icr (parametros_chirps.json): si está desactivado, el valor viaja solo como referencia
+            usar = self.conf.get("usar_en_icr", {})
             datos[div] = {
                 "divipola": div,
-                "indicador_a3_anomalia_precip_pct": c["a3"],
-                "indicador_a4_dias_sin_lluvia": c["a4"],
+                "indicador_a3_anomalia_precip_pct": c["a3"] if usar.get("A-3", True) else None,
+                "indicador_a4_dias_sin_lluvia": c["a4"] if usar.get("A-4", True) else None,
+                "referencia_a3_pct": c["a3"], "referencia_a4_dias": c["a4"],
                 "a4_cota_inferior": c["a4_cota_inferior"],
                 "fecha_dato": fin,
                 "version_dato": cache["dias"].get(fin, {}).get("version") if fin else None,
@@ -155,13 +158,15 @@ class ConectorCHIRPS(ConectorBase):
         hash_sha256 = hashlib.sha256(contenido).hexdigest()
         ruta = self.guardar_en_bronce(contenido, "json", hash_sha256)
 
-        con_a3 = sum(1 for d in datos.values() if d["indicador_a3_anomalia_precip_pct"] is not None)
-        con_a4 = sum(1 for d in datos.values() if d["indicador_a4_dias_sin_lluvia"] is not None)
+        con_a3 = sum(1 for d in datos.values() if d["referencia_a3_pct"] is not None)
+        con_a4 = sum(1 for d in datos.values() if d["referencia_a4_dias"] is not None)
         ultimo = usados[-1] if usados else None
         return CapturaResultado(
             id_fuente=self.id_fuente, estado="exitosa", hash_sha256=hash_sha256,
             bytes_descargados=len(contenido), filas_procesadas=len(usados), ruta_archivo_bronce=str(ruta),
             mensaje=(f"CHIRPS: {len(leidos)} días leídos, último día disponible {ultimo}; "
-                     f"A-3 en {con_a3}/{len(datos)} y A-4 en {con_a4}/{len(datos)} municipios"),
+                     f"A-3 en {con_a3}/{len(datos)} y A-4 en {con_a4}/{len(datos)} municipios; "
+                     f"en el ICR: A-3 {'sí' if self.conf.get('usar_en_icr', {}).get('A-3', True) else 'no'}, "
+                     f"A-4 {'sí' if self.conf.get('usar_en_icr', {}).get('A-4', True) else 'no'}"),
             datos_extraidos=datos,
         )

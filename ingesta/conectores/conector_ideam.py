@@ -110,6 +110,33 @@ class ConectorIDEAM(ConectorBase):
             time.sleep(1.0)
         return ena
 
+    def control_calidad(self, diarios: Dict[str, Dict[date, Tuple[float, int]]], hasta: date) -> Dict[str, Any]:
+        """
+        Excluye estaciones que transmiten (casi) cero cuando la referencia independiente
+        (CHIRPS municipal, zona plata) muestra lluvia (parametros_ideam.json, control_calidad_estaciones).
+        Sin referencia disponible no se excluye nada y se declara.
+        """
+        q = self.conf.get("control_calidad_estaciones", {})
+        ruta = self.root_dir / "data" / "plata" / "chirps" / "diario_municipal.json"
+        if not q.get("activo"):
+            return {"aplicado": False, "motivo": "desactivado", "excluidas": {}}
+        if not ruta.exists():
+            logger.warning("Sin referencia CHIRPS en plata: control de calidad de estaciones no aplicado")
+            return {"aplicado": False, "motivo": "sin referencia CHIRPS", "excluidas": {}}
+        cache = json.loads(ruta.read_text(encoding="utf-8"))["dias"]
+        referencia = {date.fromisoformat(d): v["valores"] for d, v in cache.items()}
+        de_estacion = {c: div for div, a in self.estaciones["municipios"].items() for c in a["automaticas"]["dentro"]}
+        p = self.conf["precipitacion"]
+        dias = [hasta - timedelta(days=k) for k in range(q["dias_ventana"])]
+        excluidas = pm.estaciones_inconsistentes(
+            diarios, de_estacion, referencia, dias,
+            int(p["registros_por_dia_completo"] * p["fraccion_minima_registros_dia"]),
+            int(p["registros_por_dia_completo"] * p["fraccion_maxima_registros_dia"]),
+            q["min_dias_validos"], q["min_referencia_mm"], q["fraccion_maxima"])
+        if excluidas:
+            logger.info(f"Control de calidad: {len(excluidas)} estaciones excluidas por inconsistencia con CHIRPS")
+        return {"aplicado": True, "excluidas": excluidas}
+
     # ------------------------------------------------------------- cálculo
     def calcular_municipio(self, divipola: str, diarios: Dict[str, Dict[date, Tuple[float, int]]],
                            normales: Dict[str, Dict[str, float]], hasta: date) -> Dict[str, Any]:
@@ -164,6 +191,8 @@ class ConectorIDEAM(ConectorBase):
         diarios: Dict[str, Dict[date, Tuple[float, int]]] = {}
         for cod, dia, mm, n in filas:
             diarios.setdefault(cod, {})[date.fromisoformat(dia)] = (mm, n)
+        qc = self.control_calidad(diarios, hasta)
+        diarios = {c: v for c, v in diarios.items() if c not in qc["excluidas"]}
 
         datos: Dict[str, Any] = {}
         resumen: Dict[str, Any] = {}
@@ -196,6 +225,7 @@ class ConectorIDEAM(ConectorBase):
             "ena_origen": ({"archivo": "data/config/ena_municipios.json", "fuentes": self.ena_config.get("fuentes")}
                            if self.ena_config is not None else "consulta puntual al servicio"),
             "ventana": {"desde": desde.isoformat(), "hasta": hasta.isoformat()},
+            "control_calidad": qc,
             "fecha_reporte": ahora.strftime("%Y-%m-%d"),
             "fecha_captura": ahora.isoformat(),
             "version_parametros": self.conf["version"],

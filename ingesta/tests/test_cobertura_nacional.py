@@ -213,3 +213,24 @@ def test_tramo_de_validacion_usa_los_quiebres_del_icr():
     q_a3 = [[0, 0], [-20, 25], [-40, 50], [-60, 75], [-90, 100]]
     assert tramo(0.0, q_a3) == 0 and tramo(-30.0, q_a3) == 1 and tramo(-95.0, q_a3) == 3
     assert tramo(None, q_a3) is None
+
+
+# --- Control de calidad de estaciones y uso de CHIRPS en el ICR ---------------------------
+
+def test_estacion_que_transmite_ceros_se_excluye_pero_la_sequia_real_no():
+    dias = [date(2026, 10, 31) - timedelta(days=k) for k in range(40)]
+    diarios = {"MUERTA": {d: (0.0, 144) for d in dias},          # 0 mm mientras la referencia llueve
+               "SECA": {d: (0.0, 144) for d in dias},            # 0 mm y la referencia también seca
+               "BUENA": {d: (5.0, 144) for d in dias},
+               "CORTA": {d: (0.0, 144) for d in dias[:10]}}      # pocos días válidos: no se juzga
+    de_est = {"MUERTA": "27205", "SECA": "44847", "BUENA": "05001", "CORTA": "27205"}
+    ref = {d: {"27205": 30.0, "44847": 0.2, "05001": 6.0} for d in dias}
+    malas = pm.estaciones_inconsistentes(diarios, de_est, ref, dias, 115, 144, 30, 100.0, 0.1)
+    assert set(malas) == {"MUERTA"}
+    assert malas["MUERTA"]["referencia_mm"] == pytest.approx(1200.0)
+
+
+def test_chirps_no_entra_al_icr_si_el_parametro_lo_desactiva():
+    conf = json.loads((RAIZ / "data" / "config" / "parametros_chirps.json").read_text(encoding="utf-8"))
+    assert conf["usar_en_icr"]["A-4"] is False      # validación: CHIRPS borra las rachas secas
+    assert "justificacion" in conf["usar_en_icr"]

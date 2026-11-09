@@ -130,3 +130,34 @@ def anomalia_30d(serie: Dict[date, Optional[float]], fin: date, n_dias: int, min
     # Días faltantes (permitidos hasta el mínimo) se completan con la media observada de la ventana
     observada = sum(validos) * n_dias / len(validos)
     return round((observada - base_mm) / base_mm * 100, 1), round(observada, 1), len(validos)
+
+
+def estaciones_inconsistentes(diarios: Dict[str, Dict[date, Tuple[float, int]]],
+                              municipio_de_estacion: Dict[str, str],
+                              referencia: Dict[date, Dict[str, Optional[float]]],
+                              dias: List[date], min_registros: int, max_registros: int,
+                              min_dias_validos: int, min_referencia_mm: float,
+                              fraccion_maxima: float) -> Dict[str, Dict[str, float]]:
+    """
+    Control de calidad (Fase 0): estación cuyo total en la ventana es menor que
+    'fraccion_maxima' de la lluvia de referencia de su municipio (CHIRPS), cuando la
+    referencia supera 'min_referencia_mm'. Detecta sensores que transmiten ceros con
+    registros completos (p. ej. 0 mm en dos meses en Condoto). Una sequía real no se
+    descarta: la referencia independiente también la mostraría seca.
+    Devuelve {estación: {"estacion_mm", "referencia_mm", "dias_validos"}}.
+    """
+    sospechosas: Dict[str, Dict[str, float]] = {}
+    for cod, serie in diarios.items():
+        div = municipio_de_estacion.get(cod)
+        if div is None:
+            continue
+        validos = [d for d in dias if d in serie and min_registros <= serie[d][1] <= max_registros
+                   and referencia.get(d, {}).get(div) is not None]
+        if len(validos) < min_dias_validos:
+            continue
+        s_est = sum(serie[d][0] for d in validos)
+        s_ref = sum(referencia[d][div] for d in validos)
+        if s_ref >= min_referencia_mm and s_est < fraccion_maxima * s_ref:
+            sospechosas[cod] = {"estacion_mm": round(s_est, 1), "referencia_mm": round(s_ref, 1),
+                                "dias_validos": len(validos)}
+    return sospechosas

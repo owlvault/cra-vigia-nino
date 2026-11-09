@@ -38,8 +38,8 @@ El catálogo vive en `config.fuente` y es editable por ACT-ADMIN-DATOS. Valores 
 | FTE-SUI-PEC | Planes de emergencia y contingencia | SSPD / MinVivienda | Reporte de PEC por prestador | Q-ING-02 | Semanal | R-1 |
 | FTE-INS-IRCA | IRCA | INS SIVICAP | IRCA mensual por municipio | datos.gov.co / SIVICAP | Mensual, día 20 | S-2 |
 | FTE-UNGRD | Consolidado de emergencias | UNGRD | Eventos, calamidades públicas | Archivo publicado en portal UNGRD | Diaria 07:00 | R-2, R-4 |
-| FTE-MVCT-RIESGO | Nivel de riesgo El Niño agua y saneamiento | MinVivienda | Municipios en riesgo Alto/Muy Alto | Archivo de la circular / solicitud institucional | Por publicación | ICR (contexto) |
-| FTE-MVCT-AFECT | Reportes de afectación | MinVivienda (Survey123) | Racionamiento, desabastecimiento | Q-ING-04 | Diaria | R-3 |
+| FTE-MVCT-RIESGO | Nivel de riesgo El Niño agua y saneamiento | MinVivienda | Nivel de riesgo de desabastecimiento por municipio (DIVIPOLA) | ArcGIS público `MpiosAfectadosNino/FeatureServer/1` (verificado 2026-11-09) | Diaria con la captura R | Contexto del municipio (no entra al ICR) |
+| FTE-MVCT-AFECT | Reportes de afectación | MinVivienda (Survey123) | Reportes de sequía con afectación de acueducto (DIVIPOLA, fecha) | ArcGIS público `Reporte_de_Emergencias-Gestores_Prestadores` y `-PDAs` (verificado 2026-11-09), sin campos personales; seguimiento El Niño con token: Q-ING-04 | Diaria | R-3 |
 | FTE-DANE | DIVIPOLA, MGN, proyecciones de población | DANE | Llave territorial, geometrías, población | Descarga de archivos oficiales | Trimestral | `specs/modelo-territorial.md` |
 | FTE-XM | Nivel de embalses | XM Sinergox | Volumen útil diario | API pública XM | Diaria 06:00 | H-5 |
 | FTE-FIRMS | Focos de calor | NASA FIRMS | Detecciones VIIRS (NRT), conteo por polígono municipal | API con MAP_KEY | Diaria 04:00 | A-5 |

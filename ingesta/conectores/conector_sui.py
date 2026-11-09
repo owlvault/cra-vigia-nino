@@ -68,9 +68,39 @@ class ConectorSUI(ConectorBase):
             return None
         return f"{anio:04d}-{mes:02d}-{calendar.monthrange(anio, mes)[1]:02d}"
 
+    def _cargar_extracto_nacional(self) -> Optional[Dict[str, Any]]:
+        """
+        Fase 1 (convenio CRA–SSPD): extracto por APS con el contrato sui_aps_v1
+        (ingesta/fase1/contrato_sui.py), dejado en bronce como data/bronce/fte_sui/sui_aps_*.csv
+        por carga asistida (RF-ING-06). Se valida y se agrega al municipio (RF-TER-03).
+        """
+        from ingesta.fase1 import contrato_sui as cs
+        archivos = sorted(self.sui_bronce_dir.glob("sui_aps_*.csv"))
+        if not archivos:
+            return None
+        cfg = self.root_dir / "data" / "config"
+        divipolas = {m["divipola"] for m in json.loads((cfg / "territorio_municipios.json").read_text(encoding="utf-8"))["municipios"]}
+        ruta_hogares = cfg / "hogares_urbanos_dane.json"
+        hogares = json.loads(ruta_hogares.read_text(encoding="utf-8")).get("hogares_urbanos") if ruta_hogares.exists() else None
+        texto = archivos[-1].read_text(encoding="utf-8")
+        validas, rechazos = cs.validar_filas(cs.leer_csv(texto), divipolas)
+        periodo, municipios = cs.agregar_nacional(validas, hogares)
+        return {"archivo": archivos[-1].name, "sha256": hashlib.sha256(texto.encode("utf-8")).hexdigest(),
+                "contrato": cs.VERSION_CONTRATO, "periodo_corte": periodo, "filas_validas": len(validas),
+                "rechazos": rechazos, "municipios": municipios}
+
     def ejecutar_captura(self) -> CapturaResultado:
         extracto = self._cargar_extracto_certificado()
-        municipios_raw = extracto.get("municipios", {})
+        municipios_raw = dict(extracto.get("municipios", {}))
+        nacional = self._cargar_extracto_nacional()
+        fechas_por_mun: Dict[str, Optional[str]] = {}
+        if nacional:
+            f_nac = self._fin_de_periodo(nacional["periodo_corte"])
+            for div, ind in nacional["municipios"].items():
+                municipios_raw[div] = {**municipios_raw.get(div, {}), **{k: v for k, v in ind.items() if v is not None}}
+                fechas_por_mun[div] = f_nac
+            logger.info(f"Extracto SUI nacional {nacional['archivo']}: {len(nacional['municipios'])} municipios, "
+                        f"{nacional['filas_validas']} filas válidas, {len(nacional['rechazos'])} rechazadas")
         # fecha_dato = último día del periodo reportado (no la fecha de certificación)
         fecha_corte = self._fin_de_periodo(extracto.get("periodo_corte"))
 
@@ -97,7 +127,8 @@ class ConectorSUI(ConectorBase):
                 "s6_consumo_m3": s6_consumo,
                 "h4_autonomia_h": h4_auton,
                 "r1_pec": r1_pec,
-                "fecha_dato": fecha_corte
+                "fecha_dato": fechas_por_mun.get(divipola, fecha_corte),
+                "origen": "extracto_nacional_aps" if divipola in fechas_por_mun else "extracto_certificado_piloto",
             }
 
         snapshot = {
@@ -105,6 +136,7 @@ class ConectorSUI(ConectorBase):
             "fecha_reporte": fecha_corte,
             "fecha_captura": datetime.now(timezone.utc).isoformat(),
             "total_municipios": len(datos_procesados),
+            "extracto_nacional": ({k: v for k, v in nacional.items() if k != "municipios"} if nacional else None),
             "municipios": datos_procesados
         }
 
