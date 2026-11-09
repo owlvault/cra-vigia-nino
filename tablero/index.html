@@ -59,7 +59,7 @@
       </button>
       <div class="corte-info-card">
         <div class="fecha-label">Fecha de Corte Vigente</div>
-        <div class="fecha-valor" id="corte-fecha-val">2026-10-14</div>
+        <div class="fecha-valor" id="corte-fecha-val">2026-11-09</div>
       </div>
       <div id="corte-estado-pill" class="frescura-pill">
         <span class="frescura-dot"></span> Corte Oficial
@@ -100,7 +100,7 @@
     </button>
     <button class="nav-tab-btn" data-vista="V-06" id="tab-v06">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-      V-06 Alertas <span class="badge-count" id="badge-total-alertas">10</span>
+      V-06 Alertas <span class="badge-count" id="badge-total-alertas">4</span>
     </button>
     <button class="nav-tab-btn" data-vista="V-07" id="tab-v07">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -235,10 +235,10 @@
           <span class="noaa-badge-top">Amenaza Global ENSO · NOAA Climate Prediction Center</span>
           <h3>Advertencia de El Niño en Fortalecimiento</h3>
           <p id="noaa-resumen-desc">
-            Anomalía en la región <strong>Niño 3.4 a +3.3 °C</strong> (con picos en la región Niño 1+2 de +5.2 °C) y una probabilidad del <strong>83.0 %</strong> de consolidar un evento de carácter histórico (RONI &ge; +2.5 °C).
+            Anomalía en la región <strong>Niño 3.4 a +3.4 °C</strong> (con picos en la región Niño 1+2 de +5.4 °C) y una probabilidad del <strong>83.0 %</strong> de consolidar un evento de carácter histórico (RONI &ge; +2.5 °C).
           </p>
           <div style="margin-top:12px;font-size:12px;opacity:0.85" id="noaa-oni-resumen">
-            Trimestre JAS 2026: +2.16 °C (Muy Fuerte / Histórico)
+            Trimestre ASO 2026: +2.46 °C (Muy Fuerte / Histórico)
           </div>
         </div>
         <div class="grid-noaa-indices">
@@ -287,27 +287,27 @@
         </div>
         <div class="card-kpi alerta-roja">
           <div class="kpi-label" style="color:var(--alerta-roja)">Nivel Rojo (Alerta Máxima)</div>
-          <div class="kpi-valor" id="kpi-alerta-roja" style="color:var(--alerta-roja)">4</div>
+          <div class="kpi-valor" id="kpi-alerta-roja" style="color:var(--alerta-roja)">1</div>
           <div class="kpi-desc">ICR &ge; 75 pts (Colapso / Racionamiento)</div>
         </div>
         <div class="card-kpi alerta-naranja">
           <div class="kpi-label" style="color:var(--alerta-naranja)">Nivel Naranja (Alerta Alta)</div>
-          <div class="kpi-valor" id="kpi-alerta-naranja" style="color:var(--alerta-naranja)">6</div>
+          <div class="kpi-valor" id="kpi-alerta-naranja" style="color:var(--alerta-naranja)">3</div>
           <div class="kpi-desc">60 &le; ICR &lt; 75 o Impacto Confirmado</div>
         </div>
         <div class="card-kpi alerta-amarilla">
           <div class="kpi-label" style="color:#C79E00">Nivel Amarillo (Alerta Media)</div>
-          <div class="kpi-valor" id="kpi-alerta-amarilla" style="color:#C79E00">8</div>
+          <div class="kpi-valor" id="kpi-alerta-amarilla" style="color:#C79E00">9</div>
           <div class="kpi-desc">40 &le; ICR &lt; 60 (Déficit Hídrico)</div>
         </div>
         <div class="card-kpi alerta-sin">
           <div class="kpi-label" style="color:var(--alerta-sin)">Sin Alerta (Operación Normal)</div>
-          <div class="kpi-valor" id="kpi-sin-alerta" style="color:var(--alerta-sin)">5</div>
+          <div class="kpi-valor" id="kpi-sin-alerta" style="color:var(--alerta-sin)">10</div>
           <div class="kpi-desc">ICR &lt; 40 pts (Condiciones estables)</div>
         </div>
         <div class="card-kpi">
           <div class="kpi-label">Población en Riesgo Crítico</div>
-          <div class="kpi-valor" id="kpi-poblacion-riesgo">1.1 M</div>
+          <div class="kpi-valor" id="kpi-poblacion-riesgo">0.5 M</div>
           <div class="kpi-desc">Habitantes en Naranja y Rojo</div>
         </div>
       </div>
@@ -498,19 +498,19 @@
           <div class="mapa-leyenda" id="mapa-leyenda-dinamica">
             <div class="leyenda-item">
               <span class="leyenda-box" style="background-color:var(--alerta-roja)"></span>
-              <span>Roja (&ge; 75) <strong id="leyenda-count-roja">(5)</strong></span>
+              <span>Roja (&ge; 75) <strong id="leyenda-count-roja">(1)</strong></span>
             </div>
             <div class="leyenda-item">
               <span class="leyenda-box" style="background-color:var(--alerta-naranja)"></span>
-              <span>Naranja (60 - 74) <strong id="leyenda-count-naranja">(12)</strong></span>
+              <span>Naranja (60 - 74) <strong id="leyenda-count-naranja">(3)</strong></span>
             </div>
             <div class="leyenda-item">
               <span class="leyenda-box" style="background-color:var(--alerta-amarilla)"></span>
-              <span>Amarilla (40 - 59) <strong id="leyenda-count-amarilla">(1)</strong></span>
+              <span>Amarilla (40 - 59) <strong id="leyenda-count-amarilla">(9)</strong></span>
             </div>
             <div class="leyenda-item">
               <span class="leyenda-box" style="background-color:var(--alerta-sin)"></span>
-              <span>Sin Alerta (&lt; 40) <strong id="leyenda-count-sin">(5)</strong></span>
+              <span>Sin Alerta (&lt; 40) <strong id="leyenda-count-sin">(10)</strong></span>
             </div>
             <div class="leyenda-item">
               <span class="leyenda-box" style="background-color:var(--alerta-sin-dato)"></span>
@@ -850,7 +850,7 @@
           <p>Trazabilidad criptográfica SHA-256, estado de compuertas y latencia de las 18 fuentes oficiales.</p>
         </div>
         <div>
-          <a href="../auditoria/index.html" target="_blank" class="btn-principal" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px" title="Abrir Módulo Independiente de Auditoría y Veracidad">
+          <a href="auditoria/index.html" target="_blank" class="btn-principal" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px" title="Abrir Módulo Independiente de Auditoría y Veracidad">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             <span>Ejecutar / Ver Auditoría Fehaciente</span>
           </a>
@@ -952,7 +952,7 @@
         <div class="modal-seccion">
           <h3 class="modal-seccion-titulo">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cra-cian)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polygon points="12 6 12 12 16 14"/></svg>
-            Comportamiento Territorial en el Corte Actual (2026-10-08)
+            Comportamiento Territorial en el Corte Actual
           </h3>
           <div class="modal-distribucion-grid" id="modal-ind-distribucion">
             <!-- Gráfico de distribución de municipios (verde, amarillo, naranja, rojo) -->
