@@ -1606,11 +1606,21 @@ document.addEventListener('DOMContentLoaded', () => {
         attributionControl: true
       });
 
-      // CartoDB Positron basemap
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; OpenStreetMap &copy; CARTO | República de Colombia · CRA',
-        subdomains: 'abcd',
-        maxZoom: 19
+      // Mapa base Esri World Light Gray (sin clave). CARTO exige API key desde 2026 y sirve mosaicos con marca de agua.
+      const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/';
+      L.tileLayer(ESRI + 'World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Mapa base &copy; Esri, HERE, Garmin, &copy; colaboradores de OpenStreetMap | República de Colombia · CRA',
+        maxZoom: 16
+      }).addTo(state.leafletMap);
+      // Etiquetas en capa aparte para que queden sobre los departamentos coloreados
+      if (!state.leafletMap.getPane('etiquetasBase')) {
+        state.leafletMap.createPane('etiquetasBase');
+        state.leafletMap.getPane('etiquetasBase').style.zIndex = 450;
+        state.leafletMap.getPane('etiquetasBase').style.pointerEvents = 'none';
+      }
+      L.tileLayer(ESRI + 'World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+        pane: 'etiquetasBase',
+        maxZoom: 16
       }).addTo(state.leafletMap);
     }
 
