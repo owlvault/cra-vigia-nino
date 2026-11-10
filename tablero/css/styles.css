@@ -3767,3 +3767,18 @@ a.btn-iniciar-story { text-decoration: none; }
 .est-ok { background: #E8F5EE; color: #1E5E3A; }
 .est-falla { background: #FFEBEE; color: var(--alerta-roja); }
 .est-otro { background: #F4F6F8; color: var(--texto); }
+
+/* V-03: paginación de la tabla territorial (1.122 municipios) */
+.fila-mas td { padding: 14px 8px; background: transparent; }
+.btn-mostrar-mas {
+  border: 1px solid var(--cra-cian-texto, #00648c);
+  background: #fff;
+  color: var(--cra-cian-texto, #00648c);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.btn-mostrar-mas:hover { background: var(--cra-cian-texto, #00648c); color: #fff; }
+.btn-mostrar-mas:focus-visible { outline: 3px solid var(--cra-cian-texto, #00648c); outline-offset: 2px; }

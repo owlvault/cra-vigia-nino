@@ -1,0 +1,4499 @@
+{
+  "fuente": "NASA FIRMS (VIIRS_SNPP_NRT, confianza nominal y alta)",
+  "ventana_dias": 7,
+  "fecha_reporte": "2026-11-09",
+  "fecha_captura": "2026-11-09T23:59:20.243870+00:00",
+  "estado_autenticacion": "sin_api_key_modo_seguro",
+  "respuesta_api": "sin_respuesta",
+  "crudo": {},
+  "focos_municipales": {
+    "05001": {
+      "nombre": "Medellín",
+      "focos_7d": null
+    },
+    "05002": {
+      "nombre": "Abejorral",
+      "focos_7d": null
+    },
+    "05004": {
+      "nombre": "Abriaquí",
+      "focos_7d": null
+    },
+    "05021": {
+      "nombre": "Alejandría",
+      "focos_7d": null
+    },
+    "05030": {
+      "nombre": "Amagá",
+      "focos_7d": null
+    },
+    "05031": {
+      "nombre": "Amalfi",
+      "focos_7d": null
+    },
+    "05034": {
+      "nombre": "Andes",
+      "focos_7d": null
+    },
+    "05036": {
+      "nombre": "Angelópolis",
+      "focos_7d": null
+    },
+    "05038": {
+      "nombre": "Angostura",
+      "focos_7d": null
+    },
+    "05040": {
+      "nombre": "Anorí",
+      "focos_7d": null
+    },
+    "05042": {
+      "nombre": "Santa Fé de Antioquia",
+      "focos_7d": null
+    },
+    "05044": {
+      "nombre": "Anzá",
+      "focos_7d": null
+    },
+    "05045": {
+      "nombre": "Apartadó",
+      "focos_7d": null
+    },
+    "05051": {
+      "nombre": "Arboletes",
+      "focos_7d": null
+    },
+    "05055": {
+      "nombre": "Argelia",
+      "focos_7d": null
+    },
+    "05059": {
+      "nombre": "Armenia",
+      "focos_7d": null
+    },
+    "05079": {
+      "nombre": "Barbosa",
+      "focos_7d": null
+    },
+    "05086": {
+      "nombre": "Belmira",
+      "focos_7d": null
+    },
+    "05088": {
+      "nombre": "Bello",
+      "focos_7d": null
+    },
+    "05091": {
+      "nombre": "Betania",
+      "focos_7d": null
+    },
+    "05093": {
+      "nombre": "Betulia",
+      "focos_7d": null
+    },
+    "05101": {
+      "nombre": "Ciudad Bolívar",
+      "focos_7d": null
+    },
+    "05107": {
+      "nombre": "Briceño",
+      "focos_7d": null
+    },
+    "05113": {
+      "nombre": "Buriticá",
+      "focos_7d": null
+    },
+    "05120": {
+      "nombre": "Cáceres",
+      "focos_7d": null
+    },
+    "05125": {
+      "nombre": "Caicedo",
+      "focos_7d": null
+    },
+    "05129": {
+      "nombre": "Caldas",
+      "focos_7d": null
+    },
+    "05134": {
+      "nombre": "Campamento",
+      "focos_7d": null
+    },
+    "05138": {
+      "nombre": "Cañasgordas",
+      "focos_7d": null
+    },
+    "05142": {
+      "nombre": "Caracolí",
+      "focos_7d": null
+    },
+    "05145": {
+      "nombre": "Caramanta",
+      "focos_7d": null
+    },
+    "05147": {
+      "nombre": "Carepa",
+      "focos_7d": null
+    },
+    "05148": {
+      "nombre": "El Carmen de Viboral",
+      "focos_7d": null
+    },
+    "05150": {
+      "nombre": "Carolina",
+      "focos_7d": null
+    },
+    "05154": {
+      "nombre": "Caucasia",
+      "focos_7d": null
+    },
+    "05172": {
+      "nombre": "Chigorodó",
+      "focos_7d": null
+    },
+    "05190": {
+      "nombre": "Cisneros",
+      "focos_7d": null
+    },
+    "05197": {
+      "nombre": "Cocorná",
+      "focos_7d": null
+    },
+    "05206": {
+      "nombre": "Concepción",
+      "focos_7d": null
+    },
+    "05209": {
+      "nombre": "Concordia",
+      "focos_7d": null
+    },
+    "05212": {
+      "nombre": "Copacabana",
+      "focos_7d": null
+    },
+    "05234": {
+      "nombre": "Dabeiba",
+      "focos_7d": null
+    },
+    "05237": {
+      "nombre": "Donmatías",
+      "focos_7d": null
+    },
+    "05240": {
+      "nombre": "Ebéjico",
+      "focos_7d": null
+    },
+    "05250": {
+      "nombre": "El Bagre",
+      "focos_7d": null
+    },
+    "05264": {
+      "nombre": "Entrerríos",
+      "focos_7d": null
+    },
+    "05266": {
+      "nombre": "Envigado",
+      "focos_7d": null
+    },
+    "05282": {
+      "nombre": "Fredonia",
+      "focos_7d": null
+    },
+    "05284": {
+      "nombre": "Frontino",
+      "focos_7d": null
+    },
+    "05306": {
+      "nombre": "Giraldo",
+      "focos_7d": null
+    },
+    "05308": {
+      "nombre": "Girardota",
+      "focos_7d": null
+    },
+    "05310": {
+      "nombre": "Gómez Plata",
+      "focos_7d": null
+    },
+    "05313": {
+      "nombre": "Granada",
+      "focos_7d": null
+    },
+    "05315": {
+      "nombre": "Guadalupe",
+      "focos_7d": null
+    },
+    "05318": {
+      "nombre": "Guarne",
+      "focos_7d": null
+    },
+    "05321": {
+      "nombre": "Guatapé",
+      "focos_7d": null
+    },
+    "05347": {
+      "nombre": "Heliconia",
+      "focos_7d": null
+    },
+    "05353": {
+      "nombre": "Hispania",
+      "focos_7d": null
+    },
+    "05360": {
+      "nombre": "Itagüí",
+      "focos_7d": null
+    },
+    "05361": {
+      "nombre": "Ituango",
+      "focos_7d": null
+    },
+    "05364": {
+      "nombre": "Jardín",
+      "focos_7d": null
+    },
+    "05368": {
+      "nombre": "Jericó",
+      "focos_7d": null
+    },
+    "05376": {
+      "nombre": "La Ceja",
+      "focos_7d": null
+    },
+    "05380": {
+      "nombre": "La Estrella",
+      "focos_7d": null
+    },
+    "05390": {
+      "nombre": "La Pintada",
+      "focos_7d": null
+    },
+    "05400": {
+      "nombre": "La Unión",
+      "focos_7d": null
+    },
+    "05411": {
+      "nombre": "Liborina",
+      "focos_7d": null
+    },
+    "05425": {
+      "nombre": "Maceo",
+      "focos_7d": null
+    },
+    "05440": {
+      "nombre": "Marinilla",
+      "focos_7d": null
+    },
+    "05467": {
+      "nombre": "Montebello",
+      "focos_7d": null
+    },
+    "05475": {
+      "nombre": "Murindó",
+      "focos_7d": null
+    },
+    "05480": {
+      "nombre": "Mutatá",
+      "focos_7d": null
+    },
+    "05483": {
+      "nombre": "Nariño",
+      "focos_7d": null
+    },
+    "05490": {
+      "nombre": "Necoclí",
+      "focos_7d": null
+    },
+    "05495": {
+      "nombre": "Nechí",
+      "focos_7d": null
+    },
+    "05501": {
+      "nombre": "Olaya",
+      "focos_7d": null
+    },
+    "05541": {
+      "nombre": "Peñol",
+      "focos_7d": null
+    },
+    "05543": {
+      "nombre": "Peque",
+      "focos_7d": null
+    },
+    "05576": {
+      "nombre": "Pueblorrico",
+      "focos_7d": null
+    },
+    "05579": {
+      "nombre": "Puerto Berrío",
+      "focos_7d": null
+    },
+    "05585": {
+      "nombre": "Puerto Nare",
+      "focos_7d": null
+    },
+    "05591": {
+      "nombre": "Puerto Triunfo",
+      "focos_7d": null
+    },
+    "05604": {
+      "nombre": "Remedios",
+      "focos_7d": null
+    },
+    "05607": {
+      "nombre": "Retiro",
+      "focos_7d": null
+    },
+    "05615": {
+      "nombre": "Rionegro",
+      "focos_7d": null
+    },
+    "05628": {
+      "nombre": "Sabanalarga",
+      "focos_7d": null
+    },
+    "05631": {
+      "nombre": "Sabaneta",
+      "focos_7d": null
+    },
+    "05642": {
+      "nombre": "Salgar",
+      "focos_7d": null
+    },
+    "05647": {
+      "nombre": "San Andrés de Cuerquía",
+      "focos_7d": null
+    },
+    "05649": {
+      "nombre": "San Carlos",
+      "focos_7d": null
+    },
+    "05652": {
+      "nombre": "San Francisco",
+      "focos_7d": null
+    },
+    "05656": {
+      "nombre": "San Jerónimo",
+      "focos_7d": null
+    },
+    "05658": {
+      "nombre": "San José de la Montaña",
+      "focos_7d": null
+    },
+    "05659": {
+      "nombre": "San Juan de Urabá",
+      "focos_7d": null
+    },
+    "05660": {
+      "nombre": "San Luis",
+      "focos_7d": null
+    },
+    "05664": {
+      "nombre": "San Pedro de los Milagros",
+      "focos_7d": null
+    },
+    "05665": {
+      "nombre": "San Pedro de Urabá",
+      "focos_7d": null
+    },
+    "05667": {
+      "nombre": "San Rafael",
+      "focos_7d": null
+    },
+    "05670": {
+      "nombre": "San Roque",
+      "focos_7d": null
+    },
+    "05674": {
+      "nombre": "San Vicente Ferrer",
+      "focos_7d": null
+    },
+    "05679": {
+      "nombre": "Santa Bárbara",
+      "focos_7d": null
+    },
+    "05686": {
+      "nombre": "Santa Rosa de Osos",
+      "focos_7d": null
+    },
+    "05690": {
+      "nombre": "Santo Domingo",
+      "focos_7d": null
+    },
+    "05697": {
+      "nombre": "El Santuario",
+      "focos_7d": null
+    },
+    "05736": {
+      "nombre": "Segovia",
+      "focos_7d": null
+    },
+    "05756": {
+      "nombre": "Sonsón",
+      "focos_7d": null
+    },
+    "05761": {
+      "nombre": "Sopetrán",
+      "focos_7d": null
+    },
+    "05789": {
+      "nombre": "Támesis",
+      "focos_7d": null
+    },
+    "05790": {
+      "nombre": "Tarazá",
+      "focos_7d": null
+    },
+    "05792": {
+      "nombre": "Tarso",
+      "focos_7d": null
+    },
+    "05809": {
+      "nombre": "Titiribí",
+      "focos_7d": null
+    },
+    "05819": {
+      "nombre": "Toledo",
+      "focos_7d": null
+    },
+    "05837": {
+      "nombre": "Turbo",
+      "focos_7d": null
+    },
+    "05842": {
+      "nombre": "Uramita",
+      "focos_7d": null
+    },
+    "05847": {
+      "nombre": "Urrao",
+      "focos_7d": null
+    },
+    "05854": {
+      "nombre": "Valdivia",
+      "focos_7d": null
+    },
+    "05856": {
+      "nombre": "Valparaíso",
+      "focos_7d": null
+    },
+    "05858": {
+      "nombre": "Vegachí",
+      "focos_7d": null
+    },
+    "05861": {
+      "nombre": "Venecia",
+      "focos_7d": null
+    },
+    "05873": {
+      "nombre": "Vigía del Fuerte",
+      "focos_7d": null
+    },
+    "05885": {
+      "nombre": "Yalí",
+      "focos_7d": null
+    },
+    "05887": {
+      "nombre": "Yarumal",
+      "focos_7d": null
+    },
+    "05890": {
+      "nombre": "Yolombó",
+      "focos_7d": null
+    },
+    "05893": {
+      "nombre": "Yondó",
+      "focos_7d": null
+    },
+    "05895": {
+      "nombre": "Zaragoza",
+      "focos_7d": null
+    },
+    "08001": {
+      "nombre": "Barranquilla",
+      "focos_7d": null
+    },
+    "08078": {
+      "nombre": "Baranoa",
+      "focos_7d": null
+    },
+    "08137": {
+      "nombre": "Campo de la Cruz",
+      "focos_7d": null
+    },
+    "08141": {
+      "nombre": "Candelaria",
+      "focos_7d": null
+    },
+    "08296": {
+      "nombre": "Galapa",
+      "focos_7d": null
+    },
+    "08372": {
+      "nombre": "Juan de Acosta",
+      "focos_7d": null
+    },
+    "08421": {
+      "nombre": "Luruaco",
+      "focos_7d": null
+    },
+    "08433": {
+      "nombre": "Malambo",
+      "focos_7d": null
+    },
+    "08436": {
+      "nombre": "Manatí",
+      "focos_7d": null
+    },
+    "08520": {
+      "nombre": "Palmar de Varela",
+      "focos_7d": null
+    },
+    "08549": {
+      "nombre": "Piojó",
+      "focos_7d": null
+    },
+    "08558": {
+      "nombre": "Polonuevo",
+      "focos_7d": null
+    },
+    "08560": {
+      "nombre": "Ponedera",
+      "focos_7d": null
+    },
+    "08573": {
+      "nombre": "Puerto Colombia",
+      "focos_7d": null
+    },
+    "08606": {
+      "nombre": "Repelón",
+      "focos_7d": null
+    },
+    "08634": {
+      "nombre": "Sabanagrande",
+      "focos_7d": null
+    },
+    "08638": {
+      "nombre": "Sabanalarga",
+      "focos_7d": null
+    },
+    "08675": {
+      "nombre": "Santa Lucía",
+      "focos_7d": null
+    },
+    "08685": {
+      "nombre": "Santo Tomás",
+      "focos_7d": null
+    },
+    "08758": {
+      "nombre": "Soledad",
+      "focos_7d": null
+    },
+    "08770": {
+      "nombre": "Suan",
+      "focos_7d": null
+    },
+    "08832": {
+      "nombre": "Tubará",
+      "focos_7d": null
+    },
+    "08849": {
+      "nombre": "Usiacurí",
+      "focos_7d": null
+    },
+    "11001": {
+      "nombre": "Bogotá, D.C.",
+      "focos_7d": null
+    },
+    "13001": {
+      "nombre": "Cartagena de Indias",
+      "focos_7d": null
+    },
+    "13006": {
+      "nombre": "Achí",
+      "focos_7d": null
+    },
+    "13030": {
+      "nombre": "Altos del Rosario",
+      "focos_7d": null
+    },
+    "13042": {
+      "nombre": "Arenal",
+      "focos_7d": null
+    },
+    "13052": {
+      "nombre": "Arjona",
+      "focos_7d": null
+    },
+    "13062": {
+      "nombre": "Arroyohondo",
+      "focos_7d": null
+    },
+    "13074": {
+      "nombre": "Barranco de Loba",
+      "focos_7d": null
+    },
+    "13140": {
+      "nombre": "Calamar",
+      "focos_7d": null
+    },
+    "13160": {
+      "nombre": "Cantagallo",
+      "focos_7d": null
+    },
+    "13188": {
+      "nombre": "Cicuco",
+      "focos_7d": null
+    },
+    "13212": {
+      "nombre": "Córdoba",
+      "focos_7d": null
+    },
+    "13222": {
+      "nombre": "Clemencia",
+      "focos_7d": null
+    },
+    "13244": {
+      "nombre": "El Carmen de Bolívar",
+      "focos_7d": null
+    },
+    "13248": {
+      "nombre": "El Guamo",
+      "focos_7d": null
+    },
+    "13268": {
+      "nombre": "El Peñón",
+      "focos_7d": null
+    },
+    "13300": {
+      "nombre": "Hatillo de Loba",
+      "focos_7d": null
+    },
+    "13430": {
+      "nombre": "Magangué",
+      "focos_7d": null
+    },
+    "13433": {
+      "nombre": "Mahates",
+      "focos_7d": null
+    },
+    "13440": {
+      "nombre": "Margarita",
+      "focos_7d": null
+    },
+    "13442": {
+      "nombre": "María la Baja",
+      "focos_7d": null
+    },
+    "13458": {
+      "nombre": "Montecristo",
+      "focos_7d": null
+    },
+    "13468": {
+      "nombre": "Santa Cruz de Mompox",
+      "focos_7d": null
+    },
+    "13473": {
+      "nombre": "Morales",
+      "focos_7d": null
+    },
+    "13490": {
+      "nombre": "Norosí",
+      "focos_7d": null
+    },
+    "13549": {
+      "nombre": "Pinillos",
+      "focos_7d": null
+    },
+    "13580": {
+      "nombre": "Regidor",
+      "focos_7d": null
+    },
+    "13600": {
+      "nombre": "Río Viejo",
+      "focos_7d": null
+    },
+    "13620": {
+      "nombre": "San Cristóbal",
+      "focos_7d": null
+    },
+    "13647": {
+      "nombre": "San Estanislao",
+      "focos_7d": null
+    },
+    "13650": {
+      "nombre": "San Fernando",
+      "focos_7d": null
+    },
+    "13654": {
+      "nombre": "San Jacinto",
+      "focos_7d": null
+    },
+    "13655": {
+      "nombre": "San Jacinto del Cauca",
+      "focos_7d": null
+    },
+    "13657": {
+      "nombre": "San Juan Nepomuceno",
+      "focos_7d": null
+    },
+    "13667": {
+      "nombre": "San Martín de Loba",
+      "focos_7d": null
+    },
+    "13670": {
+      "nombre": "San Pablo",
+      "focos_7d": null
+    },
+    "13673": {
+      "nombre": "Santa Catalina",
+      "focos_7d": null
+    },
+    "13683": {
+      "nombre": "Santa Rosa",
+      "focos_7d": null
+    },
+    "13688": {
+      "nombre": "Santa Rosa del Sur",
+      "focos_7d": null
+    },
+    "13744": {
+      "nombre": "Simití",
+      "focos_7d": null
+    },
+    "13760": {
+      "nombre": "Soplaviento",
+      "focos_7d": null
+    },
+    "13780": {
+      "nombre": "Talaigua Nuevo",
+      "focos_7d": null
+    },
+    "13810": {
+      "nombre": "Tiquisio",
+      "focos_7d": null
+    },
+    "13836": {
+      "nombre": "Turbaco",
+      "focos_7d": null
+    },
+    "13838": {
+      "nombre": "Turbaná",
+      "focos_7d": null
+    },
+    "13873": {
+      "nombre": "Villanueva",
+      "focos_7d": null
+    },
+    "13894": {
+      "nombre": "Zambrano",
+      "focos_7d": null
+    },
+    "15001": {
+      "nombre": "Tunja",
+      "focos_7d": null
+    },
+    "15022": {
+      "nombre": "Almeida",
+      "focos_7d": null
+    },
+    "15047": {
+      "nombre": "Aquitania",
+      "focos_7d": null
+    },
+    "15051": {
+      "nombre": "Arcabuco",
+      "focos_7d": null
+    },
+    "15087": {
+      "nombre": "Belén",
+      "focos_7d": null
+    },
+    "15090": {
+      "nombre": "Berbeo",
+      "focos_7d": null
+    },
+    "15092": {
+      "nombre": "Betéitiva",
+      "focos_7d": null
+    },
+    "15097": {
+      "nombre": "Boavita",
+      "focos_7d": null
+    },
+    "15104": {
+      "nombre": "Boyacá",
+      "focos_7d": null
+    },
+    "15106": {
+      "nombre": "Briceño",
+      "focos_7d": null
+    },
+    "15109": {
+      "nombre": "Buenavista",
+      "focos_7d": null
+    },
+    "15114": {
+      "nombre": "Busbanzá",
+      "focos_7d": null
+    },
+    "15131": {
+      "nombre": "Caldas",
+      "focos_7d": null
+    },
+    "15135": {
+      "nombre": "Campohermoso",
+      "focos_7d": null
+    },
+    "15162": {
+      "nombre": "Cerinza",
+      "focos_7d": null
+    },
+    "15172": {
+      "nombre": "Chinavita",
+      "focos_7d": null
+    },
+    "15176": {
+      "nombre": "Chiquinquirá",
+      "focos_7d": null
+    },
+    "15180": {
+      "nombre": "Chiscas",
+      "focos_7d": null
+    },
+    "15183": {
+      "nombre": "Chita",
+      "focos_7d": null
+    },
+    "15185": {
+      "nombre": "Chitaraque",
+      "focos_7d": null
+    },
+    "15187": {
+      "nombre": "Chivatá",
+      "focos_7d": null
+    },
+    "15189": {
+      "nombre": "Ciénega",
+      "focos_7d": null
+    },
+    "15204": {
+      "nombre": "Cómbita",
+      "focos_7d": null
+    },
+    "15212": {
+      "nombre": "Coper",
+      "focos_7d": null
+    },
+    "15215": {
+      "nombre": "Corrales",
+      "focos_7d": null
+    },
+    "15218": {
+      "nombre": "Covarachía",
+      "focos_7d": null
+    },
+    "15223": {
+      "nombre": "Cubará",
+      "focos_7d": null
+    },
+    "15224": {
+      "nombre": "Cucaita",
+      "focos_7d": null
+    },
+    "15226": {
+      "nombre": "Cuítiva",
+      "focos_7d": null
+    },
+    "15232": {
+      "nombre": "Chíquiza",
+      "focos_7d": null
+    },
+    "15236": {
+      "nombre": "Chivor",
+      "focos_7d": null
+    },
+    "15238": {
+      "nombre": "Duitama",
+      "focos_7d": null
+    },
+    "15244": {
+      "nombre": "El Cocuy",
+      "focos_7d": null
+    },
+    "15248": {
+      "nombre": "El Espino",
+      "focos_7d": null
+    },
+    "15272": {
+      "nombre": "Firavitoba",
+      "focos_7d": null
+    },
+    "15276": {
+      "nombre": "Floresta",
+      "focos_7d": null
+    },
+    "15293": {
+      "nombre": "Gachantivá",
+      "focos_7d": null
+    },
+    "15296": {
+      "nombre": "Gámeza",
+      "focos_7d": null
+    },
+    "15299": {
+      "nombre": "Garagoa",
+      "focos_7d": null
+    },
+    "15317": {
+      "nombre": "Guacamayas",
+      "focos_7d": null
+    },
+    "15322": {
+      "nombre": "Guateque",
+      "focos_7d": null
+    },
+    "15325": {
+      "nombre": "Guayatá",
+      "focos_7d": null
+    },
+    "15332": {
+      "nombre": "Güicán de la Sierra",
+      "focos_7d": null
+    },
+    "15362": {
+      "nombre": "Iza",
+      "focos_7d": null
+    },
+    "15367": {
+      "nombre": "Jenesano",
+      "focos_7d": null
+    },
+    "15368": {
+      "nombre": "Jericó",
+      "focos_7d": null
+    },
+    "15377": {
+      "nombre": "Labranzagrande",
+      "focos_7d": null
+    },
+    "15380": {
+      "nombre": "La Capilla",
+      "focos_7d": null
+    },
+    "15401": {
+      "nombre": "La Victoria",
+      "focos_7d": null
+    },
+    "15403": {
+      "nombre": "La Uvita",
+      "focos_7d": null
+    },
+    "15407": {
+      "nombre": "Villa de Leyva",
+      "focos_7d": null
+    },
+    "15425": {
+      "nombre": "Macanal",
+      "focos_7d": null
+    },
+    "15442": {
+      "nombre": "Maripí",
+      "focos_7d": null
+    },
+    "15455": {
+      "nombre": "Miraflores",
+      "focos_7d": null
+    },
+    "15464": {
+      "nombre": "Mongua",
+      "focos_7d": null
+    },
+    "15466": {
+      "nombre": "Monguí",
+      "focos_7d": null
+    },
+    "15469": {
+      "nombre": "Moniquirá",
+      "focos_7d": null
+    },
+    "15476": {
+      "nombre": "Motavita",
+      "focos_7d": null
+    },
+    "15480": {
+      "nombre": "Muzo",
+      "focos_7d": null
+    },
+    "15491": {
+      "nombre": "Nobsa",
+      "focos_7d": null
+    },
+    "15494": {
+      "nombre": "Nuevo Colón",
+      "focos_7d": null
+    },
+    "15500": {
+      "nombre": "Oicatá",
+      "focos_7d": null
+    },
+    "15507": {
+      "nombre": "Otanche",
+      "focos_7d": null
+    },
+    "15511": {
+      "nombre": "Pachavita",
+      "focos_7d": null
+    },
+    "15514": {
+      "nombre": "Páez",
+      "focos_7d": null
+    },
+    "15516": {
+      "nombre": "Paipa",
+      "focos_7d": null
+    },
+    "15518": {
+      "nombre": "Pajarito",
+      "focos_7d": null
+    },
+    "15522": {
+      "nombre": "Panqueba",
+      "focos_7d": null
+    },
+    "15531": {
+      "nombre": "Pauna",
+      "focos_7d": null
+    },
+    "15533": {
+      "nombre": "Paya",
+      "focos_7d": null
+    },
+    "15537": {
+      "nombre": "Paz de Río",
+      "focos_7d": null
+    },
+    "15542": {
+      "nombre": "Pesca",
+      "focos_7d": null
+    },
+    "15550": {
+      "nombre": "Pisba",
+      "focos_7d": null
+    },
+    "15572": {
+      "nombre": "Puerto Boyacá",
+      "focos_7d": null
+    },
+    "15580": {
+      "nombre": "Quípama",
+      "focos_7d": null
+    },
+    "15599": {
+      "nombre": "Ramiriquí",
+      "focos_7d": null
+    },
+    "15600": {
+      "nombre": "Ráquira",
+      "focos_7d": null
+    },
+    "15621": {
+      "nombre": "Rondón",
+      "focos_7d": null
+    },
+    "15632": {
+      "nombre": "Saboyá",
+      "focos_7d": null
+    },
+    "15638": {
+      "nombre": "Sáchica",
+      "focos_7d": null
+    },
+    "15646": {
+      "nombre": "Samacá",
+      "focos_7d": null
+    },
+    "15660": {
+      "nombre": "San Eduardo",
+      "focos_7d": null
+    },
+    "15664": {
+      "nombre": "San José de Pare",
+      "focos_7d": null
+    },
+    "15667": {
+      "nombre": "San Luis de Gaceno",
+      "focos_7d": null
+    },
+    "15673": {
+      "nombre": "San Mateo",
+      "focos_7d": null
+    },
+    "15676": {
+      "nombre": "San Miguel de Sema",
+      "focos_7d": null
+    },
+    "15681": {
+      "nombre": "San Pablo de Borbur",
+      "focos_7d": null
+    },
+    "15686": {
+      "nombre": "Santana",
+      "focos_7d": null
+    },
+    "15690": {
+      "nombre": "Santa María",
+      "focos_7d": null
+    },
+    "15693": {
+      "nombre": "Santa Rosa de Viterbo",
+      "focos_7d": null
+    },
+    "15696": {
+      "nombre": "Santa Sofía",
+      "focos_7d": null
+    },
+    "15720": {
+      "nombre": "Sativanorte",
+      "focos_7d": null
+    },
+    "15723": {
+      "nombre": "Sativasur",
+      "focos_7d": null
+    },
+    "15740": {
+      "nombre": "Siachoque",
+      "focos_7d": null
+    },
+    "15753": {
+      "nombre": "Soatá",
+      "focos_7d": null
+    },
+    "15755": {
+      "nombre": "Socotá",
+      "focos_7d": null
+    },
+    "15757": {
+      "nombre": "Socha",
+      "focos_7d": null
+    },
+    "15759": {
+      "nombre": "Sogamoso",
+      "focos_7d": null
+    },
+    "15761": {
+      "nombre": "Somondoco",
+      "focos_7d": null
+    },
+    "15762": {
+      "nombre": "Sora",
+      "focos_7d": null
+    },
+    "15763": {
+      "nombre": "Sotaquirá",
+      "focos_7d": null
+    },
+    "15764": {
+      "nombre": "Soracá",
+      "focos_7d": null
+    },
+    "15774": {
+      "nombre": "Susacón",
+      "focos_7d": null
+    },
+    "15776": {
+      "nombre": "Sutamarchán",
+      "focos_7d": null
+    },
+    "15778": {
+      "nombre": "Sutatenza",
+      "focos_7d": null
+    },
+    "15790": {
+      "nombre": "Tasco",
+      "focos_7d": null
+    },
+    "15798": {
+      "nombre": "Tenza",
+      "focos_7d": null
+    },
+    "15804": {
+      "nombre": "Tibaná",
+      "focos_7d": null
+    },
+    "15806": {
+      "nombre": "Tibasosa",
+      "focos_7d": null
+    },
+    "15808": {
+      "nombre": "Tinjacá",
+      "focos_7d": null
+    },
+    "15810": {
+      "nombre": "Tipacoque",
+      "focos_7d": null
+    },
+    "15814": {
+      "nombre": "Toca",
+      "focos_7d": null
+    },
+    "15816": {
+      "nombre": "Togüí",
+      "focos_7d": null
+    },
+    "15820": {
+      "nombre": "Tópaga",
+      "focos_7d": null
+    },
+    "15822": {
+      "nombre": "Tota",
+      "focos_7d": null
+    },
+    "15832": {
+      "nombre": "Tununguá",
+      "focos_7d": null
+    },
+    "15835": {
+      "nombre": "Turmequé",
+      "focos_7d": null
+    },
+    "15837": {
+      "nombre": "Tuta",
+      "focos_7d": null
+    },
+    "15839": {
+      "nombre": "Tutazá",
+      "focos_7d": null
+    },
+    "15842": {
+      "nombre": "Úmbita",
+      "focos_7d": null
+    },
+    "15861": {
+      "nombre": "Ventaquemada",
+      "focos_7d": null
+    },
+    "15879": {
+      "nombre": "Viracachá",
+      "focos_7d": null
+    },
+    "15897": {
+      "nombre": "Zetaquira",
+      "focos_7d": null
+    },
+    "17001": {
+      "nombre": "Manizales",
+      "focos_7d": null
+    },
+    "17013": {
+      "nombre": "Aguadas",
+      "focos_7d": null
+    },
+    "17042": {
+      "nombre": "Anserma",
+      "focos_7d": null
+    },
+    "17050": {
+      "nombre": "Aranzazu",
+      "focos_7d": null
+    },
+    "17088": {
+      "nombre": "Belalcázar",
+      "focos_7d": null
+    },
+    "17174": {
+      "nombre": "Chinchiná",
+      "focos_7d": null
+    },
+    "17272": {
+      "nombre": "Filadelfia",
+      "focos_7d": null
+    },
+    "17380": {
+      "nombre": "La Dorada",
+      "focos_7d": null
+    },
+    "17388": {
+      "nombre": "La Merced",
+      "focos_7d": null
+    },
+    "17433": {
+      "nombre": "Manzanares",
+      "focos_7d": null
+    },
+    "17442": {
+      "nombre": "Marmato",
+      "focos_7d": null
+    },
+    "17444": {
+      "nombre": "Marquetalia",
+      "focos_7d": null
+    },
+    "17446": {
+      "nombre": "Marulanda",
+      "focos_7d": null
+    },
+    "17486": {
+      "nombre": "Neira",
+      "focos_7d": null
+    },
+    "17495": {
+      "nombre": "Norcasia",
+      "focos_7d": null
+    },
+    "17513": {
+      "nombre": "Pácora",
+      "focos_7d": null
+    },
+    "17524": {
+      "nombre": "Palestina",
+      "focos_7d": null
+    },
+    "17541": {
+      "nombre": "Pensilvania",
+      "focos_7d": null
+    },
+    "17614": {
+      "nombre": "Riosucio",
+      "focos_7d": null
+    },
+    "17616": {
+      "nombre": "Risaralda",
+      "focos_7d": null
+    },
+    "17653": {
+      "nombre": "Salamina",
+      "focos_7d": null
+    },
+    "17662": {
+      "nombre": "Samaná",
+      "focos_7d": null
+    },
+    "17665": {
+      "nombre": "San José",
+      "focos_7d": null
+    },
+    "17777": {
+      "nombre": "Supía",
+      "focos_7d": null
+    },
+    "17867": {
+      "nombre": "Victoria",
+      "focos_7d": null
+    },
+    "17873": {
+      "nombre": "Villamaría",
+      "focos_7d": null
+    },
+    "17877": {
+      "nombre": "Viterbo",
+      "focos_7d": null
+    },
+    "18001": {
+      "nombre": "Florencia",
+      "focos_7d": null
+    },
+    "18029": {
+      "nombre": "Albania",
+      "focos_7d": null
+    },
+    "18094": {
+      "nombre": "Belén de los Andaquíes",
+      "focos_7d": null
+    },
+    "18150": {
+      "nombre": "Cartagena del Chairá",
+      "focos_7d": null
+    },
+    "18205": {
+      "nombre": "Curillo",
+      "focos_7d": null
+    },
+    "18247": {
+      "nombre": "El Doncello",
+      "focos_7d": null
+    },
+    "18256": {
+      "nombre": "El Paujíl",
+      "focos_7d": null
+    },
+    "18410": {
+      "nombre": "La Montañita",
+      "focos_7d": null
+    },
+    "18460": {
+      "nombre": "Milán",
+      "focos_7d": null
+    },
+    "18479": {
+      "nombre": "Morelia",
+      "focos_7d": null
+    },
+    "18592": {
+      "nombre": "Puerto Rico",
+      "focos_7d": null
+    },
+    "18610": {
+      "nombre": "San José del Fragua",
+      "focos_7d": null
+    },
+    "18753": {
+      "nombre": "San Vicente del Caguán",
+      "focos_7d": null
+    },
+    "18756": {
+      "nombre": "Solano",
+      "focos_7d": null
+    },
+    "18785": {
+      "nombre": "Solita",
+      "focos_7d": null
+    },
+    "18860": {
+      "nombre": "Valparaíso",
+      "focos_7d": null
+    },
+    "19001": {
+      "nombre": "Popayán",
+      "focos_7d": null
+    },
+    "19022": {
+      "nombre": "Almaguer",
+      "focos_7d": null
+    },
+    "19050": {
+      "nombre": "Argelia",
+      "focos_7d": null
+    },
+    "19075": {
+      "nombre": "Balboa",
+      "focos_7d": null
+    },
+    "19100": {
+      "nombre": "Bolívar",
+      "focos_7d": null
+    },
+    "19110": {
+      "nombre": "Buenos Aires",
+      "focos_7d": null
+    },
+    "19130": {
+      "nombre": "Cajibío",
+      "focos_7d": null
+    },
+    "19137": {
+      "nombre": "Caldono",
+      "focos_7d": null
+    },
+    "19142": {
+      "nombre": "Caloto",
+      "focos_7d": null
+    },
+    "19212": {
+      "nombre": "Corinto",
+      "focos_7d": null
+    },
+    "19256": {
+      "nombre": "El Tambo",
+      "focos_7d": null
+    },
+    "19290": {
+      "nombre": "Florencia",
+      "focos_7d": null
+    },
+    "19300": {
+      "nombre": "Guachené",
+      "focos_7d": null
+    },
+    "19318": {
+      "nombre": "Guapi",
+      "focos_7d": null
+    },
+    "19355": {
+      "nombre": "Inzá",
+      "focos_7d": null
+    },
+    "19364": {
+      "nombre": "Jambaló",
+      "focos_7d": null
+    },
+    "19392": {
+      "nombre": "La Sierra",
+      "focos_7d": null
+    },
+    "19397": {
+      "nombre": "La Vega",
+      "focos_7d": null
+    },
+    "19418": {
+      "nombre": "López de Micay",
+      "focos_7d": null
+    },
+    "19450": {
+      "nombre": "Mercaderes",
+      "focos_7d": null
+    },
+    "19455": {
+      "nombre": "Miranda",
+      "focos_7d": null
+    },
+    "19473": {
+      "nombre": "Morales",
+      "focos_7d": null
+    },
+    "19513": {
+      "nombre": "Padilla",
+      "focos_7d": null
+    },
+    "19517": {
+      "nombre": "Páez",
+      "focos_7d": null
+    },
+    "19532": {
+      "nombre": "Patía",
+      "focos_7d": null
+    },
+    "19533": {
+      "nombre": "Piamonte",
+      "focos_7d": null
+    },
+    "19548": {
+      "nombre": "Piendamó - Tunía",
+      "focos_7d": null
+    },
+    "19573": {
+      "nombre": "Puerto Tejada",
+      "focos_7d": null
+    },
+    "19585": {
+      "nombre": "Puracé",
+      "focos_7d": null
+    },
+    "19622": {
+      "nombre": "Rosas",
+      "focos_7d": null
+    },
+    "19693": {
+      "nombre": "San Sebastián",
+      "focos_7d": null
+    },
+    "19698": {
+      "nombre": "Santander de Quilichao",
+      "focos_7d": null
+    },
+    "19701": {
+      "nombre": "Santa Rosa",
+      "focos_7d": null
+    },
+    "19743": {
+      "nombre": "Silvia",
+      "focos_7d": null
+    },
+    "19760": {
+      "nombre": "Sotará - Paispamba",
+      "focos_7d": null
+    },
+    "19780": {
+      "nombre": "Suárez",
+      "focos_7d": null
+    },
+    "19785": {
+      "nombre": "Sucre",
+      "focos_7d": null
+    },
+    "19807": {
+      "nombre": "Timbío",
+      "focos_7d": null
+    },
+    "19809": {
+      "nombre": "Timbiquí",
+      "focos_7d": null
+    },
+    "19821": {
+      "nombre": "Toribío",
+      "focos_7d": null
+    },
+    "19824": {
+      "nombre": "Totoró",
+      "focos_7d": null
+    },
+    "19845": {
+      "nombre": "Villa Rica",
+      "focos_7d": null
+    },
+    "20001": {
+      "nombre": "Valledupar",
+      "focos_7d": null
+    },
+    "20011": {
+      "nombre": "Aguachica",
+      "focos_7d": null
+    },
+    "20013": {
+      "nombre": "Agustín Codazzi",
+      "focos_7d": null
+    },
+    "20032": {
+      "nombre": "Astrea",
+      "focos_7d": null
+    },
+    "20045": {
+      "nombre": "Becerril",
+      "focos_7d": null
+    },
+    "20060": {
+      "nombre": "Bosconia",
+      "focos_7d": null
+    },
+    "20175": {
+      "nombre": "Chimichagua",
+      "focos_7d": null
+    },
+    "20178": {
+      "nombre": "Chiriguaná",
+      "focos_7d": null
+    },
+    "20228": {
+      "nombre": "Curumaní",
+      "focos_7d": null
+    },
+    "20238": {
+      "nombre": "El Copey",
+      "focos_7d": null
+    },
+    "20250": {
+      "nombre": "El Paso",
+      "focos_7d": null
+    },
+    "20295": {
+      "nombre": "Gamarra",
+      "focos_7d": null
+    },
+    "20310": {
+      "nombre": "González",
+      "focos_7d": null
+    },
+    "20383": {
+      "nombre": "La Gloria",
+      "focos_7d": null
+    },
+    "20400": {
+      "nombre": "La Jagua de Ibirico",
+      "focos_7d": null
+    },
+    "20443": {
+      "nombre": "Manaure Balcón del Cesar",
+      "focos_7d": null
+    },
+    "20517": {
+      "nombre": "Pailitas",
+      "focos_7d": null
+    },
+    "20550": {
+      "nombre": "Pelaya",
+      "focos_7d": null
+    },
+    "20570": {
+      "nombre": "Pueblo Bello",
+      "focos_7d": null
+    },
+    "20614": {
+      "nombre": "Río de Oro",
+      "focos_7d": null
+    },
+    "20621": {
+      "nombre": "La Paz",
+      "focos_7d": null
+    },
+    "20710": {
+      "nombre": "San Alberto",
+      "focos_7d": null
+    },
+    "20750": {
+      "nombre": "San Diego",
+      "focos_7d": null
+    },
+    "20770": {
+      "nombre": "San Martín",
+      "focos_7d": null
+    },
+    "20787": {
+      "nombre": "Tamalameque",
+      "focos_7d": null
+    },
+    "23001": {
+      "nombre": "Montería",
+      "focos_7d": null
+    },
+    "23068": {
+      "nombre": "Ayapel",
+      "focos_7d": null
+    },
+    "23079": {
+      "nombre": "Buenavista",
+      "focos_7d": null
+    },
+    "23090": {
+      "nombre": "Canalete",
+      "focos_7d": null
+    },
+    "23162": {
+      "nombre": "Cereté",
+      "focos_7d": null
+    },
+    "23168": {
+      "nombre": "Chimá",
+      "focos_7d": null
+    },
+    "23182": {
+      "nombre": "Chinú",
+      "focos_7d": null
+    },
+    "23189": {
+      "nombre": "Ciénaga de Oro",
+      "focos_7d": null
+    },
+    "23300": {
+      "nombre": "Cotorra",
+      "focos_7d": null
+    },
+    "23350": {
+      "nombre": "La Apartada",
+      "focos_7d": null
+    },
+    "23417": {
+      "nombre": "Lorica",
+      "focos_7d": null
+    },
+    "23419": {
+      "nombre": "Los Córdobas",
+      "focos_7d": null
+    },
+    "23464": {
+      "nombre": "Momil",
+      "focos_7d": null
+    },
+    "23466": {
+      "nombre": "Montelíbano",
+      "focos_7d": null
+    },
+    "23500": {
+      "nombre": "Moñitos",
+      "focos_7d": null
+    },
+    "23555": {
+      "nombre": "Planeta Rica",
+      "focos_7d": null
+    },
+    "23570": {
+      "nombre": "Pueblo Nuevo",
+      "focos_7d": null
+    },
+    "23574": {
+      "nombre": "Puerto Escondido",
+      "focos_7d": null
+    },
+    "23580": {
+      "nombre": "Puerto Libertador",
+      "focos_7d": null
+    },
+    "23586": {
+      "nombre": "Purísima de la Concepción",
+      "focos_7d": null
+    },
+    "23660": {
+      "nombre": "Sahagún",
+      "focos_7d": null
+    },
+    "23670": {
+      "nombre": "San Andrés de Sotavento",
+      "focos_7d": null
+    },
+    "23672": {
+      "nombre": "San Antero",
+      "focos_7d": null
+    },
+    "23675": {
+      "nombre": "San Bernardo del Viento",
+      "focos_7d": null
+    },
+    "23678": {
+      "nombre": "San Carlos",
+      "focos_7d": null
+    },
+    "23682": {
+      "nombre": "San José de Uré",
+      "focos_7d": null
+    },
+    "23686": {
+      "nombre": "San Pelayo",
+      "focos_7d": null
+    },
+    "23807": {
+      "nombre": "Tierralta",
+      "focos_7d": null
+    },
+    "23815": {
+      "nombre": "Tuchín",
+      "focos_7d": null
+    },
+    "23855": {
+      "nombre": "Valencia",
+      "focos_7d": null
+    },
+    "25001": {
+      "nombre": "Agua de Dios",
+      "focos_7d": null
+    },
+    "25019": {
+      "nombre": "Albán",
+      "focos_7d": null
+    },
+    "25035": {
+      "nombre": "Anapoima",
+      "focos_7d": null
+    },
+    "25040": {
+      "nombre": "Anolaima",
+      "focos_7d": null
+    },
+    "25053": {
+      "nombre": "Arbeláez",
+      "focos_7d": null
+    },
+    "25086": {
+      "nombre": "Beltrán",
+      "focos_7d": null
+    },
+    "25095": {
+      "nombre": "Bituima",
+      "focos_7d": null
+    },
+    "25099": {
+      "nombre": "Bojacá",
+      "focos_7d": null
+    },
+    "25120": {
+      "nombre": "Cabrera",
+      "focos_7d": null
+    },
+    "25123": {
+      "nombre": "Cachipay",
+      "focos_7d": null
+    },
+    "25126": {
+      "nombre": "Cajicá",
+      "focos_7d": null
+    },
+    "25148": {
+      "nombre": "Caparrapí",
+      "focos_7d": null
+    },
+    "25151": {
+      "nombre": "Cáqueza",
+      "focos_7d": null
+    },
+    "25154": {
+      "nombre": "Carmen de Carupa",
+      "focos_7d": null
+    },
+    "25168": {
+      "nombre": "Chaguaní",
+      "focos_7d": null
+    },
+    "25175": {
+      "nombre": "Chía",
+      "focos_7d": null
+    },
+    "25178": {
+      "nombre": "Chipaque",
+      "focos_7d": null
+    },
+    "25181": {
+      "nombre": "Choachí",
+      "focos_7d": null
+    },
+    "25183": {
+      "nombre": "Chocontá",
+      "focos_7d": null
+    },
+    "25200": {
+      "nombre": "Cogua",
+      "focos_7d": null
+    },
+    "25214": {
+      "nombre": "Cota",
+      "focos_7d": null
+    },
+    "25224": {
+      "nombre": "Cucunubá",
+      "focos_7d": null
+    },
+    "25245": {
+      "nombre": "El Colegio",
+      "focos_7d": null
+    },
+    "25258": {
+      "nombre": "El Peñón",
+      "focos_7d": null
+    },
+    "25260": {
+      "nombre": "El Rosal",
+      "focos_7d": null
+    },
+    "25269": {
+      "nombre": "Facatativá",
+      "focos_7d": null
+    },
+    "25279": {
+      "nombre": "Fómeque",
+      "focos_7d": null
+    },
+    "25281": {
+      "nombre": "Fosca",
+      "focos_7d": null
+    },
+    "25286": {
+      "nombre": "Funza",
+      "focos_7d": null
+    },
+    "25288": {
+      "nombre": "Fúquene",
+      "focos_7d": null
+    },
+    "25290": {
+      "nombre": "Fusagasugá",
+      "focos_7d": null
+    },
+    "25293": {
+      "nombre": "Gachalá",
+      "focos_7d": null
+    },
+    "25295": {
+      "nombre": "Gachancipá",
+      "focos_7d": null
+    },
+    "25297": {
+      "nombre": "Gachetá",
+      "focos_7d": null
+    },
+    "25299": {
+      "nombre": "Gama",
+      "focos_7d": null
+    },
+    "25307": {
+      "nombre": "Girardot",
+      "focos_7d": null
+    },
+    "25312": {
+      "nombre": "Granada",
+      "focos_7d": null
+    },
+    "25317": {
+      "nombre": "Guachetá",
+      "focos_7d": null
+    },
+    "25320": {
+      "nombre": "Guaduas",
+      "focos_7d": null
+    },
+    "25322": {
+      "nombre": "Guasca",
+      "focos_7d": null
+    },
+    "25324": {
+      "nombre": "Guataquí",
+      "focos_7d": null
+    },
+    "25326": {
+      "nombre": "Guatavita",
+      "focos_7d": null
+    },
+    "25328": {
+      "nombre": "Guayabal de Síquima",
+      "focos_7d": null
+    },
+    "25335": {
+      "nombre": "Guayabetal",
+      "focos_7d": null
+    },
+    "25339": {
+      "nombre": "Gutiérrez",
+      "focos_7d": null
+    },
+    "25368": {
+      "nombre": "Jerusalén",
+      "focos_7d": null
+    },
+    "25372": {
+      "nombre": "Junín",
+      "focos_7d": null
+    },
+    "25377": {
+      "nombre": "La Calera",
+      "focos_7d": null
+    },
+    "25386": {
+      "nombre": "La Mesa",
+      "focos_7d": null
+    },
+    "25394": {
+      "nombre": "La Palma",
+      "focos_7d": null
+    },
+    "25398": {
+      "nombre": "La Peña",
+      "focos_7d": null
+    },
+    "25402": {
+      "nombre": "La Vega",
+      "focos_7d": null
+    },
+    "25407": {
+      "nombre": "Lenguazaque",
+      "focos_7d": null
+    },
+    "25426": {
+      "nombre": "Machetá",
+      "focos_7d": null
+    },
+    "25430": {
+      "nombre": "Madrid",
+      "focos_7d": null
+    },
+    "25436": {
+      "nombre": "Manta",
+      "focos_7d": null
+    },
+    "25438": {
+      "nombre": "Medina",
+      "focos_7d": null
+    },
+    "25473": {
+      "nombre": "Mosquera",
+      "focos_7d": null
+    },
+    "25483": {
+      "nombre": "Nariño",
+      "focos_7d": null
+    },
+    "25486": {
+      "nombre": "Nemocón",
+      "focos_7d": null
+    },
+    "25488": {
+      "nombre": "Nilo",
+      "focos_7d": null
+    },
+    "25489": {
+      "nombre": "Nimaima",
+      "focos_7d": null
+    },
+    "25491": {
+      "nombre": "Nocaima",
+      "focos_7d": null
+    },
+    "25506": {
+      "nombre": "Venecia",
+      "focos_7d": null
+    },
+    "25513": {
+      "nombre": "Pacho",
+      "focos_7d": null
+    },
+    "25518": {
+      "nombre": "Paime",
+      "focos_7d": null
+    },
+    "25524": {
+      "nombre": "Pandi",
+      "focos_7d": null
+    },
+    "25530": {
+      "nombre": "Paratebueno",
+      "focos_7d": null
+    },
+    "25535": {
+      "nombre": "Pasca",
+      "focos_7d": null
+    },
+    "25572": {
+      "nombre": "Puerto Salgar",
+      "focos_7d": null
+    },
+    "25580": {
+      "nombre": "Pulí",
+      "focos_7d": null
+    },
+    "25592": {
+      "nombre": "Quebradanegra",
+      "focos_7d": null
+    },
+    "25594": {
+      "nombre": "Quetame",
+      "focos_7d": null
+    },
+    "25596": {
+      "nombre": "Quipile",
+      "focos_7d": null
+    },
+    "25599": {
+      "nombre": "Apulo",
+      "focos_7d": null
+    },
+    "25612": {
+      "nombre": "Ricaurte",
+      "focos_7d": null
+    },
+    "25645": {
+      "nombre": "San Antonio del Tequendama",
+      "focos_7d": null
+    },
+    "25649": {
+      "nombre": "San Bernardo",
+      "focos_7d": null
+    },
+    "25653": {
+      "nombre": "San Cayetano",
+      "focos_7d": null
+    },
+    "25658": {
+      "nombre": "San Francisco",
+      "focos_7d": null
+    },
+    "25662": {
+      "nombre": "San Juan de Rioseco",
+      "focos_7d": null
+    },
+    "25718": {
+      "nombre": "Sasaima",
+      "focos_7d": null
+    },
+    "25736": {
+      "nombre": "Sesquilé",
+      "focos_7d": null
+    },
+    "25740": {
+      "nombre": "Sibaté",
+      "focos_7d": null
+    },
+    "25743": {
+      "nombre": "Silvania",
+      "focos_7d": null
+    },
+    "25745": {
+      "nombre": "Simijaca",
+      "focos_7d": null
+    },
+    "25754": {
+      "nombre": "Soacha",
+      "focos_7d": null
+    },
+    "25758": {
+      "nombre": "Sopó",
+      "focos_7d": null
+    },
+    "25769": {
+      "nombre": "Subachoque",
+      "focos_7d": null
+    },
+    "25772": {
+      "nombre": "Suesca",
+      "focos_7d": null
+    },
+    "25777": {
+      "nombre": "Supatá",
+      "focos_7d": null
+    },
+    "25779": {
+      "nombre": "Susa",
+      "focos_7d": null
+    },
+    "25781": {
+      "nombre": "Sutatausa",
+      "focos_7d": null
+    },
+    "25785": {
+      "nombre": "Tabio",
+      "focos_7d": null
+    },
+    "25793": {
+      "nombre": "Tausa",
+      "focos_7d": null
+    },
+    "25797": {
+      "nombre": "Tena",
+      "focos_7d": null
+    },
+    "25799": {
+      "nombre": "Tenjo",
+      "focos_7d": null
+    },
+    "25805": {
+      "nombre": "Tibacuy",
+      "focos_7d": null
+    },
+    "25807": {
+      "nombre": "Tibirita",
+      "focos_7d": null
+    },
+    "25815": {
+      "nombre": "Tocaima",
+      "focos_7d": null
+    },
+    "25817": {
+      "nombre": "Tocancipá",
+      "focos_7d": null
+    },
+    "25823": {
+      "nombre": "Topaipí",
+      "focos_7d": null
+    },
+    "25839": {
+      "nombre": "Ubalá",
+      "focos_7d": null
+    },
+    "25841": {
+      "nombre": "Ubaque",
+      "focos_7d": null
+    },
+    "25843": {
+      "nombre": "Villa de San Diego de Ubaté",
+      "focos_7d": null
+    },
+    "25845": {
+      "nombre": "Une",
+      "focos_7d": null
+    },
+    "25851": {
+      "nombre": "Útica",
+      "focos_7d": null
+    },
+    "25862": {
+      "nombre": "Vergara",
+      "focos_7d": null
+    },
+    "25867": {
+      "nombre": "Vianí",
+      "focos_7d": null
+    },
+    "25871": {
+      "nombre": "Villagómez",
+      "focos_7d": null
+    },
+    "25873": {
+      "nombre": "Villapinzón",
+      "focos_7d": null
+    },
+    "25875": {
+      "nombre": "Villeta",
+      "focos_7d": null
+    },
+    "25878": {
+      "nombre": "Viotá",
+      "focos_7d": null
+    },
+    "25885": {
+      "nombre": "Yacopí",
+      "focos_7d": null
+    },
+    "25898": {
+      "nombre": "Zipacón",
+      "focos_7d": null
+    },
+    "25899": {
+      "nombre": "Zipaquirá",
+      "focos_7d": null
+    },
+    "27001": {
+      "nombre": "Quibdó",
+      "focos_7d": null
+    },
+    "27006": {
+      "nombre": "Acandí",
+      "focos_7d": null
+    },
+    "27025": {
+      "nombre": "Alto Baudó",
+      "focos_7d": null
+    },
+    "27050": {
+      "nombre": "Atrato",
+      "focos_7d": null
+    },
+    "27073": {
+      "nombre": "Bagadó",
+      "focos_7d": null
+    },
+    "27075": {
+      "nombre": "Bahía Solano",
+      "focos_7d": null
+    },
+    "27077": {
+      "nombre": "Bajo Baudó",
+      "focos_7d": null
+    },
+    "27099": {
+      "nombre": "Bojayá",
+      "focos_7d": null
+    },
+    "27135": {
+      "nombre": "El Cantón del San Pablo",
+      "focos_7d": null
+    },
+    "27150": {
+      "nombre": "Carmen del Darién",
+      "focos_7d": null
+    },
+    "27160": {
+      "nombre": "Cértegui",
+      "focos_7d": null
+    },
+    "27205": {
+      "nombre": "Condoto",
+      "focos_7d": null
+    },
+    "27245": {
+      "nombre": "El Carmen de Atrato",
+      "focos_7d": null
+    },
+    "27250": {
+      "nombre": "El Litoral del San Juan",
+      "focos_7d": null
+    },
+    "27361": {
+      "nombre": "Istmina",
+      "focos_7d": null
+    },
+    "27372": {
+      "nombre": "Juradó",
+      "focos_7d": null
+    },
+    "27413": {
+      "nombre": "Lloró",
+      "focos_7d": null
+    },
+    "27425": {
+      "nombre": "Medio Atrato",
+      "focos_7d": null
+    },
+    "27430": {
+      "nombre": "Medio Baudó",
+      "focos_7d": null
+    },
+    "27450": {
+      "nombre": "Medio San Juan",
+      "focos_7d": null
+    },
+    "27491": {
+      "nombre": "Nóvita",
+      "focos_7d": null
+    },
+    "27493": {
+      "nombre": "Nuevo Belén de Bajirá",
+      "focos_7d": null
+    },
+    "27495": {
+      "nombre": "Nuquí",
+      "focos_7d": null
+    },
+    "27580": {
+      "nombre": "Río Iró",
+      "focos_7d": null
+    },
+    "27600": {
+      "nombre": "Río Quito",
+      "focos_7d": null
+    },
+    "27615": {
+      "nombre": "Riosucio",
+      "focos_7d": null
+    },
+    "27660": {
+      "nombre": "San José del Palmar",
+      "focos_7d": null
+    },
+    "27745": {
+      "nombre": "Sipí",
+      "focos_7d": null
+    },
+    "27787": {
+      "nombre": "Tadó",
+      "focos_7d": null
+    },
+    "27800": {
+      "nombre": "Unguía",
+      "focos_7d": null
+    },
+    "27810": {
+      "nombre": "Unión Panamericana",
+      "focos_7d": null
+    },
+    "41001": {
+      "nombre": "Neiva",
+      "focos_7d": null
+    },
+    "41006": {
+      "nombre": "Acevedo",
+      "focos_7d": null
+    },
+    "41013": {
+      "nombre": "Agrado",
+      "focos_7d": null
+    },
+    "41016": {
+      "nombre": "Aipe",
+      "focos_7d": null
+    },
+    "41020": {
+      "nombre": "Algeciras",
+      "focos_7d": null
+    },
+    "41026": {
+      "nombre": "Altamira",
+      "focos_7d": null
+    },
+    "41078": {
+      "nombre": "Baraya",
+      "focos_7d": null
+    },
+    "41132": {
+      "nombre": "Campoalegre",
+      "focos_7d": null
+    },
+    "41206": {
+      "nombre": "Colombia",
+      "focos_7d": null
+    },
+    "41244": {
+      "nombre": "Elías",
+      "focos_7d": null
+    },
+    "41298": {
+      "nombre": "Garzón",
+      "focos_7d": null
+    },
+    "41306": {
+      "nombre": "Gigante",
+      "focos_7d": null
+    },
+    "41319": {
+      "nombre": "Guadalupe",
+      "focos_7d": null
+    },
+    "41349": {
+      "nombre": "Hobo",
+      "focos_7d": null
+    },
+    "41357": {
+      "nombre": "Íquira",
+      "focos_7d": null
+    },
+    "41359": {
+      "nombre": "Isnos",
+      "focos_7d": null
+    },
+    "41378": {
+      "nombre": "La Argentina",
+      "focos_7d": null
+    },
+    "41396": {
+      "nombre": "La Plata",
+      "focos_7d": null
+    },
+    "41483": {
+      "nombre": "Nátaga",
+      "focos_7d": null
+    },
+    "41503": {
+      "nombre": "Oporapa",
+      "focos_7d": null
+    },
+    "41518": {
+      "nombre": "Paicol",
+      "focos_7d": null
+    },
+    "41524": {
+      "nombre": "Palermo",
+      "focos_7d": null
+    },
+    "41530": {
+      "nombre": "Palestina",
+      "focos_7d": null
+    },
+    "41548": {
+      "nombre": "Pital",
+      "focos_7d": null
+    },
+    "41551": {
+      "nombre": "Pitalito",
+      "focos_7d": null
+    },
+    "41615": {
+      "nombre": "Rivera",
+      "focos_7d": null
+    },
+    "41660": {
+      "nombre": "Saladoblanco",
+      "focos_7d": null
+    },
+    "41668": {
+      "nombre": "San Agustín",
+      "focos_7d": null
+    },
+    "41676": {
+      "nombre": "Santa María",
+      "focos_7d": null
+    },
+    "41770": {
+      "nombre": "Suaza",
+      "focos_7d": null
+    },
+    "41791": {
+      "nombre": "Tarqui",
+      "focos_7d": null
+    },
+    "41797": {
+      "nombre": "Tesalia",
+      "focos_7d": null
+    },
+    "41799": {
+      "nombre": "Tello",
+      "focos_7d": null
+    },
+    "41801": {
+      "nombre": "Teruel",
+      "focos_7d": null
+    },
+    "41807": {
+      "nombre": "Timaná",
+      "focos_7d": null
+    },
+    "41872": {
+      "nombre": "Villavieja",
+      "focos_7d": null
+    },
+    "41885": {
+      "nombre": "Yaguará",
+      "focos_7d": null
+    },
+    "44001": {
+      "nombre": "Riohacha",
+      "focos_7d": null
+    },
+    "44035": {
+      "nombre": "Albania",
+      "focos_7d": null
+    },
+    "44078": {
+      "nombre": "Barrancas",
+      "focos_7d": null
+    },
+    "44090": {
+      "nombre": "Dibulla",
+      "focos_7d": null
+    },
+    "44098": {
+      "nombre": "Distracción",
+      "focos_7d": null
+    },
+    "44110": {
+      "nombre": "El Molino",
+      "focos_7d": null
+    },
+    "44279": {
+      "nombre": "Fonseca",
+      "focos_7d": null
+    },
+    "44378": {
+      "nombre": "Hatonuevo",
+      "focos_7d": null
+    },
+    "44420": {
+      "nombre": "La Jagua del Pilar",
+      "focos_7d": null
+    },
+    "44430": {
+      "nombre": "Maicao",
+      "focos_7d": null
+    },
+    "44560": {
+      "nombre": "Manaure",
+      "focos_7d": null
+    },
+    "44650": {
+      "nombre": "San Juan del Cesar",
+      "focos_7d": null
+    },
+    "44847": {
+      "nombre": "Uribia",
+      "focos_7d": null
+    },
+    "44855": {
+      "nombre": "Urumita",
+      "focos_7d": null
+    },
+    "44874": {
+      "nombre": "Villanueva",
+      "focos_7d": null
+    },
+    "47001": {
+      "nombre": "Santa Marta",
+      "focos_7d": null
+    },
+    "47030": {
+      "nombre": "Algarrobo",
+      "focos_7d": null
+    },
+    "47053": {
+      "nombre": "Aracataca",
+      "focos_7d": null
+    },
+    "47058": {
+      "nombre": "Ariguaní",
+      "focos_7d": null
+    },
+    "47161": {
+      "nombre": "Cerro de San Antonio",
+      "focos_7d": null
+    },
+    "47170": {
+      "nombre": "Chivolo",
+      "focos_7d": null
+    },
+    "47189": {
+      "nombre": "Ciénaga",
+      "focos_7d": null
+    },
+    "47205": {
+      "nombre": "Concordia",
+      "focos_7d": null
+    },
+    "47245": {
+      "nombre": "El Banco",
+      "focos_7d": null
+    },
+    "47258": {
+      "nombre": "El Piñón",
+      "focos_7d": null
+    },
+    "47268": {
+      "nombre": "El Retén",
+      "focos_7d": null
+    },
+    "47288": {
+      "nombre": "Fundación",
+      "focos_7d": null
+    },
+    "47318": {
+      "nombre": "Guamal",
+      "focos_7d": null
+    },
+    "47460": {
+      "nombre": "Nueva Granada",
+      "focos_7d": null
+    },
+    "47541": {
+      "nombre": "Pedraza",
+      "focos_7d": null
+    },
+    "47545": {
+      "nombre": "Pijiño del Carmen",
+      "focos_7d": null
+    },
+    "47551": {
+      "nombre": "Pivijay",
+      "focos_7d": null
+    },
+    "47555": {
+      "nombre": "Plato",
+      "focos_7d": null
+    },
+    "47570": {
+      "nombre": "Puebloviejo",
+      "focos_7d": null
+    },
+    "47605": {
+      "nombre": "Remolino",
+      "focos_7d": null
+    },
+    "47660": {
+      "nombre": "Sabanas de San Ángel",
+      "focos_7d": null
+    },
+    "47675": {
+      "nombre": "Salamina",
+      "focos_7d": null
+    },
+    "47692": {
+      "nombre": "San Sebastián de Buenavista",
+      "focos_7d": null
+    },
+    "47703": {
+      "nombre": "San Zenón",
+      "focos_7d": null
+    },
+    "47707": {
+      "nombre": "Santa Ana",
+      "focos_7d": null
+    },
+    "47720": {
+      "nombre": "Santa Bárbara de Pinto",
+      "focos_7d": null
+    },
+    "47745": {
+      "nombre": "Sitionuevo",
+      "focos_7d": null
+    },
+    "47798": {
+      "nombre": "Tenerife",
+      "focos_7d": null
+    },
+    "47960": {
+      "nombre": "Zapayán",
+      "focos_7d": null
+    },
+    "47980": {
+      "nombre": "Zona Bananera",
+      "focos_7d": null
+    },
+    "50001": {
+      "nombre": "Villavicencio",
+      "focos_7d": null
+    },
+    "50006": {
+      "nombre": "Acacías",
+      "focos_7d": null
+    },
+    "50110": {
+      "nombre": "Barranca de Upía",
+      "focos_7d": null
+    },
+    "50124": {
+      "nombre": "Cabuyaro",
+      "focos_7d": null
+    },
+    "50150": {
+      "nombre": "Castilla la Nueva",
+      "focos_7d": null
+    },
+    "50223": {
+      "nombre": "Cubarral",
+      "focos_7d": null
+    },
+    "50226": {
+      "nombre": "Cumaral",
+      "focos_7d": null
+    },
+    "50245": {
+      "nombre": "El Calvario",
+      "focos_7d": null
+    },
+    "50251": {
+      "nombre": "El Castillo",
+      "focos_7d": null
+    },
+    "50270": {
+      "nombre": "El Dorado",
+      "focos_7d": null
+    },
+    "50287": {
+      "nombre": "Fuente de Oro",
+      "focos_7d": null
+    },
+    "50313": {
+      "nombre": "Granada",
+      "focos_7d": null
+    },
+    "50318": {
+      "nombre": "Guamal",
+      "focos_7d": null
+    },
+    "50325": {
+      "nombre": "Mapiripán",
+      "focos_7d": null
+    },
+    "50330": {
+      "nombre": "Mesetas",
+      "focos_7d": null
+    },
+    "50350": {
+      "nombre": "La Macarena",
+      "focos_7d": null
+    },
+    "50370": {
+      "nombre": "Uribe",
+      "focos_7d": null
+    },
+    "50400": {
+      "nombre": "Lejanías",
+      "focos_7d": null
+    },
+    "50450": {
+      "nombre": "Puerto Concordia",
+      "focos_7d": null
+    },
+    "50568": {
+      "nombre": "Puerto Gaitán",
+      "focos_7d": null
+    },
+    "50573": {
+      "nombre": "Puerto López",
+      "focos_7d": null
+    },
+    "50577": {
+      "nombre": "Puerto Lleras",
+      "focos_7d": null
+    },
+    "50590": {
+      "nombre": "Puerto Rico",
+      "focos_7d": null
+    },
+    "50606": {
+      "nombre": "Restrepo",
+      "focos_7d": null
+    },
+    "50680": {
+      "nombre": "San Carlos de Guaroa",
+      "focos_7d": null
+    },
+    "50683": {
+      "nombre": "San Juan de Arama",
+      "focos_7d": null
+    },
+    "50686": {
+      "nombre": "San Juanito",
+      "focos_7d": null
+    },
+    "50689": {
+      "nombre": "San Martín",
+      "focos_7d": null
+    },
+    "50711": {
+      "nombre": "Vistahermosa",
+      "focos_7d": null
+    },
+    "52001": {
+      "nombre": "Pasto",
+      "focos_7d": null
+    },
+    "52019": {
+      "nombre": "Albán",
+      "focos_7d": null
+    },
+    "52022": {
+      "nombre": "Aldana",
+      "focos_7d": null
+    },
+    "52036": {
+      "nombre": "Ancuya",
+      "focos_7d": null
+    },
+    "52051": {
+      "nombre": "Arboleda",
+      "focos_7d": null
+    },
+    "52079": {
+      "nombre": "Barbacoas",
+      "focos_7d": null
+    },
+    "52083": {
+      "nombre": "Belén",
+      "focos_7d": null
+    },
+    "52110": {
+      "nombre": "Buesaco",
+      "focos_7d": null
+    },
+    "52203": {
+      "nombre": "Colón",
+      "focos_7d": null
+    },
+    "52207": {
+      "nombre": "Consacá",
+      "focos_7d": null
+    },
+    "52210": {
+      "nombre": "Contadero",
+      "focos_7d": null
+    },
+    "52215": {
+      "nombre": "Córdoba",
+      "focos_7d": null
+    },
+    "52224": {
+      "nombre": "Cuaspud Carlosama",
+      "focos_7d": null
+    },
+    "52227": {
+      "nombre": "Cumbal",
+      "focos_7d": null
+    },
+    "52233": {
+      "nombre": "Cumbitara",
+      "focos_7d": null
+    },
+    "52240": {
+      "nombre": "Chachagüí",
+      "focos_7d": null
+    },
+    "52250": {
+      "nombre": "El Charco",
+      "focos_7d": null
+    },
+    "52254": {
+      "nombre": "El Peñol",
+      "focos_7d": null
+    },
+    "52256": {
+      "nombre": "El Rosario",
+      "focos_7d": null
+    },
+    "52258": {
+      "nombre": "El Tablón de Gómez",
+      "focos_7d": null
+    },
+    "52260": {
+      "nombre": "El Tambo",
+      "focos_7d": null
+    },
+    "52287": {
+      "nombre": "Funes",
+      "focos_7d": null
+    },
+    "52317": {
+      "nombre": "Guachucal",
+      "focos_7d": null
+    },
+    "52320": {
+      "nombre": "Guaitarilla",
+      "focos_7d": null
+    },
+    "52323": {
+      "nombre": "Gualmatán",
+      "focos_7d": null
+    },
+    "52352": {
+      "nombre": "Iles",
+      "focos_7d": null
+    },
+    "52354": {
+      "nombre": "Imués",
+      "focos_7d": null
+    },
+    "52356": {
+      "nombre": "Ipiales",
+      "focos_7d": null
+    },
+    "52378": {
+      "nombre": "La Cruz",
+      "focos_7d": null
+    },
+    "52381": {
+      "nombre": "La Florida",
+      "focos_7d": null
+    },
+    "52385": {
+      "nombre": "La Llanada",
+      "focos_7d": null
+    },
+    "52390": {
+      "nombre": "La Tola",
+      "focos_7d": null
+    },
+    "52399": {
+      "nombre": "La Unión",
+      "focos_7d": null
+    },
+    "52405": {
+      "nombre": "Leiva",
+      "focos_7d": null
+    },
+    "52411": {
+      "nombre": "Linares",
+      "focos_7d": null
+    },
+    "52418": {
+      "nombre": "Los Andes",
+      "focos_7d": null
+    },
+    "52427": {
+      "nombre": "Magüí",
+      "focos_7d": null
+    },
+    "52435": {
+      "nombre": "Mallama",
+      "focos_7d": null
+    },
+    "52473": {
+      "nombre": "Mosquera",
+      "focos_7d": null
+    },
+    "52480": {
+      "nombre": "Nariño",
+      "focos_7d": null
+    },
+    "52490": {
+      "nombre": "Olaya Herrera",
+      "focos_7d": null
+    },
+    "52506": {
+      "nombre": "Ospina",
+      "focos_7d": null
+    },
+    "52520": {
+      "nombre": "Francisco Pizarro",
+      "focos_7d": null
+    },
+    "52540": {
+      "nombre": "Policarpa",
+      "focos_7d": null
+    },
+    "52560": {
+      "nombre": "Potosí",
+      "focos_7d": null
+    },
+    "52565": {
+      "nombre": "Providencia",
+      "focos_7d": null
+    },
+    "52573": {
+      "nombre": "Puerres",
+      "focos_7d": null
+    },
+    "52585": {
+      "nombre": "Pupiales",
+      "focos_7d": null
+    },
+    "52612": {
+      "nombre": "Ricaurte",
+      "focos_7d": null
+    },
+    "52621": {
+      "nombre": "Roberto Payán",
+      "focos_7d": null
+    },
+    "52678": {
+      "nombre": "Samaniego",
+      "focos_7d": null
+    },
+    "52683": {
+      "nombre": "Sandoná",
+      "focos_7d": null
+    },
+    "52685": {
+      "nombre": "San Bernardo",
+      "focos_7d": null
+    },
+    "52687": {
+      "nombre": "San Lorenzo",
+      "focos_7d": null
+    },
+    "52693": {
+      "nombre": "San Pablo",
+      "focos_7d": null
+    },
+    "52694": {
+      "nombre": "San Pedro de Cartago",
+      "focos_7d": null
+    },
+    "52696": {
+      "nombre": "Santa Bárbara",
+      "focos_7d": null
+    },
+    "52699": {
+      "nombre": "Santacruz",
+      "focos_7d": null
+    },
+    "52720": {
+      "nombre": "Sapuyes",
+      "focos_7d": null
+    },
+    "52786": {
+      "nombre": "Taminango",
+      "focos_7d": null
+    },
+    "52788": {
+      "nombre": "Tangua",
+      "focos_7d": null
+    },
+    "52835": {
+      "nombre": "San Andrés de Tumaco",
+      "focos_7d": null
+    },
+    "52838": {
+      "nombre": "Túquerres",
+      "focos_7d": null
+    },
+    "52885": {
+      "nombre": "Yacuanquer",
+      "focos_7d": null
+    },
+    "54001": {
+      "nombre": "San José de Cúcuta",
+      "focos_7d": null
+    },
+    "54003": {
+      "nombre": "Ábrego",
+      "focos_7d": null
+    },
+    "54051": {
+      "nombre": "Arboledas",
+      "focos_7d": null
+    },
+    "54099": {
+      "nombre": "Bochalema",
+      "focos_7d": null
+    },
+    "54109": {
+      "nombre": "Bucarasica",
+      "focos_7d": null
+    },
+    "54125": {
+      "nombre": "Cácota",
+      "focos_7d": null
+    },
+    "54128": {
+      "nombre": "Cáchira",
+      "focos_7d": null
+    },
+    "54172": {
+      "nombre": "Chinácota",
+      "focos_7d": null
+    },
+    "54174": {
+      "nombre": "Chitagá",
+      "focos_7d": null
+    },
+    "54206": {
+      "nombre": "Convención",
+      "focos_7d": null
+    },
+    "54223": {
+      "nombre": "Cucutilla",
+      "focos_7d": null
+    },
+    "54239": {
+      "nombre": "Durania",
+      "focos_7d": null
+    },
+    "54245": {
+      "nombre": "El Carmen",
+      "focos_7d": null
+    },
+    "54250": {
+      "nombre": "El Tarra",
+      "focos_7d": null
+    },
+    "54261": {
+      "nombre": "El Zulia",
+      "focos_7d": null
+    },
+    "54313": {
+      "nombre": "Gramalote",
+      "focos_7d": null
+    },
+    "54344": {
+      "nombre": "Hacarí",
+      "focos_7d": null
+    },
+    "54347": {
+      "nombre": "Herrán",
+      "focos_7d": null
+    },
+    "54377": {
+      "nombre": "Labateca",
+      "focos_7d": null
+    },
+    "54385": {
+      "nombre": "La Esperanza",
+      "focos_7d": null
+    },
+    "54398": {
+      "nombre": "La Playa",
+      "focos_7d": null
+    },
+    "54405": {
+      "nombre": "Los Patios",
+      "focos_7d": null
+    },
+    "54418": {
+      "nombre": "Lourdes",
+      "focos_7d": null
+    },
+    "54480": {
+      "nombre": "Mutiscua",
+      "focos_7d": null
+    },
+    "54498": {
+      "nombre": "Ocaña",
+      "focos_7d": null
+    },
+    "54518": {
+      "nombre": "Pamplona",
+      "focos_7d": null
+    },
+    "54520": {
+      "nombre": "Pamplonita",
+      "focos_7d": null
+    },
+    "54553": {
+      "nombre": "Puerto Santander",
+      "focos_7d": null
+    },
+    "54599": {
+      "nombre": "Ragonvalia",
+      "focos_7d": null
+    },
+    "54660": {
+      "nombre": "Salazar",
+      "focos_7d": null
+    },
+    "54670": {
+      "nombre": "San Calixto",
+      "focos_7d": null
+    },
+    "54673": {
+      "nombre": "San Cayetano",
+      "focos_7d": null
+    },
+    "54680": {
+      "nombre": "Santiago",
+      "focos_7d": null
+    },
+    "54720": {
+      "nombre": "Sardinata",
+      "focos_7d": null
+    },
+    "54743": {
+      "nombre": "Silos",
+      "focos_7d": null
+    },
+    "54800": {
+      "nombre": "Teorama",
+      "focos_7d": null
+    },
+    "54810": {
+      "nombre": "Tibú",
+      "focos_7d": null
+    },
+    "54820": {
+      "nombre": "Toledo",
+      "focos_7d": null
+    },
+    "54871": {
+      "nombre": "Villa Caro",
+      "focos_7d": null
+    },
+    "54874": {
+      "nombre": "Villa del Rosario",
+      "focos_7d": null
+    },
+    "63001": {
+      "nombre": "Armenia",
+      "focos_7d": null
+    },
+    "63111": {
+      "nombre": "Buenavista",
+      "focos_7d": null
+    },
+    "63130": {
+      "nombre": "Calarcá",
+      "focos_7d": null
+    },
+    "63190": {
+      "nombre": "Circasia",
+      "focos_7d": null
+    },
+    "63212": {
+      "nombre": "Córdoba",
+      "focos_7d": null
+    },
+    "63272": {
+      "nombre": "Filandia",
+      "focos_7d": null
+    },
+    "63302": {
+      "nombre": "Génova",
+      "focos_7d": null
+    },
+    "63401": {
+      "nombre": "La Tebaida",
+      "focos_7d": null
+    },
+    "63470": {
+      "nombre": "Montenegro",
+      "focos_7d": null
+    },
+    "63548": {
+      "nombre": "Pijao",
+      "focos_7d": null
+    },
+    "63594": {
+      "nombre": "Quimbaya",
+      "focos_7d": null
+    },
+    "63690": {
+      "nombre": "Salento",
+      "focos_7d": null
+    },
+    "66001": {
+      "nombre": "Pereira",
+      "focos_7d": null
+    },
+    "66045": {
+      "nombre": "Apía",
+      "focos_7d": null
+    },
+    "66075": {
+      "nombre": "Balboa",
+      "focos_7d": null
+    },
+    "66088": {
+      "nombre": "Belén de Umbría",
+      "focos_7d": null
+    },
+    "66170": {
+      "nombre": "Dosquebradas",
+      "focos_7d": null
+    },
+    "66318": {
+      "nombre": "Guática",
+      "focos_7d": null
+    },
+    "66383": {
+      "nombre": "La Celia",
+      "focos_7d": null
+    },
+    "66400": {
+      "nombre": "La Virginia",
+      "focos_7d": null
+    },
+    "66440": {
+      "nombre": "Marsella",
+      "focos_7d": null
+    },
+    "66456": {
+      "nombre": "Mistrató",
+      "focos_7d": null
+    },
+    "66572": {
+      "nombre": "Pueblo Rico",
+      "focos_7d": null
+    },
+    "66594": {
+      "nombre": "Quinchía",
+      "focos_7d": null
+    },
+    "66682": {
+      "nombre": "Santa Rosa de Cabal",
+      "focos_7d": null
+    },
+    "66687": {
+      "nombre": "Santuario",
+      "focos_7d": null
+    },
+    "68001": {
+      "nombre": "Bucaramanga",
+      "focos_7d": null
+    },
+    "68013": {
+      "nombre": "Aguada",
+      "focos_7d": null
+    },
+    "68020": {
+      "nombre": "Albania",
+      "focos_7d": null
+    },
+    "68051": {
+      "nombre": "Aratoca",
+      "focos_7d": null
+    },
+    "68077": {
+      "nombre": "Barbosa",
+      "focos_7d": null
+    },
+    "68079": {
+      "nombre": "Barichara",
+      "focos_7d": null
+    },
+    "68081": {
+      "nombre": "Barrancabermeja",
+      "focos_7d": null
+    },
+    "68092": {
+      "nombre": "Betulia",
+      "focos_7d": null
+    },
+    "68101": {
+      "nombre": "Bolívar",
+      "focos_7d": null
+    },
+    "68121": {
+      "nombre": "Cabrera",
+      "focos_7d": null
+    },
+    "68132": {
+      "nombre": "California",
+      "focos_7d": null
+    },
+    "68147": {
+      "nombre": "Capitanejo",
+      "focos_7d": null
+    },
+    "68152": {
+      "nombre": "Carcasí",
+      "focos_7d": null
+    },
+    "68160": {
+      "nombre": "Cepitá",
+      "focos_7d": null
+    },
+    "68162": {
+      "nombre": "Cerrito",
+      "focos_7d": null
+    },
+    "68167": {
+      "nombre": "Charalá",
+      "focos_7d": null
+    },
+    "68169": {
+      "nombre": "Charta",
+      "focos_7d": null
+    },
+    "68176": {
+      "nombre": "Chima",
+      "focos_7d": null
+    },
+    "68179": {
+      "nombre": "Chipatá",
+      "focos_7d": null
+    },
+    "68190": {
+      "nombre": "Cimitarra",
+      "focos_7d": null
+    },
+    "68207": {
+      "nombre": "Concepción",
+      "focos_7d": null
+    },
+    "68209": {
+      "nombre": "Confines",
+      "focos_7d": null
+    },
+    "68211": {
+      "nombre": "Contratación",
+      "focos_7d": null
+    },
+    "68217": {
+      "nombre": "Coromoro",
+      "focos_7d": null
+    },
+    "68229": {
+      "nombre": "Curití",
+      "focos_7d": null
+    },
+    "68235": {
+      "nombre": "El Carmen de Chucurí",
+      "focos_7d": null
+    },
+    "68245": {
+      "nombre": "El Guacamayo",
+      "focos_7d": null
+    },
+    "68250": {
+      "nombre": "El Peñón",
+      "focos_7d": null
+    },
+    "68255": {
+      "nombre": "El Playón",
+      "focos_7d": null
+    },
+    "68264": {
+      "nombre": "Encino",
+      "focos_7d": null
+    },
+    "68266": {
+      "nombre": "Enciso",
+      "focos_7d": null
+    },
+    "68271": {
+      "nombre": "Florián",
+      "focos_7d": null
+    },
+    "68276": {
+      "nombre": "Floridablanca",
+      "focos_7d": null
+    },
+    "68296": {
+      "nombre": "Galán",
+      "focos_7d": null
+    },
+    "68298": {
+      "nombre": "Gámbita",
+      "focos_7d": null
+    },
+    "68307": {
+      "nombre": "Girón",
+      "focos_7d": null
+    },
+    "68318": {
+      "nombre": "Guaca",
+      "focos_7d": null
+    },
+    "68320": {
+      "nombre": "Guadalupe",
+      "focos_7d": null
+    },
+    "68322": {
+      "nombre": "Guapotá",
+      "focos_7d": null
+    },
+    "68324": {
+      "nombre": "Guavatá",
+      "focos_7d": null
+    },
+    "68327": {
+      "nombre": "Güepsa",
+      "focos_7d": null
+    },
+    "68344": {
+      "nombre": "Hato",
+      "focos_7d": null
+    },
+    "68368": {
+      "nombre": "Jesús María",
+      "focos_7d": null
+    },
+    "68370": {
+      "nombre": "Jordán",
+      "focos_7d": null
+    },
+    "68377": {
+      "nombre": "La Belleza",
+      "focos_7d": null
+    },
+    "68385": {
+      "nombre": "Landázuri",
+      "focos_7d": null
+    },
+    "68397": {
+      "nombre": "La Paz",
+      "focos_7d": null
+    },
+    "68406": {
+      "nombre": "Lebrija",
+      "focos_7d": null
+    },
+    "68418": {
+      "nombre": "Los Santos",
+      "focos_7d": null
+    },
+    "68425": {
+      "nombre": "Macaravita",
+      "focos_7d": null
+    },
+    "68432": {
+      "nombre": "Málaga",
+      "focos_7d": null
+    },
+    "68444": {
+      "nombre": "Matanza",
+      "focos_7d": null
+    },
+    "68464": {
+      "nombre": "Mogotes",
+      "focos_7d": null
+    },
+    "68468": {
+      "nombre": "Molagavita",
+      "focos_7d": null
+    },
+    "68498": {
+      "nombre": "Ocamonte",
+      "focos_7d": null
+    },
+    "68500": {
+      "nombre": "Oiba",
+      "focos_7d": null
+    },
+    "68502": {
+      "nombre": "Onzaga",
+      "focos_7d": null
+    },
+    "68522": {
+      "nombre": "Palmar",
+      "focos_7d": null
+    },
+    "68524": {
+      "nombre": "Palmas del Socorro",
+      "focos_7d": null
+    },
+    "68533": {
+      "nombre": "Páramo",
+      "focos_7d": null
+    },
+    "68547": {
+      "nombre": "Piedecuesta",
+      "focos_7d": null
+    },
+    "68549": {
+      "nombre": "Pinchote",
+      "focos_7d": null
+    },
+    "68572": {
+      "nombre": "Puente Nacional",
+      "focos_7d": null
+    },
+    "68573": {
+      "nombre": "Puerto Parra",
+      "focos_7d": null
+    },
+    "68575": {
+      "nombre": "Puerto Wilches",
+      "focos_7d": null
+    },
+    "68615": {
+      "nombre": "Rionegro",
+      "focos_7d": null
+    },
+    "68655": {
+      "nombre": "Sabana de Torres",
+      "focos_7d": null
+    },
+    "68669": {
+      "nombre": "San Andrés",
+      "focos_7d": null
+    },
+    "68673": {
+      "nombre": "San Benito",
+      "focos_7d": null
+    },
+    "68679": {
+      "nombre": "San Gil",
+      "focos_7d": null
+    },
+    "68682": {
+      "nombre": "San Joaquín",
+      "focos_7d": null
+    },
+    "68684": {
+      "nombre": "San José de Miranda",
+      "focos_7d": null
+    },
+    "68686": {
+      "nombre": "San Miguel",
+      "focos_7d": null
+    },
+    "68689": {
+      "nombre": "San Vicente de Chucurí",
+      "focos_7d": null
+    },
+    "68705": {
+      "nombre": "Santa Bárbara",
+      "focos_7d": null
+    },
+    "68720": {
+      "nombre": "Santa Helena del Opón",
+      "focos_7d": null
+    },
+    "68745": {
+      "nombre": "Simacota",
+      "focos_7d": null
+    },
+    "68755": {
+      "nombre": "Socorro",
+      "focos_7d": null
+    },
+    "68770": {
+      "nombre": "Suaita",
+      "focos_7d": null
+    },
+    "68773": {
+      "nombre": "Sucre",
+      "focos_7d": null
+    },
+    "68780": {
+      "nombre": "Suratá",
+      "focos_7d": null
+    },
+    "68820": {
+      "nombre": "Tona",
+      "focos_7d": null
+    },
+    "68855": {
+      "nombre": "Valle de San José",
+      "focos_7d": null
+    },
+    "68861": {
+      "nombre": "Vélez",
+      "focos_7d": null
+    },
+    "68867": {
+      "nombre": "Vetas",
+      "focos_7d": null
+    },
+    "68872": {
+      "nombre": "Villanueva",
+      "focos_7d": null
+    },
+    "68895": {
+      "nombre": "Zapatoca",
+      "focos_7d": null
+    },
+    "70001": {
+      "nombre": "Sincelejo",
+      "focos_7d": null
+    },
+    "70110": {
+      "nombre": "Buenavista",
+      "focos_7d": null
+    },
+    "70124": {
+      "nombre": "Caimito",
+      "focos_7d": null
+    },
+    "70204": {
+      "nombre": "Colosó",
+      "focos_7d": null
+    },
+    "70215": {
+      "nombre": "Corozal",
+      "focos_7d": null
+    },
+    "70221": {
+      "nombre": "Coveñas",
+      "focos_7d": null
+    },
+    "70230": {
+      "nombre": "Chalán",
+      "focos_7d": null
+    },
+    "70233": {
+      "nombre": "El Roble",
+      "focos_7d": null
+    },
+    "70235": {
+      "nombre": "Galeras",
+      "focos_7d": null
+    },
+    "70265": {
+      "nombre": "Guaranda",
+      "focos_7d": null
+    },
+    "70400": {
+      "nombre": "La Unión",
+      "focos_7d": null
+    },
+    "70418": {
+      "nombre": "Los Palmitos",
+      "focos_7d": null
+    },
+    "70429": {
+      "nombre": "Majagual",
+      "focos_7d": null
+    },
+    "70473": {
+      "nombre": "Morroa",
+      "focos_7d": null
+    },
+    "70508": {
+      "nombre": "Ovejas",
+      "focos_7d": null
+    },
+    "70523": {
+      "nombre": "Palmito",
+      "focos_7d": null
+    },
+    "70670": {
+      "nombre": "Sampués",
+      "focos_7d": null
+    },
+    "70678": {
+      "nombre": "San Benito Abad",
+      "focos_7d": null
+    },
+    "70702": {
+      "nombre": "San Juan de Betulia",
+      "focos_7d": null
+    },
+    "70708": {
+      "nombre": "San Marcos",
+      "focos_7d": null
+    },
+    "70713": {
+      "nombre": "San Onofre",
+      "focos_7d": null
+    },
+    "70717": {
+      "nombre": "San Pedro",
+      "focos_7d": null
+    },
+    "70742": {
+      "nombre": "San Luis de Sincé",
+      "focos_7d": null
+    },
+    "70771": {
+      "nombre": "Sucre",
+      "focos_7d": null
+    },
+    "70820": {
+      "nombre": "Santiago de Tolú",
+      "focos_7d": null
+    },
+    "70823": {
+      "nombre": "San José de Toluviejo",
+      "focos_7d": null
+    },
+    "73001": {
+      "nombre": "Ibagué",
+      "focos_7d": null
+    },
+    "73024": {
+      "nombre": "Alpujarra",
+      "focos_7d": null
+    },
+    "73026": {
+      "nombre": "Alvarado",
+      "focos_7d": null
+    },
+    "73030": {
+      "nombre": "Ambalema",
+      "focos_7d": null
+    },
+    "73043": {
+      "nombre": "Anzoátegui",
+      "focos_7d": null
+    },
+    "73055": {
+      "nombre": "Armero",
+      "focos_7d": null
+    },
+    "73067": {
+      "nombre": "Ataco",
+      "focos_7d": null
+    },
+    "73124": {
+      "nombre": "Cajamarca",
+      "focos_7d": null
+    },
+    "73148": {
+      "nombre": "Carmen de Apicalá",
+      "focos_7d": null
+    },
+    "73152": {
+      "nombre": "Casabianca",
+      "focos_7d": null
+    },
+    "73168": {
+      "nombre": "Chaparral",
+      "focos_7d": null
+    },
+    "73200": {
+      "nombre": "Coello",
+      "focos_7d": null
+    },
+    "73217": {
+      "nombre": "Coyaima",
+      "focos_7d": null
+    },
+    "73226": {
+      "nombre": "Cunday",
+      "focos_7d": null
+    },
+    "73236": {
+      "nombre": "Dolores",
+      "focos_7d": null
+    },
+    "73268": {
+      "nombre": "Espinal",
+      "focos_7d": null
+    },
+    "73270": {
+      "nombre": "Falan",
+      "focos_7d": null
+    },
+    "73275": {
+      "nombre": "Flandes",
+      "focos_7d": null
+    },
+    "73283": {
+      "nombre": "Fresno",
+      "focos_7d": null
+    },
+    "73319": {
+      "nombre": "Guamo",
+      "focos_7d": null
+    },
+    "73347": {
+      "nombre": "Herveo",
+      "focos_7d": null
+    },
+    "73349": {
+      "nombre": "Honda",
+      "focos_7d": null
+    },
+    "73352": {
+      "nombre": "Icononzo",
+      "focos_7d": null
+    },
+    "73408": {
+      "nombre": "Lérida",
+      "focos_7d": null
+    },
+    "73411": {
+      "nombre": "Líbano",
+      "focos_7d": null
+    },
+    "73443": {
+      "nombre": "San Sebastián de Mariquita",
+      "focos_7d": null
+    },
+    "73449": {
+      "nombre": "Melgar",
+      "focos_7d": null
+    },
+    "73461": {
+      "nombre": "Murillo",
+      "focos_7d": null
+    },
+    "73483": {
+      "nombre": "Natagaima",
+      "focos_7d": null
+    },
+    "73504": {
+      "nombre": "Ortega",
+      "focos_7d": null
+    },
+    "73520": {
+      "nombre": "Palocabildo",
+      "focos_7d": null
+    },
+    "73547": {
+      "nombre": "Piedras",
+      "focos_7d": null
+    },
+    "73555": {
+      "nombre": "Planadas",
+      "focos_7d": null
+    },
+    "73563": {
+      "nombre": "Prado",
+      "focos_7d": null
+    },
+    "73585": {
+      "nombre": "Purificación",
+      "focos_7d": null
+    },
+    "73616": {
+      "nombre": "Rioblanco",
+      "focos_7d": null
+    },
+    "73622": {
+      "nombre": "Roncesvalles",
+      "focos_7d": null
+    },
+    "73624": {
+      "nombre": "Rovira",
+      "focos_7d": null
+    },
+    "73671": {
+      "nombre": "Saldaña",
+      "focos_7d": null
+    },
+    "73675": {
+      "nombre": "San Antonio",
+      "focos_7d": null
+    },
+    "73678": {
+      "nombre": "San Luis",
+      "focos_7d": null
+    },
+    "73686": {
+      "nombre": "Santa Isabel",
+      "focos_7d": null
+    },
+    "73770": {
+      "nombre": "Suárez",
+      "focos_7d": null
+    },
+    "73854": {
+      "nombre": "Valle de San Juan",
+      "focos_7d": null
+    },
+    "73861": {
+      "nombre": "Venadillo",
+      "focos_7d": null
+    },
+    "73870": {
+      "nombre": "Villahermosa",
+      "focos_7d": null
+    },
+    "73873": {
+      "nombre": "Villarrica",
+      "focos_7d": null
+    },
+    "76001": {
+      "nombre": "Cali",
+      "focos_7d": null
+    },
+    "76020": {
+      "nombre": "Alcalá",
+      "focos_7d": null
+    },
+    "76036": {
+      "nombre": "Andalucía",
+      "focos_7d": null
+    },
+    "76041": {
+      "nombre": "Ansermanuevo",
+      "focos_7d": null
+    },
+    "76054": {
+      "nombre": "Argelia",
+      "focos_7d": null
+    },
+    "76100": {
+      "nombre": "Bolívar",
+      "focos_7d": null
+    },
+    "76109": {
+      "nombre": "Buenaventura",
+      "focos_7d": null
+    },
+    "76111": {
+      "nombre": "Guadalajara de Buga",
+      "focos_7d": null
+    },
+    "76113": {
+      "nombre": "Bugalagrande",
+      "focos_7d": null
+    },
+    "76122": {
+      "nombre": "Caicedonia",
+      "focos_7d": null
+    },
+    "76126": {
+      "nombre": "Calima",
+      "focos_7d": null
+    },
+    "76130": {
+      "nombre": "Candelaria",
+      "focos_7d": null
+    },
+    "76147": {
+      "nombre": "Cartago",
+      "focos_7d": null
+    },
+    "76233": {
+      "nombre": "Dagua",
+      "focos_7d": null
+    },
+    "76243": {
+      "nombre": "El Águila",
+      "focos_7d": null
+    },
+    "76246": {
+      "nombre": "El Cairo",
+      "focos_7d": null
+    },
+    "76248": {
+      "nombre": "El Cerrito",
+      "focos_7d": null
+    },
+    "76250": {
+      "nombre": "El Dovio",
+      "focos_7d": null
+    },
+    "76275": {
+      "nombre": "Florida",
+      "focos_7d": null
+    },
+    "76306": {
+      "nombre": "Ginebra",
+      "focos_7d": null
+    },
+    "76318": {
+      "nombre": "Guacarí",
+      "focos_7d": null
+    },
+    "76364": {
+      "nombre": "Jamundí",
+      "focos_7d": null
+    },
+    "76377": {
+      "nombre": "La Cumbre",
+      "focos_7d": null
+    },
+    "76400": {
+      "nombre": "La Unión",
+      "focos_7d": null
+    },
+    "76403": {
+      "nombre": "La Victoria",
+      "focos_7d": null
+    },
+    "76497": {
+      "nombre": "Obando",
+      "focos_7d": null
+    },
+    "76520": {
+      "nombre": "Palmira",
+      "focos_7d": null
+    },
+    "76563": {
+      "nombre": "Pradera",
+      "focos_7d": null
+    },
+    "76606": {
+      "nombre": "Restrepo",
+      "focos_7d": null
+    },
+    "76616": {
+      "nombre": "Riofrío",
+      "focos_7d": null
+    },
+    "76622": {
+      "nombre": "Roldanillo",
+      "focos_7d": null
+    },
+    "76670": {
+      "nombre": "San Pedro",
+      "focos_7d": null
+    },
+    "76736": {
+      "nombre": "Sevilla",
+      "focos_7d": null
+    },
+    "76823": {
+      "nombre": "Toro",
+      "focos_7d": null
+    },
+    "76828": {
+      "nombre": "Trujillo",
+      "focos_7d": null
+    },
+    "76834": {
+      "nombre": "Tuluá",
+      "focos_7d": null
+    },
+    "76845": {
+      "nombre": "Ulloa",
+      "focos_7d": null
+    },
+    "76863": {
+      "nombre": "Versalles",
+      "focos_7d": null
+    },
+    "76869": {
+      "nombre": "Vijes",
+      "focos_7d": null
+    },
+    "76890": {
+      "nombre": "Yotoco",
+      "focos_7d": null
+    },
+    "76892": {
+      "nombre": "Yumbo",
+      "focos_7d": null
+    },
+    "76895": {
+      "nombre": "Zarzal",
+      "focos_7d": null
+    },
+    "81001": {
+      "nombre": "Arauca",
+      "focos_7d": null
+    },
+    "81065": {
+      "nombre": "Arauquita",
+      "focos_7d": null
+    },
+    "81220": {
+      "nombre": "Cravo Norte",
+      "focos_7d": null
+    },
+    "81300": {
+      "nombre": "Fortul",
+      "focos_7d": null
+    },
+    "81591": {
+      "nombre": "Puerto Rondón",
+      "focos_7d": null
+    },
+    "81736": {
+      "nombre": "Saravena",
+      "focos_7d": null
+    },
+    "81794": {
+      "nombre": "Tame",
+      "focos_7d": null
+    },
+    "85001": {
+      "nombre": "Yopal",
+      "focos_7d": null
+    },
+    "85010": {
+      "nombre": "Aguazul",
+      "focos_7d": null
+    },
+    "85015": {
+      "nombre": "Chámeza",
+      "focos_7d": null
+    },
+    "85125": {
+      "nombre": "Hato Corozal",
+      "focos_7d": null
+    },
+    "85136": {
+      "nombre": "La Salina",
+      "focos_7d": null
+    },
+    "85139": {
+      "nombre": "Maní",
+      "focos_7d": null
+    },
+    "85162": {
+      "nombre": "Monterrey",
+      "focos_7d": null
+    },
+    "85225": {
+      "nombre": "Nunchía",
+      "focos_7d": null
+    },
+    "85230": {
+      "nombre": "Orocué",
+      "focos_7d": null
+    },
+    "85250": {
+      "nombre": "Paz de Ariporo",
+      "focos_7d": null
+    },
+    "85263": {
+      "nombre": "Pore",
+      "focos_7d": null
+    },
+    "85279": {
+      "nombre": "Recetor",
+      "focos_7d": null
+    },
+    "85300": {
+      "nombre": "Sabanalarga",
+      "focos_7d": null
+    },
+    "85315": {
+      "nombre": "Sácama",
+      "focos_7d": null
+    },
+    "85325": {
+      "nombre": "San Luis de Palenque",
+      "focos_7d": null
+    },
+    "85400": {
+      "nombre": "Támara",
+      "focos_7d": null
+    },
+    "85410": {
+      "nombre": "Tauramena",
+      "focos_7d": null
+    },
+    "85430": {
+      "nombre": "Trinidad",
+      "focos_7d": null
+    },
+    "85440": {
+      "nombre": "Villanueva",
+      "focos_7d": null
+    },
+    "86001": {
+      "nombre": "Mocoa",
+      "focos_7d": null
+    },
+    "86219": {
+      "nombre": "Colón",
+      "focos_7d": null
+    },
+    "86320": {
+      "nombre": "Orito",
+      "focos_7d": null
+    },
+    "86568": {
+      "nombre": "Puerto Asís",
+      "focos_7d": null
+    },
+    "86569": {
+      "nombre": "Puerto Caicedo",
+      "focos_7d": null
+    },
+    "86571": {
+      "nombre": "Puerto Guzmán",
+      "focos_7d": null
+    },
+    "86573": {
+      "nombre": "Puerto Leguízamo",
+      "focos_7d": null
+    },
+    "86749": {
+      "nombre": "Sibundoy",
+      "focos_7d": null
+    },
+    "86755": {
+      "nombre": "San Francisco",
+      "focos_7d": null
+    },
+    "86757": {
+      "nombre": "San Miguel",
+      "focos_7d": null
+    },
+    "86760": {
+      "nombre": "Santiago",
+      "focos_7d": null
+    },
+    "86865": {
+      "nombre": "Valle del Guamuez",
+      "focos_7d": null
+    },
+    "86885": {
+      "nombre": "Villagarzón",
+      "focos_7d": null
+    },
+    "88001": {
+      "nombre": "San Andrés",
+      "focos_7d": null
+    },
+    "88564": {
+      "nombre": "Providencia",
+      "focos_7d": null
+    },
+    "91001": {
+      "nombre": "Leticia",
+      "focos_7d": null
+    },
+    "91263": {
+      "nombre": "El Encanto",
+      "focos_7d": null
+    },
+    "91405": {
+      "nombre": "La Chorrera",
+      "focos_7d": null
+    },
+    "91407": {
+      "nombre": "La Pedrera",
+      "focos_7d": null
+    },
+    "91430": {
+      "nombre": "La Victoria",
+      "focos_7d": null
+    },
+    "91460": {
+      "nombre": "Mirití - Paraná",
+      "focos_7d": null
+    },
+    "91530": {
+      "nombre": "Puerto Alegría",
+      "focos_7d": null
+    },
+    "91536": {
+      "nombre": "Puerto Arica",
+      "focos_7d": null
+    },
+    "91540": {
+      "nombre": "Puerto Nariño",
+      "focos_7d": null
+    },
+    "91669": {
+      "nombre": "Puerto Santander",
+      "focos_7d": null
+    },
+    "91798": {
+      "nombre": "Tarapacá",
+      "focos_7d": null
+    },
+    "94001": {
+      "nombre": "Inírida",
+      "focos_7d": null
+    },
+    "94343": {
+      "nombre": "Barrancominas",
+      "focos_7d": null
+    },
+    "94883": {
+      "nombre": "San Felipe",
+      "focos_7d": null
+    },
+    "94884": {
+      "nombre": "Puerto Colombia",
+      "focos_7d": null
+    },
+    "94885": {
+      "nombre": "La Guadalupe",
+      "focos_7d": null
+    },
+    "94886": {
+      "nombre": "Cacahual",
+      "focos_7d": null
+    },
+    "94887": {
+      "nombre": "Pana Pana",
+      "focos_7d": null
+    },
+    "94888": {
+      "nombre": "Morichal",
+      "focos_7d": null
+    },
+    "95001": {
+      "nombre": "San José del Guaviare",
+      "focos_7d": null
+    },
+    "95015": {
+      "nombre": "Calamar",
+      "focos_7d": null
+    },
+    "95025": {
+      "nombre": "El Retorno",
+      "focos_7d": null
+    },
+    "95200": {
+      "nombre": "Miraflores",
+      "focos_7d": null
+    },
+    "97001": {
+      "nombre": "Mitú",
+      "focos_7d": null
+    },
+    "97161": {
+      "nombre": "Carurú",
+      "focos_7d": null
+    },
+    "97511": {
+      "nombre": "Pacoa",
+      "focos_7d": null
+    },
+    "97666": {
+      "nombre": "Taraira",
+      "focos_7d": null
+    },
+    "97777": {
+      "nombre": "Papunahua",
+      "focos_7d": null
+    },
+    "97889": {
+      "nombre": "Yavaraté",
+      "focos_7d": null
+    },
+    "99001": {
+      "nombre": "Puerto Carreño",
+      "focos_7d": null
+    },
+    "99524": {
+      "nombre": "La Primavera",
+      "focos_7d": null
+    },
+    "99624": {
+      "nombre": "Santa Rosalía",
+      "focos_7d": null
+    },
+    "99773": {
+      "nombre": "Cumaribo",
+      "focos_7d": null
+    }
+  }
+}

@@ -3278,5 +3278,85 @@
     "ruta_archivo_bronce": "data/bronce/fte_sspd_sui/20261109_010415_a131603a.json",
     "mensaje": "Captura certificada de 23 municipios desde SSPD SUI",
     "capturado_en": "2026-11-09T01:04:15.428044+00:00"
+  },
+  {
+    "id_fuente": "FTE-CPC-NOAA",
+    "estado": "exitosa",
+    "hash_sha256": "2ace7559d59a0066602cb9108b14d2b294b600c28d19bc16d2be75ea0d40917f",
+    "bytes_descargados": 171804,
+    "filas_procesadas": 2,
+    "ruta_archivo_bronce": "data/bronce/fte_cpc_noaa/20261109_234110_2ace7559.txt",
+    "mensaje": "Captura exitosa de anomalías SST semanales y ONI de NOAA CPC",
+    "capturado_en": "2026-11-09T23:41:10.646975+00:00"
+  },
+  {
+    "id_fuente": "FTE-INS-IRCA",
+    "estado": "exitosa",
+    "hash_sha256": "3351cefa296c6a2925d7b6e615a80e5f57a2e4cb9d07f6fb40d791ddfea69ebb",
+    "bytes_descargados": 816164,
+    "filas_procesadas": 1037,
+    "ruta_archivo_bronce": "data/bronce/fte_ins_irca/20261109_234113_3351cefa.json",
+    "mensaje": "Captura exitosa de 1037 municipios desde SIVICAP",
+    "capturado_en": "2026-11-09T23:41:13.325421+00:00"
+  },
+  {
+    "id_fuente": "FTE-CHIRPS",
+    "estado": "exitosa",
+    "hash_sha256": "6e0253b6f31f5dfe28fee618d1afdacd581e9e3a095eb24f88cc3e0e71983d3c",
+    "bytes_descargados": 1505700,
+    "filas_procesadas": 72,
+    "ruta_archivo_bronce": "data/bronce/fte_chirps/20261109_235653_6e0253b6.json",
+    "mensaje": "CHIRPS: 72 días leídos, último día disponible 2026-11-05; A-3 en 1122/1122 y A-4 en 1122/1122 municipios; en el ICR: A-3 no, A-4 no",
+    "capturado_en": "2026-11-09T23:56:53.204907+00:00"
+  },
+  {
+    "id_fuente": "FTE-IDEAM-CLIMA",
+    "estado": "exitosa",
+    "hash_sha256": "23821b241599dbeb691dfc96d63f0c9a4f5407d34bb3a4ef5a3cdf79178adcb5",
+    "bytes_descargados": 1735125,
+    "filas_procesadas": 34028,
+    "ruta_archivo_bronce": "data/bronce/fte_ideam_clima/20261109_235915_23821b24.json",
+    "mensaje": "IDEAM: 34028 días-estación de 513 estaciones; A-4 en 996/1122 y A-3 en 951/1122 municipios",
+    "capturado_en": "2026-11-09T23:59:15.134362+00:00"
+  },
+  {
+    "id_fuente": "FTE-UNGRD-MVCT",
+    "estado": "exitosa",
+    "hash_sha256": "6d81ef57c73e583b52f7a2a6f5d57d611eb3da888f9d3eea8fdb7b14691bf6ab",
+    "bytes_descargados": 421646,
+    "filas_procesadas": 1122,
+    "ruta_archivo_bronce": "data/bronce/fte_ungrd_mvct/20261109_235919_6d81ef57.json",
+    "mensaje": "Captura verificada de 1122 municipios desde UNGRD/MinVivienda (5 con piso de alerta)",
+    "capturado_en": "2026-11-09T23:59:19.416142+00:00"
+  },
+  {
+    "id_fuente": "FTE-XM-EMBALSES",
+    "estado": "exitosa",
+    "hash_sha256": "146538c8bc6db9006b68cf522b85bf217fb8ec24946a966fe3f4058315d67932",
+    "bytes_descargados": 1802,
+    "filas_procesadas": 6,
+    "ruta_archivo_bronce": "data/bronce/fte_xm_embalses/20261109_235920_146538c8.json",
+    "mensaje": "Captura exitosa de 6 embalses desde XM (Chuza: 80.7%, SIN: 79.19%)",
+    "capturado_en": "2026-11-09T23:59:20.064827+00:00"
+  },
+  {
+    "id_fuente": "FTE-FIRMS-NASA",
+    "estado": "exitosa",
+    "hash_sha256": "131384fada3e447e7ba9784f0344550baed441dacd44f540c6bca4e8c1c1bcf5",
+    "bytes_descargados": 83704,
+    "filas_procesadas": 1122,
+    "ruta_archivo_bronce": "data/bronce/fte_firms_nasa/20261109_235920_131384fa.json",
+    "mensaje": "Captura FIRMS: A-5 en 0/1122 municipios (modo: sin_clave/null)",
+    "capturado_en": "2026-11-09T23:59:20.269836+00:00"
+  },
+  {
+    "id_fuente": "FTE-SSPD-SUI",
+    "estado": "exitosa",
+    "hash_sha256": "c37d9c263fa122237b168ff13bef7080f66ce0e0091866a0c58024b615246d2a",
+    "bytes_descargados": 8436,
+    "filas_procesadas": 23,
+    "ruta_archivo_bronce": "data/bronce/fte_sspd_sui/20261109_235920_c37d9c26.json",
+    "mensaje": "Captura certificada de 23 municipios desde SSPD SUI",
+    "capturado_en": "2026-11-09T23:59:20.505255+00:00"
   }
 ]

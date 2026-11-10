@@ -355,6 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
     deptoSeleccionadoId: null,
     ordenColumna: 'icr',
     ordenAscendente: false,
+    limiteTabla: 100, // filas visibles en V-03; con 1.122 municipios se pagina
     storytelling: {
       activo: false,
       pasoActual: 1,
@@ -1600,6 +1601,7 @@ document.addEventListener('DOMContentLoaded', () => {
         zoom: 6,
         minZoom: 5,
         maxZoom: 12,
+        preferCanvas: true, // 1.122 marcadores: canvas en vez de un nodo SVG por municipio
         zoomControl: true,
         attributionControl: true
       });
@@ -1704,7 +1706,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!m.lat || !m.lon) return;
 
       const colHex = obtenerColorHexPorVariable(m, state.variableMapa);
-      const radio = m.nivel_alerta === 'roja' ? 10 : (m.nivel_alerta === 'naranja' ? 8 : 6);
+      const radio = m.nivel_alerta === 'roja' ? 8 : (m.nivel_alerta === 'naranja' ? 6.5 : 4.5);
 
       // Efecto radar animado para alerta roja
       if (m.nivel_alerta === 'roja') {
@@ -1721,10 +1723,13 @@ document.addEventListener('DOMContentLoaded', () => {
         radius: radio,
         fillColor: colHex,
         color: '#FFFFFF',
-        weight: 2,
+        weight: 1,
         opacity: 1,
         fillOpacity: 0.95
       });
+
+      // El popup se arma al abrirlo: no se generan 1.122 bloques HTML por adelantado
+      circleMarker.bindPopup(() => {
 
       const s1Val = escaparHtml(conUnidad(fmtInd(m, 'S-1', 1), 'h/día'));
       const a3Val = escaparHtml(conUnidad(fmtInd(m, 'A-3', 1, true), '%'));
@@ -1765,8 +1770,8 @@ document.addEventListener('DOMContentLoaded', () => {
           </button>
         </div>
       `;
-
-      circleMarker.bindPopup(popupHtml, { maxWidth: 300 });
+      return popupHtml;
+      }, { maxWidth: 300 });
 
       circleMarker.on('click', () => {
         circleMarker.openPopup();
@@ -1927,8 +1932,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const conteoEl = document.getElementById('conteo-resultados-tabla');
     if (conteoEl) {
-      conteoEl.textContent = `${filtrados.length} municipios encontrados`;
+      conteoEl.textContent = filtrados.length > state.limiteTabla
+        ? `${fmt(filtrados.length, 0)} municipios encontrados · se muestran ${fmt(state.limiteTabla, 0)}`
+        : `${fmt(filtrados.length, 0)} municipios encontrados`;
     }
+    const totalFiltrados = filtrados.length;
+    filtrados = filtrados.slice(0, state.limiteTabla);
 
     // Celda de indicador con fuente, fecha y frescura al pasar el cursor (RF-UI-05)
     const celdaInd = (m, cod, unidad, dec = 1, signo = false) => {
@@ -1958,7 +1967,13 @@ document.addEventListener('DOMContentLoaded', () => {
         ${celdaR3(m)}
         <td style="font-variant-numeric:tabular-nums">${typeof m.poblacion === 'number' ? fmt(m.poblacion, 0) : '<span class="sin-dato-txt">Sin dato</span>'}</td>
       </tr>
-    `).join('');
+    `).join('') + (totalFiltrados > filtrados.length ? `
+      <tr class="fila-mas"><td colspan="10" style="text-align:center">
+        <button type="button" class="btn-mostrar-mas" id="btn-mostrar-mas-tabla">Mostrar los ${fmt(totalFiltrados, 0)} municipios</button>
+      </td></tr>` : '');
+
+    const btnMas = document.getElementById('btn-mostrar-mas-tabla');
+    if (btnMas) btnMas.addEventListener('click', () => { state.limiteTabla = Infinity; renderTablaTerritorio(); });
 
     // Sincronizar hover de filas con marcadores en el mapa
     tbody.querySelectorAll('tr').forEach(row => {
@@ -1971,7 +1986,7 @@ document.addEventListener('DOMContentLoaded', () => {
       row.addEventListener('mouseleave', () => {
         const divipola = row.getAttribute('data-abrir-municipio');
         if (state.muniMarkers[divipola] && state.leafletMap) {
-          state.muniMarkers[divipola].setStyle({ weight: 2, color: '#FFFFFF' });
+          state.muniMarkers[divipola].setStyle({ weight: 1, color: '#FFFFFF' });
         }
       });
     });

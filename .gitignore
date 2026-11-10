@@ -43,3 +43,6 @@ build/
 
 # Cachés reproducibles de CHIRPS (se regeneran desde la fuente; Fase 0)
 data/plata/chirps/
+
+# Cortes rechazados por la compuerta RF-CAL-04: evidencia local, no se versiona
+data/oro/rechazados/
